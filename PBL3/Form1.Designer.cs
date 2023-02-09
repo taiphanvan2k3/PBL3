@@ -74,9 +74,11 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(100, 60);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 22);
+            this.textBox1.Size = new System.Drawing.Size(267, 98);
             this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "Test \r\ntét\r\ntets\r\nttrrtrtest\r\netrreest";
             // 
             // Form1
             // 
