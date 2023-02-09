@@ -17,6 +17,5 @@ namespace PBL3
             InitializeComponent();
         }
 
-   
     }
 }
