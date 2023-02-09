@@ -28,27 +28,8 @@
         /// </summary>
         private void InitializeComponent ()
         {
-            this.customButton1 = new WindowsFormsApp1.Controls.CustomButton();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 40;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.Location = new System.Drawing.Point(432, 141);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(163, 66);
-            this.customButton1.TabIndex = 0;
-            this.customButton1.Text = "customButton1";
-            this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -81,8 +62,8 @@
 
         #endregion
 
-        private WindowsFormsApp1.Controls.CustomButton customButton1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
