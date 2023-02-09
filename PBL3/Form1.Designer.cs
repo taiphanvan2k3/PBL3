@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            //Bị lỗi nè 
             this.customButton1 = new WindowsFormsApp1.Controls.CustomButton();
             this.toggleButton1 = new WindowsFormsApp1.Controls.ToggleButton();
             this.boxCalendar1 = new WindowsFormsApp1.Controls.BoxCalendar();
