@@ -26,14 +26,14 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent ()
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // customButton1
+            // button1
             // 
             this.button1.Location = new System.Drawing.Point(316, 144);
             this.button1.Name = "button1";
