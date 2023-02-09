@@ -28,28 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.customButton1 = new PBL3.MyCustomControl.CustomButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.customButton1 = new PBL3.MyCustomControl.CustomButton();
             this.SuspendLayout();
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 40;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.Location = new System.Drawing.Point(293, 261);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(150, 40);
-            this.customButton1.TabIndex = 0;
-            this.customButton1.Text = "customButton1";
-            this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -64,6 +46,24 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(274, 22);
             this.textBox2.TabIndex = 2;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton1.BorderRadius = 40;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton1.Location = new System.Drawing.Point(306, 255);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(150, 40);
+            this.customButton1.TabIndex = 0;
+            this.customButton1.Text = "customButton1";
+            this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // Form01
             // 
