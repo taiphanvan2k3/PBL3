@@ -31,6 +31,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.customButton1 = new MyCustomControl.CustomButton();
             this.SuspendLayout();
             // 
             // textBox1
