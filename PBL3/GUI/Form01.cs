@@ -16,7 +16,5 @@ namespace PBL3.GUI
         {
             InitializeComponent();
         }
-
-   
     }
 }
