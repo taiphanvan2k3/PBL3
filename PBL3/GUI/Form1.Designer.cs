@@ -1,6 +1,6 @@
 ﻿namespace PBL3.GUI
 {
-    partial class Form01
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
