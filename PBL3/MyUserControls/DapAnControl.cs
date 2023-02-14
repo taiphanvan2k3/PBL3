@@ -11,7 +11,8 @@ namespace PBL3.MyUserControls
             get => _STT;
             set
             {
-                labelCauHoi.Text += " " + value;
+                char c = (char)(value - 1 + 'A');
+                labelCauHoi.Text += " " + c;
                 _STT = value;
             }
         }

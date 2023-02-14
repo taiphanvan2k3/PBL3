@@ -43,6 +43,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelCheck = new System.Windows.Forms.Label();
+            this.customButton2 = new PBL3.MyCustomControl.CustomButton();
             this.customButton1 = new PBL3.MyCustomControl.CustomButton();
             this.groupBoxSingleChoice.SuspendLayout();
             this.groupBoxMultiChoices.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             this.checkBoxSingleMulti.AutoSize = true;
             this.checkBoxSingleMulti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxSingleMulti.Location = new System.Drawing.Point(688, 79);
+            this.checkBoxSingleMulti.Location = new System.Drawing.Point(688, 137);
             this.checkBoxSingleMulti.Name = "checkBoxSingleMulti";
             this.checkBoxSingleMulti.Size = new System.Drawing.Size(197, 24);
             this.checkBoxSingleMulti.TabIndex = 2;
@@ -63,10 +64,10 @@
             // panelDanhSachDapAn
             // 
             this.panelDanhSachDapAn.AutoScroll = true;
-            this.panelDanhSachDapAn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelDanhSachDapAn.BackColor = System.Drawing.Color.Lavender;
             this.panelDanhSachDapAn.Location = new System.Drawing.Point(25, 116);
             this.panelDanhSachDapAn.Name = "panelDanhSachDapAn";
-            this.panelDanhSachDapAn.Size = new System.Drawing.Size(624, 472);
+            this.panelDanhSachDapAn.Size = new System.Drawing.Size(624, 577);
             this.panelDanhSachDapAn.TabIndex = 2;
             // 
             // groupBoxSingleChoice
@@ -76,7 +77,7 @@
             this.groupBoxSingleChoice.Controls.Add(this.radioButton2);
             this.groupBoxSingleChoice.Controls.Add(this.radioButton1);
             this.groupBoxSingleChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSingleChoice.Location = new System.Drawing.Point(688, 130);
+            this.groupBoxSingleChoice.Location = new System.Drawing.Point(688, 177);
             this.groupBoxSingleChoice.Name = "groupBoxSingleChoice";
             this.groupBoxSingleChoice.Size = new System.Drawing.Size(179, 197);
             this.groupBoxSingleChoice.TabIndex = 3;
@@ -133,10 +134,10 @@
             // 
             // textBoxCauHoi
             // 
-            this.textBoxCauHoi.Location = new System.Drawing.Point(104, 18);
+            this.textBoxCauHoi.Location = new System.Drawing.Point(120, 18);
             this.textBoxCauHoi.Multiline = true;
             this.textBoxCauHoi.Name = "textBoxCauHoi";
-            this.textBoxCauHoi.Size = new System.Drawing.Size(544, 82);
+            this.textBoxCauHoi.Size = new System.Drawing.Size(471, 82);
             this.textBoxCauHoi.TabIndex = 0;
             this.textBoxCauHoi.TextChanged += new System.EventHandler(this.textBoxCauHoi_TextChanged);
             // 
@@ -144,7 +145,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 18);
+            this.label1.Location = new System.Drawing.Point(35, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 6;
@@ -157,7 +158,7 @@
             this.groupBoxMultiChoices.Controls.Add(this.checkBox2);
             this.groupBoxMultiChoices.Controls.Add(this.checkBox1);
             this.groupBoxMultiChoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxMultiChoices.Location = new System.Drawing.Point(688, 398);
+            this.groupBoxMultiChoices.Location = new System.Drawing.Point(688, 483);
             this.groupBoxMultiChoices.Name = "groupBoxMultiChoices";
             this.groupBoxMultiChoices.Size = new System.Drawing.Size(179, 197);
             this.groupBoxMultiChoices.TabIndex = 7;
@@ -210,11 +211,30 @@
             this.labelCheck.AutoSize = true;
             this.labelCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCheck.ForeColor = System.Drawing.Color.Red;
-            this.labelCheck.Location = new System.Drawing.Point(654, 49);
+            this.labelCheck.Location = new System.Drawing.Point(603, 49);
             this.labelCheck.Name = "labelCheck";
             this.labelCheck.Size = new System.Drawing.Size(16, 20);
             this.labelCheck.TabIndex = 8;
             this.labelCheck.Text = "*";
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.SteelBlue;
+            this.customButton2.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton2.BorderRadius = 40;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton2.Location = new System.Drawing.Point(784, 437);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(88, 40);
+            this.customButton2.TabIndex = 9;
+            this.customButton2.Text = "Thoát";
+            this.customButton2.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
             // 
             // customButton1
             // 
@@ -226,11 +246,11 @@
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.Location = new System.Drawing.Point(688, 352);
+            this.customButton1.Location = new System.Drawing.Point(678, 437);
             this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(118, 40);
+            this.customButton1.Size = new System.Drawing.Size(97, 40);
             this.customButton1.TabIndex = 4;
-            this.customButton1.Text = "Xác nhận";
+            this.customButton1.Text = "Lưu";
             this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
             this.customButton1.UseVisualStyleBackColor = false;
             this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
@@ -238,7 +258,9 @@
             // FormTaoCauHoi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(897, 600);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(897, 719);
+            this.Controls.Add(this.customButton2);
             this.Controls.Add(this.labelCheck);
             this.Controls.Add(this.groupBoxMultiChoices);
             this.Controls.Add(this.label1);
@@ -278,5 +300,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label labelCheck;
+        private MyCustomControl.CustomButton customButton2;
     }
 }

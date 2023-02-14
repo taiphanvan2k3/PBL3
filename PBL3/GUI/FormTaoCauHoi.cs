@@ -90,5 +90,10 @@ namespace PBL3.GUI
                 labelCheck.Visible = true;
             else labelCheck.Visible = false;
         }
+
+        private void customButton2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
