@@ -45,6 +45,7 @@
             this.labelCheck = new System.Windows.Forms.Label();
             this.customButton2 = new PBL3.MyCustomControl.CustomButton();
             this.customButton1 = new PBL3.MyCustomControl.CustomButton();
+            this.customButton3 = new PBL3.MyCustomControl.CustomButton();
             this.groupBoxSingleChoice.SuspendLayout();
             this.groupBoxMultiChoices.SuspendLayout();
             this.SuspendLayout();
@@ -255,11 +256,30 @@
             this.customButton1.UseVisualStyleBackColor = false;
             this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
+            // customButton3
+            // 
+            this.customButton3.BackColor = System.Drawing.Color.SteelBlue;
+            this.customButton3.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton3.BorderRadius = 40;
+            this.customButton3.BorderSize = 0;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton3.Location = new System.Drawing.Point(699, 49);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(97, 40);
+            this.customButton3.TabIndex = 10;
+            this.customButton3.Text = "Test";
+            this.customButton3.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton3.UseVisualStyleBackColor = false;
+            // 
             // FormTaoCauHoi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(897, 719);
+            this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.labelCheck);
             this.Controls.Add(this.groupBoxMultiChoices);
@@ -301,5 +321,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label labelCheck;
         private MyCustomControl.CustomButton customButton2;
+        private MyCustomControl.CustomButton customButton3;
     }
 }
