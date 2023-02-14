@@ -43,9 +43,9 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelCheck = new System.Windows.Forms.Label();
+            this.customButton3 = new PBL3.MyCustomControl.CustomButton();
             this.customButton2 = new PBL3.MyCustomControl.CustomButton();
             this.customButton1 = new PBL3.MyCustomControl.CustomButton();
-            this.customButton3 = new PBL3.MyCustomControl.CustomButton();
             this.groupBoxSingleChoice.SuspendLayout();
             this.groupBoxMultiChoices.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             // 
             this.checkBoxSingleMulti.AutoSize = true;
             this.checkBoxSingleMulti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxSingleMulti.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.checkBoxSingleMulti.Location = new System.Drawing.Point(688, 137);
             this.checkBoxSingleMulti.Name = "checkBoxSingleMulti";
             this.checkBoxSingleMulti.Size = new System.Drawing.Size(197, 24);
@@ -65,7 +66,6 @@
             // panelDanhSachDapAn
             // 
             this.panelDanhSachDapAn.AutoScroll = true;
-            this.panelDanhSachDapAn.BackColor = System.Drawing.Color.Lavender;
             this.panelDanhSachDapAn.Location = new System.Drawing.Point(25, 116);
             this.panelDanhSachDapAn.Name = "panelDanhSachDapAn";
             this.panelDanhSachDapAn.Size = new System.Drawing.Size(624, 577);
@@ -78,6 +78,7 @@
             this.groupBoxSingleChoice.Controls.Add(this.radioButton2);
             this.groupBoxSingleChoice.Controls.Add(this.radioButton1);
             this.groupBoxSingleChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxSingleChoice.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBoxSingleChoice.Location = new System.Drawing.Point(688, 177);
             this.groupBoxSingleChoice.Name = "groupBoxSingleChoice";
             this.groupBoxSingleChoice.Size = new System.Drawing.Size(179, 197);
@@ -88,6 +89,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.radioButton4.Location = new System.Drawing.Point(6, 157);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(101, 24);
@@ -100,6 +102,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.radioButton3.Location = new System.Drawing.Point(6, 117);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(100, 24);
@@ -112,6 +115,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.radioButton2.Location = new System.Drawing.Point(6, 77);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(100, 24);
@@ -124,6 +128,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.radioButton1.Location = new System.Drawing.Point(6, 38);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(99, 24);
@@ -135,7 +140,9 @@
             // 
             // textBoxCauHoi
             // 
-            this.textBoxCauHoi.Location = new System.Drawing.Point(120, 18);
+            this.textBoxCauHoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.textBoxCauHoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCauHoi.Location = new System.Drawing.Point(114, 18);
             this.textBoxCauHoi.Multiline = true;
             this.textBoxCauHoi.Name = "textBoxCauHoi";
             this.textBoxCauHoi.Size = new System.Drawing.Size(471, 82);
@@ -146,6 +153,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(35, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
@@ -159,6 +167,7 @@
             this.groupBoxMultiChoices.Controls.Add(this.checkBox2);
             this.groupBoxMultiChoices.Controls.Add(this.checkBox1);
             this.groupBoxMultiChoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxMultiChoices.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBoxMultiChoices.Location = new System.Drawing.Point(688, 483);
             this.groupBoxMultiChoices.Name = "groupBoxMultiChoices";
             this.groupBoxMultiChoices.Size = new System.Drawing.Size(179, 197);
@@ -218,6 +227,24 @@
             this.labelCheck.TabIndex = 8;
             this.labelCheck.Text = "*";
             // 
+            // customButton3
+            // 
+            this.customButton3.BackColor = System.Drawing.Color.SteelBlue;
+            this.customButton3.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton3.BorderRadius = 40;
+            this.customButton3.BorderSize = 0;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton3.Location = new System.Drawing.Point(699, 49);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(97, 40);
+            this.customButton3.TabIndex = 10;
+            this.customButton3.Text = "Test";
+            this.customButton3.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton3.UseVisualStyleBackColor = false;
+            // 
             // customButton2
             // 
             this.customButton2.BackColor = System.Drawing.Color.SteelBlue;
@@ -256,28 +283,10 @@
             this.customButton1.UseVisualStyleBackColor = false;
             this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.Color.SteelBlue;
-            this.customButton3.BackGroundColor = System.Drawing.Color.SteelBlue;
-            this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton3.BorderRadius = 40;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton3.Location = new System.Drawing.Point(699, 49);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(97, 40);
-            this.customButton3.TabIndex = 10;
-            this.customButton3.Text = "Test";
-            this.customButton3.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton3.UseVisualStyleBackColor = false;
-            // 
             // FormTaoCauHoi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(28)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(897, 719);
             this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);

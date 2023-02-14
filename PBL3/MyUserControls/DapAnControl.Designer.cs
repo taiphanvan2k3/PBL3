@@ -35,6 +35,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(91, 21);
             this.textBox1.Multiline = true;
@@ -58,6 +59,7 @@
             // 
             this.labelCauHoi.AutoSize = true;
             this.labelCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCauHoi.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelCauHoi.Location = new System.Drawing.Point(10, 25);
             this.labelCauHoi.Name = "labelCauHoi";
             this.labelCauHoi.Size = new System.Drawing.Size(68, 20);
@@ -68,6 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(28)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.labelCauHoi);
             this.Controls.Add(this.labelCheck);
             this.Controls.Add(this.textBox1);
