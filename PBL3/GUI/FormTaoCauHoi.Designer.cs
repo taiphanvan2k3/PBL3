@@ -43,7 +43,6 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelCheck = new System.Windows.Forms.Label();
-            this.customButton3 = new PBL3.MyCustomControl.CustomButton();
             this.customButton2 = new PBL3.MyCustomControl.CustomButton();
             this.customButton1 = new PBL3.MyCustomControl.CustomButton();
             this.groupBoxSingleChoice.SuspendLayout();
@@ -140,12 +139,13 @@
             // 
             // textBoxCauHoi
             // 
-            this.textBoxCauHoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.textBoxCauHoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCauHoi.Location = new System.Drawing.Point(114, 18);
+            this.textBoxCauHoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(56)))), ((int)(((byte)(86)))));
+            this.textBoxCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCauHoi.ForeColor = System.Drawing.Color.White;
+            this.textBoxCauHoi.Location = new System.Drawing.Point(118, 18);
             this.textBoxCauHoi.Multiline = true;
             this.textBoxCauHoi.Name = "textBoxCauHoi";
-            this.textBoxCauHoi.Size = new System.Drawing.Size(471, 82);
+            this.textBoxCauHoi.Size = new System.Drawing.Size(470, 82);
             this.textBoxCauHoi.TabIndex = 0;
             this.textBoxCauHoi.TextChanged += new System.EventHandler(this.textBoxCauHoi_TextChanged);
             // 
@@ -227,24 +227,6 @@
             this.labelCheck.TabIndex = 8;
             this.labelCheck.Text = "*";
             // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.Color.SteelBlue;
-            this.customButton3.BackGroundColor = System.Drawing.Color.SteelBlue;
-            this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton3.BorderRadius = 40;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton3.Location = new System.Drawing.Point(699, 49);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(97, 40);
-            this.customButton3.TabIndex = 10;
-            this.customButton3.Text = "Test";
-            this.customButton3.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton3.UseVisualStyleBackColor = false;
-            // 
             // customButton2
             // 
             this.customButton2.BackColor = System.Drawing.Color.SteelBlue;
@@ -286,9 +268,8 @@
             // FormTaoCauHoi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(28)))), ((int)(((byte)(63)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(897, 719);
-            this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.labelCheck);
             this.Controls.Add(this.groupBoxMultiChoices);
@@ -330,6 +311,5 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label labelCheck;
         private MyCustomControl.CustomButton customButton2;
-        private MyCustomControl.CustomButton customButton3;
     }
 }
