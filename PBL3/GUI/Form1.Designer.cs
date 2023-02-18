@@ -35,11 +35,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.customButton1 = new PBL3.MyCustomControl.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelTaiKhoan= new System.Windows.Forms.Label();
+            this.labelMatKhau = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 112);
+            this.textBox1.Location = new System.Drawing.Point(292, 112);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(277, 22);
@@ -48,20 +50,31 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(238, 193);
+            this.textBox2.Location = new System.Drawing.Point(292, 196);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(274, 22);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "mAT KHAU";
             // 
-            // button1
+            // labelTaiKhoan
             // 
-            this.button1.Location = new System.Drawing.Point(615, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.labelTaiKhoan.AutoSize = true;
+            this.labelTaiKhoan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTaiKhoan.Location = new System.Drawing.Point(151, 111);
+            this.labelTaiKhoan.Name = "labelTaiKhoan";
+            this.labelTaiKhoan.Size = new System.Drawing.Size(99, 28);
+            this.labelTaiKhoan.TabIndex = 7;
+            this.labelTaiKhoan.Text = "Tài khoản";
+            // 
+            // labelMatKhau
+            // 
+            this.labelMatKhau.AutoSize = true;
+            this.labelMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMatKhau.Location = new System.Drawing.Point(152, 191);
+            this.labelMatKhau.Name = "labelMatKhau";
+            this.labelMatKhau.Size = new System.Drawing.Size(98, 28);
+            this.labelMatKhau.TabIndex = 8;
+            this.labelMatKhau.Text = "Mật khẩu";
             // 
             // label2
             // 
@@ -91,11 +104,11 @@
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.Location = new System.Drawing.Point(306, 255);
+            this.customButton1.Location = new System.Drawing.Point(353, 253);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(150, 40);
             this.customButton1.TabIndex = 0;
-            this.customButton1.Text = "customButton1";
+            this.customButton1.Text = "Đăng nhập";
             this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
             this.customButton1.UseVisualStyleBackColor = false;
             // 
@@ -136,5 +149,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTaiKhoan;
+        private System.Windows.Forms.Label labelMatKhau;
     }
 }

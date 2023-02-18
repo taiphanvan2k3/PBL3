@@ -282,14 +282,20 @@
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form3.cs">
+    <Compile Include="GUI\FormTaoCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="GUI\FormTaoCauHoi.Designer.cs">
+      <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
     </Compile>
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\DapAnControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\DapAnControl.Designer.cs">
+      <DependentUpon>DapAnControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -311,8 +317,11 @@
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\FormTaoCauHoi.resx">
+      <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\DapAnControl.resx">
+      <DependentUpon>DapAnControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
