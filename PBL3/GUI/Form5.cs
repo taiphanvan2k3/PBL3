@@ -19,7 +19,9 @@ namespace PBL3.GUI
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            FormTaoCauHoi f1 = new FormTaoCauHoi();
+            f1.Show();
+            f1.Show();
         }
     }
 }
