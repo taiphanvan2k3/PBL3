@@ -1,4 +1,4 @@
-﻿namespace PBL3.GUI
+﻿namespace PBL3
 {
     partial class Form2
     {
@@ -28,98 +28,180 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnLogin = new PBL3.MyCustomControl.CustomButton();
-            this.panel1.SuspendLayout();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lbMonday = new System.Windows.Forms.Label();
+            this.lbTuesday = new System.Windows.Forms.Label();
+            this.lbThursday = new System.Windows.Forms.Label();
+            this.lbWednesday = new System.Windows.Forms.Label();
+            this.lbSunday = new System.Windows.Forms.Label();
+            this.lbSaturday = new System.Windows.Forms.Label();
+            this.lbFriday = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // panel1
+            // btnPrevious
             // 
-            this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.labelPassword);
-            this.panel1.Controls.Add(this.labelUser);
-            this.panel1.Location = new System.Drawing.Point(333, 185);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 311);
-            this.panel1.TabIndex = 0;
+            this.btnPrevious.Location = new System.Drawing.Point(952, 775);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(74, 24);
+            this.btnPrevious.TabIndex = 1;
+            this.btnPrevious.Text = "Previuos";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // labelUser
+            // btnNext
             // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(52, 114);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(78, 16);
-            this.labelUser.TabIndex = 0;
-            this.labelUser.Text = "TÀI KHOẢN";
+            this.btnNext.Location = new System.Drawing.Point(1050, 775);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(84, 24);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // labelPassword
+            // lbMonday
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(52, 165);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(76, 16);
-            this.labelPassword.TabIndex = 1;
-            this.labelPassword.Text = "MẬT KHẨU";
+            this.lbMonday.AutoSize = true;
+            this.lbMonday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMonday.Location = new System.Drawing.Point(49, 94);
+            this.lbMonday.Name = "lbMonday";
+            this.lbMonday.Size = new System.Drawing.Size(92, 27);
+            this.lbMonday.TabIndex = 3;
+            this.lbMonday.Text = "Monday";
             // 
-            // textBox1
+            // lbTuesday
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 22);
-            this.textBox1.TabIndex = 2;
+            this.lbTuesday.AutoSize = true;
+            this.lbTuesday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTuesday.Location = new System.Drawing.Point(224, 94);
+            this.lbTuesday.Name = "lbTuesday";
+            this.lbTuesday.Size = new System.Drawing.Size(90, 27);
+            this.lbTuesday.TabIndex = 4;
+            this.lbTuesday.Text = "Tuesday";
             // 
-            // textBox2
+            // lbThursday
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 22);
-            this.textBox2.TabIndex = 3;
+            this.lbThursday.AutoSize = true;
+            this.lbThursday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThursday.Location = new System.Drawing.Point(590, 95);
+            this.lbThursday.Name = "lbThursday";
+            this.lbThursday.Size = new System.Drawing.Size(99, 27);
+            this.lbThursday.TabIndex = 6;
+            this.lbThursday.Text = "Thursday";
             // 
-            // btnLogin
+            // lbWednesday
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLogin.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogin.BorderRadius = 11;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.Location = new System.Drawing.Point(171, 197);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(134, 29);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "ĐĂNG NHẬP";
-            this.btnLogin.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.lbWednesday.AutoSize = true;
+            this.lbWednesday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWednesday.Location = new System.Drawing.Point(395, 94);
+            this.lbWednesday.Name = "lbWednesday";
+            this.lbWednesday.Size = new System.Drawing.Size(123, 27);
+            this.lbWednesday.TabIndex = 5;
+            this.lbWednesday.Text = "Wednesday";
+            // 
+            // lbSunday
+            // 
+            this.lbSunday.AutoSize = true;
+            this.lbSunday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSunday.Location = new System.Drawing.Point(1140, 95);
+            this.lbSunday.Name = "lbSunday";
+            this.lbSunday.Size = new System.Drawing.Size(83, 27);
+            this.lbSunday.TabIndex = 9;
+            this.lbSunday.Text = "Sunday";
+            // 
+            // lbSaturday
+            // 
+            this.lbSaturday.AutoSize = true;
+            this.lbSaturday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSaturday.Location = new System.Drawing.Point(961, 95);
+            this.lbSaturday.Name = "lbSaturday";
+            this.lbSaturday.Size = new System.Drawing.Size(97, 27);
+            this.lbSaturday.TabIndex = 8;
+            this.lbSaturday.Text = "Saturday";
+            // 
+            // lbFriday
+            // 
+            this.lbFriday.AutoSize = true;
+            this.lbFriday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFriday.Location = new System.Drawing.Point(789, 95);
+            this.lbFriday.Name = "lbFriday";
+            this.lbFriday.Size = new System.Drawing.Size(71, 27);
+            this.lbFriday.TabIndex = 7;
+            this.lbFriday.Text = "Friday";
+            // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Mistral", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbDate.Location = new System.Drawing.Point(557, 21);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(241, 56);
+            this.lbDate.TabIndex = 10;
+            this.lbDate.Text = "MONTH YEAR";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1186, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 48);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 124);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1337, 623);
+            this.flowLayoutPanel1.TabIndex = 14;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 737);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1382, 811);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbDate);
+            this.Controls.Add(this.lbSunday);
+            this.Controls.Add(this.lbSaturday);
+            this.Controls.Add(this.lbFriday);
+            this.Controls.Add(this.lbThursday);
+            this.Controls.Add(this.lbWednesday);
+            this.Controls.Add(this.lbTuesday);
+            this.Controls.Add(this.lbMonday);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPrevious);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelUser;
-        private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private MyCustomControl.CustomButton btnLogin;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lbMonday;
+        private System.Windows.Forms.Label lbTuesday;
+        private System.Windows.Forms.Label lbThursday;
+        private System.Windows.Forms.Label lbWednesday;
+        private System.Windows.Forms.Label lbSunday;
+        private System.Windows.Forms.Label lbSaturday;
+        private System.Windows.Forms.Label lbFriday;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
