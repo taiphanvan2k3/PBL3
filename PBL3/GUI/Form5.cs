@@ -22,8 +22,6 @@ namespace PBL3.GUI
 
             FormTaoCauHoi f1 = new FormTaoCauHoi();
             f1.Show();
-            f1.Show();
-            MessageBox.Show("ngan kak");
 
         }
 
