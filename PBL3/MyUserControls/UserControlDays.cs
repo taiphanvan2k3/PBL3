@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3.GUI
+namespace PBL3
 {
-    public partial class Form01 : Form
+    public partial class UserControlDays : UserControl
     {
-        public Form01()
+        public UserControlDays()
         {
             InitializeComponent();
         }
 
-   
+        public void Days(int numDay)
+        {
+            btnDays.Text = numDay + "";
+        }
     }
 }
