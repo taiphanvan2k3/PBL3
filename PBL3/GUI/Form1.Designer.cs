@@ -35,6 +35,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.customButton1 = new PBL3.MyCustomControl.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelTaiKhoan= new System.Windows.Forms.Label();
+            this.labelMatKhau = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -147,5 +149,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTaiKhoan;
+        private System.Windows.Forms.Label labelMatKhau;
     }
 }
