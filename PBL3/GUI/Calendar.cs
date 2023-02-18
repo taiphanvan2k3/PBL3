@@ -15,12 +15,12 @@ using System.Windows.Forms;
 
 namespace PBL3
 {
-    public partial class Form2 : Form
+    public partial class Calendar : Form
     {
         int MONTH, YEAR;
         Button[,] btn = new Button[7, 7];
         String[,] dTime = new String[7, 7];
-        public Form2()
+        public Calendar()
         {
             InitializeComponent();
             init();
