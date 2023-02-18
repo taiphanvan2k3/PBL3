@@ -135,11 +135,11 @@
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Mistral", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.DarkRed;
             this.lbDate.Location = new System.Drawing.Point(557, 21);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(241, 56);
+            this.lbDate.Size = new System.Drawing.Size(345, 54);
             this.lbDate.TabIndex = 10;
             this.lbDate.Text = "MONTH YEAR";
             // 
@@ -147,7 +147,7 @@
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(1186, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 48);
@@ -162,6 +162,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1337, 623);
             this.flowLayoutPanel1.TabIndex = 14;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // Form2
             // 
