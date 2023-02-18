@@ -1,6 +1,6 @@
 ﻿namespace PBL3
 {
-    partial class Form2
+    partial class Calendar
     {
         /// <summary>
         /// Required designer variable.
