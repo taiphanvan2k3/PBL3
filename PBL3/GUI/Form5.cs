@@ -19,13 +19,12 @@ namespace PBL3.GUI
 
         private void label1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             FormTaoCauHoi f1 = new FormTaoCauHoi();
             f1.Show();
             f1.Show();
-=======
             MessageBox.Show("ngan kak");
->>>>>>> c10833f2c8552d49c08b6acead9f2ef28abc8657
+
         }
 
         private void Form5_Load(object sender, EventArgs e)
