@@ -299,16 +299,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MyCustomControl\UserControlBlank.cs">
+    <Compile Include="MyUserControls\UserControlBlank.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyCustomControl\UserControlBlank.Designer.cs">
+    <Compile Include="MyUserControls\UserControlBlank.Designer.cs">
       <DependentUpon>UserControlBlank.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyCustomControl\UserControlDays.cs">
+    <Compile Include="MyUserControls\UserControlDays.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyCustomControl\UserControlDays.Designer.cs">
+    <Compile Include="MyUserControls\UserControlDays.Designer.cs">
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\Form2.resx">
@@ -332,10 +332,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MyCustomControl\UserControlBlank.resx">
+    <EmbeddedResource Include="MyUserControls\UserControlBlank.resx">
       <DependentUpon>UserControlBlank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyCustomControl\UserControlDays.resx">
+    <EmbeddedResource Include="MyUserControls\UserControlDays.resx">
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
