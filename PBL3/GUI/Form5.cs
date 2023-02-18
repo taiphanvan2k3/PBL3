@@ -22,7 +22,7 @@ namespace PBL3.GUI
 
             FormTaoCauHoi f1 = new FormTaoCauHoi();
             f1.Show();
-
+            MessageBox.Show("oo");
         }
 
         private void Form5_Load(object sender, EventArgs e)
