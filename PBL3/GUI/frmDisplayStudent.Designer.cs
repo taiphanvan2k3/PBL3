@@ -30,8 +30,10 @@ namespace PBL3
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.LOGIN = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -45,14 +47,27 @@ namespace PBL3
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.LOGIN);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1397, 111);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label3.Location = new System.Drawing.Point(134, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(359, 45);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Student Information System";
             // 
             // label1
             // 
@@ -72,6 +87,17 @@ namespace PBL3
             this.pictureBox1.Size = new System.Drawing.Size(113, 103);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(134, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(616, 48);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "HỆ THỐNG THÔNG TIN SINH VIÊN";
             // 
             // LOGIN
             // 
@@ -175,6 +201,7 @@ namespace PBL3
             this.Controls.Add(this.ptnContainer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmDisplayStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDisplayStudent";
@@ -197,5 +224,7 @@ namespace PBL3
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btnInfomation;
         private System.Windows.Forms.Panel ptnContainer;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

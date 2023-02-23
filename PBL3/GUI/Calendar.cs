@@ -1,7 +1,4 @@
-﻿using MySqlX.XDevAPI.Relational;
-using Org.BouncyCastle.Math;
-using ServiceStack;
-using ServiceStack.Script;
+﻿using Org.BouncyCastle.Math;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
