@@ -320,11 +320,11 @@
     <Compile Include="MyUserControls\UC_Class.Designer.cs">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_InfomationStudent.cs">
+    <Compile Include="MyUserControls\UC_Student.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControls\UC_InfomationStudent.Designer.cs">
-      <DependentUpon>UC_InfomationStudent.cs</DependentUpon>
+    <Compile Include="MyUserControls\UC_Student.Designer.cs">
+      <DependentUpon>UC_Student.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -361,8 +361,8 @@
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_InfomationStudent.resx">
-      <DependentUpon>UC_InfomationStudent.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControls\UC_Student.resx">
+      <DependentUpon>UC_Student.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

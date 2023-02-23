@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PBL3.MyUserControls
 {
-    public partial class UC_InfomationStudent : UserControl
+    public partial class UC_Student : UserControl
     {
-        public UC_InfomationStudent()
+        public UC_Student()
         {
             InitializeComponent();
         }

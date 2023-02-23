@@ -1,8 +1,10 @@
-﻿using PBL3.MyUserControls;
+﻿using PBL3.GUI;
+using PBL3.MyUserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +18,7 @@ namespace PBL3
         public frmDisplayStudent()
         {
             InitializeComponent();
-            UC_InfomationStudent uc = new UC_InfomationStudent();
+            UC_Student uc = new UC_Student();
             addUserControl(uc);
         }
 
@@ -30,7 +32,7 @@ namespace PBL3
         }
         private void btnInfomation_Click(object sender, EventArgs e)
         {
-            UC_InfomationStudent uc = new UC_InfomationStudent();
+            UC_Student uc = new UC_Student();
             addUserControl(uc);
         }
 
@@ -40,5 +42,12 @@ namespace PBL3
             addUserControl(uc);
         }
 
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            frmLogin lg = new frmLogin();
+            this.Hide();
+            lg.ShowDialog();
+            this.Close();
+        }
     }
 }
