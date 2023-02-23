@@ -108,9 +108,9 @@
             this.guna2Button3.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.DimGray;
             this.guna2Button3.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2Button3.Location = new System.Drawing.Point(467, 3);
+            this.guna2Button3.Location = new System.Drawing.Point(467, 6);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(197, 57);
+            this.guna2Button3.Size = new System.Drawing.Size(197, 54);
             this.guna2Button3.TabIndex = 3;
             this.guna2Button3.Text = "Thoát";
             // 
