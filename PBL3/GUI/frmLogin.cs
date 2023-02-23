@@ -34,6 +34,7 @@ namespace PBL3.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //PHẦN NÀY T KẾT NỐI VỚI DATABASE CỦA T 
             string path = @"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=testPbl;Integrated Security=True";
             SqlConnection cnn = new SqlConnection(path);
             cnn.Open();
