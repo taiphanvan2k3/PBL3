@@ -2,7 +2,7 @@
     [MaGV]        NVARCHAR (9)  NOT NULL,
     [HoGV]        NVARCHAR (10) NOT NULL,
     [TenGV]       NVARCHAR (20) NOT NULL,
-    [NgaySinh]    DATETIME      NULL,
+    [NgaySinh]    DATE      NULL,
     [GioiTinh]    NVARCHAR (3)  NULL,
     [DiaChi]      NVARCHAR (30) NULL,
     [TrinhDo]     NVARCHAR (20) NULL,
