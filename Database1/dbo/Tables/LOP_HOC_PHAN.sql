@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[LOP_HOC_PHAN] (
+    [MaLopHP] NVARCHAR (9) NOT NULL,
+    [MaMH]    NVARCHAR (9) NULL,
+    [MaGV]    NVARCHAR (9) NULL,
+    PRIMARY KEY CLUSTERED ([MaLopHP] ASC),
+    FOREIGN KEY ([MaGV]) REFERENCES [dbo].[GIANG_VIEN] ([MaGV]),
+    FOREIGN KEY ([MaMH]) REFERENCES [dbo].[MON_HOC] ([MaMH])
+);
+
