@@ -1,4 +1,5 @@
-﻿namespace PBL3
+﻿
+namespace PBL3
 {
     partial class frmDisplayStudent
     {
@@ -75,7 +76,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label1.Location = new System.Drawing.Point(134, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 45);
+            this.label1.Size = new System.Drawing.Size(355, 45);
             this.label1.TabIndex = 3;
             this.label1.Text = "Student Information System";
             // 
@@ -105,7 +106,7 @@
             this.LOGIN.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.LOGIN.Location = new System.Drawing.Point(134, 9);
             this.LOGIN.Name = "LOGIN";
-            this.LOGIN.Size = new System.Drawing.Size(616, 48);
+            this.LOGIN.Size = new System.Drawing.Size(603, 48);
             this.LOGIN.TabIndex = 2;
             this.LOGIN.Text = "HỆ THỐNG THÔNG TIN SINH VIÊN";
             // 
@@ -202,7 +203,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmDisplayStudent";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDisplayStudent";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

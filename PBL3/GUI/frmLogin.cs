@@ -27,9 +27,9 @@ namespace PBL3.GUI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            string path = @"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=testPbl;Integrated Security=True";
-            SqlConnection cnn = new SqlConnection(path);
-            cnn.Open();
+            //string path = @"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=testPbl;Integrated Security=True";
+            //SqlConnection cnn = new SqlConnection(path);
+            //cnn.Open();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -49,7 +49,6 @@ namespace PBL3.GUI
             {
                 frmDisplayStudent frm= new frmDisplayStudent();
                 frm.ShowDialog();
-
             }
             else
             {
