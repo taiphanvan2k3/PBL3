@@ -13,7 +13,7 @@
     </RootPath>
     <RootNamespace>Database1</RootNamespace>
     <AssemblyName>Database1</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,6 +22,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -56,5 +58,26 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\CHUONG_TRINH_DAO_TAO.sql" />
+    <Build Include="dbo\Tables\KHOA.sql" />
+    <Build Include="dbo\Tables\THONG_TIN_DANG_NHAP.sql" />
+    <Build Include="dbo\Tables\GIANG_VIEN.sql" />
+    <Build Include="dbo\Tables\LOP_SINH_HOAT.sql" />
+    <Build Include="dbo\Tables\SINH_VIEN.sql" />
+    <Build Include="dbo\Tables\PHU_HUYNH.sql" />
+    <Build Include="dbo\Tables\MON_HOC.sql" />
+    <Build Include="dbo\Tables\LOP_HOC_PHAN.sql" />
+    <Build Include="dbo\Tables\SINHVIEN_LOPHOCPHAN.sql" />
+    <Build Include="dbo\Tables\THONG_BAO.sql" />
+    <Build Include="dbo\Tables\THOI_KHOA_BIEU.sql" />
+    <Build Include="dbo\Tables\CAU_HOI.sql" />
+    <Build Include="dbo\Tables\BAI_KIEM_TRA.sql" />
+    <Build Include="dbo\Tables\LOPHOCPHAN_BAIKIEMTRA.sql" />
+    <Build Include="dbo\Tables\THONGBAO_LOPHOCPHAN.sql" />
+    <Build Include="dbo\Tables\SINHVIEN_BAIKIEMTRA.sql" />
   </ItemGroup>
 </Project>
