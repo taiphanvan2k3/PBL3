@@ -76,6 +76,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -91,11 +97,23 @@
     <Compile Include="MyUserControls\UC_Class.Designer.cs">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_DanhSachLopSH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DanhSachLopSH.Designer.cs">
+      <DependentUpon>UC_DanhSachLopSH.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_Student.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_Student.Designer.cs">
       <DependentUpon>UC_Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfo.Designer.cs">
+      <DependentUpon>UC_StudentInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UserControlBlank.cs">
       <SubType>UserControl</SubType>
@@ -120,14 +138,23 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\DapAnControl.resx">
       <DependentUpon>DapAnControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DanhSachLopSH.resx">
+      <DependentUpon>UC_DanhSachLopSH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Student.resx">
       <DependentUpon>UC_Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_StudentInfo.resx">
+      <DependentUpon>UC_StudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UserControlBlank.resx">
       <DependentUpon>UserControlBlank.cs</DependentUpon>
