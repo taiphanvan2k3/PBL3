@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1758, 50);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1756, 50);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnClose
@@ -84,9 +84,9 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1703, 3);
+            this.btnClose.Location = new System.Drawing.Point(1700, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(52, 29);
+            this.btnClose.Size = new System.Drawing.Size(53, 29);
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -97,7 +97,7 @@
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1653, 3);
+            this.btnMaximize.Location = new System.Drawing.Point(1650, 3);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(44, 29);
             this.btnMaximize.TabIndex = 1;
@@ -110,7 +110,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1603, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(1600, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(44, 29);
             this.btnMinimize.TabIndex = 2;
@@ -131,14 +131,14 @@
             this.panelGradient1.Location = new System.Drawing.Point(0, 0);
             this.panelGradient1.Name = "panelGradient1";
             this.panelGradient1.Padding = new System.Windows.Forms.Padding(7);
-            this.panelGradient1.Size = new System.Drawing.Size(1758, 850);
+            this.panelGradient1.Size = new System.Drawing.Size(1756, 850);
             this.panelGradient1.TabIndex = 0;
             // 
             // calendarcs1
             // 
-            this.calendarcs1.Location = new System.Drawing.Point(207, 7);
+            this.calendarcs1.Location = new System.Drawing.Point(200, 34);
             this.calendarcs1.Name = "calendarcs1";
-            this.calendarcs1.Size = new System.Drawing.Size(1544, 836);
+            this.calendarcs1.Size = new System.Drawing.Size(1548, 836);
             this.calendarcs1.TabIndex = 2;
             // 
             // pnlMenu
@@ -332,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1758, 850);
+            this.ClientSize = new System.Drawing.Size(1756, 850);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelGradient1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
