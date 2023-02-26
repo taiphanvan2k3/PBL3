@@ -91,6 +91,12 @@
     <Compile Include="MyUserControls\DapAnControl.Designer.cs">
       <DependentUpon>DapAnControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection.Designer.cs">
+      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_Class.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     <EmbeddedResource Include="MyUserControls\DapAnControl.resx">
       <DependentUpon>DapAnControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_AddressSelection.resx">
+      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{49b11625-d759-4b04-b5de-9c4e07b45793}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

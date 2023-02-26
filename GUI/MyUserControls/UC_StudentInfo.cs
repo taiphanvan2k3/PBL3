@@ -16,5 +16,16 @@ namespace GUI.MyUserControls
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string res = AddressSelectionCaNhan.TinhThanhPho + "," + AddressSelectionCaNhan.QuanHuyen;
+            MessageBox.Show(res);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
