@@ -285,14 +285,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControlBlank.cs" />
-    <Compile Include="UserControlBlank.Designer.cs">
-      <DependentUpon>UserControlBlank.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlDays.cs" />
-    <Compile Include="UserControlDays.Designer.cs">
-      <DependentUpon>UserControlDays.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,12 +300,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControlBlank.resx">
-      <DependentUpon>UserControlBlank.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDays.resx">
-      <DependentUpon>UserControlDays.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
