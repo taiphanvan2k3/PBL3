@@ -65,7 +65,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel1.Controls.Add(this.btnClose, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnMaximize, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnMinimize, 5, 0);
@@ -84,9 +84,9 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1700, 3);
+            this.btnClose.Location = new System.Drawing.Point(1699, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(53, 29);
+            this.btnClose.Size = new System.Drawing.Size(54, 29);
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -97,7 +97,7 @@
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1650, 3);
+            this.btnMaximize.Location = new System.Drawing.Point(1649, 3);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(44, 29);
             this.btnMaximize.TabIndex = 1;
@@ -110,7 +110,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1600, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(1599, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(44, 29);
             this.btnMinimize.TabIndex = 2;
@@ -196,7 +196,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 18);
+            this.label1.Location = new System.Drawing.Point(75, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 34);
             this.label1.TabIndex = 2;

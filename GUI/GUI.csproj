@@ -74,11 +74,29 @@
     <Compile Include="FormTaoCauHoi.Designer.cs">
       <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDisplayStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisplayStudent.Designer.cs">
+      <DependentUpon>frmDisplayStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExam.Designer.cs">
+      <DependentUpon>frmExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
@@ -101,6 +119,12 @@
     <Compile Include="MyUserControls\DapAnControl.Designer.cs">
       <DependentUpon>DapAnControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection.Designer.cs">
+      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_Class.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,11 +137,23 @@
     <Compile Include="MyUserControls\UC_EditTeacher.Designer.cs">
       <DependentUpon>UC_EditTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_DanhSachLopSH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DanhSachLopSH.Designer.cs">
+      <DependentUpon>UC_DanhSachLopSH.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_Student.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_Student.Designer.cs">
       <DependentUpon>UC_Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfo.Designer.cs">
+      <DependentUpon>UC_StudentInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UserControlBlank.cs">
       <SubType>UserControl</SubType>
@@ -147,8 +183,14 @@
     <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\DapAnControl.resx">
       <DependentUpon>DapAnControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_AddressSelection.resx">
+      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
@@ -156,8 +198,14 @@
     <EmbeddedResource Include="MyUserControls\UC_EditTeacher.resx">
       <DependentUpon>UC_EditTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DanhSachLopSH.resx">
+      <DependentUpon>UC_DanhSachLopSH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Student.resx">
       <DependentUpon>UC_Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_StudentInfo.resx">
+      <DependentUpon>UC_StudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UserControlBlank.resx">
       <DependentUpon>UserControlBlank.cs</DependentUpon>
@@ -194,6 +242,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{49b11625-d759-4b04-b5de-9c4e07b45793}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

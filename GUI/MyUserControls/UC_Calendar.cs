@@ -12,7 +12,11 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
+<<<<<<<< HEAD:GUI/MyUserControls/UC_Calendar.cs
     public partial class UC_Calendar : UserControl
+========
+    public partial class Calendar : UserControl
+>>>>>>>> Tài:GUI/MyUserControls/Calendar.cs
     {
         int MONTH, YEAR;
         Button[,] btn = new Button[7, 7];
