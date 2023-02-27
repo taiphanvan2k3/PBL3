@@ -1,6 +1,6 @@
-﻿namespace PBL3
+﻿namespace GUI.MyUserControls
 {
-    partial class Form2
+    partial class Calendarcs
     {
         /// <summary>
         /// Required designer variable.
@@ -38,13 +38,12 @@
             this.lbSaturday = new System.Windows.Forms.Label();
             this.lbFriday = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(952, 775);
+            this.btnPrevious.Location = new System.Drawing.Point(951, 45);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(74, 24);
             this.btnPrevious.TabIndex = 1;
@@ -54,7 +53,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1050, 775);
+            this.btnNext.Location = new System.Drawing.Point(1096, 45);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 24);
             this.btnNext.TabIndex = 2;
@@ -135,26 +134,13 @@
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Font = new System.Drawing.Font("Mistral", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.DarkRed;
             this.lbDate.Location = new System.Drawing.Point(557, 21);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(345, 54);
+            this.lbDate.Size = new System.Drawing.Size(241, 56);
             this.lbDate.TabIndex = 10;
             this.lbDate.Text = "MONTH YEAR";
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1186, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 48);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -162,15 +148,12 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1337, 623);
             this.flowLayoutPanel1.TabIndex = 14;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // Form2
+            // Calendarcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 811);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbSunday);
             this.Controls.Add(this.lbSaturday);
@@ -181,10 +164,8 @@
             this.Controls.Add(this.lbMonday);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Name = "Calendarcs";
+            this.Size = new System.Drawing.Size(1382, 767);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,7 +183,6 @@
         private System.Windows.Forms.Label lbSaturday;
         private System.Windows.Forms.Label lbFriday;
         private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

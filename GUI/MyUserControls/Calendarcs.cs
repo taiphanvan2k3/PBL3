@@ -1,7 +1,4 @@
-﻿using MySqlX.XDevAPI.Relational;
-using Org.BouncyCastle.Math;
-using ServiceStack;
-using ServiceStack.Script;
+﻿using Org.BouncyCastle.Math;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3
+namespace GUI.MyUserControls
 {
-    public partial class Form2 : Form
+    public partial class Calendarcs : UserControl
     {
         int MONTH, YEAR;
         Button[,] btn = new Button[7, 7];
         String[,] dTime = new String[7, 7];
-        public Form2()
+        public Calendarcs()
         {
             InitializeComponent();
             init();
@@ -52,7 +49,7 @@ namespace PBL3
         //Determine number of day in the month
         public static int Nday(int month, BigInteger year)
         {
-            switch(month)
+            switch (month)
             {
                 case 1:
                 case 3:
@@ -190,7 +187,7 @@ namespace PBL3
                     }
                     if (check == 1)
                     {
-                        if(j != 6)
+                        if (j != 6)
                         {
                             if (a[i, j] > a[i, j + 1])
                                 check++;
@@ -203,7 +200,7 @@ namespace PBL3
                                 check++;
                         }
                     }
-                    if(check == 0 || check == 2)
+                    if (check == 0 || check == 2)
                     {
                         UserControlBlank ucBlank = new UserControlBlank();
                         ucBlank.Days(a[i, j]);
@@ -231,13 +228,11 @@ namespace PBL3
             int days = DateTime.DaysInMonth(year, month);
             //convert the startOfMonth to integer
             int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d")) + 1;
-
             for (int i = 1; i < dayOfTheWeek; i++)
             {
                 UserControlBlank ucBlank = new UserControlBlank();
                 dayContainer.Controls.Add(ucBlank);
             }
-
             for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucDays = new UserControlDays();
@@ -255,11 +250,11 @@ namespace PBL3
             YEAR = now.Year;
             LoadDays();
         }
-        
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             MONTH++;
-            if(MONTH == 13)
+            if (MONTH == 13)
             {
                 YEAR++;
                 MONTH = 1;
@@ -274,29 +269,17 @@ namespace PBL3
             int days = DateTime.DaysInMonth(year, month);
             //convert the startOfMonth to integer
             int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d")) + 1;
-
             for (int i = 1; i < dayOfTheWeek; i++)
             {
                 UserControlBlank ucBlank = new UserControlBlank();
                 dayContainer.Controls.Add(ucBlank);
             }
-
             for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.Days(i);
                 dayContainer.Controls.Add(ucDays);
             }*/
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -317,13 +300,11 @@ namespace PBL3
             int days = DateTime.DaysInMonth(year, month);
             //convert the startOfMonth to integer
             int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d")) + 1;
-
             for (int i = 1; i < dayOfTheWeek; i++)
             {
                 UserControlBlank ucBlank = new UserControlBlank();
                 dayContainer.Controls.Add(ucBlank);
             }
-
             for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucDays = new UserControlDays();
