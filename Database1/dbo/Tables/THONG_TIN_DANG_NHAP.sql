@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[THONG_TIN_DANG_NHAP] (
     [TaiKhoan]       NVARCHAR (50) NOT NULL,
-    [MkUngDung]      NVARCHAR (50) NULL,
+    [MkUngDung]      NVARCHAR (50) NOT NULL,
     [EmailTruongCap] NVARCHAR (30) NULL,
     [MkEmail]        NVARCHAR (50) NULL,
-    [VaiTro]         NVARCHAR (30) NULL,
+    [VaiTro]         NVARCHAR (30) NOT NULL,
     [LuuMatKhau]     BIT           NULL,
     PRIMARY KEY CLUSTERED ([TaiKhoan] ASC)
 );

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[PHU_HUYNH] (
     [MaSV]      NVARCHAR (9)   NOT NULL,
     [TenPH]     NVARCHAR (30)  NOT NULL,
-    [GioiTinh]  NVARCHAR (3)   NULL,
+    [GioiTinh]  NVARCHAR (3)   NOT NULL,
     [Sdt]       NVARCHAR (9)   NULL,
     [NgaySinh]  DATE           NULL,
     [DiaChi]    NVARCHAR (100) NULL,

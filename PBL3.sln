@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{49B11625-D759-4B04-B5DE-9C4E07B45793}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "Database1\Database1.sqlproj", "{EA9AE525-17EA-4F29-A6A7-4D0B3D46FBC7}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB_PBL3", "Database1\DB_PBL3.sqlproj", "{EA9AE525-17EA-4F29-A6A7-4D0B3D46FBC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

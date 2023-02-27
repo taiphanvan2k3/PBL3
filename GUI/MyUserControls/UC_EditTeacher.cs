@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.MyUserControls
 {
-    public partial class Form1 : Form
+    public partial class UC_EditTeacher : UserControl
     {
-        public Form1()
+        public UC_EditTeacher()
         {
             InitializeComponent();
         }
+
+
     }
 }
