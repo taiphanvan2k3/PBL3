@@ -73,17 +73,17 @@
     <Compile Include="frmDisplayStudent.Designer.cs">
       <DependentUpon>frmDisplayStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExam.Designer.cs">
+      <DependentUpon>frmExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyCustomControl\Calendar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MyCustomControl\Calendar.Designer.cs">
-      <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -164,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDisplayStudent.resx">
       <DependentUpon>frmDisplayStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExam.resx">
+      <DependentUpon>frmExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
