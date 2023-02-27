@@ -80,12 +80,6 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyCustomControl\Calendar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MyCustomControl\Calendar.Designer.cs">
-      <DependentUpon>Calendar.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -95,11 +89,11 @@
     <Compile Include="MyCustomControl\PanelGradient.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MyUserControls\Calendarcs.cs">
+    <Compile Include="MyUserControls\UC_Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControls\Calendarcs.Designer.cs">
-      <DependentUpon>Calendarcs.cs</DependentUpon>
+    <Compile Include="MyUserControls\UC_Calendar.Designer.cs">
+      <DependentUpon>UC_Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\DapAnControl.cs">
       <SubType>UserControl</SubType>
@@ -150,8 +144,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\Calendarcs.resx">
-      <DependentUpon>Calendarcs.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
+      <DependentUpon>UC_Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\DapAnControl.resx">
       <DependentUpon>DapAnControl.cs</DependentUpon>
