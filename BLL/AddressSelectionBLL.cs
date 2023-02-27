@@ -21,6 +21,8 @@ namespace BLL
         }
         public List<CBBAddressItem> GetCityRecords()
         {
+            //Mục đích DAL là trả về DataTable còn việc xử lí như nào với dữ liệu
+            //trả về là việc của BLL
             DataTable dt = AddressSelectionDAL.Instance.GetAllCities();
             List<CBBAddressItem> ds = new List<CBBAddressItem>();
             foreach(DataRow row in dt.Rows)

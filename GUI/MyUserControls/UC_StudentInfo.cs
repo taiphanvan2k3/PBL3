@@ -19,7 +19,7 @@ namespace GUI.MyUserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string res = AddressSelectionCaNhan.TinhThanhPho + "," + AddressSelectionCaNhan.QuanHuyen;
+            string res = AddressSelectionCaNhan.TinhThanhPho + "," + AddressSelectionCaNhan.QuanHuyen +","+ AddressSelectionCaNhan.XaPhuong;
             MessageBox.Show(res);
         }
 
