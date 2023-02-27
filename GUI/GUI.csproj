@@ -33,14 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.2.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.2.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,13 +56,14 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmTeacher.Designer.cs">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTaoCauHoi.cs">
       <SubType>Form</SubType>
@@ -91,6 +98,12 @@
     <Compile Include="MyUserControls\UC_Class.Designer.cs">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_EditTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_EditTeacher.Designer.cs">
+      <DependentUpon>UC_EditTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_Student.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +124,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
+    <None Include="Resources\Back.png" />
+    <EmbeddedResource Include="frmTeacher.resx">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTaoCauHoi.resx">
       <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_EditTeacher.resx">
+      <DependentUpon>UC_EditTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Student.resx">
       <DependentUpon>UC_Student.cs</DependentUpon>
