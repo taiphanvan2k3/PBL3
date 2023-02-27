@@ -149,16 +149,10 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1337, 623);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
-<<<<<<<< HEAD:GUI/MyUserControls/UC_Calendar.Designer.cs
             // Calendarcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-========
-            // Calendar
-            // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
->>>>>>>> Tài:GUI/MyUserControls/Calendar.Designer.cs
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbSunday);
@@ -170,11 +164,7 @@
             this.Controls.Add(this.lbMonday);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
-<<<<<<<< HEAD:GUI/MyUserControls/UC_Calendar.Designer.cs
             this.Name = "Calendarcs";
-========
-            this.Name = "Calendar";
->>>>>>>> Tài:GUI/MyUserControls/Calendar.Designer.cs
             this.Size = new System.Drawing.Size(1382, 767);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
