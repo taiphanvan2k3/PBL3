@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -76,6 +79,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyCustomControl\Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyCustomControl\Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +93,18 @@
     </Compile>
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyCustomControl\EllipseControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyCustomControl\PanelGradient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\Calendarcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\Calendarcs.Designer.cs">
+      <DependentUpon>Calendarcs.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\DapAnControl.cs">
       <SubType>UserControl</SubType>
@@ -135,6 +156,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTaoCauHoi.resx">
       <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\Calendarcs.resx">
+      <DependentUpon>Calendarcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

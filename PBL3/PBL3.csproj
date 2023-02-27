@@ -270,6 +270,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Calendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,12 +336,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MyUserControls\UserControlBlank.resx">
-      <DependentUpon>UserControlBlank.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UserControlDays.resx">
-      <DependentUpon>UserControlDays.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -349,6 +349,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
