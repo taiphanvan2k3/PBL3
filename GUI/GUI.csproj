@@ -62,18 +62,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTeacher.Designer.cs">
-      <DependentUpon>frmTeacher.cs</DependentUpon>
-	</Compile>
-    <Compile Include="FormExam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormExam.Designer.cs">
-      <DependentUpon>FormExam.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTaoCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
