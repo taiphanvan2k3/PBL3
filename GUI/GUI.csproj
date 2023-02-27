@@ -74,12 +74,6 @@
     <Compile Include="FormTaoCauHoi.Designer.cs">
       <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDisplayStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDisplayStudent.Designer.cs">
-      <DependentUpon>frmDisplayStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoCauHoi.resx">
       <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDisplayStudent.resx">
-      <DependentUpon>frmDisplayStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
