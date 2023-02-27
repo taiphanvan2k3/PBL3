@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-    public partial class Calendarcs : UserControl
+    public partial class UC_Calendar : UserControl
     {
         int MONTH, YEAR;
         Button[,] btn = new Button[7, 7];
         String[,] dTime = new String[7, 7];
-        public Calendarcs()
+        public UC_Calendar()
         {
             InitializeComponent();
             init();
