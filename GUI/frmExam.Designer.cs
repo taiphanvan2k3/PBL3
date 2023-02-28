@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.uC_Calendar1 = new GUI.MyUserControls.UC_Calendar();
+            this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +43,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1270, 933);
             this.panel1.TabIndex = 1;
+            // 
+            // uC_Calendar1
+            // 
+            this.uC_Calendar1.Location = new System.Drawing.Point(6, 27);
+            this.uC_Calendar1.Name = "uC_Calendar1";
+            this.uC_Calendar1.Size = new System.Drawing.Size(1142, 741);
+            this.uC_Calendar1.TabIndex = 0;
             // 
             // panelGradient1
             // 
@@ -57,13 +64,6 @@
             this.panelGradient1.Name = "panelGradient1";
             this.panelGradient1.Size = new System.Drawing.Size(200, 933);
             this.panelGradient1.TabIndex = 0;
-            // 
-            // uC_Calendar1
-            // 
-            this.uC_Calendar1.Location = new System.Drawing.Point(6, 27);
-            this.uC_Calendar1.Name = "uC_Calendar1";
-            this.uC_Calendar1.Size = new System.Drawing.Size(1161, 741);
-            this.uC_Calendar1.TabIndex = 0;
             // 
             // frmExam
             // 
