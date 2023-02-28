@@ -42,9 +42,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxMSSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxNoiSinh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -171,13 +171,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 110);
+            this.dateTimePicker1.CustomFormat = "dd / MM / yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(93, 114);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker1.TabIndex = 23;
-            this.dateTimePicker1.Value = new System.DateTime(1988, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2003, 1, 1, 0, 0, 0, 0);
             // 
             // radioButton1
             // 
@@ -203,29 +204,21 @@
             this.radioButton2.Text = "Nam";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // textBoxName
             // 
-            this.textBox4.Location = new System.Drawing.Point(93, 73);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(237, 22);
-            this.textBox4.TabIndex = 20;
+            this.textBoxName.Location = new System.Drawing.Point(93, 73);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(237, 22);
+            this.textBoxName.TabIndex = 20;
             // 
-            // textBox5
+            // textBoxMSSV
             // 
-            this.textBox5.Location = new System.Drawing.Point(93, 151);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(287, 22);
-            this.textBox5.TabIndex = 18;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(93, 37);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(237, 22);
-            this.textBox6.TabIndex = 16;
+            this.textBoxMSSV.Location = new System.Drawing.Point(93, 37);
+            this.textBoxMSSV.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMSSV.Name = "textBoxMSSV";
+            this.textBoxMSSV.Size = new System.Drawing.Size(237, 22);
+            this.textBoxMSSV.TabIndex = 16;
             // 
             // label1
             // 
@@ -320,6 +313,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.comboBoxNoiSinh);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.comboBox1);
@@ -332,9 +326,8 @@
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.textBoxName);
+            this.groupBox2.Controls.Add(this.textBoxMSSV);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
@@ -362,6 +355,14 @@
             this.pictureBox1.Size = new System.Drawing.Size(200, 176);
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
+            // 
+            // comboBoxNoiSinh
+            // 
+            this.comboBoxNoiSinh.FormattingEnabled = true;
+            this.comboBoxNoiSinh.Location = new System.Drawing.Point(93, 152);
+            this.comboBoxNoiSinh.Name = "comboBoxNoiSinh";
+            this.comboBoxNoiSinh.Size = new System.Drawing.Size(126, 24);
+            this.comboBoxNoiSinh.TabIndex = 37;
             // 
             // UC_Student
             // 
@@ -396,9 +397,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxMSSV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -409,5 +409,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBoxNoiSinh;
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3.MyUserControls
+namespace GUI
 {
-    public partial class UC_Student : UserControl
+    public partial class frmExam : Form
     {
-        public UC_Student()
+        public frmExam()
         {
             InitializeComponent();
         }

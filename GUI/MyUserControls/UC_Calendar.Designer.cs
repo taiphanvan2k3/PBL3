@@ -1,6 +1,6 @@
 ﻿namespace GUI.MyUserControls
 {
-    partial class Calendarcs
+    partial class UC_Calendar
     {
         /// <summary>
         /// Required designer variable.

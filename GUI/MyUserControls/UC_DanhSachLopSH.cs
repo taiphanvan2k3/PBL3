@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3
+namespace GUI.MyUserControls
 {
-    public partial class UserControlDays : UserControl
+    public partial class UC_DanhSachLopSH : UserControl
     {
-        public UserControlDays()
+        public UC_DanhSachLopSH()
         {
             InitializeComponent();
         }
 
-        public void Days(int numDay)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            btnDays.Text = numDay + "";
+
         }
     }
 }

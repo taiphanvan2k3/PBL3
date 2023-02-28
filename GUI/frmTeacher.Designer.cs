@@ -62,6 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -342,6 +343,7 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.label13);
             this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.label8);
@@ -473,6 +475,16 @@
             this.panel5.Size = new System.Drawing.Size(1332, 1);
             this.panel5.TabIndex = 0;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(149, 64);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 17);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "1022211";
+            // 
             // frmTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -539,6 +551,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
     }
 }
 

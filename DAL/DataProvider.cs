@@ -6,7 +6,7 @@ namespace DAL
     public class DataProvider
     {
         private static DataProvider _Instance;
-        private string connectionString = @"Data Source=DRAKEN\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True";
+        private string connectionString = @"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True";
         public static DataProvider Instance
         {
             get
