@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI;
-
 namespace PBL3
 {
     internal static class Program

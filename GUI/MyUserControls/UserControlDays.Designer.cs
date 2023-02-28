@@ -35,6 +35,9 @@ namespace GUI.MyUserControls
             // 
             // btnDays
             // 
+            this.btnDays.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDays.FlatAppearance.BorderSize = 0;
+            this.btnDays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDays.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDays.Location = new System.Drawing.Point(0, 0);
             this.btnDays.Name = "btnDays";
@@ -46,8 +49,7 @@ namespace GUI.MyUserControls
             // 
             // UserControlDays
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnDays);
             this.Name = "UserControlDays";

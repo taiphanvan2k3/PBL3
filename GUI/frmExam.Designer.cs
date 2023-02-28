@@ -41,7 +41,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1270, 933);
+            this.panel1.Size = new System.Drawing.Size(1127, 643);
             this.panel1.TabIndex = 1;
             // 
             // panelGradient1
@@ -55,24 +55,24 @@
             this.panelGradient1.GradientTopColor = System.Drawing.Color.DodgerBlue;
             this.panelGradient1.Location = new System.Drawing.Point(0, 0);
             this.panelGradient1.Name = "panelGradient1";
-            this.panelGradient1.Size = new System.Drawing.Size(200, 933);
+            this.panelGradient1.Size = new System.Drawing.Size(200, 643);
             this.panelGradient1.TabIndex = 0;
             // 
             // uC_Calendar1
             // 
-            this.uC_Calendar1.Location = new System.Drawing.Point(6, 27);
+            this.uC_Calendar1.Location = new System.Drawing.Point(0, 0);
             this.uC_Calendar1.Name = "uC_Calendar1";
-            this.uC_Calendar1.Size = new System.Drawing.Size(1161, 741);
+            this.uC_Calendar1.Size = new System.Drawing.Size(1115, 661);
             this.uC_Calendar1.TabIndex = 0;
             // 
             // frmExam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 933);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1327, 643);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelGradient1);
             this.Name = "frmExam";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExam";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -1,13 +1,6 @@
 ﻿using Org.BouncyCastle.Math;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -17,8 +10,8 @@ namespace GUI.MyUserControls
 
     {
         int MONTH, YEAR;
-        Button[,] btn = new Button[7, 7];
-        String[,] dTime = new String[7, 7];
+        Button[,] btn = new Button[6, 7];
+        String[,] dTime = new String[6, 7];
         public UC_Calendar()
         {
             InitializeComponent();
@@ -28,14 +21,17 @@ namespace GUI.MyUserControls
         #region Methods
         public void init()
         {
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
                     btn[i, j] = new Button();
                     btn[i, j].Font = new Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    btn[i, j].Size = new Size(130, 80);
+                    btn[i, j].Size = new Size(152, 82);
                     btn[i, j].BackColor = Color.White;
                     btn[i, j].ForeColor = Color.Black;
+                    btn[i, j].FlatStyle = FlatStyle.Flat;
+                    btn[i, j].FlatAppearance.BorderSize = 1;
+                    btn[i, j].Click += buttonDate_Click;
                     flowLayoutPanel1.Controls.Add(btn[i, j]);
                 }
         }
@@ -73,17 +69,7 @@ namespace GUI.MyUserControls
             }
             return 0;
         }
-        //Tinh so ngay tu 01/01/0001 -> nay
-        /*public static int getDay(int month, int year)
-        {
-            int N = year - 1;
-            int days = N*365 + N/4 - N/100 + N/400;
-            for(int i  = 1; i < month; i++)
-            {
-                days += Nday(i, N + 1);
-            }
-            return days;
-        }*/
+
         public static BigInteger toBig(int s)
         {
             return new BigInteger(s.ToString());
@@ -113,7 +99,7 @@ namespace GUI.MyUserControls
         }
         public void reset()
         {
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
                     btn[i, j].BackColor = Color.White;
@@ -141,6 +127,9 @@ namespace GUI.MyUserControls
             {
                 btn[I, J].Text = i.ToString();
                 btn[I, J].ForeColor = Color.Black;
+                btn[I, J].BackColor = Color.White;
+                if (i == DateTime.Now.Day && month == DateTime.Now.Month && year.IntValue == DateTime.Now.Year)
+                    btn[I, J].BackColor = Color.GreenYellow;
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year.CompareTo(toBig(YEAR)) == 0 && MONTH == month + 1 && i == day)
                 {
@@ -202,55 +191,51 @@ namespace GUI.MyUserControls
                                 check++;
                         }
                     }
-                    if (check == 0 || check == 2)
-                    {
-                        UserControlBlank ucBlank = new UserControlBlank();
-                        ucBlank.Days(a[i, j]);
-                        //dayContainer.Controls.Add(ucBlank);
-                    }
-                    else
-                    {
-                        UserControlDays ucDays = new UserControlDays();
-                        ucDays.Days(a[i, j]);
-                        //dayContainer.Controls.Add(ucDays);
-                    }
                 }
             }
         }
-        /*private void DisplayDays()
+
+        private string GetStringMonth(int month)
         {
-            DateTime now = DateTime.Now;
-            month = now.Month;
-            year = now.Year;
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            lbDate.Text = monthname + " " + year;
-            //Lay ngay dau tien trong thang
-            DateTime startOfMonth = new DateTime(year, month, 1);
-            //Lay so ngay trong thang
-            int days = DateTime.DaysInMonth(year, month);
-            //convert the startOfMonth to integer
-            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d")) + 1;
-            for (int i = 1; i < dayOfTheWeek; i++)
-            {
-                UserControlBlank ucBlank = new UserControlBlank();
-                dayContainer.Controls.Add(ucBlank);
-            }
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays ucDays = new UserControlDays();
-                ucDays.Days(i);
-                dayContainer.Controls.Add(ucDays);
-            }
-        }*/
+            string[] ds = {"","Tháng 1","Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6",
+                "Tháng 7", "Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"};
+            return ds[month];
+        }
+
+        private string GetDateOnButton(Button e)
+        {
+            string res = "";
+            /*
+             * 28/2/2023: hello
+             * select *from baiKiemTra
+             * where month(ngaykiemtra)=@p1 and year(ngaykiemtra)=@p2
+             * Mình sẽ truyền @p1 -> giá trị tháng hiện tại, @p2 -> giá trị của năm hiện tại
+             * -> Trả về 1 List<Job> trong đó Job chứa DateTime, tên sự kiện, 
+             * for cho button, mỗi button đi vào List kiếm , nếu xuất hiện sự kiện thì break
+             * hiển thị form và add sự kiện vào cho form hiển thị
+             */
+            return res;
+        }
         #endregion
         //Events
         #region Events
-        private void Form2_Load(object sender, EventArgs e)
+        private void buttonDate_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            MessageBox.Show(btn.Text);
+        }
+        private void buttonToday_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             MONTH = now.Month;
             YEAR = now.Year;
+            lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            buttonToday_Click(sender, e);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -261,27 +246,8 @@ namespace GUI.MyUserControls
                 YEAR++;
                 MONTH = 1;
             }
-            //dayContainer.Controls.Clear();
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(MONTH);
-            lbDate.Text = monthname + " " + YEAR;
+            lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
-            //Lay ngay dau tien trong thang
-            /*DateTime startOfMonth = new DateTime(year, month, 1);
-            //Lay so ngay trong thang
-            int days = DateTime.DaysInMonth(year, month);
-            //convert the startOfMonth to integer
-            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d")) + 1;
-            for (int i = 1; i < dayOfTheWeek; i++)
-            {
-                UserControlBlank ucBlank = new UserControlBlank();
-                dayContainer.Controls.Add(ucBlank);
-            }
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays ucDays = new UserControlDays();
-                ucDays.Days(i);
-                dayContainer.Controls.Add(ucDays);
-            }*/
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -292,27 +258,8 @@ namespace GUI.MyUserControls
                 YEAR--;
                 MONTH = 12;
             }
-            //dayContainer.Controls.Clear();
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(MONTH);
-            lbDate.Text = monthname + " " + YEAR;
+            lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
-            //Lay ngay dau tien trong thang
-            /*DateTime startOfMonth = new DateTime(year, month, 1);
-            //Lay so ngay trong thang
-            int days = DateTime.DaysInMonth(year, month);
-            //convert the startOfMonth to integer
-            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d")) + 1;
-            for (int i = 1; i < dayOfTheWeek; i++)
-            {
-                UserControlBlank ucBlank = new UserControlBlank();
-                dayContainer.Controls.Add(ucBlank);
-            }
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays ucDays = new UserControlDays();
-                ucDays.Days(i);
-                dayContainer.Controls.Add(ucDays);
-            }*/
         }
         #endregion
     }

@@ -65,9 +65,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,9 +170,6 @@
     <None Include="Resources\Back.png" />
     <EmbeddedResource Include="frmExam.resx">
       <DependentUpon>frmExam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTeacher.resx">
       <DependentUpon>frmTeacher.cs</DependentUpon>
