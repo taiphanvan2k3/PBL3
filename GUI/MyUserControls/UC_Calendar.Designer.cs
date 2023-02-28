@@ -43,7 +43,7 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(951, 45);
+            this.btnPrevious.Location = new System.Drawing.Point(743, 45);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(74, 24);
             this.btnPrevious.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1096, 45);
+            this.btnNext.Location = new System.Drawing.Point(892, 45);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 24);
             this.btnNext.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.lbMonday.AutoSize = true;
             this.lbMonday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMonday.Location = new System.Drawing.Point(49, 94);
+            this.lbMonday.Location = new System.Drawing.Point(34, 94);
             this.lbMonday.Name = "lbMonday";
             this.lbMonday.Size = new System.Drawing.Size(92, 27);
             this.lbMonday.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             this.lbTuesday.AutoSize = true;
             this.lbTuesday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTuesday.Location = new System.Drawing.Point(224, 94);
+            this.lbTuesday.Location = new System.Drawing.Point(199, 94);
             this.lbTuesday.Name = "lbTuesday";
             this.lbTuesday.Size = new System.Drawing.Size(90, 27);
             this.lbTuesday.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             this.lbThursday.AutoSize = true;
             this.lbThursday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThursday.Location = new System.Drawing.Point(590, 95);
+            this.lbThursday.Location = new System.Drawing.Point(476, 95);
             this.lbThursday.Name = "lbThursday";
             this.lbThursday.Size = new System.Drawing.Size(99, 27);
             this.lbThursday.TabIndex = 6;
@@ -95,7 +95,7 @@
             // 
             this.lbWednesday.AutoSize = true;
             this.lbWednesday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWednesday.Location = new System.Drawing.Point(395, 94);
+            this.lbWednesday.Location = new System.Drawing.Point(325, 94);
             this.lbWednesday.Name = "lbWednesday";
             this.lbWednesday.Size = new System.Drawing.Size(123, 27);
             this.lbWednesday.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.lbSunday.AutoSize = true;
             this.lbSunday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSunday.Location = new System.Drawing.Point(1140, 95);
+            this.lbSunday.Location = new System.Drawing.Point(932, 95);
             this.lbSunday.Name = "lbSunday";
             this.lbSunday.Size = new System.Drawing.Size(83, 27);
             this.lbSunday.TabIndex = 9;
@@ -115,7 +115,7 @@
             // 
             this.lbSaturday.AutoSize = true;
             this.lbSaturday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSaturday.Location = new System.Drawing.Point(961, 95);
+            this.lbSaturday.Location = new System.Drawing.Point(786, 95);
             this.lbSaturday.Name = "lbSaturday";
             this.lbSaturday.Size = new System.Drawing.Size(97, 27);
             this.lbSaturday.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             this.lbFriday.AutoSize = true;
             this.lbFriday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFriday.Location = new System.Drawing.Point(789, 95);
+            this.lbFriday.Location = new System.Drawing.Point(628, 95);
             this.lbFriday.Name = "lbFriday";
             this.lbFriday.Size = new System.Drawing.Size(71, 27);
             this.lbFriday.TabIndex = 7;
@@ -136,7 +136,7 @@
             this.lbDate.AutoSize = true;
             this.lbDate.Font = new System.Drawing.Font("Mistral", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbDate.Location = new System.Drawing.Point(557, 21);
+            this.lbDate.Location = new System.Drawing.Point(358, 21);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(241, 56);
             this.lbDate.TabIndex = 10;
@@ -146,10 +146,10 @@
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 124);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1337, 623);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1102, 600);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
-            // Calendarcs
+            // UC_Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,8 +164,8 @@
             this.Controls.Add(this.lbMonday);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
-            this.Name = "Calendarcs";
-            this.Size = new System.Drawing.Size(1382, 767);
+            this.Name = "UC_Calendar";
+            this.Size = new System.Drawing.Size(1161, 741);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

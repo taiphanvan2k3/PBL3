@@ -28,20 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelGradient1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
+            this.uC_Calendar1 = new GUI.MyUserControls.UC_Calendar();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.uC_Calendar1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(200, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1270, 933);
+            this.panel1.TabIndex = 1;
             // 
             // panelGradient1
             // 
             this.panelGradient1.BackColor = System.Drawing.Color.White;
             this.panelGradient1.BorderRadius = 0;
-            this.panelGradient1.Controls.Add(this.panel2);
             this.panelGradient1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelGradient1.ForeColor = System.Drawing.Color.Black;
             this.panelGradient1.GradientAngle = 90F;
@@ -49,58 +55,26 @@
             this.panelGradient1.GradientTopColor = System.Drawing.Color.DodgerBlue;
             this.panelGradient1.Location = new System.Drawing.Point(0, 0);
             this.panelGradient1.Name = "panelGradient1";
-            this.panelGradient1.Size = new System.Drawing.Size(200, 530);
+            this.panelGradient1.Size = new System.Drawing.Size(200, 933);
             this.panelGradient1.TabIndex = 0;
             // 
-            // panel1
+            // uC_Calendar1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(856, 530);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(164, 69);
-            this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Xin chào";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Phan Văn Tài";
+            this.uC_Calendar1.Location = new System.Drawing.Point(6, 27);
+            this.uC_Calendar1.Name = "uC_Calendar1";
+            this.uC_Calendar1.Size = new System.Drawing.Size(1161, 741);
+            this.uC_Calendar1.TabIndex = 0;
             // 
             // frmExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 530);
+            this.ClientSize = new System.Drawing.Size(1470, 933);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelGradient1);
             this.Name = "frmExam";
             this.Text = "frmExam";
-            this.panelGradient1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -109,8 +83,6 @@
 
         private MyCustomControl.PanelGradient panelGradient1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private MyUserControls.UC_Calendar uC_Calendar1;
     }
 }
