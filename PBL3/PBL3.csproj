@@ -79,12 +79,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\GUI\GUI.csproj">
-      <Project>{79ADC398-C9AC-4789-B1CD-B160EAAE205B}</Project>
-      <Name>GUI</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
