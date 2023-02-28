@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[KHOA] (
-    [MaKhoa]  NVARCHAR (9)  NOT NULL,
-    [TenKhoa] NVARCHAR (50) NOT NULL,
-    PRIMARY KEY CLUSTERED ([MaKhoa] ASC)
-);
-
