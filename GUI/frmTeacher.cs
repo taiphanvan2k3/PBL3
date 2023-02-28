@@ -13,6 +13,9 @@ namespace GUI
 {
     public partial class frmTeacher : Form
     {
+        //Fields
+        private int borderSize = 2;
+        private Size formSize; //Keep form size when it is minimized and restored.Since the form is resized because it takes into account the size of the title bar and borders.
         public frmTeacher()
         {
             InitializeComponent();
@@ -23,7 +26,10 @@ namespace GUI
         {
             CollapseMenu();
         }
+        private void add_UC(UserControl uc)
+        {
 
+        }
         private void CollapseMenu()
         {
             if (this.panelMenu.Width > 200) //Collapse menu
@@ -31,7 +37,7 @@ namespace GUI
                 panelMenu.Width = 100;
                 pictureBox1.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
-                panelProfile.Size = new Size(1350, 400);
+                //panelProfile.Size = new Size(1350, 400);
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
                 {
                     menuButton.Text = "";
@@ -44,7 +50,7 @@ namespace GUI
                 panelMenu.Width = 250;
                 pictureBox1.Visible = true;
                 btnMenu.Dock = DockStyle.None;
-                panelProfile.Size = new Size(1200, 400);
+                //panelProfile.Size = new Size(1200, 400);
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
                 {
                     menuButton.Text = "   " + menuButton.Tag.ToString();
@@ -71,14 +77,7 @@ namespace GUI
             panelDisplay.Controls.Add(uc);
             uc.BringToFront();
             uc.Location = new Point(75, 110);
-            if (this.panelMenu.Width > 200) //Collapse menu
-            {
-                uc.Size = new Size(1350, 400);
-            }
-            else
-            {
-                uc.Size = new Size(1200, 400);
-            }
+
         }
     }
 }

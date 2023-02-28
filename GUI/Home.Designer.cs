@@ -45,6 +45,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemRoot1,
@@ -122,7 +123,7 @@
             // 
             this.menuItemDanhSach.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.menuItemDanhSach.Name = "menuItemDanhSach";
-            this.menuItemDanhSach.Size = new System.Drawing.Size(224, 26);
+            this.menuItemDanhSach.Size = new System.Drawing.Size(221, 26);
             this.menuItemDanhSach.Text = "Danh sách sinh viên";
             this.menuItemDanhSach.Click += new System.EventHandler(this.menuItemDanhSachSV_Click);
             this.menuItemDanhSach.MouseEnter += new System.EventHandler(this.menuItem_MouseEnter);
@@ -139,7 +140,7 @@
             // 
             // UC_StudentInfo
             // 
-            this.UC_StudentInfo.Location = new System.Drawing.Point(0, 1);
+            this.UC_StudentInfo.Location = new System.Drawing.Point(3, 0);
             this.UC_StudentInfo.Name = "UC_StudentInfo";
             this.UC_StudentInfo.Size = new System.Drawing.Size(1218, 990);
             this.UC_StudentInfo.TabIndex = 0;
