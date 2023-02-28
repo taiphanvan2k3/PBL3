@@ -40,9 +40,7 @@ namespace GUI
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                frmDisplayStudent frm= new frmDisplayStudent();
-                frm.ShowDialog();
-
+               
             }
             else
             {
