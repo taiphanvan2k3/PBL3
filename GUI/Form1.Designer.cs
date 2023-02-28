@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FormExam
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExam));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
-            //this.calendarcs1 = new GUI.MyUserControls.Calendarcs();
+            this.calendarcs1 = new GUI.MyUserControls.Calendarcs();
             this.pnlMenu = new GUI.MyCustomControl.PanelGradient();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -121,7 +121,7 @@
             // 
             this.panelGradient1.BackColor = System.Drawing.Color.White;
             this.panelGradient1.BorderRadius = 30;
-            //this.panelGradient1.Controls.Add(this.calendarcs1);
+            this.panelGradient1.Controls.Add(this.calendarcs1);
             this.panelGradient1.Controls.Add(this.pnlMenu);
             this.panelGradient1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGradient1.ForeColor = System.Drawing.Color.Black;
@@ -136,10 +136,10 @@
             // 
             // calendarcs1
             // 
-           // this.calendarcs1.Location = new System.Drawing.Point(200, 34);
-            //this.calendarcs1.Name = "calendarcs1";
-           // this.calendarcs1.Size = new System.Drawing.Size(1548, 836);
-           // this.calendarcs1.TabIndex = 2;
+            this.calendarcs1.Location = new System.Drawing.Point(200, 34);
+            this.calendarcs1.Name = "calendarcs1";
+            this.calendarcs1.Size = new System.Drawing.Size(1548, 836);
+            this.calendarcs1.TabIndex = 2;
             // 
             // pnlMenu
             // 
@@ -363,10 +363,11 @@
         private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Button btnScore;
         private System.Windows.Forms.Button btnHome;
-        //private MyUserControls. calendarcs1;
+        private MyUserControls.Calendarcs calendarcs1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
     }
 }
+
