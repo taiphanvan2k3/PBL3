@@ -33,11 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>..\..\HKII Year II\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.2.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.2.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
@@ -48,9 +57,12 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -65,6 +77,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLogin1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin1.Designer.cs">
+      <DependentUpon>frmLogin1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +101,11 @@
     <Compile Include="frmExam.Designer.cs">
       <DependentUpon>frmExam.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmForgetPass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmForgetPass.Designer.cs">
+      <DependentUpon>frmForgetPass.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -95,8 +113,17 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyCustomControl\CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyCustomControl\CustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyCustomControl\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="MyCustomControl\EllipseControl.cs">
       <SubType>Component</SubType>
@@ -171,14 +198,20 @@
     <EmbeddedResource Include="frmExam.resx">
       <DependentUpon>frmExam.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin1.resx">
+      <DependentUpon>frmLogin1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTeacher.resx">
       <DependentUpon>frmTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoCauHoi.resx">
       <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmForgetPass.resx">
+      <DependentUpon>frmForgetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
@@ -252,6 +285,9 @@
       <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

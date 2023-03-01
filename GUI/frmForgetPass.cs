@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmLogin : Form
+    public partial class frmForgetPass : Form
     {
-        public frmLogin()
+        public frmForgetPass()
         {
             InitializeComponent();
         }

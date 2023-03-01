@@ -14,8 +14,6 @@ namespace GUI
     public partial class frmTeacher : Form
     {
         //Fields
-        private int borderSize = 2;
-        private Size formSize; //Keep form size when it is minimized and restored.Since the form is resized because it takes into account the size of the title bar and borders.
         public frmTeacher()
         {
             InitializeComponent();

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmLogin
+    partial class frmForgetPass
     {
         /// <summary>
         /// Required designer variable.
