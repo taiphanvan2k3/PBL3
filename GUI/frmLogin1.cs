@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms.Enums;
+﻿using BLL;
+using Guna.UI2.WinForms.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,34 +78,23 @@ namespace GUI
         // Đăng nhập
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection(@"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
-            string pass = txtPassword.Texts.ToString();
-            string query = "SELECT * FROM dbo.THONG_TIN_DANG_NHAP WHERE dbo.THONG_TIN_DANG_NHAP.TaiKhoan = '" + txtUsername.Texts.ToString() + /*"'AND dbo.THONG_TIN_DANG_NHAP.MkUngDung = '" + txtPassword.Texts.ToString() + */"'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, cnn);
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            if (dtbl.Rows.Count == 1 && BCrypt.Net.BCrypt.Verify(pass, dtbl.Rows[0]["MkUngDung"].ToString()) == true)
+            CheckLoginBLL checkLoginBLL = new CheckLoginBLL();
+            int count = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+            switch (count)
             {
-                if (dtbl.Rows[0]["VaiTro"].ToString() == "GV")
-                {
+                case -1:
+                    MessageBox.Show("Check your username and password");
+                    break;
+                case 0:
                     MessageBox.Show("Đăng nhập với tư cách giáo viên");
-                }
-                else if (dtbl.Rows[0]["VaiTro"].ToString() == "SV")
-                {
+                    break;
+                case 1:
                     MessageBox.Show("Đăng nhập với tư cách sinh viên");
+                    break;
 
-                }
-            }
-            else
-            {
-                MessageBox.Show("Check your username and password");
             }
         }
 
-        private void frmLogin1_Load(object sender, EventArgs e)
-        {
-            SqlConnection cnn = new SqlConnection(@"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
-            cnn.Open();
-        }
+
     }
 }
