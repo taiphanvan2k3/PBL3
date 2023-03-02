@@ -30,12 +30,10 @@ namespace BLL
                 if (dtbl.Rows[0]["VaiTro"].ToString() == "GV")
                 {
                     return 0;
-                    //MessageBox.Show("Đăng nhập với tư cách giáo viên");
                 }
                 else if (dtbl.Rows[0]["VaiTro"].ToString() == "SV")
                 {
                     return 1;
-                    //MessageBox.Show("Đăng nhập với tư cách sinh viên");
                 }
             }
             return -1;

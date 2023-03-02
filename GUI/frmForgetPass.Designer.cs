@@ -28,185 +28,339 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LOGIN = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            GUI.MyCustomControl.CustomButton btnSend;
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtEmail = new GUI.MyCustomControl.CustomTextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbExit = new System.Windows.Forms.Label();
-            this.cbShowPass = new System.Windows.Forms.CheckBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new GUI.MyCustomControl.CustomButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new FontAwesome.Sharp.IconButton();
+            btnSend = new GUI.MyCustomControl.CustomButton();
+            this.panelContainer.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LOGIN
+            // btnSend
             // 
-            this.LOGIN.AutoSize = true;
-            this.LOGIN.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LOGIN.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LOGIN.Location = new System.Drawing.Point(85, 134);
-            this.LOGIN.Name = "LOGIN";
-            this.LOGIN.Size = new System.Drawing.Size(143, 48);
-            this.LOGIN.TabIndex = 1;
-            this.LOGIN.Text = "LOG IN";
+            btnSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(120)))), ((int)(((byte)(193)))));
+            btnSend.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(120)))), ((int)(((byte)(193)))));
+            btnSend.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(107)))), ((int)(((byte)(104)))));
+            btnSend.BorderRadius = 15;
+            btnSend.BorderSize = 0;
+            btnSend.FlatAppearance.BorderSize = 0;
+            btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnSend.ForeColor = System.Drawing.Color.WhiteSmoke;
+            btnSend.Location = new System.Drawing.Point(20, 0);
+            btnSend.Name = "btnSend";
+            btnSend.Size = new System.Drawing.Size(360, 58);
+            btnSend.TabIndex = 24;
+            btnSend.Text = "Send";
+            btnSend.TextColor = System.Drawing.Color.WhiteSmoke;
+            btnSend.UseVisualStyleBackColor = false;
+            btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // panel1
+            // panelContainer
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel1.Location = new System.Drawing.Point(12, 247);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 1);
-            this.panel1.TabIndex = 3;
+            this.panelContainer.Controls.Add(this.panel11);
+            this.panelContainer.Controls.Add(this.panel10);
+            this.panelContainer.Controls.Add(this.panel6);
+            this.panelContainer.Controls.Add(this.panel5);
+            this.panelContainer.Controls.Add(this.panel3);
+            this.panelContainer.Controls.Add(this.panel2);
+            this.panelContainer.Controls.Add(this.panel4);
+            this.panelContainer.Controls.Add(this.panel1);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(400, 800);
+            this.panelContainer.TabIndex = 0;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.panel13);
+            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Controls.Add(btnSend);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 335);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(400, 60);
+            this.panel11.TabIndex = 27;
+            // 
+            // panel13
+            // 
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel13.Location = new System.Drawing.Point(380, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(20, 60);
+            this.panel13.TabIndex = 1;
+            // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(20, 60);
+            this.panel12.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 307);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(400, 28);
+            this.panel10.TabIndex = 26;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txtEmail);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 255);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(400, 52);
+            this.panel6.TabIndex = 12;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.BorderColor = System.Drawing.Color.Lavender;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEmail.BorderRadius = 10;
+            this.txtEmail.BorderSize = 2;
+            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEmail.Location = new System.Drawing.Point(20, 0);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(10);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.PlaceholderText = "Example@gmail.com";
+            this.txtEmail.Size = new System.Drawing.Size(360, 51);
+            this.txtEmail.TabIndex = 13;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = false;
+            // 
+            // panel8
+            // 
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(380, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(20, 52);
+            this.panel8.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(20, 52);
+            this.panel7.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 220);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(400, 35);
+            this.panel5.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label6.Location = new System.Drawing.Point(16, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Email address";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 130);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(400, 90);
+            this.panel3.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label5.Location = new System.Drawing.Point(16, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(192, 21);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "to reset your password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label4.Location = new System.Drawing.Point(16, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(328, 21);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "and we\'ll send an email with instructions\r\n";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label3.Location = new System.Drawing.Point(16, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(366, 21);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Enter the email associated with your account\r\n";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel2.Location = new System.Drawing.Point(12, 331);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(286, 1);
-            this.panel2.TabIndex = 5;
+            this.panel2.Size = new System.Drawing.Size(400, 60);
+            this.panel2.TabIndex = 8;
             // 
-            // pictureBox3
+            // label2
             // 
-            this.pictureBox3.Image = global::GUI.Properties.Resources.padlock;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 304);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(250, 35);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Reset Password";
             // 
-            // pictureBox2
+            // panel4
             // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 220);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 40);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(400, 30);
+            this.panel4.TabIndex = 5;
             // 
-            // pictureBox1
+            // panel1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(104, 57);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 74);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 40);
+            this.panel1.TabIndex = 3;
             // 
-            // lbExit
+            // label1
             // 
-            this.lbExit.AutoSize = true;
-            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.lbExit.Location = new System.Drawing.Point(141, 438);
-            this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(41, 20);
-            this.lbExit.TabIndex = 8;
-            this.lbExit.Text = "Exit";
-            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(45, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Back";
             // 
-            // cbShowPass
+            // btnBack
             // 
-            this.cbShowPass.AutoSize = true;
-            this.cbShowPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbShowPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.cbShowPass.Location = new System.Drawing.Point(173, 338);
-            this.cbShowPass.Name = "cbShowPass";
-            this.cbShowPass.Size = new System.Drawing.Size(125, 20);
-            this.cbShowPass.TabIndex = 9;
-            this.cbShowPass.Text = "Show Password";
-            this.cbShowPass.UseVisualStyleBackColor = true;
-            this.cbShowPass.CheckedChanged += new System.EventHandler(this.cbShowPass_CheckedChanged);
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.btnBack.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBack.IconSize = 30;
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(40, 40);
+            this.btnBack.TabIndex = 9;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // txtUserName
-            // 
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtUserName.Location = new System.Drawing.Point(44, 219);
-            this.txtUserName.Multiline = true;
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(254, 24);
-            this.txtUserName.TabIndex = 10;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtPassword.Location = new System.Drawing.Point(43, 304);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(254, 24);
-            this.txtPassword.TabIndex = 11;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLogin.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogin.BorderRadius = 40;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.Location = new System.Drawing.Point(12, 378);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(286, 47);
-            this.btnLogin.TabIndex = 7;
-            this.btnLogin.Text = "LOGIN";
-            this.btnLogin.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // frmLogin
+            // frmForgetPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(321, 547);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.cbShowPass);
-            this.Controls.Add(this.lbExit);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.LOGIN);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(400, 800);
+            this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLogin";
+            this.Name = "frmForgetPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelContainer.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label LOGIN;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnBack;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private MyCustomControl.CustomButton btnLogin;
-        private System.Windows.Forms.Label lbExit;
-        private System.Windows.Forms.CheckBox cbShowPass;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private MyCustomControl.CustomTextBox txtEmail;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel12;
     }
 }
