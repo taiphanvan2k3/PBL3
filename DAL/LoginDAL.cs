@@ -21,7 +21,27 @@ namespace DAL
         }
         public DataTable getUser(string username)
         {
-            string query = "SELECT * FROM dbo.THONG_TIN_DANG_NHAP WHERE dbo.THONG_TIN_DANG_NHAP.TaiKhoan = '" + username + /*"'AND dbo.THONG_TIN_DANG_NHAP.MkUngDung = '" + txtPassword.Texts.ToString() + */"'";
+            string query = "SELECT * FROM dbo.THONG_TIN_DANG_NHAP WHERE dbo.THONG_TIN_DANG_NHAP.TaiKhoan = '" + username + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public DataTable getUser(string username, int role)
+        {
+            string nameTable = "dbo.";
+            string nameID = "";
+            if (role == 0)
+            {
+                nameTable += "GIANG_VIEN";
+                nameID = nameTable + ".MaGV";
+
+            }
+            else if (role == 1)
+            {
+                nameTable += "SINH_VIEN";
+                nameID = nameTable + ".MaSV";
+
+            }
+            string query = "SELECT * FROM " + nameTable + " WHERE " + nameID + " LIKE '" + username + "'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
