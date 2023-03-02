@@ -1,4 +1,5 @@
 ﻿using BLL;
+using GUI.MyCustomControl;
 using Guna.UI2.WinForms.Enums;
 using Org.BouncyCastle.Math.Field;
 using System;
@@ -65,7 +66,9 @@ namespace GUI
         // Nút quên mật khẩu
         private void btnForgetPass_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Quên mật khẩu");
+            frmForgetPass f = new frmForgetPass();
+            f.ShowDialog();
+            this.Close();
         }
 
         private void btnForgetPass_MouseHover(object sender, EventArgs e)
@@ -82,20 +85,27 @@ namespace GUI
         // Đăng nhập
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            CheckLoginBLL checkLoginBLL = new CheckLoginBLL();
-            int count = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
-            switch (count)
+            if (txtUsername.Texts.ToString() == "" || txtPassword.Texts.ToString() == "")
             {
-                case -1:
-                    MessageBox.Show("Check your username and password");
-                    break;
-                case 0:
-                    MessageBox.Show("Đăng nhập với tư cách giáo viên");
-                    break;
-                case 1:
-                    MessageBox.Show("Đăng nhập với tư cách sinh viên");
-                    break;
+                MessageBox.Show("Please fill in at least one field\r\nFill in at least one field to search for your account");
+            }
+            else
+            {
+                CheckLoginBLL checkLoginBLL = new CheckLoginBLL();
+                int count = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                switch (count)
+                {
+                    case -1:
+                        MessageBox.Show("Check your username and password");
+                        break;
+                    case 0:
+                        MessageBox.Show("Đăng nhập với tư cách giáo viên");
+                        break;
+                    case 1:
+                        MessageBox.Show("Đăng nhập với tư cách sinh viên");
+                        break;
 
+                }
             }
         }
 
