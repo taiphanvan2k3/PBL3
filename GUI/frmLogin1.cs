@@ -68,6 +68,7 @@ namespace GUI
         private void btnForgetPass_Click(object sender, EventArgs e)
         {
             frmForgetPass f = new frmForgetPass();
+            this.Visible = false;
             f.ShowDialog();
             this.Close();
         }
