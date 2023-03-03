@@ -77,7 +77,7 @@ namespace GUI
         // Đăng nhập
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection(@"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
+            SqlConnection cnn = new SqlConnection(@"Data Source=DRAKEN\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
             string pass = txtPassword.Texts.ToString();
             string query = "SELECT * FROM dbo.THONG_TIN_DANG_NHAP WHERE dbo.THONG_TIN_DANG_NHAP.TaiKhoan = '" + txtUsername.Texts.ToString() + /*"'AND dbo.THONG_TIN_DANG_NHAP.MkUngDung = '" + txtPassword.Texts.ToString() + */"'";
             SqlDataAdapter sda = new SqlDataAdapter(query, cnn);
@@ -103,7 +103,7 @@ namespace GUI
 
         private void frmLogin1_Load(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection(@"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
+            SqlConnection cnn = new SqlConnection(@"Data Source=DRAKEN\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
             cnn.Open();
         }
     }
