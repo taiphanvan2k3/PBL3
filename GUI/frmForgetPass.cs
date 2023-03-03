@@ -1,10 +1,13 @@
-﻿using System;
+﻿using GUI.MyCustomControl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,57 +19,28 @@ namespace GUI
         public frmForgetPass()
         {
             InitializeComponent();
+
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            /*string path = @"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=testPbl;Integrated Security=True";
-            SqlConnection cnn = new SqlConnection(path);
-            cnn.Open();*/
+            frmLogin1 frm = new frmLogin1();
+            frm.ShowDialog();
+            this.Close();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e)
         {
-            //PHẦN NÀY T KẾT NỐI VỚI DATABASE CỦA T 
-            string path = @"Data Source=THANHNGAN13\SQLEXPRESS;Initial Catalog=testPbl;Integrated Security=True";
-            SqlConnection cnn = new SqlConnection(path);
-            cnn.Open();
-            string userValid = txtUserName.Text.ToString();
-            string passwordValid = txtPassword.Text.ToString();
-            string requried = "SELECT Account.ID, Account.Passwords, Account.Flag FROM Account WHERE Account.ID = '" + userValid + "'AND Account.Passwords = '" + passwordValid + "'";
-            SqlCommand cmd = new SqlCommand(requried, cnn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            if(txtEmail.Texts.ToString() == "")
             {
-                MessageBox.Show("hekko");
-
-
-
+                MessageBox.Show("Please fill in at least one field\r\nFill in at least one field to search for your account");
             }
             else
             {
-                MessageBox.Show("Invalid Login please check username and password");
+                frmCheckEmail frm = new frmCheckEmail();
+                frm.ShowDialog();
+                this.Close();
             }
-            cnn.Close();
-        }
-
-        private void cbShowPass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbShowPass.Checked)
-            {
-                txtPassword.UseSystemPasswordChar = true;
-            }
-            else
-            {
-                txtPassword.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void lbExit_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }

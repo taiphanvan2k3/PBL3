@@ -1,4 +1,7 @@
-﻿using Guna.UI2.WinForms.Enums;
+﻿using BLL;
+using GUI.MyCustomControl;
+using Guna.UI2.WinForms.Enums;
+using Org.BouncyCastle.Math.Field;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -17,8 +21,8 @@ namespace GUI
     {
         public frmLogin1()
         {
-
             InitializeComponent();
+            //2 button nằm cùng 1 vị trí nhưng ban đầu cho buttonDoNotShow lên trước nên mới dùng BringToFont 
             btnDoNotShow.BringToFront();
         }
 
@@ -54,13 +58,18 @@ namespace GUI
 
         private void txtUsername_Click(object sender, EventArgs e)
         {
+            //Edit:2/3/2023 by Tai
+            //Khi bấm vào lại textbox username thì ẩn mật khẩu đi
+            //và hiện tại btnShow nằm chồng lên btnDoNotShow nên phải mang nó lên trước 
             txtPassword.PasswordChar = true;
             btnDoNotShow.BringToFront();
         }
         // Nút quên mật khẩu
         private void btnForgetPass_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Quên mật khẩu");
+            frmForgetPass f = new frmForgetPass();
+            f.ShowDialog();
+            this.Close();
         }
 
         private void btnForgetPass_MouseHover(object sender, EventArgs e)
@@ -77,34 +86,45 @@ namespace GUI
         // Đăng nhập
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection(@"Data Source=DRAKEN\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
-            string pass = txtPassword.Texts.ToString();
-            string query = "SELECT * FROM dbo.THONG_TIN_DANG_NHAP WHERE dbo.THONG_TIN_DANG_NHAP.TaiKhoan = '" + txtUsername.Texts.ToString() + /*"'AND dbo.THONG_TIN_DANG_NHAP.MkUngDung = '" + txtPassword.Texts.ToString() + */"'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, cnn);
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            if (dtbl.Rows.Count == 1 && BCrypt.Net.BCrypt.Verify(pass, dtbl.Rows[0]["MkUngDung"].ToString()) == true)
+            if (txtUsername.Texts.ToString() == "" || txtPassword.Texts.ToString() == "")
             {
-                if (dtbl.Rows[0]["VaiTro"].ToString() == "GV")
-                {
-                    MessageBox.Show("Đăng nhập với tư cách giáo viên");
-                }
-                else if (dtbl.Rows[0]["VaiTro"].ToString() == "SV")
-                {
-                    MessageBox.Show("Đăng nhập với tư cách sinh viên");
-
-                }
+                MessageBox.Show("Please fill in at least one field\r\nFill in at least one field to search for your account");
             }
             else
             {
-                MessageBox.Show("Check your username and password");
+                CheckLoginBLL checkLoginBLL = new CheckLoginBLL();
+                string result = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                MessageBox.Show(result);
             }
         }
 
-        private void frmLogin1_Load(object sender, EventArgs e)
+        #region các thuộc tính xử lí form di chuyển
+        private bool move;
+        private int moveX, moveY;
+        #endregion
+        private void panelTitle_MouseDown(object sender, MouseEventArgs e)
         {
-            SqlConnection cnn = new SqlConnection(@"Data Source=DRAKEN\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True");
-            cnn.Open();
+            //Chỉ xử lí việc di chuyển form khi nhấn chuột trái
+            if (e.Button == MouseButtons.Left)
+            {
+                move = true;
+                moveX = e.X;
+                moveY = e.Y;
+            }
+        }
+
+        private void panelTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (move)
+            {
+                //set lại vị trí của form trên màn hình
+                this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
+            }   
+        }
+
+        private void panelTitle_MouseUp(object sender, MouseEventArgs e)
+        {
+            move = false;
         }
     }
 }

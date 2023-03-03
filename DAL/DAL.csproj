@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AddressSelectionDAL.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="LoginDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
