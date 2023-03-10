@@ -23,7 +23,7 @@ namespace BLL
                 return _Instance;
             }
         }
-        public string Check(string user, string pass) {
+        public int Check(string user, string pass) {
             DataTable dtbl = LoginDAL.Instance.getUser(user);
             DataTable dt;
             string s = "NULL";
@@ -31,16 +31,18 @@ namespace BLL
             {
                 if (dtbl.Rows[0]["VaiTro"].ToString() == "GV")
                 {
-                    dt = LoginDAL.Instance.getUser(user, 0);
-                    s = "Giáo viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
+                    //dt = LoginDAL.Instance.getUser(user, 0);
+                    //s = "Giáo viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
+                    return 1;
                 }
                 else if (dtbl.Rows[0]["VaiTro"].ToString() == "SV")
                 {
-                    dt = LoginDAL.Instance.getUser(user, 1);
-                    s = "Sinh viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
+                    //dt = LoginDAL.Instance.getUser(user, 1);
+                    //s = "Sinh viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
+                    return 2;
                 }
             }
-            return s;
+            return -1;
         }
     }
 }
