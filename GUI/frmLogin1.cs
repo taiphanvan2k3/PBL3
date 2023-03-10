@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -67,6 +68,7 @@ namespace GUI
         private void btnForgetPass_Click(object sender, EventArgs e)
         {
             frmForgetPass f = new frmForgetPass();
+            this.Visible = false;
             f.ShowDialog();
             this.Close();
         }
@@ -92,20 +94,8 @@ namespace GUI
             else
             {
                 CheckLoginBLL checkLoginBLL = new CheckLoginBLL();
-                int count = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
-                switch (count)
-                {
-                    case -1:
-                        MessageBox.Show("Check your username and password");
-                        break;
-                    case 0:
-                        MessageBox.Show("Đăng nhập với tư cách giáo viên");
-                        break;
-                    case 1:
-                        MessageBox.Show("Đăng nhập với tư cách sinh viên");
-                        break;
-
-                }
+                string result = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                MessageBox.Show(result);
             }
         }
 

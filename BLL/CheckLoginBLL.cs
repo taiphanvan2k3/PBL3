@@ -23,20 +23,24 @@ namespace BLL
                 return _Instance;
             }
         }
-        public int Check(string user, string pass) {
+        public string Check(string user, string pass) {
             DataTable dtbl = LoginDAL.Instance.getUser(user);
+            DataTable dt;
+            string s = "NULL";
             if (dtbl.Rows.Count == 1 && BCrypt.Net.BCrypt.Verify(pass, dtbl.Rows[0]["MkUngDung"].ToString()) == true)
             {
                 if (dtbl.Rows[0]["VaiTro"].ToString() == "GV")
                 {
-                    return 0;
+                    dt = LoginDAL.Instance.getUser(user, 0);
+                    s = "Giáo viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
                 }
                 else if (dtbl.Rows[0]["VaiTro"].ToString() == "SV")
                 {
-                    return 1;
+                    dt = LoginDAL.Instance.getUser(user, 1);
+                    s = "Sinh viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
                 }
             }
-            return -1;
+            return s;
         }
     }
 }
