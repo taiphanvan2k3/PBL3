@@ -5,12 +5,38 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-
     public partial class UC_Calendar : UserControl
-
     {
+        private Color colorBack;
+        public Color ColorBack
+        {
+            get => colorBack;
+            set
+            {
+                colorBack = value;
+                this.BackColor = colorBack;
+                flowLayoutPanel1.BackColor = colorBack;
+                lbMonday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbTuesday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbWednesday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbThursday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbFriday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbSaturday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbSunday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                btnPrevious.ForeColor= ((colorBack == Color.White) ? Color.Black : Color.White);
+                btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                buttonToday.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                buttonToday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbDate.ForeColor = (colorBack== Color.White) ? Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119))))) : Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
+                LoadDays();
+                this.Invalidate();
+            }
+        }
         int MONTH, YEAR;
-        Button[,] btn = new Button[6, 7];
+        MyCustomControl.CustomButton[,] btn = new MyCustomControl.CustomButton[6, 7];
+        //Button[,] btn = new Button[6, 7];
         String[,] dTime = new String[6, 7];
         public UC_Calendar()
         {
@@ -21,14 +47,18 @@ namespace GUI.MyUserControls
         #region Methods
         public void init()
         {
+            colorBack = Color.White;
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
-                    btn[i, j] = new Button();
+                    btn[i, j] = new MyCustomControl.CustomButton();
+                    btn[i, j].BorderSize = 1;
+                    btn[i, j].BorderColor = Color.Black;
+                    btn[i, j].BorderRadius = 20;
                     btn[i, j].Font = new Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btn[i, j].Size = new Size(152, 82);
-                    btn[i, j].BackColor = Color.White;
-                    btn[i, j].ForeColor = Color.Black;
+                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                    btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                     btn[i, j].FlatStyle = FlatStyle.Flat;
                     btn[i, j].FlatAppearance.BorderSize = 1;
                     btn[i, j].Click += buttonDate_Click;
@@ -102,8 +132,8 @@ namespace GUI.MyUserControls
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
-                    btn[i, j].BackColor = Color.White;
-                    btn[i, j].ForeColor = Color.White;
+                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                    btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                     dTime[i, j] = "";
                 }
         }
@@ -126,10 +156,10 @@ namespace GUI.MyUserControls
             for (int i = 1; i <= day; i++)
             {
                 btn[I, J].Text = i.ToString();
-                btn[I, J].ForeColor = Color.Black;
-                btn[I, J].BackColor = Color.White;
+                btn[I, J].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
                 if (i == DateTime.Now.Day && month == DateTime.Now.Month && year.IntValue == DateTime.Now.Year)
-                    btn[I, J].BackColor = Color.GreenYellow;
+                    btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(249)))), ((int)(((byte)(249))))) : Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(191)))), ((int)(((byte)(109))))));
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year.CompareTo(toBig(YEAR)) == 0 && MONTH == month + 1 && i == day)
                 {
@@ -146,14 +176,14 @@ namespace GUI.MyUserControls
             for (int i = start - 1; i >= 0; i--)
             {
                 btn[0, i].Text = (pday-- + "");
-                btn[0, i].BackColor = Color.Gray;
+                btn[0, i].BackColor = ((colorBack == Color.White) ? Color.Gray : colorBack);
             }
             //Determine phần ngày của tháng sau đó
             int st = 1;
             while (!(I == 6 && J == 0))
             {
                 btn[I, J].Text = (st++ + "");
-                btn[I, J].BackColor = Color.Gray;
+                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.Gray : colorBack);
                 J++;
                 if (J == 7)
                 {
@@ -248,6 +278,11 @@ namespace GUI.MyUserControls
             }
             lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
+        }
+
+        private void lbSunday_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)

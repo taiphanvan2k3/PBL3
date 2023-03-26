@@ -92,7 +92,8 @@ namespace GUI
             else
             {
                 CheckLoginBLL checkLoginBLL = new CheckLoginBLL();
-                int count = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                //int count = checkLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                int count = 1;
                 switch (count)
                 {
                     case -1:

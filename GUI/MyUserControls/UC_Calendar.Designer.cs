@@ -44,9 +44,9 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(822, 45);
+            this.btnPrevious.Location = new System.Drawing.Point(776, 45);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(90, 24);
+            this.btnPrevious.Size = new System.Drawing.Size(113, 38);
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "Tháng trước";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.btnNext.Location = new System.Drawing.Point(1008, 45);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(84, 24);
+            this.btnNext.Size = new System.Drawing.Size(107, 38);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Tháng sau";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -111,6 +111,7 @@
             this.lbSunday.Size = new System.Drawing.Size(99, 28);
             this.lbSunday.TabIndex = 9;
             this.lbSunday.Text = "Chủ nhật";
+            this.lbSunday.Click += new System.EventHandler(this.lbSunday_Click);
             // 
             // lbSaturday
             // 
@@ -135,11 +136,11 @@
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Segoe UI", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbDate.Font = new System.Drawing.Font("Mongolian Baiti", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119)))));
             this.lbDate.Location = new System.Drawing.Point(380, 21);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(336, 62);
+            this.lbDate.Size = new System.Drawing.Size(345, 50);
             this.lbDate.TabIndex = 10;
             this.lbDate.Text = "MONTH YEAR";
             // 
@@ -152,9 +153,9 @@
             // 
             // buttonToday
             // 
-            this.buttonToday.Location = new System.Drawing.Point(918, 45);
+            this.buttonToday.Location = new System.Drawing.Point(895, 45);
             this.buttonToday.Name = "buttonToday";
-            this.buttonToday.Size = new System.Drawing.Size(84, 24);
+            this.buttonToday.Size = new System.Drawing.Size(107, 38);
             this.buttonToday.TabIndex = 15;
             this.buttonToday.Text = "Hôm nay";
             this.buttonToday.UseVisualStyleBackColor = true;
@@ -176,7 +177,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
             this.Name = "UC_Calendar";
-            this.Size = new System.Drawing.Size(1161, 756);
+            this.Size = new System.Drawing.Size(1158, 756);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
