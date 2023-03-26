@@ -89,6 +89,12 @@
     <Compile Include="frmLogin1.Designer.cs">
       <DependentUpon>frmLogin1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudent.Designer.cs">
+      <DependentUpon>frmStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     </Compile>
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_AddStudentAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_AddStudentAccount.Designer.cs">
+      <DependentUpon>UC_AddStudentAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_Calendar.cs">
       <SubType>UserControl</SubType>
@@ -213,6 +225,9 @@
     <EmbeddedResource Include="frmLogin1.resx">
       <DependentUpon>frmLogin1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStudent.resx">
+      <DependentUpon>frmStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTeacher.resx">
       <DependentUpon>frmTeacher.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_AddStudentAccount.resx">
+      <DependentUpon>UC_AddStudentAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
@@ -300,6 +318,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studentAvatar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
