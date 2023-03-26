@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 10);
+            this.label1.Location = new System.Drawing.Point(14, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 0;
@@ -47,6 +47,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(372, 11);
             this.label2.Name = "label2";
@@ -56,6 +57,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(714, 12);
             this.label3.Name = "label3";
@@ -68,7 +70,7 @@
             this.comboBoxTinhThanhPho.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxTinhThanhPho.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxTinhThanhPho.FormattingEnabled = true;
-            this.comboBoxTinhThanhPho.Location = new System.Drawing.Point(135, 6);
+            this.comboBoxTinhThanhPho.Location = new System.Drawing.Point(146, 10);
             this.comboBoxTinhThanhPho.Name = "comboBoxTinhThanhPho";
             this.comboBoxTinhThanhPho.Size = new System.Drawing.Size(177, 24);
             this.comboBoxTinhThanhPho.TabIndex = 3;
@@ -76,10 +78,11 @@
             // 
             // comboBoxQuanHuyen
             // 
+            this.comboBoxQuanHuyen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBoxQuanHuyen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxQuanHuyen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxQuanHuyen.FormattingEnabled = true;
-            this.comboBoxQuanHuyen.Location = new System.Drawing.Point(482, 6);
+            this.comboBoxQuanHuyen.Location = new System.Drawing.Point(482, 9);
             this.comboBoxQuanHuyen.Name = "comboBoxQuanHuyen";
             this.comboBoxQuanHuyen.Size = new System.Drawing.Size(177, 24);
             this.comboBoxQuanHuyen.TabIndex = 4;
@@ -87,10 +90,11 @@
             // 
             // comboBoxXaPhuong
             // 
+            this.comboBoxXaPhuong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxXaPhuong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxXaPhuong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxXaPhuong.FormattingEnabled = true;
-            this.comboBoxXaPhuong.Location = new System.Drawing.Point(814, 8);
+            this.comboBoxXaPhuong.Location = new System.Drawing.Point(814, 11);
             this.comboBoxXaPhuong.Name = "comboBoxXaPhuong";
             this.comboBoxXaPhuong.Size = new System.Drawing.Size(177, 24);
             this.comboBoxXaPhuong.TabIndex = 5;
@@ -98,6 +102,7 @@
             // UC_AddressSelection
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.Controls.Add(this.comboBoxXaPhuong);
             this.Controls.Add(this.comboBoxQuanHuyen);
             this.Controls.Add(this.comboBoxTinhThanhPho);

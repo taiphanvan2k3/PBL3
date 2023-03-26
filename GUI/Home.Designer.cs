@@ -37,7 +37,7 @@
             this.menuItemRoot2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemDanhSach = new System.Windows.Forms.ToolStripMenuItem();
             this.panel = new System.Windows.Forms.Panel();
-            this.UC_StudentInfo = new GUI.MyUserControls.UC_StudentInfo();
+            this.UC_StudentInfo = new GUI.MyUserControls.uC_StudentInfo();
             this.menuStrip1.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -172,7 +172,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemRoot2;
         private System.Windows.Forms.ToolStripMenuItem menuItemDanhSach;
         private System.Windows.Forms.Panel panel;
-        private MyUserControls.UC_StudentInfo UC_StudentInfo;
+        private MyUserControls.uC_StudentInfo UC_StudentInfo;
         private System.Windows.Forms.ToolStripMenuItem menuItemTKB;
     }
 }

@@ -32,7 +32,7 @@ namespace GUI
                     panelLop.Height = i;
                 timerExpandClass.Stop();
                 btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
-                isExpandingClass= true;
+                isExpandingClass = true;
             }
         }
 
@@ -80,6 +80,8 @@ namespace GUI
                     panelCalendar.Height = panelCalendar.MinimumSize.Height;
                 if (isExpandingClass)
                     panelLop.Height = panelLop.MinimumSize.Height;
+                panelShowDetail.Location = new Point(panelShowDetail.Location.X - (237-63), panelShowDetail.Location.Y);
+                panelShowDetail.Width += (237 - 63);
             }
             else
             {
@@ -90,6 +92,8 @@ namespace GUI
                     panelCalendar.Height = panelCalendar.MaximumSize.Height;
                 if (isExpandingClass)
                     panelLop.Height = panelLop.MaximumSize.Height;
+                panelShowDetail.Location = new Point(panelShowDetail.Location.X + (237 - 63), panelShowDetail.Location.Y);
+                panelShowDetail.Width -= (237 - 63);
             }
         }
     }

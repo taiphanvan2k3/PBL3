@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-    public partial class UC_StudentInfo : UserControl
+    public partial class uC_StudentInfo : UserControl
     {
-        public UC_StudentInfo()
+        public uC_StudentInfo()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string res = AddressSelectionCaNhan.TinhThanhPho + "," + AddressSelectionCaNhan.QuanHuyen +","+ AddressSelectionCaNhan.XaPhuong;
+            string res = uC_AddressSelectionCaNhan.TinhThanhPho + "," + uC_AddressSelectionCaNhan.QuanHuyen +","+ uC_AddressSelectionCaNhan.XaPhuong;
             MessageBox.Show(res);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
