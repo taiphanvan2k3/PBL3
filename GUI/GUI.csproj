@@ -51,9 +51,6 @@
     <Reference Include="FontAwesome.Sharp, Version=6.2.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.2.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -83,11 +80,17 @@
     <Compile Include="frmCheckEmail.Designer.cs">
       <DependentUpon>frmCheckEmail.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin1.cs">
+    <Compile Include="frmDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin1.Designer.cs">
-      <DependentUpon>frmLogin1.cs</DependentUpon>
+    <Compile Include="frmDisplay.Designer.cs">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTeacher.cs">
       <SubType>Form</SubType>
@@ -164,6 +167,12 @@
     <Compile Include="MyUserControls\UC_Class.Designer.cs">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_DisplayInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DisplayInformation.Designer.cs">
+      <DependentUpon>UC_DisplayInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_EditTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,11 +216,14 @@
     <EmbeddedResource Include="frmCheckEmail.resx">
       <DependentUpon>frmCheckEmail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDisplay.resx">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmExam.resx">
       <DependentUpon>frmExam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin1.resx">
-      <DependentUpon>frmLogin1.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTeacher.resx">
       <DependentUpon>frmTeacher.cs</DependentUpon>
@@ -239,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DisplayInformation.resx">
+      <DependentUpon>UC_DisplayInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_EditTeacher.resx">
       <DependentUpon>UC_EditTeacher.cs</DependentUpon>

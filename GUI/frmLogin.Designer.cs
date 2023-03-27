@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmLogin1
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.circularPictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -50,6 +51,8 @@
             this.btnShow = new FontAwesome.Sharp.IconButton();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.txtUsername = new GUI.MyCustomControl.CustomTextBox();
+            this.txtPassword = new GUI.MyCustomControl.CustomTextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnForgetPass = new System.Windows.Forms.Label();
@@ -57,15 +60,13 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
+            this.btnSignIn = new GUI.MyCustomControl.CustomButton();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.btnSignIn = new GUI.MyCustomControl.CustomButton();
-            this.txtUsername = new GUI.MyCustomControl.CustomTextBox();
-            this.txtPassword = new GUI.MyCustomControl.CustomTextBox();
-            this.circularPictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
             this.panelTitle.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -73,7 +74,6 @@
             this.panel16.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -186,6 +186,23 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(125, 150);
             this.panel5.TabIndex = 6;
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.circularPictureBox1.BorderSize = 5;
+            this.circularPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Image = global::GUI.Properties.Resources._294355517_1105843533621186_1411223748583159430_n;
+            this.circularPictureBox1.Location = new System.Drawing.Point(125, 0);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 5;
+            this.circularPictureBox1.TabStop = false;
             // 
             // panel4
             // 
@@ -324,6 +341,52 @@
             this.panel16.Size = new System.Drawing.Size(360, 101);
             this.panel16.TabIndex = 22;
             // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUsername.BorderColor = System.Drawing.Color.Lavender;
+            this.txtUsername.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtUsername.BorderRadius = 5;
+            this.txtUsername.BorderSize = 3;
+            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUsername.Location = new System.Drawing.Point(0, 0);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.Multiline = false;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(7);
+            this.txtUsername.PasswordChar = false;
+            this.txtUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtUsername.PlaceholderText = "Username";
+            this.txtUsername.Size = new System.Drawing.Size(360, 51);
+            this.txtUsername.TabIndex = 3;
+            this.txtUsername.Texts = "";
+            this.txtUsername.UnderlinedStyle = false;
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.BorderColor = System.Drawing.Color.Lavender;
+            this.txtPassword.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPassword.BorderRadius = 5;
+            this.txtPassword.BorderSize = 3;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPassword.Location = new System.Drawing.Point(0, 50);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPassword.PasswordChar = true;
+            this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.PlaceholderText = "Password";
+            this.txtPassword.Size = new System.Drawing.Size(360, 51);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Texts = "";
+            this.txtPassword.UnderlinedStyle = false;
+            // 
             // panel15
             // 
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
@@ -390,6 +453,27 @@
             this.panel21.Size = new System.Drawing.Size(400, 58);
             this.panel21.TabIndex = 27;
             // 
+            // btnSignIn
+            // 
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(120)))), ((int)(((byte)(193)))));
+            this.btnSignIn.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(120)))), ((int)(((byte)(193)))));
+            this.btnSignIn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(107)))), ((int)(((byte)(104)))));
+            this.btnSignIn.BorderRadius = 15;
+            this.btnSignIn.BorderSize = 0;
+            this.btnSignIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSignIn.FlatAppearance.BorderSize = 0;
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSignIn.Location = new System.Drawing.Point(20, 0);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(360, 58);
+            this.btnSignIn.TabIndex = 23;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
+            // 
             // panel23
             // 
             this.panel23.Dock = System.Windows.Forms.DockStyle.Right;
@@ -414,90 +498,7 @@
             this.panel24.Size = new System.Drawing.Size(400, 123);
             this.panel24.TabIndex = 28;
             // 
-            // btnSignIn
-            // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(120)))), ((int)(((byte)(193)))));
-            this.btnSignIn.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(120)))), ((int)(((byte)(193)))));
-            this.btnSignIn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(107)))), ((int)(((byte)(104)))));
-            this.btnSignIn.BorderRadius = 15;
-            this.btnSignIn.BorderSize = 0;
-            this.btnSignIn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSignIn.FlatAppearance.BorderSize = 0;
-            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSignIn.Location = new System.Drawing.Point(20, 0);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(360, 58);
-            this.btnSignIn.TabIndex = 23;
-            this.btnSignIn.Text = "Sign In";
-            this.btnSignIn.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSignIn.UseVisualStyleBackColor = false;
-            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsername.BorderColor = System.Drawing.Color.Lavender;
-            this.txtUsername.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtUsername.BorderRadius = 5;
-            this.txtUsername.BorderSize = 3;
-            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsername.Location = new System.Drawing.Point(0, 0);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsername.Multiline = false;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Padding = new System.Windows.Forms.Padding(7);
-            this.txtUsername.PasswordChar = false;
-            this.txtUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.PlaceholderText = "Username";
-            this.txtUsername.Size = new System.Drawing.Size(360, 51);
-            this.txtUsername.TabIndex = 3;
-            this.txtUsername.Texts = "";
-            this.txtUsername.UnderlinedStyle = false;
-            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.BorderColor = System.Drawing.Color.Lavender;
-            this.txtPassword.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtPassword.BorderRadius = 5;
-            this.txtPassword.BorderSize = 3;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(0, 50);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.Multiline = false;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtPassword.PasswordChar = true;
-            this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.Size = new System.Drawing.Size(360, 51);
-            this.txtPassword.TabIndex = 4;
-            this.txtPassword.Texts = "";
-            this.txtPassword.UnderlinedStyle = false;
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.circularPictureBox1.BorderSize = 5;
-            this.circularPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Location = new System.Drawing.Point(125, 0);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 5;
-            this.circularPictureBox1.TabStop = false;
-            // 
-            // frmLogin1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -519,11 +520,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLogin1";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin1";
             this.panelTitle.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -535,7 +537,6 @@
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
