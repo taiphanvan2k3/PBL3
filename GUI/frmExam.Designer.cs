@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uC_DataGridView1 = new GUI.MyUserControls.UC_DataGridView();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDarkMode = new FontAwesome.Sharp.IconButton();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
@@ -41,7 +42,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.customButton1 = new GUI.MyCustomControl.CustomButton();
             this.panel1.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -62,23 +62,21 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlMain.Controls.Add(this.customButton1);
-            this.pnlMain.Controls.Add(this.label1);
+            this.pnlMain.Controls.Add(this.uC_DataGridView1);
             this.pnlMain.Location = new System.Drawing.Point(250, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1136, 660);
+            this.pnlMain.Size = new System.Drawing.Size(1139, 663);
             this.pnlMain.TabIndex = 2;
             // 
-            // label1
+            // uC_DataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(460, 285);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 80);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Home";
+            this.uC_DataGridView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(221)))), ((int)(((byte)(240)))));
+            this.uC_DataGridView1.Location = new System.Drawing.Point(6, 10);
+            this.uC_DataGridView1.Name = "uC_DataGridView1";
+            this.uC_DataGridView1.Padding = new System.Windows.Forms.Padding(10);
+            this.uC_DataGridView1.Size = new System.Drawing.Size(1078, 589);
+            this.uC_DataGridView1.TabIndex = 0;
+            this.uC_DataGridView1.Load += new System.EventHandler(this.uC_DataGridView1_Load);
             // 
             // panelMenu
             // 
@@ -245,7 +243,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.Back;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(135, 48);
@@ -270,24 +268,6 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderColor = System.Drawing.Color.Black;
-            this.customButton1.BorderRadius = 20;
-            this.customButton1.BorderSize = 1;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.Location = new System.Drawing.Point(225, 109);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(150, 59);
-            this.customButton1.TabIndex = 1;
-            this.customButton1.Text = "customButton1";
-            this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
             // frmExam
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -298,7 +278,6 @@
             this.Text = "frmExam";
             this.panel1.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
-            this.pnlMain.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -319,7 +298,6 @@
         private FontAwesome.Sharp.IconButton btnGrade;
         private FontAwesome.Sharp.IconButton btnDarkMode;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Label label1;
-        private MyCustomControl.CustomButton customButton1;
+        private MyUserControls.UC_DataGridView uC_DataGridView1;
     }
 }

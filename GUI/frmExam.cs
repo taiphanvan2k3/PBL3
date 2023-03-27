@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace GUI
             InitializeComponent();
             CollapseMenu();
         }
+        
         private void Init()
         {
             lblHome.Text = "Home";
@@ -102,6 +104,11 @@ namespace GUI
                 panel1.BackColor = Color.White;
                 this.BackColor = Color.White;
             }
+        }
+
+        private void uC_DataGridView1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
