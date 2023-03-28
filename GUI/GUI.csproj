@@ -57,13 +57,6 @@
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
@@ -118,11 +111,17 @@
     <Compile Include="frmCheckEmail.Designer.cs">
       <DependentUpon>frmCheckEmail.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin1.cs">
+    <Compile Include="frmDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin1.Designer.cs">
-      <DependentUpon>frmLogin1.cs</DependentUpon>
+    <Compile Include="frmDisplay.Designer.cs">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTeacher.cs">
       <SubType>Form</SubType>
@@ -199,6 +198,12 @@
     <Compile Include="MyUserControls\UC_Class.Designer.cs">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_DisplayInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DisplayInformation.Designer.cs">
+      <DependentUpon>UC_DisplayInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_EditTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,11 +238,14 @@
     <EmbeddedResource Include="frmCheckEmail.resx">
       <DependentUpon>frmCheckEmail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDisplay.resx">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmExam.resx">
       <DependentUpon>frmExam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin1.resx">
-      <DependentUpon>frmLogin1.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTeacher.resx">
       <DependentUpon>frmTeacher.cs</DependentUpon>
@@ -268,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DisplayInformation.resx">
+      <DependentUpon>UC_DisplayInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_EditTeacher.resx">
       <DependentUpon>UC_EditTeacher.cs</DependentUpon>

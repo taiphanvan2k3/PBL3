@@ -18,15 +18,19 @@ namespace GUI
         {
             InitializeComponent();
             CollapseMenu();
+            UC_DisplayInformation uC_DisplayInformation = new UC_DisplayInformation();
+            addUC(uC_DisplayInformation);
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
         }
-        private void add_UC(UserControl uc)
-        {
 
+        private void addUC(UserControl uc) {
+            panelProfile.Controls.Clear();
+            panelProfile.Controls.Add(uc);
+            uc.BringToFront();
         }
         private void CollapseMenu()
         {
@@ -68,14 +72,8 @@ namespace GUI
 
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            panelProfile.Visible = false;
-            UC_EditTeacher uc = new UC_EditTeacher();
-            panelDisplay.Controls.Add(uc);
-            uc.BringToFront();
-            uc.Location = new Point(75, 110);
 
-        }
+
+
     }
 }

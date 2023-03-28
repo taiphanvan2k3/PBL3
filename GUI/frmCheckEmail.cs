@@ -42,7 +42,7 @@ namespace GUI
 
         private void btnSkip_Click(object sender, EventArgs e)
         {
-            frmLogin1 frmLogin1 = new frmLogin1(); 
+            frmLogin frmLogin1 = new frmLogin(); 
             frmLogin1.ShowDialog();
             this.Dispose();
         }

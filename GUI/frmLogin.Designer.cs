@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmLogin1
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -196,6 +196,7 @@
             this.circularPictureBox1.BorderSize = 5;
             this.circularPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Image = global::GUI.Properties.Resources._294355517_1105843533621186_1411223748583159430_n;
             this.circularPictureBox1.Location = new System.Drawing.Point(125, 0);
             this.circularPictureBox1.Name = "circularPictureBox1";
             this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
@@ -497,7 +498,7 @@
             this.panel24.Size = new System.Drawing.Size(400, 123);
             this.panel24.TabIndex = 28;
             // 
-            // frmLogin1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -519,7 +520,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLogin1";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin1";
             this.panelTitle.ResumeLayout(false);

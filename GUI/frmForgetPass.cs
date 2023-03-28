@@ -24,11 +24,20 @@ namespace GUI
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            frmLogin1 frm = new frmLogin1();
+            frmLogin frm = new frmLogin();
+            this.Visible = false;
             frm.ShowDialog();
-            this.Close();
+            this.Dispose();
         }
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void btnSend_Click(object sender, EventArgs e)
         {
             if(txtEmail.Texts.ToString() == "")
@@ -38,9 +47,12 @@ namespace GUI
             else
             {
                 frmCheckEmail frm = new frmCheckEmail();
+                this.Visible = false;
                 frm.ShowDialog();
-                this.Close();
+                this.Dispose();
             }
         }
+
+       
     }
 }
