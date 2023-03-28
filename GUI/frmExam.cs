@@ -14,6 +14,7 @@ namespace GUI
 {
     public partial class frmExam : Form
     {
+        private Size formOriginalSize;
         UC_Calendar calendar = new UC_Calendar();
         Label lblHome = new Label();
         Color backColor = Color.White;
@@ -22,6 +23,7 @@ namespace GUI
         {
             InitializeComponent();
             CollapseMenu();
+            formOriginalSize = this.Size;
         }
         
         private void Init()
@@ -48,6 +50,8 @@ namespace GUI
                     menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(0);
                 }
+                pnlMain.Width += 100;
+                pnlMain.Location = new Point(pnlMain.Location.X - 100, pnlMain.Location.Y);
             }
             else
             { //Expand menu
@@ -61,6 +65,8 @@ namespace GUI
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
+                pnlMain.Width -= 100;
+                pnlMain.Location = new Point(pnlMain.Location.X + 100, pnlMain.Location.Y);
             }
         }
 
@@ -106,9 +112,17 @@ namespace GUI
             }
         }
 
-        private void uC_DataGridView1_Load(object sender, EventArgs e)
+        private void frmExam_Resize(object sender, EventArgs e)
         {
-
+            float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
+            float yRatio = (float)(this.Height) / (float)(formOriginalSize.Height);
+            pnlMain.Size = new Size((int)(pnlMain.Width * xRatio), (int)(pnlMain.Height * yRatio));
+            panelMenu.Location = new Point((int)(panelMenu.Location.X * xRatio), (int)(panelMenu.Location.Y * yRatio));
+            calendar.Size = new Size((int)(calendar.Width * xRatio), (int)(calendar.Height * yRatio));
+            calendar.Location = new Point((int)(calendar.Location.X * xRatio), (int)(calendar.Location.Y * yRatio));
+            calendar.LoadDays();
+            formOriginalSize = this.Size;
         }
+
     }
 }

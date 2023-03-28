@@ -248,6 +248,9 @@
     <EmbeddedResource Include="frmForgetPass.resx">
       <DependentUpon>frmForgetPass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyCustomControl\CustomButton.resx">
+      <DependentUpon>CustomButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.uC_DataGridView1 = new GUI.MyUserControls.UC_DataGridView();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDarkMode = new FontAwesome.Sharp.IconButton();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
@@ -43,7 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            this.pnlMain.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,21 +60,10 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.uC_DataGridView1);
             this.pnlMain.Location = new System.Drawing.Point(250, 2);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1139, 663);
             this.pnlMain.TabIndex = 2;
-            // 
-            // uC_DataGridView1
-            // 
-            this.uC_DataGridView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(221)))), ((int)(((byte)(240)))));
-            this.uC_DataGridView1.Location = new System.Drawing.Point(6, 10);
-            this.uC_DataGridView1.Name = "uC_DataGridView1";
-            this.uC_DataGridView1.Padding = new System.Windows.Forms.Padding(10);
-            this.uC_DataGridView1.Size = new System.Drawing.Size(1078, 589);
-            this.uC_DataGridView1.TabIndex = 0;
-            this.uC_DataGridView1.Load += new System.EventHandler(this.uC_DataGridView1_Load);
             // 
             // panelMenu
             // 
@@ -276,8 +263,8 @@
             this.Name = "frmExam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExam";
+            this.Resize += new System.EventHandler(this.frmExam_Resize);
             this.panel1.ResumeLayout(false);
-            this.pnlMain.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -298,6 +285,5 @@
         private FontAwesome.Sharp.IconButton btnGrade;
         private FontAwesome.Sharp.IconButton btnDarkMode;
         private System.Windows.Forms.Panel pnlMain;
-        private MyUserControls.UC_DataGridView uC_DataGridView1;
     }
 }
