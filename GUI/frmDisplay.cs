@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.MyUserControls
+namespace GUI
 {
-    public partial class UserControlDays : UserControl
+    public partial class frmDisplay : Form
     {
-        public UserControlDays()
+        public frmDisplay()
         {
             InitializeComponent();
-        }
-
-        public void Days(int numDay)
-        {
-            btnDays.Text = numDay + "";
         }
     }
 }

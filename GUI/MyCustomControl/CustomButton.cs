@@ -133,5 +133,12 @@ namespace GUI.MyCustomControl
             if (borderRadius > this.Height)
                 borderRadius = this.Height;
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.ResumeLayout(false);
+
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using BLL;
 using GUI.MyCustomControl;
-using Guna.UI2.WinForms.Enums;
 using Org.BouncyCastle.Math.Field;
 using System;
 using System.Collections.Generic;
@@ -16,14 +15,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmLogin1 : Form
+    public partial class frmLogin : Form
     {
-        public frmLogin1()
+        public frmLogin()
         {
             InitializeComponent();
             //2 button nằm cùng 1 vị trí nhưng ban đầu cho buttonDoNotShow lên trước nên mới dùng BringToFont 
             btnDoNotShow.BringToFront();
         }
+
+        public static DataRow dataUser = null;
 
         // Custom Minisize and Close
         private void btnClose_Click(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace GUI
         }
 
         private void txtUsername_Click(object sender, EventArgs e)
-        {
+        { 
             //Edit:2/3/2023 by Tai
             //Khi bấm vào lại textbox username thì ẩn mật khẩu đi
             //và hiện tại btnShow nằm chồng lên btnDoNotShow nên phải mang nó lên trước 
@@ -67,8 +68,9 @@ namespace GUI
         private void btnForgetPass_Click(object sender, EventArgs e)
         {
             frmForgetPass f = new frmForgetPass();
+            this.Visible = false;
             f.ShowDialog();
-            this.Close();
+            this.Dispose();
         }
 
         private void btnForgetPass_MouseHover(object sender, EventArgs e)
@@ -91,21 +93,13 @@ namespace GUI
             }
             else
             {
-                CheckLoginBLL checkLoginBLL = new CheckLoginBLL();
-                int count = checkLoginBLL.Check(txtUsername.Texts, txtPassword.Texts);
-                switch (count)
-                {
-                    case -1:
-                        MessageBox.Show("Check your username and password");
-                        break;
-                    case 0:
-                        MessageBox.Show("Đăng nhập với tư cách giáo viên");
-                        break;
-                    case 1:
-                        MessageBox.Show("Đăng nhập với tư cách sinh viên");
-                        break;
+                string result =  CheckLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                MessageBox.Show(result);
+                dataUser = CheckLoginBLL.getACC(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                frmTeacher frmTeacher = new frmTeacher();
+                frmTeacher.ShowDialog();
+                this.Hide();
 
-                }
             }
         }
 

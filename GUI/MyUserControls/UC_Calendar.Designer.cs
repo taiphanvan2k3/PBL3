@@ -38,15 +38,15 @@
             this.lbSaturday = new System.Windows.Forms.Label();
             this.lbFriday = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonToday = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(822, 45);
+            this.btnPrevious.Location = new System.Drawing.Point(776, 45);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(90, 24);
+            this.btnPrevious.Size = new System.Drawing.Size(113, 38);
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "Tháng trước";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.btnNext.Location = new System.Drawing.Point(1008, 45);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(84, 24);
+            this.btnNext.Size = new System.Drawing.Size(107, 38);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Tháng sau";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             // 
             this.lbThursday.AutoSize = true;
             this.lbThursday.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThursday.Location = new System.Drawing.Point(687, 94);
+            this.lbThursday.Location = new System.Drawing.Point(671, 94);
             this.lbThursday.Name = "lbThursday";
             this.lbThursday.Size = new System.Drawing.Size(97, 28);
             this.lbThursday.TabIndex = 6;
@@ -96,7 +96,7 @@
             // 
             this.lbWednesday.AutoSize = true;
             this.lbWednesday.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWednesday.Location = new System.Drawing.Point(537, 94);
+            this.lbWednesday.Location = new System.Drawing.Point(525, 94);
             this.lbWednesday.Name = "lbWednesday";
             this.lbWednesday.Size = new System.Drawing.Size(76, 28);
             this.lbWednesday.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             this.lbSaturday.AutoSize = true;
             this.lbSaturday.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSaturday.Location = new System.Drawing.Point(1002, 94);
+            this.lbSaturday.Location = new System.Drawing.Point(981, 94);
             this.lbSaturday.Name = "lbSaturday";
             this.lbSaturday.Size = new System.Drawing.Size(90, 28);
             this.lbSaturday.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             this.lbFriday.AutoSize = true;
             this.lbFriday.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFriday.Location = new System.Drawing.Point(855, 95);
+            this.lbFriday.Location = new System.Drawing.Point(829, 95);
             this.lbFriday.Name = "lbFriday";
             this.lbFriday.Size = new System.Drawing.Size(88, 28);
             this.lbFriday.TabIndex = 7;
@@ -134,37 +134,51 @@
             // 
             // lbDate
             // 
-            this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Segoe UI", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbDate.Font = new System.Drawing.Font("Mongolian Baiti", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119)))));
             this.lbDate.Location = new System.Drawing.Point(380, 21);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(336, 62);
+            this.lbDate.Size = new System.Drawing.Size(345, 50);
             this.lbDate.TabIndex = 10;
             this.lbDate.Text = "MONTH YEAR";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 124);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1133, 629);
-            this.flowLayoutPanel1.TabIndex = 14;
-            // 
             // buttonToday
             // 
-            this.buttonToday.Location = new System.Drawing.Point(918, 45);
+            this.buttonToday.Location = new System.Drawing.Point(895, 45);
             this.buttonToday.Name = "buttonToday";
-            this.buttonToday.Size = new System.Drawing.Size(84, 24);
+            this.buttonToday.Size = new System.Drawing.Size(107, 38);
             this.buttonToday.TabIndex = 15;
             this.buttonToday.Text = "Hôm nay";
             this.buttonToday.UseVisualStyleBackColor = true;
             this.buttonToday.Click += new System.EventHandler(this.buttonToday_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 135);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1064, 492);
+            this.tableLayoutPanel1.TabIndex = 16;
+            // 
             // UC_Calendar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonToday);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbSunday);
             this.Controls.Add(this.lbSaturday);
@@ -176,8 +190,9 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
             this.Name = "UC_Calendar";
-            this.Size = new System.Drawing.Size(1161, 756);
+            this.Size = new System.Drawing.Size(1158, 756);
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Resize += new System.EventHandler(this.UC_Calendar_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +209,7 @@
         private System.Windows.Forms.Label lbSaturday;
         private System.Windows.Forms.Label lbFriday;
         private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button buttonToday;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

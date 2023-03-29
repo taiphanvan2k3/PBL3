@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,7 +24,8 @@ namespace BLL
                 return _Instance;
             }
         }
-        public int Check(string user, string pass) {
+        public static string Check(string user, string pass)
+        {
             DataTable dtbl = LoginDAL.Instance.getUser(user);
             DataTable dt;
             string s = "NULL";
@@ -31,18 +33,40 @@ namespace BLL
             {
                 if (dtbl.Rows[0]["VaiTro"].ToString() == "GV")
                 {
-                    //dt = LoginDAL.Instance.getUser(user, 0);
-                    //s = "Giáo viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
-                    return 1;
+                    dt = LoginDAL.Instance.getUser(user, 0);
+                    s = "Giáo viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
                 }
                 else if (dtbl.Rows[0]["VaiTro"].ToString() == "SV")
                 {
-                    //dt = LoginDAL.Instance.getUser(user, 1);
-                    //s = "Sinh viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
-                    return 2;
+                    dt = LoginDAL.Instance.getUser(user, 1);
+                    s = "Sinh viên " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
                 }
             }
-            return -1;
+            return s;
+        }
+
+        public static DataRow getACC(string user, string pass)
+        {
+            DataTable dtbl = LoginDAL.Instance.getUser(user);
+            DataTable dt;
+            DataRow row = null;
+            string s = "NULL";
+            if (dtbl.Rows.Count == 1 && BCrypt.Net.BCrypt.Verify(pass, dtbl.Rows[0]["MkUngDung"].ToString()) == true)
+            {
+                if (dtbl.Rows[0]["VaiTro"].ToString() == "GV")
+                {
+                    dt = LoginDAL.Instance.getUser(user, 0);
+                    row = dt.Rows[0];
+                   
+                }
+                else if (dtbl.Rows[0]["VaiTro"].ToString() == "SV")
+                {
+                    dt = LoginDAL.Instance.getUser(user, 1);
+                    row = dt.Rows[0];
+                }
+            }
+            return row;
         }
     }
 }
+

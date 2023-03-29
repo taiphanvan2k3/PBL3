@@ -16,6 +16,8 @@ namespace GUI.MyUserControls
         {
             InitializeComponent();
         }
+
+
     }
        
 }

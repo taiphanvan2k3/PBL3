@@ -5,34 +5,66 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-
     public partial class UC_Calendar : UserControl
-
     {
+        private Size formOriginalSize;
+        private Color colorBack;
+        public Color ColorBack
+        {
+            get => colorBack;
+            set
+            {
+                colorBack = value;
+                this.BackColor = colorBack;
+                tableLayoutPanel1.BackColor = colorBack;
+                lbMonday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbTuesday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbWednesday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbThursday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbFriday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbSaturday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbSunday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                btnPrevious.ForeColor= ((colorBack == Color.White) ? Color.Black : Color.White);
+                btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                buttonToday.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                buttonToday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                lbDate.ForeColor = (colorBack== Color.White) ? Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119))))) : Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
+                LoadDays();
+                this.Invalidate();
+            }
+        }
         int MONTH, YEAR;
-        Button[,] btn = new Button[6, 7];
+        MyCustomControl.CustomButton[,] btn = new MyCustomControl.CustomButton[6, 7];
+        //Button[,] btn = new Button[6, 7];
         String[,] dTime = new String[6, 7];
         public UC_Calendar()
         {
             InitializeComponent();
             init();
+            formOriginalSize = this.Size;
         }
         //Methods
         #region Methods
         public void init()
         {
+            colorBack = Color.White;
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
-                    btn[i, j] = new Button();
+                    btn[i, j] = new MyCustomControl.CustomButton();
+                    btn[i, j].BorderSize = 1;
+                    btn[i, j].BorderColor = Color.Black;
+                    btn[i, j].BorderRadius = 20;
                     btn[i, j].Font = new Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btn[i, j].Size = new Size(152, 82);
-                    btn[i, j].BackColor = Color.White;
-                    btn[i, j].ForeColor = Color.Black;
+                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                    btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                     btn[i, j].FlatStyle = FlatStyle.Flat;
                     btn[i, j].FlatAppearance.BorderSize = 1;
                     btn[i, j].Click += buttonDate_Click;
-                    flowLayoutPanel1.Controls.Add(btn[i, j]);
+                    tableLayoutPanel1.Controls.Add(btn[i, j]);
                 }
         }
         //Kiem tra nam nhuan
@@ -99,13 +131,18 @@ namespace GUI.MyUserControls
         }
         public void reset()
         {
+            float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
+            float yRatio = (float)(this.Height) / (float)(formOriginalSize.Height);
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
-                    btn[i, j].BackColor = Color.White;
-                    btn[i, j].ForeColor = Color.White;
+                    btn[i, j].Size = new Size((int)(btn[i, j].Width * xRatio), (int)(btn[i, j].Height * yRatio));
+                    btn[i, j].Location = new Point((int)(btn[i, j].Location.X * xRatio), (int)(btn[i, j].Location.Y * yRatio));
+                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                    btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                     dTime[i, j] = "";
                 }
+            formOriginalSize = this.Size;
         }
         public int[,] update(int month, BigInteger year)
         {
@@ -126,10 +163,10 @@ namespace GUI.MyUserControls
             for (int i = 1; i <= day; i++)
             {
                 btn[I, J].Text = i.ToString();
-                btn[I, J].ForeColor = Color.Black;
-                btn[I, J].BackColor = Color.White;
+                btn[I, J].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
                 if (i == DateTime.Now.Day && month == DateTime.Now.Month && year.IntValue == DateTime.Now.Year)
-                    btn[I, J].BackColor = Color.GreenYellow;
+                    btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(249)))), ((int)(((byte)(249))))) : Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(191)))), ((int)(((byte)(109))))));
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year.CompareTo(toBig(YEAR)) == 0 && MONTH == month + 1 && i == day)
                 {
@@ -146,14 +183,14 @@ namespace GUI.MyUserControls
             for (int i = start - 1; i >= 0; i--)
             {
                 btn[0, i].Text = (pday-- + "");
-                btn[0, i].BackColor = Color.Gray;
+                btn[0, i].BackColor = ((colorBack == Color.White) ? Color.Gray : colorBack);
             }
             //Determine phần ngày của tháng sau đó
             int st = 1;
             while (!(I == 6 && J == 0))
             {
                 btn[I, J].Text = (st++ + "");
-                btn[I, J].BackColor = Color.Gray;
+                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.Gray : colorBack);
                 J++;
                 if (J == 7)
                 {
@@ -163,7 +200,7 @@ namespace GUI.MyUserControls
             }
             return a;
         }
-        private void LoadDays()
+        public void LoadDays()
         {
             BigInteger Year_new = toBig(YEAR);
             int[,] a = update(MONTH, Year_new);
@@ -222,7 +259,7 @@ namespace GUI.MyUserControls
         private void buttonDate_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            MessageBox.Show(btn.Text);
+            MessageBox.Show(btn.Text + " " + btn.Size.Width + " " + btn.Size.Height);
         }
         private void buttonToday_Click(object sender, EventArgs e)
         {
@@ -248,6 +285,45 @@ namespace GUI.MyUserControls
             }
             lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
+        }
+
+        private void UC_Calendar_Resize(object sender, EventArgs e)
+        {
+            float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
+            float yRatio = (float)(this.Height) / (float)(formOriginalSize.Height);
+            tableLayoutPanel1.Size = new Size((int)(tableLayoutPanel1.Width * xRatio), (int)(tableLayoutPanel1.Height * yRatio));
+            tableLayoutPanel1.Location = new Point((int)(tableLayoutPanel1.Location.X * xRatio), (int)(tableLayoutPanel1.Location.Y * yRatio));
+            lbDate.Size = new Size((int)(lbDate.Width * xRatio), (int)(lbDate.Height * yRatio));
+            //lbDate.Font = new Font("Mongolian Baiti", lbDate.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbDate.Location = new Point((int)(lbDate.Location.X * xRatio), (int)(lbDate.Location.Y * yRatio));
+            lbSunday.Size = new Size((int)(lbSunday.Width * xRatio), (int)(lbSunday.Height * yRatio));
+            //lbSunday.Font = new Font("Segoe UI", lbSunday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbSunday.Location = new Point((int)(lbSunday.Location.X * xRatio), (int)(lbSunday.Location.Y * yRatio));
+            lbMonday.Size = new Size((int)(lbMonday.Width * xRatio), (int)(lbMonday.Height * yRatio));
+            //lbMonday.Font = new Font("Segoe UI", lbMonday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbMonday.Location = new Point((int)(lbMonday.Location.X * xRatio), (int)(lbMonday.Location.Y * yRatio));
+            lbTuesday.Size = new Size((int)(lbTuesday.Width * xRatio), (int)(lbTuesday.Height * yRatio));
+            //lbTuesday.Font = new Font("Segoe UI", lbTuesday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbTuesday.Location = new Point((int)(lbTuesday.Location.X * xRatio), (int)(lbTuesday.Location.Y * yRatio));
+            lbWednesday.Size = new Size((int)(lbWednesday.Width * xRatio), (int)(lbWednesday.Height * yRatio));
+            //lbWednesday.Font = new Font("Segoe UI", lbWednesday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbWednesday.Location = new Point((int)(lbWednesday.Location.X * xRatio), (int)(lbWednesday.Location.Y * yRatio));
+            lbThursday.Size = new Size((int)(lbThursday.Width * xRatio), (int)(lbThursday.Height * yRatio));
+            //lbThursday.Font = new Font("Segoe UI", lbThursday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbThursday.Location = new Point((int)(lbThursday.Location.X * xRatio), (int)(lbThursday.Location.Y * yRatio));
+            lbFriday.Size = new Size((int)(lbFriday.Width * xRatio), (int)(lbFriday.Height * yRatio));
+            //lbFriday.Font = new Font("Segoe UI", lbFriday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbFriday.Location = new Point((int)(lbFriday.Location.X * xRatio), (int)(lbFriday.Location.Y * yRatio));
+            lbSaturday.Size = new Size((int)(lbSaturday.Width * xRatio), (int)(lbSaturday.Height * yRatio));
+            //lbSaturday.Font = new Font("Segoe UI", lbSaturday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbSaturday.Location = new Point((int)(lbSaturday.Location.X * xRatio), (int)(lbSaturday.Location.Y * yRatio));
+            btnNext.Size = new Size((int)(btnNext.Width * xRatio), (int)(btnNext.Height * yRatio));
+            btnNext.Location = new Point((int)(btnNext.Location.X * xRatio), (int)(btnNext.Location.Y * yRatio));
+            btnPrevious.Size = new Size((int)(btnPrevious.Width * xRatio), (int)(btnPrevious.Height * yRatio));
+            btnPrevious.Location = new Point((int)(btnPrevious.Location.X * xRatio), (int)(btnPrevious.Location.Y * yRatio));
+            buttonToday.Size = new Size((int)(buttonToday.Width * xRatio), (int)(buttonToday.Height * yRatio));
+            buttonToday.Location = new Point((int)(buttonToday.Location.X * xRatio), (int)(buttonToday.Location.Y * yRatio));
+            formOriginalSize = this.Size;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
