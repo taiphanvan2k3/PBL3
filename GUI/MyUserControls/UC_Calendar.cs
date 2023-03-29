@@ -25,12 +25,12 @@ namespace GUI.MyUserControls
                 lbSaturday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSunday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
-                btnPrevious.ForeColor= ((colorBack == Color.White) ? Color.Black : Color.White);
+                btnPrevious.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
                 btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 buttonToday.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
                 buttonToday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                lbDate.ForeColor = (colorBack== Color.White) ? Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119))))) : Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
+                lbDate.ForeColor = (colorBack == Color.White) ? Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119))))) : Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
                 LoadDays();
                 this.Invalidate();
             }
@@ -289,40 +289,53 @@ namespace GUI.MyUserControls
 
         private void UC_Calendar_Resize(object sender, EventArgs e)
         {
-            float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
-            float yRatio = (float)(this.Height) / (float)(formOriginalSize.Height);
+            //29/3/2023: Edit by Tai -> Label nằm chính giữa của mỗi ngày
+            double xRatio = this.Width * 1.0 / formOriginalSize.Width;
+            double yRatio = this.Height * 1.0 / formOriginalSize.Height;
+
             tableLayoutPanel1.Size = new Size((int)(tableLayoutPanel1.Width * xRatio), (int)(tableLayoutPanel1.Height * yRatio));
             tableLayoutPanel1.Location = new Point((int)(tableLayoutPanel1.Location.X * xRatio), (int)(tableLayoutPanel1.Location.Y * yRatio));
+
             lbDate.Size = new Size((int)(lbDate.Width * xRatio), (int)(lbDate.Height * yRatio));
-            //lbDate.Font = new Font("Mongolian Baiti", lbDate.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lbDate.Location = new Point((int)(lbDate.Location.X * xRatio), (int)(lbDate.Location.Y * yRatio));
+
+            int offset = tableLayoutPanel1.Location.X;
             lbSunday.Size = new Size((int)(lbSunday.Width * xRatio), (int)(lbSunday.Height * yRatio));
-            //lbSunday.Font = new Font("Segoe UI", lbSunday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lbSunday.Location = new Point((int)(lbSunday.Location.X * xRatio), (int)(lbSunday.Location.Y * yRatio));
+
             lbMonday.Size = new Size((int)(lbMonday.Width * xRatio), (int)(lbMonday.Height * yRatio));
-            //lbMonday.Font = new Font("Segoe UI", lbMonday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbMonday.Location = new Point((int)(lbMonday.Location.X * xRatio), (int)(lbMonday.Location.Y * yRatio));
+            int posX = offset + btn[0, 1].Location.X + (btn[0, 1].Width - lbMonday.Width) / 2;
+            lbMonday.Location = new Point(posX, lbSunday.Location.Y);
+
             lbTuesday.Size = new Size((int)(lbTuesday.Width * xRatio), (int)(lbTuesday.Height * yRatio));
-            //lbTuesday.Font = new Font("Segoe UI", lbTuesday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbTuesday.Location = new Point((int)(lbTuesday.Location.X * xRatio), (int)(lbTuesday.Location.Y * yRatio));
+            posX = offset + btn[0, 2].Location.X + (btn[0, 1].Width - lbTuesday.Width) / 2;
+            lbTuesday.Location = new Point(posX, lbSunday.Location.Y);
+
             lbWednesday.Size = new Size((int)(lbWednesday.Width * xRatio), (int)(lbWednesday.Height * yRatio));
-            //lbWednesday.Font = new Font("Segoe UI", lbWednesday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbWednesday.Location = new Point((int)(lbWednesday.Location.X * xRatio), (int)(lbWednesday.Location.Y * yRatio));
+            posX = offset + btn[0, 3].Location.X + (btn[0, 1].Width - lbWednesday.Width) / 2;
+            lbWednesday.Location = new Point(posX, lbSunday.Location.Y);
+
             lbThursday.Size = new Size((int)(lbThursday.Width * xRatio), (int)(lbThursday.Height * yRatio));
-            //lbThursday.Font = new Font("Segoe UI", lbThursday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbThursday.Location = new Point((int)(lbThursday.Location.X * xRatio), (int)(lbThursday.Location.Y * yRatio));
+            posX = offset + btn[0, 4].Location.X + (btn[0, 1].Width - lbThursday.Width) / 2;
+            lbThursday.Location = new Point(posX, lbSunday.Location.Y);
+
             lbFriday.Size = new Size((int)(lbFriday.Width * xRatio), (int)(lbFriday.Height * yRatio));
-            //lbFriday.Font = new Font("Segoe UI", lbFriday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbFriday.Location = new Point((int)(lbFriday.Location.X * xRatio), (int)(lbFriday.Location.Y * yRatio));
+            posX = offset + btn[0, 5].Location.X + (btn[0, 1].Width - lbFriday.Width) / 2;
+            lbFriday.Location = new Point(posX, lbSunday.Location.Y);
+
             lbSaturday.Size = new Size((int)(lbSaturday.Width * xRatio), (int)(lbSaturday.Height * yRatio));
-            //lbSaturday.Font = new Font("Segoe UI", lbSaturday.Font.Size * xRatio * yRatio, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbSaturday.Location = new Point((int)(lbSaturday.Location.X * xRatio), (int)(lbSaturday.Location.Y * yRatio));
+            posX = offset + btn[0, 6].Location.X + (btn[0, 1].Width - lbSaturday.Width) / 2;
+            lbSaturday.Location = new Point(posX, lbSunday.Location.Y);
+
             btnNext.Size = new Size((int)(btnNext.Width * xRatio), (int)(btnNext.Height * yRatio));
             btnNext.Location = new Point((int)(btnNext.Location.X * xRatio), (int)(btnNext.Location.Y * yRatio));
+
             btnPrevious.Size = new Size((int)(btnPrevious.Width * xRatio), (int)(btnPrevious.Height * yRatio));
             btnPrevious.Location = new Point((int)(btnPrevious.Location.X * xRatio), (int)(btnPrevious.Location.Y * yRatio));
+
             buttonToday.Size = new Size((int)(buttonToday.Width * xRatio), (int)(buttonToday.Height * yRatio));
             buttonToday.Location = new Point((int)(buttonToday.Location.X * xRatio), (int)(buttonToday.Location.Y * yRatio));
+
             formOriginalSize = this.Size;
         }
 
