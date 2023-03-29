@@ -99,12 +99,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormTestOfExcel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTestOfExcel.Designer.cs">
-      <DependentUpon>FormTestOfExcel.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCheckEmail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,9 +238,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
-    <EmbeddedResource Include="FormTestOfExcel.resx">
-      <DependentUpon>FormTestOfExcel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCheckEmail.resx">
       <DependentUpon>frmCheckEmail.cs</DependentUpon>
     </EmbeddedResource>
