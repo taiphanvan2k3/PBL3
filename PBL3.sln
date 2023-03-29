@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBL3", "PBL3\PBL3.csproj", "{138785BB-A50E-47C2-8E27-82EC88B28969}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{79ADC398-C9AC-4789-B1CD-B160EAAE205B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{54DF85CD-8F4E-4AE0-B6A9-1468304352E0}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{138785BB-A50E-47C2-8E27-82EC88B28969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{138785BB-A50E-47C2-8E27-82EC88B28969}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{138785BB-A50E-47C2-8E27-82EC88B28969}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{138785BB-A50E-47C2-8E27-82EC88B28969}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79ADC398-C9AC-4789-B1CD-B160EAAE205B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{79ADC398-C9AC-4789-B1CD-B160EAAE205B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79ADC398-C9AC-4789-B1CD-B160EAAE205B}.Release|Any CPU.ActiveCfg = Release|Any CPU
