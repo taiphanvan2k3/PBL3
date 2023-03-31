@@ -139,7 +139,7 @@
             // 
             // textBoxCauHoi
             // 
-            this.textBoxCauHoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(56)))), ((int)(((byte)(86)))));
+            this.textBoxCauHoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119)))));
             this.textBoxCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCauHoi.ForeColor = System.Drawing.Color.White;
             this.textBoxCauHoi.Location = new System.Drawing.Point(118, 18);
@@ -229,8 +229,8 @@
             // 
             // customButton2
             // 
-            this.customButton2.BackColor = System.Drawing.Color.SteelBlue;
-            this.customButton2.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
+            this.customButton2.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
             this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.customButton2.BorderRadius = 40;
             this.customButton2.BorderSize = 0;
@@ -248,8 +248,8 @@
             // 
             // customButton1
             // 
-            this.customButton1.BackColor = System.Drawing.Color.SteelBlue;
-            this.customButton1.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
+            this.customButton1.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
             this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.customButton1.BorderRadius = 40;
             this.customButton1.BorderSize = 0;
@@ -268,7 +268,7 @@
             // FormTaoCauHoi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(153)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(897, 719);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.labelCheck);
