@@ -471,7 +471,7 @@
             this.uC_StudentInfo.Size = new System.Drawing.Size(1190, 950);
             this.uC_StudentInfo.TabIndex = 0;
             // 
-            // frmStudent
+            // frmStudent2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -480,7 +480,7 @@
             this.Controls.Add(this.panelMenuTong);
             this.Controls.Add(this.panel3);
             this.MinimumSize = new System.Drawing.Size(1178, 720);
-            this.Name = "frmStudent";
+            this.Name = "frmStudent2";
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
