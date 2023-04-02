@@ -55,14 +55,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1389, 665);
+            this.panel1.Size = new System.Drawing.Size(1372, 665);
             this.panel1.TabIndex = 1;
             // 
             // pnlMain
             // 
             this.pnlMain.Location = new System.Drawing.Point(250, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1139, 663);
+            this.pnlMain.Size = new System.Drawing.Size(1119, 663);
             this.pnlMain.TabIndex = 2;
             // 
             // panelMenu
@@ -258,8 +258,9 @@
             // frmExam
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1389, 665);
+            this.ClientSize = new System.Drawing.Size(1372, 665);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(1300, 712);
             this.Name = "frmExam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExam";
