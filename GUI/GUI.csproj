@@ -99,6 +99,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAssignTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignTeacher.Designer.cs">
+      <DependentUpon>frmAssignTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCheckEmail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,12 @@
     </Compile>
     <Compile Include="frmForgetPass.Designer.cs">
       <DependentUpon>frmForgetPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewDetailModuleClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewDetailModuleClass.Designer.cs">
+      <DependentUpon>frmViewDetailModuleClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -234,10 +246,19 @@
     <Compile Include="MyUserControls\UC_StudentInfo.Designer.cs">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_ViewListModuleClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ViewListModuleClass.Designer.cs">
+      <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
+    <EmbeddedResource Include="frmAssignTeacher.resx">
+      <DependentUpon>frmAssignTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCheckEmail.resx">
       <DependentUpon>frmCheckEmail.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_StudentInfo.resx">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass.resx">
+      <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

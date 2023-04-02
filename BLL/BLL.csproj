@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AddressSelectionBLL.cs" />
     <Compile Include="CheckLoginBLL.cs" />
+    <Compile Include="MoveFormHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
