@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Math;
+﻿using GUI.MyCustomControl;
+using Org.BouncyCastle.Math;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -36,7 +37,7 @@ namespace GUI.MyUserControls
             }
         }
         int MONTH, YEAR;
-        MyCustomControl.CustomButton[,] btn = new MyCustomControl.CustomButton[6, 7];
+        CustomButton[,] btn = new CustomButton[6, 7];
         //Button[,] btn = new Button[6, 7];
         String[,] dTime = new String[6, 7];
         public UC_Calendar()
@@ -53,7 +54,7 @@ namespace GUI.MyUserControls
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
-                    btn[i, j] = new MyCustomControl.CustomButton();
+                    btn[i, j] = new CustomButton();
                     btn[i, j].BorderSize = 1;
                     btn[i, j].BorderColor = Color.Black;
                     btn[i, j].BorderRadius = 20;
@@ -68,16 +69,16 @@ namespace GUI.MyUserControls
                 }
         }
         //Kiem tra nam nhuan
-        public static bool isLeapYear(BigInteger N)
+        public bool isLeapYear(int N)
         {
-            if (N.Mod(toBig(4)).CompareTo(toBig(0)) == 0 && N.Mod(toBig(100)).CompareTo(toBig(0)) != 0)
+            if (N % 4 == 0 && N % 100 != 0)
                 return true;
-            if (N.Mod(toBig(400)).CompareTo(toBig(0)) == 0)
+            if (N % 400 == 0)
                 return true;
             return false;
         }
         //Determine number of day in the month
-        public static int Nday(int month, BigInteger year)
+        public int Nday(int month, int year)
         {
             switch (month)
             {
@@ -101,33 +102,25 @@ namespace GUI.MyUserControls
             }
             return 0;
         }
-
-        public static BigInteger toBig(int s)
-        {
-            return new BigInteger(s.ToString());
-        }
         public String leng2(String s)
         {
             if (s.Length == 1)
                 return "0" + s;
             return s;
         }
-        //Determine thứ
-        public static int getThu(int month, BigInteger year)
+        public int getDay(int month, int year)
         {
-            year = year.Subtract(toBig(1));
-            BigInteger d = year;
-            d = year.Divide(toBig(4));
-            d = d.Subtract(year.Divide(toBig(100)));
-            d = d.Add(year.Divide(toBig(400)));
-            d = d.Add(year.Multiply(toBig(365)));
+            int N = year - 1;
+            int d = N * 365 + N / 4 - N / 100 + N / 400;
             for (int i = 1; i < month; i++)
-                d = d.Add(toBig(Nday(i, year.Add(toBig(1)))));
-            //		System.out.println(d);
-            d = d.Mod(toBig(7)).Add(toBig(2));
-            return Convert.ToInt32(d.ToString());
+                d += Nday(i, N + 1);
+            return d;
+        }
+        //Determine thứ
+        public int getThu(int month, int year)
+        {
             //Cong them 2 de lay ra ten thu luon
-            //return getDay(month, year) % 7 + 2;
+            return getDay(month, year) % 7 + 2;
         }
         public void reset()
         {
@@ -144,7 +137,7 @@ namespace GUI.MyUserControls
                 }
             formOriginalSize = this.Size;
         }
-        public int[,] update(int month, BigInteger year)
+        public int[,] update(int month, int year)
         {
             reset();
             int[,] a = new int[6, 7];
@@ -155,7 +148,7 @@ namespace GUI.MyUserControls
             if (month > 1)
                 pday = Nday(month - 1, year);
             else
-                pday = Nday(12, year.Subtract(toBig(1)));
+                pday = Nday(12, year - 1);
             int start = thu - 1;
             if (start == 7)
                 start = 0;
@@ -165,10 +158,10 @@ namespace GUI.MyUserControls
                 btn[I, J].Text = i.ToString();
                 btn[I, J].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
-                if (i == DateTime.Now.Day && month == DateTime.Now.Month && year.IntValue == DateTime.Now.Year)
+                if (i == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
                     btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(249)))), ((int)(((byte)(249))))) : Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(191)))), ((int)(((byte)(109))))));
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
-                if (year.CompareTo(toBig(YEAR)) == 0 && MONTH == month + 1 && i == day)
+                if (year != YEAR && MONTH == month + 1 && i == day)
                 {
                     btn[I, J].BackColor = Color.Cyan;
                 }
@@ -202,8 +195,7 @@ namespace GUI.MyUserControls
         }
         public void LoadDays()
         {
-            BigInteger Year_new = toBig(YEAR);
-            int[,] a = update(MONTH, Year_new);
+            int[,] a = update(MONTH, YEAR);
             int check = 0;
             for (int i = 0; i < a.GetLength(0); i++)
             {
