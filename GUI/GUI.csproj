@@ -234,6 +234,12 @@
     <Compile Include="MyUserControls\UC_Student.Designer.cs">
       <DependentUpon>UC_Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfo2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfo2.Designer.cs">
+      <DependentUpon>UC_StudentInfo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_StudentInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Student.resx">
       <DependentUpon>UC_Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_StudentInfo2.resx">
+      <DependentUpon>UC_StudentInfo2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_StudentInfo.resx">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
