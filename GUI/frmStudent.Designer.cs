@@ -35,8 +35,8 @@
             this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
             this.panelCalendar = new System.Windows.Forms.Panel();
-            this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
+            this.btnXemTKB = new FontAwesome.Sharp.IconButton();
+            this.btnXemLichTrongNgay = new FontAwesome.Sharp.IconButton();
             this.btnCalendarExpand = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -146,8 +146,8 @@
             // 
             // panelCalendar
             // 
-            this.panelCalendar.Controls.Add(this.iconButton10);
-            this.panelCalendar.Controls.Add(this.iconButton9);
+            this.panelCalendar.Controls.Add(this.btnXemTKB);
+            this.panelCalendar.Controls.Add(this.btnXemLichTrongNgay);
             this.panelCalendar.Controls.Add(this.btnCalendarExpand);
             this.panelCalendar.Controls.Add(this.btnCalendar);
             this.panelCalendar.Location = new System.Drawing.Point(3, 202);
@@ -157,39 +157,40 @@
             this.panelCalendar.Size = new System.Drawing.Size(217, 53);
             this.panelCalendar.TabIndex = 7;
             // 
-            // iconButton10
+            // btnXemTKB
             // 
-            this.iconButton10.FlatAppearance.BorderSize = 0;
-            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
-            this.iconButton10.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.Location = new System.Drawing.Point(21, 104);
-            this.iconButton10.Name = "iconButton10";
-            this.iconButton10.Size = new System.Drawing.Size(176, 57);
-            this.iconButton10.TabIndex = 7;
-            this.iconButton10.Text = "     Xem thời\r\n     khoá biểu";
-            this.iconButton10.UseVisualStyleBackColor = true;
+            this.btnXemTKB.FlatAppearance.BorderSize = 0;
+            this.btnXemTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemTKB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnXemTKB.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
+            this.btnXemTKB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnXemTKB.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXemTKB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemTKB.Location = new System.Drawing.Point(21, 104);
+            this.btnXemTKB.Name = "btnXemTKB";
+            this.btnXemTKB.Size = new System.Drawing.Size(176, 57);
+            this.btnXemTKB.TabIndex = 7;
+            this.btnXemTKB.Text = "     Xem thời\r\n     khoá biểu";
+            this.btnXemTKB.UseVisualStyleBackColor = true;
             // 
-            // iconButton9
+            // btnXemLichTrongNgay
             // 
-            this.iconButton9.FlatAppearance.BorderSize = 0;
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.iconButton9.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton9.Location = new System.Drawing.Point(21, 48);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Size = new System.Drawing.Size(162, 57);
-            this.iconButton9.TabIndex = 6;
-            this.iconButton9.Text = "     Xem lịch \r\n     trong ngày";
-            this.iconButton9.UseVisualStyleBackColor = true;
+            this.btnXemLichTrongNgay.FlatAppearance.BorderSize = 0;
+            this.btnXemLichTrongNgay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemLichTrongNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemLichTrongNgay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnXemLichTrongNgay.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
+            this.btnXemLichTrongNgay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnXemLichTrongNgay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXemLichTrongNgay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemLichTrongNgay.Location = new System.Drawing.Point(21, 48);
+            this.btnXemLichTrongNgay.Name = "btnXemLichTrongNgay";
+            this.btnXemLichTrongNgay.Size = new System.Drawing.Size(162, 57);
+            this.btnXemLichTrongNgay.TabIndex = 6;
+            this.btnXemLichTrongNgay.Text = "     Xem lịch \r\n     trong ngày";
+            this.btnXemLichTrongNgay.UseVisualStyleBackColor = true;
+            this.btnXemLichTrongNgay.Click += new System.EventHandler(this.btnXemLichTrongNgay_Click);
             // 
             // btnCalendarExpand
             // 
@@ -280,6 +281,7 @@
             this.btnHome.Text = "        Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelLop
             // 
@@ -435,6 +437,7 @@
             this.btnLogOut.TabIndex = 0;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panelMenuTong
             // 
@@ -479,7 +482,7 @@
             this.Controls.Add(this.panelShowDetail);
             this.Controls.Add(this.panelMenuTong);
             this.Controls.Add(this.panel3);
-            this.MinimumSize = new System.Drawing.Size(1178, 720);
+            this.MinimumSize = new System.Drawing.Size(1469, 720);
             this.Name = "frmStudent";
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
@@ -517,8 +520,8 @@
         private FontAwesome.Sharp.IconButton btnClass;
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton10;
-        private FontAwesome.Sharp.IconButton iconButton9;
+        private FontAwesome.Sharp.IconButton btnXemTKB;
+        private FontAwesome.Sharp.IconButton btnXemLichTrongNgay;
         private System.Windows.Forms.Timer timerExpandClass;
         private System.Windows.Forms.Timer timerExpandCalendar;
         private System.Windows.Forms.Label label2;
