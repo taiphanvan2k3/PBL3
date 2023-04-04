@@ -55,70 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BAI_KIEM_TRA.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CAU_HOI.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
     <Compile Include="CBBAddressItem.cs" />
-    <Compile Include="CHUONG_TRINH_DAO_TAO.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
     <Compile Include="DTO_Teacher.cs" />
-    <Compile Include="GIANG_VIEN.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KHOA.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LAM_BAI_KIEM_TRA.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOP_HOC_PHAN.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOP_SINH_HOAT.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="modelPBL3.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modelPBL3.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="modelPBL3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="modelPBL3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>modelPBL3.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="MON_HOC.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PHU_HUYNH.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SINHVIEN_LOPHOCPHAN.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SINH_VIEN.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="THOI_KHOA_BIEU.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="THONG_BAO.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="THONG_TIN_DANG_NHAP.cs">
-      <DependentUpon>modelPBL3.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -128,13 +68,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="modelPBL3.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>modelPBL3.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="modelPBL3.edmx.diagram">
-      <DependentUpon>modelPBL3.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -151,18 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="modelPBL3.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modelPBL3.edmx</DependentUpon>
-      <LastGenOutput>modelPBL3.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="modelPBL3.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modelPBL3.edmx</DependentUpon>
-      <LastGenOutput>modelPBL3.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
