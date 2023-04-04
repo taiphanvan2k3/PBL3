@@ -18,7 +18,7 @@ namespace GUI
         UC_Calendar calendar = new UC_Calendar();
         Label lblHome = new Label();
         Color backColor = Color.White;
-        Color DarkColor = Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+        Color DarkColor = Color.FromArgb(36, 37, 38);
         public frmExam()
         {
             InitializeComponent();

@@ -45,5 +45,10 @@ namespace GUI
             dataGridView1.Rows.Add(7, "102210230", "Phan Văn Tài", "21TCLC_DT3", "0905...");
         }
 
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
 }

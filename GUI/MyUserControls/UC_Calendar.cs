@@ -24,13 +24,13 @@ namespace GUI.MyUserControls
                 lbFriday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSaturday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSunday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58,59,60));
                 btnPrevious.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                buttonToday.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                buttonToday.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 buttonToday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                lbDate.ForeColor = (colorBack == Color.White) ? Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119))))) : Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(111)))), ((int)(((byte)(38)))));
+                lbDate.ForeColor = (colorBack == Color.White) ? Color.FromArgb(13, 87, 119) : Color.FromArgb(227, 111, 38);
                 LoadDays();
                 this.Invalidate();
             }
@@ -59,7 +59,7 @@ namespace GUI.MyUserControls
                     btn[i, j].BorderRadius = 20;
                     btn[i, j].Font = new Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btn[i, j].Size = new Size(152, 82);
-                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                     btn[i, j].FlatStyle = FlatStyle.Flat;
                     btn[i, j].FlatAppearance.BorderSize = 1;
@@ -130,7 +130,7 @@ namespace GUI.MyUserControls
                 {
                     btn[i, j].Size = new Size((int)(btn[i, j].Width * xRatio), (int)(btn[i, j].Height * yRatio));
                     btn[i, j].Location = new Point((int)(btn[i, j].Location.X * xRatio), (int)(btn[i, j].Location.Y * yRatio));
-                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                    btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                     dTime[i, j] = "";
                 }
@@ -156,9 +156,9 @@ namespace GUI.MyUserControls
             {
                 btn[I, J].Text = i.ToString();
                 btn[I, J].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(59)))), ((int)(((byte)(60))))));
+                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 if (i == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
-                    btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(249)))), ((int)(((byte)(249))))) : Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(191)))), ((int)(((byte)(109))))));
+                    btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year != YEAR && MONTH == month + 1 && i == day)
                 {
