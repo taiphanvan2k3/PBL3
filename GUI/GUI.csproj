@@ -222,6 +222,12 @@
     <Compile Include="MyUserControls\UC_Class.Designer.cs">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_DailySchoolSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DailySchoolSchedule.Designer.cs">
+      <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_DisplayInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     <EmbeddedResource Include="MyUserControls\UC_Class.resx">
       <DependentUpon>UC_Class.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DailySchoolSchedule.resx">
+      <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DisplayInformation.resx">
       <DependentUpon>UC_DisplayInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,4 +399,8 @@
     <None Include="Resources\studentAvatar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>
