@@ -1,5 +1,6 @@
 ﻿using GUI.MyUserControls;
 using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -10,11 +11,18 @@ namespace GUI
         private enum SelectionState
         {
             Home,
-            DailySchoolSchedule
+            DailySchoolSchedule,
+            WeeklySchoolSchedule,
+            ViewHomeRoomClass
         }
 
+        #region danh sách UC bỏ vào các tab
         UC_DailySchoolSchedule dailySchoolSchedule;
+        UC_WeeklySchoolSchedule weeklySchoolSchedule;
+        UC_ViewHomeRoomClass viewHomeRoomClass;
         SelectionState state;
+        #endregion
+
         public frmStudent()
         {
             InitializeComponent();
@@ -158,6 +166,36 @@ namespace GUI
             //bị ảnh hưởng bởi việc đóng form hiện tại
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
+        }
+
+        private void btnXemTKB_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.WeeklySchoolSchedule)
+            {
+                state = SelectionState.WeeklySchoolSchedule;
+                panelShowDetail.Controls.Clear();
+                if (weeklySchoolSchedule == null)
+                {
+                    weeklySchoolSchedule = new UC_WeeklySchoolSchedule();
+                    weeklySchoolSchedule.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(weeklySchoolSchedule);
+            }
+        }
+
+        private void btnLopSH_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.ViewHomeRoomClass)
+            {
+                state = SelectionState.ViewHomeRoomClass;
+                panelShowDetail.Controls.Clear();
+                if (viewHomeRoomClass == null)
+                {
+                    viewHomeRoomClass = new UC_ViewHomeRoomClass();
+                    viewHomeRoomClass.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(viewHomeRoomClass);
+            }
         }
     }
 }
