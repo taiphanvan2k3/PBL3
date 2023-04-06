@@ -1,5 +1,4 @@
-﻿using GUI.MyUserControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,24 +12,14 @@ namespace GUI
 {
     public partial class frmTeacher : Form
     {
-        //Fields
         public frmTeacher()
         {
             InitializeComponent();
             CollapseMenu();
-            UC_DisplayInformation uC_DisplayInformation = new UC_DisplayInformation();
-            addUC(uC_DisplayInformation);
         }
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
-        }
-
-        private void addUC(UserControl uc) {
-            panelProfile.Controls.Clear();
-            panelProfile.Controls.Add(uc);
-            uc.BringToFront();
         }
         private void CollapseMenu()
         {
@@ -46,6 +35,8 @@ namespace GUI
                     menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(0);
                 }
+                pnlMain.Width += 100;
+                pnlMain.Location = new Point(pnlMain.Location.X - 100, pnlMain.Location.Y);
             }
             else
             { //Expand menu
@@ -59,21 +50,19 @@ namespace GUI
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
+                pnlMain.Width -= 100;
+                pnlMain.Location = new Point(pnlMain.Location.X + 100, pnlMain.Location.Y);
             }
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            pnlMain.Controls.Clear();
         }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GUI.MyUserControls
 {
-    partial class DapAnControl
+    partial class UC_DapAnControl
     {
         /// <summary> 
         /// Required designer variable.

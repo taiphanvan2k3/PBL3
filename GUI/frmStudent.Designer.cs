@@ -32,7 +32,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
             this.panelCalendar = new System.Windows.Forms.Panel();
             this.btnXemTKB = new FontAwesome.Sharp.IconButton();
@@ -58,8 +57,8 @@
             this.panelMenuTong = new System.Windows.Forms.Panel();
             this.panelShowDetail = new System.Windows.Forms.Panel();
             this.uC_StudentInfo = new GUI.MyUserControls.uC_StudentInfo();
+            this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.panelCalendar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,6 +69,7 @@
             this.panel2.SuspendLayout();
             this.panelMenuTong.SuspendLayout();
             this.panelShowDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -77,7 +77,6 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.circularPictureBox);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -108,24 +107,6 @@
             this.label1.Size = new System.Drawing.Size(66, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Xin chào";
-            // 
-            // circularPictureBox
-            // 
-            this.circularPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.circularPictureBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox.BorderSize = 2;
-            this.circularPictureBox.GradientAngle = 50F;
-            this.circularPictureBox.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.circularPictureBox.InitialImage = global::GUI.Properties.Resources.studentAvatar;
-            this.circularPictureBox.Location = new System.Drawing.Point(1381, 8);
-            this.circularPictureBox.Name = "circularPictureBox";
-            this.circularPictureBox.Size = new System.Drawing.Size(58, 58);
-            this.circularPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox.TabIndex = 0;
-            this.circularPictureBox.TabStop = false;
             // 
             // btnCalendar
             // 
@@ -474,6 +455,24 @@
             this.uC_StudentInfo.Size = new System.Drawing.Size(1190, 950);
             this.uC_StudentInfo.TabIndex = 0;
             // 
+            // circularPictureBox
+            // 
+            this.circularPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.circularPictureBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox.BorderColor2 = System.Drawing.Color.HotPink;
+            this.circularPictureBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox.BorderSize = 2;
+            this.circularPictureBox.GradientAngle = 50F;
+            this.circularPictureBox.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.circularPictureBox.InitialImage = global::GUI.Properties.Resources.studentAvatar;
+            this.circularPictureBox.Location = new System.Drawing.Point(1381, 8);
+            this.circularPictureBox.Name = "circularPictureBox";
+            this.circularPictureBox.Size = new System.Drawing.Size(58, 58);
+            this.circularPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox.TabIndex = 0;
+            this.circularPictureBox.TabStop = false;
+            // 
             // frmStudent
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -487,7 +486,6 @@
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.panelCalendar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -498,6 +496,7 @@
             this.panel2.ResumeLayout(false);
             this.panelMenuTong.ResumeLayout(false);
             this.panelShowDetail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

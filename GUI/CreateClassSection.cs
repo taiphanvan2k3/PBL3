@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.MyUserControls
+namespace GUI
 {
-    public partial class UC_Student : UserControl
+    public partial class CreateClassSection : Form
     {
-        public UC_Student()
+        public CreateClassSection()
         {
             InitializeComponent();
+        }
+
+        private void btnAddSV_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

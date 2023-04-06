@@ -18,7 +18,7 @@ namespace GUI
     public partial class frmLogin : Form
     {
 
-        PBL3Entities4 PBL3Entities = new PBL3Entities4();
+        //PBL3Entities4 PBL3Entities = new PBL3Entities4();
         public frmLogin()
         {
             InitializeComponent();
@@ -89,7 +89,7 @@ namespace GUI
         // Đăng nhập
 
 
-        private THONG_TIN_DANG_NHAP login(string username, string password)
+        /*private THONG_TIN_DANG_NHAP login(string username, string password)
         {
             var account = PBL3Entities.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
             if (account != null) {
@@ -97,14 +97,14 @@ namespace GUI
                     return account;
             }
             return null;
-        }
+        }*/
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             if (txtUsername.Texts.ToString() == "" || txtPassword.Texts.ToString() == "")
             {
                 MessageBox.Show("Please fill in at least one field\r\nFill in at least one field to search for your account");
             }
-            else
+            /*else
             {
                 var account = login(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
                 if (account != null)
@@ -122,9 +122,9 @@ namespace GUI
                 //frmTeacher.ShowDialog();
                 //this.Hide();
 
-            }
+            }*/
         }
-
+        
         #region các thuộc tính xử lí form di chuyển
         private bool move;
         private int moveX, moveY;
