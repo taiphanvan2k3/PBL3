@@ -44,8 +44,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panelLop = new System.Windows.Forms.Panel();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.btnLopHP = new FontAwesome.Sharp.IconButton();
+            this.btnLopSH = new FontAwesome.Sharp.IconButton();
             this.btnLopArrowDown = new FontAwesome.Sharp.IconButton();
             this.btnClass = new FontAwesome.Sharp.IconButton();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -154,6 +154,7 @@
             this.btnXemTKB.TabIndex = 7;
             this.btnXemTKB.Text = "     Xem thời\r\n     khoá biểu";
             this.btnXemTKB.UseVisualStyleBackColor = true;
+            this.btnXemTKB.Click += new System.EventHandler(this.btnXemTKB_Click);
             // 
             // btnXemLichTrongNgay
             // 
@@ -169,7 +170,7 @@
             this.btnXemLichTrongNgay.Name = "btnXemLichTrongNgay";
             this.btnXemLichTrongNgay.Size = new System.Drawing.Size(162, 57);
             this.btnXemLichTrongNgay.TabIndex = 6;
-            this.btnXemLichTrongNgay.Text = "     Xem lịch \r\n     trong ngày";
+            this.btnXemLichTrongNgay.Text = "        Xem lịch \r\n        trong ngày";
             this.btnXemLichTrongNgay.UseVisualStyleBackColor = true;
             this.btnXemLichTrongNgay.Click += new System.EventHandler(this.btnXemLichTrongNgay_Click);
             // 
@@ -266,8 +267,8 @@
             // 
             // panelLop
             // 
-            this.panelLop.Controls.Add(this.iconButton8);
-            this.panelLop.Controls.Add(this.iconButton7);
+            this.panelLop.Controls.Add(this.btnLopHP);
+            this.panelLop.Controls.Add(this.btnLopSH);
             this.panelLop.Controls.Add(this.btnLopArrowDown);
             this.panelLop.Controls.Add(this.btnClass);
             this.panelLop.Location = new System.Drawing.Point(3, 140);
@@ -277,45 +278,46 @@
             this.panelLop.Size = new System.Drawing.Size(217, 56);
             this.panelLop.TabIndex = 2;
             // 
-            // iconButton8
+            // btnLopHP
             // 
-            this.iconButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
-            this.iconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 35;
-            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(36, 104);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(186, 46);
-            this.iconButton8.TabIndex = 11;
-            this.iconButton8.Text = "        Lớp học phần";
-            this.iconButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.UseVisualStyleBackColor = false;
+            this.btnLopHP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
+            this.btnLopHP.FlatAppearance.BorderSize = 0;
+            this.btnLopHP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLopHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLopHP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnLopHP.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
+            this.btnLopHP.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnLopHP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLopHP.IconSize = 35;
+            this.btnLopHP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLopHP.Location = new System.Drawing.Point(36, 104);
+            this.btnLopHP.Name = "btnLopHP";
+            this.btnLopHP.Size = new System.Drawing.Size(186, 46);
+            this.btnLopHP.TabIndex = 11;
+            this.btnLopHP.Text = "        Lớp học phần";
+            this.btnLopHP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLopHP.UseVisualStyleBackColor = false;
             // 
-            // iconButton7
+            // btnLopSH
             // 
-            this.iconButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconButton7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 35;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(36, 52);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(171, 46);
-            this.iconButton7.TabIndex = 10;
-            this.iconButton7.Text = "        Lớp sinh hoạt";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.UseVisualStyleBackColor = false;
+            this.btnLopSH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
+            this.btnLopSH.FlatAppearance.BorderSize = 0;
+            this.btnLopSH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLopSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLopSH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnLopSH.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnLopSH.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnLopSH.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLopSH.IconSize = 35;
+            this.btnLopSH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLopSH.Location = new System.Drawing.Point(36, 52);
+            this.btnLopSH.Name = "btnLopSH";
+            this.btnLopSH.Size = new System.Drawing.Size(171, 46);
+            this.btnLopSH.TabIndex = 10;
+            this.btnLopSH.Text = "        Lớp sinh hoạt";
+            this.btnLopSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLopSH.UseVisualStyleBackColor = false;
+            this.btnLopSH.Click += new System.EventHandler(this.btnLopSH_Click);
             // 
             // btnLopArrowDown
             // 
@@ -391,7 +393,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
             this.panel2.Controls.Add(this.btnLogOut);
@@ -422,7 +424,7 @@
             // 
             // panelMenuTong
             // 
-            this.panelMenuTong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelMenuTong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelMenuTong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
             this.panelMenuTong.Controls.Add(this.flowLayoutPanel1);
@@ -434,8 +436,8 @@
             // 
             // panelShowDetail
             // 
-            this.panelShowDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelShowDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelShowDetail.AutoScroll = true;
             this.panelShowDetail.BackColor = System.Drawing.Color.White;
@@ -447,7 +449,7 @@
             // 
             // uC_StudentInfo
             // 
-            this.uC_StudentInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.uC_StudentInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uC_StudentInfo.Location = new System.Drawing.Point(3, 0);
             this.uC_StudentInfo.MinimumSize = new System.Drawing.Size(1190, 700);
@@ -517,8 +519,8 @@
         private FontAwesome.Sharp.IconButton btnDoExam;
         private FontAwesome.Sharp.IconButton btnLopArrowDown;
         private FontAwesome.Sharp.IconButton btnClass;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private FontAwesome.Sharp.IconButton btnLopHP;
+        private FontAwesome.Sharp.IconButton btnLopSH;
         private FontAwesome.Sharp.IconButton btnXemTKB;
         private FontAwesome.Sharp.IconButton btnXemLichTrongNgay;
         private System.Windows.Forms.Timer timerExpandClass;

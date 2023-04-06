@@ -106,15 +106,15 @@ namespace GUI
             }
             /*else
             {
-                var account = login(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
-                if (account != null)
-                {
-                    MessageBox.Show("Thành Công");
-                }
-                else
-                {
-                    MessageBox.Show("Thất bại");
-                }
+                //var account = login(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
+                //if (account != null)
+                //{
+                //    MessageBox.Show("Thành Công");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Thất bại");
+                //}
                 //string result =  CheckLoginBLL.Check(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
                 //MessageBox.Show(result);
                 //dataUser = CheckLoginBLL.getACC(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());

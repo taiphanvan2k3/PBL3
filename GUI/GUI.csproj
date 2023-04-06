@@ -243,11 +243,23 @@
     <Compile Include="MyUserControls\UC_StudentInfo.Designer.cs">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_ViewHomeRoomClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ViewHomeRoomClass.Designer.cs">
+      <DependentUpon>UC_ViewHomeRoomClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_ViewListModuleClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_ViewListModuleClass.Designer.cs">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_WeeklySchoolSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_WeeklySchoolSchedule.Designer.cs">
+      <DependentUpon>UC_WeeklySchoolSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -406,6 +418,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-date.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

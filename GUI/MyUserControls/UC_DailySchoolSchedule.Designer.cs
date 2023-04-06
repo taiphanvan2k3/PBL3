@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dtgv = new System.Windows.Forms.DataGridView();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +41,8 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.lblShowDateTime = new System.Windows.Forms.Label();
-            this.btnXemLich = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.btnXemLichHoc = new GUI.MyCustomControl.CustomButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +59,7 @@
             // 
             // separator
             // 
-            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.separator.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -67,35 +68,50 @@
             this.separator.Size = new System.Drawing.Size(1169, 1);
             this.separator.TabIndex = 1;
             // 
-            // dataGridView
+            // dtgv
             // 
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtgv.AllowUserToAddRows = false;
+            this.dtgv.AllowUserToDeleteRows = false;
+            this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt,
             this.maHP,
             this.tenHP,
             this.tenGV,
             this.tkb});
-            this.dataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView.Location = new System.Drawing.Point(24, 122);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.RowTemplate.Height = 30;
-            this.dataGridView.Size = new System.Drawing.Size(1134, 386);
-            this.dataGridView.TabIndex = 2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgv.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dtgv.Location = new System.Drawing.Point(24, 138);
+            this.dtgv.Name = "dtgv";
+            this.dtgv.ReadOnly = true;
+            this.dtgv.RowHeadersVisible = false;
+            this.dtgv.RowHeadersWidth = 51;
+            this.dtgv.RowTemplate.Height = 30;
+            this.dtgv.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgv.Size = new System.Drawing.Size(1134, 284);
+            this.dtgv.TabIndex = 2;
             // 
             // stt
             // 
@@ -103,13 +119,17 @@
             this.stt.HeaderText = "STT";
             this.stt.MinimumWidth = 6;
             this.stt.Name = "stt";
+            this.stt.ReadOnly = true;
             // 
             // maHP
             // 
+            this.maHP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.maHP.FillWeight = 111.631F;
             this.maHP.HeaderText = "Mã học phần";
             this.maHP.MinimumWidth = 6;
             this.maHP.Name = "maHP";
+            this.maHP.ReadOnly = true;
+            this.maHP.Width = 145;
             // 
             // tenHP
             // 
@@ -117,6 +137,7 @@
             this.tenHP.HeaderText = "Tên học phần";
             this.tenHP.MinimumWidth = 6;
             this.tenHP.Name = "tenHP";
+            this.tenHP.ReadOnly = true;
             // 
             // tenGV
             // 
@@ -124,6 +145,7 @@
             this.tenGV.HeaderText = "Giảng viên";
             this.tenGV.MinimumWidth = 6;
             this.tenGV.Name = "tenGV";
+            this.tenGV.ReadOnly = true;
             // 
             // tkb
             // 
@@ -131,6 +153,7 @@
             this.tkb.HeaderText = "Thời khoá biểu";
             this.tkb.MinimumWidth = 6;
             this.tkb.Name = "tkb";
+            this.tkb.ReadOnly = true;
             // 
             // dateTimePicker
             // 
@@ -168,39 +191,42 @@
             this.lblShowDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblShowDateTime.Click += new System.EventHandler(this.lblShowDateTime_Click);
             // 
-            // btnXemLich
+            // btnXemLichHoc
             // 
-            this.btnXemLich.BackColor = System.Drawing.Color.Wheat;
-            this.btnXemLich.FlatAppearance.BorderSize = 0;
-            this.btnXemLich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXemLich.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemLich.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.btnXemLich.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(153)))), ((int)(((byte)(174)))));
-            this.btnXemLich.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXemLich.IconSize = 30;
-            this.btnXemLich.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemLich.Location = new System.Drawing.Point(336, 76);
-            this.btnXemLich.Name = "btnXemLich";
-            this.btnXemLich.Size = new System.Drawing.Size(175, 34);
-            this.btnXemLich.TabIndex = 6;
-            this.btnXemLich.Text = "        Xem lịch học";
-            this.btnXemLich.UseVisualStyleBackColor = false;
-            this.btnXemLich.Click += new System.EventHandler(this.btnXemLich_Click);
+            this.btnXemLichHoc.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnXemLichHoc.BackGroundColor = System.Drawing.Color.MediumTurquoise;
+            this.btnXemLichHoc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnXemLichHoc.BorderRadius = 20;
+            this.btnXemLichHoc.BorderSize = 0;
+            this.btnXemLichHoc.FlatAppearance.BorderSize = 0;
+            this.btnXemLichHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemLichHoc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemLichHoc.ForeColor = System.Drawing.Color.Red;
+            this.btnXemLichHoc.Image = global::GUI.Properties.Resources.calendar_date;
+            this.btnXemLichHoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemLichHoc.Location = new System.Drawing.Point(372, 74);
+            this.btnXemLichHoc.Name = "btnXemLichHoc";
+            this.btnXemLichHoc.Size = new System.Drawing.Size(177, 40);
+            this.btnXemLichHoc.TabIndex = 16;
+            this.btnXemLichHoc.Text = "   Xem lịch học";
+            this.btnXemLichHoc.TextColor = System.Drawing.Color.Red;
+            this.btnXemLichHoc.UseVisualStyleBackColor = false;
+            this.btnXemLichHoc.Click += new System.EventHandler(this.btnXemLich_Click);
             // 
             // UC_DailySchoolSchedule
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnXemLich);
+            this.Controls.Add(this.btnXemLichHoc);
             this.Controls.Add(this.lblShowDateTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.dtgv);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.label1);
             this.Name = "UC_DailySchoolSchedule";
             this.Size = new System.Drawing.Size(1190, 950);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,15 +236,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel separator;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dtgv;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblShowDateTime;
-        private FontAwesome.Sharp.IconButton btnXemLich;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn maHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn tkb;
+        private MyCustomControl.CustomButton btnXemLichHoc;
     }
 }

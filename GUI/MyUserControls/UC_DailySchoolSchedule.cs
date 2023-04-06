@@ -38,7 +38,11 @@ namespace GUI.MyUserControls
         private void btnXemLich_Click(object sender, EventArgs e)
         {
             Panel pnl = Parent as Panel;
-            MessageBox.Show(pnl.Width + "");
+            //Test giao diện thôi
+            dtgv.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Rows.Add("1", "XSTK21.13", "Xác suất thống kê", "Phan Quang Như Anh", "T3,1-3,H302");
+            dtgv.Rows.Add("2", "OOAD21.13", "Phân tích thiết kế hướng đối tượng", "Lê Thị Mỹ Hạnh", "T3,1-3,H302");
+            dtgv.Height = dtgv.ColumnHeadersHeight + dtgv.Rows.Count * dtgv.Rows[0].Height;
         }
     }
 }
