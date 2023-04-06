@@ -86,22 +86,14 @@ namespace GUI
         }
 
 
-        private THONG_TIN_DANG_NHAP login(string username, string password)
-        {
-            var account = PBL3Entities.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
-            if (account != null) {
-                if (BCrypt.Net.BCrypt.Verify(password, account.MkUngDung))
-                    return account;
-            }
-            return null;
-        }
+
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             if (txtUsername.Texts.ToString() == "" || txtPassword.Texts.ToString() == "")
             {
                 MessageBox.Show("Please fill in at least one field\r\nFill in at least one field to search for your account");
             }
-            /*else
+            else
             {
 
                 ValidLogin validLogin = new ValidLogin();
@@ -121,7 +113,7 @@ namespace GUI
                     MessageBox.Show("Thất bại");
                 }
 
-            }*/
+            }
         }
         
         #region các thuộc tính xử lí form di chuyển

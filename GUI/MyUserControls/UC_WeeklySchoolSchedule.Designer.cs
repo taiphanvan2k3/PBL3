@@ -193,7 +193,7 @@
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customButton1.ForeColor = System.Drawing.Color.Red;
-            this.customButton1.Image = global::GUI.Properties.Resources.calendar_day;
+            //this.customButton1.Image = global::GUI.Properties.Resources.calendar_day;
             this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.customButton1.Location = new System.Drawing.Point(506, 76);
             this.customButton1.Name = "customButton1";

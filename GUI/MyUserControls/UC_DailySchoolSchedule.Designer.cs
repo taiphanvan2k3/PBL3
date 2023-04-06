@@ -202,7 +202,7 @@
             this.btnXemLichHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemLichHoc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemLichHoc.ForeColor = System.Drawing.Color.Red;
-            this.btnXemLichHoc.Image = global::GUI.Properties.Resources.calendar_date;
+            //this.btnXemLichHoc.Image = global::GUI.Properties.Resources.calendar_date;
             this.btnXemLichHoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXemLichHoc.Location = new System.Drawing.Point(372, 74);
             this.btnXemLichHoc.Name = "btnXemLichHoc";
