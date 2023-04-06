@@ -168,7 +168,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Cambria", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(77, 256);
+            this.lbName.Location = new System.Drawing.Point(77, 275);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(147, 36);
             this.lbName.TabIndex = 31;

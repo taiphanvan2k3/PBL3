@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-    public partial class UC_AddStudentAccount : UserControl
+    public partial class UC_ViewHomeRoomClass : UserControl
     {
-        public UC_AddStudentAccount()
+        public UC_ViewHomeRoomClass()
         {
             InitializeComponent();
         }

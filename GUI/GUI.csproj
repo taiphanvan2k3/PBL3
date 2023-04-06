@@ -99,6 +99,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateClassSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateClassSection.Designer.cs">
+      <DependentUpon>CreateClassSection.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,23 +147,11 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStudent2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmStudent2.Designer.cs">
-      <DependentUpon>frmStudent2.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmStudent.Designer.cs">
       <DependentUpon>frmStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTeacher.Designer.cs">
-      <DependentUpon>frmTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTaoCauHoi.cs">
       <SubType>Form</SubType>
@@ -189,12 +183,6 @@
     <Compile Include="frmViewDetailModuleClass.Designer.cs">
       <DependentUpon>frmViewDetailModuleClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyCustomControl\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -216,35 +204,29 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyUserControls\UC_AddStudentAccount.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_AddStudentAccount.Designer.cs">
-      <DependentUpon>UC_AddStudentAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyUserControls\UC_Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_Calendar.Designer.cs">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\DapAnControl.cs">
+    <Compile Include="MyUserControls\UC_ChangeGradeStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControls\DapAnControl.Designer.cs">
-      <DependentUpon>DapAnControl.cs</DependentUpon>
+    <Compile Include="MyUserControls\UC_ChangeGradeStudent.Designer.cs">
+      <DependentUpon>UC_ChangeGradeStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DapAnControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DapAnControl.Designer.cs">
+      <DependentUpon>UC_DapAnControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_AddressSelection.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_AddressSelection.Designer.cs">
       <DependentUpon>UC_AddressSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserControls\UC_Class.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_Class.Designer.cs">
-      <DependentUpon>UC_Class.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_DailySchoolSchedule.cs">
       <SubType>UserControl</SubType>
@@ -264,29 +246,17 @@
     <Compile Include="MyUserControls\UC_EditTeacher.Designer.cs">
       <DependentUpon>UC_EditTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_DanhSachLopSH.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_DanhSachLopSH.Designer.cs">
-      <DependentUpon>UC_DanhSachLopSH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserControls\UC_Student.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_Student.Designer.cs">
-      <DependentUpon>UC_Student.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserControls\UC_StudentInfo2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_StudentInfo2.Designer.cs">
-      <DependentUpon>UC_StudentInfo2.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyUserControls\UC_StudentInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_StudentInfo.Designer.cs">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ViewHomeRoomClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ViewHomeRoomClass.Designer.cs">
+      <DependentUpon>UC_ViewHomeRoomClass.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_ViewListModuleClass.cs">
       <SubType>UserControl</SubType>
@@ -294,10 +264,19 @@
     <Compile Include="MyUserControls\UC_ViewListModuleClass.Designer.cs">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_WeeklySchoolSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_WeeklySchoolSchedule.Designer.cs">
+      <DependentUpon>UC_WeeklySchoolSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
+    <EmbeddedResource Include="CreateClassSection.resx">
+      <DependentUpon>CreateClassSection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,14 +301,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStudent2.resx">
-      <DependentUpon>frmStudent2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmStudent.resx">
       <DependentUpon>frmStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTeacher.resx">
-      <DependentUpon>frmTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoCauHoi.resx">
       <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
@@ -349,23 +322,17 @@
     <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_AddStudentAccount.resx">
-      <DependentUpon>UC_AddStudentAccount.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControls\UC_ChangeGradeStudent.resx">
+      <DependentUpon>UC_ChangeGradeStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\DapAnControl.resx">
-      <DependentUpon>DapAnControl.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControls\UC_DapAnControl.resx">
+      <DependentUpon>UC_DapAnControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_AddressSelection.resx">
       <DependentUpon>UC_AddressSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_Class.resx">
-      <DependentUpon>UC_Class.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailySchoolSchedule.resx">
       <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>
@@ -375,15 +342,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_EditTeacher.resx">
       <DependentUpon>UC_EditTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_DanhSachLopSH.resx">
-      <DependentUpon>UC_DanhSachLopSH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_Student.resx">
-      <DependentUpon>UC_Student.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_StudentInfo2.resx">
-      <DependentUpon>UC_StudentInfo2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_StudentInfo.resx">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
@@ -460,6 +418,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\left1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-date.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

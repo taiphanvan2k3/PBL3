@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-    public partial class DapAnControl : UserControl
+    public partial class UC_DapAnControl : UserControl
     {
         private int _STT;
         public int STT
@@ -22,7 +22,7 @@ namespace GUI.MyUserControls
             get => textBox1.Text;
             set => textBox1.Text = value;
         }
-        public DapAnControl()
+        public UC_DapAnControl()
         {
             InitializeComponent();
         }

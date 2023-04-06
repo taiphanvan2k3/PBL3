@@ -7,7 +7,7 @@ namespace GUI
 {
     public partial class FormTaoCauHoi : Form
     {
-        private List<DapAnControl> dsDapAn;
+        private List<UC_DapAnControl> dsDapAn;
         public FormTaoCauHoi()
         {
             InitializeComponent();
@@ -31,10 +31,10 @@ namespace GUI
 
         private void FormTaoCauHoi_Load(object sender, EventArgs e)
         {
-            dsDapAn = new List<DapAnControl>();
+            dsDapAn = new List<UC_DapAnControl>();
             for (int i = 1; i <= 4; i++)
             {
-                DapAnControl da = new DapAnControl() { STT = i };
+                UC_DapAnControl da = new UC_DapAnControl() { STT = i };
                 panelDanhSachDapAn.Controls.Add(da);
                 dsDapAn.Add(da);
             }
@@ -63,7 +63,7 @@ namespace GUI
             if (textBoxCauHoi.Text == "")
                 check = false;
             string input = textBoxCauHoi.Text;
-            foreach (DapAnControl item in dsDapAn)
+            foreach (UC_DapAnControl item in dsDapAn)
             {
                 if (item.DapAn == "")
                 {

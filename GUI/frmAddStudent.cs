@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.MyUserControls
+namespace GUI
 {
-    public partial class UC_DanhSachLopSH : UserControl
+    public partial class frmAddStudent : Form
     {
-        public UC_DanhSachLopSH()
+        public frmAddStudent()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void panelGradient1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("test");
         }
     }
 }
