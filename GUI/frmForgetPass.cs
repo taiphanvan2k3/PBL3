@@ -1,4 +1,5 @@
-﻿using GUI.MyCustomControl;
+﻿using BLL;
+using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,10 +47,21 @@ namespace GUI
             }
             else
             {
-                frmCheckEmail frm = new frmCheckEmail();
-                this.Visible = false;
-                frm.ShowDialog();
-                this.Dispose();
+
+                ResetPassword resetPassword = new ResetPassword();
+                string result = resetPassword.ResetPasswordByEmail(txtEmail.Texts.ToString());
+                if (result == null)
+                {
+                    MessageBox.Show("Địa chỉ id không hợp lệ");
+                }
+                else
+                {
+                    MessageBox.Show("Đã gửi mã thành công");
+                    frmCheckEmail frm = new frmCheckEmail();
+                    this.Visible = false;
+                    frm.ShowDialog();
+                    this.Dispose();
+                }
             }
         }
 

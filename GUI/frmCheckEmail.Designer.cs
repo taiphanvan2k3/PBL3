@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckEmail));
             GUI.MyCustomControl.CustomButton btnOpenEmail;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckEmail));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMinisize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
@@ -59,6 +59,26 @@
             this.panel9.SuspendLayout();
             this.panel13.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnOpenEmail
+            // 
+            btnOpenEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(192)))), ((int)(((byte)(244)))));
+            btnOpenEmail.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(192)))), ((int)(((byte)(244)))));
+            btnOpenEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(107)))), ((int)(((byte)(104)))));
+            btnOpenEmail.BorderRadius = 15;
+            btnOpenEmail.BorderSize = 0;
+            btnOpenEmail.FlatAppearance.BorderSize = 0;
+            btnOpenEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnOpenEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnOpenEmail.ForeColor = System.Drawing.SystemColors.Window;
+            btnOpenEmail.Location = new System.Drawing.Point(20, 0);
+            btnOpenEmail.Name = "btnOpenEmail";
+            btnOpenEmail.Size = new System.Drawing.Size(360, 58);
+            btnOpenEmail.TabIndex = 25;
+            btnOpenEmail.Text = "Open email";
+            btnOpenEmail.TextColor = System.Drawing.SystemColors.Window;
+            btnOpenEmail.UseVisualStyleBackColor = false;
+            btnOpenEmail.Click += new System.EventHandler(this.btnOpenEmail_Click);
             // 
             // panel1
             // 
@@ -98,7 +118,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
             this.btnClose.IconColor = System.Drawing.Color.DarkRed;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 30;
@@ -271,25 +291,6 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(400, 21);
             this.panel13.TabIndex = 29;
-            // 
-            // btnOpenEmail
-            // 
-            btnOpenEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(192)))), ((int)(((byte)(244)))));
-            btnOpenEmail.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(192)))), ((int)(((byte)(244)))));
-            btnOpenEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(107)))), ((int)(((byte)(104)))));
-            btnOpenEmail.BorderRadius = 15;
-            btnOpenEmail.BorderSize = 0;
-            btnOpenEmail.FlatAppearance.BorderSize = 0;
-            btnOpenEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnOpenEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnOpenEmail.ForeColor = System.Drawing.SystemColors.Window;
-            btnOpenEmail.Location = new System.Drawing.Point(20, 0);
-            btnOpenEmail.Name = "btnOpenEmail";
-            btnOpenEmail.Size = new System.Drawing.Size(360, 58);
-            btnOpenEmail.TabIndex = 25;
-            btnOpenEmail.Text = "Open email";
-            btnOpenEmail.TextColor = System.Drawing.SystemColors.Window;
-            btnOpenEmail.UseVisualStyleBackColor = false;
             // 
             // frmCheckEmail
             // 

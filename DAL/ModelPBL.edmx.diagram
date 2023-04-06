@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f09d86cc88844663b0a52d54f627f7c6" Name="Diagram1">
+        <EntityTypeShape EntityType="PBL3Model.BAI_KIEM_TRA" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.CAU_HOI" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.CHUONG_TRINH_DAO_TAO" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.GIANG_VIEN" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.KHOA" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.LAM_BAI_KIEM_TRA" Width="1.5" PointX="7.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.LOP_HOC_PHAN" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.LOP_SINH_HOAT" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.MON_HOC" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.NGUOI_DUNG" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.PHU_HUYNH" Width="1.5" PointX="7.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.SINH_VIEN" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.SINHVIEN_LOPHOCPHAN" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.THOI_KHOA_BIEU" Width="1.5" PointX="10.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.THONG_BAO" Width="1.5" PointX="13.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.THONG_TIN_DANG_NHAP" Width="1.5" PointX="1.5" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="PBL3Model.FK__BAI_KIEM_T__MaGV__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaBaiKiemTra_LAMBKT" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaLopHP_BaiKT" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK__CAU_HOI__MaMH__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaCTDT" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaKhoa" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaGV" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaGV_GV" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaGVCN" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaGVThongBao_TB" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaKhoa_GV" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaSV_LAMBKT" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaHP_SVLHP" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaLopHP" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaMH" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaLopSH" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_IdUser" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaSV_SV" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaSV" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaSV_SVLHP" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.BAIKIEMTRA_CAUHOI" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.THONGBAO_LOPHOCPHAN" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PBL3Model.city" Width="1.5" PointX="8.375" PointY="1.125" />
+        <EntityTypeShape EntityType="PBL3Model.district" Width="1.5" PointX="10.625" PointY="0.875" />
+        <EntityTypeShape EntityType="PBL3Model.ward" Width="1.5" PointX="12.875" PointY="1" />
+        <AssociationConnector Association="PBL3Model.FK__district__city_i__71D1E811" />
+        <AssociationConnector Association="PBL3Model.FK__ward__district_i__74AE54BC" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

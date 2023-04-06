@@ -46,5 +46,12 @@ namespace GUI
             frmLogin1.ShowDialog();
             this.Dispose();
         }
+
+        private void btnOpenEmail_Click(object sender, EventArgs e)
+        {
+           frmValidPass frmValidPass = new frmValidPass();
+            frmValidPass.ShowDialog();
+            this.Dispose();
+        }
     }
 }

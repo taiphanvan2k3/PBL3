@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,11 +36,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,10 +62,83 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressSelectionDAL.cs" />
+    <Compile Include="BAI_KIEM_TRA.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAU_HOI.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHUONG_TRINH_DAO_TAO.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="city.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="district.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GIANG_VIEN.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHOA.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LAM_BAI_KIEM_TRA.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
     <Compile Include="LoginDAL.cs" />
+    <Compile Include="LOP_HOC_PHAN.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOP_SINH_HOAT.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPBL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPBL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPBL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPBL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPBL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MON_HOC.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NGUOI_DUNG.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHU_HUYNH.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SINHVIEN_LOPHOCPHAN.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SINH_VIEN.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THOI_KHOA_BIEU.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THONG_BAO.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THONG_TIN_DANG_NHAP.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValidLogin_DAL.cs" />
+    <Compile Include="ward.cs">
+      <DependentUpon>ModelPBL.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -69,6 +148,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="ModelPBL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPBL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelPBL.edmx.diagram">
+      <DependentUpon>ModelPBL.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -86,5 +172,25 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelPBL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPBL.edmx</DependentUpon>
+      <LastGenOutput>ModelPBL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelPBL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPBL.edmx</DependentUpon>
+      <LastGenOutput>ModelPBL.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
