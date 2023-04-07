@@ -202,7 +202,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.House;
             this.btnHome.IconColor = System.Drawing.Color.White;
             this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHome.IconSize = 30;
@@ -244,7 +244,7 @@
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
             this.btnMenu.IconColor = System.Drawing.Color.White;
             this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenu.IconSize = 30;

@@ -111,6 +111,12 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStudent.Designer.cs">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,12 @@
     <Compile Include="frmForgetPass.Designer.cs">
       <DependentUpon>frmForgetPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacher.Designer.cs">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmValidPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +199,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MyCustomControl\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyCustomControl\CustomCombobox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MyCustomControl\CustomTextBox.cs">
@@ -280,6 +295,9 @@
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStudent.resx">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmForgetPass.resx">
       <DependentUpon>frmForgetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacher.resx">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmValidPass.resx">
       <DependentUpon>frmValidPass.cs</DependentUpon>

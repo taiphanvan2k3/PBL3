@@ -215,7 +215,7 @@
             // 
             this.btnExpandMenu.FlatAppearance.BorderSize = 0;
             this.btnExpandMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpandMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btnExpandMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
             this.btnExpandMenu.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnExpandMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExpandMenu.IconSize = 33;
@@ -251,7 +251,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.House;
             this.btnHome.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHome.IconSize = 35;
@@ -369,7 +369,7 @@
             this.btnDoExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoExam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnDoExam.IconChar = FontAwesome.Sharp.IconChar.Pencil;
+            this.btnDoExam.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
             this.btnDoExam.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnDoExam.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoExam.IconSize = 35;
@@ -393,7 +393,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
             this.panel2.Controls.Add(this.btnLogOut);
@@ -424,7 +424,7 @@
             // 
             // panelMenuTong
             // 
-            this.panelMenuTong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panelMenuTong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelMenuTong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
             this.panelMenuTong.Controls.Add(this.flowLayoutPanel1);
@@ -436,8 +436,8 @@
             // 
             // panelShowDetail
             // 
-            this.panelShowDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelShowDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelShowDetail.AutoScroll = true;
             this.panelShowDetail.BackColor = System.Drawing.Color.White;
@@ -449,7 +449,7 @@
             // 
             // uC_StudentInfo
             // 
-            this.uC_StudentInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.uC_StudentInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uC_StudentInfo.Location = new System.Drawing.Point(3, 0);
             this.uC_StudentInfo.MinimumSize = new System.Drawing.Size(1190, 700);
