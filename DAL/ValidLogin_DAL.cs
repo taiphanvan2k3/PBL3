@@ -32,5 +32,15 @@ namespace DAL
             }
             return null;
         }
+
+        public THONG_TIN_DANG_NHAP CheckUsernameExist(string username)
+        {
+            //Kiểm tra username có tồn tại hay không trước khi check mk
+            using (PBL3Entities db = new PBL3Entities())
+            {
+                //null nếu không tồn tại
+                return db.THONG_TIN_DANG_NHAP.Find(username);
+            }
+        }
     }
 }

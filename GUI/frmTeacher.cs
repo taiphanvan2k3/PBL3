@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,7 +63,7 @@ namespace GUI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            UtilityClass.OpenNewForm(this, new frmLogin());
         }
     }
 }

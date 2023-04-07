@@ -45,5 +45,15 @@ namespace BLL
             return new string(Enumerable.Repeat(chars, 6)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public bool IsValidMaXacThuc(string username, string maXacThuc)
+        {
+            var thongTinDangNhap = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
+            if (thongTinDangNhap == null) return false;
+
+            return thongTinDangNhap.MaXacThucDeLayLaiMK.Equals(maXacThuc);
+        }
+
+
     }
 }

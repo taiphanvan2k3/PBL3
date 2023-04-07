@@ -57,6 +57,7 @@
             this.panelMenuTong = new System.Windows.Forms.Panel();
             this.panelShowDetail = new System.Windows.Forms.Panel();
             this.uC_StudentInfo = new GUI.MyUserControls.uC_StudentInfo();
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.panel3.SuspendLayout();
             this.panelCalendar.SuspendLayout();
@@ -69,12 +70,14 @@
             this.panel2.SuspendLayout();
             this.panelMenuTong.SuspendLayout();
             this.panelShowDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
+            this.panel3.Controls.Add(this.avatarTopRight);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -457,6 +460,23 @@
             this.uC_StudentInfo.Size = new System.Drawing.Size(1190, 950);
             this.uC_StudentInfo.TabIndex = 0;
             // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1371, 6);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
+            // 
             // circularPictureBox
             // 
             this.circularPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -498,6 +518,7 @@
             this.panel2.ResumeLayout(false);
             this.panelMenuTong.ResumeLayout(false);
             this.panelShowDetail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -533,5 +554,6 @@
         private System.Windows.Forms.Panel panelMenuTong;
         private System.Windows.Forms.Panel panelShowDetail;
         private MyUserControls.uC_StudentInfo uC_StudentInfo;
+        private MyCustomControl.CircularPictureBox avatarTopRight;
     }
 }

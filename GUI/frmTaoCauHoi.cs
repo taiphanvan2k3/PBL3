@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormTaoCauHoi : Form
+    public partial class frmTaoCauHoi : Form
     {
         private List<UC_DapAnControl> dsDapAn;
-        public FormTaoCauHoi()
+        public frmTaoCauHoi()
         {
             InitializeComponent();
         }
@@ -35,7 +35,9 @@ namespace GUI
             for (int i = 1; i <= 4; i++)
             {
                 UC_DapAnControl da = new UC_DapAnControl() { STT = i };
+                da.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                 panelDanhSachDapAn.Controls.Add(da);
+                
                 dsDapAn.Add(da);
             }
         }
@@ -96,5 +98,12 @@ namespace GUI
             this.Dispose();
         }
 
+        private void panelDanhSachDapAn_Resize(object sender, EventArgs e)
+        {
+            foreach (UC_DapAnControl uc in panelDanhSachDapAn.Controls)
+            {
+                uc.Width = panelDanhSachDapAn.Width - 10;
+            }
+        }
     }
 }

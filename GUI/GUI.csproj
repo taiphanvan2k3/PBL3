@@ -99,17 +99,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateClassSection.cs">
+    <Compile Include="frmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateClassSection.Designer.cs">
-      <DependentUpon>CreateClassSection.cs</DependentUpon>
+    <Compile Include="frmAddStudent.Designer.cs">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTest.cs">
+    <Compile Include="frmCreateClassSection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTest.Designer.cs">
-      <DependentUpon>FormTest.cs</DependentUpon>
+    <Compile Include="frmCreateClassSection.Designer.cs">
+      <DependentUpon>frmCreateClassSection.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddStudent.cs">
       <SubType>Form</SubType>
@@ -159,11 +159,11 @@
     <Compile Include="frmStudent.Designer.cs">
       <DependentUpon>frmStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoCauHoi.cs">
+    <Compile Include="frmTaoCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoCauHoi.Designer.cs">
-      <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
+    <Compile Include="frmTaoCauHoi.Designer.cs">
+      <DependentUpon>frmTaoCauHoi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmExam.cs">
       <SubType>Form</SubType>
@@ -289,11 +289,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
-    <EmbeddedResource Include="CreateClassSection.resx">
-      <DependentUpon>CreateClassSection.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddStudent.resx">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTest.resx">
-      <DependentUpon>FormTest.cs</DependentUpon>
+    <EmbeddedResource Include="frmCreateClassSection.resx">
+      <DependentUpon>frmCreateClassSection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudent.resx">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
@@ -322,8 +322,8 @@
     <EmbeddedResource Include="frmStudent.resx">
       <DependentUpon>frmStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoCauHoi.resx">
-      <DependentUpon>FormTaoCauHoi.cs</DependentUpon>
+    <EmbeddedResource Include="frmTaoCauHoi.resx">
+      <DependentUpon>frmTaoCauHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForgetPass.resx">
       <DependentUpon>frmForgetPass.cs</DependentUpon>
