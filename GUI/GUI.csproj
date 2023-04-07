@@ -201,9 +201,6 @@
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MyCustomControl\CustomCombobox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="MyCustomControl\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
