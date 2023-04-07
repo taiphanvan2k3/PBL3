@@ -3,21 +3,25 @@ using DTO;
 
 namespace BLL
 {
-    public class ValidLogin
+    public class ValidLogin_BLL
     {
-        private static ValidLogin _Instance;
-        public static ValidLogin Instance
+        private static ValidLogin_BLL _Instance;
+        public static ValidLogin_BLL Instance
         {
             get
             {
                 if (_Instance == null)
                 {
-                    _Instance = new ValidLogin();
+                    _Instance = new ValidLogin_BLL();
                 }
                 return _Instance;
             }
         }
 
+        private ValidLogin_BLL()
+        {
+
+        }
         //private  PBL3Entities modelPBL3Entities1 = new PBL3Entities();
 
         //public THONG_TIN_DANG_NHAP_DTO login(string username, string password)
@@ -42,5 +46,21 @@ namespace BLL
             return null;
         }
 
+        public THONG_TIN_DANG_NHAP_DTO CheckUsername(string username)
+        {
+            THONG_TIN_DANG_NHAP account=ValidLogin_DAL.Instance.CheckUsernameExist(username);
+            if (account != null)
+            {
+                return new THONG_TIN_DANG_NHAP_DTO(account.TaiKhoan, account.MkUngDung, account.VaiTro,
+                                                    account.MaXacThucDeLayLaiMK);
+            }
+            return null;
+        }
+
+        public bool CheckCorrectPassword(string passwordInput, THONG_TIN_DANG_NHAP_DTO account)
+        {
+            //Kiểm tra xem có trùng với mật khẩu đã lưu trong CSDL?
+            return BCrypt.Net.BCrypt.Verify(passwordInput, account.MkUngDung);
+        }
     }
 }

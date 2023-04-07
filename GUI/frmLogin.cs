@@ -1,16 +1,10 @@
 ﻿using BLL;
 using DTO;
-using GUI.MyCustomControl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
+using System.Threading;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GUI
@@ -49,7 +43,7 @@ namespace GUI
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            if(!txtPassword.PasswordChar)
+            if (!txtPassword.PasswordChar)
             {
                 btnDoNotShow.BringToFront();
                 txtPassword.PasswordChar = true;
@@ -57,7 +51,7 @@ namespace GUI
         }
 
         private void txtUsername_Click(object sender, EventArgs e)
-        { 
+        {
             //Edit:2/3/2023 by Tai
             //Khi bấm vào lại textbox username thì ẩn mật khẩu đi
             //và hiện tại btnShow nằm chồng lên btnDoNotShow nên phải mang nó lên trước 
@@ -86,7 +80,6 @@ namespace GUI
         }
 
 
-
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             if (txtUsername.Texts.ToString() == "" || txtPassword.Texts.ToString() == "")
@@ -95,9 +88,9 @@ namespace GUI
             }
             else
             {
-
-                ValidLogin validLogin = new ValidLogin();
-
+                #region Phần của Ngân
+                /*
+                 * ValidLogin validLogin = new ValidLogin();
                 var account = validLogin.login(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
                 if (account != null)
                 {
@@ -112,10 +105,43 @@ namespace GUI
                 {
                     MessageBox.Show("Thất bại");
                 }
+                 */
+                #endregion
 
+
+                THONG_TIN_DANG_NHAP_DTO account = ValidLogin_BLL.Instance.CheckUsername(txtUsername.Texts);
+                if (account == null)
+                    MessageBox.Show("Tài khoản không tồn tại.");
+                else
+                {
+                    bool checkLoginSuccess = ValidLogin_BLL.Instance.CheckCorrectPassword(txtPassword.Texts, account);
+                    if (checkLoginSuccess)
+                    {
+                        Form frm = null;
+                        if (account.VaiTro == "Giáo viên")
+                        {
+                            //102BK0001 123456
+                            MessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
+                            frm = new frmTeacher();
+                        }
+                        else if (account.VaiTro == "Sinh Viên")
+                        {
+                            //101190001 123456
+                            MessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
+                            frm = new frmStudent();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bạn đang đăng nhập với vai trò Quản trị viên");
+                            frm = new frmAdmin();
+                        }
+                        UtilityClass.OpenNewForm(this, frm);
+                    }
+                    else MessageBox.Show("Mật khẩu không chính xác.");
+                }
             }
         }
-        
+
         #region các thuộc tính xử lí form di chuyển
         private bool move;
         private int moveX, moveY;
@@ -137,7 +163,7 @@ namespace GUI
             {
                 //set lại vị trí của form trên màn hình
                 this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
-            }   
+            }
         }
 
         private void panelTitle_MouseUp(object sender, MouseEventArgs e)

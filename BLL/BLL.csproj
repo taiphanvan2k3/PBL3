@@ -62,10 +62,11 @@
     <Compile Include="AddressSelectionBLL.cs" />
     <Compile Include="CheckLoginBLL.cs" />
     <Compile Include="MoveFormHelper.cs" />
+    <Compile Include="UtilityClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResetPassword.cs" />
-    <Compile Include="ValidLogin.cs" />
+    <Compile Include="ValidLogin_BLL.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

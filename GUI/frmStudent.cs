@@ -1,4 +1,5 @@
-﻿using GUI.MyUserControls;
+﻿using BLL;
+using GUI.MyUserControls;
 using System;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
@@ -155,17 +156,7 @@ namespace GUI
              * và chú ý là Close() thôi chứ chưa Dispose() nên vd ở 1 lớp nào đó vẫn có thể truy cập
              * đến thuộc tính của form này thông qua đối tượng của form
              */
-            this.Close();
-            Thread t = new Thread(() =>
-            {
-                Application.Run(new frmLogin());
-            });
-
-            //Thiết lập trạng thái của tiến trình mới là STA (Single-Threaded Apartment)
-            //để yêu cầu tiến trình mới được chạy trên một luồng riêng biệt, do đó nó không
-            //bị ảnh hưởng bởi việc đóng form hiện tại
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
+            UtilityClass.OpenNewForm(this, new frmLogin());
         }
 
         private void btnXemTKB_Click(object sender, EventArgs e)
