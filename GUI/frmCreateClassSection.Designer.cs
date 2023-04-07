@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class CreateClassSection
+    partial class frmCreateClassSection
     {
         /// <summary>
         /// Required designer variable.

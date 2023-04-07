@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormTest : Form
+    public partial class frmCreateClassSection : Form
     {
-        public FormTest()
+        public frmCreateClassSection()
         {
             InitializeComponent();
+        }
+
+        private void btnAddSV_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
