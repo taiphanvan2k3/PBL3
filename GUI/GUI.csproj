@@ -135,11 +135,11 @@
     <Compile Include="frmDisplay.Designer.cs">
       <DependentUpon>frmDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEnterMaXacNhan.cs">
+    <Compile Include="frmEnterDigitCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEnterMaXacNhan.Designer.cs">
-      <DependentUpon>frmEnterMaXacNhan.cs</DependentUpon>
+    <Compile Include="frmEnterDigitCode.Designer.cs">
+      <DependentUpon>frmEnterDigitCode.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -298,8 +298,8 @@
     <EmbeddedResource Include="frmDisplay.resx">
       <DependentUpon>frmDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEnterMaXacNhan.resx">
-      <DependentUpon>frmEnterMaXacNhan.cs</DependentUpon>
+    <EmbeddedResource Include="frmEnterDigitCode.resx">
+      <DependentUpon>frmEnterDigitCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmExam.resx">
       <DependentUpon>frmExam.cs</DependentUpon>

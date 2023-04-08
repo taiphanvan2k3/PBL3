@@ -22,18 +22,6 @@ namespace BLL
         {
 
         }
-        //private  PBL3Entities modelPBL3Entities1 = new PBL3Entities();
-
-        //public THONG_TIN_DANG_NHAP_DTO login(string username, string password)
-        //{
-        //    var account = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
-        //    if (account != null)
-        //    {
-        //        if (BCrypt.Net.BCrypt.Verify(password, account.MkUngDung))
-        //            return new THONG_TIN_DANG_NHAP_DTO(account.TaiKhoan, account.MkUngDung, account.VaiTro, account.MaXacThucDeLayLaiMK);
-        //    }
-        //    return null;
-        //}
 
         public THONG_TIN_DANG_NHAP_DTO login(string username, string password)
         {
@@ -56,11 +44,10 @@ namespace BLL
             }
             return null;
         }
-
-        public bool CheckCorrectPassword(string passwordInput, THONG_TIN_DANG_NHAP_DTO account)
+        public void UpdateAllCodesToNull_BLL()
         {
-            //Kiểm tra xem có trùng với mật khẩu đã lưu trong CSDL?
-            return BCrypt.Net.BCrypt.Verify(passwordInput, account.MkUngDung);
+            ValidLogin_BLL.Instance.UpdateAllCodesToNull_BLL();
         }
+
     }
 }

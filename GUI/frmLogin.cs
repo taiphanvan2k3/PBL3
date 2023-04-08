@@ -4,7 +4,6 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Threading;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace GUI
@@ -19,6 +18,8 @@ namespace GUI
         }
 
         public static DataRow dataUser = null;
+        Form frm = null;
+
 
         // Custom Minisize and Close
         private void btnClose_Click(object sender, EventArgs e)
@@ -88,36 +89,14 @@ namespace GUI
             }
             else
             {
-                #region Phần của Ngân
-                /*
-                 * ValidLogin validLogin = new ValidLogin();
-                var account = validLogin.login(txtUsername.Texts.ToString(), txtPassword.Texts.ToString());
-                if (account != null)
-                {
-                    if (account.VaiTro == "Quản trị viên")
-                        MessageBox.Show("1 " + account.VaiTro);
-                    else if (account.VaiTro == "Sinh Viên")
-                        MessageBox.Show("2 " + account.VaiTro);
-                    else if (account.VaiTro == "Giáo viên")
-                        MessageBox.Show("3 " + account.VaiTro);
-                }
-                else
-                {
-                    MessageBox.Show("Thất bại");
-                }
-                 */
-                #endregion
-
-
-                THONG_TIN_DANG_NHAP_DTO account = ValidLogin_BLL.Instance.CheckUsername(txtUsername.Texts);
+                var account = ValidLogin_BLL.Instance.CheckUsername(txtUsername.Texts);
                 if (account == null)
                     MessageBox.Show("Tài khoản không tồn tại.");
                 else
                 {
-                    bool checkLoginSuccess = ValidLogin_BLL.Instance.CheckCorrectPassword(txtPassword.Texts, account);
-                    if (checkLoginSuccess)
+                    var accountValid = ValidLogin_BLL.Instance.login(txtUsername.Texts, txtPassword.Texts);
+                    if (accountValid != null)
                     {
-                        Form frm = null;
                         if (account.VaiTro == "Giáo viên")
                         {
                             //102BK0001 123456

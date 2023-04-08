@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,5 +43,19 @@ namespace DAL
                 return db.THONG_TIN_DANG_NHAP.Find(username);
             }
         }
+
+        public void UpdateAllCodesToNull()
+        {
+            
+                var userInfoList = modelPBL3Entities1.THONG_TIN_DANG_NHAP.ToList();
+
+                foreach (var userInfo in userInfoList)
+                {
+                    userInfo.MaXacThucDeLayLaiMK = null;
+                }
+
+            modelPBL3Entities1.SaveChanges();
+            }
+        
     }
 }

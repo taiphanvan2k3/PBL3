@@ -78,6 +78,7 @@
     <Compile Include="district.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>
+    <Compile Include="ForgetPass_DAL.cs" />
     <Compile Include="GIANG_VIEN.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>
@@ -87,7 +88,6 @@
     <Compile Include="LAM_BAI_KIEM_TRA.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>
-    <Compile Include="LoginDAL.cs" />
     <Compile Include="LOP_HOC_PHAN.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>

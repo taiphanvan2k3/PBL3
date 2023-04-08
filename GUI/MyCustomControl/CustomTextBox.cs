@@ -33,6 +33,8 @@ namespace GUI.MyCustomControl
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
+
+        private int maxLengh = 32767;
         public CustomTextBox()
         {
             InitializeComponent();
@@ -156,7 +158,7 @@ namespace GUI.MyCustomControl
                     textBox1.UseSystemPasswordChar = value;
             }
         }
-
+        
         [Category("RJ Code Advance")]
         public bool Multiline
         {
@@ -249,6 +251,17 @@ namespace GUI.MyCustomControl
                 placeholderText = value;
                 textBox1.Text = "";
                 SetPlaceholder();
+            }
+        }
+
+        [Category("RJ Code Advance")]
+        public int MaxLength
+        {
+            get { return maxLengh; }
+            set
+            {
+                maxLengh = value;
+                textBox1.MaxLength = maxLengh;
             }
         }
         #endregion
