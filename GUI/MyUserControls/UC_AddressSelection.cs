@@ -1,7 +1,5 @@
 ﻿using BLL;
 using DTO;
-using System.Collections.Generic;
-using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -13,6 +11,18 @@ namespace GUI.MyUserControls
             InitializeComponent();
         }
 
+        private void SetSelectedItemForCBB(string value, ComboBox cbb)
+        {
+            foreach (var item in cbb.Items)
+            {
+                CBBAddressItem address = item as CBBAddressItem;
+                if (address.Value == value)
+                {
+                    cbb.SelectedItem = address;
+                    break;
+                }
+            }
+        }
         public string TinhThanhPho
         {
             get
@@ -23,7 +33,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                comboBoxTinhThanhPho.SelectedItem = value;
+                SetSelectedItemForCBB(value, comboBoxTinhThanhPho);
             }
         }
 
@@ -37,7 +47,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                comboBoxQuanHuyen.SelectedItem = value;
+                SetSelectedItemForCBB(value, comboBoxQuanHuyen);
             }
         }
 
@@ -51,7 +61,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                comboBoxXaPhuong.SelectedItem = value;
+                SetSelectedItemForCBB(value, comboBoxXaPhuong);
             }
         }
 

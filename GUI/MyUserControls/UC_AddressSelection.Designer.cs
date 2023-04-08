@@ -74,6 +74,7 @@
             this.comboBoxTinhThanhPho.Name = "comboBoxTinhThanhPho";
             this.comboBoxTinhThanhPho.Size = new System.Drawing.Size(177, 24);
             this.comboBoxTinhThanhPho.TabIndex = 3;
+            this.comboBoxTinhThanhPho.TabStop = false;
             this.comboBoxTinhThanhPho.SelectedIndexChanged += new System.EventHandler(this.comboBoxTinhThanhPho_SelectedIndexChanged);
             // 
             // comboBoxQuanHuyen
@@ -86,6 +87,7 @@
             this.comboBoxQuanHuyen.Name = "comboBoxQuanHuyen";
             this.comboBoxQuanHuyen.Size = new System.Drawing.Size(177, 24);
             this.comboBoxQuanHuyen.TabIndex = 4;
+            this.comboBoxQuanHuyen.TabStop = false;
             this.comboBoxQuanHuyen.SelectedIndexChanged += new System.EventHandler(this.comboBoxQuanHuyen_SelectedIndexChanged);
             // 
             // comboBoxXaPhuong
@@ -98,6 +100,7 @@
             this.comboBoxXaPhuong.Name = "comboBoxXaPhuong";
             this.comboBoxXaPhuong.Size = new System.Drawing.Size(177, 24);
             this.comboBoxXaPhuong.TabIndex = 5;
+            this.comboBoxXaPhuong.TabStop = false;
             // 
             // UC_AddressSelection
             // 

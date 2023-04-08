@@ -32,33 +32,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNgaySinh = new System.Windows.Forms.TextBox();
+            this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxNoiSinh = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBoxQuocTinh = new System.Windows.Forms.ComboBox();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtKhoa = new System.Windows.Forms.TextBox();
+            this.txtLopSH = new System.Windows.Forms.TextBox();
+            this.txtCTDT = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtEmailCaNhan = new System.Windows.Forms.TextBox();
+            this.comboBoxDanToc = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtSoNha = new System.Windows.Forms.TextBox();
+            this.btnLuuTTCaNhan = new System.Windows.Forms.Button();
+            this.btnLuuTTNhanThan = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
@@ -67,8 +67,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtTenCha = new System.Windows.Forms.TextBox();
+            this.txtTenMe = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -79,8 +79,8 @@
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtSDTMe = new System.Windows.Forms.TextBox();
+            this.txtSDTCha = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -131,29 +131,29 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(230, 124);
+            this.label3.Location = new System.Drawing.Point(230, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "Giới tính";
             // 
-            // textBoxName
+            // txtName
             // 
-            this.textBoxName.Enabled = false;
-            this.textBoxName.Location = new System.Drawing.Point(333, 90);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(223, 22);
-            this.textBoxName.TabIndex = 4;
-            this.textBoxName.Text = "Phan Văn Tài";
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(333, 90);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(223, 22);
+            this.txtName.TabIndex = 4;
+            this.txtName.Text = "Phan Văn Tài";
             // 
-            // textBox2
+            // txtGioiTinh
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(333, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 22);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Nam";
+            this.txtGioiTinh.Enabled = false;
+            this.txtGioiTinh.Location = new System.Drawing.Point(333, 124);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(131, 22);
+            this.txtGioiTinh.TabIndex = 5;
+            this.txtGioiTinh.Text = "Nam";
             // 
             // label2
             // 
@@ -166,41 +166,43 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Ngày sinh:";
             // 
-            // textBoxNgaySinh
+            // txtNgaySinh
             // 
-            this.textBoxNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNgaySinh.Enabled = false;
-            this.textBoxNgaySinh.Location = new System.Drawing.Point(710, 90);
-            this.textBoxNgaySinh.Name = "textBoxNgaySinh";
-            this.textBoxNgaySinh.Size = new System.Drawing.Size(170, 22);
-            this.textBoxNgaySinh.TabIndex = 7;
-            this.textBoxNgaySinh.Text = "24/03/2003";
+            this.txtNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNgaySinh.Enabled = false;
+            this.txtNgaySinh.Location = new System.Drawing.Point(710, 90);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(170, 22);
+            this.txtNgaySinh.TabIndex = 7;
+            this.txtNgaySinh.Text = "24/03/2003";
             // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(953, 90);
+            this.label4.Location = new System.Drawing.Point(936, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 18);
             this.label4.TabIndex = 9;
             this.label4.Text = "Nơi sinh:";
             // 
-            // comboBox1
+            // comboBoxNoiSinh
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1057, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
+            this.comboBoxNoiSinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxNoiSinh.FormattingEnabled = true;
+            this.comboBoxNoiSinh.Location = new System.Drawing.Point(1025, 90);
+            this.comboBoxNoiSinh.Name = "comboBoxNoiSinh";
+            this.comboBoxNoiSinh.Size = new System.Drawing.Size(153, 24);
+            this.comboBoxNoiSinh.TabIndex = 10;
+            this.comboBoxNoiSinh.TabStop = false;
+            this.comboBoxNoiSinh.SelectedIndexChanged += new System.EventHandler(this.comboBoxNoiSinh_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(230, 163);
+            this.label5.Location = new System.Drawing.Point(230, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 18);
             this.label5.TabIndex = 11;
@@ -222,48 +224,49 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(953, 127);
+            this.label8.Location = new System.Drawing.Point(936, 127);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 18);
+            this.label8.Size = new System.Drawing.Size(76, 18);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Quốc tịch";
+            this.label8.Text = "Quốc tịch:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(214, 323);
+            this.label9.Location = new System.Drawing.Point(220, 323);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 18);
             this.label9.TabIndex = 15;
             this.label9.Text = "Điện thoại:";
             // 
-            // comboBox2
+            // comboBoxQuocTinh
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1057, 121);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 18;
+            this.comboBoxQuocTinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxQuocTinh.FormattingEnabled = true;
+            this.comboBoxQuocTinh.Location = new System.Drawing.Point(1025, 121);
+            this.comboBoxQuocTinh.Name = "comboBoxQuocTinh";
+            this.comboBoxQuocTinh.Size = new System.Drawing.Size(153, 24);
+            this.comboBoxQuocTinh.TabIndex = 18;
+            this.comboBoxQuocTinh.TabStop = false;
             // 
-            // textBox5
+            // txtCCCD
             // 
-            this.textBox5.Location = new System.Drawing.Point(333, 163);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(131, 22);
-            this.textBox5.TabIndex = 19;
-            this.textBox5.Text = "123456789";
+            this.txtCCCD.Location = new System.Drawing.Point(333, 163);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(131, 22);
+            this.txtCCCD.TabIndex = 19;
+            this.txtCCCD.Text = "123456789";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(233, 252);
+            this.label7.Location = new System.Drawing.Point(252, 252);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 18);
+            this.label7.Size = new System.Drawing.Size(47, 18);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Ngành:";
+            this.label7.Text = "Khoa:";
             // 
             // label10
             // 
@@ -298,40 +301,40 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
-            // textBox6
+            // txtKhoa
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(333, 252);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(345, 22);
-            this.textBox6.TabIndex = 24;
-            this.textBox6.Text = "Công nghệ thông tin";
+            this.txtKhoa.Enabled = false;
+            this.txtKhoa.Location = new System.Drawing.Point(333, 252);
+            this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.Size = new System.Drawing.Size(345, 22);
+            this.txtKhoa.TabIndex = 24;
+            this.txtKhoa.Text = "Công nghệ thông tin";
             // 
-            // textBox7
+            // txtLopSH
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(908, 252);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(270, 22);
-            this.textBox7.TabIndex = 25;
-            this.textBox7.Text = "21TCLC_DT3";
+            this.txtLopSH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLopSH.Enabled = false;
+            this.txtLopSH.Location = new System.Drawing.Point(908, 252);
+            this.txtLopSH.Name = "txtLopSH";
+            this.txtLopSH.Size = new System.Drawing.Size(270, 22);
+            this.txtLopSH.TabIndex = 25;
+            this.txtLopSH.Text = "21TCLC_DT3";
             // 
-            // textBox8
+            // txtCTDT
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(333, 288);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(345, 22);
-            this.textBox8.TabIndex = 26;
-            this.textBox8.Text = "Công nghệ Thông tin K2021CLC Đặc thù";
+            this.txtCTDT.Enabled = false;
+            this.txtCTDT.Location = new System.Drawing.Point(333, 288);
+            this.txtCTDT.Name = "txtCTDT";
+            this.txtCTDT.Size = new System.Drawing.Size(345, 22);
+            this.txtCTDT.TabIndex = 26;
+            this.txtCTDT.Text = "Công nghệ Thông tin K2021CLC Đặc thù";
             // 
-            // textBox9
+            // txtSDT
             // 
-            this.textBox9.Location = new System.Drawing.Point(333, 323);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(345, 22);
-            this.textBox9.TabIndex = 27;
+            this.txtSDT.Location = new System.Drawing.Point(333, 323);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(345, 22);
+            this.txtSDT.TabIndex = 27;
             // 
             // label12
             // 
@@ -344,23 +347,24 @@
             this.label12.TabIndex = 28;
             this.label12.Text = "Email cá nhân:";
             // 
-            // textBox10
+            // txtEmailCaNhan
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Location = new System.Drawing.Point(908, 288);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(270, 22);
-            this.textBox10.TabIndex = 29;
-            this.textBox10.Text = "taiphanvan2403@gmail.com";
+            this.txtEmailCaNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmailCaNhan.Location = new System.Drawing.Point(908, 288);
+            this.txtEmailCaNhan.Name = "txtEmailCaNhan";
+            this.txtEmailCaNhan.Size = new System.Drawing.Size(270, 22);
+            this.txtEmailCaNhan.TabIndex = 29;
+            this.txtEmailCaNhan.Text = "taiphanvan2403@gmail.com";
             // 
-            // comboBox3
+            // comboBoxDanToc
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(710, 124);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(170, 24);
-            this.comboBox3.TabIndex = 30;
+            this.comboBoxDanToc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxDanToc.FormattingEnabled = true;
+            this.comboBoxDanToc.Location = new System.Drawing.Point(710, 124);
+            this.comboBoxDanToc.Name = "comboBoxDanToc";
+            this.comboBoxDanToc.Size = new System.Drawing.Size(170, 24);
+            this.comboBoxDanToc.TabIndex = 30;
+            this.comboBoxDanToc.TabStop = false;
             // 
             // label13
             // 
@@ -372,43 +376,43 @@
             this.label13.TabIndex = 31;
             this.label13.Text = "Địa chỉ cư trú hiện tại:";
             // 
-            // textBox4
+            // txtSoNha
             // 
-            this.textBox4.Location = new System.Drawing.Point(333, 365);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(345, 22);
-            this.textBox4.TabIndex = 32;
+            this.txtSoNha.Location = new System.Drawing.Point(333, 365);
+            this.txtSoNha.Name = "txtSoNha";
+            this.txtSoNha.Size = new System.Drawing.Size(345, 22);
+            this.txtSoNha.TabIndex = 32;
             // 
-            // button1
+            // btnLuuTTCaNhan
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(504, 470);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 36);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Lưu thông tin cá nhân";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLuuTTCaNhan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLuuTTCaNhan.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLuuTTCaNhan.FlatAppearance.BorderSize = 0;
+            this.btnLuuTTCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuuTTCaNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuTTCaNhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLuuTTCaNhan.Location = new System.Drawing.Point(504, 470);
+            this.btnLuuTTCaNhan.Name = "btnLuuTTCaNhan";
+            this.btnLuuTTCaNhan.Size = new System.Drawing.Size(206, 36);
+            this.btnLuuTTCaNhan.TabIndex = 39;
+            this.btnLuuTTCaNhan.Text = "Lưu thông tin cá nhân";
+            this.btnLuuTTCaNhan.UseVisualStyleBackColor = false;
+            this.btnLuuTTCaNhan.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnLuuTTNhanThan
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(504, 899);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 36);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "Lưu thông tin nhân thân";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLuuTTNhanThan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLuuTTNhanThan.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLuuTTNhanThan.FlatAppearance.BorderSize = 0;
+            this.btnLuuTTNhanThan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuuTTNhanThan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuTTNhanThan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLuuTTNhanThan.Location = new System.Drawing.Point(504, 899);
+            this.btnLuuTTNhanThan.Name = "btnLuuTTNhanThan";
+            this.btnLuuTTNhanThan.Size = new System.Drawing.Size(206, 36);
+            this.btnLuuTTNhanThan.TabIndex = 40;
+            this.btnLuuTTNhanThan.Text = "Lưu thông tin nhân thân";
+            this.btnLuuTTNhanThan.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -493,19 +497,19 @@
             this.label22.TabIndex = 46;
             this.label22.Text = "Họ và tên mẹ:";
             // 
-            // textBox11
+            // txtTenCha
             // 
-            this.textBox11.Location = new System.Drawing.Point(287, 641);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(195, 22);
-            this.textBox11.TabIndex = 47;
+            this.txtTenCha.Location = new System.Drawing.Point(287, 641);
+            this.txtTenCha.Name = "txtTenCha";
+            this.txtTenCha.Size = new System.Drawing.Size(195, 22);
+            this.txtTenCha.TabIndex = 47;
             // 
-            // textBox12
+            // txtTenMe
             // 
-            this.textBox12.Location = new System.Drawing.Point(287, 676);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(195, 22);
-            this.textBox12.TabIndex = 48;
+            this.txtTenMe.Location = new System.Drawing.Point(287, 676);
+            this.txtTenMe.Name = "txtTenMe";
+            this.txtTenMe.Size = new System.Drawing.Size(195, 22);
+            this.txtTenMe.TabIndex = 48;
             // 
             // label23
             // 
@@ -605,20 +609,20 @@
             this.label26.TabIndex = 58;
             this.label26.Text = "Thông tin liên lạc:";
             // 
-            // textBox13
+            // txtSDTMe
             // 
-            this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox13.Location = new System.Drawing.Point(956, 822);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(195, 22);
-            this.textBox13.TabIndex = 70;
+            this.txtSDTMe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSDTMe.Location = new System.Drawing.Point(956, 822);
+            this.txtSDTMe.Name = "txtSDTMe";
+            this.txtSDTMe.Size = new System.Drawing.Size(195, 22);
+            this.txtSDTMe.TabIndex = 70;
             // 
-            // textBox14
+            // txtSDTCha
             // 
-            this.textBox14.Location = new System.Drawing.Point(286, 824);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(195, 22);
-            this.textBox14.TabIndex = 69;
+            this.txtSDTCha.Location = new System.Drawing.Point(286, 824);
+            this.txtSDTCha.Name = "txtSDTCha";
+            this.txtSDTCha.Size = new System.Drawing.Size(195, 22);
+            this.txtSDTCha.TabIndex = 69;
             // 
             // label30
             // 
@@ -739,8 +743,8 @@
             this.Controls.Add(this.uC_AddressSelectionThanNhan);
             this.Controls.Add(this.uC_AddressSelectionCaNhan);
             this.Controls.Add(this.label34);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.txtSDTMe);
+            this.Controls.Add(this.txtSDTCha);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label32);
@@ -755,8 +759,8 @@
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtTenMe);
+            this.Controls.Add(this.txtTenCha);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label21);
@@ -764,33 +768,33 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.btnLuuTTNhanThan);
+            this.Controls.Add(this.btnLuuTTCaNhan);
+            this.Controls.Add(this.txtSoNha);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.comboBoxDanToc);
+            this.Controls.Add(this.txtEmailCaNhan);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtCTDT);
+            this.Controls.Add(this.txtLopSH);
+            this.Controls.Add(this.txtKhoa);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.txtCCCD);
+            this.Controls.Add(this.comboBoxQuocTinh);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxNoiSinh);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxNgaySinh);
+            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.txtGioiTinh);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBox1);
@@ -815,33 +819,33 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxNgaySinh;
+        private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxNoiSinh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox comboBoxQuocTinh;
+        private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtKhoa;
+        private System.Windows.Forms.TextBox txtLopSH;
+        private System.Windows.Forms.TextBox txtCTDT;
+        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox txtEmailCaNhan;
+        private System.Windows.Forms.ComboBox comboBoxDanToc;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtSoNha;
+        private System.Windows.Forms.Button btnLuuTTCaNhan;
+        private System.Windows.Forms.Button btnLuuTTNhanThan;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label17;
@@ -850,8 +854,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtTenCha;
+        private System.Windows.Forms.TextBox txtTenMe;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox comboBox4;
@@ -862,8 +866,8 @@
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtSDTMe;
+        private System.Windows.Forms.TextBox txtSDTCha;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
