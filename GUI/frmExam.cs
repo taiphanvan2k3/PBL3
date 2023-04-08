@@ -123,6 +123,5 @@ namespace GUI
             calendar.LoadDays();
             formOriginalSize = this.Size;
         }
-
     }
 }

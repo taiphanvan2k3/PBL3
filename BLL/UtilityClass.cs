@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BLL
@@ -25,6 +21,11 @@ namespace BLL
             //bị ảnh hưởng bởi việc đóng form hiện tại
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
+        }
+
+        public static string[] SplitAddress(string address)
+        {
+            return Regex.Split(address, " - ");
         }
     }
 }

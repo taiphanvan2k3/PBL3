@@ -1,27 +1,22 @@
 ﻿using BLL;
 using DTO;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-    public partial class UC_AddressSelection : UserControl
+    public partial class UC_AddressSelection_vertical_ : UserControl
     {
-        public UC_AddressSelection()
+        public UC_AddressSelection_vertical_()
         {
             InitializeComponent();
-        }
-
-        private void SetSelectedItemForCBB(string value, ComboBox cbb)
-        {
-            foreach (var item in cbb.Items)
-            {
-                CBBAddressItem address = item as CBBAddressItem;
-                if (address.Value == value)
-                {
-                    cbb.SelectedItem = address;
-                    break;
-                }
-            }
         }
         public string TinhThanhPho
         {
@@ -33,7 +28,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                SetSelectedItemForCBB(value, comboBoxTinhThanhPho);
+                comboBoxTinhThanhPho.SelectedItem = value;
             }
         }
 
@@ -47,7 +42,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                SetSelectedItemForCBB(value, comboBoxQuanHuyen);
+                comboBoxQuanHuyen.SelectedItem = value;
             }
         }
 
@@ -61,7 +56,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                SetSelectedItemForCBB(value, comboBoxXaPhuong);
+                comboBoxXaPhuong.SelectedItem = value;
             }
         }
 

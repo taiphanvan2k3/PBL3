@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
 using System;
 using System.Data;
 using System.Drawing;
@@ -80,7 +81,6 @@ namespace GUI
             btnForgetPass.ForeColor = Color.Black;
         }
 
-
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             if (txtUsername.Texts.ToString() == "" || txtPassword.Texts.ToString() == "")
@@ -91,7 +91,7 @@ namespace GUI
             {
                 var account = ValidLogin_BLL.Instance.CheckUsername(txtUsername.Texts);
                 if (account == null)
-                    MessageBox.Show("Tài khoản không tồn tại.");
+                    CustomMessageBox.Show("Tài khoản không tồn tại.");
                 else
                 {
                     var accountValid = ValidLogin_BLL.Instance.login(txtUsername.Texts, txtPassword.Texts);
@@ -100,23 +100,23 @@ namespace GUI
                         if (account.VaiTro == "Giáo viên")
                         {
                             //102BK0001 123456
-                            MessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
+                            CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
                             frm = new frmTeacher();
                         }
                         else if (account.VaiTro == "Sinh Viên")
                         {
                             //101190001 123456
-                            MessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
+                            CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
                             frm = new frmStudent();
                         }
                         else
                         {
-                            MessageBox.Show("Bạn đang đăng nhập với vai trò Quản trị viên");
+                            CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Quản trị viên");
                             frm = new frmAdmin();
                         }
                         UtilityClass.OpenNewForm(this, frm);
                     }
-                    else MessageBox.Show("Mật khẩu không chính xác.");
+                    else CustomMessageBox.Show("Mật khẩu không chính xác.","Lỗi");
                 }
             }
         }

@@ -78,7 +78,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
             this.panel3.Controls.Add(this.avatarTopRight);
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.lblAvatar);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -86,7 +86,7 @@
             this.panel3.Size = new System.Drawing.Size(1451, 69);
             this.panel3.TabIndex = 2;
             // 
-            // avatarTopRight
+            // label2
             // 
             this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -103,17 +103,17 @@
             this.avatarTopRight.TabIndex = 3;
             this.avatarTopRight.TabStop = false;
             // 
-            // label2
+            // lblAvatar
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1239, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Phan Văn Tài";
+            this.lblAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAvatar.AutoSize = true;
+            this.lblAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
+            this.lblAvatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvatar.Location = new System.Drawing.Point(1213, 38);
+            this.lblAvatar.Name = "lblAvatar";
+            this.lblAvatar.Size = new System.Drawing.Size(109, 20);
+            this.lblAvatar.TabIndex = 2;
+            this.lblAvatar.Text = "Phan Văn Tài";
             // 
             // label1
             // 
@@ -122,7 +122,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(1240, 15);
+            this.label1.Location = new System.Drawing.Point(1216, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 18);
             this.label1.TabIndex = 1;
@@ -471,10 +471,23 @@
             // 
             this.uC_StudentInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.uC_StudentInfo.CCCD = "123456789";
+            this.uC_StudentInfo.ChuongTrinhDaoTao = "Công nghệ Thông tin K2021CLC Đặc thù";
+            this.uC_StudentInfo.DanToc = "empty";
+            this.uC_StudentInfo.EmailCaNhan = "taiphanvan2403@gmail.com";
+            this.uC_StudentInfo.GioiTinh = true;
+            this.uC_StudentInfo.HoVaTen = "Phan Văn Tài";
+            this.uC_StudentInfo.Khoa = "Công nghệ thông tin";
             this.uC_StudentInfo.Location = new System.Drawing.Point(3, 0);
+            this.uC_StudentInfo.LopSinhHoat = "21TCLC_DT3";
             this.uC_StudentInfo.MinimumSize = new System.Drawing.Size(1190, 700);
             this.uC_StudentInfo.Name = "uC_StudentInfo";
+            this.uC_StudentInfo.NgaySinh = "24/03/2003";
+            this.uC_StudentInfo.NoiSinh = "empty";
+            this.uC_StudentInfo.QuocTinh = "empty";
             this.uC_StudentInfo.Size = new System.Drawing.Size(1190, 950);
+            this.uC_StudentInfo.SoDienThoai = "";
+            this.uC_StudentInfo.SoNha = "";
             this.uC_StudentInfo.TabIndex = 0;
             // 
             // circularPictureBox
@@ -506,6 +519,7 @@
             this.MinimumSize = new System.Drawing.Size(1469, 720);
             this.Name = "frmStudent";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmStudent_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
@@ -546,7 +560,7 @@
         private FontAwesome.Sharp.IconButton btnXemLichTrongNgay;
         private System.Windows.Forms.Timer timerExpandClass;
         private System.Windows.Forms.Timer timerExpandCalendar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAvatar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnLogOut;

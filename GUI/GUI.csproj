@@ -102,7 +102,7 @@
     <Compile Include="frmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddStudent.Designer.cs">
+    <Compile Include="frmAddStudent.designer.cs">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCreateClassSection.cs">
@@ -146,6 +146,12 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageBox.Designer.cs">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStudent.cs">
       <SubType>Form</SubType>
@@ -195,6 +201,7 @@
     <Compile Include="MyCustomControl\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MyCustomControl\CustomMessageBox.cs" />
     <Compile Include="MyCustomControl\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +216,12 @@
     </Compile>
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection%28vertical%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection%28vertical%29.Designer.cs">
+      <DependentUpon>UC_AddressSelection%28vertical%29.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_Calendar.cs">
       <SubType>UserControl</SubType>
@@ -257,6 +270,12 @@
     </Compile>
     <Compile Include="MyUserControls\UC_StudentInfo.Designer.cs">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_TeacherInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_TeacherInfo.Designer.cs">
+      <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_ViewHomeRoomClass.cs">
       <SubType>UserControl</SubType>
@@ -307,6 +326,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStudent.resx">
       <DependentUpon>frmStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +353,9 @@
     <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_AddressSelection%28vertical%29.resx">
+      <DependentUpon>UC_AddressSelection%28vertical%29.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_StudentInfo.resx">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_TeacherInfo.resx">
+      <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass.resx">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
@@ -445,6 +473,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar-date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
