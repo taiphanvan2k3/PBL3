@@ -102,7 +102,7 @@
     <Compile Include="frmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddStudent.Designer.cs">
+    <Compile Include="frmAddStudent.designer.cs">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCreateClassSection.cs">
@@ -110,12 +110,6 @@
     </Compile>
     <Compile Include="frmCreateClassSection.Designer.cs">
       <DependentUpon>frmCreateClassSection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAddStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddStudent.Designer.cs">
-      <DependentUpon>frmAddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
@@ -216,6 +210,12 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection%28vertical%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_AddressSelection%28vertical%29.Designer.cs">
+      <DependentUpon>UC_AddressSelection%28vertical%29.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +264,12 @@
     <Compile Include="MyUserControls\UC_StudentInfo.Designer.cs">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_TeacherInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_TeacherInfo.Designer.cs">
+      <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_ViewHomeRoomClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,9 +297,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreateClassSection.resx">
       <DependentUpon>frmCreateClassSection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAddStudent.resx">
-      <DependentUpon>frmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
@@ -340,6 +343,9 @@
     <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_AddressSelection%28vertical%29.resx">
+      <DependentUpon>UC_AddressSelection%28vertical%29.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_StudentInfo.resx">
       <DependentUpon>UC_StudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_TeacherInfo.resx">
+      <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass.resx">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
