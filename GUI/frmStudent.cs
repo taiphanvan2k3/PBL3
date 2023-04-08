@@ -1,14 +1,21 @@
 ﻿using BLL;
+using DTO;
 using GUI.MyUserControls;
 using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 namespace GUI
 {
     public partial class frmStudent : Form
     {
+        public string MSSV { get; set; }
+        public frmStudent()
+        {
+            InitializeComponent();
+            MSSV = "101190001";
+            state = SelectionState.Home;
+        }
+
         private enum SelectionState
         {
             Home,
@@ -17,19 +24,14 @@ namespace GUI
             ViewHomeRoomClass
         }
 
-        #region danh sách UC bỏ vào các tab
+        #region Danh sách UC bỏ vào các tab
         UC_DailySchoolSchedule dailySchoolSchedule;
         UC_WeeklySchoolSchedule weeklySchoolSchedule;
         UC_ViewHomeRoomClass viewHomeRoomClass;
         SelectionState state;
         #endregion
 
-        public frmStudent()
-        {
-            InitializeComponent();
-            state = SelectionState.Home;
-        }
-
+        #region Event menu trái
         private void btnLopArrowDown_Click(object sender, EventArgs e)
         {
             timerExpandClass.Start();
@@ -115,6 +117,7 @@ namespace GUI
                 panelShowDetail.Width -= (237 - 63);
             }
         }
+        #endregion
 
         private void btnXemLichTrongNgay_Click(object sender, EventArgs e)
         {
@@ -187,6 +190,31 @@ namespace GUI
                 }
                 panelShowDetail.Controls.Add(viewHomeRoomClass);
             }
+        }
+
+        private void LoadStudentInfo()
+        {
+            SinhVien_DTO sv = SinhVien_BLL.GetSinhVienById(MSSV);
+            uC_StudentInfo.HoVaTen = sv.Ho + " " + sv.Ten;
+            lblAvatar.Text = sv.Ho + " " + sv.Ten;
+            uC_StudentInfo.GioiTinh = sv.GioiTinh;
+            uC_StudentInfo.NgaySinh = sv.NgaySinh.ToShortDateString();
+            uC_StudentInfo.NoiSinh = sv.NoiSinh;
+            uC_StudentInfo.CCCD = sv.MaCCCD;
+            //uC_StudentInfo.DanToc = sv.DanToc;
+            //uC_StudentInfo.QuocTinh = sv.QuocTinh;
+            uC_StudentInfo.Khoa = sv.Khoa;
+            uC_StudentInfo.ChuongTrinhDaoTao = sv.TenCTDT;
+            uC_StudentInfo.LopSinhHoat = sv.MaLopSH;
+            uC_StudentInfo.EmailCaNhan = sv.EmailCaNhan;
+            uC_StudentInfo.SoDienThoai = sv.Sdt;
+            uC_StudentInfo.SoNha = sv.DiaChi;
+            uC_StudentInfo.SetDiaChi(sv.DiaChi);
+        }
+        private void frmStudent_Load(object sender, EventArgs e)
+        {
+            uC_StudentInfo.setComboBoxNoiSinh(SinhVien_BLL.GetNoiSinh());
+            LoadStudentInfo();
         }
     }
 }
