@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PBL3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PBL3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAI_KIEM_TRA">
           <Key>
             <PropertyRef Name="MaBaiKiemTra" />
@@ -128,7 +128,7 @@
           <Property Name="NgaySinh" Type="date" Nullable="false" />
           <Property Name="GioiTinh" Type="bit" Nullable="false" />
           <Property Name="DanToc" Type="nvarchar" MaxLength="20" />
-          <Property Name="QuocTinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuocTich" Type="nvarchar" MaxLength="50" />
           <Property Name="NoiSinh" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
           <Property Name="Sdt" Type="varchar" MaxLength="10" />
@@ -262,7 +262,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__district__city_i__71D1E811">
+        <Association Name="FK__district__city_i__628FA481">
           <End Role="city" Type="Self.city" Multiplicity="0..1" />
           <End Role="district" Type="Self.district" Multiplicity="*" />
           <ReferentialConstraint>
@@ -298,7 +298,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ward__district_i__74AE54BC">
+        <Association Name="FK__ward__district_i__656C112C">
           <End Role="district" Type="Self.district" Multiplicity="0..1" />
           <End Role="ward" Type="Self.ward" Multiplicity="*" />
           <ReferentialConstraint>
@@ -564,7 +564,7 @@
             <End Role="MON_HOC" EntitySet="MON_HOC" />
             <End Role="CAU_HOI" EntitySet="CAU_HOI" />
           </AssociationSet>
-          <AssociationSet Name="FK__district__city_i__71D1E811" Association="Self.FK__district__city_i__71D1E811">
+          <AssociationSet Name="FK__district__city_i__628FA481" Association="Self.FK__district__city_i__628FA481">
             <End Role="city" EntitySet="city" />
             <End Role="district" EntitySet="district" />
           </AssociationSet>
@@ -576,7 +576,7 @@
             <End Role="THONG_BAO" EntitySet="THONG_BAO" />
             <End Role="THONGBAO_LOPHOCPHAN" EntitySet="THONGBAO_LOPHOCPHAN" />
           </AssociationSet>
-          <AssociationSet Name="FK__ward__district_i__74AE54BC" Association="Self.FK__ward__district_i__74AE54BC">
+          <AssociationSet Name="FK__ward__district_i__656C112C" Association="Self.FK__ward__district_i__656C112C">
             <End Role="district" EntitySet="district" />
             <End Role="ward" EntitySet="ward" />
           </AssociationSet>
@@ -653,7 +653,8 @@
             <End Role="SINHVIEN_LOPHOCPHAN" EntitySet="SINHVIEN_LOPHOCPHAN" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PBL3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -700,6 +701,24 @@
           <Property Name="MaKhoa" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="SINH_VIEN" Relationship="Self.FK_MaCTDT" FromRole="CHUONG_TRINH_DAO_TAO" ToRole="SINH_VIEN" />
           <NavigationProperty Name="KHOA" Relationship="Self.FK_MaKhoa" FromRole="CHUONG_TRINH_DAO_TAO" ToRole="KHOA" />
+        </EntityType>
+        <EntityType Name="city">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Name="city_id" Type="Int32" Nullable="false" />
+          <Property Name="tinhThanhPho" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="districts" Relationship="Self.FK__district__city_i__628FA481" FromRole="city" ToRole="district" />
+        </EntityType>
+        <EntityType Name="district">
+          <Key>
+            <PropertyRef Name="district_id" />
+          </Key>
+          <Property Name="district_id" Type="Int32" Nullable="false" />
+          <Property Name="city_id" Type="Int32" />
+          <Property Name="huyenQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="city" Relationship="Self.FK__district__city_i__628FA481" FromRole="district" ToRole="city" />
+          <NavigationProperty Name="wards" Relationship="Self.FK__ward__district_i__656C112C" FromRole="district" ToRole="ward" />
         </EntityType>
         <EntityType Name="GIANG_VIEN">
           <Key>
@@ -785,7 +804,7 @@
           <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
           <Property Name="DanToc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="QuocTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuocTich" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NoiSinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -871,6 +890,15 @@
           <Property Name="MaXacThucDeLayLaiMK" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="NGUOI_DUNG" Relationship="Self.FK_IdUser" FromRole="THONG_TIN_DANG_NHAP" ToRole="NGUOI_DUNG" />
         </EntityType>
+        <EntityType Name="ward">
+          <Key>
+            <PropertyRef Name="ward_id" />
+          </Key>
+          <Property Name="ward_id" Type="Int32" Nullable="false" />
+          <Property Name="district_id" Type="Int32" />
+          <Property Name="xaPhuong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="district" Relationship="Self.FK__ward__district_i__656C112C" FromRole="ward" ToRole="district" />
+        </EntityType>
         <Association Name="FK__BAI_KIEM_T__MaGV__4D94879B">
           <End Role="GIANG_VIEN" Type="Self.GIANG_VIEN" Multiplicity="0..1" />
           <End Role="BAI_KIEM_TRA" Type="Self.BAI_KIEM_TRA" Multiplicity="*" />
@@ -940,6 +968,30 @@
             </Principal>
             <Dependent Role="CHUONG_TRINH_DAO_TAO">
               <PropertyRef Name="MaKhoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__district__city_i__628FA481">
+          <End Role="city" Type="Self.city" Multiplicity="0..1" />
+          <End Role="district" Type="Self.district" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="city">
+              <PropertyRef Name="city_id" />
+            </Principal>
+            <Dependent Role="district">
+              <PropertyRef Name="city_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ward__district_i__656C112C">
+          <End Role="district" Type="Self.district" Multiplicity="0..1" />
+          <End Role="ward" Type="Self.ward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="district">
+              <PropertyRef Name="district_id" />
+            </Principal>
+            <Dependent Role="ward">
+              <PropertyRef Name="district_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1123,6 +1175,8 @@
           <EntitySet Name="BAI_KIEM_TRA" EntityType="Self.BAI_KIEM_TRA" />
           <EntitySet Name="CAU_HOI" EntityType="Self.CAU_HOI" />
           <EntitySet Name="CHUONG_TRINH_DAO_TAO" EntityType="Self.CHUONG_TRINH_DAO_TAO" />
+          <EntitySet Name="cities" EntityType="Self.city" />
+          <EntitySet Name="districts" EntityType="Self.district" />
           <EntitySet Name="GIANG_VIEN" EntityType="Self.GIANG_VIEN" />
           <EntitySet Name="KHOAs" EntityType="Self.KHOA" />
           <EntitySet Name="LAM_BAI_KIEM_TRA" EntityType="Self.LAM_BAI_KIEM_TRA" />
@@ -1136,6 +1190,7 @@
           <EntitySet Name="THOI_KHOA_BIEU" EntityType="Self.THOI_KHOA_BIEU" />
           <EntitySet Name="THONG_BAO" EntityType="Self.THONG_BAO" />
           <EntitySet Name="THONG_TIN_DANG_NHAP" EntityType="Self.THONG_TIN_DANG_NHAP" />
+          <EntitySet Name="wards" EntityType="Self.ward" />
           <AssociationSet Name="FK__BAI_KIEM_T__MaGV__4D94879B" Association="Self.FK__BAI_KIEM_T__MaGV__4D94879B">
             <End Role="GIANG_VIEN" EntitySet="GIANG_VIEN" />
             <End Role="BAI_KIEM_TRA" EntitySet="BAI_KIEM_TRA" />
@@ -1159,6 +1214,14 @@
           <AssociationSet Name="FK_MaKhoa" Association="Self.FK_MaKhoa">
             <End Role="KHOA" EntitySet="KHOAs" />
             <End Role="CHUONG_TRINH_DAO_TAO" EntitySet="CHUONG_TRINH_DAO_TAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__district__city_i__628FA481" Association="Self.FK__district__city_i__628FA481">
+            <End Role="city" EntitySet="cities" />
+            <End Role="district" EntitySet="districts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ward__district_i__656C112C" Association="Self.FK__ward__district_i__656C112C">
+            <End Role="district" EntitySet="districts" />
+            <End Role="ward" EntitySet="wards" />
           </AssociationSet>
           <AssociationSet Name="FK_MaGV" Association="Self.FK_MaGV">
             <End Role="GIANG_VIEN" EntitySet="GIANG_VIEN" />
@@ -1224,69 +1287,7 @@
             <End Role="LOP_HOC_PHAN" EntitySet="LOP_HOC_PHAN" />
             <End Role="THONG_BAO" EntitySet="THONG_BAO" />
           </AssociationSet>
-          <EntitySet Name="cities" EntityType="PBL3Model.city" />
-          <EntitySet Name="districts" EntityType="PBL3Model.district" />
-          <EntitySet Name="wards" EntityType="PBL3Model.ward" />
-          <AssociationSet Name="FK__district__city_i__71D1E811" Association="PBL3Model.FK__district__city_i__71D1E811">
-            <End Role="city" EntitySet="cities" />
-            <End Role="district" EntitySet="districts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ward__district_i__74AE54BC" Association="PBL3Model.FK__ward__district_i__74AE54BC">
-            <End Role="district" EntitySet="districts" />
-            <End Role="ward" EntitySet="wards" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="city">
-          <Key>
-            <PropertyRef Name="city_id" />
-          </Key>
-          <Property Name="city_id" Type="Int32" Nullable="false" />
-          <Property Name="tinhThanhPho" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="districts" Relationship="PBL3Model.FK__district__city_i__71D1E811" FromRole="city" ToRole="district" />
-        </EntityType>
-        <EntityType Name="district">
-          <Key>
-            <PropertyRef Name="district_id" />
-          </Key>
-          <Property Name="district_id" Type="Int32" Nullable="false" />
-          <Property Name="city_id" Type="Int32" />
-          <Property Name="huyenQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="city" Relationship="PBL3Model.FK__district__city_i__71D1E811" FromRole="district" ToRole="city" />
-          <NavigationProperty Name="wards" Relationship="PBL3Model.FK__ward__district_i__74AE54BC" FromRole="district" ToRole="ward" />
-        </EntityType>
-        <EntityType Name="ward">
-          <Key>
-            <PropertyRef Name="ward_id" />
-          </Key>
-          <Property Name="ward_id" Type="Int32" Nullable="false" />
-          <Property Name="district_id" Type="Int32" />
-          <Property Name="xaPhuong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="district" Relationship="PBL3Model.FK__ward__district_i__74AE54BC" FromRole="ward" ToRole="district" />
-        </EntityType>
-        <Association Name="FK__district__city_i__71D1E811">
-          <End Type="PBL3Model.city" Role="city" Multiplicity="0..1" />
-          <End Type="PBL3Model.district" Role="district" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="city">
-              <PropertyRef Name="city_id" />
-            </Principal>
-            <Dependent Role="district">
-              <PropertyRef Name="city_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ward__district_i__74AE54BC">
-          <End Type="PBL3Model.district" Role="district" Multiplicity="0..1" />
-          <End Type="PBL3Model.ward" Role="ward" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="district">
-              <PropertyRef Name="district_id" />
-            </Principal>
-            <Dependent Role="ward">
-              <PropertyRef Name="district_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1329,6 +1330,23 @@
                 <ScalarProperty Name="MaCTDT" ColumnName="MaCTDT" />
                 <ScalarProperty Name="TenCTDT" ColumnName="TenCTDT" />
                 <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cities">
+            <EntityTypeMapping TypeName="PBL3Model.city">
+              <MappingFragment StoreEntitySet="city">
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="tinhThanhPho" ColumnName="tinhThanhPho" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="districts">
+            <EntityTypeMapping TypeName="PBL3Model.district">
+              <MappingFragment StoreEntitySet="district">
+                <ScalarProperty Name="district_id" ColumnName="district_id" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="huyenQuan" ColumnName="huyenQuan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1400,7 +1418,7 @@
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="DanToc" ColumnName="DanToc" />
-                <ScalarProperty Name="QuocTinh" ColumnName="QuocTinh" />
+                <ScalarProperty Name="QuocTich" ColumnName="QuocTich" />
                 <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="Sdt" ColumnName="Sdt" />
@@ -1474,6 +1492,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="wards">
+            <EntityTypeMapping TypeName="PBL3Model.ward">
+              <MappingFragment StoreEntitySet="ward">
+                <ScalarProperty Name="ward_id" ColumnName="ward_id" />
+                <ScalarProperty Name="district_id" ColumnName="district_id" />
+                <ScalarProperty Name="xaPhuong" ColumnName="xaPhuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="BAIKIEMTRA_CAUHOI" TypeName="PBL3Model.BAIKIEMTRA_CAUHOI" StoreEntitySet="BAIKIEMTRA_CAUHOI">
             <EndProperty Name="BAI_KIEM_TRA">
               <ScalarProperty Name="MaBaiKiemTra" ColumnName="MaBaiKiemTra" />
@@ -1490,32 +1517,6 @@
               <ScalarProperty Name="MaTB" ColumnName="MaTB" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="cities">
-            <EntityTypeMapping TypeName="PBL3Model.city">
-              <MappingFragment StoreEntitySet="city">
-                <ScalarProperty Name="tinhThanhPho" ColumnName="tinhThanhPho" />
-                <ScalarProperty Name="city_id" ColumnName="city_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="districts">
-            <EntityTypeMapping TypeName="PBL3Model.district">
-              <MappingFragment StoreEntitySet="district">
-                <ScalarProperty Name="huyenQuan" ColumnName="huyenQuan" />
-                <ScalarProperty Name="city_id" ColumnName="city_id" />
-                <ScalarProperty Name="district_id" ColumnName="district_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="wards">
-            <EntityTypeMapping TypeName="PBL3Model.ward">
-              <MappingFragment StoreEntitySet="ward">
-                <ScalarProperty Name="xaPhuong" ColumnName="xaPhuong" />
-                <ScalarProperty Name="district_id" ColumnName="district_id" />
-                <ScalarProperty Name="ward_id" ColumnName="ward_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

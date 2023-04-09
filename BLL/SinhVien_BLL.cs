@@ -29,7 +29,7 @@ namespace BLL
                     NoiSinh = nd.NoiSinh,
                     GioiTinh = nd.GioiTinh,
                     DanToc = nd.DanToc,
-                    QuocTinh = nd.QuocTinh,
+                    QuocTinh = nd.QuocTich,
                     MaCCCD = nd.MaCCCD,
                     Khoa = khoa.TenKhoa,
                     TenCTDT = ctdt.TenCTDT,
