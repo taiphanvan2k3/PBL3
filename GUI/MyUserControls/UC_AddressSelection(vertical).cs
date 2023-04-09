@@ -1,13 +1,5 @@
 ﻿using BLL;
 using DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -17,6 +9,25 @@ namespace GUI.MyUserControls
         public UC_AddressSelection_vertical_()
         {
             InitializeComponent();
+            Init();
+        }
+        void Init()
+        {
+            comboBoxTinhThanhPho.Items.Add(new CBBAddressItem() { Id = 0, Value = "Chọn Tỉnh/ Thành phố" });
+            comboBoxTinhThanhPho.Items.AddRange(AddressSelectionBLL.Instance.GetCityRecords().ToArray());
+            comboBoxTinhThanhPho.SelectedIndex = 0;
+        }
+        private void SetSelectedItemForCBB(string value, ComboBox cbb)
+        {
+            foreach (var item in cbb.Items)
+            {
+                CBBAddressItem address = item as CBBAddressItem;
+                if (address.Value == value)
+                {
+                    cbb.SelectedItem = address;
+                    break;
+                }
+            }
         }
         public string TinhThanhPho
         {
@@ -28,7 +39,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                comboBoxTinhThanhPho.SelectedItem = value;
+                SetSelectedItemForCBB(value, comboBoxTinhThanhPho);
             }
         }
 
@@ -42,7 +53,7 @@ namespace GUI.MyUserControls
             }
             set
             {
-                comboBoxQuanHuyen.SelectedItem = value;
+                SetSelectedItemForCBB(value, comboBoxQuanHuyen);
             }
         }
 
@@ -56,15 +67,15 @@ namespace GUI.MyUserControls
             }
             set
             {
-                comboBoxXaPhuong.SelectedItem = value;
+                SetSelectedItemForCBB(value, comboBoxXaPhuong);
             }
         }
 
         private void UC_AddressSelection_Load(object sender, System.EventArgs e)
         {
-            comboBoxTinhThanhPho.Items.Add(new CBBAddressItem() { Id = 0, Value = "Chọn Tỉnh/ Thành phố" });
+            /*comboBoxTinhThanhPho.Items.Add(new CBBAddressItem() { Id = 0, Value = "Chọn Tỉnh/ Thành phố" });
             comboBoxTinhThanhPho.Items.AddRange(AddressSelectionBLL.Instance.GetCityRecords().ToArray());
-            comboBoxTinhThanhPho.SelectedIndex = 0;
+            comboBoxTinhThanhPho.SelectedIndex = 0;*/
         }
 
         private void comboBoxTinhThanhPho_SelectedIndexChanged(object sender, System.EventArgs e)

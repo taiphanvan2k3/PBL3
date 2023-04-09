@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressSelectionBLL.cs" />
+    <Compile Include="CheckLoginBLL.cs" />
+    <Compile Include="GiangVienBLL.cs" />
     <Compile Include="MoveFormHelper.cs" />
     <Compile Include="SinhVien_BLL.cs" />
     <Compile Include="UtilityClass.cs" />

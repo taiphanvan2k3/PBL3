@@ -134,11 +134,11 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 0);
+            this.label1.Location = new System.Drawing.Point(125, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 35);
+            this.label1.Size = new System.Drawing.Size(154, 35);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Hello Again!";
+            this.label1.Text = "Welcome!";
             // 
             // label2
             // 
@@ -196,7 +196,7 @@
             this.circularPictureBox1.BorderSize = 5;
             this.circularPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Image = global::GUI.Properties.Resources._294355517_1105843533621186_1411223748583159430_n;
+            this.circularPictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
             this.circularPictureBox1.Location = new System.Drawing.Point(125, 0);
             this.circularPictureBox1.Name = "circularPictureBox1";
             this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
@@ -235,7 +235,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(113, 36);
+            this.panel8.Size = new System.Drawing.Size(125, 36);
             this.panel8.TabIndex = 0;
             // 
             // panel9
