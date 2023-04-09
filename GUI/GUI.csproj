@@ -416,6 +416,9 @@
     <EmbeddedResource Include="MyUserControls\UC_TeacherInfo.resx">
       <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_ViewHomeRoomClass.resx">
+      <DependentUpon>UC_ViewHomeRoomClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass.resx">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -548,6 +551,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\previousPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoPBL3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yourname.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

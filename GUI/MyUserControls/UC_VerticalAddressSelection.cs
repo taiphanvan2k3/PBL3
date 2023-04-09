@@ -95,6 +95,14 @@ namespace GUI.MyUserControls
             }
         }
 
+        public void SetDiaChi(string address)
+        {
+            string[] tmp = UtilityClass.SplitAddress(address);
+            this.TinhThanhPho = tmp[0];
+            this.QuanHuyen = tmp[1];
+            this.XaPhuong = tmp[2];
+        }
+
         private void UC_AddressSelection_Load(object sender, System.EventArgs e)
         {
             /*comboBoxTinhThanhPho.Items.Add(new CBBAddressItem() { Id = 0, Value = "Chọn Tỉnh/ Thành phố" });

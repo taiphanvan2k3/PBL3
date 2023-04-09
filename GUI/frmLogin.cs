@@ -106,8 +106,10 @@ namespace GUI
                         else if (account.VaiTro == "Sinh Viên")
                         {
                             //101190001 123456
+                            //101180002 123457
+                            //101180003 123458
                             CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
-                            frm = new frmStudent();
+                            frm = new frmStudent(account.TaiKhoan); 
                         }
                         else
                         {
