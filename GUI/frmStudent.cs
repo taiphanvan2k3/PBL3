@@ -216,5 +216,14 @@ namespace GUI
             uC_StudentInfo.setComboBoxNoiSinh(SinhVien_BLL.GetNoiSinh());
             LoadStudentInfo();
         }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            panelShowDetail.Controls.Clear();
+            UC_StudentInfoNew uc = new UC_StudentInfoNew();
+
+            uc.Dock = DockStyle.Fill;
+            panelShowDetail.Controls.Add(uc);
+        }
     }
 }

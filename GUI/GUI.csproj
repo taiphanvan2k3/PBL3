@@ -217,11 +217,23 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyUserControls\UC_AddressSelection%28vertical%29.cs">
+    <Compile Include="MyUserControls\UC_ParentInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControls\UC_AddressSelection%28vertical%29.Designer.cs">
-      <DependentUpon>UC_AddressSelection%28vertical%29.cs</DependentUpon>
+    <Compile Include="MyUserControls\UC_ParentInfo.designer.cs">
+      <DependentUpon>UC_ParentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfoNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_StudentInfoNew.designer.cs">
+      <DependentUpon>UC_StudentInfoNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_VerticalAddressSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_VerticalAddressSelection.Designer.cs">
+      <DependentUpon>UC_VerticalAddressSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_Calendar.cs">
       <SubType>UserControl</SubType>
@@ -353,8 +365,14 @@
     <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_AddressSelection%28vertical%29.resx">
-      <DependentUpon>UC_AddressSelection%28vertical%29.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControls\UC_ParentInfo.resx">
+      <DependentUpon>UC_ParentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_StudentInfoNew.resx">
+      <DependentUpon>UC_StudentInfoNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_VerticalAddressSelection.resx">
+      <DependentUpon>UC_VerticalAddressSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
       <DependentUpon>UC_Calendar.cs</DependentUpon>
@@ -500,6 +518,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoPBL3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nextPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previousPage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
