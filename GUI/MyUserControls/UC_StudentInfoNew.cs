@@ -10,6 +10,11 @@ namespace GUI.MyUserControls
         public string MSSV { get; set; }
         public UC_ParentInfo nextPage { get; set; }
         #region Properties
+        public string LabelMSSV
+        {
+            get => lblMSSV.Text;
+            set => lblMSSV.Text = value;
+        }
         public string HoVaTen
         {
             get => lblHoVaTen.Text;

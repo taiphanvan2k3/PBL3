@@ -54,7 +54,7 @@ namespace GUI
                 for (int i = 153; i >= 53; i--)
                     panelLop.Height = i;
                 timerExpandClass.Stop();
-                btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+                //btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
                 isExpandingClass = false;
             }
             else
@@ -62,7 +62,7 @@ namespace GUI
                 for (int i = 53; i <= 153; i++)
                     panelLop.Height = i;
                 timerExpandClass.Stop();
-                btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
+                //btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
                 isExpandingClass = true;
             }
         }
@@ -79,7 +79,7 @@ namespace GUI
                 for (int i = 156; i >= 53; i--)
                     panelCalendar.Height = i;
                 timerExpandCalendar.Stop();
-                btnCalendarExpand.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+                //btnCalendarExpand.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
                 isExpandingCalendar = false;
             }
             else
@@ -87,7 +87,7 @@ namespace GUI
                 for (int i = 53; i <= 156; i++)
                     panelCalendar.Height = i;
                 timerExpandCalendar.Stop();
-                btnCalendarExpand.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
+                //btnCalendarExpand.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
                 isExpandingCalendar = true;
             }
         }
@@ -151,12 +151,6 @@ namespace GUI
                 state = SelectionState.Home;
                 panelShowDetail.Controls.Clear();
                 panelShowDetail.Controls.Add(uC_StudentInfoNew);
-                //uC_StudentInfo.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
-                //uC_StudentInfo.Location = new Point(0, 0);
-                //uC_StudentInfo.Width = panelShowDetail.Width - 30;
-                //if (panelShowDetail.Height > 950)
-                //    uC_StudentInfo.Height = panelShowDetail.Height + 30;
-                //else uC_StudentInfo.Height = 950;
             }
         }
 
@@ -206,22 +200,7 @@ namespace GUI
         private void LoadStudentInfo()
         {
             sv = SinhVien_BLL.GetSinhVienById(MSSV);
-            //uC_StudentInfo.HoVaTen = sv.Ho + " " + sv.Ten;
-            //lblAvatar.Text = sv.Ho + " " + sv.Ten;
-            //uC_StudentInfo.GioiTinh = sv.GioiTinh;
-            //uC_StudentInfo.NgaySinh = sv.NgaySinh.ToShortDateString();
-            //uC_StudentInfo.NoiSinh = sv.NoiSinh;
-            //uC_StudentInfo.CCCD = sv.MaCCCD;
-            ////uC_StudentInfo.DanToc = sv.DanToc;
-            ////uC_StudentInfo.QuocTinh = sv.QuocTinh;
-            //uC_StudentInfo.Khoa = sv.Khoa;
-            //uC_StudentInfo.ChuongTrinhDaoTao = sv.TenCTDT;
-            //uC_StudentInfo.LopSinhHoat = sv.MaLopSH;
-            //uC_StudentInfo.EmailCaNhan = sv.EmailCaNhan;
-            //uC_StudentInfo.SoDienThoai = sv.Sdt;
-            //uC_StudentInfo.SoNha = sv.DiaChi;
-            //uC_StudentInfo.SetDiaChi(sv.DiaChi);
-
+            uC_StudentInfoNew.LabelMSSV = sv.MaNguoiDung;
             uC_StudentInfoNew.HoVaTen = sv.Ho + " " + sv.Ten;
             lblAvatar.Text = sv.Ho + " " + sv.Ten;
             uC_StudentInfoNew.GioiTinh = sv.GioiTinh;
@@ -241,7 +220,6 @@ namespace GUI
         }
         private void frmStudent_Load(object sender, EventArgs e)
         {
-            uC_StudentInfo.setComboBoxNoiSinh(SinhVien_BLL.GetNoiSinh());
             LoadStudentInfo();
             panelShowDetail.Controls.Clear();
             uC_StudentInfoNew.MSSV = MSSV;
