@@ -121,7 +121,7 @@ namespace GUI
                         {
                             //102BK0001 123456
                             CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
-                            frm = new frmTeacher();
+                            frm = new frmTeacher(txtUsername.Texts);
                         }
                         else if (account.VaiTro == "Sinh Viên")
                         {

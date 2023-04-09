@@ -32,17 +32,15 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnDarkMode = new FontAwesome.Sharp.IconButton();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
-            this.btnGrade = new FontAwesome.Sharp.IconButton();
+            this.btnManageClass = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
-            this.btnTakeExam = new FontAwesome.Sharp.IconButton();
+            this.btnInfo = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.uC_TeacherInfo1 = new GUI.MyUserControls.UC_TeacherInfo();
-            this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -51,7 +49,6 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.uC_TeacherInfo1);
             this.pnlMain.Location = new System.Drawing.Point(250, 2);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1119, 663);
@@ -70,12 +67,12 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(153)))), ((int)(((byte)(174)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
             this.panelMenu.Controls.Add(this.btnDarkMode);
             this.panelMenu.Controls.Add(this.btnCalendar);
-            this.panelMenu.Controls.Add(this.btnGrade);
+            this.panelMenu.Controls.Add(this.btnManageClass);
             this.panelMenu.Controls.Add(this.btnLogOut);
-            this.panelMenu.Controls.Add(this.btnTakeExam);
+            this.panelMenu.Controls.Add(this.btnInfo);
             this.panelMenu.Controls.Add(this.btnHome);
             this.panelMenu.Controls.Add(this.panel4);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -83,16 +80,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 665);
             this.panelMenu.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.btnMenu);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 76);
-            this.panel4.TabIndex = 0;
             // 
             // btnDarkMode
             // 
@@ -115,6 +102,7 @@
             this.btnDarkMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDarkMode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDarkMode.UseVisualStyleBackColor = true;
+            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
             // 
             // btnCalendar
             // 
@@ -137,28 +125,30 @@
             this.btnCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCalendar.UseVisualStyleBackColor = true;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
-            // btnGrade
+            // btnManageClass
             // 
-            this.btnGrade.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGrade.FlatAppearance.BorderSize = 0;
-            this.btnGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrade.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrade.ForeColor = System.Drawing.Color.White;
-            this.btnGrade.IconChar = FontAwesome.Sharp.IconChar.LandmarkFlag;
-            this.btnGrade.IconColor = System.Drawing.Color.White;
-            this.btnGrade.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGrade.IconSize = 30;
-            this.btnGrade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrade.Location = new System.Drawing.Point(0, 264);
-            this.btnGrade.Name = "btnGrade";
-            this.btnGrade.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGrade.Size = new System.Drawing.Size(250, 94);
-            this.btnGrade.TabIndex = 8;
-            this.btnGrade.Tag = "Quản lí lớp";
-            this.btnGrade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGrade.UseVisualStyleBackColor = true;
+            this.btnManageClass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageClass.FlatAppearance.BorderSize = 0;
+            this.btnManageClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageClass.ForeColor = System.Drawing.Color.White;
+            this.btnManageClass.IconChar = FontAwesome.Sharp.IconChar.LandmarkFlag;
+            this.btnManageClass.IconColor = System.Drawing.Color.White;
+            this.btnManageClass.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnManageClass.IconSize = 30;
+            this.btnManageClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageClass.Location = new System.Drawing.Point(0, 264);
+            this.btnManageClass.Name = "btnManageClass";
+            this.btnManageClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnManageClass.Size = new System.Drawing.Size(250, 94);
+            this.btnManageClass.TabIndex = 8;
+            this.btnManageClass.Tag = "Quản lí lớp";
+            this.btnManageClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManageClass.UseVisualStyleBackColor = true;
+            this.btnManageClass.Click += new System.EventHandler(this.btnManageClass_Click);
             // 
             // btnLogOut
             // 
@@ -183,27 +173,28 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // btnTakeExam
+            // btnInfo
             // 
-            this.btnTakeExam.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTakeExam.FlatAppearance.BorderSize = 0;
-            this.btnTakeExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTakeExam.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTakeExam.ForeColor = System.Drawing.Color.White;
-            this.btnTakeExam.IconChar = FontAwesome.Sharp.IconChar.Person;
-            this.btnTakeExam.IconColor = System.Drawing.Color.White;
-            this.btnTakeExam.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTakeExam.IconSize = 30;
-            this.btnTakeExam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTakeExam.Location = new System.Drawing.Point(0, 170);
-            this.btnTakeExam.Name = "btnTakeExam";
-            this.btnTakeExam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnTakeExam.Size = new System.Drawing.Size(250, 94);
-            this.btnTakeExam.TabIndex = 6;
-            this.btnTakeExam.Tag = "Thông tin cá nhân";
-            this.btnTakeExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTakeExam.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTakeExam.UseVisualStyleBackColor = true;
+            this.btnInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInfo.FlatAppearance.BorderSize = 0;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.ForeColor = System.Drawing.Color.White;
+            this.btnInfo.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.btnInfo.IconColor = System.Drawing.Color.White;
+            this.btnInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInfo.IconSize = 30;
+            this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInfo.Location = new System.Drawing.Point(0, 170);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInfo.Size = new System.Drawing.Size(250, 94);
+            this.btnInfo.TabIndex = 6;
+            this.btnInfo.Tag = "Thông tin cá nhân";
+            this.btnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnHome
             // 
@@ -228,9 +219,19 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.btnMenu);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(250, 76);
+            this.panel4.TabIndex = 0;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(135, 48);
@@ -255,22 +256,14 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // uC_TeacherInfo1
-            // 
-            this.uC_TeacherInfo1.Location = new System.Drawing.Point(0, 0);
-            this.uC_TeacherInfo1.Name = "uC_TeacherInfo1";
-            this.uC_TeacherInfo1.Size = new System.Drawing.Size(1119, 663);
-            this.uC_TeacherInfo1.TabIndex = 0;
-            // 
             // frmTeacher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1372, 665);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTeacher";
-            this.Text = "frmTeacher";
-            this.pnlMain.ResumeLayout(false);
+            this.Text = "Teacher";
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -286,13 +279,12 @@
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnDarkMode;
         private FontAwesome.Sharp.IconButton btnCalendar;
-        private FontAwesome.Sharp.IconButton btnGrade;
+        private FontAwesome.Sharp.IconButton btnManageClass;
         private FontAwesome.Sharp.IconButton btnLogOut;
-        private FontAwesome.Sharp.IconButton btnTakeExam;
+        private FontAwesome.Sharp.IconButton btnInfo;
         private FontAwesome.Sharp.IconButton btnHome;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnMenu;
-        private MyUserControls.UC_TeacherInfo uC_TeacherInfo1;
     }
 }

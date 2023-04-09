@@ -1,4 +1,6 @@
 ﻿using BLL;
+using DTO;
+using GUI.MyUserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +15,16 @@ namespace GUI
 {
     public partial class frmTeacher : Form
     {
-        public frmTeacher()
+        private string ButtonClicked = "Home";
+        private UC_TeacherInfo Info;
+        public frmTeacher(string Account)
         {
             InitializeComponent();
             CollapseMenu();
+            Info = new UC_TeacherInfo();
+            LoadInfo(Account);
         }
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            CollapseMenu();
-        }
+        #region Methods
         private void CollapseMenu()
         {
             if (this.panelMenu.Width > 200) //Collapse menu
@@ -55,15 +58,77 @@ namespace GUI
                 pnlMain.Location = new Point(pnlMain.Location.X + 100, pnlMain.Location.Y);
             }
         }
-
+        void LoadInfo(string Account)
+        {
+            GiangVien_DTO gv = GiangVienBLL.Instance.GetGiangVienById(Account);
+            Info.Name = gv.Ho + " " + gv.Ten;
+            Info.IdTeacher = gv.MaNguoiDung;
+            Info.Khoa = gv.Khoa;
+            Info.NgaySinh = gv.NgaySinh.ToShortDateString();
+            Info.GioiTinh = (gv.GioiTinh) ? "Nam" : "Nữ";
+            Info.TrinhDo = gv.TrinhDo;
+            Info.Luong = gv.Luong.ToString();
+            Info.EmailCaNhan = gv.EmailCaNhan;
+            Info.EmailTruongCap = gv.EmailTruongCap;
+            Info.SDT = gv.Sdt;
+            Info.DanToc = gv.DanToc;
+            Info.QuocTich = gv.QuocTinh;
+            Info.NoiSinh = gv.NoiSinh;
+            Info.CCCD = gv.MaCCCD;
+            Info.SetDiaChi(gv.DiaChi);
+        }
+        #endregion
+        #region Events
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            CollapseMenu();
+        }
         private void btnHome_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
+            //Clear hết control trong panel chứa các chức năng trên màn hình
+            if(ButtonClicked != "Home")
+            {
+                pnlMain.Controls.Clear();
+            }
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             UtilityClass.OpenNewForm(this, new frmLogin());
         }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            if (ButtonClicked != "Thông tin cá nhân")
+            {
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(Info);
+            }
+        }
+
+        private void btnManageClass_Click(object sender, EventArgs e)
+        {
+            if (ButtonClicked != "Quản lí lớp")
+            {
+                pnlMain.Controls.Clear();
+            }
+        }
+
+        private void btnCalendar_Click(object sender, EventArgs e)
+        {
+            if (ButtonClicked != "Xem lịch")
+            {
+                pnlMain.Controls.Clear();
+            }
+        }
+
+        private void btnDarkMode_Click(object sender, EventArgs e)
+        {
+            if (ButtonClicked != "Nền tối")
+            {
+                pnlMain.Controls.Clear();
+            }
+        }
+        #endregion
     }
 }

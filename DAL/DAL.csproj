@@ -78,6 +78,7 @@
     <Compile Include="district.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>
+    <Compile Include="GiangVien_DAL.cs" />
     <Compile Include="GIANG_VIEN.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>

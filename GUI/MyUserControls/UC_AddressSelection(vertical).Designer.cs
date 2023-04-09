@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxTinhThanhPho = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboBoxQuanHuyen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboBoxXaPhuong = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxTinhThanhPho = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -45,23 +45,6 @@
             this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Tỉnh/ Thành phố:";
-            // 
-            // comboBoxTinhThanhPho
-            // 
-            this.comboBoxTinhThanhPho.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxTinhThanhPho.BorderRadius = 8;
-            this.comboBoxTinhThanhPho.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxTinhThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTinhThanhPho.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxTinhThanhPho.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxTinhThanhPho.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTinhThanhPho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxTinhThanhPho.ItemHeight = 30;
-            this.comboBoxTinhThanhPho.Location = new System.Drawing.Point(146, 12);
-            this.comboBoxTinhThanhPho.Name = "comboBoxTinhThanhPho";
-            this.comboBoxTinhThanhPho.Size = new System.Drawing.Size(282, 36);
-            this.comboBoxTinhThanhPho.TabIndex = 12;
-            this.comboBoxTinhThanhPho.SelectedIndexChanged += new System.EventHandler(this.comboBoxTinhThanhPho_SelectedIndexChanged);
             // 
             // comboBoxQuanHuyen
             // 
@@ -116,15 +99,32 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Xã/ Phường:";
             // 
+            // comboBoxTinhThanhPho
+            // 
+            this.comboBoxTinhThanhPho.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxTinhThanhPho.BorderRadius = 8;
+            this.comboBoxTinhThanhPho.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxTinhThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTinhThanhPho.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxTinhThanhPho.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxTinhThanhPho.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTinhThanhPho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxTinhThanhPho.ItemHeight = 30;
+            this.comboBoxTinhThanhPho.Location = new System.Drawing.Point(146, 15);
+            this.comboBoxTinhThanhPho.Name = "comboBoxTinhThanhPho";
+            this.comboBoxTinhThanhPho.Size = new System.Drawing.Size(282, 36);
+            this.comboBoxTinhThanhPho.TabIndex = 17;
+            this.comboBoxTinhThanhPho.SelectedIndexChanged += new System.EventHandler(this.comboBoxTinhThanhPho_SelectedIndexChanged);
+            // 
             // UC_AddressSelection_vertical_
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
+            this.Controls.Add(this.comboBoxTinhThanhPho);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBoxXaPhuong);
             this.Controls.Add(this.comboBoxQuanHuyen);
-            this.Controls.Add(this.comboBoxTinhThanhPho);
             this.Controls.Add(this.label1);
             this.Name = "UC_AddressSelection_vertical_";
             this.Size = new System.Drawing.Size(437, 177);
@@ -136,10 +136,10 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxTinhThanhPho;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxQuanHuyen;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxXaPhuong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxTinhThanhPho;
     }
 }
