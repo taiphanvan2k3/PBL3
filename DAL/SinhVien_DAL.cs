@@ -21,7 +21,8 @@ namespace DAL
 
         public static List<SINH_VIEN> GetSinhVienInLopSH(string MaLopSH)
         {
-            return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).ToList();
+            return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).
+                OrderBy(sv=>sv.NGUOI_DUNG.Ten).ToList();
         }
     }
 }

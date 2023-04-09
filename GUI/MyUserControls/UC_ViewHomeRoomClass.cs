@@ -16,6 +16,9 @@ namespace GUI.MyUserControls
 
         private void changePropertiesForColumns()
         {
+            dtgv.Columns["STT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv.Columns["STT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
             dtgv.Columns["MaSV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtgv.Columns["MaSV"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 

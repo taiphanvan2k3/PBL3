@@ -7,6 +7,8 @@ namespace DTO
     /// </summary>
     public class SinhVienLSH_View
     {
+        public int STT { get; set; }
+
         [DisplayName("Số thẻ sinh viên")]
         public string MaSV { get; set; }
 

@@ -2,7 +2,6 @@
 using DTO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace BLL
 {
@@ -48,21 +47,22 @@ namespace BLL
         {
             List<SINH_VIEN> li = SinhVien_DAL.GetSinhVienInLopSH(MaLopSH);
             List<SinhVienLSH_View> res = new List<SinhVienLSH_View>();
+            int stt = 1;
             foreach (SINH_VIEN sv in li)
             {
                 NGUOI_DUNG nd = sv.NGUOI_DUNG;
                 SinhVienLSH_View svView = new SinhVienLSH_View()
                 {
+                    STT = stt,
                     MaSV = sv.MaSV,
                     HoTen = nd.Ho + " " + nd.Ten,
                     SDT = nd.Sdt,
                     EmailCaNhan = nd.EmailCaNhan
                 };
                 if (sv.PHU_HUYNH.Count > 0)
-                {
                     svView.SdtNguoiThan = sv.PHU_HUYNH.FirstOrDefault().Sdt;
-                }
                 res.Add(svView);
+                stt++;
             }
             return res;
         }
