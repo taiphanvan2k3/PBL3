@@ -49,9 +49,9 @@ namespace GUI
 
         private void btnOpenEmail_Click(object sender, EventArgs e)
         {
-           frmValidPass frmValidPass = new frmValidPass();
-            frmValidPass.ShowDialog();
-            this.Dispose();
+           //frmValidPass frmValidPass = new frmValidPass();
+           // frmValidPass.ShowDialog();
+           // this.Dispose();
         }
     }
 }

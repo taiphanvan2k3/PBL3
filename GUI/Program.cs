@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Windows.Forms;
 namespace GUI
 {
@@ -14,5 +15,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
         }
+
+
     }
 }

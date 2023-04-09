@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -47,17 +48,37 @@ namespace GUI
             }
             else
             {
-
-                ResetPassword resetPassword = new ResetPassword();
-                string result = resetPassword.ResetPasswordByEmail(txtEmail.Texts.ToString());
-                if (result == null)
+                var acc = ForgetPass_BLL.Instance.ResetPasswordByEmail(txtEmail.Texts.ToString());
+                if (acc == null)
                 {
                     MessageBox.Show("Địa chỉ id không hợp lệ");
                 }
                 else
                 {
+                    // Lưu thời điểm hiện tại vào biến lastUpdateTime
+                    DateTime lastUpdateTime = DateTime.Now;
+
+                    // Tạo một Timer với khoảng thời gian là 1 phút
+                    Timer timer = new Timer();
+                    timer.Interval = 60000;
+
+                    // Xử lý sự kiện Tick của Timer
+                    timer.Tick += (s, e1) =>
+                    {
+                        // Kiểm tra xem đã đủ khoảng thời gian để cập nhật dữ liệu chưa
+                        if (DateTime.Now.Subtract(lastUpdateTime).TotalMinutes >= 1)
+                        {
+                            // Thực hiện cập nhật dữ liệu bằng Entity Framework
+                            ForgetPass_BLL.Instance.resetVerification_BLL(txtEmail.Texts.ToString());
+                            // Lưu thời điểm hiện tại để tính thời điểm cập nhật tiếp theo
+                            lastUpdateTime = DateTime.Now;
+                        }
+                    };
+
+                    // Bắt đầu chạy Timer
+                    timer.Start();
                     MessageBox.Show("Đã gửi mã thành công");
-                    frmCheckEmail frm = new frmCheckEmail();
+                    frmEnterDigitCode frm = new frmEnterDigitCode(acc);
                     this.Visible = false;
                     frm.ShowDialog();
                     this.Dispose();

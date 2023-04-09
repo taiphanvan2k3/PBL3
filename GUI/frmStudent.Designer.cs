@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
-            this.lblAvatar = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
             this.panelCalendar = new System.Windows.Forms.Panel();
@@ -86,7 +86,7 @@
             this.panel3.Size = new System.Drawing.Size(1451, 69);
             this.panel3.TabIndex = 2;
             // 
-            // avatarTopRight
+            // label2
             // 
             this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;

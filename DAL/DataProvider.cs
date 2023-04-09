@@ -21,9 +21,9 @@ namespace DAL
 
         public DataTable ExecuteQuery(string query)
         {
-            SqlConnection cnn= new SqlConnection(connectionString);
+            SqlConnection cnn = new SqlConnection(connectionString);
             cnn.Open();
-            SqlCommand cmd= new SqlCommand(query,cnn);
+            SqlCommand cmd = new SqlCommand(query, cnn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
