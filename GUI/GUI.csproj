@@ -549,6 +549,10 @@
   <ItemGroup>
     <None Include="Resources\previousPage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\LogoPBL3.png" />
+    <Content Include="Resources\Yourname.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
