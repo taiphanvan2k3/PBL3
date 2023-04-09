@@ -353,6 +353,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsername.Location = new System.Drawing.Point(0, 0);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.MaxLength = 32767;
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Padding = new System.Windows.Forms.Padding(7);
@@ -376,6 +377,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
             this.txtPassword.Location = new System.Drawing.Point(0, 50);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.MaxLength = 32767;
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
+            //this.label2 = new System.Windows.Forms.Label();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
