@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressSelectionBLL.cs" />
-    <Compile Include="CheckLoginBLL.cs" />
     <Compile Include="GiangVienBLL.cs" />
     <Compile Include="MoveFormHelper.cs" />
     <Compile Include="SinhVien_BLL.cs" />
@@ -93,10 +92,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{a3effaa1-f739-4efa-9905-ce4876fa2a8d}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
       <Name>DTO</Name>
