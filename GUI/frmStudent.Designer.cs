@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
-            //this.label2 = new System.Windows.Forms.Label();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
@@ -58,12 +57,10 @@
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panelMenuTong = new System.Windows.Forms.Panel();
             this.panelShowDetail = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnTest = new FontAwesome.Sharp.IconButton();
             this.uC_StudentInfo = new GUI.MyUserControls.uC_StudentInfo();
-            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.panelCalendar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,8 +71,6 @@
             this.panel2.SuspendLayout();
             this.panelMenuTong.SuspendLayout();
             this.panelShowDetail.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +85,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1451, 69);
             this.panel3.TabIndex = 2;
+            // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1371, 6);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
             // 
             // lblAvatar
             // 
@@ -205,7 +217,6 @@
             this.flowLayoutPanel1.Controls.Add(this.panelLop);
             this.flowLayoutPanel1.Controls.Add(this.panelCalendar);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(228, 591);
@@ -456,34 +467,6 @@
             this.panelShowDetail.Size = new System.Drawing.Size(1212, 781);
             this.panelShowDetail.TabIndex = 11;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnTest);
-            this.panel5.Location = new System.Drawing.Point(3, 322);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(217, 55);
-            this.panel5.TabIndex = 8;
-            // 
-            // btnTest
-            // 
-            this.btnTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.btnTest.FlatAppearance.BorderSize = 0;
-            this.btnTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnTest.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
-            this.btnTest.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnTest.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTest.IconSize = 35;
-            this.btnTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTest.Location = new System.Drawing.Point(11, 4);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(193, 48);
-            this.btnTest.TabIndex = 2;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = false;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
             // uC_StudentInfo
             // 
             this.uC_StudentInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -506,23 +489,6 @@
             this.uC_StudentInfo.SoDienThoai = "";
             this.uC_StudentInfo.SoNha = "";
             this.uC_StudentInfo.TabIndex = 0;
-            // 
-            // avatarTopRight
-            // 
-            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
-            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.avatarTopRight.BorderSize = 2;
-            this.avatarTopRight.GradientAngle = 50F;
-            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1371, 6);
-            this.avatarTopRight.Name = "avatarTopRight";
-            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
-            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarTopRight.TabIndex = 3;
-            this.avatarTopRight.TabStop = false;
             // 
             // circularPictureBox
             // 
@@ -552,10 +518,12 @@
             this.Controls.Add(this.panel3);
             this.MinimumSize = new System.Drawing.Size(1469, 900);
             this.Name = "frmStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmStudent_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.panelCalendar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -566,8 +534,6 @@
             this.panel2.ResumeLayout(false);
             this.panelMenuTong.ResumeLayout(false);
             this.panelShowDetail.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -604,7 +570,5 @@
         private System.Windows.Forms.Panel panelShowDetail;
         private MyUserControls.uC_StudentInfo uC_StudentInfo;
         private MyCustomControl.CircularPictureBox avatarTopRight;
-        private System.Windows.Forms.Panel panel5;
-        private FontAwesome.Sharp.IconButton btnTest;
     }
 }
