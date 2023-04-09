@@ -58,8 +58,10 @@
     <Compile Include="CBBAddressItem.cs" />
     <Compile Include="GiangVien_DTO.cs" />
     <Compile Include="NguoiDung_DTO.cs" />
+    <Compile Include="PhuHuynh_DTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SinhVienLSH_View.cs" />
     <Compile Include="SinhVien_DTO.cs" />
     <Compile Include="THONG_TIN_DANG_NHAP_DTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

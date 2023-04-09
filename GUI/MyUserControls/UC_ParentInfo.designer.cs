@@ -45,9 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnPreviousPage = new Guna.UI2.WinForms.Guna2Button();
-            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.panelTTLienLac.SuspendLayout();
             this.paneLeft.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -84,7 +84,7 @@
             this.txtSDTCha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSDTCha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSDTCha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSDTCha.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSDTCha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDTCha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDTCha.Location = new System.Drawing.Point(147, 61);
             this.txtSDTCha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -108,7 +108,7 @@
             this.txtSDTMe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSDTMe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSDTMe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSDTMe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSDTMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDTMe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDTMe.Location = new System.Drawing.Point(148, 132);
             this.txtSDTMe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -208,7 +208,7 @@
             this.txtTenMe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenMe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenMe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenMe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenMe.Location = new System.Drawing.Point(183, 316);
             this.txtTenMe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -242,7 +242,7 @@
             this.txtTenCha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenCha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenCha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenCha.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenCha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenCha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenCha.Location = new System.Drawing.Point(183, 99);
             this.txtTenCha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -318,6 +318,20 @@
             this.guna2GroupBox3.TabIndex = 5;
             this.guna2GroupBox3.Text = "Hộ khẩu gia đình";
             // 
+            // uC_AddressSelection
+            // 
+            this.uC_AddressSelection.BackColor = System.Drawing.Color.White;
+            this.uC_AddressSelection.Background = System.Drawing.Color.White;
+            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.RosyBrown;
+            this.uC_AddressSelection.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_AddressSelection.Location = new System.Drawing.Point(4, 43);
+            this.uC_AddressSelection.Name = "uC_AddressSelection";
+            this.uC_AddressSelection.QuanHuyen = "";
+            this.uC_AddressSelection.Size = new System.Drawing.Size(487, 177);
+            this.uC_AddressSelection.TabIndex = 0;
+            this.uC_AddressSelection.TinhThanhPho = "Chọn Tỉnh/ Thành phố";
+            this.uC_AddressSelection.XaPhuong = "";
+            // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -354,20 +368,6 @@
             this.btnPreviousPage.Text = "    Trang trước";
             this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
-            // uC_AddressSelection
-            // 
-            this.uC_AddressSelection.BackColor = System.Drawing.Color.White;
-            this.uC_AddressSelection.Background = System.Drawing.Color.White;
-            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.RosyBrown;
-            this.uC_AddressSelection.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uC_AddressSelection.Location = new System.Drawing.Point(4, 43);
-            this.uC_AddressSelection.Name = "uC_AddressSelection";
-            this.uC_AddressSelection.QuanHuyen = "";
-            this.uC_AddressSelection.Size = new System.Drawing.Size(487, 177);
-            this.uC_AddressSelection.TabIndex = 0;
-            this.uC_AddressSelection.TinhThanhPho = "Chọn Tỉnh/ Thành phố";
-            this.uC_AddressSelection.XaPhuong = "";
-            // 
             // UC_ParentInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -380,6 +380,7 @@
             this.MinimumSize = new System.Drawing.Size(1190, 655);
             this.Name = "UC_ParentInfo";
             this.Size = new System.Drawing.Size(1190, 655);
+            this.Load += new System.EventHandler(this.UC_ParentInfo_Load);
             this.panelTTLienLac.ResumeLayout(false);
             this.panelTTLienLac.PerformLayout();
             this.paneLeft.ResumeLayout(false);

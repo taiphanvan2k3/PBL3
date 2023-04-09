@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DTO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BLL
 {
@@ -28,17 +29,42 @@ namespace BLL
                     NoiSinh = nd.NoiSinh,
                     GioiTinh = nd.GioiTinh,
                     DanToc = nd.DanToc,
-                    QuocTinh = nd.QuocTinh,
+                    QuocTinh = nd.QuocTich,
                     MaCCCD = nd.MaCCCD,
                     Khoa = khoa.TenKhoa,
                     TenCTDT = ctdt.TenCTDT,
                     MaLopSH = sv.MaLopSH,
                     EmailCaNhan = nd.EmailCaNhan,
+                    EmailTruongCap = nd.EmailTruongCap,
                     Sdt = nd.Sdt,
                     DiaChi = nd.DiaChi
                 };
             }
             return null;
+        }
+
+        public static List<SinhVienLSH_View> GetSinhVienInLopSH(string MaLopSH)
+        {
+            List<SINH_VIEN> li = SinhVien_DAL.GetSinhVienInLopSH(MaLopSH);
+            List<SinhVienLSH_View> res = new List<SinhVienLSH_View>();
+            int stt = 1;
+            foreach (SINH_VIEN sv in li)
+            {
+                NGUOI_DUNG nd = sv.NGUOI_DUNG;
+                SinhVienLSH_View svView = new SinhVienLSH_View()
+                {
+                    STT = stt,
+                    MaSV = sv.MaSV,
+                    HoTen = nd.Ho + " " + nd.Ten,
+                    SDT = nd.Sdt,
+                    EmailCaNhan = nd.EmailCaNhan
+                };
+                if (sv.PHU_HUYNH.Count > 0)
+                    svView.SdtNguoiThan = sv.PHU_HUYNH.FirstOrDefault().Sdt;
+                res.Add(svView);
+                stt++;
+            }
+            return res;
         }
     }
 }

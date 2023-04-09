@@ -55,6 +55,7 @@ namespace GUI
                 }
                 else
                 {
+                    UtilityClass.sendEmail(txtEmail.Texts.ToString(), acc.MaXacThucDeLayLaiMK);
                     // Lưu thời điểm hiện tại vào biến lastUpdateTime
                     DateTime lastUpdateTime = DateTime.Now;
 
@@ -70,6 +71,7 @@ namespace GUI
                         {
                             // Thực hiện cập nhật dữ liệu bằng Entity Framework
                             ForgetPass_BLL.Instance.resetVerification_BLL(txtEmail.Texts.ToString());
+
                             // Lưu thời điểm hiện tại để tính thời điểm cập nhật tiếp theo
                             lastUpdateTime = DateTime.Now;
                         }

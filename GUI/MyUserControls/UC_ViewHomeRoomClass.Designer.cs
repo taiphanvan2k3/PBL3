@@ -29,16 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCenter = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.panelTop = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mssv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailCaNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdtNguoiThan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.panelTop.SuspendLayout();
@@ -46,8 +41,8 @@
             // 
             // panelCenter
             // 
-            this.panelCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCenter.BackColor = System.Drawing.Color.Transparent;
             this.panelCenter.BorderRadius = 25;
@@ -66,7 +61,7 @@
             // 
             this.dtgv.AllowUserToAddRows = false;
             this.dtgv.AllowUserToDeleteRows = false;
-            this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv.BackgroundColor = System.Drawing.SystemColors.Info;
@@ -79,25 +74,28 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.Mssv,
-            this.nameSV,
-            this.sdt,
-            this.emailCaNhan,
-            this.sdtNguoiThan});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtgv.Location = new System.Drawing.Point(65, 57);
             this.dtgv.Name = "dtgv";
             this.dtgv.ReadOnly = true;
+            this.dtgv.RowHeadersVisible = false;
             this.dtgv.RowHeadersWidth = 51;
-            this.dtgv.RowTemplate.Height = 24;
+            this.dtgv.RowTemplate.Height = 30;
+            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv.Size = new System.Drawing.Size(973, 538);
             this.dtgv.TabIndex = 0;
             // 
             // panelTop
             // 
-            this.panelTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.panelTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTop.BorderRadius = 10;
             this.panelTop.Controls.Add(this.label1);
@@ -118,50 +116,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách sinh viên";
             // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 66;
-            // 
-            // Mssv
-            // 
-            this.Mssv.HeaderText = "Mã sinh viên";
-            this.Mssv.MinimumWidth = 6;
-            this.Mssv.Name = "Mssv";
-            this.Mssv.ReadOnly = true;
-            // 
-            // nameSV
-            // 
-            this.nameSV.HeaderText = "Họ tên sinh viên";
-            this.nameSV.MinimumWidth = 6;
-            this.nameSV.Name = "nameSV";
-            this.nameSV.ReadOnly = true;
-            // 
-            // sdt
-            // 
-            this.sdt.HeaderText = "Điện thoại";
-            this.sdt.MinimumWidth = 6;
-            this.sdt.Name = "sdt";
-            this.sdt.ReadOnly = true;
-            // 
-            // emailCaNhan
-            // 
-            this.emailCaNhan.HeaderText = "Email cá nhân";
-            this.emailCaNhan.MinimumWidth = 6;
-            this.emailCaNhan.Name = "emailCaNhan";
-            this.emailCaNhan.ReadOnly = true;
-            // 
-            // sdtNguoiThan
-            // 
-            this.sdtNguoiThan.HeaderText = "Điện thoại người thân";
-            this.sdtNguoiThan.MinimumWidth = 6;
-            this.sdtNguoiThan.Name = "sdtNguoiThan";
-            this.sdtNguoiThan.ReadOnly = true;
-            // 
             // UC_ViewHomeRoomClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -170,6 +124,7 @@
             this.Controls.Add(this.panelCenter);
             this.Name = "UC_ViewHomeRoomClass";
             this.Size = new System.Drawing.Size(1139, 800);
+            this.Load += new System.EventHandler(this.UC_ViewHomeRoomClass_Load);
             this.panelCenter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.panelTop.ResumeLayout(false);
@@ -184,11 +139,5 @@
         private System.Windows.Forms.DataGridView dtgv;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelTop;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mssv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailCaNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sdtNguoiThan;
     }
 }

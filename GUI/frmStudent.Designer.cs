@@ -220,7 +220,6 @@
             this.flowLayoutPanel1.Controls.Add(this.panelLop);
             this.flowLayoutPanel1.Controls.Add(this.panelCalendar);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(228, 591);
@@ -550,6 +549,7 @@
             this.Controls.Add(this.panel3);
             this.MinimumSize = new System.Drawing.Size(1469, 900);
             this.Name = "frmStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmStudent_Load);
             this.panel3.ResumeLayout(false);
@@ -602,7 +602,5 @@
         private System.Windows.Forms.Panel panelShowDetail;
         private MyUserControls.uC_StudentInfo uC_StudentInfo;
         private MyCustomControl.CircularPictureBox avatarTopRight;
-        private System.Windows.Forms.Panel panel5;
-        private FontAwesome.Sharp.IconButton btnTest;
     }
 }
