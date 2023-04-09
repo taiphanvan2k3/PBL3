@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,102 +8,201 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace GUI
 {
     public partial class frmAdmin : Form
     {
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
         public frmAdmin()
         {
             InitializeComponent();
+            hideSubMenu();
+            CollapseMenu();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panelMenu.Controls.Add(leftBorderBtn);
         }
 
-        private void btnLopArrowDown_Click(object sender, EventArgs e)
+        private struct RGBColors
         {
-            timerExpandClass.Start();
+            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(95, 77, 221);
+            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
         }
 
-        private void timerExpandClass_Tick(object sender, EventArgs e)
+        private void ActivateButton(object senderBtn, Color color)
         {
-            if (panelLop.Height == 153)
+            if (senderBtn != null)
             {
-                for (int i = 153; i >= 53; i--)
-                    panelLop.Height = i;
-                timerExpandClass.Stop();
-                btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-                isExpandingClass = false;
+                DisableButton();
+                //Button
+                currentBtn = (IconButton)senderBtn;
+                if (this.panelMenu.Width > 200)
+                {
+                    currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+                }
+                else
+                {
+                    currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
+                }
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = color;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                //Left border button
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+            }
+        }
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                if (this.panelMenu.Width > 200)
+                {
+                    currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+                }
+                else
+                {
+                    currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
+                }
+                currentBtn.BackColor = Color.FromArgb(0, 28, 68);
+                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                leftBorderBtn.Visible = false;
+
+
+            }
+        }
+
+        private void hideSubMenu()
+        {
+            panelAdd.Visible = false;
+            panelClass.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
             }
             else
-            {
-                for (int i = 53; i <= 153; i++)
-                    panelLop.Height = i;
-                timerExpandClass.Stop();
-                btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
-                isExpandingClass = true;
-            }
+                subMenu.Visible = false;
         }
 
-        private void btnCalendarExpand_Click(object sender, EventArgs e)
+
+        
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
         {
-            timerExpandCalendar.Start();
+            if (activeForm != null) activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
-        private void timerExpandCalendar_Tick(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
-            if (panelCalendar.Height == 156)
-            {
-                for (int i = 156; i >= 53; i--)
-                    panelCalendar.Height = i;
-                timerExpandCalendar.Stop();
-                btnCalendarExpand.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-                isExpandingCalendar = false;
-            }
-            else
-            {
-                for (int i = 53; i <= 156; i++)
-                    panelCalendar.Height = i;
-                timerExpandCalendar.Stop();
-                btnCalendarExpand.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
-                isExpandingCalendar = true;
-            }
+
+            ActivateButton(sender, RGBColors.color1);
+            openChildForm(new frmAddAccount());
+            //..
+            //your codes
+            //..
+            hideSubMenu();
         }
 
-        private Point originalLocationOfBtnMenuExpand;
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            showSubMenu(panelAdd);
+        }
 
-        //Hai biến bool này để lưu trạng thái đóng mở của panelLop, panelCalendar
-        //để khi panelMenuTong đưa về trạng thái mở rộng ban đầu thì hiển thị lại trạng thái đóng, mở tương
-        //ứng đó
-        private bool isExpandingClass = false;
-        private bool isExpandingCalendar = false;
         private void btnExpandMenu_Click(object sender, EventArgs e)
         {
-            if (panelMenuTong.Width == 237)
+            CollapseMenu();
+        }
+        private void CollapseMenu()
+        {
+            if (this.panelMenu.Width > 200) //Collapse menu
             {
-                originalLocationOfBtnMenuExpand = btnExpandMenu.Location;
-                pictureBoxMenu.Visible = false;
-                btnExpandMenu.Location = pictureBoxMenu.Location;
-                panelMenuTong.Width = 63;
-                if (isExpandingCalendar)
-                    panelCalendar.Height = panelCalendar.MinimumSize.Height;
-                if (isExpandingClass)
-                    panelLop.Height = panelLop.MinimumSize.Height;
-                panelShowDetail.Location = new Point(panelShowDetail.Location.X - (237 - 63), panelShowDetail.Location.Y);
-                panelShowDetail.Width += (237 - 63);
+                panelMenu.Width = 100;
+                pictureBox1.Visible = false;
+                btnMenu.Dock = DockStyle.Top;
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
+                foreach (Button menuButton in panelAdd.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
+                foreach (Button menuButton in panelClass.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
+
             }
             else
-            {
-                panelMenuTong.Width = 237;
-                pictureBoxMenu.Visible = true;
-                btnExpandMenu.Location = originalLocationOfBtnMenuExpand;
-                if (isExpandingCalendar)
-                    panelCalendar.Height = panelCalendar.MaximumSize.Height;
-                if (isExpandingClass)
-                    panelLop.Height = panelLop.MaximumSize.Height;
-                panelShowDetail.Location = new Point(panelShowDetail.Location.X + (237 - 63), panelShowDetail.Location.Y);
-                panelShowDetail.Width -= (237 - 63);
+            { //Expand menu
+                panelMenu.Width = 250;
+                pictureBox1.Visible = true;
+                btnMenu.Dock = DockStyle.None;
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "    " + menuButton.Tag.ToString() + "    ";
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+                foreach (Button menuButton in panelAdd.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "    " + menuButton.Tag.ToString() + "    ";
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+                foreach (Button menuButton in panelClass.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "    " + menuButton.Tag.ToString() + "    ";
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+
             }
         }
 
+        private void btnClass_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            showSubMenu(panelClass);
+        }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
