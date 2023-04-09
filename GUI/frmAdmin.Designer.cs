@@ -28,459 +28,333 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
-            this.btnCalendar = new FontAwesome.Sharp.IconButton();
-            this.panelCalendar = new System.Windows.Forms.Panel();
-            this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
-            this.btnCalendarExpand = new FontAwesome.Sharp.IconButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExpandMenu = new FontAwesome.Sharp.IconButton();
-            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.panelLop = new System.Windows.Forms.Panel();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelClass = new System.Windows.Forms.Panel();
+            this.btnAcitivityClass = new FontAwesome.Sharp.IconButton();
+            this.btnClassSection = new FontAwesome.Sharp.IconButton();
             this.btnClass = new FontAwesome.Sharp.IconButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.btnLopArrowDown = new FontAwesome.Sharp.IconButton();
-            this.timerExpandClass = new System.Windows.Forms.Timer(this.components);
-            this.timerExpandCalendar = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
-            this.panelMenuTong = new System.Windows.Forms.Panel();
-            this.panelShowDetail = new System.Windows.Forms.Panel();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
-            this.panelCalendar.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panelLop.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panelMenuTong.SuspendLayout();
+            this.panelAdd = new System.Windows.Forms.Panel();
+            this.btnTeacher = new FontAwesome.Sharp.IconButton();
+            this.btnStudent = new FontAwesome.Sharp.IconButton();
+            this.btnAdd = new FontAwesome.Sharp.IconButton();
+            this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.panelMenu.SuspendLayout();
+            this.panelClass.SuspendLayout();
+            this.panelAdd.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel3
+            // panelMenu
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
-            this.panel3.Controls.Add(this.circularPictureBox);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1262, 69);
-            this.panel3.TabIndex = 2;
+            this.panelMenu.AutoScroll = true;
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.panelClass);
+            this.panelMenu.Controls.Add(this.btnClass);
+            this.panelMenu.Controls.Add(this.btnLogOut);
+            this.panelMenu.Controls.Add(this.panelAdd);
+            this.panelMenu.Controls.Add(this.btnAdd);
+            this.panelMenu.Controls.Add(this.btnHome);
+            this.panelMenu.Controls.Add(this.panelLogo);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(250, 673);
+            this.panelMenu.TabIndex = 0;
             // 
-            // circularPictureBox
+            // panelClass
             // 
-            this.circularPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.circularPictureBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox.BorderColor2 = System.Drawing.Color.HotPink;
-            this.circularPictureBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox.BorderSize = 2;
-            this.circularPictureBox.GradientAngle = 50F;
-            this.circularPictureBox.Image = global::GUI.Properties.Resources._294355517_1105843533621186_1411223748583159430_n;
-            this.circularPictureBox.InitialImage = global::GUI.Properties.Resources.studentAvatar;
-            this.circularPictureBox.Location = new System.Drawing.Point(1192, 8);
-            this.circularPictureBox.Name = "circularPictureBox";
-            this.circularPictureBox.Size = new System.Drawing.Size(58, 58);
-            this.circularPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox.TabIndex = 0;
-            this.circularPictureBox.TabStop = false;
+            this.panelClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
+            this.panelClass.Controls.Add(this.btnAcitivityClass);
+            this.panelClass.Controls.Add(this.btnClassSection);
+            this.panelClass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelClass.Location = new System.Drawing.Point(0, 360);
+            this.panelClass.Name = "panelClass";
+            this.panelClass.Size = new System.Drawing.Size(250, 121);
+            this.panelClass.TabIndex = 15;
             // 
-            // btnCalendar
+            // btnAcitivityClass
             // 
-            this.btnCalendar.FlatAppearance.BorderSize = 0;
-            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalendar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnCalendar.IconChar = FontAwesome.Sharp.IconChar.School;
-            this.btnCalendar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendar.Location = new System.Drawing.Point(4, 6);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.Size = new System.Drawing.Size(179, 36);
-            this.btnCalendar.TabIndex = 4;
-            this.btnCalendar.Text = "Lớp học";
-            this.btnCalendar.UseVisualStyleBackColor = true;
+            this.btnAcitivityClass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAcitivityClass.FlatAppearance.BorderSize = 0;
+            this.btnAcitivityClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcitivityClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcitivityClass.ForeColor = System.Drawing.Color.White;
+            this.btnAcitivityClass.IconChar = FontAwesome.Sharp.IconChar.UsersLine;
+            this.btnAcitivityClass.IconColor = System.Drawing.Color.White;
+            this.btnAcitivityClass.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAcitivityClass.IconSize = 30;
+            this.btnAcitivityClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcitivityClass.Location = new System.Drawing.Point(0, 60);
+            this.btnAcitivityClass.Name = "btnAcitivityClass";
+            this.btnAcitivityClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAcitivityClass.Size = new System.Drawing.Size(250, 60);
+            this.btnAcitivityClass.TabIndex = 13;
+            this.btnAcitivityClass.Tag = "Lớp sinh hoạt";
+            this.btnAcitivityClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcitivityClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAcitivityClass.UseVisualStyleBackColor = true;
             // 
-            // panelCalendar
+            // btnClassSection
             // 
-            this.panelCalendar.Controls.Add(this.iconButton10);
-            this.panelCalendar.Controls.Add(this.iconButton9);
-            this.panelCalendar.Controls.Add(this.btnCalendarExpand);
-            this.panelCalendar.Controls.Add(this.btnCalendar);
-            this.panelCalendar.Location = new System.Drawing.Point(3, 202);
-            this.panelCalendar.MaximumSize = new System.Drawing.Size(217, 156);
-            this.panelCalendar.MinimumSize = new System.Drawing.Size(217, 53);
-            this.panelCalendar.Name = "panelCalendar";
-            this.panelCalendar.Size = new System.Drawing.Size(217, 53);
-            this.panelCalendar.TabIndex = 7;
-            // 
-            // iconButton10
-            // 
-            this.iconButton10.FlatAppearance.BorderSize = 0;
-            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
-            this.iconButton10.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.Location = new System.Drawing.Point(21, 104);
-            this.iconButton10.Name = "iconButton10";
-            this.iconButton10.Size = new System.Drawing.Size(176, 57);
-            this.iconButton10.TabIndex = 7;
-            this.iconButton10.Text = "     Thêm sinh viên";
-            this.iconButton10.UseVisualStyleBackColor = true;
-            // 
-            // iconButton9
-            // 
-            this.iconButton9.FlatAppearance.BorderSize = 0;
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.iconButton9.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton9.Location = new System.Drawing.Point(21, 48);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Size = new System.Drawing.Size(162, 57);
-            this.iconButton9.TabIndex = 6;
-            this.iconButton9.Text = "     Thêm giảng viên";
-            this.iconButton9.UseVisualStyleBackColor = true;
-            // 
-            // btnCalendarExpand
-            // 
-            this.btnCalendarExpand.FlatAppearance.BorderSize = 0;
-            this.btnCalendarExpand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendarExpand.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.btnCalendarExpand.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnCalendarExpand.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCalendarExpand.IconSize = 25;
-            this.btnCalendarExpand.Location = new System.Drawing.Point(179, 6);
-            this.btnCalendarExpand.Name = "btnCalendarExpand";
-            this.btnCalendarExpand.Size = new System.Drawing.Size(37, 40);
-            this.btnCalendarExpand.TabIndex = 5;
-            this.btnCalendarExpand.UseVisualStyleBackColor = true;
-            this.btnCalendarExpand.Click += new System.EventHandler(this.btnCalendarExpand_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Controls.Add(this.panelLop);
-            this.flowLayoutPanel1.Controls.Add(this.panelCalendar);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(228, 591);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnExpandMenu);
-            this.panel1.Controls.Add(this.pictureBoxMenu);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 66);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnExpandMenu
-            // 
-            this.btnExpandMenu.FlatAppearance.BorderSize = 0;
-            this.btnExpandMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpandMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
-            this.btnExpandMenu.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnExpandMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExpandMenu.IconSize = 33;
-            this.btnExpandMenu.Location = new System.Drawing.Point(162, 12);
-            this.btnExpandMenu.Name = "btnExpandMenu";
-            this.btnExpandMenu.Size = new System.Drawing.Size(54, 44);
-            this.btnExpandMenu.TabIndex = 0;
-            this.btnExpandMenu.UseVisualStyleBackColor = true;
-            this.btnExpandMenu.Click += new System.EventHandler(this.btnExpandMenu_Click);
-            // 
-            // pictureBoxMenu
-            // 
-            this.pictureBoxMenu.Image = global::GUI.Properties.Resources.Back;
-            this.pictureBoxMenu.Location = new System.Drawing.Point(4, 6);
-            this.pictureBoxMenu.Name = "pictureBoxMenu";
-            this.pictureBoxMenu.Size = new System.Drawing.Size(69, 50);
-            this.pictureBoxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMenu.TabIndex = 0;
-            this.pictureBoxMenu.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnHome);
-            this.panel4.Location = new System.Drawing.Point(3, 75);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(217, 59);
-            this.panel4.TabIndex = 1;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.btnHome.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHome.IconSize = 35;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(8, 7);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(189, 46);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Trang chủ";
-            this.btnHome.UseVisualStyleBackColor = false;
-            // 
-            // panelLop
-            // 
-            this.panelLop.Controls.Add(this.iconButton8);
-            this.panelLop.Controls.Add(this.btnLopArrowDown);
-            this.panelLop.Controls.Add(this.iconButton7);
-            this.panelLop.Controls.Add(this.btnClass);
-            this.panelLop.Location = new System.Drawing.Point(3, 140);
-            this.panelLop.MaximumSize = new System.Drawing.Size(217, 153);
-            this.panelLop.MinimumSize = new System.Drawing.Size(217, 56);
-            this.panelLop.Name = "panelLop";
-            this.panelLop.Size = new System.Drawing.Size(217, 56);
-            this.panelLop.TabIndex = 2;
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
-            this.iconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 35;
-            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(36, 104);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(186, 46);
-            this.iconButton8.TabIndex = 11;
-            this.iconButton8.Text = "        Lớp học phần";
-            this.iconButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.UseVisualStyleBackColor = false;
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconButton7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 35;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(36, 52);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(171, 46);
-            this.iconButton7.TabIndex = 10;
-            this.iconButton7.Text = "        Lớp sinh hoạt";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.UseVisualStyleBackColor = false;
+            this.btnClassSection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClassSection.FlatAppearance.BorderSize = 0;
+            this.btnClassSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClassSection.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClassSection.ForeColor = System.Drawing.Color.White;
+            this.btnClassSection.IconChar = FontAwesome.Sharp.IconChar.UsersViewfinder;
+            this.btnClassSection.IconColor = System.Drawing.Color.White;
+            this.btnClassSection.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClassSection.IconSize = 30;
+            this.btnClassSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClassSection.Location = new System.Drawing.Point(0, 0);
+            this.btnClassSection.Name = "btnClassSection";
+            this.btnClassSection.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClassSection.Size = new System.Drawing.Size(250, 60);
+            this.btnClassSection.TabIndex = 12;
+            this.btnClassSection.Tag = "Lớp học phần";
+            this.btnClassSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClassSection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClassSection.UseVisualStyleBackColor = true;
             // 
             // btnClass
             // 
-            this.btnClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
+            this.btnClass.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClass.FlatAppearance.BorderSize = 0;
             this.btnClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnClass.IconChar = FontAwesome.Sharp.IconChar.Add;
-            this.btnClass.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClass.ForeColor = System.Drawing.Color.White;
+            this.btnClass.IconChar = FontAwesome.Sharp.IconChar.Landmark;
+            this.btnClass.IconColor = System.Drawing.Color.White;
             this.btnClass.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClass.IconSize = 35;
+            this.btnClass.IconSize = 30;
             this.btnClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClass.Location = new System.Drawing.Point(10, 7);
+            this.btnClass.Location = new System.Drawing.Point(0, 300);
             this.btnClass.Name = "btnClass";
-            this.btnClass.Size = new System.Drawing.Size(173, 38);
-            this.btnClass.TabIndex = 9;
-            this.btnClass.Text = "Thêm ";
-            this.btnClass.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.iconButton4);
-            this.panel5.Location = new System.Drawing.Point(3, 261);
-            this.panel5.MaximumSize = new System.Drawing.Size(217, 153);
-            this.panel5.MinimumSize = new System.Drawing.Size(217, 56);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(217, 56);
-            this.panel5.TabIndex = 8;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 35;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(10, 7);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(154, 38);
-            this.iconButton4.TabIndex = 9;
-            this.iconButton4.Text = "Search";
-            this.iconButton4.UseVisualStyleBackColor = false;
-            // 
-            // btnLopArrowDown
-            // 
-            this.btnLopArrowDown.FlatAppearance.BorderSize = 0;
-            this.btnLopArrowDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLopArrowDown.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.btnLopArrowDown.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnLopArrowDown.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLopArrowDown.IconSize = 25;
-            this.btnLopArrowDown.Location = new System.Drawing.Point(178, 8);
-            this.btnLopArrowDown.Name = "btnLopArrowDown";
-            this.btnLopArrowDown.Size = new System.Drawing.Size(33, 40);
-            this.btnLopArrowDown.TabIndex = 6;
-            this.btnLopArrowDown.UseVisualStyleBackColor = true;
-            this.btnLopArrowDown.Click += new System.EventHandler(this.btnLopArrowDown_Click);
-            // 
-            // timerExpandClass
-            // 
-            this.timerExpandClass.Interval = 150;
-            this.timerExpandClass.Tick += new System.EventHandler(this.timerExpandClass_Tick);
-            // 
-            // timerExpandCalendar
-            // 
-            this.timerExpandCalendar.Interval = 150;
-            this.timerExpandCalendar.Tick += new System.EventHandler(this.timerExpandCalendar_Tick);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.panel2.Controls.Add(this.btnLogOut);
-            this.panel2.Location = new System.Drawing.Point(3, 604);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(228, 67);
-            this.panel2.TabIndex = 8;
+            this.btnClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClass.Size = new System.Drawing.Size(250, 60);
+            this.btnClass.TabIndex = 14;
+            this.btnClass.Tag = "Lớp học ";
+            this.btnClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClass.UseVisualStyleBackColor = true;
+            this.btnClass.Click += new System.EventHandler(this.btnClass_Click);
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnLogOut.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnLogOut.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnLogOut.IconColor = System.Drawing.Color.White;
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogOut.IconSize = 30;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(9, 9);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 623);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(205, 50);
-            this.btnLogOut.TabIndex = 0;
-            this.btnLogOut.Text = "Đăng xuất";
-            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(250, 50);
+            this.btnLogOut.TabIndex = 13;
+            this.btnLogOut.Tag = "LOG OUT";
+            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // panelMenuTong
+            // panelAdd
             // 
-            this.panelMenuTong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelMenuTong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
-            this.panelMenuTong.Controls.Add(this.flowLayoutPanel1);
-            this.panelMenuTong.Controls.Add(this.panel2);
-            this.panelMenuTong.Location = new System.Drawing.Point(2, 0);
-            this.panelMenuTong.Name = "panelMenuTong";
-            this.panelMenuTong.Size = new System.Drawing.Size(237, 674);
-            this.panelMenuTong.TabIndex = 10;
+            this.panelAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
+            this.panelAdd.Controls.Add(this.btnTeacher);
+            this.panelAdd.Controls.Add(this.btnStudent);
+            this.panelAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAdd.Location = new System.Drawing.Point(0, 180);
+            this.panelAdd.Name = "panelAdd";
+            this.panelAdd.Size = new System.Drawing.Size(250, 120);
+            this.panelAdd.TabIndex = 12;
             // 
-            // panelShowDetail
+            // btnTeacher
             // 
-            this.panelShowDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelShowDetail.AutoScroll = true;
-            this.panelShowDetail.BackColor = System.Drawing.Color.White;
-            this.panelShowDetail.Location = new System.Drawing.Point(239, 70);
-            this.panelShowDetail.Name = "panelShowDetail";
-            this.panelShowDetail.Size = new System.Drawing.Size(1023, 601);
-            this.panelShowDetail.TabIndex = 11;
+            this.btnTeacher.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTeacher.FlatAppearance.BorderSize = 0;
+            this.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTeacher.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTeacher.ForeColor = System.Drawing.Color.White;
+            this.btnTeacher.IconChar = FontAwesome.Sharp.IconChar.PersonChalkboard;
+            this.btnTeacher.IconColor = System.Drawing.Color.White;
+            this.btnTeacher.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTeacher.IconSize = 30;
+            this.btnTeacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTeacher.Location = new System.Drawing.Point(0, 60);
+            this.btnTeacher.Name = "btnTeacher";
+            this.btnTeacher.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnTeacher.Size = new System.Drawing.Size(250, 60);
+            this.btnTeacher.TabIndex = 13;
+            this.btnTeacher.Tag = "Giảng viên";
+            this.btnTeacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTeacher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTeacher.UseVisualStyleBackColor = true;
+            // 
+            // btnStudent
+            // 
+            this.btnStudent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudent.FlatAppearance.BorderSize = 0;
+            this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudent.ForeColor = System.Drawing.Color.White;
+            this.btnStudent.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
+            this.btnStudent.IconColor = System.Drawing.Color.White;
+            this.btnStudent.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnStudent.IconSize = 30;
+            this.btnStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudent.Location = new System.Drawing.Point(0, 0);
+            this.btnStudent.Name = "btnStudent";
+            this.btnStudent.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnStudent.Size = new System.Drawing.Size(250, 60);
+            this.btnStudent.TabIndex = 12;
+            this.btnStudent.Tag = "Sinh viên";
+            this.btnStudent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStudent.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnAdd.IconColor = System.Drawing.Color.White;
+            this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAdd.IconSize = 30;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(0, 120);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAdd.Size = new System.Drawing.Size(250, 60);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Tag = "Tài khoản";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.btnHome.IconColor = System.Drawing.Color.White;
+            this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHome.IconSize = 30;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(0, 60);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(250, 60);
+            this.btnHome.TabIndex = 10;
+            this.btnHome.Tag = "Trang chủ";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.btnMenu);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 60);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
+            this.btnMenu.IconColor = System.Drawing.Color.White;
+            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenu.IconSize = 33;
+            this.btnMenu.Location = new System.Drawing.Point(190, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(60, 60);
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnExpandMenu_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources._338313717_162862019998089_3577123447925415259_n;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(159, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1012, 673);
+            this.panelChildForm.TabIndex = 2;
             // 
             // frmAdmin
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.panelShowDetail);
-            this.Controls.Add(this.panelMenuTong);
-            this.Controls.Add(this.panel3);
-            this.MinimumSize = new System.Drawing.Size(1080, 720);
+            this.Controls.Add(this.panelChildForm);
+            this.Controls.Add(this.panelMenu);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "frmAdmin";
-            this.Text = "Form1";
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
-            this.panelCalendar.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panelLop.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panelMenuTong.ResumeLayout(false);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.panelMenu.ResumeLayout(false);
+            this.panelClass.ResumeLayout(false);
+            this.panelAdd.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnCalendar;
-        private System.Windows.Forms.Panel panel3;
-        private MyCustomControl.CircularPictureBox circularPictureBox;
-        private System.Windows.Forms.Panel panelCalendar;
-        private FontAwesome.Sharp.IconButton btnCalendarExpand;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton btnExpandMenu;
-        private System.Windows.Forms.Panel panel4;
+
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelChildForm;
+        private FontAwesome.Sharp.IconButton btnMenu;
+        private System.Windows.Forms.Panel panelAdd;
+        private FontAwesome.Sharp.IconButton btnAdd;
         private FontAwesome.Sharp.IconButton btnHome;
-        private System.Windows.Forms.Panel panelLop;
-        private FontAwesome.Sharp.IconButton btnLopArrowDown;
-        private FontAwesome.Sharp.IconButton btnClass;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton10;
-        private FontAwesome.Sharp.IconButton iconButton9;
-        private System.Windows.Forms.Timer timerExpandClass;
-        private System.Windows.Forms.Timer timerExpandCalendar;
-        private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnLogOut;
-        private System.Windows.Forms.PictureBox pictureBoxMenu;
-        private System.Windows.Forms.Panel panelMenuTong;
-        private System.Windows.Forms.Panel panelShowDetail;
-        private System.Windows.Forms.Panel panel5;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btnClass;
+        private FontAwesome.Sharp.IconButton btnStudent;
+        private System.Windows.Forms.Panel panelClass;
+        private FontAwesome.Sharp.IconButton btnClassSection;
+        private FontAwesome.Sharp.IconButton btnTeacher;
+        private FontAwesome.Sharp.IconButton btnAcitivityClass;
     }
 }

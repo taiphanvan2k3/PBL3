@@ -28,6 +28,8 @@ namespace DAL
         public virtual DbSet<BAI_KIEM_TRA> BAI_KIEM_TRA { get; set; }
         public virtual DbSet<CAU_HOI> CAU_HOI { get; set; }
         public virtual DbSet<CHUONG_TRINH_DAO_TAO> CHUONG_TRINH_DAO_TAO { get; set; }
+        public virtual DbSet<city> cities { get; set; }
+        public virtual DbSet<district> districts { get; set; }
         public virtual DbSet<GIANG_VIEN> GIANG_VIEN { get; set; }
         public virtual DbSet<KHOA> KHOAs { get; set; }
         public virtual DbSet<LAM_BAI_KIEM_TRA> LAM_BAI_KIEM_TRA { get; set; }
@@ -41,8 +43,6 @@ namespace DAL
         public virtual DbSet<THOI_KHOA_BIEU> THOI_KHOA_BIEU { get; set; }
         public virtual DbSet<THONG_BAO> THONG_BAO { get; set; }
         public virtual DbSet<THONG_TIN_DANG_NHAP> THONG_TIN_DANG_NHAP { get; set; }
-        public virtual DbSet<city> cities { get; set; }
-        public virtual DbSet<district> districts { get; set; }
         public virtual DbSet<ward> wards { get; set; }
     }
 }

@@ -116,6 +116,7 @@
     <Compile Include="NGUOI_DUNG.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>
+    <Compile Include="PhuHuynh_DAL.cs" />
     <Compile Include="PHU_HUYNH.cs">
       <DependentUpon>ModelPBL.tt</DependentUpon>
     </Compile>

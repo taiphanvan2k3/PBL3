@@ -196,7 +196,6 @@
             this.circularPictureBox1.BorderSize = 5;
             this.circularPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
             this.circularPictureBox1.Location = new System.Drawing.Point(125, 0);
             this.circularPictureBox1.Name = "circularPictureBox1";
             this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
@@ -353,6 +352,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsername.Location = new System.Drawing.Point(0, 0);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.MaxLength = 32767;
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Padding = new System.Windows.Forms.Padding(7);
@@ -376,6 +376,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
             this.txtPassword.Location = new System.Drawing.Point(0, 50);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.MaxLength = 32767;
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);

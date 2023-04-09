@@ -9,13 +9,22 @@ namespace GUI
     public partial class frmStudent : Form
     {
         public string MSSV { get; set; }
+        private SinhVien_DTO sv { get; set; }
         public frmStudent()
         {
             InitializeComponent();
+            uC_StudentInfoNew = new UC_StudentInfoNew();
             MSSV = "101190001";
             state = SelectionState.Home;
         }
 
+        public frmStudent(string MSSV)
+        {
+            InitializeComponent();
+            uC_StudentInfoNew = new UC_StudentInfoNew();
+            this.MSSV = MSSV;
+            state = SelectionState.Home;
+        }
         private enum SelectionState
         {
             Home,
@@ -25,6 +34,7 @@ namespace GUI
         }
 
         #region Danh sách UC bỏ vào các tab
+        UC_StudentInfoNew uC_StudentInfoNew;
         UC_DailySchoolSchedule dailySchoolSchedule;
         UC_WeeklySchoolSchedule weeklySchoolSchedule;
         UC_ViewHomeRoomClass viewHomeRoomClass;
@@ -140,13 +150,13 @@ namespace GUI
             {
                 state = SelectionState.Home;
                 panelShowDetail.Controls.Clear();
-                panelShowDetail.Controls.Add(uC_StudentInfo);
-                uC_StudentInfo.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
-                uC_StudentInfo.Location = new Point(0, 0);
-                uC_StudentInfo.Width = panelShowDetail.Width - 30;
-                if (panelShowDetail.Height > 950)
-                    uC_StudentInfo.Height = panelShowDetail.Height + 30;
-                else uC_StudentInfo.Height = 950;
+                panelShowDetail.Controls.Add(uC_StudentInfoNew);
+                //uC_StudentInfo.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+                //uC_StudentInfo.Location = new Point(0, 0);
+                //uC_StudentInfo.Width = panelShowDetail.Width - 30;
+                //if (panelShowDetail.Height > 950)
+                //    uC_StudentInfo.Height = panelShowDetail.Height + 30;
+                //else uC_StudentInfo.Height = 950;
             }
         }
 
@@ -186,6 +196,7 @@ namespace GUI
                 if (viewHomeRoomClass == null)
                 {
                     viewHomeRoomClass = new UC_ViewHomeRoomClass();
+                    viewHomeRoomClass.MaLopSH = sv.MaLopSH;
                     viewHomeRoomClass.Dock = DockStyle.Fill;
                 }
                 panelShowDetail.Controls.Add(viewHomeRoomClass);
@@ -194,27 +205,48 @@ namespace GUI
 
         private void LoadStudentInfo()
         {
-            SinhVien_DTO sv = SinhVien_BLL.GetSinhVienById(MSSV);
-            uC_StudentInfo.HoVaTen = sv.Ho + " " + sv.Ten;
+            sv = SinhVien_BLL.GetSinhVienById(MSSV);
+            //uC_StudentInfo.HoVaTen = sv.Ho + " " + sv.Ten;
+            //lblAvatar.Text = sv.Ho + " " + sv.Ten;
+            //uC_StudentInfo.GioiTinh = sv.GioiTinh;
+            //uC_StudentInfo.NgaySinh = sv.NgaySinh.ToShortDateString();
+            //uC_StudentInfo.NoiSinh = sv.NoiSinh;
+            //uC_StudentInfo.CCCD = sv.MaCCCD;
+            ////uC_StudentInfo.DanToc = sv.DanToc;
+            ////uC_StudentInfo.QuocTinh = sv.QuocTinh;
+            //uC_StudentInfo.Khoa = sv.Khoa;
+            //uC_StudentInfo.ChuongTrinhDaoTao = sv.TenCTDT;
+            //uC_StudentInfo.LopSinhHoat = sv.MaLopSH;
+            //uC_StudentInfo.EmailCaNhan = sv.EmailCaNhan;
+            //uC_StudentInfo.SoDienThoai = sv.Sdt;
+            //uC_StudentInfo.SoNha = sv.DiaChi;
+            //uC_StudentInfo.SetDiaChi(sv.DiaChi);
+
+            uC_StudentInfoNew.HoVaTen = sv.Ho + " " + sv.Ten;
             lblAvatar.Text = sv.Ho + " " + sv.Ten;
-            uC_StudentInfo.GioiTinh = sv.GioiTinh;
-            uC_StudentInfo.NgaySinh = sv.NgaySinh.ToShortDateString();
-            uC_StudentInfo.NoiSinh = sv.NoiSinh;
-            uC_StudentInfo.CCCD = sv.MaCCCD;
+            uC_StudentInfoNew.GioiTinh = sv.GioiTinh;
+            uC_StudentInfoNew.NgaySinh = sv.NgaySinh.ToShortDateString();
+            uC_StudentInfoNew.NoiSinh = sv.NoiSinh;
+            uC_StudentInfoNew.CCCD = sv.MaCCCD;
             //uC_StudentInfo.DanToc = sv.DanToc;
             //uC_StudentInfo.QuocTinh = sv.QuocTinh;
-            uC_StudentInfo.Khoa = sv.Khoa;
-            uC_StudentInfo.ChuongTrinhDaoTao = sv.TenCTDT;
-            uC_StudentInfo.LopSinhHoat = sv.MaLopSH;
-            uC_StudentInfo.EmailCaNhan = sv.EmailCaNhan;
-            uC_StudentInfo.SoDienThoai = sv.Sdt;
-            uC_StudentInfo.SoNha = sv.DiaChi;
-            uC_StudentInfo.SetDiaChi(sv.DiaChi);
+            uC_StudentInfoNew.Khoa = sv.Khoa;
+            uC_StudentInfoNew.ChuongTrinhDaoTao = sv.TenCTDT;
+            uC_StudentInfoNew.LopSinhHoat = sv.MaLopSH;
+            uC_StudentInfoNew.EmailCaNhan = sv.EmailCaNhan;
+            uC_StudentInfoNew.EmailTruongCap = sv.EmailTruongCap;
+            uC_StudentInfoNew.SoDienThoai = sv.Sdt;
+            uC_StudentInfoNew.SoDuong = sv.DiaChi;
+            uC_StudentInfoNew.SetDiaChi(sv.DiaChi);
         }
         private void frmStudent_Load(object sender, EventArgs e)
         {
             uC_StudentInfo.setComboBoxNoiSinh(SinhVien_BLL.GetNoiSinh());
             LoadStudentInfo();
+            panelShowDetail.Controls.Clear();
+            uC_StudentInfoNew.MSSV = MSSV;
+            uC_StudentInfoNew.Dock = DockStyle.Fill;
+            panelShowDetail.Controls.Add(uC_StudentInfoNew);
         }
     }
 }

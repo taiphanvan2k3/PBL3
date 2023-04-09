@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmDisplay : Form
+    public partial class frmDashboard : Form
     {
-        public frmDisplay()
+        public frmDashboard()
         {
             InitializeComponent();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
