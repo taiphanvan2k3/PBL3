@@ -1,12 +1,13 @@
 ﻿using BLL;
 using DTO;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-    public partial class UC_AddressSelection_vertical_ : UserControl
+    public partial class UC_VerticalAddressSelection : UserControl
     {
-        public UC_AddressSelection_vertical_()
+        public UC_VerticalAddressSelection()
         {
             InitializeComponent();
             Init();
@@ -16,6 +17,29 @@ namespace GUI.MyUserControls
             comboBoxTinhThanhPho.Items.Add(new CBBAddressItem() { Id = 0, Value = "Chọn Tỉnh/ Thành phố" });
             comboBoxTinhThanhPho.Items.AddRange(AddressSelectionBLL.Instance.GetCityRecords().ToArray());
             comboBoxTinhThanhPho.SelectedIndex = 0;
+        }
+        public Color Background
+        {
+            get => this.BackColor;
+            set
+            {
+                this.BackColor = value;
+            }
+        }
+
+        public Color BorderColorComboBox
+        {
+            get => comboBoxQuanHuyen.BorderColor;
+            set
+            {
+                comboBoxQuanHuyen.BorderColor = value;
+                comboBoxTinhThanhPho.BorderColor = value;
+                comboBoxXaPhuong.BorderColor = value;
+            }
+        }
+        public int WidthOfControl
+        {
+            set => this.Width = value;
         }
         private void SetSelectedItemForCBB(string value, ComboBox cbb)
         {

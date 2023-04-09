@@ -36,7 +36,7 @@
             this.tbSDT = new GUI.MyCustomControl.CustomTextBox();
             this.tbEmailTruongCap = new GUI.MyCustomControl.CustomTextBox();
             this.tbEmailCaNhan = new GUI.MyCustomControl.CustomTextBox();
-            this.uc_Address = new GUI.MyUserControls.UC_AddressSelection_vertical_();
+            this.uc_Address = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.panelGradient7 = new GUI.MyCustomControl.PanelGradient();
             this.tbQuocTich = new GUI.MyCustomControl.CustomTextBox();
             this.tbCCCD = new GUI.MyCustomControl.CustomTextBox();
@@ -652,7 +652,7 @@
         private MyCustomControl.PanelGradient panelGradient7;
         private Guna.UI2.WinForms.Guna2GroupBox gbDiaChi;
         private Guna.UI2.WinForms.Guna2GroupBox gbTTLienHe;
-        private UC_AddressSelection_vertical_ uc_Address;
+        private UC_VerticalAddressSelection uc_Address;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private MyCustomControl.CustomTextBox tbSDT;
