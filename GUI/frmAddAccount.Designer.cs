@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.customTextBox1 = new GUI.MyCustomControl.CustomTextBox();
+            this.dgvUnderstock = new System.Windows.Forms.DataGridView();
+            this.ColumCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNoidng = new GUI.MyCustomControl.CustomTextBox();
+            this.txtEmail = new GUI.MyCustomControl.CustomTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
@@ -79,31 +87,118 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(200, 49);
             this.button9.TabIndex = 15;
-            this.button9.Text = "button9";
+            this.button9.Text = "Sendmail";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // customTextBox1
+            // dgvUnderstock
             // 
-            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox1.BorderRadius = 0;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox1.Location = new System.Drawing.Point(159, 175);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox1.MaxLength = 32767;
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(269, 35);
-            this.customTextBox1.TabIndex = 17;
-            this.customTextBox1.Texts = "";
-            this.customTextBox1.UnderlinedStyle = false;
+            this.dgvUnderstock.AllowUserToResizeRows = false;
+            this.dgvUnderstock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUnderstock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUnderstock.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.dgvUnderstock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvUnderstock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvUnderstock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUnderstock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvUnderstock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUnderstock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumCheck,
+            this.TaiKhoan,
+            this.Column1});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUnderstock.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvUnderstock.EnableHeadersVisualStyles = false;
+            this.dgvUnderstock.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
+            this.dgvUnderstock.Location = new System.Drawing.Point(323, 234);
+            this.dgvUnderstock.Name = "dgvUnderstock";
+            this.dgvUnderstock.RowHeadersVisible = false;
+            this.dgvUnderstock.RowHeadersWidth = 51;
+            this.dgvUnderstock.RowTemplate.Height = 25;
+            this.dgvUnderstock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUnderstock.Size = new System.Drawing.Size(558, 150);
+            this.dgvUnderstock.TabIndex = 19;
+            // 
+            // ColumCheck
+            // 
+            this.ColumCheck.HeaderText = "ALL";
+            this.ColumCheck.MinimumWidth = 6;
+            this.ColumCheck.Name = "ColumCheck";
+            this.ColumCheck.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumCheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TaiKhoan
+            // 
+            this.TaiKhoan.HeaderText = "TaiKhoan";
+            this.TaiKhoan.MinimumWidth = 6;
+            this.TaiKhoan.Name = "TaiKhoan";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Vai Trò";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // txtNoidng
+            // 
+            this.txtNoidng.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNoidng.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtNoidng.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNoidng.BorderRadius = 0;
+            this.txtNoidng.BorderSize = 2;
+            this.txtNoidng.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoidng.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNoidng.Location = new System.Drawing.Point(557, 173);
+            this.txtNoidng.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNoidng.MaxLength = 32767;
+            this.txtNoidng.Multiline = false;
+            this.txtNoidng.Name = "txtNoidng";
+            this.txtNoidng.Padding = new System.Windows.Forms.Padding(7);
+            this.txtNoidng.PasswordChar = false;
+            this.txtNoidng.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtNoidng.PlaceholderText = "";
+            this.txtNoidng.Size = new System.Drawing.Size(269, 35);
+            this.txtNoidng.TabIndex = 17;
+            this.txtNoidng.Texts = "";
+            this.txtNoidng.UnderlinedStyle = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEmail.BorderRadius = 0;
+            this.txtEmail.BorderSize = 2;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEmail.Location = new System.Drawing.Point(557, 106);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.Size = new System.Drawing.Size(269, 35);
+            this.txtEmail.TabIndex = 20;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = false;
             // 
             // frmAddAccount
             // 
@@ -111,13 +206,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(1120, 650);
-            this.Controls.Add(this.customTextBox1);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.dgvUnderstock);
+            this.Controls.Add(this.txtNoidng);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button5);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAddAccount";
             this.Text = "Form3";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,6 +224,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private MyCustomControl.CustomTextBox customTextBox1;
+        private MyCustomControl.CustomTextBox txtNoidng;
+        private System.Windows.Forms.DataGridView dgvUnderstock;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumCheck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private MyCustomControl.CustomTextBox txtEmail;
     }
 }
