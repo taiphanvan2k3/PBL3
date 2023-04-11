@@ -474,12 +474,6 @@
     <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -582,6 +576,16 @@
     <None Include="Resources\Homeroom.png" />
     <None Include="Resources\SendAnnounce.png" />
     <None Include="Resources\ManageClass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{49b11625-d759-4b04-b5de-9c4e07b45793}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
