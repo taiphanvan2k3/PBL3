@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace DAL
 {
@@ -46,16 +41,16 @@ namespace DAL
 
         public void UpdateAllCodesToNull()
         {
-            
-                var userInfoList = modelPBL3Entities1.THONG_TIN_DANG_NHAP.ToList();
 
-                foreach (var userInfo in userInfoList)
-                {
-                    userInfo.MaXacThucDeLayLaiMK = null;
-                }
+            var userInfoList = modelPBL3Entities1.THONG_TIN_DANG_NHAP.ToList();
+
+            foreach (var userInfo in userInfoList)
+            {
+                userInfo.MaXacThucDeLayLaiMK = null;
+            }
 
             modelPBL3Entities1.SaveChanges();
-            }
-        
+        }
+
     }
 }

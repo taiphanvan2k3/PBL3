@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
@@ -55,9 +54,9 @@
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panelMenuTong = new System.Windows.Forms.Panel();
             this.panelShowDetail = new System.Windows.Forms.Panel();
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.panelCalendar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,6 +66,7 @@
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMenuTong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,23 +81,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1451, 69);
             this.panel3.TabIndex = 2;
-            // 
-            // avatarTopRight
-            // 
-            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
-            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.avatarTopRight.BorderSize = 2;
-            this.avatarTopRight.GradientAngle = 50F;
-            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1371, 6);
-            this.avatarTopRight.Name = "avatarTopRight";
-            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
-            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarTopRight.TabIndex = 3;
-            this.avatarTopRight.TabStop = false;
             // 
             // lblAvatar
             // 
@@ -133,10 +116,11 @@
             this.btnCalendar.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
             this.btnCalendar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnCalendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCalendar.IconSize = 35;
             this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendar.Location = new System.Drawing.Point(0, 0);
+            this.btnCalendar.Location = new System.Drawing.Point(2, 0);
             this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.Size = new System.Drawing.Size(214, 50);
+            this.btnCalendar.Size = new System.Drawing.Size(215, 50);
             this.btnCalendar.TabIndex = 4;
             this.btnCalendar.Text = "         Xem lịch";
             this.btnCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -148,7 +132,7 @@
             this.panelCalendar.Controls.Add(this.btnXemTKB);
             this.panelCalendar.Controls.Add(this.btnXemLichTrongNgay);
             this.panelCalendar.Controls.Add(this.btnCalendar);
-            this.panelCalendar.Location = new System.Drawing.Point(3, 202);
+            this.panelCalendar.Location = new System.Drawing.Point(3, 199);
             this.panelCalendar.MaximumSize = new System.Drawing.Size(217, 156);
             this.panelCalendar.MinimumSize = new System.Drawing.Size(217, 53);
             this.panelCalendar.Name = "panelCalendar";
@@ -221,7 +205,7 @@
             this.btnExpandMenu.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnExpandMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExpandMenu.IconSize = 33;
-            this.btnExpandMenu.Location = new System.Drawing.Point(162, 12);
+            this.btnExpandMenu.Location = new System.Drawing.Point(161, 12);
             this.btnExpandMenu.Name = "btnExpandMenu";
             this.btnExpandMenu.Size = new System.Drawing.Size(54, 44);
             this.btnExpandMenu.TabIndex = 0;
@@ -231,9 +215,9 @@
             // pictureBoxMenu
             // 
             this.pictureBoxMenu.Image = global::GUI.Properties.Resources.Back;
-            this.pictureBoxMenu.Location = new System.Drawing.Point(4, 6);
+            this.pictureBoxMenu.Location = new System.Drawing.Point(0, 6);
             this.pictureBoxMenu.Name = "pictureBoxMenu";
-            this.pictureBoxMenu.Size = new System.Drawing.Size(69, 50);
+            this.pictureBoxMenu.Size = new System.Drawing.Size(56, 50);
             this.pictureBoxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMenu.TabIndex = 0;
             this.pictureBoxMenu.TabStop = false;
@@ -243,7 +227,7 @@
             this.panel4.Controls.Add(this.btnHome);
             this.panel4.Location = new System.Drawing.Point(3, 75);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(217, 59);
+            this.panel4.Size = new System.Drawing.Size(217, 56);
             this.panel4.TabIndex = 1;
             // 
             // btnHome
@@ -260,9 +244,9 @@
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(217, 59);
+            this.btnHome.Size = new System.Drawing.Size(209, 56);
             this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "        Trang chủ";
+            this.btnHome.Text = "         Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -272,7 +256,7 @@
             this.panelLop.Controls.Add(this.btnLopHP);
             this.panelLop.Controls.Add(this.btnLopSH);
             this.panelLop.Controls.Add(this.btnClass);
-            this.panelLop.Location = new System.Drawing.Point(3, 140);
+            this.panelLop.Location = new System.Drawing.Point(3, 137);
             this.panelLop.MaximumSize = new System.Drawing.Size(217, 153);
             this.panelLop.MinimumSize = new System.Drawing.Size(217, 56);
             this.panelLop.Name = "panelLop";
@@ -293,7 +277,7 @@
             this.btnLopHP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLopHP.Location = new System.Drawing.Point(36, 104);
             this.btnLopHP.Name = "btnLopHP";
-            this.btnLopHP.Size = new System.Drawing.Size(186, 46);
+            this.btnLopHP.Size = new System.Drawing.Size(179, 46);
             this.btnLopHP.TabIndex = 11;
             this.btnLopHP.Text = "        Lớp học phần";
             this.btnLopHP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,9 +295,9 @@
             this.btnLopSH.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLopSH.IconSize = 35;
             this.btnLopSH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLopSH.Location = new System.Drawing.Point(36, 52);
+            this.btnLopSH.Location = new System.Drawing.Point(36, 56);
             this.btnLopSH.Name = "btnLopSH";
-            this.btnLopSH.Size = new System.Drawing.Size(171, 46);
+            this.btnLopSH.Size = new System.Drawing.Size(178, 42);
             this.btnLopSH.TabIndex = 10;
             this.btnLopSH.Text = "        Lớp sinh hoạt";
             this.btnLopSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -332,11 +316,11 @@
             this.btnClass.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClass.IconSize = 35;
             this.btnClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClass.Location = new System.Drawing.Point(4, 7);
+            this.btnClass.Location = new System.Drawing.Point(2, 3);
             this.btnClass.Name = "btnClass";
-            this.btnClass.Size = new System.Drawing.Size(207, 46);
+            this.btnClass.Size = new System.Drawing.Size(207, 52);
             this.btnClass.TabIndex = 9;
-            this.btnClass.Text = "        Lớp";
+            this.btnClass.Text = "         Lớp";
             this.btnClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClass.UseVisualStyleBackColor = false;
             this.btnClass.Click += new System.EventHandler(this.btnLopArrowDown_Click);
@@ -344,7 +328,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.btnDoExam);
-            this.panel7.Location = new System.Drawing.Point(3, 261);
+            this.panel7.Location = new System.Drawing.Point(3, 258);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(217, 55);
             this.panel7.TabIndex = 4;
@@ -361,11 +345,11 @@
             this.btnDoExam.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoExam.IconSize = 35;
             this.btnDoExam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoExam.Location = new System.Drawing.Point(11, 4);
+            this.btnDoExam.Location = new System.Drawing.Point(4, 3);
             this.btnDoExam.Name = "btnDoExam";
-            this.btnDoExam.Size = new System.Drawing.Size(193, 48);
+            this.btnDoExam.Size = new System.Drawing.Size(210, 48);
             this.btnDoExam.TabIndex = 2;
-            this.btnDoExam.Text = "       Làm bài kiểm tra";
+            this.btnDoExam.Text = "     Làm bài kiểm tra";
             this.btnDoExam.UseVisualStyleBackColor = false;
             // 
             // timerExpandClass
@@ -401,7 +385,7 @@
             this.btnLogOut.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(9, 189);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 189);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(205, 50);
             this.btnLogOut.TabIndex = 0;
@@ -432,6 +416,23 @@
             this.panelShowDetail.Name = "panelShowDetail";
             this.panelShowDetail.Size = new System.Drawing.Size(1212, 781);
             this.panelShowDetail.TabIndex = 11;
+            // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1371, 6);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
             // 
             // circularPictureBox
             // 
@@ -466,7 +467,6 @@
             this.Load += new System.EventHandler(this.frmStudent_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.panelCalendar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -476,6 +476,7 @@
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelMenuTong.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
 

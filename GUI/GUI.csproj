@@ -241,11 +241,23 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyUserControls\UC_CreateTestQuestions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_CreateTestQuestions.Designer.cs">
+      <DependentUpon>UC_CreateTestQuestions.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_ParentInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_ParentInfo.designer.cs">
       <DependentUpon>UC_ParentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_SendMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_SendMessage.Designer.cs">
+      <DependentUpon>UC_SendMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_StudentInfoNew.cs">
       <SubType>UserControl</SubType>
@@ -428,6 +440,9 @@
     <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass.resx">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_WeeklySchoolSchedule.resx">
+      <DependentUpon>UC_WeeklySchoolSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -459,10 +474,6 @@
     <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{49b11625-d759-4b04-b5de-9c4e07b45793}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
       <Name>DTO</Name>
@@ -563,6 +574,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Yourname.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateQuestion.png" />
+    <None Include="Resources\Calendar_week.png" />
+    <Content Include="Resources\ChangeGrade.png" />
+    <None Include="Resources\Homeroom.png" />
+    <None Include="Resources\SendAnnounce.png" />
+    <None Include="Resources\ManageClass.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
