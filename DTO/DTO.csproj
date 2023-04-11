@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="CBBAddressItem.cs" />
     <Compile Include="GiangVien_DTO.cs" />
+    <Compile Include="KetQuaLamKiemTra.cs" />
     <Compile Include="LopHocPhan_DTO.cs" />
     <Compile Include="NguoiDung_DTO.cs" />
     <Compile Include="PhuHuynh_DTO.cs" />

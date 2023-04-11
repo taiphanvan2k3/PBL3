@@ -64,6 +64,7 @@
     <Compile Include="LopHocPhan_BLL.cs" />
     <Compile Include="MoveFormHelper.cs" />
     <Compile Include="PhuHuynh_BLL.cs" />
+    <Compile Include="QuanLyDiem_BLL.cs" />
     <Compile Include="SinhVien_BLL.cs" />
     <Compile Include="UtilityClass.cs" />
     <Compile Include="Program.cs" />
