@@ -124,6 +124,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyDiem_DAL.cs" />
     <Compile Include="SinhVien_DAL.cs" />
     <Compile Include="SINHVIEN_LOPHOCPHAN.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
