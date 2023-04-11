@@ -137,6 +137,24 @@ namespace GUI.MyUserControls
             InitializeComponent();
         }
 
+        private void flowLayoutRight_Resize(object sender, EventArgs e)
+        {
+            //Khi flowpanel thay đổi kích thước thì phải thay đổi là kích thước của các panel bên trong
+            //vì các panel trong flowpanel không thể tự Anchor
+
+            //offset là khoảng cách giữa các panel với nhau trong flowpanel
+            int offset = pnlThongTinDaoTao.Location.Y;
+            int heightRemains = flowLayoutRight.Height - pnlThongTinDaoTao.Height 
+                                                  - pnlDiaChi.Height - pnlThongTinLienLac.Height;
+            pnlThongTinDaoTao.Width = flowLayoutRight.Width - 10;
+            pnlThongTinDaoTao.Height += (heightRemains - 4 * offset) / 3;
+
+            //Không thay đổi chiều cao cho pnlDiaChi, vì thay đổi nữa thì khoảng trống dư quá nhiều
+            pnlDiaChi.Width = pnlThongTinDaoTao.Width;
+
+            pnlThongTinLienLac.Width = pnlThongTinDaoTao.Width;
+            pnlThongTinLienLac.Height += (heightRemains - 4 * offset) / 3;
+        }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (nextPage == null)
@@ -151,26 +169,8 @@ namespace GUI.MyUserControls
                 Panel pnl = Parent as Panel;
                 pnl.Controls.Clear();
                 pnl.Controls.Add(nextPage);
+                nextPage.LoadData();
             }
-        }
-
-        private void flowLayoutRight_Resize(object sender, EventArgs e)
-        {
-            //Khi flowpanel thay đổi kích thước thì phải thay đổi là kích thước của các panel bên trong
-            //vì các panel trong flowpanel không thể tự Anchor
-
-            //offset là khoảng cách giữa các panel với nhau trong flowpanel
-            int offset = pnlThongTinDaoTao.Location.Y;
-            int heightRemains = flowLayoutRight.Height - pnlThongTinDaoTao.Height 
-                                                  - pnlDiaChi.Height - pnlThongTinLienLac.Height;
-            pnlThongTinDaoTao.Width = flowLayoutRight.Width - 10;
-            pnlThongTinDaoTao.Height += (heightRemains - 4 * offset) / 3;
-
-            pnlDiaChi.Width = pnlThongTinDaoTao.Width;
-            pnlDiaChi.Height += (heightRemains - 4 * offset) / 3;
-
-            pnlThongTinLienLac.Width = pnlThongTinDaoTao.Width;
-            pnlThongTinLienLac.Height += (heightRemains - 4 * offset) / 3 - 5;
         }
     }
 }

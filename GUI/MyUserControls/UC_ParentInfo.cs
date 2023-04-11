@@ -25,6 +25,12 @@ namespace GUI.MyUserControls
 
         private void UC_ParentInfo_Load(object sender, EventArgs e)
         {
+            //Không dùng event Load vì giả sử sinh viên chỉ thay đổi trên giao diện nhưng chưa bấm
+            //lưu thì phải Load lại dữ liệu cũ mỗi khi control này được hiển thị lại trên giao diện
+        }
+
+        public void LoadData()
+        {
             List<PhuHuynh_DTO> li = PhuHuynh_BLL.GetPhuHuynhByIdStudent(MSSV);
             if (li != null)
             {

@@ -413,6 +413,9 @@
     <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass.resx">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_WeeklySchoolSchedule.resx">
+      <DependentUpon>UC_WeeklySchoolSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

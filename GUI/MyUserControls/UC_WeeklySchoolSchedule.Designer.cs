@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
             this.cbbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.customButton1 = new GUI.MyCustomControl.CustomButton();
+            this.btnXemLich = new GUI.MyCustomControl.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,20 +58,20 @@
             // 
             this.dtgv.AllowUserToAddRows = false;
             this.dtgv.AllowUserToDeleteRows = false;
-            this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt,
@@ -79,14 +79,14 @@
             this.tenHP,
             this.tenGV,
             this.tkb});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dtgv.Location = new System.Drawing.Point(24, 138);
             this.dtgv.Name = "dtgv";
@@ -155,7 +155,7 @@
             // 
             // separator
             // 
-            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.separator.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -182,33 +182,34 @@
             this.cbbHocKy.Size = new System.Drawing.Size(321, 36);
             this.cbbHocKy.TabIndex = 14;
             // 
-            // customButton1
+            // btnXemLich
             // 
-            this.customButton1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.customButton1.BackGroundColor = System.Drawing.Color.MediumTurquoise;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 20;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.Red;
-            //this.customButton1.Image = global::GUI.Properties.Resources.calendar_day;
-            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton1.Location = new System.Drawing.Point(506, 76);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(177, 40);
-            this.customButton1.TabIndex = 15;
-            this.customButton1.Text = "   Xem lịch học";
-            this.customButton1.TextColor = System.Drawing.Color.Red;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.btnXemLich.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnXemLich.BackGroundColor = System.Drawing.Color.MediumTurquoise;
+            this.btnXemLich.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnXemLich.BorderRadius = 20;
+            this.btnXemLich.BorderSize = 0;
+            this.btnXemLich.FlatAppearance.BorderSize = 0;
+            this.btnXemLich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemLich.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemLich.ForeColor = System.Drawing.Color.Red;
+            this.btnXemLich.Image = global::GUI.Properties.Resources.calendar_day;
+            this.btnXemLich.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemLich.Location = new System.Drawing.Point(506, 76);
+            this.btnXemLich.Name = "btnXemLich";
+            this.btnXemLich.Size = new System.Drawing.Size(177, 40);
+            this.btnXemLich.TabIndex = 15;
+            this.btnXemLich.Text = "   Xem lịch học";
+            this.btnXemLich.TextColor = System.Drawing.Color.Red;
+            this.btnXemLich.UseVisualStyleBackColor = false;
+            this.btnXemLich.Click += new System.EventHandler(this.btnXemLich_Click);
             // 
             // UC_WeeklySchoolSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btnXemLich);
             this.Controls.Add(this.cbbHocKy);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.label1);
@@ -234,6 +235,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel separator;
         private Guna.UI2.WinForms.Guna2ComboBox cbbHocKy;
-        private MyCustomControl.CustomButton customButton1;
+        private MyCustomControl.CustomButton btnXemLich;
     }
 }

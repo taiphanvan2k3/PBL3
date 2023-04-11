@@ -70,6 +70,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutRight = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -93,7 +94,7 @@
             this.panelLeft.Controls.Add(this.pictureBox1);
             this.panelLeft.Location = new System.Drawing.Point(26, 5);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(444, 712);
+            this.panelLeft.Size = new System.Drawing.Size(444, 747);
             this.panelLeft.TabIndex = 0;
             // 
             // flowLayoutPanel
@@ -106,7 +107,7 @@
             this.flowLayoutPanel.Controls.Add(this.panelTop);
             this.flowLayoutPanel.Location = new System.Drawing.Point(16, 315);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(412, 396);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(412, 431);
             this.flowLayoutPanel.TabIndex = 11;
             // 
             // pnlBottom
@@ -730,7 +731,7 @@
             this.btnNextPage.ForeColor = System.Drawing.Color.White;
             this.btnNextPage.Image = global::GUI.Properties.Resources.nextPage;
             this.btnNextPage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNextPage.Location = new System.Drawing.Point(1097, 673);
+            this.btnNextPage.Location = new System.Drawing.Point(1101, 670);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(145, 45);
             this.btnNextPage.TabIndex = 25;
@@ -748,19 +749,37 @@
             this.flowLayoutRight.Controls.Add(this.pnlThongTinLienLac);
             this.flowLayoutRight.Location = new System.Drawing.Point(508, 3);
             this.flowLayoutRight.Name = "flowLayoutRight";
-            this.flowLayoutRight.Size = new System.Drawing.Size(630, 664);
+            this.flowLayoutRight.Size = new System.Drawing.Size(630, 659);
             this.flowLayoutRight.TabIndex = 26;
             this.flowLayoutRight.Resize += new System.EventHandler(this.flowLayoutRight_Resize);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.BorderRadius = 10;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Location = new System.Drawing.Point(716, 705);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(231, 45);
+            this.btnSave.TabIndex = 27;
+            this.btnSave.Text = "Lưu thông tin cá thân";
             // 
             // UC_StudentInfoNew
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.flowLayoutRight);
             this.Name = "UC_StudentInfoNew";
-            this.Size = new System.Drawing.Size(1249, 723);
+            this.Size = new System.Drawing.Size(1249, 758);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             this.flowLayoutPanel.ResumeLayout(false);
@@ -824,5 +843,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtLopSH;
         private Guna.UI2.WinForms.Guna2TextBox txtCTDT;
         private Guna.UI2.WinForms.Guna2TextBox txtKhoa;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
     }
 }
