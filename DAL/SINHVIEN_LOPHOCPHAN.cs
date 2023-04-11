@@ -17,7 +17,7 @@ namespace DAL
         public string MaLopHP { get; set; }
         public string MaSV { get; set; }
         public byte KiHoc { get; set; }
-        public byte NamHoc { get; set; }
+        public short NamHoc { get; set; }
     
         public virtual LOP_HOC_PHAN LOP_HOC_PHAN { get; set; }
         public virtual SINH_VIEN SINH_VIEN { get; set; }

@@ -155,7 +155,7 @@
           </Key>
           <Property Name="MaSV" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="MaCTDT" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaLopSH" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaLopSH" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="SINHVIEN_LOPHOCPHAN">
           <Key>
@@ -165,7 +165,7 @@
           <Property Name="MaLopHP" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="MaSV" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="KiHoc" Type="tinyint" Nullable="false" />
-          <Property Name="NamHoc" Type="tinyint" Nullable="false" />
+          <Property Name="NamHoc" Type="smallint" Nullable="false" />
         </EntityType>
         <EntityType Name="THOI_KHOA_BIEU">
           <Key>
@@ -455,7 +455,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MaLopSH">
-          <End Role="LOP_SINH_HOAT" Type="Self.LOP_SINH_HOAT" Multiplicity="1" />
+          <End Role="LOP_SINH_HOAT" Type="Self.LOP_SINH_HOAT" Multiplicity="0..1" />
           <End Role="SINH_VIEN" Type="Self.SINH_VIEN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LOP_SINH_HOAT">
@@ -835,7 +835,7 @@
           </Key>
           <Property Name="MaSV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaCTDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaLopSH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaLopSH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CHUONG_TRINH_DAO_TAO" Relationship="Self.FK_MaCTDT" FromRole="SINH_VIEN" ToRole="CHUONG_TRINH_DAO_TAO" />
           <NavigationProperty Name="LAM_BAI_KIEM_TRA" Relationship="Self.FK_MaSV_LAMBKT" FromRole="SINH_VIEN" ToRole="LAM_BAI_KIEM_TRA" />
           <NavigationProperty Name="LOP_SINH_HOAT" Relationship="Self.FK_MaLopSH" FromRole="SINH_VIEN" ToRole="LOP_SINH_HOAT" />
@@ -851,7 +851,7 @@
           <Property Name="MaLopHP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaSV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="KiHoc" Type="Byte" Nullable="false" />
-          <Property Name="NamHoc" Type="Byte" Nullable="false" />
+          <Property Name="NamHoc" Type="Int16" Nullable="false" />
           <NavigationProperty Name="LOP_HOC_PHAN" Relationship="Self.FK_MaHP_SVLHP" FromRole="SINHVIEN_LOPHOCPHAN" ToRole="LOP_HOC_PHAN" />
           <NavigationProperty Name="SINH_VIEN" Relationship="Self.FK_MaSV_SVLHP" FromRole="SINHVIEN_LOPHOCPHAN" ToRole="SINH_VIEN" />
         </EntityType>
@@ -1104,7 +1104,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MaLopSH">
-          <End Role="LOP_SINH_HOAT" Type="Self.LOP_SINH_HOAT" Multiplicity="1" />
+          <End Role="LOP_SINH_HOAT" Type="Self.LOP_SINH_HOAT" Multiplicity="0..1" />
           <End Role="SINH_VIEN" Type="Self.SINH_VIEN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LOP_SINH_HOAT">
