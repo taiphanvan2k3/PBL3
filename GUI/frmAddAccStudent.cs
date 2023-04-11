@@ -91,7 +91,12 @@ namespace GUI
             }
             MSSV = MaKhoa + year.ToString() + (GetInformationAcc_BLL.Instance.GetCountStudent() + 1).ToString();
             Email = MSSV + "SV@emailling.xyz";
-            MessageBox.Show(MSSV + "-" + Email);
+
+            int pass1 = random.Next(100000, 999999);
+            int pass2 = random.Next(100000, 999999);
+            passID = pass1.ToString();
+            passEmai = pass2.ToString();
+            MessageBox.Show(MSSV + "\n" + passID +  "\n" + Email + "\n" +passEmai);
         }
     }
 }
