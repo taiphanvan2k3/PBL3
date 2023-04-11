@@ -459,10 +459,6 @@
     <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{49b11625-d759-4b04-b5de-9c4e07b45793}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
       <Name>DTO</Name>

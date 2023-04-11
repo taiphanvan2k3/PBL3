@@ -30,7 +30,6 @@ namespace DAL
                             (lhp, gv) => new { lhp, gv }
                       ).Where(x => x.gv.MaGV == id)
                       .Select(x => x.lhp.MaLopHP).ToList();
-
         }
     }
 }
