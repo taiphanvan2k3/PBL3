@@ -66,6 +66,8 @@ namespace DAL
             return false;
         }
 
+
+        // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công
         public bool resetVerification(string email)
         {
             THONG_TIN_DANG_NHAP userInfo = SendPass(email);

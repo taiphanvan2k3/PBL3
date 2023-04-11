@@ -15,14 +15,22 @@ namespace DAL
 
         public static SINH_VIEN GetSinhVienById(string id)
         {
-            return db.SINH_VIEN.Where(p => p.MaSV == id).Include(sv => sv.NGUOI_DUNG).
-                Include(sv => sv.CHUONG_TRINH_DAO_TAO).Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA).SingleOrDefault();
+            #region Trước đó
+            //return db.SINH_VIEN.Where(p => p.MaSV == id).Include(sv => sv.NGUOI_DUNG).
+            //    Include(sv => sv.CHUONG_TRINH_DAO_TAO).Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA).SingleOrDefault();
+            #endregion
+
+            //Do hầu như lấy hết tất cả cột của bảng NguoiDung và Khoa nên mới dùng Include trong trường hợp này
+            //Ko cần phải Include(sv => sv.CHUONG_TRINH_DAO_TAO) vì đã có trong
+            //Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA)
+            return db.SINH_VIEN.Where(p => p.MaSV == id).Include(sv => sv.NGUOI_DUNG)
+                .Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA).SingleOrDefault();
         }
 
         public static List<SINH_VIEN> GetSinhVienInLopSH(string MaLopSH)
         {
             return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).
-                OrderBy(sv=>sv.NGUOI_DUNG.Ten).ToList();
+                OrderBy(sv => sv.NGUOI_DUNG.Ten).ToList();
         }
     }
 }
