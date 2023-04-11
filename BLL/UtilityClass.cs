@@ -4,6 +4,8 @@ using System;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace BLL
 {
@@ -56,5 +58,15 @@ namespace BLL
                 MessageBox.Show("Gửi email thất bại: " + ex.Message);
             }
         }
+        public static void SwapColumns(DataGridView dataGridView, int index1, int index2)
+        {
+            var column1 = dataGridView.Columns[index1];
+            var column2 = dataGridView.Columns[index2];
+
+            int temp = column1.DisplayIndex;
+            column1.DisplayIndex = column2.DisplayIndex;
+            column2.DisplayIndex = temp;
+        }
+
     }
 }

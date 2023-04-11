@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbFacultyOrProgram = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.txtCCCD = new GUI.MyCustomControl.CustomTextBox();
             this.cmbList = new GUI.MyCustomControl.CustomComboBox();
@@ -43,6 +43,8 @@
             this.customRadioButton1 = new GUI.MyCustomControl.CustomRadioButton();
             this.dtpBirthday = new GUI.MyCustomControl.CustomDatetimePicker();
             this.txtName = new GUI.MyCustomControl.CustomTextBox();
+            this.lbYearOrLevel = new System.Windows.Forms.Label();
+            this.cmbYearOrLevel = new GUI.MyCustomControl.CustomComboBox();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,17 +146,17 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Giới tính";
             // 
-            // label5
+            // lbFacultyOrProgram
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Location = new System.Drawing.Point(51, 407);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(295, 25);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Khoa và chương trình đào tạo";
+            this.lbFacultyOrProgram.AutoSize = true;
+            this.lbFacultyOrProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.lbFacultyOrProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFacultyOrProgram.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbFacultyOrProgram.Location = new System.Drawing.Point(51, 407);
+            this.lbFacultyOrProgram.Name = "lbFacultyOrProgram";
+            this.lbFacultyOrProgram.Size = new System.Drawing.Size(295, 25);
+            this.lbFacultyOrProgram.TabIndex = 27;
+            this.lbFacultyOrProgram.Text = "Khoa và chương trình đào tạo";
             // 
             // panelTitleBar
             // 
@@ -282,15 +284,49 @@
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = false;
             // 
+            // lbYearOrLevel
+            // 
+            this.lbYearOrLevel.AutoSize = true;
+            this.lbYearOrLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.lbYearOrLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYearOrLevel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbYearOrLevel.Location = new System.Drawing.Point(51, 519);
+            this.lbYearOrLevel.Name = "lbYearOrLevel";
+            this.lbYearOrLevel.Size = new System.Drawing.Size(151, 25);
+            this.lbYearOrLevel.TabIndex = 31;
+            this.lbYearOrLevel.Text = "Năm nhập học";
+            // 
+            // cmbYearOrLevel
+            // 
+            this.cmbYearOrLevel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbYearOrLevel.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.cmbYearOrLevel.BorderSize = 1;
+            this.cmbYearOrLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbYearOrLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbYearOrLevel.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbYearOrLevel.IconColor = System.Drawing.SystemColors.ActiveCaption;
+            this.cmbYearOrLevel.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.cmbYearOrLevel.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmbYearOrLevel.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbYearOrLevel.Location = new System.Drawing.Point(50, 566);
+            this.cmbYearOrLevel.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbYearOrLevel.Name = "cmbYearOrLevel";
+            this.cmbYearOrLevel.Padding = new System.Windows.Forms.Padding(1);
+            this.cmbYearOrLevel.Size = new System.Drawing.Size(400, 40);
+            this.cmbYearOrLevel.TabIndex = 32;
+            this.cmbYearOrLevel.Texts = "";
+            // 
             // frmAddAccStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(500, 800);
+            this.Controls.Add(this.cmbYearOrLevel);
+            this.Controls.Add(this.lbYearOrLevel);
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.cmbList);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbFacultyOrProgram);
             this.Controls.Add(this.customRadioButton2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.customRadioButton1);
@@ -306,6 +342,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAddAccStudent";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.frmAddAccStudent_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -324,9 +361,11 @@
         private MyCustomControl.CustomRadioButton customRadioButton1;
         private System.Windows.Forms.Label label4;
         private MyCustomControl.CustomRadioButton customRadioButton2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbFacultyOrProgram;
         private MyCustomControl.CustomComboBox cmbList;
         private MyCustomControl.CustomTextBox txtCCCD;
         private System.Windows.Forms.Panel panelTitleBar;
+        private System.Windows.Forms.Label lbYearOrLevel;
+        private MyCustomControl.CustomComboBox cmbYearOrLevel;
     }
 }

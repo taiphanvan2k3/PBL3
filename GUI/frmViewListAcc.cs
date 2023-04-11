@@ -7,23 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
-using System.Net.Mail;
-using System.Data.SqlClient;
 using BLL;
+using DTO;
+using System.Reflection;
 
 namespace GUI
 {
-    public partial class frmAdd : Form
+    public partial class frmViewListAcc : Form
     {
         int TotalCheckBoxes = 0;
         int TotalCheckedCheckBoxes = 0;
         CheckBox HeaderCheckBox = null;
         bool IsHeaderCheckBoxClicked = false;
-        public frmAdd()
+
+        private List<object> dt;
+        private int role;
+        public frmViewListAcc(List<object> dt, int role)
         {
             InitializeComponent();
             HideButton();
+            this.dt = dt;
+            this.role = role;
         }
         private void dgvViewAcc_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
@@ -40,15 +44,15 @@ namespace GUI
         {
             AddHeaderCheckBox();
             HeaderCheckBox.MouseClick += new MouseEventHandler(HeaderCheckBox_MouseClick);
-            dgvViewAcc.CellContentClick += new DataGridViewCellEventHandler(dgvViewAcc_CellClick);
             dgvViewAcc.CurrentCellDirtyStateChanged += new EventHandler(dgvSelectAll_CurrentCellDirtyStateChanged);
-            dgvViewAcc.CellPainting += new DataGridViewCellPaintingEventHandler(dgvSelectAll_CellPainting);
+            dgvViewAcc.DataSource = dt;
+
             BindGridView();
         }
         #region Thêm header checkbox
         private void BindGridView()
         {
-            dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountRoleList();
+            UtilityClass.SwapColumns(dgvViewAcc, 0, 1);
             dgvViewAcc.CurrentCell = null;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.HeaderText = "";
@@ -56,16 +60,6 @@ namespace GUI
             dgvViewAcc.Columns.Insert(0, checkBoxColumn);
             TotalCheckBoxes = dgvViewAcc.RowCount;
             TotalCheckedCheckBoxes = 0;
-
-            dgvViewAcc.Columns[1].HeaderText = "Tài khoản";
-            dgvViewAcc.Columns[2].HeaderText = "Vai Trò";
-            dgvViewAcc.Columns[3].HeaderText = "Họ và tên";
-            dgvViewAcc.Columns[4].HeaderText = "CCCD";
-            dgvViewAcc.Columns[5].HeaderText = "Email";
-            dgvViewAcc.Columns[6].HeaderText = "Mã CTĐT";
-
-
-
         }
 
         private void dgvSelectAll_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -121,7 +115,6 @@ namespace GUI
 
 
         #endregion
-
 
         #region Sự kiện nhấn vào 1 ô 
         //Kiểm tra xem checkbox được đánh dấu ở header của datagridview có được chọn hay không.
@@ -192,7 +185,7 @@ namespace GUI
         #endregion
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddAccStudent frmAddAccStudent = new frmAddAccStudent();
+            frmAddAccStudent frmAddAccStudent = new frmAddAccStudent(role);
             frmAddAccStudent.ShowDialog();
         }
 
@@ -211,10 +204,7 @@ namespace GUI
             this.Close();
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
 
-        }
 
 
     }

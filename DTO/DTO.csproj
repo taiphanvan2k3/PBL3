@@ -58,7 +58,11 @@
     <Compile Include="CBBAddressItem.cs" />
     <Compile Include="CHUONG_TRINH_DAO_TAO_DTO.cs" />
     <Compile Include="GiangVien_DTO.cs" />
+    <Compile Include="InformationClass_DTO.cs" />
+    <Compile Include="InformationStudent_DTO.cs" />
+    <Compile Include="InformationTeacher_DTO.cs" />
     <Compile Include="KetQuaLamKiemTra.cs" />
+    <Compile Include="KHOA_DTO.cs" />
     <Compile Include="LopHocPhan_DTO.cs" />
     <Compile Include="InformationAcc_DTO.cs" />
     <Compile Include="NguoiDung_DTO.cs" />
