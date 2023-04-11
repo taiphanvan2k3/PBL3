@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class GiangVienBLL
+    public class GiangVien_BLL
     {
-        private static GiangVienBLL _Instance;
-        public static GiangVienBLL Instance
+        private static GiangVien_BLL _Instance;
+        public static GiangVien_BLL Instance
         {
             get
             {
                 if(_Instance == null)
-                    _Instance = new GiangVienBLL();
+                    _Instance = new GiangVien_BLL();
                 return _Instance;
             }
         }
@@ -49,6 +49,10 @@ namespace BLL
                 };
             }
             return null;
+        }
+        public List<string> GetClassSectionByID(string id)
+        {
+            return GiangVien_DAL.GetMaLopHPByID(id);
         }
     }
 }

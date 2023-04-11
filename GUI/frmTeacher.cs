@@ -17,11 +17,13 @@ namespace GUI
     {
         private string ButtonClicked = "Home";
         private UC_TeacherInfo Info;
+        private UC_CreateTestQuestions CreateQues;
         public frmTeacher(string Account)
         {
             InitializeComponent();
             CollapseMenu();
             Info = new UC_TeacherInfo();
+            CreateQues = new UC_CreateTestQuestions(Account);
             LoadInfo(Account);
         }
         #region Methods
@@ -39,6 +41,24 @@ namespace GUI
                     menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(0);
                 }
+                foreach (Button menuButton in flPanel.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    //menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(29);
+                }
+                foreach (Button menuButton in pnlManageClass.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    //menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(29);
+                }
+                foreach (Button menuButton in pnlViewCalendar.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    //menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(29);
+                }
                 pnlMain.Width += 100;
                 pnlMain.Location = new Point(pnlMain.Location.X - 100, pnlMain.Location.Y);
             }
@@ -54,13 +74,31 @@ namespace GUI
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
+                foreach (Button menuButton in flPanel.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+                foreach (Button menuButton in pnlManageClass.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+                foreach (Button menuButton in pnlViewCalendar.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
                 pnlMain.Width -= 100;
                 pnlMain.Location = new Point(pnlMain.Location.X + 100, pnlMain.Location.Y);
             }
         }
         void LoadInfo(string Account)
         {
-            GiangVien_DTO gv = GiangVienBLL.Instance.GetGiangVienById(Account);
+            GiangVien_DTO gv = GiangVien_BLL.Instance.GetGiangVienById(Account);
             Info.Name = gv.Ho + " " + gv.Ten;
             Info.IdTeacher = gv.MaNguoiDung;
             Info.Khoa = gv.Khoa;
@@ -108,17 +146,25 @@ namespace GUI
 
         private void btnManageClass_Click(object sender, EventArgs e)
         {
-            if (ButtonClicked != "Quản lí lớp")
+            if (pnlManageClass.Height < 69)
             {
-                pnlMain.Controls.Clear();
+                pnlManageClass.Height = 340;
+            }
+            else
+            {
+                pnlManageClass.Height = 68;
             }
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
-            if (ButtonClicked != "Xem lịch")
+            if (pnlViewCalendar.Height < 69)
             {
-                pnlMain.Controls.Clear();
+                pnlViewCalendar.Height = 204;
+            }
+            else
+            {
+                pnlViewCalendar.Height = 68;
             }
         }
 
@@ -129,6 +175,13 @@ namespace GUI
                 pnlMain.Controls.Clear();
             }
         }
+
+        private void btnCreateQuestion_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(CreateQues);
+        }
         #endregion
+
     }
 }
