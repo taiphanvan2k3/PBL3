@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PBL3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PBL3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAI_KIEM_TRA">
           <Key>
             <PropertyRef Name="MaBaiKiemTra" />
@@ -115,6 +115,7 @@
           <Property Name="TenMH" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SoTC" Type="tinyint" Nullable="false" />
           <Property Name="CtTinhDiem" Type="varchar" MaxLength="5" />
+          <Property Name="MaKhoa" Type="varchar" MaxLength="3" Nullable="false" />
         </EntityType>
         <EntityType Name="NGUOI_DUNG">
           <Key>
@@ -430,6 +431,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MaKhoa_MonHoc">
+          <End Role="KHOA" Type="Self.KHOA" Multiplicity="1" />
+          <End Role="MON_HOC" Type="Self.MON_HOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOA">
+              <PropertyRef Name="MaKhoa" />
+            </Principal>
+            <Dependent Role="MON_HOC">
+              <PropertyRef Name="MaKhoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaLopHP">
           <End Role="LOP_HOC_PHAN" Type="Self.LOP_HOC_PHAN" Multiplicity="1" />
           <End Role="THOI_KHOA_BIEU" Type="Self.THOI_KHOA_BIEU" Multiplicity="*" />
@@ -620,6 +633,10 @@
             <End Role="KHOA" EntitySet="KHOA" />
             <End Role="GIANG_VIEN" EntitySet="GIANG_VIEN" />
           </AssociationSet>
+          <AssociationSet Name="FK_MaKhoa_MonHoc" Association="Self.FK_MaKhoa_MonHoc">
+            <End Role="KHOA" EntitySet="KHOA" />
+            <End Role="MON_HOC" EntitySet="MON_HOC" />
+          </AssociationSet>
           <AssociationSet Name="FK_MaLopHP" Association="Self.FK_MaLopHP">
             <End Role="LOP_HOC_PHAN" EntitySet="LOP_HOC_PHAN" />
             <End Role="THOI_KHOA_BIEU" EntitySet="THOI_KHOA_BIEU" />
@@ -653,8 +670,7 @@
             <End Role="SINHVIEN_LOPHOCPHAN" EntitySet="SINHVIEN_LOPHOCPHAN" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PBL3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -743,6 +759,7 @@
           <Property Name="TenKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="CHUONG_TRINH_DAO_TAO" Relationship="Self.FK_MaKhoa" FromRole="KHOA" ToRole="CHUONG_TRINH_DAO_TAO" />
           <NavigationProperty Name="GIANG_VIEN" Relationship="Self.FK_MaKhoa_GV" FromRole="KHOA" ToRole="GIANG_VIEN" />
+          <NavigationProperty Name="MON_HOC" Relationship="PBL3Model.FK_MaKhoa_MonHoc" FromRole="KHOA" ToRole="MON_HOC" />
         </EntityType>
         <EntityType Name="LAM_BAI_KIEM_TRA">
           <Key>
@@ -791,6 +808,8 @@
           <Property Name="CtTinhDiem" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CAU_HOI" Relationship="Self.FK__CAU_HOI__MaMH__49C3F6B7" FromRole="MON_HOC" ToRole="CAU_HOI" />
           <NavigationProperty Name="LOP_HOC_PHAN" Relationship="Self.FK_MaMH" FromRole="MON_HOC" ToRole="LOP_HOC_PHAN" />
+          <Property Name="MaKhoa" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KHOA" Relationship="PBL3Model.FK_MaKhoa_MonHoc" FromRole="MON_HOC" ToRole="KHOA" />
         </EntityType>
         <EntityType Name="NGUOI_DUNG">
           <Key>
@@ -1287,7 +1306,23 @@
             <End Role="LOP_HOC_PHAN" EntitySet="LOP_HOC_PHAN" />
             <End Role="THONG_BAO" EntitySet="THONG_BAO" />
           </AssociationSet>
+          <AssociationSet Name="FK_MaKhoa_MonHoc" Association="PBL3Model.FK_MaKhoa_MonHoc">
+            <End Role="KHOA" EntitySet="KHOAs" />
+            <End Role="MON_HOC" EntitySet="MON_HOC" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_MaKhoa_MonHoc">
+          <End Type="PBL3Model.KHOA" Role="KHOA" Multiplicity="1" />
+          <End Type="PBL3Model.MON_HOC" Role="MON_HOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOA">
+              <PropertyRef Name="MaKhoa" />
+            </Principal>
+            <Dependent Role="MON_HOC">
+              <PropertyRef Name="MaKhoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1400,6 +1435,7 @@
           <EntitySetMapping Name="MON_HOC">
             <EntityTypeMapping TypeName="PBL3Model.MON_HOC">
               <MappingFragment StoreEntitySet="MON_HOC">
+                <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
                 <ScalarProperty Name="MaMH" ColumnName="MaMH" />
                 <ScalarProperty Name="TenMH" ColumnName="TenMH" />
                 <ScalarProperty Name="SoTC" ColumnName="SoTC" />

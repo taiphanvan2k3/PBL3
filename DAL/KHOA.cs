@@ -19,6 +19,7 @@ namespace DAL
         {
             this.CHUONG_TRINH_DAO_TAO = new HashSet<CHUONG_TRINH_DAO_TAO>();
             this.GIANG_VIEN = new HashSet<GIANG_VIEN>();
+            this.MON_HOC = new HashSet<MON_HOC>();
         }
     
         public string MaKhoa { get; set; }
@@ -28,5 +29,7 @@ namespace DAL
         public virtual ICollection<CHUONG_TRINH_DAO_TAO> CHUONG_TRINH_DAO_TAO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GIANG_VIEN> GIANG_VIEN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MON_HOC> MON_HOC { get; set; }
     }
 }

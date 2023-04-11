@@ -16,13 +16,13 @@
         <EntityTypeShape EntityType="PBL3Model.LOP_HOC_PHAN" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.LOP_SINH_HOAT" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.MON_HOC" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL3Model.NGUOI_DUNG" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.NGUOI_DUNG" Width="1.5" PointX="0.5" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.PHU_HUYNH" Width="1.5" PointX="7.5" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.SINH_VIEN" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.SINHVIEN_LOPHOCPHAN" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.THOI_KHOA_BIEU" Width="1.5" PointX="10.5" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.THONG_BAO" Width="1.5" PointX="13.5" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL3Model.THONG_TIN_DANG_NHAP" Width="1.5" PointX="1.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.THONG_TIN_DANG_NHAP" Width="1.5" PointX="0.5" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.ward" Width="1.5" PointX="14.25" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="PBL3Model.FK__BAI_KIEM_T__MaGV__4D94879B" ManuallyRouted="false" />
         <AssociationConnector Association="PBL3Model.FK_MaBaiKiemTra_LAMBKT" ManuallyRouted="false" />
@@ -48,6 +48,7 @@
         <AssociationConnector Association="PBL3Model.FK_MaSV_SVLHP" ManuallyRouted="false" />
         <AssociationConnector Association="PBL3Model.BAIKIEMTRA_CAUHOI" ManuallyRouted="false" />
         <AssociationConnector Association="PBL3Model.THONGBAO_LOPHOCPHAN" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_MaKhoa_MonHoc" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

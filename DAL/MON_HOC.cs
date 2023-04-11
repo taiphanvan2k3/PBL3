@@ -25,10 +25,12 @@ namespace DAL
         public string TenMH { get; set; }
         public byte SoTC { get; set; }
         public string CtTinhDiem { get; set; }
+        public string MaKhoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAU_HOI> CAU_HOI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOP_HOC_PHAN> LOP_HOC_PHAN { get; set; }
+        public virtual KHOA KHOA { get; set; }
     }
 }
