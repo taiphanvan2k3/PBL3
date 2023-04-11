@@ -117,13 +117,13 @@ namespace GUI
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
 
             ActivateButton(sender, RGBColors.color1);
-            openChildForm(new frmAddAccount());
             //..
             //your codes
             //..
@@ -134,6 +134,11 @@ namespace GUI
         {
             ActivateButton(sender, RGBColors.color2);
             showSubMenu(panelAdd);
+        }
+        private void btnStudent_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmAdd());
+
         }
 
         private void btnExpandMenu_Click(object sender, EventArgs e)
@@ -203,6 +208,17 @@ namespace GUI
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnTeacher_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmAddAccStudent());
+
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
         }
     }
 }

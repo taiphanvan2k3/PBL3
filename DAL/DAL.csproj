@@ -63,86 +63,87 @@
   <ItemGroup>
     <Compile Include="AddressSelectionDAL.cs" />
     <Compile Include="BAI_KIEM_TRA.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="CAU_HOI.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="CHUONG_TRINH_DAO_TAO.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="city.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="DataProvider.cs" />
     <Compile Include="district.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="ForgetPass_DAL.cs" />
+    <Compile Include="GetInformationAcc_DAL.cs" />
     <Compile Include="GiangVien_DAL.cs" />
     <Compile Include="GIANG_VIEN.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="KHOA.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="LAM_BAI_KIEM_TRA.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="LopHocPhan_DAL.cs" />
     <Compile Include="LOP_HOC_PHAN.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="LOP_SINH_HOAT.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelPBL.Context.cs">
+    <Compile Include="ModelPBL3.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPBL.Context.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelPBL.cs">
+    <Compile Include="ModelPBL3.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelPBL.Designer.cs">
+    <Compile Include="ModelPBL3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPBL.edmx</DependentUpon>
+      <DependentUpon>ModelPBL3.edmx</DependentUpon>
     </Compile>
     <Compile Include="MON_HOC.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="NGUOI_DUNG.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="PhuHuynh_DAL.cs" />
     <Compile Include="PHU_HUYNH.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyDiem_DAL.cs" />
     <Compile Include="SinhVien_DAL.cs" />
     <Compile Include="SINHVIEN_LOPHOCPHAN.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="SINH_VIEN.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="THOI_KHOA_BIEU.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="THONG_BAO.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="THONG_TIN_DANG_NHAP.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="ValidLogin_DAL.cs" />
     <Compile Include="ward.cs">
-      <DependentUpon>ModelPBL.tt</DependentUpon>
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,12 +154,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="ModelPBL.edmx">
+    <EntityDeploy Include="ModelPBL3.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelPBL.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelPBL3.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelPBL.edmx.diagram">
-      <DependentUpon>ModelPBL.edmx</DependentUpon>
+    <None Include="ModelPBL3.edmx.diagram">
+      <DependentUpon>ModelPBL3.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -178,15 +179,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelPBL.Context.tt">
+    <Content Include="ModelPBL3.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelPBL.edmx</DependentUpon>
-      <LastGenOutput>ModelPBL.Context.cs</LastGenOutput>
+      <DependentUpon>ModelPBL3.edmx</DependentUpon>
+      <LastGenOutput>ModelPBL3.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModelPBL.tt">
+    <Content Include="ModelPBL3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelPBL.edmx</DependentUpon>
-      <LastGenOutput>ModelPBL.cs</LastGenOutput>
+      <DependentUpon>ModelPBL3.edmx</DependentUpon>
+      <LastGenOutput>ModelPBL3.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -200,6 +200,7 @@
             this.btnTeacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTeacher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTeacher.UseVisualStyleBackColor = true;
+            this.btnTeacher.Click += new System.EventHandler(this.btnTeacher_Click);
             // 
             // btnStudent
             // 
@@ -222,6 +223,7 @@
             this.btnStudent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStudent.UseVisualStyleBackColor = true;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
             // btnAdd
             // 
@@ -330,6 +332,7 @@
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelClass.ResumeLayout(false);
             this.panelAdd.ResumeLayout(false);

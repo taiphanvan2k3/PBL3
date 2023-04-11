@@ -99,6 +99,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddAccStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddAccStudent.Designer.cs">
+      <DependentUpon>frmAddAccStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,11 +117,11 @@
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddAccount.cs">
+    <Compile Include="frmAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddAccount.Designer.cs">
-      <DependentUpon>frmAddAccount.cs</DependentUpon>
+    <Compile Include="frmAdd.Designer.cs">
+      <DependentUpon>frmAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddStudent.cs">
       <SubType>Form</SubType>
@@ -223,6 +229,9 @@
     <Compile Include="MyCustomControl\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyCustomControl\CustomToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyCustomControl\EllipseControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -232,11 +241,23 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyUserControls\UC_CreateTestQuestions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_CreateTestQuestions.Designer.cs">
+      <DependentUpon>UC_CreateTestQuestions.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_ParentInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_ParentInfo.designer.cs">
       <DependentUpon>UC_ParentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_SendMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_SendMessage.Designer.cs">
+      <DependentUpon>UC_SendMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_StudentInfoNew.cs">
       <SubType>UserControl</SubType>
@@ -320,8 +341,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
-    <EmbeddedResource Include="frmAddAccount.resx">
-      <DependentUpon>frmAddAccount.cs</DependentUpon>
+    <EmbeddedResource Include="frmAdd.resx">
+      <DependentUpon>frmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddAccStudent.resx">
+      <DependentUpon>frmAddAccStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
@@ -337,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCheckEmail.resx">
       <DependentUpon>frmCheckEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEnterDigitCode.resx">
       <DependentUpon>frmEnterDigitCode.cs</DependentUpon>
@@ -447,16 +474,6 @@
     <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{49b11625-d759-4b04-b5de-9c4e07b45793}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -551,6 +568,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Yourname.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateQuestion.png" />
+    <None Include="Resources\Calendar_week.png" />
+    <Content Include="Resources\ChangeGrade.png" />
+    <None Include="Resources\Homeroom.png" />
+    <None Include="Resources\SendAnnounce.png" />
+    <None Include="Resources\ManageClass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{49b11625-d759-4b04-b5de-9c4e07b45793}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{54df85cd-8f4e-4ae0-b6a9-1468304352e0}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
