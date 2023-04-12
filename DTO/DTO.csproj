@@ -63,12 +63,14 @@
     <Compile Include="InformationTeacher_DTO.cs" />
     <Compile Include="KetQuaLamKiemTra.cs" />
     <Compile Include="KHOA_DTO.cs" />
+    <Compile Include="LopHocPhan_AdminEdit.cs" />
     <Compile Include="LopHocPhan_DTO.cs" />
     <Compile Include="InformationAcc_DTO.cs" />
     <Compile Include="NguoiDung_DTO.cs" />
     <Compile Include="PhuHuynh_DTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SinhVienLHP_View.cs" />
     <Compile Include="SinhVienLSH_View.cs" />
     <Compile Include="SinhVien_DTO.cs" />
     <Compile Include="ThoiKhoaBieu_DTO.cs" />

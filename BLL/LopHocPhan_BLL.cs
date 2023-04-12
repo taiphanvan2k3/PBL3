@@ -1,7 +1,6 @@
 ﻿using DAL;
 using DTO;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BLL
 {
@@ -18,6 +17,7 @@ namespace BLL
             }
         }
 
+        #region Xử lí bên giao diện sinh viên
         public int GetKiHocHienTai(string MSSV)
         {
             return LopHocPhan_DAL.Instance.GetKiHocHienTai(MSSV);
@@ -38,6 +38,21 @@ namespace BLL
         public List<LopHocPhan_DTO> GetWeeklySchoolSchedule(string MSSV, int KiHoc, int NamHoc)
         {
             return LopHocPhan_DAL.Instance.GetListHocPhanOfStudent(MSSV, KiHoc, NamHoc);
+        }
+        #endregion
+
+        public LopHocPhan_AdminEdit GetLopHocPhanByMaHP(string MaHP)
+        {
+            return LopHocPhan_DAL.Instance.GetHocPhanByMaHP(MaHP);
+        }
+
+        public List<SinhVienLHP_View>GetSinhVienInLHP(string MaHP)
+        {
+            List<SinhVienLHP_View> li = LopHocPhan_DAL.Instance.GetSinhVienInLHP(MaHP);
+            int stt = 1;
+            foreach(var sv in li)
+                sv.STT = stt++;
+            return li;
         }
     }
 }

@@ -12,18 +12,21 @@ namespace GUI.MyUserControls
         private const int maxRow = 10;
         private int currentPage, maxPage;
         private List<SinhVienLSH_View> li;
+        private SplitPageHelper<SinhVienLSH_View> helper;
         public UC_ViewHomeRoomClass()
         {
             InitializeComponent();
         }
 
-        private void changePropertiesForColumns()
+        private void changePropertiesForColumns(int NumberOfRow = maxRow)
         {
+            dtgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             dtgv.Columns["STT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtgv.Columns["STT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             dtgv.Columns["MaSV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgv.Columns["MaSV"].Width = 200;
+            dtgv.Columns["MaSV"].Width = 180;
 
             dtgv.Columns["HoTen"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -33,7 +36,8 @@ namespace GUI.MyUserControls
             dtgv.Columns["SdtNguoiThan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtgv.Columns["SdtNguoiThan"].Width = 230;
 
-            dtgv.Columns["EmailCaNhan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;    
+            dtgv.Columns["EmailCaNhan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv.Height = dtgv.ColumnHeadersHeight + NumberOfRow * dtgv.RowTemplate.Height;
         }
 
         public void LoadData()
@@ -51,7 +55,8 @@ namespace GUI.MyUserControls
             //Hiển thị dữ liệu lên datagridview
             maxPage = (int)Math.Ceiling(li.Count * 1.0 / maxRow);
             currentPage = 1;
-            ShowPage(currentPage);
+            helper = new SplitPageHelper<SinhVienLSH_View>(maxRow, li);
+            dtgv.DataSource = helper.GetRecords(currentPage);
         }
 
         #region Không còn dùng
@@ -66,48 +71,38 @@ namespace GUI.MyUserControls
             //load lại data là không cần thiết
         }
         #endregion
-
-        private void ShowPage(int page)
-        {
-            lbCurrentPage.Text = "Trang " + page + "/" + maxPage;
-            int start = (page - 1) * maxRow;
-            int num = 10;
-            if (start + maxRow > li.Count)
-                num = li.Count % maxRow;
-
-            dtgv.DataSource = li.GetRange(start, num);
-            dtgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            changePropertiesForColumns();
-            dtgv.Height = dtgv.ColumnHeadersHeight + num * dtgv.RowTemplate.Height;
-        }
         private void btnPrev_Click(object sender, EventArgs e)
         {
             if (currentPage > 1)
             {
                 currentPage--;
-                ShowPage(currentPage);
+                dtgv.DataSource = helper.GetRecords(currentPage);
             }
         }
-
-        private void btnFirstPage_Click(object sender, EventArgs e)
-        {
-            currentPage = 1;
-            ShowPage(1);
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            currentPage = maxPage;
-            ShowPage(maxPage);
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currentPage < maxPage)
             {
                 currentPage++;
-                ShowPage(currentPage);
+                dtgv.DataSource = helper.GetRecords(currentPage);
             }
+        }
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            dtgv.DataSource = helper.GetRecords(currentPage);
+        }
+
+        private void btnLastPage(object sender, EventArgs e)
+        {
+            currentPage = maxPage;
+            dtgv.DataSource = helper.GetRecords(currentPage);
+        }
+
+        private void dtgv_DataSourceChanged(object sender, EventArgs e)
+        {
+            lbCurrentPage.Text = "Trang " + currentPage + "/" + maxPage;
+            changePropertiesForColumns(dtgv.RowCount);
         }
     }
 }

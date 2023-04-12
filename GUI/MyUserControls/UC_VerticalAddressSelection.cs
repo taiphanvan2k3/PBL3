@@ -12,6 +12,7 @@ namespace GUI.MyUserControls
         {
             InitializeComponent();
         }
+
         void Init()
         {
             comboBoxTinhThanhPho.Items.Add(new CBBItem() { Id = "0", Value = "Chọn Tỉnh/ Thành phố" });
@@ -131,6 +132,8 @@ namespace GUI.MyUserControls
 
         private void comboBoxTinhThanhPho_Click(object sender, EventArgs e)
         {
+            //Chỉ gọi Init() khi người dùng click vào combobox thôi, chứ gọi ở Constructor thì
+            //sẽ bị lỗi không tìm thấy PBL3Entities.
             if (comboBoxTinhThanhPho.Items.Count == 0)
                 Init();
         }

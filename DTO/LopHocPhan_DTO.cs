@@ -20,9 +20,17 @@ namespace DTO
         [DisplayName("Số tín chỉ")]
         public int SoTC { get; set; }
 
+        [Browsable(false)]
+        public string MaGV { get; set; }
+
         [DisplayName("Giảng viên")]
         public string TenGV { get; set; }
 
+        [Browsable(false)]
+        public int KiHoc { get; set; }
+
+        [Browsable(false)]
+        public int NamHoc { get; set; }
 
         [DisplayName("Thời khoá biểu")]
         public ThoiKhoaBieu_DTO tkb { get; set; }

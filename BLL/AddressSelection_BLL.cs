@@ -31,7 +31,6 @@ namespace BLL
                 });
             }
             return res;
-            //return AddressSelection_DAL.Instance.GetCBBCity();
         }
 
         public List<CBBItem> GetDistrictRecords(int city_id)

@@ -78,5 +78,57 @@ namespace DAL
                 .Select(p => p.KiHoc).FirstOrDefault();
         }
 
+        public LopHocPhan_AdminEdit GetHocPhanByMaHP(string MaHP)
+        {
+            return db.LOP_HOC_PHAN.Where(i => i.MaLopHP == MaHP)
+                .GroupJoin(db.GIANG_VIEN, hp => hp.MaGV, gv => gv.MaGV, (hp, gv) => new
+                {
+                    LopHP_tmp = hp,
+                    GiangVien_tmp = gv.DefaultIfEmpty()
+                })
+                .SelectMany(i1 => i1.GiangVien_tmp.Select(i2 => new
+                {
+                    i1.LopHP_tmp.MaLopHP,
+                    TenHP = i1.LopHP_tmp.MON_HOC.TenMH,
+                    i1.LopHP_tmp.MON_HOC.SoTC,
+                    i2.MaGV,
+                    HoGV = i2.NGUOI_DUNG.Ho,
+                    TenGV = i2.NGUOI_DUNG.Ten
+                }))
+                .GroupJoin(db.THOI_KHOA_BIEU, hp => hp.MaLopHP, tkb => tkb.MaLopHP, (hp, tkb) => new
+                {
+                    LopHP_tmp = hp,
+                    TKB_tmp = tkb.DefaultIfEmpty()
+                })
+                .SelectMany(i1 => i1.TKB_tmp.Select(i2 => new LopHocPhan_AdminEdit
+                {
+                    MaHP = i1.LopHP_tmp.MaLopHP,
+                    TenHP = i1.LopHP_tmp.TenHP,
+                    SoTc = i1.LopHP_tmp.SoTC,
+                    MaGV = i1.LopHP_tmp.MaGV,
+                    HoTenGV = i1.LopHP_tmp.HoGV + " " + i1.LopHP_tmp.TenGV,
+                    Thu = i2.Thu,
+                    TietBD = i2.TietBD,
+                    TietKT = i2.TietKetThuc,
+                    MaPhong = i2.MaPhongHoc
+                })).FirstOrDefault();
+        }
+
+        public List<SinhVienLHP_View> GetSinhVienInLHP(string MaHP)
+        {
+            var li = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP)
+                .Join(db.SINHVIEN_LOPHOCPHAN, hp => hp.MaLopHP, sv => sv.MaLopHP, (hp, sv) => new
+                {
+                    sv.MaSV
+                })
+                .Join(db.SINH_VIEN, svhp => svhp.MaSV, sv => sv.MaSV, (svhp, sv) => new SinhVienLHP_View
+                {
+                    MSSV = svhp.MaSV,
+                    HoTenSV = sv.NGUOI_DUNG.Ho + " " + sv.NGUOI_DUNG.Ten,
+                    SDT = sv.NGUOI_DUNG.Sdt,
+                    LopSH = sv.LOP_SINH_HOAT.MaLopSH
+                }).ToList();
+            return li;
+        }
     }
 }
