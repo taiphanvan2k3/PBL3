@@ -289,12 +289,6 @@
     <Compile Include="MyUserControls\UC_DapAnControl.Designer.cs">
       <DependentUpon>UC_DapAnControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_AddressSelection.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_AddressSelection.Designer.cs">
-      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyUserControls\UC_DailySchoolSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -418,9 +412,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DapAnControl.resx">
       <DependentUpon>UC_DapAnControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_AddressSelection.resx">
-      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailySchoolSchedule.resx">
       <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>

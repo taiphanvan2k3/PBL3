@@ -36,23 +36,28 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaHP = new System.Windows.Forms.TextBox();
-            this.txtTenHP = new System.Windows.Forms.TextBox();
+            this.tbMaHP = new System.Windows.Forms.TextBox();
+            this.tbTenHP = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtPhong = new System.Windows.Forms.TextBox();
+            this.tbPhong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTietKT = new System.Windows.Forms.TextBox();
-            this.txtTietBD = new System.Windows.Forms.TextBox();
-            this.txtThu = new System.Windows.Forms.TextBox();
+            this.tbTietKT = new System.Windows.Forms.TextBox();
+            this.tbTietBD = new System.Windows.Forms.TextBox();
+            this.tbThu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTenGV = new System.Windows.Forms.TextBox();
-            this.txtMaGV = new System.Windows.Forms.TextBox();
+            this.tbTenGV = new System.Windows.Forms.TextBox();
+            this.tbMaGV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNext = new FontAwesome.Sharp.IconButton();
+            this.btnPrev = new FontAwesome.Sharp.IconButton();
+            this.btnCancel = new GUI.MyCustomControl.CustomButton();
+            this.btnXacNhan = new GUI.MyCustomControl.CustomButton();
+            this.btnSearch = new GUI.MyCustomControl.CustomButton();
             this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,11 +66,6 @@
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xacNhan = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnNext = new FontAwesome.Sharp.IconButton();
-            this.btnPrev = new FontAwesome.Sharp.IconButton();
-            this.btnCancel = new GUI.MyCustomControl.CustomButton();
-            this.btnXacNhan = new GUI.MyCustomControl.CustomButton();
-            this.btnSearch = new GUI.MyCustomControl.CustomButton();
             this.panelTitle.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,33 +114,31 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Tên học phần:";
             // 
-            // txtMaHP
+            // tbMaHP
             // 
-            this.txtMaHP.Enabled = false;
-            this.txtMaHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHP.Location = new System.Drawing.Point(190, 74);
-            this.txtMaHP.Name = "txtMaHP";
-            this.txtMaHP.Size = new System.Drawing.Size(130, 30);
-            this.txtMaHP.TabIndex = 27;
-            this.txtMaHP.Text = "OOAD21.13";
+            this.tbMaHP.Enabled = false;
+            this.tbMaHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMaHP.Location = new System.Drawing.Point(190, 74);
+            this.tbMaHP.Name = "tbMaHP";
+            this.tbMaHP.Size = new System.Drawing.Size(130, 30);
+            this.tbMaHP.TabIndex = 27;
             // 
-            // txtTenHP
+            // tbTenHP
             // 
-            this.txtTenHP.Enabled = false;
-            this.txtTenHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenHP.Location = new System.Drawing.Point(862, 74);
-            this.txtTenHP.Name = "txtTenHP";
-            this.txtTenHP.Size = new System.Drawing.Size(315, 30);
-            this.txtTenHP.TabIndex = 28;
-            this.txtTenHP.Text = "Phân tích và thiết kế hướng đối tượng";
+            this.tbTenHP.Enabled = false;
+            this.tbTenHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenHP.Location = new System.Drawing.Point(862, 74);
+            this.tbTenHP.Name = "tbTenHP";
+            this.tbTenHP.Size = new System.Drawing.Size(315, 30);
+            this.tbTenHP.TabIndex = 28;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtPhong);
+            this.groupBox1.Controls.Add(this.tbPhong);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtTietKT);
-            this.groupBox1.Controls.Add(this.txtTietBD);
-            this.groupBox1.Controls.Add(this.txtThu);
+            this.groupBox1.Controls.Add(this.tbTietKT);
+            this.groupBox1.Controls.Add(this.tbTietBD);
+            this.groupBox1.Controls.Add(this.tbThu);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -152,14 +150,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lịch học";
             // 
-            // txtPhong
+            // tbPhong
             // 
-            this.txtPhong.Enabled = false;
-            this.txtPhong.Location = new System.Drawing.Point(1020, 44);
-            this.txtPhong.Name = "txtPhong";
-            this.txtPhong.Size = new System.Drawing.Size(100, 30);
-            this.txtPhong.TabIndex = 7;
-            this.txtPhong.Text = "H202";
+            this.tbPhong.Enabled = false;
+            this.tbPhong.Location = new System.Drawing.Point(1020, 44);
+            this.tbPhong.Name = "tbPhong";
+            this.tbPhong.Size = new System.Drawing.Size(100, 30);
+            this.tbPhong.TabIndex = 7;
+            this.tbPhong.Text = "H202";
             // 
             // label6
             // 
@@ -170,32 +168,32 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Phòng:";
             // 
-            // txtTietKT
+            // tbTietKT
             // 
-            this.txtTietKT.Enabled = false;
-            this.txtTietKT.Location = new System.Drawing.Point(728, 44);
-            this.txtTietKT.Name = "txtTietKT";
-            this.txtTietKT.Size = new System.Drawing.Size(100, 30);
-            this.txtTietKT.TabIndex = 5;
-            this.txtTietKT.Text = "Tiết 5";
+            this.tbTietKT.Enabled = false;
+            this.tbTietKT.Location = new System.Drawing.Point(728, 44);
+            this.tbTietKT.Name = "tbTietKT";
+            this.tbTietKT.Size = new System.Drawing.Size(100, 30);
+            this.tbTietKT.TabIndex = 5;
+            this.tbTietKT.Text = "Tiết 5";
             // 
-            // txtTietBD
+            // tbTietBD
             // 
-            this.txtTietBD.Enabled = false;
-            this.txtTietBD.Location = new System.Drawing.Point(392, 44);
-            this.txtTietBD.Name = "txtTietBD";
-            this.txtTietBD.Size = new System.Drawing.Size(100, 30);
-            this.txtTietBD.TabIndex = 4;
-            this.txtTietBD.Text = "Tiết 4";
+            this.tbTietBD.Enabled = false;
+            this.tbTietBD.Location = new System.Drawing.Point(392, 44);
+            this.tbTietBD.Name = "tbTietBD";
+            this.tbTietBD.Size = new System.Drawing.Size(100, 30);
+            this.tbTietBD.TabIndex = 4;
+            this.tbTietBD.Text = "Tiết 4";
             // 
-            // txtThu
+            // tbThu
             // 
-            this.txtThu.Enabled = false;
-            this.txtThu.Location = new System.Drawing.Point(67, 41);
-            this.txtThu.Name = "txtThu";
-            this.txtThu.Size = new System.Drawing.Size(100, 30);
-            this.txtThu.TabIndex = 3;
-            this.txtThu.Text = "Thứ ba";
+            this.tbThu.Enabled = false;
+            this.tbThu.Location = new System.Drawing.Point(67, 41);
+            this.tbThu.Name = "tbThu";
+            this.tbThu.Size = new System.Drawing.Size(100, 30);
+            this.tbThu.TabIndex = 3;
+            this.tbThu.Text = "Thứ ba";
             // 
             // label5
             // 
@@ -226,8 +224,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtTenGV);
-            this.groupBox2.Controls.Add(this.txtMaGV);
+            this.groupBox2.Controls.Add(this.tbTenGV);
+            this.groupBox2.Controls.Add(this.tbMaGV);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,23 +236,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giảng viên phụ trách";
             // 
-            // txtTenGV
+            // tbTenGV
             // 
-            this.txtTenGV.Enabled = false;
-            this.txtTenGV.Location = new System.Drawing.Point(816, 42);
-            this.txtTenGV.Name = "txtTenGV";
-            this.txtTenGV.Size = new System.Drawing.Size(317, 30);
-            this.txtTenGV.TabIndex = 4;
-            this.txtTenGV.Text = "Lê Thị Mỹ Hạnh";
+            this.tbTenGV.Enabled = false;
+            this.tbTenGV.Location = new System.Drawing.Point(816, 42);
+            this.tbTenGV.Name = "tbTenGV";
+            this.tbTenGV.Size = new System.Drawing.Size(317, 30);
+            this.tbTenGV.TabIndex = 4;
             // 
-            // txtMaGV
+            // tbMaGV
             // 
-            this.txtMaGV.Enabled = false;
-            this.txtMaGV.Location = new System.Drawing.Point(144, 41);
-            this.txtMaGV.Name = "txtMaGV";
-            this.txtMaGV.Size = new System.Drawing.Size(130, 30);
-            this.txtMaGV.TabIndex = 3;
-            this.txtMaGV.Text = "102bk0001";
+            this.tbMaGV.Enabled = false;
+            this.tbMaGV.Location = new System.Drawing.Point(144, 41);
+            this.tbMaGV.Name = "tbMaGV";
+            this.tbMaGV.Size = new System.Drawing.Size(130, 30);
+            this.tbMaGV.TabIndex = 3;
             // 
             // label9
             // 
@@ -283,6 +279,102 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1139, 273);
             this.panel1.TabIndex = 35;
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
+            this.btnNext.IconColor = System.Drawing.Color.DarkGreen;
+            this.btnNext.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNext.IconSize = 30;
+            this.btnNext.Location = new System.Drawing.Point(1075, 203);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(45, 43);
+            this.btnNext.TabIndex = 37;
+            this.btnNext.UseVisualStyleBackColor = false;
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPrev.FlatAppearance.BorderSize = 0;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.btnPrev.IconColor = System.Drawing.Color.DarkGreen;
+            this.btnPrev.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPrev.IconSize = 30;
+            this.btnPrev.Location = new System.Drawing.Point(1029, 203);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(44, 43);
+            this.btnPrev.TabIndex = 36;
+            this.btnPrev.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCancel.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancel.BorderRadius = 40;
+            this.btnCancel.BorderSize = 0;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Image = global::GUI.Properties.Resources.Cancel;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(742, 691);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(132, 43);
+            this.btnCancel.TabIndex = 38;
+            this.btnCancel.Text = "    Huỷ";
+            this.btnCancel.TextColor = System.Drawing.Color.Black;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnXacNhan.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnXacNhan.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnXacNhan.BorderRadius = 40;
+            this.btnXacNhan.BorderSize = 0;
+            this.btnXacNhan.FlatAppearance.BorderSize = 0;
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.ForeColor = System.Drawing.Color.Black;
+            this.btnXacNhan.Image = global::GUI.Properties.Resources.confirm;
+            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.Location = new System.Drawing.Point(309, 691);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(132, 43);
+            this.btnXacNhan.TabIndex = 37;
+            this.btnXacNhan.Text = "        Xác nhận";
+            this.btnXacNhan.TextColor = System.Drawing.Color.Black;
+            this.btnXacNhan.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSearch.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSearch.BorderRadius = 40;
+            this.btnSearch.BorderSize = 0;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Image = global::GUI.Properties.Resources.loupe;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(968, 337);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(213, 54);
+            this.btnSearch.TabIndex = 36;
+            this.btnSearch.Text = "   Tìm GV phù hợp";
+            this.btnSearch.TextColor = System.Drawing.Color.Black;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // panelGradient1
             // 
@@ -403,102 +495,6 @@
             this.xacNhan.Text = "Chọn";
             this.xacNhan.UseColumnTextForButtonValue = true;
             // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
-            this.btnNext.IconColor = System.Drawing.Color.DarkGreen;
-            this.btnNext.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNext.IconSize = 30;
-            this.btnNext.Location = new System.Drawing.Point(1075, 203);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(45, 43);
-            this.btnNext.TabIndex = 37;
-            this.btnNext.UseVisualStyleBackColor = false;
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnPrev.FlatAppearance.BorderSize = 0;
-            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
-            this.btnPrev.IconColor = System.Drawing.Color.DarkGreen;
-            this.btnPrev.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPrev.IconSize = 30;
-            this.btnPrev.Location = new System.Drawing.Point(1029, 203);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(44, 43);
-            this.btnPrev.TabIndex = 36;
-            this.btnPrev.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnCancel.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCancel.BorderRadius = 40;
-            this.btnCancel.BorderSize = 0;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Image = global::GUI.Properties.Resources.Cancel;
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(742, 691);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(132, 43);
-            this.btnCancel.TabIndex = 38;
-            this.btnCancel.Text = "    Huỷ";
-            this.btnCancel.TextColor = System.Drawing.Color.Black;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnXacNhan.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnXacNhan.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnXacNhan.BorderRadius = 40;
-            this.btnXacNhan.BorderSize = 0;
-            this.btnXacNhan.FlatAppearance.BorderSize = 0;
-            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.ForeColor = System.Drawing.Color.Black;
-            this.btnXacNhan.Image = global::GUI.Properties.Resources.confirm;
-            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacNhan.Location = new System.Drawing.Point(309, 691);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(132, 43);
-            this.btnXacNhan.TabIndex = 37;
-            this.btnXacNhan.Text = "        Xác nhận";
-            this.btnXacNhan.TextColor = System.Drawing.Color.Black;
-            this.btnXacNhan.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSearch.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSearch.BorderRadius = 40;
-            this.btnSearch.BorderSize = 0;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Image = global::GUI.Properties.Resources.loupe;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(968, 337);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(213, 54);
-            this.btnSearch.TabIndex = 36;
-            this.btnSearch.Text = "   Tìm GV phù hợp";
-            this.btnSearch.TextColor = System.Drawing.Color.Black;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
             // frmAssignTeacher
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -509,8 +505,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtTenHP);
-            this.Controls.Add(this.txtMaHP);
+            this.Controls.Add(this.tbTenHP);
+            this.Controls.Add(this.tbMaHP);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelTitle);
@@ -538,20 +534,20 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMaHP;
-        private System.Windows.Forms.TextBox txtTenHP;
+        private System.Windows.Forms.TextBox tbMaHP;
+        private System.Windows.Forms.TextBox tbTenHP;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPhong;
+        private System.Windows.Forms.TextBox tbPhong;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTietKT;
-        private System.Windows.Forms.TextBox txtTietBD;
-        private System.Windows.Forms.TextBox txtThu;
+        private System.Windows.Forms.TextBox tbTietKT;
+        private System.Windows.Forms.TextBox tbTietBD;
+        private System.Windows.Forms.TextBox tbThu;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtTenGV;
-        private System.Windows.Forms.TextBox txtMaGV;
+        private System.Windows.Forms.TextBox tbTenGV;
+        private System.Windows.Forms.TextBox tbMaGV;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
