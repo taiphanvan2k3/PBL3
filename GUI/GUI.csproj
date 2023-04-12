@@ -117,11 +117,11 @@
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdd.cs">
+    <Compile Include="frmViewListAcc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdd.Designer.cs">
-      <DependentUpon>frmAdd.cs</DependentUpon>
+    <Compile Include="frmViewListAcc.Designer.cs">
+      <DependentUpon>frmViewListAcc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddStudent.cs">
       <SubType>Form</SubType>
@@ -289,12 +289,6 @@
     <Compile Include="MyUserControls\UC_DapAnControl.Designer.cs">
       <DependentUpon>UC_DapAnControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_AddressSelection.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_AddressSelection.Designer.cs">
-      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyUserControls\UC_DailySchoolSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -341,8 +335,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
-    <EmbeddedResource Include="frmAdd.resx">
-      <DependentUpon>frmAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmViewListAcc.resx">
+      <DependentUpon>frmViewListAcc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddAccStudent.resx">
       <DependentUpon>frmAddAccStudent.cs</DependentUpon>
@@ -418,9 +412,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DapAnControl.resx">
       <DependentUpon>UC_DapAnControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_AddressSelection.resx">
-      <DependentUpon>UC_AddressSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailySchoolSchedule.resx">
       <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>

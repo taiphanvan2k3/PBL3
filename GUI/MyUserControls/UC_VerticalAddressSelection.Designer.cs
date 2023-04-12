@@ -124,6 +124,7 @@
             this.comboBoxTinhThanhPho.Size = new System.Drawing.Size(282, 36);
             this.comboBoxTinhThanhPho.TabIndex = 17;
             this.comboBoxTinhThanhPho.SelectedIndexChanged += new System.EventHandler(this.comboBoxTinhThanhPho_SelectedIndexChanged);
+            this.comboBoxTinhThanhPho.Click += new System.EventHandler(this.comboBoxTinhThanhPho_Click);
             // 
             // UC_VerticalAddressSelection
             // 
@@ -137,7 +138,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UC_VerticalAddressSelection";
             this.Size = new System.Drawing.Size(437, 177);
-            this.Load += new System.EventHandler(this.UC_AddressSelection_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

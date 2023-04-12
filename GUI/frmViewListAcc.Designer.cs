@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmAdd
+    partial class frmViewListAcc
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvViewAcc = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelButton = new System.Windows.Forms.Panel();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
@@ -45,7 +45,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewAcc)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -79,7 +79,6 @@
             this.button9.TabIndex = 15;
             this.button9.Text = "Sendmail";
             this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // panelContainer
             // 
@@ -140,11 +139,12 @@
             this.dgvViewAcc.Size = new System.Drawing.Size(1200, 328);
             this.dgvViewAcc.TabIndex = 19;
             this.dgvViewAcc.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvViewAcc_CellBeginEdit);
+            this.dgvViewAcc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvSelectAll_CellPainting);
             this.dgvViewAcc.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewAcc_CellValueChanged);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelButton);
             this.panel1.Controls.Add(this.lblProductsUnderstock);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -152,17 +152,17 @@
             this.panel1.Size = new System.Drawing.Size(1200, 72);
             this.panel1.TabIndex = 20;
             // 
-            // panel2
+            // panelButton
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Location = new System.Drawing.Point(694, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(506, 51);
-            this.panel2.TabIndex = 18;
+            this.panelButton.Controls.Add(this.btnDelete);
+            this.panelButton.Controls.Add(this.btnAdd);
+            this.panelButton.Controls.Add(this.btnEdit);
+            this.panelButton.Location = new System.Drawing.Point(694, 15);
+            this.panelButton.Name = "panelButton";
+            this.panelButton.Size = new System.Drawing.Size(506, 51);
+            this.panelButton.TabIndex = 18;
             // 
             // btnDelete
             // 
@@ -248,7 +248,7 @@
             this.lblProductsUnderstock.TabIndex = 17;
             this.lblProductsUnderstock.Text = "Quản lý tài khoản";
             // 
-            // frmAdd
+            // frmViewListAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -258,7 +258,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelContainer);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmAdd";
+            this.Name = "frmViewListAcc";
             this.Text = "frmAddAccount";
             this.Load += new System.EventHandler(this.frmAddAccount_Load);
             this.panelContainer.ResumeLayout(false);
@@ -266,7 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewAcc)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.panelButton.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -279,7 +279,7 @@
         private FontAwesome.Sharp.IconButton btnDelete;
         private FontAwesome.Sharp.IconButton btnEdit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelButton;
         private FontAwesome.Sharp.IconButton btnAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvViewAcc;

@@ -21,11 +21,14 @@ namespace BLL
             }
         }
 
-        public List<InformationAcc_DTO> GetAccountRoleList()
+        public List<InformationStudent_DTO> GetAccountStudentList()
         {
-            return GetInformationAcc_DAL.Instance.GetAccountRoleList(); 
+            return GetInformationAcc_DAL.Instance.GetAccountStudentList(); 
         }
-
+        public List<InformationTeacher_DTO> GetAccountTeacherList()
+        {
+            return GetInformationAcc_DAL.Instance.GetAccountTeacherList();
+        }
         public List<CHUONG_TRINH_DAO_TAO_DTO> GetListEducationProgram()
         {
             List<CHUONG_TRINH_DAO_TAO_DTO> newList = new List<CHUONG_TRINH_DAO_TAO_DTO>();
@@ -42,9 +45,29 @@ namespace BLL
             return newList;
         }
 
+        public List<KHOA_DTO> GetListFaculty()
+        {
+            List<KHOA_DTO> newList = new List<KHOA_DTO>();
+            foreach (KHOA item in GetInformationAcc_DAL.Instance.GetListFaculty())
+            {
+                KHOA_DTO ctdt = new KHOA_DTO
+                {
+                    
+                    MaKhoa = item.MaKhoa,
+                    TenKhoa = item.TenKhoa,
+                };
+                newList.Add(ctdt);
+            }
+            return newList;
+        }
+
         public int GetCountStudent()
         {
            return GetInformationAcc_DAL.Instance.GetCountStudent();
+        }
+        public int GetCountTeacher()
+        {
+            return GetInformationAcc_DAL.Instance.GetCountTeacher();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace GUI.MyUserControls
         public UC_VerticalAddressSelection()
         {
             InitializeComponent();
-            Init();
         }
         void Init()
         {
@@ -103,12 +102,6 @@ namespace GUI.MyUserControls
             this.QuanHuyen = tmp[1];
             this.XaPhuong = tmp[2];
         }
-        private void UC_AddressSelection_Load(object sender, System.EventArgs e)
-        {
-            /*comboBoxTinhThanhPho.Items.Add(new CBBAddressItem() { Id = 0, Value = "Chọn Tỉnh/ Thành phố" });
-            comboBoxTinhThanhPho.Items.AddRange(AddressSelectionBLL.Instance.GetCityRecords().ToArray());
-            comboBoxTinhThanhPho.SelectedIndex = 0;*/
-        }
         private void comboBoxTinhThanhPho_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             if (comboBoxTinhThanhPho.SelectedIndex > 0)
@@ -134,6 +127,12 @@ namespace GUI.MyUserControls
                 int district_id = Convert.ToInt32(item.Id);
                 comboBoxXaPhuong.Items.AddRange(AddressSelection_BLL.Instance.GetWardRecords(district_id).ToArray());
             }
+        }
+
+        private void comboBoxTinhThanhPho_Click(object sender, EventArgs e)
+        {
+            if (comboBoxTinhThanhPho.Items.Count == 0)
+                Init();
         }
     }
 }

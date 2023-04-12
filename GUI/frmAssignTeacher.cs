@@ -18,11 +18,29 @@ namespace GUI
             InitializeComponent();
             MoveFormHelper helper = new MoveFormHelper(this, panelTitle, labelTitle);
         }
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
 
+        #region Properties
+        public string MaHP
+        {
+            get => tbMaHP.Text;
+            set => tbMaHP.Text = value;
+        }
+        public string TenHP
+        {
+            get => tbTenHP.Text;
+            set => tbTenHP.Text = value;
+        }
+        public string MaGV
+        {
+            get => tbMaGV.Text;
+            set => tbMaGV.Text = value;
+        }
+        public string TenGV
+        {
+            get => tbTenGV.Text; 
+            set => tbTenGV.Text = value;
+        }
+        #endregion
         private void frm_AssignTeacher_Load(object sender, EventArgs e)
         {
             //Dữ liệu này dùng để test giao diện,khi triển khai sẽ thay bằng việc set dữ liệu cho DataTable
@@ -38,5 +56,11 @@ namespace GUI
             dtgv.Rows.Add(4, "102bk0003", "Võ Văn C", "0913...", 2);
             dtgv.Rows.Add(5, "102bk0004", "Lê Văn D", "0914...", 1);
         }
+        #region Events
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        #endregion
     }
 }

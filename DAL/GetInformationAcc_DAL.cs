@@ -19,14 +19,14 @@ namespace DAL
                 return _Instance;
             }
         }
-        public List<InformationAcc_DTO> GetAccountRoleList()
+        public List<InformationStudent_DTO> GetAccountStudentList()
         {
             using (var context = new PBL3Entities())
             {
                 var query = from tt in context.THONG_TIN_DANG_NHAP
                             join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
                             join sv in context.SINH_VIEN on nd.MaNguoiDung equals sv.MaSV
-                            select new InformationAcc_DTO
+                            select new InformationStudent_DTO
                             {
                                 TaiKhoan = tt.TaiKhoan,
                                 VaiTro = tt.VaiTro,
@@ -39,6 +39,26 @@ namespace DAL
             }
         }
 
+        public List<InformationTeacher_DTO> GetAccountTeacherList()
+        {
+            using (var context = new PBL3Entities())
+            {
+                var query = from tt in context.THONG_TIN_DANG_NHAP
+                            join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
+                            join gv in context.GIANG_VIEN on nd.MaNguoiDung equals gv.MaGV
+                            select new InformationTeacher_DTO
+                            {
+                                TaiKhoan = tt.TaiKhoan,
+                                VaiTro = tt.VaiTro,
+                                Ten = nd.Ho + " " + nd.Ten,
+                                MaCCCD = nd.MaCCCD,
+                                EmailTruongCap = nd.EmailTruongCap,
+                                TrinhDo = gv.TrinhDo    
+                            };
+                return query.ToList();
+            }
+        }
+
         public List<CHUONG_TRINH_DAO_TAO> GetListEducationProgram()
         {
             using(var context = new PBL3Entities()) { 
@@ -46,7 +66,14 @@ namespace DAL
                 return info;
             }
         }
-
+        public List<KHOA> GetListFaculty()
+        {
+            using (var context = new PBL3Entities())
+            {
+                var info = context.KHOAs.ToList();
+                return info;
+            }
+        }
         public int GetCountStudent()
         {
             using (var context = new PBL3Entities())
@@ -55,6 +82,16 @@ namespace DAL
                 return soLuongBanGhi;
             }
         }
+
+        public int GetCountTeacher()
+        {
+            using (var context = new PBL3Entities())
+            {
+                var soLuongBanGhi = context.GIANG_VIEN.Count();
+                return soLuongBanGhi;
+            }
+        }
+
 
         //public List<InformationAcc_DTO> GetAccountRoleList()
         //{

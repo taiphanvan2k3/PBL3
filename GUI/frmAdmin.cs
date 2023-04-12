@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using BLL;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -135,11 +136,7 @@ namespace GUI
             ActivateButton(sender, RGBColors.color2);
             showSubMenu(panelAdd);
         }
-        private void btnStudent_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frmAdd());
-
-        }
+       
 
         private void btnExpandMenu_Click(object sender, EventArgs e)
         {
@@ -210,9 +207,13 @@ namespace GUI
             this.Dispose();
         }
 
+        private void btnStudent_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmViewListAcc(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(), 0));
+        }
         private void btnTeacher_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmAddAccStudent());
+            openChildForm(new frmViewListAcc(GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList(), 1));
 
         }
 

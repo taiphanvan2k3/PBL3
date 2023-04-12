@@ -15,7 +15,7 @@ namespace GUI
     public partial class frmAddAccStudent : Form
     {
 
-        private string MSSV = "";
+        private string ID_User = "";
         private string MaKhoa = "";
         private string MaCTDT = "";
 
@@ -23,10 +23,12 @@ namespace GUI
 
         private string passID = "";
         private string passEmai = "";
-        public frmAddAccStudent()
+
+        private int role;
+        public frmAddAccStudent(int role)
         {
             InitializeComponent();
-            LoadData();
+            this.role = role;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -37,10 +39,7 @@ namespace GUI
 
         private void LoadData()
         {
-            foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
-            {
-                cmbList.Items.Add(item.TenCTDT);
-            }
+
         }
         #region Drag Form
 
@@ -59,16 +58,31 @@ namespace GUI
 
         private void cmbList_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbList.SelectedIndex != -1) {
+            if (cmbList.SelectedIndex != -1)
+            {
                 MaKhoa = "";
                 MaCTDT = "";
-                foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
+                if (role == 0)
                 {
-                    if(cmbList.SelectedItem.ToString() == item.TenCTDT.ToString())
+                    foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
                     {
-                        MaKhoa += item.MaKhoa;
-                        MaCTDT += item.MaCTDT;
-                        break;
+                        if (cmbList.SelectedItem.ToString() == item.TenCTDT.ToString())
+                        {
+                            MaKhoa += item.MaKhoa;
+                            MaCTDT += item.MaCTDT;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in GetInformationAcc_BLL.Instance.GetListFaculty())
+                    {
+                        if (cmbList.SelectedItem.ToString() == item.TenKhoa.ToString())
+                        {
+                            MaKhoa += item.MaKhoa;
+                            break;
+                        }
                     }
                 }
             }
@@ -80,23 +94,61 @@ namespace GUI
             passID = "";
             passEmai = "";
             Random random = new Random();
-            int year = dtpBirthday.Value.Year;
-            if (year < 2000)
+            if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1)
             {
-                year = year % 100 - 82;
+                MessageBox.Show("Vui lòng nhập đủ thông tin");
             }
+
             else
             {
-                year = year % 2000 + 18;
+                if (role == 0)
+                {
+
+                    ID_User = MaKhoa + cmbYearOrLevel.SelectedItem.ToString().Substring(2) + (GetInformationAcc_BLL.Instance.GetCountStudent() + 1).ToString();
+                    Email = ID_User + "SV@emailling.xyz";
+                }
+                else
+                {
+                    ID_User = MaKhoa + "BK" + (GetInformationAcc_BLL.Instance.GetCountTeacher() + 1).ToString();
+                    Email = ID_User + "GV@emailling.xyz";
+                }
             }
-            MSSV = MaKhoa + year.ToString() + (GetInformationAcc_BLL.Instance.GetCountStudent() + 1).ToString();
-            Email = MSSV + "SV@emailling.xyz";
 
             int pass1 = random.Next(100000, 999999);
             int pass2 = random.Next(100000, 999999);
             passID = pass1.ToString();
             passEmai = pass2.ToString();
-            MessageBox.Show(MSSV + "\n" + passID +  "\n" + Email + "\n" +passEmai);
+            MessageBox.Show(ID_User + "\n" + passID + "\n" + Email + "\n" + passEmai);
+        }
+
+        private void frmAddAccStudent_Load(object sender, EventArgs e)
+        {
+            if (role == 0)
+            {
+                List<string> list = new List<string>()
+                {
+                    "2020", "2021", "2022", "2023"
+                };
+                cmbYearOrLevel.Items.AddRange(list.ToArray());
+                foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
+                {
+                    cmbList.Items.Add(item.TenCTDT);
+                }
+            }
+            else
+            {
+                lbFacultyOrProgram.Text = "Tên khoa";
+                lbYearOrLevel.Text = "Trình độ";
+                List<string> trinhDo = new List<string>()
+                {
+                    "Tiến sĩ", "Thạc Sĩ", "Phó Giáo Sư - Tiến sĩ", "Giáo sư - Tiến sĩ"
+                };
+                cmbYearOrLevel.Items.AddRange(trinhDo.ToArray());
+                foreach (var item in GetInformationAcc_BLL.Instance.GetListFaculty())
+                {
+                    cmbList.Items.Add(item.TenKhoa);
+                }
+            }
         }
     }
 }
