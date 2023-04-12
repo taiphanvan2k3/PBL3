@@ -12,6 +12,7 @@ namespace GUI.MyUserControls
         {
             InitializeComponent();
         }
+
         void Init()
         {
             comboBoxTinhThanhPho.Items.Add(new CBBItem() { Id = "0", Value = "Chọn Tỉnh/ Thành phố" });
