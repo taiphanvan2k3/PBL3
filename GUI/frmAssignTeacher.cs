@@ -40,26 +40,40 @@ namespace GUI
             get => tbTenGV.Text; 
             set => tbTenGV.Text = value;
         }
+        public string Thu
+        {
+            get => tbThu.Text;
+            set => tbThu.Text = value;
+        }
+        public string TietBatDau
+        {
+            get => tbTietBD.Text;
+            set => tbTietBD.Text = value;
+        }
+        public string TietKetThuc
+        {
+            get => tbTietKT.Text;
+            set => tbTietKT.Text = value;
+        }
+        public string Phong
+        {
+            get => tbPhong.Text; 
+            set => tbPhong.Text = value;
+        }
         #endregion
+        #region Events
         private void frm_AssignTeacher_Load(object sender, EventArgs e)
         {
-            //Dữ liệu này dùng để test giao diện,khi triển khai sẽ thay bằng việc set dữ liệu cho DataTable
-            //bằng cách lấy dữ liệu ở DB lên
-            dtgv.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgv.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgv.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgv.Rows.Add(1, "102bk0001", "Lê Thị Mỹ Hạnh", "0905...", 2);
-            dtgv.Rows.Add(2, "102bk0002", "Nguyễn Văn A", "0911...", 3);
-            dtgv.Rows.Add(3, "102bk0003", "Huỳnh Thị B", "0912...", 2);
-            dtgv.Rows.Add(4, "102bk0003", "Võ Văn C", "0913...", 2);
-            dtgv.Rows.Add(5, "102bk0004", "Lê Văn D", "0914...", 1);
+            
         }
-        #region Events
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
     }

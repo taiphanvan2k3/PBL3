@@ -561,6 +561,7 @@
     <None Include="Resources\Yourname.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\DarkMode.png" />
     <None Include="Resources\CreateQuestion.png" />
     <None Include="Resources\Calendar_week.png" />
     <Content Include="Resources\ChangeGrade.png" />

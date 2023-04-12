@@ -77,5 +77,6 @@ namespace DAL
             return db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaSV == MSSV).OrderByDescending(p => p.KiHoc)
                 .Select(p => p.KiHoc).FirstOrDefault();
         }
+
     }
 }
