@@ -67,6 +67,7 @@
     <Compile Include="PhuHuynh_BLL.cs" />
     <Compile Include="QuanLyDiem_BLL.cs" />
     <Compile Include="SinhVien_BLL.cs" />
+    <Compile Include="SplitPageHelper.cs" />
     <Compile Include="UtilityClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
