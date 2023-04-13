@@ -77,8 +77,9 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(200, 49);
             this.button9.TabIndex = 15;
-            this.button9.Text = "Sendmail";
+            this.button9.Text = "Reload";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // panelContainer
             // 
@@ -104,6 +105,8 @@
             // 
             // dgvViewAcc
             // 
+            this.dgvViewAcc.AllowUserToAddRows = false;
+            this.dgvViewAcc.AllowUserToDeleteRows = false;
             this.dgvViewAcc.AllowUserToResizeRows = false;
             this.dgvViewAcc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvViewAcc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));

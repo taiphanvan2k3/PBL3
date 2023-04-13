@@ -33,30 +33,30 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlManageClass = new System.Windows.Forms.Panel();
-            this.pnlViewCalendar = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.btnInfo = new FontAwesome.Sharp.IconButton();
+            this.pnlManageClass = new System.Windows.Forms.Panel();
             this.btnCreateQuestion = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSendAnnounce = new System.Windows.Forms.Button();
             this.btnManageClass = new System.Windows.Forms.Button();
             this.btnChangeGrade = new System.Windows.Forms.Button();
+            this.pnlViewCalendar = new System.Windows.Forms.Panel();
             this.btnCalendarDays = new System.Windows.Forms.Button();
             this.btnCalendarWeek = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
-            this.btnDarkMode = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
+            this.btnDarkMode = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flPanel.SuspendLayout();
             this.pnlManageClass.SuspendLayout();
             this.pnlViewCalendar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -99,42 +99,6 @@
             this.panel4.Size = new System.Drawing.Size(250, 76);
             this.panel4.TabIndex = 0;
             // 
-            // flPanel
-            // 
-            this.flPanel.Controls.Add(this.btnHome);
-            this.flPanel.Controls.Add(this.btnInfo);
-            this.flPanel.Controls.Add(this.pnlManageClass);
-            this.flPanel.Controls.Add(this.pnlViewCalendar);
-            this.flPanel.Controls.Add(this.btnDarkMode);
-            this.flPanel.Location = new System.Drawing.Point(0, 76);
-            this.flPanel.Name = "flPanel";
-            this.flPanel.Size = new System.Drawing.Size(250, 496);
-            this.flPanel.TabIndex = 8;
-            // 
-            // pnlManageClass
-            // 
-            this.pnlManageClass.Controls.Add(this.btnCreateQuestion);
-            this.pnlManageClass.Controls.Add(this.button2);
-            this.pnlManageClass.Controls.Add(this.btnSendAnnounce);
-            this.pnlManageClass.Controls.Add(this.btnManageClass);
-            this.pnlManageClass.Controls.Add(this.btnChangeGrade);
-            this.pnlManageClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlManageClass.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlManageClass.Location = new System.Drawing.Point(3, 151);
-            this.pnlManageClass.Name = "pnlManageClass";
-            this.pnlManageClass.Size = new System.Drawing.Size(250, 68);
-            this.pnlManageClass.TabIndex = 7;
-            // 
-            // pnlViewCalendar
-            // 
-            this.pnlViewCalendar.Controls.Add(this.btnCalendarDays);
-            this.pnlViewCalendar.Controls.Add(this.btnCalendarWeek);
-            this.pnlViewCalendar.Controls.Add(this.btnCalendar);
-            this.pnlViewCalendar.Location = new System.Drawing.Point(3, 225);
-            this.pnlViewCalendar.Name = "pnlViewCalendar";
-            this.pnlViewCalendar.Size = new System.Drawing.Size(250, 68);
-            this.pnlViewCalendar.TabIndex = 9;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
@@ -161,6 +125,18 @@
             this.btnMenu.TabIndex = 8;
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // flPanel
+            // 
+            this.flPanel.Controls.Add(this.btnHome);
+            this.flPanel.Controls.Add(this.btnInfo);
+            this.flPanel.Controls.Add(this.pnlManageClass);
+            this.flPanel.Controls.Add(this.pnlViewCalendar);
+            this.flPanel.Controls.Add(this.btnDarkMode);
+            this.flPanel.Location = new System.Drawing.Point(0, 76);
+            this.flPanel.Name = "flPanel";
+            this.flPanel.Size = new System.Drawing.Size(250, 496);
+            this.flPanel.TabIndex = 8;
             // 
             // btnHome
             // 
@@ -205,6 +181,20 @@
             this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // pnlManageClass
+            // 
+            this.pnlManageClass.Controls.Add(this.btnCreateQuestion);
+            this.pnlManageClass.Controls.Add(this.button2);
+            this.pnlManageClass.Controls.Add(this.btnSendAnnounce);
+            this.pnlManageClass.Controls.Add(this.btnManageClass);
+            this.pnlManageClass.Controls.Add(this.btnChangeGrade);
+            this.pnlManageClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlManageClass.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlManageClass.Location = new System.Drawing.Point(3, 151);
+            this.pnlManageClass.Name = "pnlManageClass";
+            this.pnlManageClass.Size = new System.Drawing.Size(250, 68);
+            this.pnlManageClass.TabIndex = 7;
             // 
             // btnCreateQuestion
             // 
@@ -293,6 +283,16 @@
             this.btnChangeGrade.Tag = "Chỉnh sửa điểm";
             this.btnChangeGrade.UseVisualStyleBackColor = false;
             // 
+            // pnlViewCalendar
+            // 
+            this.pnlViewCalendar.Controls.Add(this.btnCalendarDays);
+            this.pnlViewCalendar.Controls.Add(this.btnCalendarWeek);
+            this.pnlViewCalendar.Controls.Add(this.btnCalendar);
+            this.pnlViewCalendar.Location = new System.Drawing.Point(3, 225);
+            this.pnlViewCalendar.Name = "pnlViewCalendar";
+            this.pnlViewCalendar.Size = new System.Drawing.Size(250, 68);
+            this.pnlViewCalendar.TabIndex = 9;
+            // 
             // btnCalendarDays
             // 
             this.btnCalendarDays.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
@@ -346,28 +346,6 @@
             this.btnCalendar.UseVisualStyleBackColor = false;
             this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
-            // btnDarkMode
-            // 
-            this.btnDarkMode.FlatAppearance.BorderSize = 0;
-            this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDarkMode.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDarkMode.ForeColor = System.Drawing.Color.White;
-            this.btnDarkMode.IconChar = FontAwesome.Sharp.IconChar.CircleHalfStroke;
-            this.btnDarkMode.IconColor = System.Drawing.Color.White;
-            this.btnDarkMode.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDarkMode.IconSize = 30;
-            this.btnDarkMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.Location = new System.Drawing.Point(3, 299);
-            this.btnDarkMode.Name = "btnDarkMode";
-            this.btnDarkMode.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDarkMode.Size = new System.Drawing.Size(250, 68);
-            this.btnDarkMode.TabIndex = 10;
-            this.btnDarkMode.Tag = "Nền tối";
-            this.btnDarkMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDarkMode.UseVisualStyleBackColor = true;
-            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
-            // 
             // btnLogOut
             // 
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -391,6 +369,25 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnDarkMode
+            // 
+            this.btnDarkMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
+            this.btnDarkMode.FlatAppearance.BorderSize = 0;
+            this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDarkMode.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDarkMode.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDarkMode.Image = global::GUI.Properties.Resources.DarkMode;
+            this.btnDarkMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDarkMode.Location = new System.Drawing.Point(3, 299);
+            this.btnDarkMode.Name = "btnDarkMode";
+            this.btnDarkMode.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnDarkMode.Size = new System.Drawing.Size(250, 68);
+            this.btnDarkMode.TabIndex = 19;
+            this.btnDarkMode.Tag = "Nền tối";
+            this.btnDarkMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDarkMode.UseVisualStyleBackColor = false;
+            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
+            // 
             // frmTeacher
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -402,10 +399,10 @@
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flPanel.ResumeLayout(false);
             this.pnlManageClass.ResumeLayout(false);
             this.pnlViewCalendar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,7 +412,6 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton btnDarkMode;
         private FontAwesome.Sharp.IconButton btnLogOut;
         private FontAwesome.Sharp.IconButton btnInfo;
         private FontAwesome.Sharp.IconButton btnHome;
@@ -433,5 +429,6 @@
         private System.Windows.Forms.Button btnCalendarWeek;
         private System.Windows.Forms.Button btnCalendar;
         private System.Windows.Forms.Button btnCreateQuestion;
+        private System.Windows.Forms.Button btnDarkMode;
     }
 }

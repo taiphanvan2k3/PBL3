@@ -18,13 +18,12 @@ namespace BLL
         }
 
         #region Xử lí bên giao diện sinh viên
-        public int GetKiHocHienTai(string MSSV)
+        /*public int GetKiHocHienTai(string MSSV)
         {
-            //return LopHocPhan_DAL.Instance.GetKiHocHienTai(MSSV);
-            return 1;
-        }
+            return LopHocPhan_DAL.Instance.GetKiHocHienTai(MSSV);
+        }*/
 
-        public List<LopHocPhan_DTO> GetDailySchoolSchedule(string MSSV, string Thu, int KiHoc, int NamHoc)
+        /*public List<LopHocPhan_DTO> GetDailySchoolSchedule(string MSSV, string Thu, int KiHoc, int NamHoc)
         {
             List<LopHocPhan_DTO> li = LopHocPhan_DAL.Instance.GetListHocPhanOfStudent(MSSV, KiHoc, NamHoc);
             List<LopHocPhan_DTO> res = new List<LopHocPhan_DTO>();
@@ -34,12 +33,12 @@ namespace BLL
                     res.Add(lhp);
             }
             return res;
-        }
+        }*/
 
-        public List<LopHocPhan_DTO> GetWeeklySchoolSchedule(string MSSV, int KiHoc, int NamHoc)
+        /*public List<LopHocPhan_DTO> GetWeeklySchoolSchedule(string MSSV, int KiHoc, int NamHoc)
         {
             return LopHocPhan_DAL.Instance.GetListHocPhanOfStudent(MSSV, KiHoc, NamHoc);
-        }
+        }*/
         #endregion
 
         public LopHocPhan_AdminEdit GetLopHocPhanByMaHP(string MaHP)

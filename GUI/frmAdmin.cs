@@ -104,7 +104,7 @@ namespace GUI
         }
 
 
-        
+
 
         private Form activeForm = null;
         private void openChildForm(Form childForm)
@@ -118,7 +118,7 @@ namespace GUI
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace GUI
             ActivateButton(sender, RGBColors.color2);
             showSubMenu(panelAdd);
         }
-       
+
 
         private void btnExpandMenu_Click(object sender, EventArgs e)
         {
@@ -204,7 +204,7 @@ namespace GUI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            UtilityClass.OpenNewForm(this, new frmLogin());
         }
 
         private void btnStudent_Click(object sender, EventArgs e)

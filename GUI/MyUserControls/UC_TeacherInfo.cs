@@ -92,10 +92,13 @@ namespace GUI.MyUserControls
         }
         public void SetDiaChi(string address)
         {
-            string[] parts = UtilityClass.SplitAddress(address);
-            uc_Address.TinhThanhPho = parts[0];
-            uc_Address.QuanHuyen = parts[1];
-            uc_Address.XaPhuong = parts[2];
+            if(address != null)
+            {
+                string[] parts = UtilityClass.SplitAddress(address);
+                uc_Address.TinhThanhPho = parts[0];
+                uc_Address.QuanHuyen = parts[1];
+                uc_Address.XaPhuong = parts[2];
+            }
         }
         #endregion
         /*void LoadInfo(string Account)

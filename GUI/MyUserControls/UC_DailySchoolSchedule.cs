@@ -44,10 +44,10 @@ namespace GUI.MyUserControls
         {
             //Hàm này sẽ được dùng khi có dữ liệu về lớp học phần
             string Thu = GetDayOfWeek(dateTimePicker.Value);
-            int kiHienTai = LopHocPhan_BLL.Instance.GetKiHocHienTai(MSSV);
-            List<LopHocPhan_DTO> li = LopHocPhan_BLL.Instance.GetDailySchoolSchedule(MSSV, Thu,
-                                                              kiHienTai, DateTime.Now.Year);
-            MessageBox.Show("Số bản ghi trả về: " + li.Count);
+            //int kiHienTai = LopHocPhan_BLL.Instance.GetKiHocHienTai(MSSV);
+            //List<LopHocPhan_DTO> li = LopHocPhan_BLL.Instance.GetDailySchoolSchedule(MSSV, Thu,
+            //                                                  kiHienTai, DateTime.Now.Year);
+            //MessageBox.Show("Số bản ghi trả về: " + li.Count);
             //dtgv.DataSource = li;
         }
         private void btnXemLich_Click(object sender, EventArgs e)

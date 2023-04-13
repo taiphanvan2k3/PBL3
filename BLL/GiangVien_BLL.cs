@@ -45,7 +45,7 @@ namespace BLL
                     EmailTruongCap = nd.EmailTruongCap,
                     TrinhDo = gv.TrinhDo,
                     Luong = gv.Luong,
-                    Khoa = k.TenKhoa
+                    MaKhoa = k.TenKhoa
                 };
             }
             return null;
@@ -53,6 +53,10 @@ namespace BLL
         public List<string> GetClassSectionByID(string id)
         {
             return GiangVien_DAL.GetMaLopHPByID(id);
+        }
+        public List<AssignTeacher> GetGiangVienWithNumberLHP()
+        {
+            return GiangVien_DAL.GetGiangVienWithNumberLHP();
         }
     }
 }
