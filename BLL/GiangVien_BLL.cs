@@ -56,7 +56,25 @@ namespace BLL
         }
         public List<AssignTeacher> GetGiangVienWithNumberLHP()
         {
-            return GiangVien_DAL.GetGiangVienWithNumberLHP();
+            List<AssignTeacher> li = new List<AssignTeacher>();
+            int stt = 1;
+            foreach(var i in GiangVien_DAL.GetGiangVienWithNumberLHP())
+            {
+                li.Add(new AssignTeacher
+                {
+                    STT = stt,
+                    MaGV = i.MaGV,
+                    TenGV = i.TenGV,
+                    SDT = i.SDT,
+                    SoLuongHPPhuTrach = i.SoLuongHPPhuTrach
+                });
+                stt++;
+            }
+            return li;
+        }
+        public bool CheckTKBGiangVienConflict(string id, string thu, int TietBD, int TietKT)
+        {
+            return GiangVien_DAL.CheckTKBGiangVienConflict(id, thu, TietBD, TietKT);
         }
     }
 }

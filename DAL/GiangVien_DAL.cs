@@ -34,14 +34,6 @@ namespace DAL
         }
         public static List<AssignTeacher> GetGiangVienWithNumberLHP()
         {
-            /*var li = db.GIANG_VIEN.Join(db.NGUOI_DUNG, gv => gv.MaGV, nd => nd.MaNguoiDung, (gv, nd) => new { GIANG_VIEN = gv, NGUOI_DUNG = nd })
-                                   .Join(db.LOP_HOC_PHAN, p => p.GIANG_VIEN.MaGV, lhp => lhp.MaGV, (p,lhp) => new 
-                                   {
-                                     MaGV = lhp.MaGV,
-                                     TenGV = p.NGUOI_DUNG.Ho + " " + p.NGUOI_DUNG.Ten,
-                                     SDT = p.NGUOI_DUNG.Sdt,
-                                     SoLuongHPPhuTrach = 
-                                   })*/
             var li = db.GIANG_VIEN
                      .Join(db.NGUOI_DUNG, gv => gv.MaGV, nd => nd.MaNguoiDung, (gv, nd) => new { GiangVien = gv, NguoiDung = nd })
                      .Join(db.LOP_HOC_PHAN, j => j.GiangVien.MaGV, lhp => lhp.MaGV, (j, lhp) => new { GiangVien = j.GiangVien, NguoiDung = j.NguoiDung, LopHocPhan = lhp })
@@ -49,6 +41,16 @@ namespace DAL
                      .Select(g => new AssignTeacher{ MaGV = g.Key.MaGV, TenGV = g.Key.HoTen, SDT = g.Key.Sdt, SoLuongHPPhuTrach = g.Count() })
                      .ToList();
             return li;
+        }
+        public static bool CheckTKBGiangVienConflict(string id, string thu, int TietBD, int TietKT)
+        {
+            var li = db.THOI_KHOA_BIEU
+                     .Join(db.LOP_HOC_PHAN, tkb => tkb.MaLopHP, lhp => lhp.MaLopHP, (tkb, lhp) => new { TKB = tkb, LHP = lhp })
+                     .Join(db.GIANG_VIEN, x => x.LHP.MaGV, gv => gv.MaGV, (x, gv) => new { x.TKB, x.LHP, GV = gv })
+                     .Where(x => x.GV.MaGV == id && x.TKB.Thu == thu && ((x.TKB.TietBD >= TietBD && x.TKB.TietBD <= TietKT) || (x.TKB.TietKetThuc >= TietBD && x.TKB.TietKetThuc <= TietKT)))
+                     .Select(x => x.TKB).ToList();
+            //Nếu list rỗng thì không có xung đột trả về true
+            return (li.Count == 0 ? true : false);
         }
     }
 }
