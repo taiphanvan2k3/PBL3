@@ -53,7 +53,7 @@ namespace DAL
                                 Ten = nd.Ho + " " + nd.Ten,
                                 MaCCCD = nd.MaCCCD,
                                 EmailTruongCap = nd.EmailTruongCap,
-                                TrinhDo = gv.TrinhDo    
+                                TrinhDo = gv.TrinhDo
                             };
                 return query.ToList();
             }
@@ -61,9 +61,11 @@ namespace DAL
 
         public List<CHUONG_TRINH_DAO_TAO> GetListEducationProgram()
         {
-            using(var context = new PBL3Entities()) { 
+            using (var context = new PBL3Entities())
+            {
                 var info = context.CHUONG_TRINH_DAO_TAO.ToList();
                 return info;
+
             }
         }
         public List<KHOA> GetListFaculty()
@@ -71,6 +73,7 @@ namespace DAL
             using (var context = new PBL3Entities())
             {
                 var info = context.KHOAs.ToList();
+
                 return info;
             }
         }
@@ -80,18 +83,136 @@ namespace DAL
             {
                 var soLuongBanGhi = context.SINH_VIEN.Count();
                 return soLuongBanGhi;
+
             }
         }
-
         public int GetCountTeacher()
         {
             using (var context = new PBL3Entities())
             {
                 var soLuongBanGhi = context.GIANG_VIEN.Count();
                 return soLuongBanGhi;
+
+            }
+        }
+        public void InsertLoginInfo(THONG_TIN_DANG_NHAP newLoginInfo)
+        {
+            using (var context = new PBL3Entities())
+            {
+                context.THONG_TIN_DANG_NHAP.Add(newLoginInfo);
+                context.SaveChanges();
             }
         }
 
+        public void InsertLoginInfo(NGUOI_DUNG newLoginInfo)
+        {
+            using (var context = new PBL3Entities())
+            {
+                context.NGUOI_DUNG.Add(newLoginInfo);
+                context.SaveChanges();
+            }
+        }
+
+        public bool InsertData(THONG_TIN_DANG_NHAP loginInfo, NGUOI_DUNG userInfo, object specificInfo)
+        {
+            bool success = false;
+            using (PBL3Entities context = new PBL3Entities())
+            {
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        // Lưu thông tin đăng nhập vào bảng Thong_Tin_Dang_Nhap trước
+                        context.THONG_TIN_DANG_NHAP.Add(loginInfo);
+                        context.SaveChanges();
+
+                        // Trích xuất MaNguoiDung từ khóa chính TaiKhoan trong bảng Thong_Tin_Dang_Nhap
+                        string maNguoiDung = context.THONG_TIN_DANG_NHAP
+                            .Where(t => t.TaiKhoan == loginInfo.TaiKhoan)
+                            .Select(t => t.TaiKhoan)
+                            .FirstOrDefault();
+
+                        // Lưu thông tin người dùng vào bảng Nguoi_Dung với MaNguoiDung trích xuất được
+                        userInfo.MaNguoiDung = maNguoiDung;
+                        context.NGUOI_DUNG.Add(userInfo);
+                        context.SaveChanges();
+
+                        if (specificInfo.GetType() == typeof(SINH_VIEN))
+                        {
+                            var studentInfo = (SINH_VIEN)specificInfo;
+                            studentInfo.MaSV = userInfo.MaNguoiDung;
+                            context.SINH_VIEN.Add(studentInfo);
+                        }
+                        else if (specificInfo.GetType() == typeof(GIANG_VIEN))
+                        {
+                            var teacherInfo = (GIANG_VIEN)specificInfo;
+                            teacherInfo.MaGV = userInfo.MaNguoiDung;
+                            context.GIANG_VIEN.Add(teacherInfo);
+                        }
+                        context.SaveChanges();
+                        // Lưu các thay đổi vào database
+                        transaction.Commit();
+                        success = true;
+                    }
+                    catch
+                    {
+                        // Rollback transaction nếu có lỗi
+                        transaction.Rollback();
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
+
+        public bool DeleteData(int role, string maTaiKhoan)
+        {
+            bool success = false;
+            using (PBL3Entities context = new PBL3Entities())
+            {
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        // Xóa các bảng ghi Sinh_Vien trước
+                        if (role == 0)
+                        {
+                            // Xóa bản ghi trong bảng SINH_VIEN với MaSV = MaNguoiDung vừa lấy được
+                            var studentInfo = context.SINH_VIEN.SingleOrDefault(s => s.MaSV == maTaiKhoan);
+                            context.SINH_VIEN.Remove(studentInfo);
+                        }
+                        else if (role == 1)
+                        {
+                            // Xóa bản ghi trong bảng GIANG_VIEN với MaGV = MaNguoiDung vừa lấy được
+                            var teacherInfo = context.GIANG_VIEN.SingleOrDefault(t => t.MaGV == maTaiKhoan);
+                            context.GIANG_VIEN.Remove(teacherInfo);
+                        }
+                        context.SaveChanges();
+
+                        //  Xóa các bảng ghi Nguoi_Dung
+                        var userToDelete = context.NGUOI_DUNG.SingleOrDefault(u => u.MaNguoiDung == maTaiKhoan);
+                        context.NGUOI_DUNG.Remove(userToDelete);
+                        context.SaveChanges();
+
+                        // Xóa các bảng ghi Thong_Tin_Dang_Nhap
+                        var loginToDelete = context.THONG_TIN_DANG_NHAP.SingleOrDefault(t => t.TaiKhoan == maTaiKhoan);
+                        context.THONG_TIN_DANG_NHAP.Remove(loginToDelete);
+                        context.SaveChanges();
+
+                        // Lưu các thay đổi vào database
+                        transaction.Commit();
+                        success = true;
+                    }
+                    catch
+                    {
+                        // Rollback transaction nếu có lỗi
+                        transaction.Rollback();
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
 
         //public List<InformationAcc_DTO> GetAccountRoleList()
         //{
@@ -120,8 +241,5 @@ namespace DAL
         //        return accountRoles;
         //    }
         //}
-
-
-
     }
 }

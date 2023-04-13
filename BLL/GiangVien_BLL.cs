@@ -45,7 +45,7 @@ namespace BLL
                     EmailTruongCap = nd.EmailTruongCap,
                     TrinhDo = gv.TrinhDo,
                     Luong = gv.Luong,
-                    Khoa = k.TenKhoa
+                    MaKhoa = k.TenKhoa
                 };
             }
             return null;

@@ -20,6 +20,8 @@ namespace GUI
         CheckBox HeaderCheckBox = null;
         bool IsHeaderCheckBoxClicked = false;
 
+        List<string> listOfStudentCodesToDelete = new List<string>();
+
         private List<object> dt;
         private int role;
         public frmViewListAcc(List<object> dt, int role)
@@ -38,15 +40,14 @@ namespace GUI
                 e.Cancel = true;
             }
         }
-       
 
         private void frmAddAccount_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pBL3DataSet.NGUOI_DUNG' table. You can move, or remove it, as needed.
             AddHeaderCheckBox();
             HeaderCheckBox.MouseClick += new MouseEventHandler(HeaderCheckBox_MouseClick);
             dgvViewAcc.CurrentCellDirtyStateChanged += new EventHandler(dgvSelectAll_CurrentCellDirtyStateChanged);
             dgvViewAcc.DataSource = dt;
-
             BindGridView();
         }
         #region Thêm header checkbox
@@ -140,6 +141,7 @@ namespace GUI
         {
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
+                string mssv;
                 DataGridViewCheckBoxCell checkCell = dgvViewAcc.Rows[e.RowIndex].Cells["checkBoxColumn"] as DataGridViewCheckBoxCell;
                 if (checkCell != null)
                 {
@@ -152,12 +154,16 @@ namespace GUI
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
                         TotalCheckedCheckBoxes++;
+                        mssv = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        listOfStudentCodesToDelete.Add(mssv);
                     }
                     else
                     {
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.FromName("ActiveCaption");
                         TotalCheckedCheckBoxes--;
+                        mssv = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        listOfStudentCodesToDelete.Remove(mssv);
                     }
 
                     if (TotalCheckedCheckBoxes > 1)
@@ -185,12 +191,39 @@ namespace GUI
         #endregion
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddAccStudent frmAddAccStudent = new frmAddAccStudent(role);
+            frmAddAccount frmAddAccStudent = new frmAddAccount(role);
             frmAddAccStudent.ShowDialog();
+
+            frmAddAccStudent.FormClosed += (s, args) =>
+            {
+                this.Refresh();
+            };
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
+            foreach (var item in listOfStudentCodesToDelete)
+            {
+                if (GetInformationAcc_BLL.Instance.DeleteData(role, item))
+                {
+                    MessageBox.Show("Xóa acc thành công:" + item);
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công");
+                }
+            }
+            if (role == 0)
+            {
+                dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountStudentList();
+            }
+            else
+            {
+                dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountTeacherList();
+            }
+
+
 
         }
 
@@ -204,8 +237,9 @@ namespace GUI
             this.Close();
         }
 
-
-
-
+        private void button9_Click(object sender, EventArgs e)
+        {
+            dgvViewAcc.DataSource = dt;
+        }
     }
 }
