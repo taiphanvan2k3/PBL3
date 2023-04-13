@@ -99,6 +99,8 @@
           <Property Name="MaLopHP" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="MaMH" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="MaGV" Type="varchar" MaxLength="9" />
+          <Property Name="KiHoc" Type="int" Nullable="false" />
+          <Property Name="NamHoc" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="LOP_SINH_HOAT">
           <Key>
@@ -165,8 +167,6 @@
           </Key>
           <Property Name="MaLopHP" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="MaSV" Type="varchar" MaxLength="9" Nullable="false" />
-          <Property Name="KiHoc" Type="tinyint" Nullable="false" />
-          <Property Name="NamHoc" Type="smallint" Nullable="false" />
         </EntityType>
         <EntityType Name="THOI_KHOA_BIEU">
           <Key>
@@ -788,6 +788,8 @@
           <NavigationProperty Name="THOI_KHOA_BIEU" Relationship="Self.FK_MaLopHP" FromRole="LOP_HOC_PHAN" ToRole="THOI_KHOA_BIEU" />
           <NavigationProperty Name="MON_HOC" Relationship="Self.FK_MaMH" FromRole="LOP_HOC_PHAN" ToRole="MON_HOC" />
           <NavigationProperty Name="THONG_BAO" Relationship="Self.THONGBAO_LOPHOCPHAN" FromRole="LOP_HOC_PHAN" ToRole="THONG_BAO" />
+          <Property Name="KiHoc" Type="Int32" Nullable="false" />
+          <Property Name="NamHoc" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="LOP_SINH_HOAT">
           <Key>
@@ -869,8 +871,6 @@
           </Key>
           <Property Name="MaLopHP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaSV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KiHoc" Type="Byte" Nullable="false" />
-          <Property Name="NamHoc" Type="Int16" Nullable="false" />
           <NavigationProperty Name="LOP_HOC_PHAN" Relationship="Self.FK_MaHP_SVLHP" FromRole="SINHVIEN_LOPHOCPHAN" ToRole="LOP_HOC_PHAN" />
           <NavigationProperty Name="SINH_VIEN" Relationship="Self.FK_MaSV_SVLHP" FromRole="SINHVIEN_LOPHOCPHAN" ToRole="SINH_VIEN" />
         </EntityType>
@@ -1418,6 +1418,8 @@
           <EntitySetMapping Name="LOP_HOC_PHAN">
             <EntityTypeMapping TypeName="PBL3Model.LOP_HOC_PHAN">
               <MappingFragment StoreEntitySet="LOP_HOC_PHAN">
+                <ScalarProperty Name="NamHoc" ColumnName="NamHoc" />
+                <ScalarProperty Name="KiHoc" ColumnName="KiHoc" />
                 <ScalarProperty Name="MaLopHP" ColumnName="MaLopHP" />
                 <ScalarProperty Name="MaMH" ColumnName="MaMH" />
                 <ScalarProperty Name="MaGV" ColumnName="MaGV" />
@@ -1491,9 +1493,7 @@
               <MappingFragment StoreEntitySet="SINHVIEN_LOPHOCPHAN">
                 <ScalarProperty Name="MaLopHP" ColumnName="MaLopHP" />
                 <ScalarProperty Name="MaSV" ColumnName="MaSV" />
-                <ScalarProperty Name="KiHoc" ColumnName="KiHoc" />
-                <ScalarProperty Name="NamHoc" ColumnName="NamHoc" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="THOI_KHOA_BIEU">

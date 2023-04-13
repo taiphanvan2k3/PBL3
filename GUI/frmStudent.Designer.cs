@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
@@ -54,9 +55,9 @@
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panelMenuTong = new System.Windows.Forms.Panel();
             this.panelShowDetail = new System.Windows.Forms.Panel();
-            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.panelCalendar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,7 +67,6 @@
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMenuTong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1451, 69);
             this.panel3.TabIndex = 2;
+            // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1371, 6);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
             // 
             // lblAvatar
             // 
@@ -370,7 +387,7 @@
             this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Location = new System.Drawing.Point(3, 604);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(228, 247);
+            this.panel2.Size = new System.Drawing.Size(228, 297);
             this.panel2.TabIndex = 8;
             // 
             // btnLogOut
@@ -385,7 +402,7 @@
             this.btnLogOut.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 189);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 239);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(205, 50);
             this.btnLogOut.TabIndex = 0;
@@ -402,7 +419,7 @@
             this.panelMenuTong.Controls.Add(this.panel2);
             this.panelMenuTong.Location = new System.Drawing.Point(2, 0);
             this.panelMenuTong.Name = "panelMenuTong";
-            this.panelMenuTong.Size = new System.Drawing.Size(237, 854);
+            this.panelMenuTong.Size = new System.Drawing.Size(237, 904);
             this.panelMenuTong.TabIndex = 10;
             // 
             // panelShowDetail
@@ -414,25 +431,8 @@
             this.panelShowDetail.BackColor = System.Drawing.Color.White;
             this.panelShowDetail.Location = new System.Drawing.Point(239, 70);
             this.panelShowDetail.Name = "panelShowDetail";
-            this.panelShowDetail.Size = new System.Drawing.Size(1212, 781);
+            this.panelShowDetail.Size = new System.Drawing.Size(1212, 831);
             this.panelShowDetail.TabIndex = 11;
-            // 
-            // avatarTopRight
-            // 
-            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
-            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.avatarTopRight.BorderSize = 2;
-            this.avatarTopRight.GradientAngle = 50F;
-            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1371, 6);
-            this.avatarTopRight.Name = "avatarTopRight";
-            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
-            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarTopRight.TabIndex = 3;
-            this.avatarTopRight.TabStop = false;
             // 
             // circularPictureBox
             // 
@@ -456,17 +456,18 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1451, 853);
+            this.ClientSize = new System.Drawing.Size(1451, 903);
             this.Controls.Add(this.panelShowDetail);
             this.Controls.Add(this.panelMenuTong);
             this.Controls.Add(this.panel3);
-            this.MinimumSize = new System.Drawing.Size(1469, 900);
+            this.MinimumSize = new System.Drawing.Size(1469, 950);
             this.Name = "frmStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Thông tin sinh viên";
             this.Load += new System.EventHandler(this.frmStudent_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.panelCalendar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -476,7 +477,6 @@
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelMenuTong.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
 

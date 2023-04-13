@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 
 namespace GUI.MyUserControls
 {
@@ -13,7 +14,7 @@ namespace GUI.MyUserControls
             InitializeComponent();
         }
 
-        void Init()
+        public void Init()
         {
             comboBoxTinhThanhPho.Items.Add(new CBBItem() { Id = "0", Value = "Chọn Tỉnh/ Thành phố" });
             comboBoxTinhThanhPho.Items.AddRange(AddressSelection_BLL.Instance.GetAllCities().ToArray());
@@ -99,9 +100,21 @@ namespace GUI.MyUserControls
         public void SetDiaChi(string address)
         {
             string[] tmp = UtilityClass.SplitAddress(address);
-            this.TinhThanhPho = tmp[0];
-            this.QuanHuyen = tmp[1];
-            this.XaPhuong = tmp[2];
+            Init();
+            if (tmp.Length == 3)
+            {
+                //Khi chưa có số đường trong CSDL
+                this.TinhThanhPho = tmp[0];
+                this.QuanHuyen = tmp[1];
+                this.XaPhuong = tmp[2];
+            }
+            else if (tmp.Length == 4)
+            {
+                //Khi đã có số đường
+                this.TinhThanhPho = tmp[1];
+                this.QuanHuyen = tmp[2];
+                this.XaPhuong = tmp[3];
+            }
         }
         private void comboBoxTinhThanhPho_SelectedIndexChanged(object sender, System.EventArgs e)
         {

@@ -112,6 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelPBL3.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MonHoc_DAL.cs" />
     <Compile Include="MON_HOC.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>

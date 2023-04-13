@@ -45,9 +45,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnPreviousPage = new Guna.UI2.WinForms.Guna2Button();
+            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
+            this.lblSoDuong = new System.Windows.Forms.Label();
+            this.txtSoDuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelTTLienLac.SuspendLayout();
             this.paneLeft.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -159,7 +161,7 @@
             this.paneLeft.Location = new System.Drawing.Point(35, 48);
             this.paneLeft.MinimumSize = new System.Drawing.Size(542, 423);
             this.paneLeft.Name = "paneLeft";
-            this.paneLeft.Size = new System.Drawing.Size(542, 443);
+            this.paneLeft.Size = new System.Drawing.Size(542, 499);
             this.paneLeft.TabIndex = 0;
             this.paneLeft.Text = "Thông tin nhân thân";
             // 
@@ -171,7 +173,7 @@
             this.ngsinhMe.FillColor = System.Drawing.Color.SandyBrown;
             this.ngsinhMe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ngsinhMe.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngsinhMe.Location = new System.Drawing.Point(183, 382);
+            this.ngsinhMe.Location = new System.Drawing.Point(183, 409);
             this.ngsinhMe.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ngsinhMe.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.ngsinhMe.Name = "ngsinhMe";
@@ -187,7 +189,7 @@
             this.ngsinhCha.FillColor = System.Drawing.Color.SandyBrown;
             this.ngsinhCha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ngsinhCha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngsinhCha.Location = new System.Drawing.Point(183, 171);
+            this.ngsinhCha.Location = new System.Drawing.Point(183, 161);
             this.ngsinhCha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ngsinhCha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.ngsinhCha.Name = "ngsinhCha";
@@ -210,7 +212,7 @@
             this.txtTenMe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenMe.Location = new System.Drawing.Point(183, 316);
+            this.txtTenMe.Location = new System.Drawing.Point(183, 346);
             this.txtTenMe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenMe.Name = "txtTenMe";
             this.txtTenMe.PasswordChar = '\0';
@@ -223,7 +225,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(50, 387);
+            this.label8.Location = new System.Drawing.Point(50, 415);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 23);
             this.label8.TabIndex = 11;
@@ -257,7 +259,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 257);
+            this.label7.Location = new System.Drawing.Point(16, 286);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 23);
             this.label7.TabIndex = 10;
@@ -277,7 +279,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(50, 171);
+            this.label5.Location = new System.Drawing.Point(50, 166);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 23);
             this.label5.TabIndex = 8;
@@ -287,7 +289,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(50, 316);
+            this.label4.Location = new System.Drawing.Point(50, 351);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 23);
             this.label4.TabIndex = 6;
@@ -308,29 +310,17 @@
             this.guna2GroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2GroupBox3.BorderRadius = 10;
+            this.guna2GroupBox3.Controls.Add(this.txtSoDuong);
+            this.guna2GroupBox3.Controls.Add(this.lblSoDuong);
             this.guna2GroupBox3.Controls.Add(this.uC_AddressSelection);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.SeaGreen;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox3.Location = new System.Drawing.Point(622, 271);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(541, 225);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(541, 276);
             this.guna2GroupBox3.TabIndex = 5;
             this.guna2GroupBox3.Text = "Hộ khẩu gia đình";
-            // 
-            // uC_AddressSelection
-            // 
-            this.uC_AddressSelection.BackColor = System.Drawing.Color.White;
-            this.uC_AddressSelection.Background = System.Drawing.Color.White;
-            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.RosyBrown;
-            this.uC_AddressSelection.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uC_AddressSelection.Location = new System.Drawing.Point(4, 43);
-            this.uC_AddressSelection.Name = "uC_AddressSelection";
-            this.uC_AddressSelection.QuanHuyen = "";
-            this.uC_AddressSelection.Size = new System.Drawing.Size(487, 177);
-            this.uC_AddressSelection.TabIndex = 0;
-            this.uC_AddressSelection.TinhThanhPho = "Chọn Tỉnh/ Thành phố";
-            this.uC_AddressSelection.XaPhuong = "";
             // 
             // btnSave
             // 
@@ -343,11 +333,12 @@
             this.btnSave.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(470, 584);
+            this.btnSave.Location = new System.Drawing.Point(470, 632);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(231, 45);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu thông tin nhân thân";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPreviousPage
             // 
@@ -361,12 +352,60 @@
             this.btnPreviousPage.ForeColor = System.Drawing.Color.White;
             this.btnPreviousPage.Image = global::GUI.Properties.Resources.previousPage;
             this.btnPreviousPage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPreviousPage.Location = new System.Drawing.Point(1025, 502);
+            this.btnPreviousPage.Location = new System.Drawing.Point(1018, 593);
             this.btnPreviousPage.Name = "btnPreviousPage";
             this.btnPreviousPage.Size = new System.Drawing.Size(145, 45);
             this.btnPreviousPage.TabIndex = 8;
             this.btnPreviousPage.Text = "    Trang trước";
             this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            // 
+            // uC_AddressSelection
+            // 
+            this.uC_AddressSelection.BackColor = System.Drawing.Color.White;
+            this.uC_AddressSelection.Background = System.Drawing.Color.White;
+            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.RosyBrown;
+            this.uC_AddressSelection.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_AddressSelection.Location = new System.Drawing.Point(7, 99);
+            this.uC_AddressSelection.Name = "uC_AddressSelection";
+            this.uC_AddressSelection.QuanHuyen = "";
+            this.uC_AddressSelection.Size = new System.Drawing.Size(509, 169);
+            this.uC_AddressSelection.TabIndex = 0;
+            this.uC_AddressSelection.TinhThanhPho = "";
+            this.uC_AddressSelection.XaPhuong = "";
+            // 
+            // lblSoDuong
+            // 
+            this.lblSoDuong.AutoSize = true;
+            this.lblSoDuong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoDuong.Location = new System.Drawing.Point(30, 63);
+            this.lblSoDuong.Name = "lblSoDuong";
+            this.lblSoDuong.Size = new System.Drawing.Size(88, 23);
+            this.lblSoDuong.TabIndex = 5;
+            this.lblSoDuong.Text = "Số đường:";
+            // 
+            // txtSoDuong
+            // 
+            this.txtSoDuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoDuong.BorderColor = System.Drawing.Color.RosyBrown;
+            this.txtSoDuong.BorderRadius = 10;
+            this.txtSoDuong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSoDuong.DefaultText = "";
+            this.txtSoDuong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSoDuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSoDuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoDuong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoDuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoDuong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoDuong.Location = new System.Drawing.Point(153, 57);
+            this.txtSoDuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSoDuong.Name = "txtSoDuong";
+            this.txtSoDuong.PasswordChar = '\0';
+            this.txtSoDuong.PlaceholderText = "";
+            this.txtSoDuong.SelectedText = "";
+            this.txtSoDuong.Size = new System.Drawing.Size(351, 33);
+            this.txtSoDuong.TabIndex = 5;
             // 
             // UC_ParentInfo
             // 
@@ -379,13 +418,14 @@
             this.Controls.Add(this.panelTTLienLac);
             this.MinimumSize = new System.Drawing.Size(1190, 655);
             this.Name = "UC_ParentInfo";
-            this.Size = new System.Drawing.Size(1190, 655);
+            this.Size = new System.Drawing.Size(1190, 703);
             this.Load += new System.EventHandler(this.UC_ParentInfo_Load);
             this.panelTTLienLac.ResumeLayout(false);
             this.panelTTLienLac.PerformLayout();
             this.paneLeft.ResumeLayout(false);
             this.paneLeft.PerformLayout();
             this.guna2GroupBox3.ResumeLayout(false);
+            this.guna2GroupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -411,6 +451,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker ngsinhMe;
         private Guna.UI2.WinForms.Guna2DateTimePicker ngsinhCha;
         private Guna.UI2.WinForms.Guna2Button btnPreviousPage;
+        private Guna.UI2.WinForms.Guna2TextBox txtSoDuong;
+        private System.Windows.Forms.Label lblSoDuong;
         private UC_VerticalAddressSelection uC_AddressSelection;
     }
 }

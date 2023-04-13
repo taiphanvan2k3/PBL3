@@ -7,10 +7,6 @@ namespace BLL
 {
     public class SinhVien_BLL
     {
-        public static List<string> GetNoiSinh()
-        {
-            return SinhVien_DAL.GetAllTinhThanh();
-        }
 
         public static SinhVien_DTO GetSinhVienById(string id)
         {
@@ -65,6 +61,11 @@ namespace BLL
                 stt++;
             }
             return res;
+        }
+
+        public static bool UpdateStudentInfo(SinhVien_DTO sv)
+        {
+            return SinhVien_DAL.UpdateStudentInfo(sv);
         }
     }
 }
