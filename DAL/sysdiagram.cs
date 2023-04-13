@@ -12,12 +12,12 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class SINHVIEN_LOPHOCPHAN
+    public partial class sysdiagram
     {
-        public string MaLopHP { get; set; }
-        public string MaSV { get; set; }
-    
-        public virtual LOP_HOC_PHAN LOP_HOC_PHAN { get; set; }
-        public virtual SINH_VIEN SINH_VIEN { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

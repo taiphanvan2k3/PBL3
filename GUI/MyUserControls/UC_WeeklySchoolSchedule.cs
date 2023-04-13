@@ -39,7 +39,7 @@ namespace GUI.MyUserControls
             {
                 int KiHoc = cbbHocKy.SelectedIndex + 1;
                 int NamHoc = NamNhapHoc + cbbHocKy.SelectedIndex / 2;
-                dtgv.DataSource = LopHocPhan_BLL.Instance.GetWeeklySchoolSchedule(MSSV, KiHoc, NamHoc);
+                //dtgv.DataSource = LopHocPhan_BLL.Instance.GetWeeklySchoolSchedule(MSSV, KiHoc, NamHoc);
             }
         }
     }

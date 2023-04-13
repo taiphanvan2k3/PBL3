@@ -22,7 +22,7 @@ namespace DAL
             db = new PBL3Entities();
         }
 
-        public List<LopHocPhan_DTO> GetListHocPhanOfStudent(string MSSV, int KiHoc, int NamHoc)
+        /*public List<LopHocPhan_DTO> GetListHocPhanOfStudent(string MSSV, int KiHoc, int NamHoc)
         {
             //Lấy ra các môn học của sinh viên có MSSV ở KiHoc,NamHoc nào đó, rồi mới đi Join bảng
             var li = db.SINHVIEN_LOPHOCPHAN.Where(i => i.MaSV == MSSV && i.KiHoc == KiHoc && i.NamHoc == NamHoc)
@@ -70,14 +70,13 @@ namespace DAL
                 });
             }
             return res;
-        }
+        }*/
 
-        public int GetKiHocHienTai(string MSSV)
+        /*public int GetKiHocHienTai(string MSSV)
         {
             return db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaSV == MSSV).OrderByDescending(p => p.KiHoc)
                 .Select(p => p.KiHoc).FirstOrDefault();
-        }
-
+        }*/
         public LopHocPhan_AdminEdit GetHocPhanByMaHP(string MaHP)
         {
             return db.LOP_HOC_PHAN.Where(i => i.MaLopHP == MaHP)

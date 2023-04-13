@@ -132,6 +132,9 @@
     <Compile Include="SINH_VIEN.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
+    </Compile>
     <Compile Include="THOI_KHOA_BIEU.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>

@@ -64,7 +64,11 @@ namespace GUI
         #region Events
         private void frm_AssignTeacher_Load(object sender, EventArgs e)
         {
-            
+            dtgv.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgv.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -73,7 +77,26 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            dtgv.Rows.Clear();
+            dtgv.Refresh();
+            int stt = 1;
+            foreach(var i in GiangVien_BLL.Instance.GetGiangVienWithNumberLHP())
+            {
+                dtgv.Rows.Add(stt, i.MaGV, i.TenGV, i.SDT, i.SoLuongHPPhuTrach);
+                stt++;
+            }
+        }
+        //Bắt sự kiện cho button chọn trong Datagridview
+        private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == dtgv.Columns["xacNhan"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv.Rows[e.RowIndex];
+                //Xử lí sự kiện khi nhấn button Phân công ở chỗ này. Xử lí theo row đã lấy ở dòng trên
+                //MessageBox.Show(row.Cells[0].Value.ToString());
+                tbMaGV.Texts = row.Cells[1].Value.ToString();
+                tbTenGV.Texts = row.Cells[2].Value.ToString();
+            }
         }
         #endregion
     }

@@ -54,5 +54,9 @@ namespace BLL
         {
             return GiangVien_DAL.GetMaLopHPByID(id);
         }
+        public List<AssignTeacher> GetGiangVienWithNumberLHP()
+        {
+            return GiangVien_DAL.GetGiangVienWithNumberLHP();
+        }
     }
 }
