@@ -23,7 +23,7 @@ namespace BLL
 
         public List<InformationStudent_DTO> GetAccountStudentList()
         {
-            return GetInformationAcc_DAL.Instance.GetAccountStudentList(); 
+            return GetInformationAcc_DAL.Instance.GetAccountStudentList();
         }
         public List<InformationTeacher_DTO> GetAccountTeacherList()
         {
@@ -52,7 +52,7 @@ namespace BLL
             {
                 KHOA_DTO ctdt = new KHOA_DTO
                 {
-                    
+
                     MaKhoa = item.MaKhoa,
                     TenKhoa = item.TenKhoa,
                 };
@@ -63,11 +63,86 @@ namespace BLL
 
         public int GetCountStudent()
         {
-           return GetInformationAcc_DAL.Instance.GetCountStudent();
+            return GetInformationAcc_DAL.Instance.GetCountStudent();
         }
         public int GetCountTeacher()
         {
             return GetInformationAcc_DAL.Instance.GetCountTeacher();
         }
+
+        public void InsertLoginInfo(THONG_TIN_DANG_NHAP_DTO newLoginInfo)
+        {
+            THONG_TIN_DANG_NHAP ttdn = new THONG_TIN_DANG_NHAP();
+            ttdn.TaiKhoan = newLoginInfo.TaiKhoan;
+            ttdn.MkUngDung = newLoginInfo.MkUngDung;
+            ttdn.VaiTro = newLoginInfo.VaiTro;
+            ttdn.MaXacThucDeLayLaiMK = newLoginInfo.MaXacThucDeLayLaiMK;
+            GetInformationAcc_DAL.Instance.InsertLoginInfo(ttdn);
+        }
+
+        public bool InsertData(THONG_TIN_DANG_NHAP_DTO loginInfo, NguoiDung_DTO userInfo, object specificInfo)
+        {
+
+            THONG_TIN_DANG_NHAP tndn = new THONG_TIN_DANG_NHAP
+            {
+                TaiKhoan = loginInfo.TaiKhoan,
+                VaiTro = loginInfo.VaiTro,
+                MkUngDung = loginInfo.MkUngDung,
+                MaXacThucDeLayLaiMK = loginInfo.MaXacThucDeLayLaiMK
+            };
+            NGUOI_DUNG nd = new NGUOI_DUNG()
+            {
+                MaNguoiDung = userInfo.MaNguoiDung,
+                Ho = userInfo.Ho,
+                Ten = userInfo.Ten,
+                MaCCCD = userInfo.MaCCCD,
+                AnhCaNhan = userInfo.AnhCaNhan,
+                NgaySinh = userInfo.NgaySinh,
+                GioiTinh = userInfo.GioiTinh,
+                DanToc = userInfo.DanToc,
+                QuocTich = userInfo.QuocTinh,
+                NoiSinh = userInfo.NoiSinh,
+                DiaChi = userInfo.DiaChi,
+                Sdt = userInfo.Sdt,
+                EmailCaNhan = userInfo.EmailCaNhan,
+                EmailTruongCap = userInfo.EmailTruongCap,
+                MkEmailTruongCap = userInfo.MkEmailTruongCap
+            };
+
+            if (specificInfo.GetType() == typeof(SinhVien_DTO))
+            {
+                SinhVien_DTO svDt = new SinhVien_DTO();
+                svDt = (SinhVien_DTO)specificInfo;
+                SINH_VIEN sv = new SINH_VIEN()
+                {
+                    MaSV = svDt.MaNguoiDung,
+                    MaLopSH = svDt.MaLopSH,
+                    MaCTDT = svDt.MaCTDT
+                };
+                specificInfo = sv;
+            }
+            else if (specificInfo.GetType() == typeof(GiangVien_DTO))
+            {
+                GiangVien_DTO gtDt = new GiangVien_DTO();
+                gtDt = (GiangVien_DTO)specificInfo;
+                GIANG_VIEN gv = new GIANG_VIEN()
+                {
+                    MaGV = gtDt.MaNguoiDung,
+                    TrinhDo = gtDt.TrinhDo,
+                    Luong = gtDt.Luong,
+                    MaKhoa = gtDt.MaKhoa
+                };
+                specificInfo = gv;
+            }
+
+            return GetInformationAcc_DAL.Instance.InsertData(tndn, nd, specificInfo);
+
+        }
+
+        public bool DeleteData(int role, string maTaiKhoan)
+        {
+            return GetInformationAcc_DAL.Instance.DeleteData(role, maTaiKhoan);
+        }
+
     }
 }

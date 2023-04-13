@@ -59,7 +59,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pnlDiaChi = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSoDuong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.label3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlThongTinDaoTao = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -71,6 +70,7 @@
             this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutRight = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.panelLeft.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -248,12 +248,14 @@
             this.cbbQuocTich.BackColor = System.Drawing.Color.Transparent;
             this.cbbQuocTich.BorderRadius = 15;
             this.cbbQuocTich.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbQuocTich.DropDownHeight = 300;
             this.cbbQuocTich.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbQuocTich.FillColor = System.Drawing.Color.Azure;
             this.cbbQuocTich.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbQuocTich.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbQuocTich.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbQuocTich.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbQuocTich.IntegralHeight = false;
             this.cbbQuocTich.ItemHeight = 30;
             this.cbbQuocTich.Location = new System.Drawing.Point(188, 130);
             this.cbbQuocTich.Name = "cbbQuocTich";
@@ -265,12 +267,14 @@
             this.cbbDanToc.BackColor = System.Drawing.Color.Transparent;
             this.cbbDanToc.BorderRadius = 15;
             this.cbbDanToc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbDanToc.DropDownHeight = 300;
             this.cbbDanToc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDanToc.FillColor = System.Drawing.Color.Azure;
             this.cbbDanToc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbDanToc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbDanToc.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbDanToc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbDanToc.IntegralHeight = false;
             this.cbbDanToc.ItemHeight = 30;
             this.cbbDanToc.Location = new System.Drawing.Point(188, 73);
             this.cbbDanToc.Name = "cbbDanToc";
@@ -283,17 +287,20 @@
             this.cbbNoiSinh.BackColor = System.Drawing.Color.Transparent;
             this.cbbNoiSinh.BorderRadius = 15;
             this.cbbNoiSinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNoiSinh.DropDownHeight = 300;
             this.cbbNoiSinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNoiSinh.FillColor = System.Drawing.Color.Azure;
             this.cbbNoiSinh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNoiSinh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbNoiSinh.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbNoiSinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbNoiSinh.IntegralHeight = false;
             this.cbbNoiSinh.ItemHeight = 30;
             this.cbbNoiSinh.Location = new System.Drawing.Point(188, 19);
             this.cbbNoiSinh.Name = "cbbNoiSinh";
             this.cbbNoiSinh.Size = new System.Drawing.Size(201, 36);
             this.cbbNoiSinh.TabIndex = 35;
+            this.cbbNoiSinh.Click += new System.EventHandler(this.cbbNoiSinh_Click);
             // 
             // label12
             // 
@@ -398,7 +405,7 @@
             this.pnlThongTinLienLac.ForeColor = System.Drawing.Color.Black;
             this.pnlThongTinLienLac.Location = new System.Drawing.Point(3, 463);
             this.pnlThongTinLienLac.Name = "pnlThongTinLienLac";
-            this.pnlThongTinLienLac.Size = new System.Drawing.Size(615, 192);
+            this.pnlThongTinLienLac.Size = new System.Drawing.Size(615, 198);
             this.pnlThongTinLienLac.TabIndex = 3;
             this.pnlThongTinLienLac.Text = "Thông tin liên lạc";
             this.pnlThongTinLienLac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -418,7 +425,7 @@
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSDT.Location = new System.Drawing.Point(163, 147);
+            this.txtSDT.Location = new System.Drawing.Point(163, 144);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
@@ -443,7 +450,7 @@
             this.txtEmailTruongCap.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailTruongCap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtEmailTruongCap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmailTruongCap.Location = new System.Drawing.Point(163, 53);
+            this.txtEmailTruongCap.Location = new System.Drawing.Point(163, 50);
             this.txtEmailTruongCap.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmailTruongCap.Name = "txtEmailTruongCap";
             this.txtEmailTruongCap.PasswordChar = '\0';
@@ -467,7 +474,7 @@
             this.txtEmailCaNhan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailCaNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtEmailCaNhan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmailCaNhan.Location = new System.Drawing.Point(163, 99);
+            this.txtEmailCaNhan.Location = new System.Drawing.Point(163, 96);
             this.txtEmailCaNhan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmailCaNhan.Name = "txtEmailCaNhan";
             this.txtEmailCaNhan.PasswordChar = '\0';
@@ -482,7 +489,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 150);
+            this.label16.Location = new System.Drawing.Point(14, 152);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 23);
             this.label16.TabIndex = 11;
@@ -494,7 +501,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 61);
+            this.label15.Location = new System.Drawing.Point(12, 58);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(144, 23);
             this.label15.TabIndex = 10;
@@ -506,7 +513,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 105);
+            this.label14.Location = new System.Drawing.Point(12, 104);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(121, 23);
             this.label14.TabIndex = 9;
@@ -557,21 +564,6 @@
             this.txtSoDuong.SelectedText = "";
             this.txtSoDuong.Size = new System.Drawing.Size(419, 40);
             this.txtSoDuong.TabIndex = 15;
-            // 
-            // uC_AddressSelection
-            // 
-            this.uC_AddressSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_AddressSelection.BackColor = System.Drawing.Color.Moccasin;
-            this.uC_AddressSelection.Background = System.Drawing.Color.Moccasin;
-            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.IndianRed;
-            this.uC_AddressSelection.Location = new System.Drawing.Point(3, 90);
-            this.uC_AddressSelection.Name = "uC_AddressSelection";
-            this.uC_AddressSelection.QuanHuyen = "";
-            this.uC_AddressSelection.Size = new System.Drawing.Size(574, 177);
-            this.uC_AddressSelection.TabIndex = 24;
-            this.uC_AddressSelection.TinhThanhPho = "Chọn Tỉnh/ Thành phố";
-            this.uC_AddressSelection.XaPhuong = "";
             // 
             // label3
             // 
@@ -749,7 +741,7 @@
             this.flowLayoutRight.Controls.Add(this.pnlThongTinLienLac);
             this.flowLayoutRight.Location = new System.Drawing.Point(508, 3);
             this.flowLayoutRight.Name = "flowLayoutRight";
-            this.flowLayoutRight.Size = new System.Drawing.Size(630, 659);
+            this.flowLayoutRight.Size = new System.Drawing.Size(630, 667);
             this.flowLayoutRight.TabIndex = 26;
             this.flowLayoutRight.Resize += new System.EventHandler(this.flowLayoutRight_Resize);
             // 
@@ -769,6 +761,22 @@
             this.btnSave.Size = new System.Drawing.Size(231, 45);
             this.btnSave.TabIndex = 27;
             this.btnSave.Text = "Lưu thông tin cá thân";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // uC_AddressSelection
+            // 
+            this.uC_AddressSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uC_AddressSelection.BackColor = System.Drawing.Color.Moccasin;
+            this.uC_AddressSelection.Background = System.Drawing.Color.Moccasin;
+            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.IndianRed;
+            this.uC_AddressSelection.Location = new System.Drawing.Point(3, 90);
+            this.uC_AddressSelection.Name = "uC_AddressSelection";
+            this.uC_AddressSelection.QuanHuyen = "";
+            this.uC_AddressSelection.Size = new System.Drawing.Size(574, 177);
+            this.uC_AddressSelection.TabIndex = 24;
+            this.uC_AddressSelection.TinhThanhPho = "";
+            this.uC_AddressSelection.XaPhuong = "";
             // 
             // UC_StudentInfoNew
             // 

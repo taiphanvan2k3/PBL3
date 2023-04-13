@@ -90,6 +90,8 @@ namespace DAL
                     i1.LopHP_tmp.MaLopHP,
                     TenHP = i1.LopHP_tmp.MON_HOC.TenMH,
                     i1.LopHP_tmp.MON_HOC.SoTC,
+                    i1.LopHP_tmp.KiHoc,
+                    i1.LopHP_tmp.NamHoc,
                     i2.MaGV,
                     HoGV = i2.NGUOI_DUNG.Ho,
                     TenGV = i2.NGUOI_DUNG.Ten
@@ -105,6 +107,8 @@ namespace DAL
                     TenHP = i1.LopHP_tmp.TenHP,
                     SoTc = i1.LopHP_tmp.SoTC,
                     MaGV = i1.LopHP_tmp.MaGV,
+                    KiHoc = i1.LopHP_tmp.KiHoc,
+                    NamHoc = i1.LopHP_tmp.NamHoc,
                     HoTenGV = i1.LopHP_tmp.HoGV + " " + i1.LopHP_tmp.TenGV,
                     Thu = i2.Thu,
                     TietBD = i2.TietBD,
@@ -128,6 +132,14 @@ namespace DAL
                     LopSH = sv.LOP_SINH_HOAT.MaLopSH
                 }).ToList();
             return li;
+        }
+
+        public bool UpdateSoTC(string MaHP, int SoTC)
+        {
+            string MaMH = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP).Select(p => p.MaMH).FirstOrDefault();
+            //Nếu GetMonHocById từ MonHoc_DAL rồi cập nhật SoTC rồi lấy db.SaveChanges() ở đây thì sẽ không
+            //thực hiện bất kì việc cập nhật nào vì 2 đối tượng db ở 2 lớp DAL là khác nhau
+            return MonHoc_DAL.Instance.UpdateSoTC(MaMH, SoTC);
         }
     }
 }

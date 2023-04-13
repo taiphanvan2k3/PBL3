@@ -1,6 +1,7 @@
 ﻿using BLL;
+using DTO;
+using GUI.MyCustomControl;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -124,17 +125,30 @@ namespace GUI.MyUserControls
             set => txtEmailTruongCap.Text = value;
         }
 
+        public void LoadCBBNoiSinh()
+        {
+            cbbNoiSinh.Items.AddRange(AddressSelection_BLL.Instance.GetAllTinhThanh().ToArray());
+        }
+
+        private void LoadCBBDanToc_QuocTich()
+        {
+            cbbDanToc.Items.AddRange(UtilityClass.GetDanToc());
+            cbbQuocTich.Items.AddRange(UtilityClass.GetQuocTich());
+        }
         public void SetDiaChi(string address)
         {
-            string[] tmp = UtilityClass.SplitAddress(address);
-            uC_AddressSelection.TinhThanhPho = tmp[0];
-            uC_AddressSelection.QuanHuyen = tmp[1];
-            uC_AddressSelection.XaPhuong = tmp[2];
+            //string[] tmp = UtilityClass.SplitAddress(address);
+            //uC_AddressSelection.Init();
+            //uC_AddressSelection.TinhThanhPho = tmp[0];
+            //uC_AddressSelection.QuanHuyen = tmp[1];
+            //uC_AddressSelection.XaPhuong = tmp[2];
+            uC_AddressSelection.SetDiaChi(address);
         }
         #endregion
         public UC_StudentInfoNew()
         {
             InitializeComponent();
+            LoadCBBDanToc_QuocTich();
         }
 
         private void flowLayoutRight_Resize(object sender, EventArgs e)
@@ -144,7 +158,7 @@ namespace GUI.MyUserControls
 
             //offset là khoảng cách giữa các panel với nhau trong flowpanel
             int offset = pnlThongTinDaoTao.Location.Y;
-            int heightRemains = flowLayoutRight.Height - pnlThongTinDaoTao.Height 
+            int heightRemains = flowLayoutRight.Height - pnlThongTinDaoTao.Height
                                                   - pnlDiaChi.Height - pnlThongTinLienLac.Height;
             pnlThongTinDaoTao.Width = flowLayoutRight.Width - 10;
             pnlThongTinDaoTao.Height += (heightRemains - 4 * offset) / 3;
@@ -171,6 +185,47 @@ namespace GUI.MyUserControls
                 pnl.Controls.Add(nextPage);
                 nextPage.LoadData();
             }
+        }
+
+        private void cbbNoiSinh_Click(object sender, EventArgs e)
+        {
+            if (cbbNoiSinh.Items.Count == 0)
+                LoadCBBNoiSinh();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SinhVien_DTO sv = new SinhVien_DTO();
+            sv.MaNguoiDung = MSSV;
+            string address = "";
+            if (txtSoDuong.Text != "" && uC_AddressSelection.TinhThanhPho != ""
+                && uC_AddressSelection.QuanHuyen != ""
+                && uC_AddressSelection.XaPhuong != "")
+            {
+                address += txtSoDuong.Text + " - " + uC_AddressSelection.TinhThanhPho + " - " +
+                    uC_AddressSelection.QuanHuyen + " - " + uC_AddressSelection.XaPhuong;
+                sv.DiaChi = address;
+            }
+            else
+            {
+                CustomMessageBox.Show("Phần thông tin địa chỉ không được lưu vì chưa nhập đầy đủ.");
+                sv.DiaChi = "";
+            }
+            sv.EmailCaNhan = txtEmailCaNhan.Text;
+            sv.Sdt = txtSDT.Text;
+            if (cbbNoiSinh.SelectedIndex >= 0)
+                sv.NoiSinh = cbbNoiSinh.SelectedItem.ToString();
+            else sv.NoiSinh = "";
+
+            if (cbbDanToc.SelectedIndex >= 0)
+                sv.DanToc = cbbDanToc.SelectedItem.ToString();
+            else sv.DanToc = "";
+
+            if (cbbQuocTich.SelectedIndex >= 0)
+                sv.QuocTinh = cbbQuocTich.SelectedItem.ToString();
+            else sv.QuocTinh = "";
+            if (SinhVien_BLL.UpdateStudentInfo(sv))
+                CustomMessageBox.Show("Cập nhật thông tin sinh viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -17,7 +17,10 @@ namespace BLL
                 return _Instance;
             }
         }
-
+        public List<string> GetAllTinhThanh()
+        {
+            return AddressSelection_DAL.Instance.GetAllTinhThanh();
+        }
         public List<CBBItem> GetAllCities()
         {
             List<city> li = AddressSelection_DAL.Instance.GetAllCities();

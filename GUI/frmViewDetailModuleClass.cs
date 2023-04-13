@@ -48,17 +48,17 @@ namespace GUI
         public void LoadData()
         {
             MaHP = "OOAD21.13";
-            if (lhp == null)
-                lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
+            lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
             txtMaHP.Text = lhp.MaHP;
-            txtTenMH.Text = lhp.TenHP;
+            txtTenMH.Texts = lhp.TenHP;
             cbbSoTC.SelectedItem = lhp.SoTc;
+            txtHocKy.Text = lhp.KiHoc.ToString();
+            txtNamHoc.Text = lhp.NamHoc.ToString();
             //Nếu đã phân công giảng viên dạy rồi
             if (!string.IsNullOrEmpty(lhp.MaGV))
             {
                 txtMaGV.Text = lhp.MaGV;
-                txtTenGV.Text = lhp.HoTenGV;
-
+                txtTenGV.Texts = lhp.HoTenGV;
             }
 
             //Nếu chưa xếp lịch dạy
@@ -134,6 +134,16 @@ namespace GUI
         {
             //Lấy lại dữ liệu cũ trước khi edit
             LoadData();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (cbbSoTC.SelectedIndex >= 0)
+            {
+                int SoTC = Convert.ToInt32(cbbSoTC.SelectedItem);
+                if (SoTC != lhp.SoTc)
+                    LopHocPhan_BLL.Instance.UpdateSoTC(MaHP, SoTC);
+            }
         }
     }
 }

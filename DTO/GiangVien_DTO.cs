@@ -10,7 +10,7 @@ namespace DTO
     {
         public string TrinhDo { get; set; }
         public int? Luong { get; set; }
-        public string Khoa { get; set; }
+        public string MaKhoa { get; set; }
         public GiangVien_DTO() { }
     }
 }

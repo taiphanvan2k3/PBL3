@@ -99,11 +99,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddAccStudent.cs">
+    <Compile Include="frmAddAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddAccStudent.Designer.cs">
-      <DependentUpon>frmAddAccStudent.cs</DependentUpon>
+    <Compile Include="frmAddAccount.Designer.cs">
+      <DependentUpon>frmAddAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
@@ -338,8 +338,8 @@
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddAccStudent.resx">
-      <DependentUpon>frmAddAccStudent.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddAccount.resx">
+      <DependentUpon>frmAddAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DTO;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -31,6 +32,28 @@ namespace DAL
         {
             return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).
                 OrderBy(sv => sv.NGUOI_DUNG.Ten).ToList();
+        }
+
+        public static bool UpdateStudentInfo(SinhVien_DTO sv)
+        {
+            NGUOI_DUNG nd = db.NGUOI_DUNG.Where(p => p.MaNguoiDung == sv.MaNguoiDung).FirstOrDefault();
+            if (nd != null)
+            {
+                if (sv.DiaChi != "")
+                    nd.DiaChi = sv.DiaChi;
+                if (sv.EmailCaNhan != "")
+                    nd.EmailTruongCap = sv.EmailCaNhan;
+                if (sv.Sdt != "")
+                    nd.Sdt = sv.Sdt;
+                if (sv.NoiSinh != "")
+                    nd.NoiSinh = sv.NoiSinh;
+                if (sv.DanToc != "")
+                    nd.DanToc = sv.DanToc;
+                if (sv.QuocTinh != "")
+                    nd.QuocTich = sv.QuocTinh;
+                return db.SaveChanges() > 0;
+            }
+            return false;
         }
     }
 }

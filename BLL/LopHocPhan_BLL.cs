@@ -46,13 +46,18 @@ namespace BLL
             return LopHocPhan_DAL.Instance.GetHocPhanByMaHP(MaHP);
         }
 
-        public List<SinhVienLHP_View>GetSinhVienInLHP(string MaHP)
+        public List<SinhVienLHP_View> GetSinhVienInLHP(string MaHP)
         {
             List<SinhVienLHP_View> li = LopHocPhan_DAL.Instance.GetSinhVienInLHP(MaHP);
             int stt = 1;
-            foreach(var sv in li)
+            foreach (var sv in li)
                 sv.STT = stt++;
             return li;
+        }
+
+        public bool UpdateSoTC(string MaHP, int SoTC)
+        {
+            return LopHocPhan_DAL.Instance.UpdateSoTC(MaHP, SoTC);
         }
     }
 }

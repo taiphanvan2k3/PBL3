@@ -101,7 +101,7 @@ namespace GUI
             GiangVien_DTO gv = GiangVien_BLL.Instance.GetGiangVienById(Account);
             Info.Name = gv.Ho + " " + gv.Ten;
             Info.IdTeacher = gv.MaNguoiDung;
-            Info.Khoa = gv.Khoa;
+            Info.Khoa = gv.MaKhoa;
             Info.NgaySinh = gv.NgaySinh.ToShortDateString();
             Info.GioiTinh = (gv.GioiTinh) ? "Nam" : "Nữ";
             Info.TrinhDo = gv.TrinhDo;
