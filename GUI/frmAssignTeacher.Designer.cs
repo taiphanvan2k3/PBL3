@@ -36,16 +36,6 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbPhong = new GUI.MyCustomControl.CustomTextBox();
-            this.tbTietKT = new GUI.MyCustomControl.CustomTextBox();
-            this.tbTietBD = new GUI.MyCustomControl.CustomTextBox();
-            this.tbThu = new GUI.MyCustomControl.CustomTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbTenGV = new GUI.MyCustomControl.CustomTextBox();
-            this.tbMaGV = new GUI.MyCustomControl.CustomTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,19 +49,28 @@
             this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xacNhan = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnNext = new GUI.MyCustomControl.CustomButton();
-            this.tbTenHP = new GUI.MyCustomControl.CustomTextBox();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.tbTenGV = new GUI.MyCustomControl.CustomTextBox();
+            this.tbMaGV = new GUI.MyCustomControl.CustomTextBox();
+            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.tbPhong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbbTietKT = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbTietBD = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbThu = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbTenMH = new GUI.MyCustomControl.CustomTextBox();
             this.tbMaHP = new GUI.MyCustomControl.CustomTextBox();
             this.btnCancel = new GUI.MyCustomControl.CustomButton();
             this.btnXacNhan = new GUI.MyCustomControl.CustomButton();
             this.btnSearch = new GUI.MyCustomControl.CustomButton();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panelTitle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelGradient1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
-            this.guna2GroupBox2.SuspendLayout();
+            this.guna2GroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -110,199 +109,15 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(720, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 23);
+            this.label2.Size = new System.Drawing.Size(113, 23);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Tên học phần:";
-            // 
-            // tbPhong
-            // 
-            this.tbPhong.BackColor = System.Drawing.SystemColors.Window;
-            this.tbPhong.BorderColor = System.Drawing.Color.Teal;
-            this.tbPhong.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbPhong.BorderRadius = 15;
-            this.tbPhong.BorderSize = 1;
-            this.tbPhong.Enabled = false;
-            this.tbPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhong.ForeColor = System.Drawing.Color.DimGray;
-            this.tbPhong.Location = new System.Drawing.Point(1011, 50);
-            this.tbPhong.Margin = new System.Windows.Forms.Padding(4);
-            this.tbPhong.MaxLength = 32767;
-            this.tbPhong.Multiline = false;
-            this.tbPhong.Name = "tbPhong";
-            this.tbPhong.Padding = new System.Windows.Forms.Padding(30, 7, 7, 7);
-            this.tbPhong.PasswordChar = false;
-            this.tbPhong.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbPhong.PlaceholderText = "";
-            this.tbPhong.Size = new System.Drawing.Size(111, 35);
-            this.tbPhong.TabIndex = 45;
-            this.tbPhong.Texts = "H202";
-            this.tbPhong.UnderlinedStyle = false;
-            // 
-            // tbTietKT
-            // 
-            this.tbTietKT.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTietKT.BorderColor = System.Drawing.Color.Teal;
-            this.tbTietKT.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbTietKT.BorderRadius = 15;
-            this.tbTietKT.BorderSize = 1;
-            this.tbTietKT.Enabled = false;
-            this.tbTietKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTietKT.ForeColor = System.Drawing.Color.DimGray;
-            this.tbTietKT.Location = new System.Drawing.Point(741, 50);
-            this.tbTietKT.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTietKT.MaxLength = 32767;
-            this.tbTietKT.Multiline = false;
-            this.tbTietKT.Name = "tbTietKT";
-            this.tbTietKT.Padding = new System.Windows.Forms.Padding(30, 7, 7, 7);
-            this.tbTietKT.PasswordChar = false;
-            this.tbTietKT.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbTietKT.PlaceholderText = "";
-            this.tbTietKT.Size = new System.Drawing.Size(111, 35);
-            this.tbTietKT.TabIndex = 44;
-            this.tbTietKT.Texts = "Tiết 5";
-            this.tbTietKT.UnderlinedStyle = false;
-            // 
-            // tbTietBD
-            // 
-            this.tbTietBD.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTietBD.BorderColor = System.Drawing.Color.Teal;
-            this.tbTietBD.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbTietBD.BorderRadius = 15;
-            this.tbTietBD.BorderSize = 1;
-            this.tbTietBD.Enabled = false;
-            this.tbTietBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTietBD.ForeColor = System.Drawing.Color.DimGray;
-            this.tbTietBD.Location = new System.Drawing.Point(397, 50);
-            this.tbTietBD.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTietBD.MaxLength = 32767;
-            this.tbTietBD.Multiline = false;
-            this.tbTietBD.Name = "tbTietBD";
-            this.tbTietBD.Padding = new System.Windows.Forms.Padding(30, 7, 7, 7);
-            this.tbTietBD.PasswordChar = false;
-            this.tbTietBD.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbTietBD.PlaceholderText = "";
-            this.tbTietBD.Size = new System.Drawing.Size(111, 35);
-            this.tbTietBD.TabIndex = 43;
-            this.tbTietBD.Texts = "Tiết 4";
-            this.tbTietBD.UnderlinedStyle = false;
-            // 
-            // tbThu
-            // 
-            this.tbThu.BackColor = System.Drawing.SystemColors.Window;
-            this.tbThu.BorderColor = System.Drawing.Color.Teal;
-            this.tbThu.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbThu.BorderRadius = 15;
-            this.tbThu.BorderSize = 1;
-            this.tbThu.Enabled = false;
-            this.tbThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbThu.ForeColor = System.Drawing.Color.DimGray;
-            this.tbThu.Location = new System.Drawing.Point(71, 50);
-            this.tbThu.Margin = new System.Windows.Forms.Padding(4);
-            this.tbThu.MaxLength = 32767;
-            this.tbThu.Multiline = false;
-            this.tbThu.Name = "tbThu";
-            this.tbThu.Padding = new System.Windows.Forms.Padding(30, 7, 7, 7);
-            this.tbThu.PasswordChar = false;
-            this.tbThu.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbThu.PlaceholderText = "";
-            this.tbThu.Size = new System.Drawing.Size(111, 35);
-            this.tbThu.TabIndex = 42;
-            this.tbThu.Texts = "Thứ ba";
-            this.tbThu.UnderlinedStyle = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(932, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Phòng:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(615, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Tiết kết thúc:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(273, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Tiết bắt đầu:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(9, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Thứ:";
-            // 
-            // tbTenGV
-            // 
-            this.tbTenGV.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTenGV.BorderColor = System.Drawing.Color.Teal;
-            this.tbTenGV.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbTenGV.BorderRadius = 10;
-            this.tbTenGV.BorderSize = 1;
-            this.tbTenGV.Enabled = false;
-            this.tbTenGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenGV.ForeColor = System.Drawing.Color.DimGray;
-            this.tbTenGV.Location = new System.Drawing.Point(816, 44);
-            this.tbTenGV.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTenGV.MaxLength = 32767;
-            this.tbTenGV.Multiline = false;
-            this.tbTenGV.Name = "tbTenGV";
-            this.tbTenGV.Padding = new System.Windows.Forms.Padding(7);
-            this.tbTenGV.PasswordChar = false;
-            this.tbTenGV.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbTenGV.PlaceholderText = "";
-            this.tbTenGV.Size = new System.Drawing.Size(315, 35);
-            this.tbTenGV.TabIndex = 41;
-            this.tbTenGV.Texts = "";
-            this.tbTenGV.UnderlinedStyle = false;
-            // 
-            // tbMaGV
-            // 
-            this.tbMaGV.BackColor = System.Drawing.SystemColors.Window;
-            this.tbMaGV.BorderColor = System.Drawing.Color.Teal;
-            this.tbMaGV.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbMaGV.BorderRadius = 10;
-            this.tbMaGV.BorderSize = 1;
-            this.tbMaGV.Enabled = false;
-            this.tbMaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaGV.ForeColor = System.Drawing.Color.DimGray;
-            this.tbMaGV.Location = new System.Drawing.Point(144, 44);
-            this.tbMaGV.Margin = new System.Windows.Forms.Padding(4);
-            this.tbMaGV.MaxLength = 32767;
-            this.tbMaGV.Multiline = false;
-            this.tbMaGV.Name = "tbMaGV";
-            this.tbMaGV.Padding = new System.Windows.Forms.Padding(7);
-            this.tbMaGV.PasswordChar = false;
-            this.tbMaGV.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbMaGV.PlaceholderText = "";
-            this.tbMaGV.Size = new System.Drawing.Size(130, 35);
-            this.tbMaGV.TabIndex = 40;
-            this.tbMaGV.Texts = "";
-            this.tbMaGV.UnderlinedStyle = false;
+            this.label2.Text = "Tên môn học:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(674, 52);
+            this.label9.Location = new System.Drawing.Point(7, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 20);
             this.label9.TabIndex = 1;
@@ -312,7 +127,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(7, 50);
+            this.label10.Location = new System.Drawing.Point(7, 59);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 20);
             this.label10.TabIndex = 0;
@@ -345,6 +160,7 @@
             this.btnPrev.TabIndex = 2;
             this.btnPrev.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnPrev.UseVisualStyleBackColor = false;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // panelGradient1
             // 
@@ -483,30 +299,248 @@
             this.btnNext.TabIndex = 1;
             this.btnNext.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // tbTenHP
+            // guna2GroupBox1
             // 
-            this.tbTenHP.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTenHP.BorderColor = System.Drawing.Color.Teal;
-            this.tbTenHP.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbTenHP.BorderRadius = 10;
-            this.tbTenHP.BorderSize = 1;
-            this.tbTenHP.Enabled = false;
-            this.tbTenHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenHP.ForeColor = System.Drawing.Color.DimGray;
-            this.tbTenHP.Location = new System.Drawing.Point(862, 72);
-            this.tbTenHP.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTenHP.MaxLength = 32767;
-            this.tbTenHP.Multiline = false;
-            this.tbTenHP.Name = "tbTenHP";
-            this.tbTenHP.Padding = new System.Windows.Forms.Padding(7);
-            this.tbTenHP.PasswordChar = false;
-            this.tbTenHP.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbTenHP.PlaceholderText = "";
-            this.tbTenHP.Size = new System.Drawing.Size(315, 35);
-            this.tbTenHP.TabIndex = 40;
-            this.tbTenHP.Texts = "";
-            this.tbTenHP.UnderlinedStyle = false;
+            this.guna2GroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox1.BorderRadius = 20;
+            this.guna2GroupBox1.Controls.Add(this.tbTenGV);
+            this.guna2GroupBox1.Controls.Add(this.tbMaGV);
+            this.guna2GroupBox1.Controls.Add(this.label10);
+            this.guna2GroupBox1.Controls.Add(this.label9);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.BurlyWood;
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(704, 134);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(473, 186);
+            this.guna2GroupBox1.TabIndex = 41;
+            this.guna2GroupBox1.Text = "Giảng viên phụ trách";
+            this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbTenGV
+            // 
+            this.tbTenGV.BackColor = System.Drawing.SystemColors.Window;
+            this.tbTenGV.BorderColor = System.Drawing.Color.Teal;
+            this.tbTenGV.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbTenGV.BorderRadius = 10;
+            this.tbTenGV.BorderSize = 1;
+            this.tbTenGV.Enabled = false;
+            this.tbTenGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenGV.ForeColor = System.Drawing.Color.Black;
+            this.tbTenGV.Location = new System.Drawing.Point(144, 130);
+            this.tbTenGV.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTenGV.MaxLength = 32767;
+            this.tbTenGV.Multiline = false;
+            this.tbTenGV.Name = "tbTenGV";
+            this.tbTenGV.Padding = new System.Windows.Forms.Padding(7);
+            this.tbTenGV.PasswordChar = false;
+            this.tbTenGV.PlaceholderColor = System.Drawing.Color.White;
+            this.tbTenGV.PlaceholderText = "";
+            this.tbTenGV.Size = new System.Drawing.Size(287, 35);
+            this.tbTenGV.TabIndex = 41;
+            this.tbTenGV.Texts = "";
+            this.tbTenGV.UnderlinedStyle = false;
+            // 
+            // tbMaGV
+            // 
+            this.tbMaGV.BackColor = System.Drawing.SystemColors.Window;
+            this.tbMaGV.BorderColor = System.Drawing.Color.Teal;
+            this.tbMaGV.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbMaGV.BorderRadius = 10;
+            this.tbMaGV.BorderSize = 1;
+            this.tbMaGV.Enabled = false;
+            this.tbMaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMaGV.ForeColor = System.Drawing.Color.Black;
+            this.tbMaGV.Location = new System.Drawing.Point(144, 53);
+            this.tbMaGV.Margin = new System.Windows.Forms.Padding(4);
+            this.tbMaGV.MaxLength = 32767;
+            this.tbMaGV.Multiline = false;
+            this.tbMaGV.Name = "tbMaGV";
+            this.tbMaGV.Padding = new System.Windows.Forms.Padding(7);
+            this.tbMaGV.PasswordChar = false;
+            this.tbMaGV.PlaceholderColor = System.Drawing.Color.White;
+            this.tbMaGV.PlaceholderText = "";
+            this.tbMaGV.Size = new System.Drawing.Size(287, 35);
+            this.tbMaGV.TabIndex = 40;
+            this.tbMaGV.Texts = "";
+            this.tbMaGV.UnderlinedStyle = false;
+            // 
+            // guna2GroupBox3
+            // 
+            this.guna2GroupBox3.BorderRadius = 20;
+            this.guna2GroupBox3.Controls.Add(this.tbPhong);
+            this.guna2GroupBox3.Controls.Add(this.cbbTietKT);
+            this.guna2GroupBox3.Controls.Add(this.cbbTietBD);
+            this.guna2GroupBox3.Controls.Add(this.cbbThu);
+            this.guna2GroupBox3.Controls.Add(this.label7);
+            this.guna2GroupBox3.Controls.Add(this.label8);
+            this.guna2GroupBox3.Controls.Add(this.label11);
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.BurlyWood;
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
+            this.guna2GroupBox3.Location = new System.Drawing.Point(49, 134);
+            this.guna2GroupBox3.Name = "guna2GroupBox3";
+            this.guna2GroupBox3.Size = new System.Drawing.Size(453, 249);
+            this.guna2GroupBox3.TabIndex = 43;
+            this.guna2GroupBox3.Text = "Lịch học";
+            this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbPhong
+            // 
+            this.tbPhong.BackColor = System.Drawing.Color.Transparent;
+            this.tbPhong.BorderRadius = 8;
+            this.tbPhong.BorderThickness = 2;
+            this.tbPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPhong.DefaultText = "";
+            this.tbPhong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPhong.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.tbPhong.ForeColor = System.Drawing.Color.Black;
+            this.tbPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPhong.Location = new System.Drawing.Point(138, 129);
+            this.tbPhong.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbPhong.Name = "tbPhong";
+            this.tbPhong.PasswordChar = '\0';
+            this.tbPhong.PlaceholderText = "";
+            this.tbPhong.SelectedText = "";
+            this.tbPhong.Size = new System.Drawing.Size(223, 35);
+            this.tbPhong.TabIndex = 35;
+            // 
+            // cbbTietKT
+            // 
+            this.cbbTietKT.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTietKT.BorderRadius = 8;
+            this.cbbTietKT.BorderThickness = 2;
+            this.cbbTietKT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTietKT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTietKT.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTietKT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTietKT.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.cbbTietKT.ForeColor = System.Drawing.Color.Black;
+            this.cbbTietKT.ItemHeight = 30;
+            this.cbbTietKT.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbbTietKT.Location = new System.Drawing.Point(276, 192);
+            this.cbbTietKT.Name = "cbbTietKT";
+            this.cbbTietKT.Size = new System.Drawing.Size(81, 36);
+            this.cbbTietKT.TabIndex = 5;
+            // 
+            // cbbTietBD
+            // 
+            this.cbbTietBD.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTietBD.BorderRadius = 8;
+            this.cbbTietBD.BorderThickness = 2;
+            this.cbbTietBD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTietBD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTietBD.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTietBD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTietBD.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTietBD.ForeColor = System.Drawing.Color.Black;
+            this.cbbTietBD.ItemHeight = 30;
+            this.cbbTietBD.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9"});
+            this.cbbTietBD.Location = new System.Drawing.Point(134, 192);
+            this.cbbTietBD.Name = "cbbTietBD";
+            this.cbbTietBD.Size = new System.Drawing.Size(82, 36);
+            this.cbbTietBD.TabIndex = 4;
+            // 
+            // cbbThu
+            // 
+            this.cbbThu.BackColor = System.Drawing.Color.Transparent;
+            this.cbbThu.BorderRadius = 8;
+            this.cbbThu.BorderThickness = 2;
+            this.cbbThu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbThu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbThu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbThu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbThu.ForeColor = System.Drawing.Color.Black;
+            this.cbbThu.ItemHeight = 30;
+            this.cbbThu.Items.AddRange(new object[] {
+            "Thứ hai",
+            "Thứ ba",
+            "Thứ tư",
+            "Thứ năm",
+            "Thứ sáu",
+            "Thứ bảy",
+            "Chủ nhật"});
+            this.cbbThu.Location = new System.Drawing.Point(138, 63);
+            this.cbbThu.Name = "cbbThu";
+            this.cbbThu.Size = new System.Drawing.Size(219, 36);
+            this.cbbThu.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Thứ:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(14, 200);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 20);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Tiết:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(15, 137);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 20);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Phòng:";
+            // 
+            // tbTenMH
+            // 
+            this.tbTenMH.BackColor = System.Drawing.SystemColors.Window;
+            this.tbTenMH.BorderColor = System.Drawing.Color.Teal;
+            this.tbTenMH.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbTenMH.BorderRadius = 10;
+            this.tbTenMH.BorderSize = 1;
+            this.tbTenMH.Enabled = false;
+            this.tbTenMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenMH.ForeColor = System.Drawing.Color.Black;
+            this.tbTenMH.Location = new System.Drawing.Point(862, 72);
+            this.tbTenMH.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTenMH.MaxLength = 32767;
+            this.tbTenMH.Multiline = false;
+            this.tbTenMH.Name = "tbTenMH";
+            this.tbTenMH.Padding = new System.Windows.Forms.Padding(7);
+            this.tbTenMH.PasswordChar = false;
+            this.tbTenMH.PlaceholderColor = System.Drawing.Color.White;
+            this.tbTenMH.PlaceholderText = "";
+            this.tbTenMH.Size = new System.Drawing.Size(315, 35);
+            this.tbTenMH.TabIndex = 40;
+            this.tbTenMH.Texts = "";
+            this.tbTenMH.UnderlinedStyle = false;
             // 
             // tbMaHP
             // 
@@ -517,7 +551,7 @@
             this.tbMaHP.BorderSize = 1;
             this.tbMaHP.Enabled = false;
             this.tbMaHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaHP.ForeColor = System.Drawing.Color.DimGray;
+            this.tbMaHP.ForeColor = System.Drawing.Color.Black;
             this.tbMaHP.Location = new System.Drawing.Point(190, 72);
             this.tbMaHP.Margin = new System.Windows.Forms.Padding(4);
             this.tbMaHP.MaxLength = 32767;
@@ -525,7 +559,7 @@
             this.tbMaHP.Name = "tbMaHP";
             this.tbMaHP.Padding = new System.Windows.Forms.Padding(7);
             this.tbMaHP.PasswordChar = false;
-            this.tbMaHP.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbMaHP.PlaceholderColor = System.Drawing.Color.White;
             this.tbMaHP.PlaceholderText = "";
             this.tbMaHP.Size = new System.Drawing.Size(130, 35);
             this.tbMaHP.TabIndex = 39;
@@ -534,8 +568,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnCancel.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCancel.BackColor = System.Drawing.Color.Moccasin;
+            this.btnCancel.BackGroundColor = System.Drawing.Color.Moccasin;
             this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnCancel.BorderRadius = 40;
             this.btnCancel.BorderSize = 0;
@@ -557,8 +591,8 @@
             // 
             // btnXacNhan
             // 
-            this.btnXacNhan.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnXacNhan.BackGroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnXacNhan.BackColor = System.Drawing.Color.Moccasin;
+            this.btnXacNhan.BackGroundColor = System.Drawing.Color.Moccasin;
             this.btnXacNhan.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnXacNhan.BorderRadius = 40;
             this.btnXacNhan.BorderSize = 0;
@@ -576,6 +610,7 @@
             this.btnXacNhan.Text = "      Xác nhận";
             this.btnXacNhan.TextColor = System.Drawing.Color.Black;
             this.btnXacNhan.UseVisualStyleBackColor = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // btnSearch
             // 
@@ -600,57 +635,15 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // guna2GroupBox1
-            // 
-            this.guna2GroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox1.BorderRadius = 20;
-            this.guna2GroupBox1.Controls.Add(this.tbTenGV);
-            this.guna2GroupBox1.Controls.Add(this.tbMaGV);
-            this.guna2GroupBox1.Controls.Add(this.label10);
-            this.guna2GroupBox1.Controls.Add(this.label9);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.BurlyWood;
-            this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(46, 114);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1139, 102);
-            this.guna2GroupBox1.TabIndex = 41;
-            this.guna2GroupBox1.Text = "Giảng viên phụ trách";
-            this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // guna2GroupBox2
-            // 
-            this.guna2GroupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox2.BorderRadius = 20;
-            this.guna2GroupBox2.Controls.Add(this.tbPhong);
-            this.guna2GroupBox2.Controls.Add(this.tbThu);
-            this.guna2GroupBox2.Controls.Add(this.tbTietKT);
-            this.guna2GroupBox2.Controls.Add(this.label3);
-            this.guna2GroupBox2.Controls.Add(this.tbTietBD);
-            this.guna2GroupBox2.Controls.Add(this.label4);
-            this.guna2GroupBox2.Controls.Add(this.label5);
-            this.guna2GroupBox2.Controls.Add(this.label6);
-            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.BurlyWood;
-            this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(46, 222);
-            this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(1139, 102);
-            this.guna2GroupBox2.TabIndex = 42;
-            this.guna2GroupBox2.Text = "Lịch học";
-            this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // frmAssignTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1230, 751);
-            this.Controls.Add(this.guna2GroupBox2);
+            this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox1);
-            this.Controls.Add(this.tbTenHP);
+            this.Controls.Add(this.tbTenMH);
             this.Controls.Add(this.tbMaHP);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnXacNhan);
@@ -672,8 +665,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            this.guna2GroupBox2.ResumeLayout(false);
-            this.guna2GroupBox2.PerformLayout();
+            this.guna2GroupBox3.ResumeLayout(false);
+            this.guna2GroupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,10 +678,6 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
@@ -704,16 +693,19 @@
         private MyCustomControl.CustomButton btnXacNhan; 
         private MyCustomControl.CustomButton btnCancel;
         private MyCustomControl.CustomTextBox tbMaHP;
-        private MyCustomControl.CustomTextBox tbPhong;
-        private MyCustomControl.CustomTextBox tbTietKT;
-        private MyCustomControl.CustomTextBox tbTietBD;
-        private MyCustomControl.CustomTextBox tbThu;
         private MyCustomControl.CustomTextBox tbTenGV;
         private MyCustomControl.CustomTextBox tbMaGV;
-        private MyCustomControl.CustomTextBox tbTenHP;
+        private MyCustomControl.CustomTextBox tbTenMH;
         private MyCustomControl.CustomButton btnPrev;
         private MyCustomControl.CustomButton btnNext;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
+        private Guna.UI2.WinForms.Guna2TextBox tbPhong;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbTietKT;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbTietBD;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbThu;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
     }
 }

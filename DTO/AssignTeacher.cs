@@ -9,7 +9,8 @@ namespace DTO
 {
     public class AssignTeacher
     {
-
+        [DisplayName("STT")]
+        public int STT { get; set; }
         [DisplayName("Mã giảng viên")]
         public string MaGV { get; set; }
 

@@ -1,4 +1,6 @@
 ﻿using BLL;
+using DTO;
+using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,47 +15,66 @@ namespace GUI
 {
     public partial class frmAssignTeacher : Form
     {
+        private const int maxRow = 6;
+        private int currentPage, maxPage;
+        private List<AssignTeacher> li;
+        private SplitPageHelper<AssignTeacher> helper;
         public frmAssignTeacher()
         {
             InitializeComponent();
             MoveFormHelper helper = new MoveFormHelper(this, panelTitle, labelTitle);
         }
-
+        public void LoadData()
+        {
+            dtgv.Rows.Clear();
+            dtgv.Refresh();
+            li = GiangVien_BLL.Instance.GetGiangVienWithNumberLHP();
+            currentPage = 1;
+            maxPage = (int)Math.Ceiling(li.Count * 1.0 / maxRow);
+            helper = new SplitPageHelper<AssignTeacher>(maxRow, li);
+            foreach (var i in helper.GetRecords(currentPage))
+            {
+                dtgv.Rows.Add(i.STT, i.MaGV, i.TenGV, i.SDT, i.SoLuongHPPhuTrach);
+            }
+        }
         #region Properties
         public string MaHP
         {
-            get => tbMaHP.Text;
-            set => tbMaHP.Text = value;
+            get => tbMaHP.Texts;
+            set
+            {
+                tbMaHP.Texts = value;
+            }
         }
-        public string TenHP
+        public string TenMH
         {
-            get => tbTenHP.Text;
-            set => tbTenHP.Text = value;
+            get => tbTenMH.Texts;
+            set => tbTenMH.Texts = value;
         }
         public string MaGV
         {
-            get => tbMaGV.Text;
-            set => tbMaGV.Text = value;
+            get => tbMaGV.Texts;
+            set => tbMaGV.Texts = value;
         }
         public string TenGV
         {
-            get => tbTenGV.Text; 
-            set => tbTenGV.Text = value;
+            get => tbTenGV.Texts;
+            set => tbTenGV.Texts = value;
         }
         public string Thu
         {
-            get => tbThu.Text;
-            set => tbThu.Text = value;
+            get => cbbThu.SelectedText;
+            set => cbbThu.SelectedText = value;
         }
         public string TietBatDau
         {
-            get => tbTietBD.Text;
-            set => tbTietBD.Text = value;
+            get => cbbTietBD.SelectedText;
+            set => cbbTietBD.SelectedText = value;
         }
         public string TietKetThuc
         {
-            get => tbTietKT.Text;
-            set => tbTietKT.Text = value;
+            get => cbbTietKT.SelectedText;
+            set => cbbTietKT.SelectedText = value;
         }
         public string Phong
         {
@@ -77,14 +98,10 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dtgv.Rows.Clear();
-            dtgv.Refresh();
-            int stt = 1;
-            foreach(var i in GiangVien_BLL.Instance.GetGiangVienWithNumberLHP())
-            {
-                dtgv.Rows.Add(stt, i.MaGV, i.TenGV, i.SDT, i.SoLuongHPPhuTrach);
-                stt++;
-            }
+            //dtgv.Rows.Clear();
+            //dtgv.Refresh();
+            LoadData();
+            
         }
         //Bắt sự kiện cho button chọn trong Datagridview
         private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,11 +110,65 @@ namespace GUI
             {
                 DataGridViewRow row = dtgv.Rows[e.RowIndex];
                 //Xử lí sự kiện khi nhấn button Phân công ở chỗ này. Xử lí theo row đã lấy ở dòng trên
-                //MessageBox.Show(row.Cells[0].Value.ToString());
                 tbMaGV.Texts = row.Cells[1].Value.ToString();
                 tbTenGV.Texts = row.Cells[2].Value.ToString();
             }
         }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if(currentPage > 1)
+            {
+                dtgv.Rows.Clear();
+                dtgv.Refresh();
+                currentPage--;
+                foreach (var i in helper.GetRecords(currentPage))
+                {
+                    dtgv.Rows.Add(i.STT, i.MaGV, i.TenGV, i.SDT, i.SoLuongHPPhuTrach);
+                }
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if(currentPage < maxPage)
+            {
+                dtgv.Rows.Clear();
+                dtgv.Refresh();
+                currentPage++;
+                foreach (var i in helper.GetRecords(currentPage))
+                {
+                    dtgv.Rows.Add(i.STT, i.MaGV, i.TenGV, i.SDT, i.SoLuongHPPhuTrach);
+                }
+            }
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            if(cbbThu.SelectedItem.ToString() == null || tbPhong.Text == "" || cbbTietBD.SelectedItem.ToString() == null || cbbTietKT.SelectedItem.ToString() == null)
+            {
+                CustomMessageBox.Show("Thông tin lịch học không được để trống!");
+            }
+            else if(tbMaGV.Texts == "")
+            {
+                CustomMessageBox.Show("Vui lòng chọn giảng viên!");
+            }
+            else if(Convert.ToInt32(cbbTietBD.SelectedItem.ToString()) >= Convert.ToInt32(cbbTietKT.SelectedItem.ToString()))
+                CustomMessageBox.Show("Tiết bắt đầu sai lệch so với tiết kết thúc!");
+            else
+            {
+                if (GiangVien_BLL.Instance.CheckTKBGiangVienConflict(tbMaGV.Texts, cbbThu.SelectedItem.ToString(), Convert.ToInt32(cbbTietBD.SelectedItem.ToString()), Convert.ToInt32(cbbTietKT.SelectedItem.ToString())))
+                {
+                    //Chỗ này sẽ gọi tới hàm truy vấn vào csdl để sửa đổi thông tin giảng viên của LHP
+                    GiangVien_BLL.Instance.AssignTeacherToSectionClass(tbMaGV.Texts, cbbThu.SelectedItem.ToString(), Convert.ToInt32(cbbTietBD.SelectedItem.ToString()), Convert.ToInt32(cbbTietKT.SelectedItem.ToString()), tbPhong.Text, tbMaHP.Texts);
+                    CustomMessageBox.Show("Phân công giảng viên thành công!");
+                    this.Dispose();
+                }
+                else
+                    CustomMessageBox.Show("Lịch dạy của giảng viên bị xung đột!");
+            }
+        }
         #endregion
+
     }
 }
