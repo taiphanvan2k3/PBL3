@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pnlUpload = new GUI.MyCustomControl.PanelGradient();
+            this.lblImgUpload = new System.Windows.Forms.Label();
+            this.lblTextUpload = new System.Windows.Forms.Label();
             this.btnCancel = new GUI.MyCustomControl.CustomButton();
             this.btnAdd = new GUI.MyCustomControl.CustomButton();
-            this.tbIdStudent = new GUI.MyCustomControl.CustomTextBox();
-            this.panelGradient1.SuspendLayout();
+            this.txtIdStudent = new GUI.MyCustomControl.CustomTextBox();
+            this.pnlUpload.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -48,45 +48,45 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sinh viên";
             // 
-            // panelGradient1
+            // pnlUpload
             // 
-            this.panelGradient1.BackColor = System.Drawing.Color.White;
-            this.panelGradient1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelGradient1.BorderRadius = 30;
-            this.panelGradient1.Controls.Add(this.label3);
-            this.panelGradient1.Controls.Add(this.label2);
-            this.panelGradient1.ForeColor = System.Drawing.Color.Black;
-            this.panelGradient1.GradientAngle = 90F;
-            this.panelGradient1.GradientBottomColor = System.Drawing.SystemColors.ControlDark;
-            this.panelGradient1.GradientTopColor = System.Drawing.SystemColors.ControlDark;
-            this.panelGradient1.Location = new System.Drawing.Point(53, 79);
-            this.panelGradient1.Name = "panelGradient1";
-            this.panelGradient1.Size = new System.Drawing.Size(384, 176);
-            this.panelGradient1.TabIndex = 4;
-            this.panelGradient1.Click += new System.EventHandler(this.panelGradient1_Click);
+            this.pnlUpload.BackColor = System.Drawing.Color.White;
+            this.pnlUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlUpload.BorderRadius = 30;
+            this.pnlUpload.Controls.Add(this.lblImgUpload);
+            this.pnlUpload.Controls.Add(this.lblTextUpload);
+            this.pnlUpload.ForeColor = System.Drawing.Color.Black;
+            this.pnlUpload.GradientAngle = 90F;
+            this.pnlUpload.GradientBottomColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlUpload.GradientTopColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlUpload.Location = new System.Drawing.Point(53, 79);
+            this.pnlUpload.Name = "pnlUpload";
+            this.pnlUpload.Size = new System.Drawing.Size(384, 176);
+            this.pnlUpload.TabIndex = 4;
+            this.pnlUpload.Click += new System.EventHandler(this.pnlUpload_Click);
             // 
-            // label3
+            // lblImgUpload
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Image = global::GUI.Properties.Resources.csv;
-            this.label3.Location = new System.Drawing.Point(152, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 78);
-            this.label3.TabIndex = 6;
-            this.label3.Click += new System.EventHandler(this.panelGradient1_Click);
+            this.lblImgUpload.BackColor = System.Drawing.Color.Transparent;
+            this.lblImgUpload.Image = global::GUI.Properties.Resources.csv;
+            this.lblImgUpload.Location = new System.Drawing.Point(152, 65);
+            this.lblImgUpload.Name = "lblImgUpload";
+            this.lblImgUpload.Size = new System.Drawing.Size(74, 78);
+            this.lblImgUpload.TabIndex = 6;
+            this.lblImgUpload.Click += new System.EventHandler(this.pnlUpload_Click);
             // 
-            // label2
+            // lblTextUpload
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(35, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(314, 38);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Chọn file CSV để tải lên";
-            this.label2.Click += new System.EventHandler(this.panelGradient1_Click);
+            this.lblTextUpload.AutoSize = true;
+            this.lblTextUpload.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextUpload.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextUpload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblTextUpload.Location = new System.Drawing.Point(35, 16);
+            this.lblTextUpload.Name = "lblTextUpload";
+            this.lblTextUpload.Size = new System.Drawing.Size(314, 38);
+            this.lblTextUpload.TabIndex = 5;
+            this.lblTextUpload.Text = "Chọn file CSV để tải lên";
+            this.lblTextUpload.Click += new System.EventHandler(this.pnlUpload_Click);
             // 
             // btnCancel
             // 
@@ -106,6 +106,7 @@
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -125,43 +126,46 @@
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // tbIdStudent
+            // txtIdStudent
             // 
-            this.tbIdStudent.BackColor = System.Drawing.SystemColors.Window;
-            this.tbIdStudent.BorderColor = System.Drawing.Color.Black;
-            this.tbIdStudent.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbIdStudent.BorderRadius = 10;
-            this.tbIdStudent.BorderSize = 2;
-            this.tbIdStudent.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIdStudent.ForeColor = System.Drawing.Color.DimGray;
-            this.tbIdStudent.Location = new System.Drawing.Point(198, 23);
-            this.tbIdStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.tbIdStudent.Multiline = false;
-            this.tbIdStudent.Name = "tbIdStudent";
-            this.tbIdStudent.Padding = new System.Windows.Forms.Padding(7);
-            this.tbIdStudent.PasswordChar = false;
-            this.tbIdStudent.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbIdStudent.PlaceholderText = "";
-            this.tbIdStudent.Size = new System.Drawing.Size(227, 38);
-            this.tbIdStudent.TabIndex = 1;
-            this.tbIdStudent.Texts = "";
-            this.tbIdStudent.UnderlinedStyle = false;
+            this.txtIdStudent.BackColor = System.Drawing.SystemColors.Window;
+            this.txtIdStudent.BorderColor = System.Drawing.Color.Black;
+            this.txtIdStudent.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtIdStudent.BorderRadius = 10;
+            this.txtIdStudent.BorderSize = 2;
+            this.txtIdStudent.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdStudent.ForeColor = System.Drawing.Color.DimGray;
+            this.txtIdStudent.Location = new System.Drawing.Point(198, 23);
+            this.txtIdStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdStudent.MaxLength = 32767;
+            this.txtIdStudent.Multiline = false;
+            this.txtIdStudent.Name = "txtIdStudent";
+            this.txtIdStudent.Padding = new System.Windows.Forms.Padding(7);
+            this.txtIdStudent.PasswordChar = false;
+            this.txtIdStudent.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtIdStudent.PlaceholderText = "";
+            this.txtIdStudent.Size = new System.Drawing.Size(227, 38);
+            this.txtIdStudent.TabIndex = 1;
+            this.txtIdStudent.Texts = "";
+            this.txtIdStudent.UnderlinedStyle = false;
+            this.txtIdStudent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdStudent_KeyDown);
             // 
             // frmAddStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(491, 334);
-            this.Controls.Add(this.panelGradient1);
+            this.Controls.Add(this.pnlUpload);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.tbIdStudent);
+            this.Controls.Add(this.txtIdStudent);
             this.Controls.Add(this.label1);
             this.Name = "frmAddStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddStudent";
-            this.panelGradient1.ResumeLayout(false);
-            this.panelGradient1.PerformLayout();
+            this.pnlUpload.ResumeLayout(false);
+            this.pnlUpload.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,11 +174,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MyCustomControl.CustomTextBox tbIdStudent;
+        private MyCustomControl.CustomTextBox txtIdStudent;
         private MyCustomControl.CustomButton btnAdd;
         private MyCustomControl.CustomButton btnCancel;
-        private MyCustomControl.PanelGradient panelGradient1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private MyCustomControl.PanelGradient pnlUpload;
+        private System.Windows.Forms.Label lblTextUpload;
+        private System.Windows.Forms.Label lblImgUpload;
     }
 }

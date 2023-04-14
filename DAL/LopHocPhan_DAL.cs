@@ -79,6 +79,7 @@ namespace DAL
         }*/
         public LopHocPhan_AdminEdit GetHocPhanByMaHP(string MaHP)
         {
+            //Trả về các thông tin cần thiết trong giao diện frmViewDetailModuleClass
             return db.LOP_HOC_PHAN.Where(i => i.MaLopHP == MaHP)
                 .GroupJoin(db.GIANG_VIEN, hp => hp.MaGV, gv => gv.MaGV, (hp, gv) => new
                 {
@@ -119,6 +120,7 @@ namespace DAL
 
         public List<SinhVienLHP_View> GetSinhVienInLHP(string MaHP)
         {
+            //Trả về danh sách sinh viên hiển thị lên dtgv của frmViewDetailModuleClass
             var li = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP)
                 .Join(db.SINHVIEN_LOPHOCPHAN, hp => hp.MaLopHP, sv => sv.MaLopHP, (hp, sv) => new
                 {
@@ -140,6 +142,50 @@ namespace DAL
             //Nếu GetMonHocById từ MonHoc_DAL rồi cập nhật SoTC rồi lấy db.SaveChanges() ở đây thì sẽ không
             //thực hiện bất kì việc cập nhật nào vì 2 đối tượng db ở 2 lớp DAL là khác nhau
             return MonHoc_DAL.Instance.UpdateSoTC(MaMH, SoTC);
+        }
+
+
+        /// <summary>
+        /// Hàm này phục vụ cho việc add sinh viên vào lớp học phần
+        /// </summary>
+        /// <param name="MaSV"></param>
+        /// <param name="KiHoc"></param>
+        /// <returns></returns>
+        public List<LopHocPhan_AdminEdit> GetListHocPhanOfStudent_AddSV(string MaSV, int KiHoc)
+        {
+            //Lấy thông tin của các lớp học phần của sinh viên có MaSV ở kì học nào đó
+            return db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaSV == MaSV)
+                .Join(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
+                {
+                    svhp.MaLopHP,
+                    hp.MON_HOC.TenMH,
+                    hp.KiHoc
+                }).Where(p => p.KiHoc == KiHoc)
+                .Join(db.THOI_KHOA_BIEU, hp => hp.MaLopHP, tkb => tkb.MaLopHP, (hp, tkb) => new LopHocPhan_AdminEdit()
+                {
+                    MaHP = hp.MaLopHP,
+                    TenHP = hp.TenMH,
+                    Thu = tkb.Thu,
+                    TietBD = tkb.TietBD,
+                    TietKT = tkb.TietKetThuc
+                }).ToList();
+        }
+
+        public void AddStudentIntoClass(string MaHP, string MaSV)
+        {
+            //Hàm này dùng để thêm 1 sinh viên vào lớp học phần
+            SINHVIEN_LOPHOCPHAN svhp = new SINHVIEN_LOPHOCPHAN()
+            {
+                MaSV = MaSV,
+                MaLopHP = MaHP
+            };
+            db.SINHVIEN_LOPHOCPHAN.Add(svhp);
+            db.SaveChanges();
+        }
+
+        public string GetMaKhoaOfLHP(string MaHP)
+        {
+            return db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP).Select(hp => hp.MON_HOC.MaKhoa).FirstOrDefault();
         }
     }
 }

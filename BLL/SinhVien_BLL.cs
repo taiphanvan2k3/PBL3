@@ -1,12 +1,26 @@
 ﻿using DAL;
 using DTO;
+using Microsoft.SqlServer.Server;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace BLL
 {
     public class SinhVien_BLL
     {
+
+        public static bool ValidateIDStudent(string MSSV)
+        {
+            string pattern = "1[0-9]{8}";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(MSSV);
+            if (match.Success)
+            {
+                return SinhVien_DAL.CheckIdStudentExist(MSSV);
+            }
+            return false;
+        }
 
         public static SinhVien_DTO GetSinhVienById(string id)
         {

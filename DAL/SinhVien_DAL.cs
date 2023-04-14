@@ -14,6 +14,11 @@ namespace DAL
             return db.cities.Select(p => p.tinhThanhPho).ToList();
         }
 
+        public static bool CheckIdStudentExist(string MSSV)
+        {
+            return db.THONG_TIN_DANG_NHAP.Where(p => p.TaiKhoan == MSSV 
+                                          && p.VaiTro == "Sinh Viên").FirstOrDefault() != null;
+        }
         public static SINH_VIEN GetSinhVienById(string id)
         {
             #region Trước đó
