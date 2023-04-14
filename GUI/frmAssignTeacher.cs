@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,23 +40,26 @@ namespace GUI
         #region Properties
         public string MaHP
         {
-            get => tbMaHP.Text;
-            set => tbMaHP.Text = value;
+            get => tbMaHP.Texts;
+            set
+            {
+                tbMaHP.Texts = value;
+            }
         }
-        public string TenHP
+        public string TenMH
         {
-            get => tbTenHP.Text;
-            set => tbTenHP.Text = value;
+            get => tbTenMH.Texts;
+            set => tbTenMH.Texts = value;
         }
         public string MaGV
         {
-            get => tbMaGV.Text;
-            set => tbMaGV.Text = value;
+            get => tbMaGV.Texts;
+            set => tbMaGV.Texts = value;
         }
         public string TenGV
         {
-            get => tbTenGV.Text; 
-            set => tbTenGV.Text = value;
+            get => tbTenGV.Texts;
+            set => tbTenGV.Texts = value;
         }
         public string Thu
         {
@@ -141,20 +145,27 @@ namespace GUI
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if(cbbThu.SelectedText == null || tbPhong.Text == "" || cbbTietBD.SelectedText == null || cbbTietKT.SelectedText == null)
+            if(cbbThu.SelectedItem.ToString() == null || tbPhong.Text == "" || cbbTietBD.SelectedItem.ToString() == null || cbbTietKT.SelectedItem.ToString() == null)
             {
-                MessageBox.Show("Thông tin lịch học không được để trống!");
+                CustomMessageBox.Show("Thông tin lịch học không được để trống!");
             }
             else if(tbMaGV.Texts == "")
             {
-                MessageBox.Show("Vui lòng chọn giảng viên!");
+                CustomMessageBox.Show("Vui lòng chọn giảng viên!");
             }
+            else if(Convert.ToInt32(cbbTietBD.SelectedItem.ToString()) >= Convert.ToInt32(cbbTietKT.SelectedItem.ToString()))
+                CustomMessageBox.Show("Tiết bắt đầu sai lệch so với tiết kết thúc!");
             else
             {
                 if (GiangVien_BLL.Instance.CheckTKBGiangVienConflict(tbMaGV.Texts, cbbThu.SelectedItem.ToString(), Convert.ToInt32(cbbTietBD.SelectedItem.ToString()), Convert.ToInt32(cbbTietKT.SelectedItem.ToString())))
-                    MessageBox.Show("Phân công giảng viên thành công!");
+                {
+                    //Chỗ này sẽ gọi tới hàm truy vấn vào csdl để sửa đổi thông tin giảng viên của LHP
+                    GiangVien_BLL.Instance.AssignTeacherToSectionClass(tbMaGV.Texts, cbbThu.SelectedItem.ToString(), Convert.ToInt32(cbbTietBD.SelectedItem.ToString()), Convert.ToInt32(cbbTietKT.SelectedItem.ToString()), tbPhong.Text, tbMaHP.Texts);
+                    CustomMessageBox.Show("Phân công giảng viên thành công!");
+                    this.Dispose();
+                }
                 else
-                    MessageBox.Show("Lịch dạy của giảng viên bị xung đột!");
+                    CustomMessageBox.Show("Lịch dạy của giảng viên bị xung đột!");
             }
         }
         #endregion

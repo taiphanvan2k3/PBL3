@@ -47,7 +47,7 @@ namespace GUI
         }
         public void LoadData()
         {
-            MaHP = "OOAD21.13";
+            MaHP = "CSDL21.13";
             lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
             txtMaHP.Text = lhp.MaHP;
             txtTenMH.Texts = lhp.TenHP;
@@ -100,6 +100,10 @@ namespace GUI
         private void btnPhanCongGV_Click(object sender, EventArgs e)
         {
             frmAssignTeacher frm = new frmAssignTeacher();
+            frm.MaHP = txtMaHP.Text;
+            frm.TenMH = txtTenMH.Texts;
+            frm.MaGV = txtMaGV.Text;
+            frm.TenGV = txtTenGV.Texts;
             frm.ShowDialog();
         }
 

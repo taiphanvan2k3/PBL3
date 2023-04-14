@@ -21,5 +21,13 @@ namespace GUI
         {
 
         }
+
+        private void btnAssignGV_Click(object sender, EventArgs e)
+        {
+            frmAssignTeacher frm = new frmAssignTeacher();
+            frm.MaHP = tbMaHP.Text;
+            frm.TenMH = tbTenMH.Texts;
+            frm.ShowDialog();
+        }
     }
 }
