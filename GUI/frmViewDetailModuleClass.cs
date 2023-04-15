@@ -91,6 +91,19 @@ namespace GUI
             frm.TenMH = txtTenMH.Texts;
             frm.MaGV = txtMaGV.Text;
             frm.TenGV = txtTenGV.Texts;
+            if(!string.IsNullOrEmpty(lhp.Thu))
+            {
+                frm.CheckHasSchedule = true;
+                frm.tkb = new ThoiKhoaBieu_DTO
+                {
+                    Thu = lhp.Thu,
+                    Phong = lhp.MaPhong,
+                    TietBD = Convert.ToInt32(lhp.TietBD),
+                    TietKT = Convert.ToInt32(lhp.TietKT)
+                };
+            }
+            else
+                frm.CheckHasSchedule = false;
             frm.ShowDialog();
         }
 
@@ -139,7 +152,7 @@ namespace GUI
 
         private void btnAddSV_Click(object sender, EventArgs e)
         {
-            if (lhp.Thu != "")
+            if (!string.IsNullOrEmpty(lhp.Thu))
             {
                 //Chỉ có thể thêm sinh viên khi lớp học phần này đã được xếp thời khoá biểu
                 //Một khi đã có thứ trong tuần thì chắc chắn đã có TietBD,TietKT nên có thể ép

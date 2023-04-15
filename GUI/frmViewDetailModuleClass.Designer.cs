@@ -50,13 +50,14 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnArrow = new FontAwesome.Sharp.IconButton();
+            this.lblTietKT = new System.Windows.Forms.Label();
+            this.lblTietBD = new System.Windows.Forms.Label();
+            this.lblPhong = new System.Windows.Forms.Label();
+            this.lblThu = new System.Windows.Forms.Label();
             this.txtMaGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNamHoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtHocKy = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblThu = new System.Windows.Forms.Label();
-            this.lblPhong = new System.Windows.Forms.Label();
-            this.lblTietBD = new System.Windows.Forms.Label();
-            this.lblTietKT = new System.Windows.Forms.Label();
             this.txtTenGV = new GUI.MyCustomControl.CustomTextBox();
             this.btnExit = new GUI.MyCustomControl.CustomButton();
             this.btnUndo = new GUI.MyCustomControl.CustomButton();
@@ -70,7 +71,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnArrow = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -333,6 +333,53 @@
             this.guna2GroupBox1.Text = "Lịch học";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnArrow
+            // 
+            this.btnArrow.Enabled = false;
+            this.btnArrow.FlatAppearance.BorderSize = 0;
+            this.btnArrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArrow.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            this.btnArrow.IconColor = System.Drawing.Color.DimGray;
+            this.btnArrow.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnArrow.IconSize = 25;
+            this.btnArrow.Location = new System.Drawing.Point(144, 139);
+            this.btnArrow.Name = "btnArrow";
+            this.btnArrow.Size = new System.Drawing.Size(41, 23);
+            this.btnArrow.TabIndex = 35;
+            this.btnArrow.UseVisualStyleBackColor = true;
+            // 
+            // lblTietKT
+            // 
+            this.lblTietKT.AutoSize = true;
+            this.lblTietKT.Location = new System.Drawing.Point(186, 139);
+            this.lblTietKT.Name = "lblTietKT";
+            this.lblTietKT.Size = new System.Drawing.Size(0, 20);
+            this.lblTietKT.TabIndex = 6;
+            // 
+            // lblTietBD
+            // 
+            this.lblTietBD.AutoSize = true;
+            this.lblTietBD.Location = new System.Drawing.Point(95, 139);
+            this.lblTietBD.Name = "lblTietBD";
+            this.lblTietBD.Size = new System.Drawing.Size(0, 20);
+            this.lblTietBD.TabIndex = 5;
+            // 
+            // lblPhong
+            // 
+            this.lblPhong.AutoSize = true;
+            this.lblPhong.Location = new System.Drawing.Point(96, 96);
+            this.lblPhong.Name = "lblPhong";
+            this.lblPhong.Size = new System.Drawing.Size(0, 20);
+            this.lblPhong.TabIndex = 4;
+            // 
+            // lblThu
+            // 
+            this.lblThu.AutoSize = true;
+            this.lblThu.Location = new System.Drawing.Point(95, 54);
+            this.lblThu.Name = "lblThu";
+            this.lblThu.Size = new System.Drawing.Size(0, 20);
+            this.lblThu.TabIndex = 3;
+            // 
             // txtMaGV
             // 
             this.txtMaGV.BackColor = System.Drawing.Color.Transparent;
@@ -404,42 +451,6 @@
             this.txtHocKy.SelectedText = "";
             this.txtHocKy.Size = new System.Drawing.Size(53, 36);
             this.txtHocKy.TabIndex = 33;
-            // 
-            // lblThu
-            // 
-            this.lblThu.AutoSize = true;
-            this.lblThu.Location = new System.Drawing.Point(95, 54);
-            this.lblThu.Name = "lblThu";
-            this.lblThu.Size = new System.Drawing.Size(61, 20);
-            this.lblThu.TabIndex = 3;
-            this.lblThu.Text = "_Thứ ba";
-            // 
-            // lblPhong
-            // 
-            this.lblPhong.AutoSize = true;
-            this.lblPhong.Location = new System.Drawing.Point(96, 96);
-            this.lblPhong.Name = "lblPhong";
-            this.lblPhong.Size = new System.Drawing.Size(50, 20);
-            this.lblPhong.TabIndex = 4;
-            this.lblPhong.Text = "_H202";
-            // 
-            // lblTietBD
-            // 
-            this.lblTietBD.AutoSize = true;
-            this.lblTietBD.Location = new System.Drawing.Point(95, 139);
-            this.lblTietBD.Name = "lblTietBD";
-            this.lblTietBD.Size = new System.Drawing.Size(52, 20);
-            this.lblTietBD.TabIndex = 5;
-            this.lblTietBD.Text = "_Tiết 4";
-            // 
-            // lblTietKT
-            // 
-            this.lblTietKT.AutoSize = true;
-            this.lblTietKT.Location = new System.Drawing.Point(186, 139);
-            this.lblTietKT.Name = "lblTietKT";
-            this.lblTietKT.Size = new System.Drawing.Size(52, 20);
-            this.lblTietKT.TabIndex = 6;
-            this.lblTietKT.Text = "_Tiết 5";
             // 
             // txtTenGV
             // 
@@ -695,21 +706,6 @@
             this.label6.Size = new System.Drawing.Size(85, 23);
             this.label6.TabIndex = 5;
             this.label6.Text = "Số tín chỉ:";
-            // 
-            // btnArrow
-            // 
-            this.btnArrow.Enabled = false;
-            this.btnArrow.FlatAppearance.BorderSize = 0;
-            this.btnArrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArrow.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
-            this.btnArrow.IconColor = System.Drawing.Color.DimGray;
-            this.btnArrow.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnArrow.IconSize = 25;
-            this.btnArrow.Location = new System.Drawing.Point(144, 139);
-            this.btnArrow.Name = "btnArrow";
-            this.btnArrow.Size = new System.Drawing.Size(41, 23);
-            this.btnArrow.TabIndex = 35;
-            this.btnArrow.UseVisualStyleBackColor = true;
             // 
             // frmViewDetailModuleClass
             // 
