@@ -32,7 +32,6 @@ namespace GUI
             this.Thu = Thu;
             this.TietBD = TietBD;
             this.TietKT = TietKT;
-            MessageBox.Show(MaHP);
         }
 
         private void pnlUpload_Click(object sender, EventArgs e)
@@ -81,6 +80,7 @@ namespace GUI
                             //Không bị va chạm => Có thể thêm
                             CustomMessageBox.Show("Thêm thành công");
                             LopHocPhan_BLL.Instance.AddStudentIntoClass(MaHP, MaSV);
+                            txtIdStudent.Texts = "";
                         }
                         else if (li.Count == 0)
                         {

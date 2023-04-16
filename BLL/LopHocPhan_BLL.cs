@@ -76,7 +76,6 @@ namespace BLL
                                                                         string Thu, int TietBD, int TietKT)
         {
             List<LopHocPhan_AdminEdit> li = LopHocPhan_DAL.Instance.GetListHocPhanOfStudent_AddSV(MaSV, KiHoc);
-            //MessageBox.Show(li.Count + "");
             List<LopHocPhan_AdminEdit> conflict = null;
             foreach (LopHocPhan_AdminEdit lhp in li)
             {
@@ -100,6 +99,11 @@ namespace BLL
         public void AddStudentIntoClass(string MaHP, string MaSV)
         {
             LopHocPhan_DAL.Instance.AddStudentIntoClass(MaHP, MaSV);
+        }
+
+        public bool DeleteStudent(string MaHP, List<string> liMSSV)
+        {
+            return LopHocPhan_DAL.Instance.DeleteStudent(MaHP, liMSSV);
         }
 
         public string GetMaKhoaOfLHP(string MaHP)

@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class frmAssignTeacher : Form
     {
+        public bool checkHaveSchedule { get; set; }
         private const int maxRow = 6;
         private int currentPage, maxPage;
         private List<AssignTeacher> li;

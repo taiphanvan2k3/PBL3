@@ -16,8 +16,13 @@ namespace DAL
 
         public static bool CheckIdStudentExist(string MSSV)
         {
-            return db.THONG_TIN_DANG_NHAP.Where(p => p.TaiKhoan == MSSV 
+            return db.THONG_TIN_DANG_NHAP.Where(p => p.TaiKhoan == MSSV
                                           && p.VaiTro == "Sinh Viên").FirstOrDefault() != null;
+        }
+
+        public static string GetNameOfHomeroomClass(string MSSV)
+        {
+            return db.SINH_VIEN.Where(sv => sv.MaSV == MSSV).Select(sv => sv.MaLopSH).FirstOrDefault();
         }
         public static SINH_VIEN GetSinhVienById(string id)
         {
@@ -41,6 +46,7 @@ namespace DAL
 
         public static bool UpdateStudentInfo(SinhVien_DTO sv)
         {
+            //Hàm này dùng trong frmStudent để cập nhật thông tin cá nhân
             NGUOI_DUNG nd = db.NGUOI_DUNG.Where(p => p.MaNguoiDung == sv.MaNguoiDung).FirstOrDefault();
             if (nd != null)
             {

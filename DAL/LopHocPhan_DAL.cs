@@ -187,5 +187,18 @@ namespace DAL
         {
             return db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP).Select(hp => hp.MON_HOC.MaKhoa).FirstOrDefault();
         }
+
+        public bool DeleteStudent(string MaHP, List<string> liMSSV)
+        {
+            List<SINHVIEN_LOPHOCPHAN> li = new List<SINHVIEN_LOPHOCPHAN>();
+            foreach(string mssv in liMSSV)
+            {
+                var svhp = db.SINHVIEN_LOPHOCPHAN.Where(i => i.MaLopHP == MaHP && i.MaSV == mssv).FirstOrDefault();
+                if (svhp != null)
+                    li.Add(svhp);
+            }
+            db.SINHVIEN_LOPHOCPHAN.RemoveRange(li);
+            return db.SaveChanges() > 0;
+        }
     }
 }

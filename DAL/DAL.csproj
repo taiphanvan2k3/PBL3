@@ -91,6 +91,7 @@
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="LopHocPhan_DAL.cs" />
+    <Compile Include="LopSinhHoat_DAL.cs" />
     <Compile Include="LOP_HOC_PHAN.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
