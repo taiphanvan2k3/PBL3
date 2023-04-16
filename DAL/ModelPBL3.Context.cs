@@ -44,6 +44,5 @@ namespace DAL
         public virtual DbSet<THONG_BAO> THONG_BAO { get; set; }
         public virtual DbSet<THONG_TIN_DANG_NHAP> THONG_TIN_DANG_NHAP { get; set; }
         public virtual DbSet<ward> wards { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

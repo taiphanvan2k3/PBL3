@@ -214,6 +214,56 @@ namespace DAL
             return success;
         }
 
+
+        public bool DeleteStudent(string maSV)
+        {
+            bool success = false;
+            using (var context = new PBL3Entities())
+            {
+                var student = context.SINH_VIEN.FirstOrDefault(s => s.MaSV == maSV);
+                if (student != null)
+                {
+                    context.SINH_VIEN.Remove(student);
+                    context.SaveChanges();
+                    success = true;
+                }
+            }
+            return success;
+        }
+
+        public bool DeleteUser(string maSV)
+        {
+            bool success = false;
+            using (var context = new PBL3Entities())
+            {
+                var user = context.NGUOI_DUNG.FirstOrDefault(u => u.MaNguoiDung == maSV);
+                if (user != null)
+                {
+                    context.NGUOI_DUNG.Remove(user);
+                    context.SaveChanges();
+                    success = true;
+                }
+            }
+            return success;
+        }
+
+        public bool DeleteLoginInfo(string maSV)
+        {
+            bool success = false;
+            using (var context = new PBL3Entities())
+            {
+                var loginInfo = context.THONG_TIN_DANG_NHAP.FirstOrDefault(l => l.TaiKhoan == maSV);
+                if (loginInfo != null)
+                {
+                    context.THONG_TIN_DANG_NHAP.Remove(loginInfo);
+                    context.SaveChanges();
+                    success = true;
+                }
+            }
+            return success;
+        }
+
+
         //public List<InformationAcc_DTO> GetAccountRoleList()
         //{
         //    using (var context = new PBL3Entities())

@@ -57,6 +57,27 @@
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="IronSoftware.Drawing.Common, Version=2023.3.3.0, Culture=neutral, PublicKeyToken=8d7e55c97b3e9835, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.System.Drawing.2023.3.3\lib\netstandard2.0\IronSoftware.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IronXL, Version=2023.4.13.0, Culture=neutral, PublicKeyToken=0f5804b6690bad1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronXL.Excel.2023.4.13\lib\netstandard2.0\IronXL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.Interop.15.0.1\lib\net452\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.Interop.15.0.1\lib\net452\Microsoft.Vbe.Interop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.Interop.15.0.1\lib\net452\Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
@@ -70,20 +91,20 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    <Reference Include="System.Text.Encoding.CodePages, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.7.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xaml" />
@@ -116,6 +137,30 @@
     </Compile>
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDesignEnterNewPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesignEnterNewPass.Designer.cs">
+      <DependentUpon>frmDesignEnterNewPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDesignFindAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesignFindAcc.Designer.cs">
+      <DependentUpon>frmDesignFindAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDesignLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesignLogin.Designer.cs">
+      <DependentUpon>frmDesignLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDesinEnterDigitCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesinEnterDigitCode.Designer.cs">
+      <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViewListAcc.cs">
       <SubType>Form</SubType>
@@ -335,6 +380,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
+    <EmbeddedResource Include="frmDesignEnterNewPass.resx">
+      <DependentUpon>frmDesignEnterNewPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesignFindAcc.resx">
+      <DependentUpon>frmDesignFindAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesignLogin.resx">
+      <DependentUpon>frmDesignLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesinEnterDigitCode.resx">
+      <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
     </EmbeddedResource>
@@ -561,9 +618,15 @@
     <None Include="Resources\Yourname.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\icons8-user-48.png" />
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\istockphoto-1431931532-170667a.jpg" />
     <None Include="Resources\DarkMode.png" />
     <None Include="Resources\CreateQuestion.png" />
     <None Include="Resources\Calendar_week.png" />
+    <None Include="Resources\backroud.jpg" />
+    <None Include="Resources\backroud1.jpg" />
     <Content Include="Resources\ChangeGrade.png" />
     <None Include="Resources\Homeroom.png" />
     <None Include="Resources\SendAnnounce.png" />
@@ -590,6 +653,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets" Condition="Exists('..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets')" />
 </Project>

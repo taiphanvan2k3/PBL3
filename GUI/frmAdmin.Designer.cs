@@ -30,19 +30,19 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelClass = new System.Windows.Forms.Panel();
+            this.panelAdd = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.btnAcitivityClass = new FontAwesome.Sharp.IconButton();
             this.btnClassSection = new FontAwesome.Sharp.IconButton();
             this.btnClass = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
-            this.panelAdd = new System.Windows.Forms.Panel();
             this.btnTeacher = new FontAwesome.Sharp.IconButton();
             this.btnStudent = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelClass.SuspendLayout();
             this.panelAdd.SuspendLayout();
@@ -77,6 +77,36 @@
             this.panelClass.Name = "panelClass";
             this.panelClass.Size = new System.Drawing.Size(250, 121);
             this.panelClass.TabIndex = 15;
+            // 
+            // panelAdd
+            // 
+            this.panelAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
+            this.panelAdd.Controls.Add(this.btnTeacher);
+            this.panelAdd.Controls.Add(this.btnStudent);
+            this.panelAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAdd.Location = new System.Drawing.Point(0, 180);
+            this.panelAdd.Name = "panelAdd";
+            this.panelAdd.Size = new System.Drawing.Size(250, 120);
+            this.panelAdd.TabIndex = 12;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.btnMenu);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 60);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1012, 673);
+            this.panelChildForm.TabIndex = 2;
             // 
             // btnAcitivityClass
             // 
@@ -167,17 +197,6 @@
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // panelAdd
-            // 
-            this.panelAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
-            this.panelAdd.Controls.Add(this.btnTeacher);
-            this.panelAdd.Controls.Add(this.btnStudent);
-            this.panelAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdd.Location = new System.Drawing.Point(0, 180);
-            this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(250, 120);
-            this.panelAdd.TabIndex = 12;
             // 
             // btnTeacher
             // 
@@ -271,16 +290,6 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.btnMenu);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(250, 60);
-            this.panelLogo.TabIndex = 0;
-            // 
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -300,22 +309,14 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::GUI.Properties.Resources._338313717_162862019998089_3577123447925415259_n;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1012, 673);
-            this.panelChildForm.TabIndex = 2;
             // 
             // frmAdmin
             // 

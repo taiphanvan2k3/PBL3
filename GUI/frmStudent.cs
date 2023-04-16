@@ -200,7 +200,7 @@ namespace GUI
              * và chú ý là Close() thôi chứ chưa Dispose() nên vd ở 1 lớp nào đó vẫn có thể truy cập
              * đến thuộc tính của form này thông qua đối tượng của form
              */
-            UtilityClass.OpenNewForm(this, new frmLogin());
+            UtilityClass.OpenNewForm(this, new frmDesignLogin());
         }
 
         private void LoadStudentInfo()

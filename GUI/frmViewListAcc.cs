@@ -61,6 +61,7 @@ namespace GUI
             dgvViewAcc.Columns.Insert(0, checkBoxColumn);
             TotalCheckBoxes = dgvViewAcc.RowCount;
             TotalCheckedCheckBoxes = 0;
+            dgvViewAcc.Columns["TaiKhoan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void dgvSelectAll_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -202,7 +203,20 @@ namespace GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            //DataGridViewRow row = dgvViewAcc.CurrentRow;
+            //string mssv = row.Cells[2].Value.ToString();
+            //MessageBox.Show(mssv);
+            //if (GetInformationAcc_BLL.Instance.DeleteStudent(mssv)) {
+            //    MessageBox.Show("Thanfh cong");
+            //}
+            //if (GetInformationAcc_BLL.Instance.DeleteUser(mssv))
+            //{
+            //    MessageBox.Show("Thanfh cong");
+            //}
+            //if (GetInformationAcc_BLL.Instance.DeleteLoginInfo(mssv))
+            //{
+            //    MessageBox.Show("Thanfh cong");
+            //}
             foreach (var item in listOfStudentCodesToDelete)
             {
                 if (GetInformationAcc_BLL.Instance.DeleteData(role, item))

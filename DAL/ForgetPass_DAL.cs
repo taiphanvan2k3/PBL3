@@ -27,7 +27,7 @@ namespace DAL
         private PBL3Entities modelPBL3Entities1 = new PBL3Entities();
 
 
-
+        // Gửi 1 mã đến mail 
         public THONG_TIN_DANG_NHAP SendPass(string email)
         {
             var user = modelPBL3Entities1.NGUOI_DUNG.SingleOrDefault(p => p.EmailTruongCap.Equals(email));
@@ -54,7 +54,7 @@ namespace DAL
             if (thongTinDangNhap == null) return false;
             return thongTinDangNhap.MaXacThucDeLayLaiMK.Equals(maXacThuc);
         }
-
+        // Cập nhật lại mật khẩu
         public bool updatePass(string username,string pass)
         {
             var thongTinDangNhap = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
@@ -67,7 +67,7 @@ namespace DAL
         }
 
 
-        // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công
+        // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công hoặc sau 30s kể từ lúc gửi mã
         public bool resetVerification(string email)
         {
             THONG_TIN_DANG_NHAP userInfo = SendPass(email);

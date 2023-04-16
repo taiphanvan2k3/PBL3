@@ -207,6 +207,7 @@ namespace GUI
             UtilityClass.OpenNewForm(this, new frmLogin());
         }
 
+        // gắn datasource
         private void btnStudent_Click(object sender, EventArgs e)
         {
             openChildForm(new frmViewListAcc(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(), 0));

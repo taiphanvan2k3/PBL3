@@ -147,6 +147,8 @@ namespace GUI
             }
         }
 
+
+
         private void panelTitle_MouseUp(object sender, MouseEventArgs e)
         {
             move = false;

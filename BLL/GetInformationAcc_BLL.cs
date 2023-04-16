@@ -144,5 +144,23 @@ namespace BLL
             return GetInformationAcc_DAL.Instance.DeleteData(role, maTaiKhoan);
         }
 
+        public bool DeleteStudent(string maSV)
+        {
+               return GetInformationAcc_DAL.Instance.DeleteStudent(maSV);   
+        }
+
+        public bool DeleteUser(string maSV)
+        {
+            return GetInformationAcc_DAL.Instance.DeleteUser(maSV);
+
+        }
+
+        public bool DeleteLoginInfo(string maSV)
+        {
+            return GetInformationAcc_DAL.Instance.DeleteLoginInfo(maSV);
+
+        }
+
+
     }
 }

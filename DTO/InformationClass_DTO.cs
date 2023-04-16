@@ -8,8 +8,8 @@ namespace DTO
 {
     public class InformationClass_DTO
     {
-        public string MaLopHP { get; set; }
-        public string TenLopHP { get; set; }
+        public string MaLop { get; set; }
+        public string TenLop { get; set; }
         public string TenGV { get; set; }
     }
 }

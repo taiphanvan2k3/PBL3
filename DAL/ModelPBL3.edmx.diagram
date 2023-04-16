@@ -49,7 +49,6 @@
         <AssociationConnector Association="PBL3Model.BAIKIEMTRA_CAUHOI" ManuallyRouted="false" />
         <AssociationConnector Association="PBL3Model.THONGBAO_LOPHOCPHAN" ManuallyRouted="false" />
         <AssociationConnector Association="PBL3Model.FK_MaKhoa_MonHoc" />
-        <EntityTypeShape EntityType="PBL3Model.sysdiagram" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
