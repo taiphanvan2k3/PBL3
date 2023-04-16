@@ -17,7 +17,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CAU_HOI()
         {
-            this.BAI_KIEM_TRA = new HashSet<BAI_KIEM_TRA>();
+            this.BAIKIEMTRA_CAUHOI = new HashSet<BAIKIEMTRA_CAUHOI>();
         }
     
         public int MaCauHoi { get; set; }
@@ -29,8 +29,8 @@ namespace DAL
         public string DapAnDung { get; set; }
         public string MaMH { get; set; }
     
-        public virtual MON_HOC MON_HOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BAI_KIEM_TRA> BAI_KIEM_TRA { get; set; }
+        public virtual ICollection<BAIKIEMTRA_CAUHOI> BAIKIEMTRA_CAUHOI { get; set; }
+        public virtual MON_HOC MON_HOC { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace GUI.MyUserControls
         }
         public void loadData()
         {
-            DataRow dt = frmLogin.dataUser;
+            DataRow dt = frmDesignLogin.dataUser;
 
             lbIDGV.Text = dt["MaGV"].ToString();
             lbFirstName.Text = dt["Ho"].ToString();

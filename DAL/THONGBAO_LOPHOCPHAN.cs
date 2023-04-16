@@ -12,13 +12,13 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class SINHVIEN_LOPHOCPHAN
+    public partial class THONGBAO_LOPHOCPHAN
     {
+        public int MaTB { get; set; }
         public string MaLopHP { get; set; }
-        public string MaSV { get; set; }
         public string MoTa { get; set; }
     
         public virtual LOP_HOC_PHAN LOP_HOC_PHAN { get; set; }
-        public virtual SINH_VIEN SINH_VIEN { get; set; }
+        public virtual THONG_BAO THONG_BAO { get; set; }
     }
 }

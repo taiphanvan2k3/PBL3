@@ -29,8 +29,8 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAU_HOI> CAU_HOI { get; set; }
+        public virtual KHOA KHOA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOP_HOC_PHAN> LOP_HOC_PHAN { get; set; }
-        public virtual KHOA KHOA { get; set; }
     }
 }

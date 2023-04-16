@@ -22,6 +22,7 @@ namespace DAL
     
         public string MaLopSH { get; set; }
         public string MaGVCN { get; set; }
+        public Nullable<int> SoLuongToiDa { get; set; }
     
         public virtual GIANG_VIEN GIANG_VIEN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

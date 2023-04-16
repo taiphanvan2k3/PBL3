@@ -18,9 +18,9 @@ namespace DAL
         public LOP_HOC_PHAN()
         {
             this.BAI_KIEM_TRA = new HashSet<BAI_KIEM_TRA>();
+            this.THONGBAO_LOPHOCPHAN = new HashSet<THONGBAO_LOPHOCPHAN>();
             this.SINHVIEN_LOPHOCPHAN = new HashSet<SINHVIEN_LOPHOCPHAN>();
             this.THOI_KHOA_BIEU = new HashSet<THOI_KHOA_BIEU>();
-            this.THONG_BAO = new HashSet<THONG_BAO>();
         }
     
         public string MaLopHP { get; set; }
@@ -28,16 +28,17 @@ namespace DAL
         public string MaGV { get; set; }
         public int KiHoc { get; set; }
         public int NamHoc { get; set; }
+        public int SoLuongToiDa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BAI_KIEM_TRA> BAI_KIEM_TRA { get; set; }
         public virtual GIANG_VIEN GIANG_VIEN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<THONGBAO_LOPHOCPHAN> THONGBAO_LOPHOCPHAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SINHVIEN_LOPHOCPHAN> SINHVIEN_LOPHOCPHAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<THOI_KHOA_BIEU> THOI_KHOA_BIEU { get; set; }
         public virtual MON_HOC MON_HOC { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<THONG_BAO> THONG_BAO { get; set; }
     }
 }
