@@ -60,10 +60,6 @@
             this.txtMaGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNamHoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtHocKy = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblThu = new System.Windows.Forms.Label();
-            this.lblPhong = new System.Windows.Forms.Label();
-            this.lblTietBD = new System.Windows.Forms.Label();
-            this.lblTietKT = new System.Windows.Forms.Label();
             this.txtTenGV = new GUI.MyCustomControl.CustomTextBox();
             this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.txtTenMH = new GUI.MyCustomControl.CustomTextBox();
