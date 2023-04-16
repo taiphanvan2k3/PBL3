@@ -67,7 +67,7 @@ namespace DAL
         }
 
 
-        // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công hoặc sau 30s kể từ lúc gửi mã
+        // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công hoặc sau 120s kể từ lúc gửi mã
         public bool resetVerification(string email)
         {
             THONG_TIN_DANG_NHAP userInfo = SendPass(email);
