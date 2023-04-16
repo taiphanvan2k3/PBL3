@@ -197,9 +197,10 @@
             this.btnXemLich.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXemLich.Location = new System.Drawing.Point(506, 76);
             this.btnXemLich.Name = "btnXemLich";
+            this.btnXemLich.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnXemLich.Size = new System.Drawing.Size(177, 40);
             this.btnXemLich.TabIndex = 15;
-            this.btnXemLich.Text = "   Xem lịch học";
+            this.btnXemLich.Text = "     Xem lịch học";
             this.btnXemLich.TextColor = System.Drawing.Color.Red;
             this.btnXemLich.UseVisualStyleBackColor = false;
             this.btnXemLich.Click += new System.EventHandler(this.btnXemLich_Click);

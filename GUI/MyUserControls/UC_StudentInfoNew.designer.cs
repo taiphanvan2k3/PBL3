@@ -59,18 +59,18 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pnlDiaChi = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSoDuong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.label3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlThongTinDaoTao = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txtLopSH = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtCTDT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtKhoa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutRight = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
+            this.txtKhoa = new System.Windows.Forms.Label();
+            this.txtCTDT = new System.Windows.Forms.Label();
+            this.txtLopSH = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -565,6 +565,21 @@
             this.txtSoDuong.Size = new System.Drawing.Size(419, 40);
             this.txtSoDuong.TabIndex = 15;
             // 
+            // uC_AddressSelection
+            // 
+            this.uC_AddressSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uC_AddressSelection.BackColor = System.Drawing.Color.Moccasin;
+            this.uC_AddressSelection.Background = System.Drawing.Color.Moccasin;
+            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.IndianRed;
+            this.uC_AddressSelection.Location = new System.Drawing.Point(3, 90);
+            this.uC_AddressSelection.Name = "uC_AddressSelection";
+            this.uC_AddressSelection.QuanHuyen = "";
+            this.uC_AddressSelection.Size = new System.Drawing.Size(574, 177);
+            this.uC_AddressSelection.TabIndex = 24;
+            this.uC_AddressSelection.TinhThanhPho = "";
+            this.uC_AddressSelection.XaPhuong = "";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -611,81 +626,6 @@
             this.pnlThongTinDaoTao.TabIndex = 24;
             this.pnlThongTinDaoTao.Text = "Thông tin đào tạo";
             this.pnlThongTinDaoTao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLopSH
-            // 
-            this.txtLopSH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLopSH.BorderColor = System.Drawing.Color.IndianRed;
-            this.txtLopSH.BorderRadius = 8;
-            this.txtLopSH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLopSH.DefaultText = "";
-            this.txtLopSH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLopSH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLopSH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLopSH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLopSH.Enabled = false;
-            this.txtLopSH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLopSH.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLopSH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtLopSH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLopSH.Location = new System.Drawing.Point(239, 134);
-            this.txtLopSH.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtLopSH.Name = "txtLopSH";
-            this.txtLopSH.PasswordChar = '\0';
-            this.txtLopSH.PlaceholderText = "";
-            this.txtLopSH.SelectedText = "";
-            this.txtLopSH.Size = new System.Drawing.Size(328, 40);
-            this.txtLopSH.TabIndex = 30;
-            // 
-            // txtCTDT
-            // 
-            this.txtCTDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCTDT.BorderColor = System.Drawing.Color.IndianRed;
-            this.txtCTDT.BorderRadius = 8;
-            this.txtCTDT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCTDT.DefaultText = "";
-            this.txtCTDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCTDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCTDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCTDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCTDT.Enabled = false;
-            this.txtCTDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCTDT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCTDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtCTDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCTDT.Location = new System.Drawing.Point(239, 88);
-            this.txtCTDT.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtCTDT.Name = "txtCTDT";
-            this.txtCTDT.PasswordChar = '\0';
-            this.txtCTDT.PlaceholderText = "";
-            this.txtCTDT.SelectedText = "";
-            this.txtCTDT.Size = new System.Drawing.Size(328, 40);
-            this.txtCTDT.TabIndex = 29;
-            // 
-            // txtKhoa
-            // 
-            this.txtKhoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhoa.BorderColor = System.Drawing.Color.IndianRed;
-            this.txtKhoa.BorderRadius = 8;
-            this.txtKhoa.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtKhoa.DefaultText = "";
-            this.txtKhoa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtKhoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtKhoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtKhoa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtKhoa.Enabled = false;
-            this.txtKhoa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtKhoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtKhoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtKhoa.Location = new System.Drawing.Point(239, 45);
-            this.txtKhoa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtKhoa.Name = "txtKhoa";
-            this.txtKhoa.PasswordChar = '\0';
-            this.txtKhoa.PlaceholderText = "";
-            this.txtKhoa.SelectedText = "";
-            this.txtKhoa.Size = new System.Drawing.Size(328, 40);
-            this.txtKhoa.TabIndex = 25;
             // 
             // label18
             // 
@@ -763,20 +703,38 @@
             this.btnSave.Text = "Lưu thông tin cá thân";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // uC_AddressSelection
+            // txtKhoa
             // 
-            this.uC_AddressSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_AddressSelection.BackColor = System.Drawing.Color.Moccasin;
-            this.uC_AddressSelection.Background = System.Drawing.Color.Moccasin;
-            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.IndianRed;
-            this.uC_AddressSelection.Location = new System.Drawing.Point(3, 90);
-            this.uC_AddressSelection.Name = "uC_AddressSelection";
-            this.uC_AddressSelection.QuanHuyen = "";
-            this.uC_AddressSelection.Size = new System.Drawing.Size(574, 177);
-            this.uC_AddressSelection.TabIndex = 24;
-            this.uC_AddressSelection.TinhThanhPho = "";
-            this.uC_AddressSelection.XaPhuong = "";
+            this.txtKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtKhoa.AutoSize = true;
+            this.txtKhoa.BackColor = System.Drawing.Color.Transparent;
+            this.txtKhoa.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtKhoa.Location = new System.Drawing.Point(287, 52);
+            this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.Size = new System.Drawing.Size(0, 23);
+            this.txtKhoa.TabIndex = 28;
+            // 
+            // txtCTDT
+            // 
+            this.txtCTDT.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCTDT.AutoSize = true;
+            this.txtCTDT.BackColor = System.Drawing.Color.Transparent;
+            this.txtCTDT.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtCTDT.Location = new System.Drawing.Point(287, 93);
+            this.txtCTDT.Name = "txtCTDT";
+            this.txtCTDT.Size = new System.Drawing.Size(0, 23);
+            this.txtCTDT.TabIndex = 29;
+            // 
+            // txtLopSH
+            // 
+            this.txtLopSH.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLopSH.AutoSize = true;
+            this.txtLopSH.BackColor = System.Drawing.Color.Transparent;
+            this.txtLopSH.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtLopSH.Location = new System.Drawing.Point(287, 143);
+            this.txtLopSH.Name = "txtLopSH";
+            this.txtLopSH.Size = new System.Drawing.Size(0, 23);
+            this.txtLopSH.TabIndex = 30;
             // 
             // UC_StudentInfoNew
             // 
@@ -848,9 +806,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtEmailCaNhan;
         private Guna.UI2.WinForms.Guna2TextBox txtSoDuong;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutRight;
-        private Guna.UI2.WinForms.Guna2TextBox txtLopSH;
-        private Guna.UI2.WinForms.Guna2TextBox txtCTDT;
-        private Guna.UI2.WinForms.Guna2TextBox txtKhoa;
         private Guna.UI2.WinForms.Guna2Button btnSave;
+        private System.Windows.Forms.Label txtLopSH;
+        private System.Windows.Forms.Label txtCTDT;
+        private System.Windows.Forms.Label txtKhoa;
     }
 }

@@ -44,12 +44,6 @@ namespace GUI.MyUserControls
         {
             //Hàm này sẽ được gọi thủ công sau khi UC này được add vào panel
             li = SinhVien_BLL.GetSinhVienInLopSH(MaLopSH);
-            //Test di chuyển trang
-            li.AddRange(li);
-            li.AddRange(li);
-            li.AddRange(li);
-            li.AddRange(li);
-            li.AddRange(li);
             lblSoLuongSV.Text = "Danh sách này có: " + li.Count + " sinh viên.";
 
             //Hiển thị dữ liệu lên datagridview
