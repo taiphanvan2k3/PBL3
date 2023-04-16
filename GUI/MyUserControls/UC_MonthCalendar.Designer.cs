@@ -156,7 +156,7 @@
             this.btnNext.BackColor = System.Drawing.Color.Transparent;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Image = global::GUI.Properties.Resources.right_arrow;
+            //this.btnNext.Image = global::GUI.Properties.Resources.right_arrow;
             this.btnNext.Location = new System.Drawing.Point(254, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(40, 40);

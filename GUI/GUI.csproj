@@ -192,24 +192,6 @@
     <Compile Include="frmAssignTeacher.Designer.cs">
       <DependentUpon>frmAssignTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCheckEmail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCheckEmail.Designer.cs">
-      <DependentUpon>frmCheckEmail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEnterDigitCode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEnterDigitCode.Designer.cs">
-      <DependentUpon>frmEnterDigitCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,23 +216,11 @@
     <Compile Include="frmExam.Designer.cs">
       <DependentUpon>frmExam.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmForgetPass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmForgetPass.Designer.cs">
-      <DependentUpon>frmForgetPass.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTeacher.Designer.cs">
       <DependentUpon>frmTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmValidPass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmValidPass.Designer.cs">
-      <DependentUpon>frmValidPass.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViewDetailModuleClass.cs">
       <SubType>Form</SubType>
@@ -437,20 +407,11 @@
     <EmbeddedResource Include="frmAssignTeacher.resx">
       <DependentUpon>frmAssignTeacher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCheckEmail.resx">
-      <DependentUpon>frmCheckEmail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEnterDigitCode.resx">
-      <DependentUpon>frmEnterDigitCode.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmExam.resx">
       <DependentUpon>frmExam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMessageBox.resx">
       <DependentUpon>frmMessageBox.cs</DependentUpon>
@@ -461,14 +422,8 @@
     <EmbeddedResource Include="frmTaoCauHoi.resx">
       <DependentUpon>frmTaoCauHoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmForgetPass.resx">
-      <DependentUpon>frmForgetPass.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmTeacher.resx">
       <DependentUpon>frmTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmValidPass.resx">
-      <DependentUpon>frmValidPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewDetailModuleClass.resx">
       <DependentUpon>frmViewDetailModuleClass.cs</DependentUpon>
