@@ -80,5 +80,9 @@ namespace BLL
         {
             GiangVien_DAL.Instance.AssignTeacherToSectionClass(id, thu, TietBD, TietKT, phong, MaLHP);
         }
+        public void AssignTeacherNoChangeSchedule(string id, string MaLHP)
+        {
+            GiangVien_DAL.Instance.AssignTeacherNoChangeSchedule(id, MaLHP);
+        }
     }
 }

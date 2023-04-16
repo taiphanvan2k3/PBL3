@@ -60,6 +60,10 @@
             this.txtMaGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNamHoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtHocKy = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblThu = new System.Windows.Forms.Label();
+            this.lblPhong = new System.Windows.Forms.Label();
+            this.lblTietBD = new System.Windows.Forms.Label();
+            this.lblTietKT = new System.Windows.Forms.Label();
             this.txtTenGV = new GUI.MyCustomControl.CustomTextBox();
             this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.txtTenMH = new GUI.MyCustomControl.CustomTextBox();
@@ -399,36 +403,32 @@
             this.lblTietKT.AutoSize = true;
             this.lblTietKT.Location = new System.Drawing.Point(186, 139);
             this.lblTietKT.Name = "lblTietKT";
-            this.lblTietKT.Size = new System.Drawing.Size(52, 20);
+            this.lblTietKT.Size = new System.Drawing.Size(0, 20);
             this.lblTietKT.TabIndex = 6;
-            this.lblTietKT.Text = "_Tiết 5";
             // 
             // lblTietBD
             // 
             this.lblTietBD.AutoSize = true;
             this.lblTietBD.Location = new System.Drawing.Point(95, 139);
             this.lblTietBD.Name = "lblTietBD";
-            this.lblTietBD.Size = new System.Drawing.Size(52, 20);
+            this.lblTietBD.Size = new System.Drawing.Size(0, 20);
             this.lblTietBD.TabIndex = 5;
-            this.lblTietBD.Text = "_Tiết 4";
             // 
             // lblPhong
             // 
             this.lblPhong.AutoSize = true;
             this.lblPhong.Location = new System.Drawing.Point(96, 96);
             this.lblPhong.Name = "lblPhong";
-            this.lblPhong.Size = new System.Drawing.Size(50, 20);
+            this.lblPhong.Size = new System.Drawing.Size(0, 20);
             this.lblPhong.TabIndex = 4;
-            this.lblPhong.Text = "_H202";
             // 
             // lblThu
             // 
             this.lblThu.AutoSize = true;
             this.lblThu.Location = new System.Drawing.Point(95, 54);
             this.lblThu.Name = "lblThu";
-            this.lblThu.Size = new System.Drawing.Size(61, 20);
+            this.lblThu.Size = new System.Drawing.Size(0, 20);
             this.lblThu.TabIndex = 3;
-            this.lblThu.Text = "_Thứ ba";
             // 
             // txtMaGV
             // 

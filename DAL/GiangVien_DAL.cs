@@ -71,17 +71,6 @@ namespace DAL
         }
         public void AssignTeacherToSectionClass(string id, string thu, int TietBD, int TietKT, string phong, string maLHP)
         {
-            /*var query = db.THOI_KHOA_BIEU
-                        .Join(db.LOP_HOC_PHAN, tkb => tkb.MaLopHP, lhp => lhp.MaLopHP, (tkb, lhp) => new { TKB = tkb, LHP = lhp })
-                        .Where(x => x.LHP.MaLopHP == maLHP);
-            foreach(var i in query)
-            {
-                i.LHP.MaGV = id;
-                i.TKB.Thu = thu;
-                i.TKB.TietBD = Convert.ToByte(TietBD);
-                i.TKB.TietKetThuc = Convert.ToByte(TietKT);
-                i.TKB.MaPhongHoc = phong;
-            }*/
             var query = db.LOP_HOC_PHAN.Where(lhp => lhp.MaLopHP == maLHP).FirstOrDefault();
             query.MaGV = id;
             var RecordToDelete = db.THOI_KHOA_BIEU.FirstOrDefault(x => x.LOP_HOC_PHAN.MaLopHP == maLHP);
@@ -99,6 +88,12 @@ namespace DAL
                 TietKetThuc = Convert.ToByte(TietKT)
             };
             db.THOI_KHOA_BIEU.Add(NewRecord);
+            db.SaveChanges();
+        }
+        public void AssignTeacherNoChangeSchedule(string id, string maLHP)
+        {
+            var query = db.LOP_HOC_PHAN.Where(lhp => lhp.MaLopHP == maLHP).FirstOrDefault();
+            query.MaGV = id;
             db.SaveChanges();
         }
     }
