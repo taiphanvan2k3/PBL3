@@ -1,11 +1,17 @@
 ﻿using GUI.MyCustomControl;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
-    public partial class UC_Calendar : UserControl
+    public partial class UC_Calendar_New : UserControl
     {
         #region Properties
         private Size formOriginalSize;
@@ -25,7 +31,7 @@ namespace GUI.MyUserControls
                 lbFriday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSaturday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSunday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58,59,60));
+                btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 btnPrevious.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
@@ -38,10 +44,10 @@ namespace GUI.MyUserControls
         }
         #endregion
         int MONTH, YEAR;
-        CustomButton[,] btn = new CustomButton[6, 7];
+        UC_Day[,] btn = new UC_Day[6, 7];
         //Button[,] btn = new Button[6, 7];
         String[,] dTime = new String[6, 7];
-        public UC_Calendar()
+        public UC_Calendar_New()
         {
             InitializeComponent();
             init();
@@ -55,16 +61,9 @@ namespace GUI.MyUserControls
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
-                    btn[i, j] = new CustomButton();
-                    btn[i, j].BorderSize = 1;
-                    btn[i, j].BorderColor = Color.Black;
-                    btn[i, j].BorderRadius = 20;
-                    btn[i, j].Font = new Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    btn[i, j].Size = new Size(152, 82);
+                    btn[i, j] = new UC_Day();
                     btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
-                    btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                    btn[i, j].FlatStyle = FlatStyle.Flat;
-                    btn[i, j].FlatAppearance.BorderSize = 1;
+                    btn[i, j].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
                     btn[i, j].Click += buttonDate_Click;
                     tableLayoutPanel1.Controls.Add(btn[i, j]);
                 }
@@ -130,10 +129,12 @@ namespace GUI.MyUserControls
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
+                    btn[i,j].ColorDay = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
+                    btn[i, j].BoderDay = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].Size = new Size((int)(btn[i, j].Width * xRatio), (int)(btn[i, j].Height * yRatio));
                     btn[i, j].Location = new Point((int)(btn[i, j].Location.X * xRatio), (int)(btn[i, j].Location.Y * yRatio));
                     btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
-                    btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                    btn[i, j].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
                     dTime[i, j] = "";
                 }
             formOriginalSize = this.Size;
@@ -156,11 +157,27 @@ namespace GUI.MyUserControls
             int I = 0, J = start;
             for (int i = 1; i <= day; i++)
             {
-                btn[I, J].Text = i.ToString();
-                btn[I, J].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                btn[I, J].Day = i.ToString();
+                btn[I, J].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 if (i == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
-                    btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
+                {
+                    btn[I, J].ColorDay = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
+                    btn[I, J].BoderDay = ((colorBack == Color.White) ? Color.DeepSkyBlue : Color.FromArgb(238, 191, 109));
+                }
+                //Test đặt event 1 ngày 
+                if (i == 18 && month == 4 && year == 2023)
+                {
+                    btn[I, J].PanelEventColor = Color.FromArgb(255, 192, 128);
+                    btn[I, J].Exam = "Giữa kì";
+                    btn[I, J].IfMore = "+ 1 more";
+                }
+                if (i == 27 && month == 4 && year == 2023)
+                {
+                    btn[I, J].PanelEventColor = Color.SpringGreen;
+                    btn[I, J].Exam = "Cuối kì";
+                    btn[I, J].IfMore = "+ 3 more";
+                }
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year != YEAR && MONTH == month + 1 && i == day)
                 {
@@ -176,15 +193,21 @@ namespace GUI.MyUserControls
             //Determine phần ngày của tháng trước đó
             for (int i = start - 1; i >= 0; i--)
             {
-                btn[0, i].Text = (pday-- + "");
-                btn[0, i].BackColor = ((colorBack == Color.White) ? Color.Gray : colorBack);
+                btn[0, i].Day = (pday-- + "");
+                btn[0, i].ColorTextDay = ((colorBack == Color.White) ? Color.Gray : colorBack);
+                btn[0, i].BackColor = ((colorBack == Color.White) ? Color.LightGray : colorBack);
+                btn[0, i].ColorDay = ((colorBack == Color.White) ? Color.LightGray : colorBack);
+                btn[0, i].BoderDay = ((colorBack == Color.White) ? Color.LightGray : colorBack);
             }
             //Determine phần ngày của tháng sau đó
             int st = 1;
             while (!(I == 6 && J == 0))
             {
-                btn[I, J].Text = (st++ + "");
-                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.Gray : colorBack);
+                btn[I, J].Day = (st++ + "");
+                btn[I, J].ColorTextDay = ((colorBack == Color.White) ? Color.Gray : colorBack);
+                btn[I, J].BackColor = ((colorBack == Color.White) ? Color.LightGray : colorBack);
+                btn[I, J].ColorDay = ((colorBack == Color.White) ? Color.LightGray : colorBack);
+                btn[I, J].BoderDay = ((colorBack == Color.White) ? Color.LightGray : colorBack);
                 J++;
                 if (J == 7)
                 {
@@ -265,7 +288,9 @@ namespace GUI.MyUserControls
 
         private void Form2_Load(object sender, EventArgs e)
         {
+
             buttonToday_Click(sender, e);
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
