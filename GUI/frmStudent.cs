@@ -14,7 +14,7 @@ namespace GUI
         {
             InitializeComponent();
             uC_StudentInfoNew = new UC_StudentInfoNew();
-            MSSV = "101190001";
+            MSSV = "101180002";
             state = SelectionState.Home;
         }
 

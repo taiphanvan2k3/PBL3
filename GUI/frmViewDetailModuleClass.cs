@@ -49,7 +49,7 @@ namespace GUI
         }
         public void LoadData()
         {
-            MaHP = "CSDL21.13";
+            MaHP = "OOAD21.13";
             lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
             txtMaHP.Text = lhp.MaHP;
             txtTenMH.Texts = lhp.TenHP;
@@ -87,6 +87,9 @@ namespace GUI
         private void btnPhanCongGV_Click(object sender, EventArgs e)
         {
             frmAssignTeacher frm = new frmAssignTeacher();
+            if (lhp.Thu != "")
+                frm.checkHaveSchedule = true;
+            else frm.checkHaveSchedule = false;
             frm.MaHP = txtMaHP.Text;
             frm.TenMH = txtTenMH.Texts;
             frm.MaGV = txtMaGV.Text;
@@ -166,6 +169,30 @@ namespace GUI
             {
                 CustomMessageBox.Show("Lớp học phần chưa được xếp thời khoá biểu.\nKhông thể thêm sinh viên",
                                  "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dtgv.SelectedRows.Count > 0)
+            {
+                List<string> li = new List<string>();
+                foreach (DataGridViewRow r in dtgv.SelectedRows)
+                {
+                    li.Add(r.Cells["MSSV"].Value.ToString());
+                }
+                DialogResult result = CustomMessageBox.Show("Các sinh viên này sẽ bị xoá khỏi lớp học phần." +
+                        "\nBạn có chắc chắn không?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    if (LopHocPhan_BLL.Instance.DeleteStudent(MaHP, li))
+                    {
+                        CustomMessageBox.Show("Đã xoá thành công " + li.Count + "  sinh viên");
+                        LoadDataGridView();
+                    }    
+                }
+                else
+                    CustomMessageBox.Show("Thao tác xoá đã bị huỷ.");
             }
         }
     }

@@ -22,6 +22,10 @@ namespace BLL
             return false;
         }
 
+        public static string GetNameOfHomeroomClass(string MSSV)
+        {
+            return SinhVien_DAL.GetNameOfHomeroomClass(MSSV);
+        }
         public static SinhVien_DTO GetSinhVienById(string id)
         {
             SINH_VIEN sv = SinhVien_DAL.GetSinhVienById(id);

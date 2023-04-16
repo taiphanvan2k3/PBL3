@@ -63,6 +63,7 @@
     <Compile Include="GetInformationAcc_BLL.cs" />
     <Compile Include="GiangVien_BLL.cs" />
     <Compile Include="LopHocPhan_BLL.cs" />
+    <Compile Include="LopSinhHoat_BLL.cs" />
     <Compile Include="MoveFormHelper.cs" />
     <Compile Include="PhuHuynh_BLL.cs" />
     <Compile Include="QuanLyDiem_BLL.cs" />

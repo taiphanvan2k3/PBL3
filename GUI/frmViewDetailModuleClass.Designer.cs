@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new GUI.MyCustomControl.CustomButton();
+            this.btnAddSV = new GUI.MyCustomControl.CustomButton();
             this.lblCurrentPage = new System.Windows.Forms.Label();
             this.btnNext = new FontAwesome.Sharp.IconButton();
             this.btnPrev = new FontAwesome.Sharp.IconButton();
@@ -59,11 +61,6 @@
             this.txtNamHoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtHocKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenGV = new GUI.MyCustomControl.CustomTextBox();
-            this.btnExit = new GUI.MyCustomControl.CustomButton();
-            this.btnUndo = new GUI.MyCustomControl.CustomButton();
-            this.btnUpdate = new GUI.MyCustomControl.CustomButton();
-            this.btnPhanCongGV = new GUI.MyCustomControl.CustomButton();
-            this.btnAddSV = new GUI.MyCustomControl.CustomButton();
             this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.txtTenMH = new GUI.MyCustomControl.CustomTextBox();
             this.cbbSoTC = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -71,6 +68,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnExit = new GUI.MyCustomControl.CustomButton();
+            this.btnUndo = new GUI.MyCustomControl.CustomButton();
+            this.btnUpdate = new GUI.MyCustomControl.CustomButton();
+            this.btnPhanCongGV = new GUI.MyCustomControl.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -146,14 +147,14 @@
             this.dtgv.AllowUserToResizeRows = false;
             this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -161,14 +162,14 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv.EnableHeadersVisualStyles = false;
             this.dtgv.Location = new System.Drawing.Point(40, 53);
             this.dtgv.Name = "dtgv";
@@ -235,6 +236,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnAddSV);
             this.panel2.Controls.Add(this.lblCurrentPage);
             this.panel2.Controls.Add(this.btnNext);
@@ -244,6 +246,50 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1114, 426);
             this.panel2.TabIndex = 20;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnDelete.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.Image = global::GUI.Properties.Resources.DeleteUser;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(771, 7);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(153, 40);
+            this.btnDelete.TabIndex = 25;
+            this.btnDelete.Text = "          Xoá sinh viên";
+            this.btnDelete.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAddSV
+            // 
+            this.btnAddSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnAddSV.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnAddSV.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddSV.BorderRadius = 20;
+            this.btnAddSV.BorderSize = 0;
+            this.btnAddSV.FlatAppearance.BorderSize = 0;
+            this.btnAddSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSV.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddSV.Image = global::GUI.Properties.Resources.AddStudent;
+            this.btnAddSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddSV.Location = new System.Drawing.Point(939, 7);
+            this.btnAddSV.Name = "btnAddSV";
+            this.btnAddSV.Size = new System.Drawing.Size(155, 40);
+            this.btnAddSV.TabIndex = 24;
+            this.btnAddSV.Text = "     Thêm sinh viên";
+            this.btnAddSV.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddSV.UseVisualStyleBackColor = false;
+            this.btnAddSV.Click += new System.EventHandler(this.btnAddSV_Click);
             // 
             // lblCurrentPage
             // 
@@ -476,116 +522,6 @@
             this.txtTenGV.Texts = "";
             this.txtTenGV.UnderlinedStyle = false;
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnExit.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnExit.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnExit.BorderRadius = 20;
-            this.btnExit.BorderSize = 0;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExit.Image = global::GUI.Properties.Resources.exit1;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(860, 770);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(127, 40);
-            this.btnExit.TabIndex = 27;
-            this.btnExit.Text = "       Thoát";
-            this.btnExit.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnUndo
-            // 
-            this.btnUndo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnUndo.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnUndo.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUndo.BorderRadius = 20;
-            this.btnUndo.BorderSize = 0;
-            this.btnUndo.FlatAppearance.BorderSize = 0;
-            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUndo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUndo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUndo.Image = global::GUI.Properties.Resources.Undo32px;
-            this.btnUndo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUndo.Location = new System.Drawing.Point(570, 770);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(127, 40);
-            this.btnUndo.TabIndex = 26;
-            this.btnUndo.Text = "       Hoàn tác";
-            this.btnUndo.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUndo.UseVisualStyleBackColor = false;
-            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnUpdate.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUpdate.BorderRadius = 20;
-            this.btnUpdate.BorderSize = 0;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.Image = global::GUI.Properties.Resources.updated;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(280, 770);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(127, 40);
-            this.btnUpdate.TabIndex = 25;
-            this.btnUpdate.Text = "       Cập nhật";
-            this.btnUpdate.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnPhanCongGV
-            // 
-            this.btnPhanCongGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnPhanCongGV.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnPhanCongGV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPhanCongGV.BorderRadius = 20;
-            this.btnPhanCongGV.BorderSize = 0;
-            this.btnPhanCongGV.FlatAppearance.BorderSize = 0;
-            this.btnPhanCongGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhanCongGV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhanCongGV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPhanCongGV.Image = global::GUI.Properties.Resources.AssignTeacher;
-            this.btnPhanCongGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanCongGV.Location = new System.Drawing.Point(1009, 285);
-            this.btnPhanCongGV.Name = "btnPhanCongGV";
-            this.btnPhanCongGV.Size = new System.Drawing.Size(170, 40);
-            this.btnPhanCongGV.TabIndex = 25;
-            this.btnPhanCongGV.Text = "       Phân công GV";
-            this.btnPhanCongGV.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPhanCongGV.UseVisualStyleBackColor = false;
-            this.btnPhanCongGV.Click += new System.EventHandler(this.btnPhanCongGV_Click);
-            // 
-            // btnAddSV
-            // 
-            this.btnAddSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnAddSV.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
-            this.btnAddSV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddSV.BorderRadius = 20;
-            this.btnAddSV.BorderSize = 0;
-            this.btnAddSV.FlatAppearance.BorderSize = 0;
-            this.btnAddSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddSV.Image = global::GUI.Properties.Resources.pencil;
-            this.btnAddSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddSV.Location = new System.Drawing.Point(939, 7);
-            this.btnAddSV.Name = "btnAddSV";
-            this.btnAddSV.Size = new System.Drawing.Size(155, 40);
-            this.btnAddSV.TabIndex = 24;
-            this.btnAddSV.Text = "     Thêm sinh viên";
-            this.btnAddSV.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddSV.UseVisualStyleBackColor = false;
-            this.btnAddSV.Click += new System.EventHandler(this.btnAddSV_Click);
-            // 
             // panelGradient1
             // 
             this.panelGradient1.BackColor = System.Drawing.Color.White;
@@ -707,6 +643,94 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Số tín chỉ:";
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnExit.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnExit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnExit.BorderRadius = 20;
+            this.btnExit.BorderSize = 0;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.Image = global::GUI.Properties.Resources.exit1;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(860, 770);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(127, 40);
+            this.btnExit.TabIndex = 27;
+            this.btnExit.Text = "       Thoát";
+            this.btnExit.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnUndo.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnUndo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnUndo.BorderRadius = 20;
+            this.btnUndo.BorderSize = 0;
+            this.btnUndo.FlatAppearance.BorderSize = 0;
+            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUndo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUndo.Image = global::GUI.Properties.Resources.Undo32px;
+            this.btnUndo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUndo.Location = new System.Drawing.Point(570, 770);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(127, 40);
+            this.btnUndo.TabIndex = 26;
+            this.btnUndo.Text = "       Hoàn tác";
+            this.btnUndo.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnUpdate.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.BorderSize = 0;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.Image = global::GUI.Properties.Resources.updated;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(280, 770);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(127, 40);
+            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Text = "       Cập nhật";
+            this.btnUpdate.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnPhanCongGV
+            // 
+            this.btnPhanCongGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnPhanCongGV.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(152)))), ((int)(((byte)(173)))));
+            this.btnPhanCongGV.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPhanCongGV.BorderRadius = 20;
+            this.btnPhanCongGV.BorderSize = 0;
+            this.btnPhanCongGV.FlatAppearance.BorderSize = 0;
+            this.btnPhanCongGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhanCongGV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhanCongGV.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPhanCongGV.Image = global::GUI.Properties.Resources.AssignTeacher;
+            this.btnPhanCongGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhanCongGV.Location = new System.Drawing.Point(1009, 285);
+            this.btnPhanCongGV.Name = "btnPhanCongGV";
+            this.btnPhanCongGV.Size = new System.Drawing.Size(170, 40);
+            this.btnPhanCongGV.TabIndex = 25;
+            this.btnPhanCongGV.Text = "       Phân công GV";
+            this.btnPhanCongGV.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPhanCongGV.UseVisualStyleBackColor = false;
+            this.btnPhanCongGV.Click += new System.EventHandler(this.btnPhanCongGV_Click);
+            // 
             // frmViewDetailModuleClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -790,5 +814,6 @@
         private System.Windows.Forms.Label lblPhong;
         private System.Windows.Forms.Label lblThu;
         private FontAwesome.Sharp.IconButton btnArrow;
+        private MyCustomControl.CustomButton btnDelete;
     }
 }

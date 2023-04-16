@@ -109,7 +109,10 @@ namespace GUI.MyUserControls
                 Cha.DiaChi = address;
                 Cha.MoiQuanHe = "Cha - con";
                 if (PhuHuynh_BLL.UpdateParentInfo(Cha, oldFatherName))
+                {
+                    oldFatherName = Cha.TenPH;
                     resultOfSave = "Cập nhật thành công thông tin cha";
+                }         
             }
 
             if (txtTenMe.Text != "")
@@ -129,6 +132,7 @@ namespace GUI.MyUserControls
                     if (resultOfSave == "")
                         resultOfSave = "Cập nhật thành công thông tin mẹ";
                     else resultOfSave = "Cập nhật thành công thông tin cha,mẹ";
+                    oldMotherName = Me.TenPH;
                 }
             }
             if (resultOfSave != "")

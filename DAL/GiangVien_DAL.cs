@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -26,6 +23,11 @@ namespace DAL
         private GiangVien_DAL()
         {
             db = new PBL3Entities();
+        }
+
+        public string GetMaKhoaOfGV(string MaGVCN)
+        {
+            return db.GIANG_VIEN.Where(gv => gv.MaGV == MaGVCN).Select(p => p.MaKhoa).FirstOrDefault();
         }
         public List<string> GetAllTinhThanh()
         {
@@ -53,7 +55,7 @@ namespace DAL
                      .Join(db.NGUOI_DUNG, gv => gv.MaGV, nd => nd.MaNguoiDung, (gv, nd) => new { GiangVien = gv, NguoiDung = nd })
                      .Join(db.LOP_HOC_PHAN, j => j.GiangVien.MaGV, lhp => lhp.MaGV, (j, lhp) => new { GiangVien = j.GiangVien, NguoiDung = j.NguoiDung, LopHocPhan = lhp })
                      .GroupBy(j => new { j.GiangVien.MaGV, HoTen = j.NguoiDung.Ho + " " + j.NguoiDung.Ten, j.NguoiDung.Sdt })
-                     .Select(g => new AssignTeacher{ MaGV = g.Key.MaGV, TenGV = g.Key.HoTen, SDT = g.Key.Sdt, SoLuongHPPhuTrach = g.Count() })
+                     .Select(g => new AssignTeacher { MaGV = g.Key.MaGV, TenGV = g.Key.HoTen, SDT = g.Key.Sdt, SoLuongHPPhuTrach = g.Count() })
                      .ToList();
             return li;
         }
@@ -72,10 +74,10 @@ namespace DAL
             var query = db.LOP_HOC_PHAN.Where(lhp => lhp.MaLopHP == maLHP).FirstOrDefault();
             query.MaGV = id;
             var RecordToDelete = db.THOI_KHOA_BIEU.FirstOrDefault(x => x.LOP_HOC_PHAN.MaLopHP == maLHP);
-            if(RecordToDelete != null )
+            if (RecordToDelete != null)
             {
                 db.THOI_KHOA_BIEU.Remove(RecordToDelete);
-                db.SaveChanges();  
+                db.SaveChanges();
             }
             var NewRecord = new THOI_KHOA_BIEU
             {
