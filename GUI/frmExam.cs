@@ -84,6 +84,8 @@ namespace GUI
         private void btnGrade_Click(object sender, EventArgs e)
         {
             pnlMain.Controls.Clear();
+            UC_Calendar_New test = new UC_Calendar_New();
+            pnlMain.Controls.Add(test);
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)

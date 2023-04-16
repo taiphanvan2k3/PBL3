@@ -74,7 +74,6 @@
     <Compile Include="city.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataProvider.cs" />
     <Compile Include="district.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
@@ -91,6 +90,7 @@
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
     <Compile Include="LopHocPhan_DAL.cs" />
+    <Compile Include="LopSinhHoat_DAL.cs" />
     <Compile Include="LOP_HOC_PHAN.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
@@ -112,6 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelPBL3.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MonHoc_DAL.cs" />
     <Compile Include="MON_HOC.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>

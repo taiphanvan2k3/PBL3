@@ -14,7 +14,7 @@ namespace GUI
         {
             InitializeComponent();
             uC_StudentInfoNew = new UC_StudentInfoNew();
-            MSSV = "101190001";
+            MSSV = "101180002";
             state = SelectionState.Home;
         }
 
@@ -213,16 +213,28 @@ namespace GUI
             uC_StudentInfoNew.NgaySinh = sv.NgaySinh.ToShortDateString();
             uC_StudentInfoNew.NoiSinh = sv.NoiSinh;
             uC_StudentInfoNew.CCCD = sv.MaCCCD;
-            //uC_StudentInfo.DanToc = sv.DanToc;
-            //uC_StudentInfo.QuocTinh = sv.QuocTinh;
+            if (sv.NoiSinh != "")
+            {
+                uC_StudentInfoNew.LoadCBBNoiSinh();
+                uC_StudentInfoNew.NoiSinh = sv.NoiSinh;
+            }
+
+            if (sv.DanToc != "")
+                uC_StudentInfoNew.DanToc = sv.DanToc;
+
+            if (sv.QuocTinh != "")
+                uC_StudentInfoNew.QuocTinh = sv.QuocTinh;
             uC_StudentInfoNew.Khoa = sv.Khoa;
             uC_StudentInfoNew.ChuongTrinhDaoTao = sv.TenCTDT;
             uC_StudentInfoNew.LopSinhHoat = sv.MaLopSH;
             uC_StudentInfoNew.EmailCaNhan = sv.EmailCaNhan;
             uC_StudentInfoNew.EmailTruongCap = sv.EmailTruongCap;
             uC_StudentInfoNew.SoDienThoai = sv.Sdt;
-            uC_StudentInfoNew.SoDuong = sv.DiaChi;
-            uC_StudentInfoNew.SetDiaChi(sv.DiaChi);
+            if (sv.DiaChi != "")
+            {
+                uC_StudentInfoNew.SoDuong = sv.DiaChi.Substring(0, sv.DiaChi.IndexOf(" - "));
+                uC_StudentInfoNew.SetDiaChi(sv.DiaChi);
+            }
         }
         private void frmStudent_Load(object sender, EventArgs e)
         {

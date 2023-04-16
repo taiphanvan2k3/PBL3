@@ -1,17 +1,31 @@
 ﻿using DAL;
 using DTO;
+using Microsoft.SqlServer.Server;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace BLL
 {
     public class SinhVien_BLL
     {
-        public static List<string> GetNoiSinh()
+
+        public static bool ValidateIDStudent(string MSSV)
         {
-            return SinhVien_DAL.GetAllTinhThanh();
+            string pattern = "1[0-9]{8}";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(MSSV);
+            if (match.Success)
+            {
+                return SinhVien_DAL.CheckIdStudentExist(MSSV);
+            }
+            return false;
         }
 
+        public static string GetNameOfHomeroomClass(string MSSV)
+        {
+            return SinhVien_DAL.GetNameOfHomeroomClass(MSSV);
+        }
         public static SinhVien_DTO GetSinhVienById(string id)
         {
             SINH_VIEN sv = SinhVien_DAL.GetSinhVienById(id);
@@ -65,6 +79,11 @@ namespace BLL
                 stt++;
             }
             return res;
+        }
+
+        public static bool UpdateStudentInfo(SinhVien_DTO sv)
+        {
+            return SinhVien_DAL.UpdateStudentInfo(sv);
         }
     }
 }

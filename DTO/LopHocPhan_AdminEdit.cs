@@ -11,6 +11,8 @@ namespace DTO
         public string MaHP { get; set; }
         public string TenHP { get; set; }
         public int SoTc { get; set; }
+        public int KiHoc { get; set; }
+        public int NamHoc { get; set; }
         public string MaGV { get; set; }
         public string HoTenGV { get; set; }
         public string Thu { get; set; }

@@ -126,6 +126,12 @@
     <Compile Include="frmAddAccount.Designer.cs">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddStudentIntoHomeroomClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStudentIntoHomeroomClass.Designer.cs">
+      <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,11 +292,29 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyUserControls\UC_Calendar_New.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_Calendar_New.Designer.cs">
+      <DependentUpon>UC_Calendar_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_CreateTestQuestions.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_CreateTestQuestions.Designer.cs">
       <DependentUpon>UC_CreateTestQuestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_Day.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_Day.Designer.cs">
+      <DependentUpon>UC_Day.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_MonthCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_MonthCalendar.Designer.cs">
+      <DependentUpon>UC_MonthCalendar.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_ParentInfo.cs">
       <SubType>UserControl</SubType>
@@ -392,6 +416,9 @@
     <EmbeddedResource Include="frmDesinEnterDigitCode.resx">
       <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStudentIntoHomeroomClass.resx">
+      <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
     </EmbeddedResource>
@@ -451,6 +478,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyCustomControl\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_Calendar_New.resx">
+      <DependentUpon>UC_Calendar_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_Day.resx">
+      <DependentUpon>UC_Day.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_MonthCalendar.resx">
+      <DependentUpon>UC_MonthCalendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ParentInfo.resx">
       <DependentUpon>UC_ParentInfo.cs</DependentUpon>
@@ -618,15 +654,9 @@
     <None Include="Resources\Yourname.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user %281%29.png" />
-    <None Include="Resources\icons8-user-48.png" />
-    <None Include="Resources\user1.png" />
-    <None Include="Resources\istockphoto-1431931532-170667a.jpg" />
     <None Include="Resources\DarkMode.png" />
     <None Include="Resources\CreateQuestion.png" />
     <None Include="Resources\Calendar_week.png" />
-    <None Include="Resources\backroud.jpg" />
-    <None Include="Resources\backroud1.jpg" />
     <Content Include="Resources\ChangeGrade.png" />
     <None Include="Resources\Homeroom.png" />
     <None Include="Resources\SendAnnounce.png" />

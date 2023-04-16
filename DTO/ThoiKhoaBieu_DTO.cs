@@ -2,8 +2,6 @@
 {
     public class ThoiKhoaBieu_DTO
     {
-
-
         public string Thu { get; set; }
         public int TietBD { get; set; }
         public int TietKT { get; set; }

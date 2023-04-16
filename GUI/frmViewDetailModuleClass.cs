@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -38,6 +39,7 @@ namespace GUI
 
         private void LoadDataGridView()
         {
+            CurrentPage = 1;
             li = LopHocPhan_BLL.Instance.GetSinhVienInLHP(MaHP);
             MaxPage = (int)Math.Ceiling(li.Count * 1.0 / MaxRow);
             helper = new SplitPageHelper<SinhVienLHP_View>(MaxRow, li);
@@ -48,23 +50,27 @@ namespace GUI
         public void LoadData()
         {
             MaHP = "OOAD21.13";
-            if (lhp == null)
-                lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
+            lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
             txtMaHP.Text = lhp.MaHP;
-            txtTenMH.Text = lhp.TenHP;
+            txtTenMH.Texts = lhp.TenHP;
             cbbSoTC.SelectedItem = lhp.SoTc;
+            txtHocKy.Text = lhp.KiHoc.ToString();
+            txtNamHoc.Text = lhp.NamHoc.ToString();
             //Nếu đã phân công giảng viên dạy rồi
             if (!string.IsNullOrEmpty(lhp.MaGV))
             {
                 txtMaGV.Text = lhp.MaGV;
-                txtTenGV.Text = lhp.HoTenGV;
-
+                txtTenGV.Texts = lhp.HoTenGV;
             }
 
-            //Nếu chưa xếp lịch dạy
+
             if (!string.IsNullOrEmpty(lhp.Thu))
             {
-                cbbThu.SelectedItem = lhp.Thu;
+                //Nếu đã xếp lịch dạy
+                lblThu.Text = lhp.Thu;
+                lblPhong.Text = lhp.MaPhong;
+                lblTietBD.Text = "Tiết " + lhp.TietBD;
+                lblTietKT.Text = "Tiết " + lhp.TietKT;
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -78,28 +84,29 @@ namespace GUI
             LoadDataGridView();
         }
 
-        private void cbbTietBD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbTietBD.SelectedIndex >= 0)
-            {
-                int tietBD = Convert.ToInt32(cbbTietBD.SelectedItem);
-                cbbTietKT.Items.Clear();
-                if (tietBD < 5)
-                {
-                    for (int i = tietBD + 1; i <= 5; i++)
-                        cbbTietKT.Items.Add(i);
-                }
-                else
-                {
-                    for (int i = tietBD + 1; i <= 10; i++)
-                        cbbTietKT.Items.Add(i);
-                }
-            }
-        }
-
         private void btnPhanCongGV_Click(object sender, EventArgs e)
         {
             frmAssignTeacher frm = new frmAssignTeacher();
+            if (lhp.Thu != "")
+                frm.checkHaveSchedule = true;
+            else frm.checkHaveSchedule = false;
+            frm.MaHP = txtMaHP.Text;
+            frm.TenMH = txtTenMH.Texts;
+            frm.MaGV = txtMaGV.Text;
+            frm.TenGV = txtTenGV.Texts;
+            if(!string.IsNullOrEmpty(lhp.Thu))
+            {
+                frm.CheckHasSchedule = true;
+                frm.tkb = new ThoiKhoaBieu_DTO
+                {
+                    Thu = lhp.Thu,
+                    Phong = lhp.MaPhong,
+                    TietBD = Convert.ToInt32(lhp.TietBD),
+                    TietKT = Convert.ToInt32(lhp.TietKT)
+                };
+            }
+            else
+                frm.CheckHasSchedule = false;
             frm.ShowDialog();
         }
 
@@ -134,6 +141,59 @@ namespace GUI
         {
             //Lấy lại dữ liệu cũ trước khi edit
             LoadData();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (cbbSoTC.SelectedIndex >= 0)
+            {
+                int SoTC = Convert.ToInt32(cbbSoTC.SelectedItem);
+                if (SoTC != lhp.SoTc)
+                    LopHocPhan_BLL.Instance.UpdateSoTC(MaHP, SoTC);
+            }
+        }
+
+        private void btnAddSV_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lhp.Thu))
+            {
+                //Chỉ có thể thêm sinh viên khi lớp học phần này đã được xếp thời khoá biểu
+                //Một khi đã có thứ trong tuần thì chắc chắn đã có TietBD,TietKT nên có thể ép
+                //kiểu int? thành int
+                frmAddStudent frm = new frmAddStudent(lhp.MaHP, lhp.KiHoc, lhp.Thu,
+                    (int)lhp.TietBD, (int)lhp.TietKT);
+                frm.reloadDTGV += new frmAddStudent.ReloadParentForm(LoadDataGridView);
+                frm.ShowDialog();
+            }
+            else
+            {
+                CustomMessageBox.Show("Lớp học phần chưa được xếp thời khoá biểu.\nKhông thể thêm sinh viên",
+                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dtgv.SelectedRows.Count > 0)
+            {
+                List<string> li = new List<string>();
+                foreach (DataGridViewRow r in dtgv.SelectedRows)
+                {
+                    li.Add(r.Cells["MSSV"].Value.ToString());
+                }
+                DialogResult result = CustomMessageBox.Show("Các sinh viên này sẽ bị xoá khỏi lớp học phần." +
+                        "\nBạn có chắc chắn không?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    if (LopHocPhan_BLL.Instance.DeleteStudent(MaHP, li))
+                    {
+                        CustomMessageBox.Show("Đã xoá thành công " + li.Count + "  sinh viên");
+                        LoadDataGridView();
+                    }    
+                }
+                else
+                    CustomMessageBox.Show("Thao tác xoá đã bị huỷ.");
+            }
         }
     }
 }
