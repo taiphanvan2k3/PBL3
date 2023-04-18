@@ -1,6 +1,5 @@
 ﻿using DAL;
 using DTO;
-using Microsoft.SqlServer.Server;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -85,5 +84,30 @@ namespace BLL
         {
             return SinhVien_DAL.UpdateStudentInfo(sv);
         }
+
+        #region Các hàm xử lí chức năng xem lịch học trong ngày
+        public static int GetKiHocHienTai(string MaSV)
+        {
+            //Nếu sinh viên chưa học môn nào cả thì KiHoc = 0
+            return SinhVien_DAL.GetKiHocHienTai(MaSV);
+        }
+
+        public static List<LopHocPhan_DTO> GetLichHocTrongTuan(string MaSV, int KiHoc)
+        {
+            return SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
+        }
+        public static List<LopHocPhan_DTO> GetLichHocTrongNgay(string MaSV, int KiHoc, string Thu)
+        {
+            var li= SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
+            List<LopHocPhan_DTO> res = new List<LopHocPhan_DTO>();
+            foreach(LopHocPhan_DTO lhp in li)
+            {
+                if (lhp.tkb.Thu == Thu)
+                    res.Add(lhp);
+            }
+            return res;
+        }
+        #endregion
+
     }
 }

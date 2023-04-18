@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
@@ -90,6 +91,21 @@ namespace BLL
                 address += SoDuong + " - " + TinhThanhPho + " - " +
                     QuanHuyen + " - " + XaPhuong;
             return address;
+        }
+
+        public static void SetAlignmentMiddleCenterForColumns(DataGridView dtgv, int NumberOfRow)
+        {
+            List<string> ColumnNames = new List<string>();
+            foreach (DataGridViewColumn column in dtgv.Columns)
+                ColumnNames.Add(column.DataPropertyName);
+
+            dtgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            foreach (string name in ColumnNames)
+            {
+                dtgv.Columns[name].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dtgv.Height = dtgv.ColumnHeadersHeight + NumberOfRow * dtgv.RowTemplate.Height;
         }
     }
 }

@@ -41,6 +41,9 @@ namespace GUI
         {
             CurrentPage = 1;
             li = LopHocPhan_BLL.Instance.GetSinhVienInLHP(MaHP);
+            if (li.Count == 0)
+                lblCurrentPage.Visible = false;
+            else lblCurrentPage.Visible = true;
             MaxPage = (int)Math.Ceiling(li.Count * 1.0 / MaxRow);
             helper = new SplitPageHelper<SinhVienLHP_View>(MaxRow, li);
             dtgv.Columns.Clear();

@@ -168,6 +168,12 @@
     <Compile Include="frmDesinEnterDigitCode.Designer.cs">
       <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViewDetailHomeroomClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewDetailHomeroomClass.Designer.cs">
+      <DependentUpon>frmViewDetailHomeroomClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmViewListAcc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudentIntoHomeroomClass.resx">
       <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewDetailHomeroomClass.resx">
+      <DependentUpon>frmViewDetailHomeroomClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
@@ -613,6 +622,7 @@
     <None Include="Resources\DarkMode.png" />
     <None Include="Resources\CreateQuestion.png" />
     <None Include="Resources\Calendar_week.png" />
+    <None Include="Resources\AddStudent.png" />
     <Content Include="Resources\ChangeGrade.png" />
     <None Include="Resources\Homeroom.png" />
     <None Include="Resources\SendAnnounce.png" />
