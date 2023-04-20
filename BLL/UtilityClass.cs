@@ -107,5 +107,30 @@ namespace BLL
             }
             dtgv.Height = dtgv.ColumnHeadersHeight + NumberOfRow * dtgv.RowTemplate.Height;
         }
+
+        public static string GetFirstCharactersOfString(string str)
+        {
+            string[] ds = str.ToUpper().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string tmp = "";
+            foreach (string s in ds)
+            {
+                if (s[0] == '.')
+                    tmp += "Net";
+                else if (s[0] == 'J')
+                    tmp += "JV";
+                else tmp += s[0];
+            }
+            return tmp;
+        }
+        public static string SplitCongThucTinhDiem(string input)
+        {
+            string[] ds = input.Split(new string[] { " + " }, StringSplitOptions.RemoveEmptyEntries);
+            string res = "";
+            foreach(string str in ds)
+            {
+                res += str[7] + "-";
+            }
+            return res.Remove(res.Length - 1, 1);
+        }
     }
 }

@@ -23,5 +23,6 @@ namespace DTO
         public int? TietBD { get; set; }
         public int? TietKT { get; set; }
         public string MaPhong { get; set; }
+        public int SoLuongMax { get; set; }
     }
 }
