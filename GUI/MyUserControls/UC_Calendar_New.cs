@@ -1,12 +1,5 @@
-﻿using GUI.MyCustomControl;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -23,7 +16,7 @@ namespace GUI.MyUserControls
             {
                 colorBack = value;
                 this.BackColor = colorBack;
-                tableLayoutPanel1.BackColor = colorBack;
+                tableLayoutPanel.BackColor = colorBack;
                 lbMonday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbTuesday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbWednesday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
@@ -38,37 +31,40 @@ namespace GUI.MyUserControls
                 buttonToday.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 buttonToday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbDate.ForeColor = (colorBack == Color.White) ? Color.FromArgb(13, 87, 119) : Color.FromArgb(227, 111, 38);
-                LoadDays();
-                this.Invalidate();
+                //LoadDays();
+                //this.Invalidate();
             }
         }
         #endregion
+
         int MONTH, YEAR;
         UC_Day[,] btn = new UC_Day[6, 7];
-        //Button[,] btn = new Button[6, 7];
-        String[,] dTime = new String[6, 7];
+        string[,] dTime = new string[6, 7];
         public UC_Calendar_New()
         {
             InitializeComponent();
             init();
             formOriginalSize = this.Size;
         }
-        //Methods
+
         #region Methods
         public void init()
         {
+            MONTH = DateTime.Now.Month;
+            YEAR = DateTime.Now.Year;
             colorBack = Color.White;
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
                     btn[i, j] = new UC_Day();
+                    btn[i, j].Dock = DockStyle.Fill;
                     btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
                     btn[i, j].Click += buttonDate_Click;
-                    tableLayoutPanel1.Controls.Add(btn[i, j]);
+                    tableLayoutPanel.Controls.Add(btn[i, j]);
                 }
         }
-        //Kiem tra nam nhuan
+
         public bool isLeapYear(int N)
         {
             if (N % 4 == 0 && N % 100 != 0)
@@ -77,32 +73,17 @@ namespace GUI.MyUserControls
                 return true;
             return false;
         }
+
         //Determine number of day in the month
-        public int Nday(int month, int year)
+        public int GetNumberOfDayInMonth(int month, int year)
         {
-            switch (month)
-            {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    return 31;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    return 30;
-                case 2:
-                    if (isLeapYear(year))
-                        return 29;
-                    return 28;
-            }
-            return 0;
+            int[] days = new int[] { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            if (isLeapYear(year))
+                days[2] = 29;
+            return days[month];
         }
-        public String leng2(String s)
+
+        public string leng2(String s)
         {
             if (s.Length == 1)
                 return "0" + s;
@@ -113,7 +94,7 @@ namespace GUI.MyUserControls
             int N = year - 1;
             int d = N * 365 + N / 4 - N / 100 + N / 400;
             for (int i = 1; i < month; i++)
-                d += Nday(i, N + 1);
+                d += GetNumberOfDayInMonth(i, N + 1);
             return d;
         }
         //Determine thứ
@@ -129,7 +110,7 @@ namespace GUI.MyUserControls
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
-                    btn[i,j].ColorDay = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
+                    btn[i, j].ColorDay = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].BoderDay = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].Size = new Size((int)(btn[i, j].Width * xRatio), (int)(btn[i, j].Height * yRatio));
                     btn[i, j].Location = new Point((int)(btn[i, j].Location.X * xRatio), (int)(btn[i, j].Location.Y * yRatio));
@@ -144,13 +125,13 @@ namespace GUI.MyUserControls
             reset();
             int[,] a = new int[6, 7];
             int thu = getThu(month, year);
-            int day = Nday(month, year);
+            int day = GetNumberOfDayInMonth(month, year);
             //Previous day
             int pday = 0;
             if (month > 1)
-                pday = Nday(month - 1, year);
+                pday = GetNumberOfDayInMonth(month - 1, year);
             else
-                pday = Nday(12, year - 1);
+                pday = GetNumberOfDayInMonth(12, year - 1);
             int start = thu - 1;
             if (start == 7)
                 start = 0;
@@ -270,13 +251,20 @@ namespace GUI.MyUserControls
             return res;
         }
         #endregion
-        //Events
+
+
         #region Events
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            buttonToday_Click(sender, e);
+        }
+
         private void buttonDate_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            MessageBox.Show(btn.Text + " " + btn.Size.Width + " " + btn.Size.Height);
+            UC_Day btn = sender as UC_Day;
+            MessageBox.Show(btn.Day + " " + btn.Size.Width + " " + btn.Size.Height);
         }
+
         private void buttonToday_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
@@ -284,13 +272,6 @@ namespace GUI.MyUserControls
             YEAR = now.Year;
             lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-            buttonToday_Click(sender, e);
-
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -305,19 +286,31 @@ namespace GUI.MyUserControls
             LoadDays();
         }
 
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            MONTH--;
+            if (MONTH == 0)
+            {
+                YEAR--;
+                MONTH = 12;
+            }
+            lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
+            LoadDays();
+        }
+
         private void UC_Calendar_Resize(object sender, EventArgs e)
         {
             //29/3/2023: Edit by Tai -> Label nằm chính giữa của mỗi ngày
             double xRatio = this.Width * 1.0 / formOriginalSize.Width;
             double yRatio = this.Height * 1.0 / formOriginalSize.Height;
 
-            tableLayoutPanel1.Size = new Size((int)(tableLayoutPanel1.Width * xRatio), (int)(tableLayoutPanel1.Height * yRatio));
-            tableLayoutPanel1.Location = new Point((int)(tableLayoutPanel1.Location.X * xRatio), (int)(tableLayoutPanel1.Location.Y * yRatio));
+            tableLayoutPanel.Size = new Size((int)(tableLayoutPanel.Width * xRatio), (int)(tableLayoutPanel.Height * yRatio));
+            tableLayoutPanel.Location = new Point((int)(tableLayoutPanel.Location.X * xRatio), (int)(tableLayoutPanel.Location.Y * yRatio));
 
             lbDate.Size = new Size((int)(lbDate.Width * xRatio), (int)(lbDate.Height * yRatio));
             lbDate.Location = new Point((int)(lbDate.Location.X * xRatio), (int)(lbDate.Location.Y * yRatio));
 
-            int offset = tableLayoutPanel1.Location.X;
+            int offset = tableLayoutPanel.Location.X;
             lbSunday.Size = new Size((int)(lbSunday.Width * xRatio), (int)(lbSunday.Height * yRatio));
             lbSunday.Location = new Point((int)(lbSunday.Location.X * xRatio), (int)(lbSunday.Location.Y * yRatio));
 
@@ -355,18 +348,6 @@ namespace GUI.MyUserControls
             buttonToday.Location = new Point((int)(buttonToday.Location.X * xRatio), (int)(buttonToday.Location.Y * yRatio));
 
             formOriginalSize = this.Size;
-        }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            MONTH--;
-            if (MONTH == 0)
-            {
-                YEAR--;
-                MONTH = 12;
-            }
-            lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
-            LoadDays();
         }
         #endregion
     }
