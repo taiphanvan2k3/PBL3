@@ -1,6 +1,4 @@
-﻿using BLL;
-using GUI.MyCustomControl;
-using System;
+﻿using System;
 using System.Windows.Forms;
 namespace GUI
 {

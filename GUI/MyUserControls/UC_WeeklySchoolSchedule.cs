@@ -33,13 +33,29 @@ namespace GUI.MyUserControls
             LoadCBB();
         }
 
+        private void ChangeColumnProperties()
+        {
+            UtilityClass.SetAlignmentMiddleCenterForColumns(dtgv, dtgv.RowCount);
+            dtgv.Columns["STT"].Width = 80;
+            dtgv.Columns["MaHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Columns["SoTC"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Columns["tkb"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+        }
+        private void dtgv_DataSourceChanged(object sender, EventArgs e)
+        {
+            ChangeColumnProperties();
+        }
+
         private void btnXemLich_Click(object sender, EventArgs e)
         {
             if (cbbHocKy.SelectedIndex >= 0)
             {
                 int KiHoc = cbbHocKy.SelectedIndex + 1;
-                int NamHoc = NamNhapHoc + cbbHocKy.SelectedIndex / 2;
-                //dtgv.DataSource = LopHocPhan_BLL.Instance.GetWeeklySchoolSchedule(MSSV, KiHoc, NamHoc);
+                var li = SinhVien_BLL.GetLichHocTrongTuan(MSSV, KiHoc);
+                for (int i = 0; i < li.Count; i++)
+                    li[i].STT = i + 1;
+                dtgv.DataSource = li;
             }
         }
     }

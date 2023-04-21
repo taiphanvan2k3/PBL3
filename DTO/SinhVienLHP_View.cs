@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    /// <summary>
+    /// Hiển thị danh sách sinh viên lên datagridview của phần xem sinh viên lớp học phần
+    /// </summary>
     public class SinhVienLHP_View
     {
         [DisplayName("STT")]

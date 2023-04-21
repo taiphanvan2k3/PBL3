@@ -3,7 +3,7 @@
 namespace DTO
 {
     /// <summary>
-    /// Lớp này tạo ra mục đích để hiển thị sinh viên lên datagridview lớp sinh hoạt
+    /// Lớp này tạo ra mục đích để hiển thị thông tin lên datagridview xem thông tin lớp sinh hoạt
     /// </summary>
     public class SinhVienLSH_View
     {

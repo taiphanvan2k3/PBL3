@@ -126,11 +126,23 @@
     <Compile Include="frmAddAccount.Designer.cs">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddModuleClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModuleClass.Designer.cs">
+      <DependentUpon>frmAddModuleClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddStudentIntoHomeroomClass.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddStudentIntoHomeroomClass.Designer.cs">
       <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSubject.Designer.cs">
+      <DependentUpon>frmAddSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
@@ -167,6 +179,12 @@
     </Compile>
     <Compile Include="frmDesinEnterDigitCode.Designer.cs">
       <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewDetailHomeroomClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewDetailHomeroomClass.Designer.cs">
+      <DependentUpon>frmViewDetailHomeroomClass.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViewListAcc.cs">
       <SubType>Form</SubType>
@@ -374,6 +392,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\294355517_1105843533621186_1411223748583159430_n.jpg" />
     <None Include="Resources\Back.png" />
+    <EmbeddedResource Include="frmAddModuleClass.resx">
+      <DependentUpon>frmAddModuleClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSubject.resx">
+      <DependentUpon>frmAddSubject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDesignEnterNewPass.resx">
       <DependentUpon>frmDesignEnterNewPass.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudentIntoHomeroomClass.resx">
       <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewDetailHomeroomClass.resx">
+      <DependentUpon>frmViewDetailHomeroomClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
@@ -613,6 +640,7 @@
     <None Include="Resources\DarkMode.png" />
     <None Include="Resources\CreateQuestion.png" />
     <None Include="Resources\Calendar_week.png" />
+    <None Include="Resources\AddStudent.png" />
     <Content Include="Resources\ChangeGrade.png" />
     <None Include="Resources\Homeroom.png" />
     <None Include="Resources\SendAnnounce.png" />

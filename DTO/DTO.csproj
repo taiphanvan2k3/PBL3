@@ -67,6 +67,8 @@
     <Compile Include="LopHocPhan_AdminEdit.cs" />
     <Compile Include="LopHocPhan_DTO.cs" />
     <Compile Include="InformationAcc_DTO.cs" />
+    <Compile Include="LopSinhHoat_AdminEdit.cs" />
+    <Compile Include="MonHoc_DTO.cs" />
     <Compile Include="NguoiDung_DTO.cs" />
     <Compile Include="PhuHuynh_DTO.cs" />
     <Compile Include="Program.cs" />

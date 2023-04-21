@@ -16,6 +16,10 @@ namespace BLL
             }
         }
 
+        public int GetNumberOfStudentInClass(string MaLopHP)
+        {
+            return LopHocPhan_DAL.Instance.GetNumberOfStudentInClass(MaLopHP);
+        }
         #region Xử lí bên giao diện sinh viên
         /*public int GetKiHocHienTai(string MSSV)
         {

@@ -89,6 +89,7 @@
     <Compile Include="KHOA.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
+    <Compile Include="Khoa_DAL.cs" />
     <Compile Include="LAM_BAI_KIEM_TRA.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
