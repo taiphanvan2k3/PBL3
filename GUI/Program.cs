@@ -1,6 +1,4 @@
-﻿using BLL;
-using GUI.MyCustomControl;
-using System;
+﻿using System;
 using System.Windows.Forms;
 namespace GUI
 {
@@ -14,7 +12,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQuiz());
+            Application.Run(new frmAddModuleClass());
         }
     }
 }

@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssignTeacher.cs" />
+    <Compile Include="CauHoi_DTO.cs" />
     <Compile Include="CBBItem.cs" />
     <Compile Include="CHUONG_TRINH_DAO_TAO_DTO.cs" />
     <Compile Include="GiangVien_DTO.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="LopHocPhan_AdminEdit.cs" />
     <Compile Include="LopHocPhan_DTO.cs" />
     <Compile Include="InformationAcc_DTO.cs" />
+    <Compile Include="LopSinhHoat_AdminEdit.cs" />
+    <Compile Include="MonHoc_DTO.cs" />
     <Compile Include="NguoiDung_DTO.cs" />
     <Compile Include="PhuHuynh_DTO.cs" />
     <Compile Include="Program.cs" />

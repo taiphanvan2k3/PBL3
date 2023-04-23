@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    /// <summary>
+    /// Lớp này được coi là DTO trả dữ liệu từ DAL về cho frmViewDetailModuleClass, cũng như dùng
+    /// để cập nhật dữ liệu ở frmViewDetailModuleClass
+    /// </summary>
     public class LopHocPhan_AdminEdit
     {
         public string MaHP { get; set; }
@@ -19,5 +23,6 @@ namespace DTO
         public int? TietBD { get; set; }
         public int? TietKT { get; set; }
         public string MaPhong { get; set; }
+        public int SoLuongMax { get; set; }
     }
 }

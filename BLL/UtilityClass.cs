@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
@@ -90,6 +91,46 @@ namespace BLL
                 address += SoDuong + " - " + TinhThanhPho + " - " +
                     QuanHuyen + " - " + XaPhuong;
             return address;
+        }
+
+        public static void SetAlignmentMiddleCenterForColumns(DataGridView dtgv, int NumberOfRow)
+        {
+            List<string> ColumnNames = new List<string>();
+            foreach (DataGridViewColumn column in dtgv.Columns)
+                ColumnNames.Add(column.DataPropertyName);
+
+            dtgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            foreach (string name in ColumnNames)
+            {
+                dtgv.Columns[name].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dtgv.Height = dtgv.ColumnHeadersHeight + NumberOfRow * dtgv.RowTemplate.Height;
+        }
+
+        public static string GetFirstCharactersOfString(string str)
+        {
+            string[] ds = str.ToUpper().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string tmp = "";
+            foreach (string s in ds)
+            {
+                if (s[0] == '.')
+                    tmp += "Net";
+                else if (s[0] == 'J')
+                    tmp += "JV";
+                else tmp += s[0];
+            }
+            return tmp;
+        }
+        public static string SplitCongThucTinhDiem(string input)
+        {
+            string[] ds = input.Split(new string[] { " + " }, StringSplitOptions.RemoveEmptyEntries);
+            string res = "";
+            foreach(string str in ds)
+            {
+                res += str[7] + "-";
+            }
+            return res.Remove(res.Length - 1, 1);
         }
     }
 }

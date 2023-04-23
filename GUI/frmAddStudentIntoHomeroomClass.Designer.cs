@@ -187,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddStudentIntoHomeroomClass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm sinh viên vào lớp sinh hoạt";
             this.pnlUpload.ResumeLayout(false);
             this.pnlUpload.PerformLayout();

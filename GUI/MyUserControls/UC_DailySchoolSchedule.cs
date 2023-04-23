@@ -9,6 +9,9 @@ namespace GUI.MyUserControls
     public partial class UC_DailySchoolSchedule : UserControl
     {
         public string MSSV { get; set; }
+
+        //Đặt làm phương thức để truy vấn duy nhất 1 lần để lấy ra KiHocHienTai ở mỗi phiên đăng nhập
+        private int KiHocHienTai = 0;
         public UC_DailySchoolSchedule()
         {
             InitializeComponent();
@@ -23,36 +26,70 @@ namespace GUI.MyUserControls
         private string GetDayOfWeek(DateTime dt)
         {
             if (dt.DayOfWeek == DayOfWeek.Sunday)
-                return "CN -";
+                return "CN";
             DayOfWeek[] ds = { DayOfWeek.Sunday,DayOfWeek.Sunday,DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday,
                                 DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday };
             string res = null;
             for (int i = 2; i <= 7; i++)
             {
                 if (dt.DayOfWeek == ds[i])
-                    res = "T" + i + " -";
+                    res = "T" + i;
             }
             return res;
+        }
+
+        private string GetDayOfWeekLongString(string dow)
+        {
+            if (dow == "CN")
+                return "Chủ nhật";
+            string[] ds = new string[]
+            {
+                "","","hai","ba","tư","năm","sáu","bảy"
+            };
+            for (int i = 2; i <= 7; i++)
+            {
+                string tmp = i + "";
+                if (dow.Contains(tmp))
+                    return "Thứ " + ds[i];
+            }
+            return "";
         }
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             DateTime date = dateTimePicker.Value;
-            lblShowDateTime.Text = GetDayOfWeek(date) + " " + dateTimePicker.Value.ToShortDateString();
+            lblShowDateTime.Text = GetDayOfWeek(date) + " -" + dateTimePicker.Value.ToShortDateString();
         }
 
         private void LoadData()
         {
-            //Hàm này sẽ được dùng khi có dữ liệu về lớp học phần
-            string Thu = GetDayOfWeek(dateTimePicker.Value);
-            //int kiHienTai = LopHocPhan_BLL.Instance.GetKiHocHienTai(MSSV);
-            //List<LopHocPhan_DTO> li = LopHocPhan_BLL.Instance.GetDailySchoolSchedule(MSSV, Thu,
-            //                                                  kiHienTai, DateTime.Now.Year);
-            //MessageBox.Show("Số bản ghi trả về: " + li.Count);
-            //dtgv.DataSource = li;
+            string Thu = GetDayOfWeekLongString(GetDayOfWeek(dateTimePicker.Value));
+            if (KiHocHienTai == 0)
+                KiHocHienTai = SinhVien_BLL.GetKiHocHienTai(MSSV);
+            if (KiHocHienTai != 0)
+            {
+                List<LopHocPhan_DTO> li = SinhVien_BLL.GetLichHocTrongNgay(MSSV, KiHocHienTai, Thu);
+                for (int i = 0; i < li.Count; i++)
+                    li[i].STT = i + 1;
+                dtgv.DataSource = li;
+            }
         }
         private void btnXemLich_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void ChangeColumnProperties()
+        {
+            UtilityClass.SetAlignmentMiddleCenterForColumns(dtgv, dtgv.RowCount);
+            dtgv.Columns["STT"].Width = 80;
+            dtgv.Columns["MaHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Columns["SoTC"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Columns["tkb"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+        }
+        private void dtgv_DataSourceChanged(object sender, EventArgs e)
+        {
+            ChangeColumnProperties();
         }
     }
 }

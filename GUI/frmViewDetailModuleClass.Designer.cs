@@ -281,6 +281,7 @@
             this.btnAddSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSV.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddSV.Image = global::GUI.Properties.Resources.AddStudent;
             this.btnAddSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddSV.Location = new System.Drawing.Point(939, 7);
             this.btnAddSV.Name = "btnAddSV";

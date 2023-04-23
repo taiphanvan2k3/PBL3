@@ -8,11 +8,28 @@ namespace GUI
     public partial class frmAddStudentIntoHomeroomClass : Form
     {
         public string MaLopSH { get; set; }
+
+        //Số lượng sinh viên tối đa của lớp sinh hoạt này
+        private int MaxNumberOfStudent;
+
+        //Số lượng sinh viên hiện tại của lớp sinh hoạt, lưu như này để kiểm tra LSH có đầy chưa
+        //trước khi thêm sinh viên
+        private int CurrentNumberStudent = 0;
+        public delegate void ReloadParentForm();
+        public ReloadParentForm reloadDTGV { get; set; }
         public frmAddStudentIntoHomeroomClass()
         {
             InitializeComponent();
             MoveFormHelper helper = new MoveFormHelper(this, panelTitle, lblTitle);
             MaLopSH = "21CNTT - DT1";
+        }
+
+        public frmAddStudentIntoHomeroomClass(string MaLopSH, int MaxNumberOfStudent)
+        {
+            InitializeComponent();
+            MoveFormHelper helper = new MoveFormHelper(this, panelTitle, lblTitle);
+            this.MaLopSH = MaLopSH;
+            this.MaxNumberOfStudent = MaxNumberOfStudent;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -53,25 +70,38 @@ namespace GUI
                 }
                 else
                 {
-                    string currentMaLopSH = SinhVien_BLL.GetNameOfHomeroomClass(MSSV);
+                    string currentMaLopSH = SinhVien_BLL.GetNameOfHomeroomClass(MSSV);    
                     if (currentMaLopSH == null)
                     {
-                        bool check = LopSinhHoat_BLL.Instance.InsertStudentIntoClass(MaLopSH, MSSV);
-                        if (check)
+                        //Nếu sinh viên đó chưa có lớp sinh hoạt thì có thể thêm vào lớp này.
+                        //Nhưng phải kiểm tra lớp sinh hoạt đã đầy chưa trước khi thêm.
+                        if (CurrentNumberStudent == 0)
+                            CurrentNumberStudent = LopSinhHoat_BLL.Instance.GetNumberOfStudent(MaLopSH);
+                        if (CurrentNumberStudent == MaxNumberOfStudent)
                         {
-                            CustomMessageBox.Show("Thêm thành công sinh viên vào lớp sinh hoạt", "Thông báo",
-                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CustomMessageBox.Show("Số lượng sinh viên đang đạt tối đa, không thể thêm", "Thông báo",
+                                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            bool check = LopSinhHoat_BLL.Instance.InsertStudentIntoClass(MaLopSH, MSSV);
+                            if (check)
+                            {
+                                CustomMessageBox.Show("Thêm thành công sinh viên vào lớp sinh hoạt", "Thông báo",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CurrentNumberStudent++;
+                            }
                         }
                     }
                     else if (currentMaLopSH == MaLopSH)
                     {
                         CustomMessageBox.Show("Sinh viên này đã được thêm vào lớp sinh hoạt này rồi", "Thông báo",
-                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else if (currentMaLopSH != MaLopSH)
                     {
                         CustomMessageBox.Show("Sinh viên này đã được thêm vào lớp sinh hoạt khác rồi", "Thông báo",
-                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -80,6 +110,7 @@ namespace GUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            reloadDTGV();
         }
     }
 }

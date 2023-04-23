@@ -41,7 +41,7 @@ namespace DAL
         public static List<SINH_VIEN> GetSinhVienInLopSH(string MaLopSH)
         {
             return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).
-                OrderBy(sv => sv.NGUOI_DUNG.Ten).ToList();
+                OrderBy(sv => sv.MaSV).ToList();
         }
 
         public static bool UpdateStudentInfo(SinhVien_DTO sv)
@@ -66,5 +66,54 @@ namespace DAL
             }
             return false;
         }
+
+        #region Các hàm xử lí chức năng xem lịch học trong ngày, trong tuần
+        public static int GetKiHocHienTai(string MaSV)
+        {
+            //Kì học đếm như sau: 1,2,3,4,5,6,7,8|,9,10
+            int KiHocHienTai = db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaSV == MaSV)
+                .GroupJoin(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
+                {
+                    Hocphan_tmp = hp.DefaultIfEmpty()
+                })
+                .SelectMany(i1 => i1.Hocphan_tmp.Select(i2 => new
+                {
+                    i2.KiHoc
+                })).OrderByDescending(i => i.KiHoc).Select(i => i.KiHoc).FirstOrDefault();
+            return KiHocHienTai;
+        }
+
+        public static List<LopHocPhan_DTO>GetLichHocTrongTuan(string MaSV,int KiHoc)
+        {
+            //Một khi đã thêm được sv vào lớp học phần thì lúc này chắc chắn đã phân công GV rồi
+            //nên không sợ chưa có GiangVien, đỡ phải GroupJoin với GIANG_VIEN. Và một khi phân công được
+            //giảng viên thì chứng tỏ đã có dữ liệu về TKB rồi
+            var li = db.SINHVIEN_LOPHOCPHAN.Where(i => i.MaSV == MaSV)
+                .GroupJoin(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
+                {
+                    Hocphan_tmp = hp.DefaultIfEmpty()
+                })
+                .SelectMany(i1 => i1.Hocphan_tmp.Select(i2 => new
+                {
+                    i2.MaLopHP,
+                    i2.MON_HOC.TenMH,
+                    i2.MON_HOC.SoTC,
+                    i2.KiHoc,
+                    HoTenGV = i2.GIANG_VIEN.NGUOI_DUNG.Ho + " " + i2.GIANG_VIEN.NGUOI_DUNG.Ten
+                }))
+                .Where(i => i.KiHoc == KiHoc)
+                .Join(db.THOI_KHOA_BIEU, hp => hp.MaLopHP, tkb => tkb.MaLopHP, (hp, tkb) => new LopHocPhan_DTO()
+                {
+                    MaHP = hp.MaLopHP,
+                    TenHP = hp.TenMH,
+                    TenGV = hp.HoTenGV,
+                    SoTC = hp.SoTC,
+                    KiHoc = hp.KiHoc,
+                    tkb = new ThoiKhoaBieu_DTO()
+                    { Thu = tkb.Thu, TietBD = tkb.TietBD, TietKT = tkb.TietKetThuc, Phong = tkb.MaPhongHoc }
+                }).ToList();
+            return li;
+        }
+        #endregion
     }
 }

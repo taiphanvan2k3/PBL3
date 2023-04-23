@@ -32,11 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgv = new System.Windows.Forms.DataGridView();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tkb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
             this.cbbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -73,12 +68,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stt,
-            this.maHP,
-            this.tenHP,
-            this.tenGV,
-            this.tkb});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,48 +87,7 @@
             this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv.Size = new System.Drawing.Size(1134, 284);
             this.dtgv.TabIndex = 7;
-            // 
-            // stt
-            // 
-            this.stt.FillWeight = 53.47594F;
-            this.stt.HeaderText = "STT";
-            this.stt.MinimumWidth = 6;
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            // 
-            // maHP
-            // 
-            this.maHP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.maHP.FillWeight = 111.631F;
-            this.maHP.HeaderText = "Mã học phần";
-            this.maHP.MinimumWidth = 6;
-            this.maHP.Name = "maHP";
-            this.maHP.ReadOnly = true;
-            this.maHP.Width = 145;
-            // 
-            // tenHP
-            // 
-            this.tenHP.FillWeight = 111.631F;
-            this.tenHP.HeaderText = "Tên học phần";
-            this.tenHP.MinimumWidth = 6;
-            this.tenHP.Name = "tenHP";
-            this.tenHP.ReadOnly = true;
-            // 
-            // tenGV
-            // 
-            this.tenGV.FillWeight = 111.631F;
-            this.tenGV.HeaderText = "Giảng viên";
-            this.tenGV.MinimumWidth = 6;
-            this.tenGV.Name = "tenGV";
-            this.tenGV.ReadOnly = true;
-            // 
-            // tkb
-            // 
-            this.tkb.FillWeight = 111.631F;
-            this.tkb.HeaderText = "Thời khoá biểu";
-            this.tkb.MinimumWidth = 6;
-            this.tkb.Name = "tkb";
-            this.tkb.ReadOnly = true;
+            this.dtgv.DataSourceChanged += new System.EventHandler(this.dtgv_DataSourceChanged);
             // 
             // label1
             // 
@@ -228,11 +176,6 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tkb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel separator;
         private Guna.UI2.WinForms.Guna2ComboBox cbbHocKy;

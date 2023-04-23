@@ -177,13 +177,14 @@ namespace GUI.MyUserControls
                 nextPage.MSSV = MSSV;
                 nextPage.previousPage = this;
                 nextPage.Dock = DockStyle.Fill;
+                //Load dữ liệu 1 lần thôi, nếu cứ mỗi lần add Control Parent lại load thì rất lag
+                nextPage.LoadData();
             }
             if (Parent is Panel)
             {
                 Panel pnl = Parent as Panel;
                 pnl.Controls.Clear();
                 pnl.Controls.Add(nextPage);
-                nextPage.LoadData();
             }
         }
 

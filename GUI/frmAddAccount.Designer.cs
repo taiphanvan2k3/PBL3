@@ -47,7 +47,11 @@
             this.rbMen = new GUI.MyCustomControl.CustomRadioButton();
             this.dtpBirthday = new GUI.MyCustomControl.CustomDatetimePicker();
             this.txtSurname = new GUI.MyCustomControl.CustomTextBox();
+            this.pnlUpload = new GUI.MyCustomControl.PanelGradient();
+            this.lblImgUpload = new System.Windows.Forms.Label();
+            this.lblTextUpload = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
+            this.pnlUpload.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -75,7 +79,7 @@
             this.Hủy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Hủy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hủy.ForeColor = System.Drawing.Color.LightGray;
-            this.Hủy.Location = new System.Drawing.Point(43, 744);
+            this.Hủy.Location = new System.Drawing.Point(43, 944);
             this.Hủy.Margin = new System.Windows.Forms.Padding(4);
             this.Hủy.Name = "Hủy";
             this.Hủy.Size = new System.Drawing.Size(200, 49);
@@ -91,7 +95,7 @@
             this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnADD.ForeColor = System.Drawing.Color.LightGray;
-            this.btnADD.Location = new System.Drawing.Point(251, 738);
+            this.btnADD.Location = new System.Drawing.Point(251, 944);
             this.btnADD.Margin = new System.Windows.Forms.Padding(4);
             this.btnADD.Name = "btnADD";
             this.btnADD.Size = new System.Drawing.Size(200, 49);
@@ -356,12 +360,50 @@
             this.txtSurname.UnderlinedStyle = false;
             this.txtSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
             // 
+            // pnlUpload
+            // 
+            this.pnlUpload.BackColor = System.Drawing.Color.White;
+            this.pnlUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlUpload.BorderRadius = 30;
+            this.pnlUpload.Controls.Add(this.lblImgUpload);
+            this.pnlUpload.Controls.Add(this.lblTextUpload);
+            this.pnlUpload.ForeColor = System.Drawing.Color.Black;
+            this.pnlUpload.GradientAngle = 90F;
+            this.pnlUpload.GradientBottomColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlUpload.GradientTopColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlUpload.Location = new System.Drawing.Point(50, 665);
+            this.pnlUpload.Name = "pnlUpload";
+            this.pnlUpload.Size = new System.Drawing.Size(400, 176);
+            this.pnlUpload.TabIndex = 35;
+            // 
+            // lblImgUpload
+            // 
+            this.lblImgUpload.BackColor = System.Drawing.Color.Transparent;
+            this.lblImgUpload.Image = global::GUI.Properties.Resources.csv;
+            this.lblImgUpload.Location = new System.Drawing.Point(160, 67);
+            this.lblImgUpload.Name = "lblImgUpload";
+            this.lblImgUpload.Size = new System.Drawing.Size(74, 78);
+            this.lblImgUpload.TabIndex = 6;
+            // 
+            // lblTextUpload
+            // 
+            this.lblTextUpload.AutoSize = true;
+            this.lblTextUpload.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextUpload.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextUpload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblTextUpload.Location = new System.Drawing.Point(41, 16);
+            this.lblTextUpload.Name = "lblTextUpload";
+            this.lblTextUpload.Size = new System.Drawing.Size(328, 38);
+            this.lblTextUpload.TabIndex = 5;
+            this.lblTextUpload.Text = "Chọn file Excel để tải lên";
+            // 
             // frmAddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(500, 800);
+            this.ClientSize = new System.Drawing.Size(500, 1000);
+            this.Controls.Add(this.pnlUpload);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbYearOrLevel);
@@ -387,6 +429,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddAccStudent_FormClosed);
             this.Load += new System.EventHandler(this.frmAddAccStudent_Load);
             this.panelTitleBar.ResumeLayout(false);
+            this.pnlUpload.ResumeLayout(false);
+            this.pnlUpload.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +456,8 @@
         private MyCustomControl.CustomComboBox cmbYearOrLevel;
         private System.Windows.Forms.Label label5;
         private MyCustomControl.CustomTextBox txtName;
+        private MyCustomControl.PanelGradient pnlUpload;
+        private System.Windows.Forms.Label lblImgUpload;
+        private System.Windows.Forms.Label lblTextUpload;
     }
 }

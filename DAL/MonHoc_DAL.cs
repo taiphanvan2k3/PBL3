@@ -1,6 +1,5 @@
-﻿using System.Linq;
-using System.Windows.Forms;
-
+﻿using System;
+using System.Linq;
 namespace DAL
 {
     public class MonHoc_DAL
@@ -26,10 +25,21 @@ namespace DAL
             return db.MON_HOC.Where(p => p.MaMH == MaMH).FirstOrDefault();
         }
 
-        public bool UpdateSoTC(string MaMH,int SoTC)
+        public bool UpdateSoTC(string MaMH, int SoTC)
         {
             MON_HOC mh = GetMonHocById(MaMH);
             mh.SoTC = (byte)SoTC;
+            return db.SaveChanges() > 0;
+        }
+
+        public bool CheckHadSubject(string MaMH)
+        {
+            return db.MON_HOC.Where(mh => mh.MaMH.Equals(MaMH, 
+                                    StringComparison.OrdinalIgnoreCase)).FirstOrDefault() != null;
+        }
+        public bool InsertSubject(MON_HOC mh)
+        {
+            db.MON_HOC.Add(mh);
             return db.SaveChanges() > 0;
         }
     }

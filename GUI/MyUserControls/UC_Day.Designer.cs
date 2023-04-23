@@ -37,6 +37,8 @@
             // 
             // pblEvent
             // 
+            this.pblEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pblEvent.BackColor = System.Drawing.Color.Transparent;
             this.pblEvent.Controls.Add(this.lbIfMore);
             this.pblEvent.Controls.Add(this.lbExam);
@@ -66,10 +68,11 @@
             // 
             // btnDay
             // 
+            this.btnDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDay.BackColor = System.Drawing.Color.Transparent;
             this.btnDay.BackGroundColor = System.Drawing.Color.Transparent;
             this.btnDay.BorderColor = System.Drawing.Color.Transparent;
-            this.btnDay.BorderRadius = 40;
+            this.btnDay.BorderRadius = 35;
             this.btnDay.BorderSize = 3;
             this.btnDay.Enabled = false;
             this.btnDay.FlatAppearance.BorderSize = 0;
@@ -78,7 +81,7 @@
             this.btnDay.ForeColor = System.Drawing.Color.Black;
             this.btnDay.Location = new System.Drawing.Point(114, 0);
             this.btnDay.Name = "btnDay";
-            this.btnDay.Size = new System.Drawing.Size(41, 41);
+            this.btnDay.Size = new System.Drawing.Size(41, 35);
             this.btnDay.TabIndex = 2;
             this.btnDay.Text = "30";
             this.btnDay.TextColor = System.Drawing.Color.Black;
@@ -86,8 +89,7 @@
             // 
             // UC_Day
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.btnDay);
             this.Controls.Add(this.pblEvent);
             this.Name = "UC_Day";

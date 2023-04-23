@@ -22,6 +22,10 @@ namespace DAL
             db = new PBL3Entities();
         }
 
+        public int GetNumberOfStudentInClass(string MaLopHP)
+        {
+            return db.LOP_HOC_PHAN.Where(lhp => lhp.MaLopHP == MaLopHP).Select(lsh => lsh.SINHVIEN_LOPHOCPHAN.Count).FirstOrDefault();
+        }
         /*public List<LopHocPhan_DTO> GetListHocPhanOfStudent(string MSSV, int KiHoc, int NamHoc)
         {
             //Lấy ra các môn học của sinh viên có MSSV ở KiHoc,NamHoc nào đó, rồi mới đi Join bảng
@@ -191,7 +195,7 @@ namespace DAL
         public bool DeleteStudent(string MaHP, List<string> liMSSV)
         {
             List<SINHVIEN_LOPHOCPHAN> li = new List<SINHVIEN_LOPHOCPHAN>();
-            foreach(string mssv in liMSSV)
+            foreach (string mssv in liMSSV)
             {
                 var svhp = db.SINHVIEN_LOPHOCPHAN.Where(i => i.MaLopHP == MaHP && i.MaSV == mssv).FirstOrDefault();
                 if (svhp != null)
