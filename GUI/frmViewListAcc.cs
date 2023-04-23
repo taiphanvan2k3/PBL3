@@ -50,6 +50,7 @@ namespace GUI
             dgvViewAcc.DataSource = dt;
             BindGridView();
         }
+
         #region Thêm header checkbox
         private void BindGridView()
         {
@@ -61,7 +62,6 @@ namespace GUI
             dgvViewAcc.Columns.Insert(0, checkBoxColumn);
             TotalCheckBoxes = dgvViewAcc.RowCount;
             TotalCheckedCheckBoxes = 0;
-            dgvViewAcc.Columns["TaiKhoan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void dgvSelectAll_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -237,8 +237,6 @@ namespace GUI
                 dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountTeacherList();
             }
 
-
-
         }
 
         private void HideButton()
@@ -251,9 +249,8 @@ namespace GUI
             this.Close();
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            dgvViewAcc.DataSource = dt;
-        }
+
+
+
     }
 }

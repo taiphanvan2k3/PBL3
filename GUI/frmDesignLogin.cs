@@ -26,11 +26,75 @@ namespace GUI
         }
 
 
-
         private void frmDesignLogin_Load(object sender, EventArgs e)
         {
+            // Đặt thuộc tính KeyPreview của form thành true
+            this.KeyPreview = true;
         }
 
+
+        private void Login()
+        {
+            var account = ValidLogin_BLL.Instance.CheckUsername(txtUsername.Texts);
+            if (account == null)
+                CustomMessageBox.Show("Tài khoản không tồn tại.");
+            else
+            {
+                var accountValid = ValidLogin_BLL.Instance.login(txtUsername.Texts, txtPassword.Texts);
+                if (accountValid != null)
+                {
+                    if (account.VaiTro == "Giáo viên")
+                    {
+                        //102BK0001 123456
+                        CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
+                        frm = new frmTeacher(txtUsername.Texts);
+                    }
+                    else if (account.VaiTro == "Sinh Viên")
+                    {
+                        //101190001 123Abc
+                        //101180002 123457
+                        //101180003 123458
+                        CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
+                        frm = new frmStudent(account.TaiKhoan);
+                    }
+                    else
+                    {
+                        CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Quản trị viên");
+                        frm = new frmAdmin();
+                    }
+                    UtilityClass.OpenNewForm(this, frm);
+                }
+                else CustomMessageBox.Show("Mật khẩu không chính xác.", "Lỗi");
+            }
+        }
+        private void frmDesignLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Kiểm tra nếu phím được nhấn là phím Enter và control đang được focus là username hoặc password
+            if (e.KeyCode == Keys.Enter && (txtUsername.Focused || txtPassword.Focused))
+            {
+                // Thực hiện hành động đăng nhập
+                Login();
+            }
+        }
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            Login();
+        }
+
+        private void btnMinisize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+
+
+
+        #region Xử lý button quên mật khẩu
         private void btnForgetPass_MouseHover(object sender, EventArgs e)
         {
             btnForgetPass.Font = new Font(btnForgetPass.Font, FontStyle.Underline);
@@ -42,6 +106,14 @@ namespace GUI
             btnForgetPass.Font = new Font(btnForgetPass.Font, FontStyle.Regular);
             btnForgetPass.ForeColor = Color.White;
         }
+        private void btnForgetPass_Click(object sender, EventArgs e)
+        {
+            UtilityClass.OpenNewForm(this, new frmDesignFindAcc());
+        }
+
+        #endregion
+
+        #region Di chuyển form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -52,69 +124,20 @@ namespace GUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void btnMinisize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnSignIn_Click(object sender, EventArgs e)
-        {
-
-            {
-
-                var account = ValidLogin_BLL.Instance.CheckUsername(txtUsername.Texts);
-                if (account == null)
-                    CustomMessageBox.Show("Tài khoản không tồn tại.");
-                else
-                {
-                    var accountValid = ValidLogin_BLL.Instance.login(txtUsername.Texts, txtPassword.Texts);
-                    if (accountValid != null)
-                    {
-                        if (account.VaiTro == "Giáo viên")
-                        {
-                            //102BK0001 123456
-                            CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
-                            frm = new frmTeacher(txtUsername.Texts);
-                        }
-                        else if (account.VaiTro == "Sinh Viên")
-                        {
-                            //101190001 123Abc
-                            //101180002 123457
-                            //101180003 123458
-                            CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
-                            frm = new frmStudent(account.TaiKhoan);
-                        }
-                        else
-                        {
-                            CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Quản trị viên");
-                            frm = new frmAdmin();
-                        }
-                        UtilityClass.OpenNewForm(this, frm);
-                    }
-                    else CustomMessageBox.Show("Mật khẩu không chính xác.", "Lỗi");
-                }
-            }
-        }
+        #endregion
 
 
-
-        private void btnForgetPass_Click(object sender, EventArgs e)
-        {
-            UtilityClass.OpenNewForm(this, new frmDesignFindAcc());
-        }
-
+        #region Kiểm tra xem textbox đã được nhập đủ thông tin hay chưa
         private void txtPassword__TextChanged(object sender, EventArgs e)
         {
             CheckIfBothTextBoxesHaveText();
 
         }
+        private void txtUsername__TextChanged(object sender, EventArgs e)
+        {
+            CheckIfBothTextBoxesHaveText();
+        }
+
         // Kiểm tra xem 2 ô textbox đã được nhập hay chưa
         private void CheckIfBothTextBoxesHaveText()
         {
@@ -127,10 +150,11 @@ namespace GUI
                 btnSignIn.Enabled = false;
             }
         }
+        #endregion
 
-        private void txtUsername__TextChanged(object sender, EventArgs e)
-        {
-            CheckIfBothTextBoxesHaveText();
-        }
+
+
+
+
     }
 }
