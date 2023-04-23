@@ -110,6 +110,10 @@ namespace BLL
 
         public static string GetFirstCharactersOfString(string str)
         {
+            if (str == "Lập trình hướng đối tượng")
+                return "OOP";
+            else if (str == "Phân tích và thiết kế hướng đối tượng")
+                return "OOAD";
             string[] ds = str.ToUpper().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string tmp = "";
             foreach (string s in ds)
@@ -118,6 +122,8 @@ namespace BLL
                     tmp += "Net";
                 else if (s[0] == 'J')
                     tmp += "JV";
+                else if (s[0] == 'Đ')
+                    tmp += 'D';
                 else tmp += s[0];
             }
             return tmp;
@@ -126,7 +132,7 @@ namespace BLL
         {
             string[] ds = input.Split(new string[] { " + " }, StringSplitOptions.RemoveEmptyEntries);
             string res = "";
-            foreach(string str in ds)
+            foreach (string str in ds)
             {
                 res += str[7] + "-";
             }

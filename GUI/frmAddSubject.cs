@@ -18,6 +18,7 @@ namespace GUI
         private void txtTenMH_TextChanged(object sender, EventArgs e)
         {
             string TenMH = txtTenMH.Texts;
+            //Lấy các kí tự đầu của môn học
             if (TenMH != "")
                 txtMaMH.Text = UtilityClass.GetFirstCharactersOfString(TenMH);
             else 

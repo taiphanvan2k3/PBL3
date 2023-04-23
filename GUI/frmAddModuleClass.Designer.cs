@@ -34,8 +34,6 @@
             this.cbbTenMH = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNhomHP = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnCancel = new GUI.MyCustomControl.CustomButton();
-            this.btnAddModuleClass = new GUI.MyCustomControl.CustomButton();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMaHP = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,12 +41,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoLuongMax = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnAssignTeacher = new GUI.MyCustomControl.CustomButton();
             this.btnAddStudent = new GUI.MyCustomControl.CustomButton();
+            this.btnAssignTeacher = new GUI.MyCustomControl.CustomButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbbNamHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbbKiHoc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblKiHoc = new System.Windows.Forms.Label();
+            this.lblNamHoc = new System.Windows.Forms.Label();
+            this.btnCancel = new GUI.MyCustomControl.CustomButton();
+            this.btnAddModuleClass = new GUI.MyCustomControl.CustomButton();
             this.panelTitle.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -95,16 +95,12 @@
             this.cbbTenMH.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbTenMH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbTenMH.ItemHeight = 30;
-            this.cbbTenMH.Items.AddRange(new object[] {
-            "Toán rời rạc",
-            "Cơ sở dữ liệu",
-            "Lập trình Java",
-            "Lập trình .Net"});
             this.cbbTenMH.Location = new System.Drawing.Point(199, 91);
             this.cbbTenMH.Name = "cbbTenMH";
             this.cbbTenMH.Size = new System.Drawing.Size(300, 36);
             this.cbbTenMH.TabIndex = 16;
-            this.cbbTenMH.Leave += new System.EventHandler(this.cbbTenMH_Leave);
+            this.cbbTenMH.SelectedIndexChanged += new System.EventHandler(this.cbbTenMH_SelectedIndexChanged);
+            this.cbbTenMH.Leave += new System.EventHandler(this.txtTenMH_Leave);
             // 
             // label2
             // 
@@ -137,47 +133,8 @@
             this.txtNhomHP.SelectedText = "";
             this.txtNhomHP.Size = new System.Drawing.Size(97, 35);
             this.txtNhomHP.TabIndex = 18;
-            this.txtNhomHP.Leave += new System.EventHandler(this.cbbTenMH_Leave);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Crimson;
-            this.btnCancel.BackGroundColor = System.Drawing.Color.Crimson;
-            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCancel.BorderRadius = 40;
-            this.btnCancel.BorderSize = 0;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancel.Location = new System.Drawing.Point(512, 421);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(127, 40);
-            this.btnCancel.TabIndex = 20;
-            this.btnCancel.Text = "Huỷ bỏ";
-            this.btnCancel.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnAddModuleClass
-            // 
-            this.btnAddModuleClass.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddModuleClass.BackGroundColor = System.Drawing.Color.SteelBlue;
-            this.btnAddModuleClass.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddModuleClass.BorderRadius = 40;
-            this.btnAddModuleClass.BorderSize = 0;
-            this.btnAddModuleClass.FlatAppearance.BorderSize = 0;
-            this.btnAddModuleClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddModuleClass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddModuleClass.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddModuleClass.Location = new System.Drawing.Point(157, 421);
-            this.btnAddModuleClass.Name = "btnAddModuleClass";
-            this.btnAddModuleClass.Size = new System.Drawing.Size(127, 40);
-            this.btnAddModuleClass.TabIndex = 19;
-            this.btnAddModuleClass.Text = "Tạo lớp";
-            this.btnAddModuleClass.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddModuleClass.UseVisualStyleBackColor = false;
-            this.btnAddModuleClass.Click += new System.EventHandler(this.btnAddModuleClass_Click);
+            this.txtNhomHP.TextChanged += new System.EventHandler(this.cbbTenMH_SelectedIndexChanged);
+            this.txtNhomHP.Leave += new System.EventHandler(this.txtTenMH_Leave);
             // 
             // label3
             // 
@@ -202,7 +159,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(78, 276);
+            this.label4.Location = new System.Drawing.Point(78, 271);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 23);
             this.label4.TabIndex = 23;
@@ -212,7 +169,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 337);
+            this.label5.Location = new System.Drawing.Point(55, 321);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 23);
             this.label5.TabIndex = 25;
@@ -241,7 +198,7 @@
             this.txtSoLuongMax.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuongMax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtSoLuongMax.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuongMax.Location = new System.Drawing.Point(198, 212);
+            this.txtSoLuongMax.Location = new System.Drawing.Point(198, 207);
             this.txtSoLuongMax.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSoLuongMax.Name = "txtSoLuongMax";
             this.txtSoLuongMax.PasswordChar = '\0';
@@ -266,28 +223,6 @@
             this.guna2GroupBox1.TabIndex = 29;
             this.guna2GroupBox1.Text = "Các tuỳ chọn";
             // 
-            // btnAssignTeacher
-            // 
-            this.btnAssignTeacher.BackColor = System.Drawing.Color.IndianRed;
-            this.btnAssignTeacher.BackGroundColor = System.Drawing.Color.IndianRed;
-            this.btnAssignTeacher.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAssignTeacher.BorderRadius = 40;
-            this.btnAssignTeacher.BorderSize = 0;
-            this.btnAssignTeacher.FlatAppearance.BorderSize = 0;
-            this.btnAssignTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAssignTeacher.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssignTeacher.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAssignTeacher.Image = global::GUI.Properties.Resources.AssignTeacher;
-            this.btnAssignTeacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAssignTeacher.Location = new System.Drawing.Point(16, 55);
-            this.btnAssignTeacher.Name = "btnAssignTeacher";
-            this.btnAssignTeacher.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAssignTeacher.Size = new System.Drawing.Size(244, 40);
-            this.btnAssignTeacher.TabIndex = 30;
-            this.btnAssignTeacher.Text = "        Phân công giảng viên";
-            this.btnAssignTeacher.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAssignTeacher.UseVisualStyleBackColor = false;
-            // 
             // btnAddStudent
             // 
             this.btnAddStudent.BackColor = System.Drawing.Color.Tomato;
@@ -295,6 +230,7 @@
             this.btnAddStudent.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnAddStudent.BorderRadius = 40;
             this.btnAddStudent.BorderSize = 0;
+            this.btnAddStudent.Enabled = false;
             this.btnAddStudent.FlatAppearance.BorderSize = 0;
             this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStudent.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,6 +247,30 @@
             this.btnAddStudent.UseVisualStyleBackColor = false;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
+            // btnAssignTeacher
+            // 
+            this.btnAssignTeacher.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAssignTeacher.BackGroundColor = System.Drawing.Color.IndianRed;
+            this.btnAssignTeacher.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAssignTeacher.BorderRadius = 40;
+            this.btnAssignTeacher.BorderSize = 0;
+            this.btnAssignTeacher.Enabled = false;
+            this.btnAssignTeacher.FlatAppearance.BorderSize = 0;
+            this.btnAssignTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignTeacher.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignTeacher.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAssignTeacher.Image = global::GUI.Properties.Resources.AssignTeacher;
+            this.btnAssignTeacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAssignTeacher.Location = new System.Drawing.Point(16, 55);
+            this.btnAssignTeacher.Name = "btnAssignTeacher";
+            this.btnAssignTeacher.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAssignTeacher.Size = new System.Drawing.Size(244, 40);
+            this.btnAssignTeacher.TabIndex = 30;
+            this.btnAssignTeacher.Text = "        Phân công giảng viên";
+            this.btnAssignTeacher.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAssignTeacher.UseVisualStyleBackColor = false;
+            this.btnAssignTeacher.Click += new System.EventHandler(this.btnAssignTeacher_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -321,60 +281,85 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "(Vd 21Nh13)";
             // 
-            // cbbNamHoc
-            // 
-            this.cbbNamHoc.BackColor = System.Drawing.Color.Transparent;
-            this.cbbNamHoc.BorderRadius = 15;
-            this.cbbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbNamHoc.DropDownHeight = 120;
-            this.cbbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNamHoc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNamHoc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNamHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbNamHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbNamHoc.IntegralHeight = false;
-            this.cbbNamHoc.ItemHeight = 30;
-            this.cbbNamHoc.Location = new System.Drawing.Point(198, 332);
-            this.cbbNamHoc.Name = "cbbNamHoc";
-            this.cbbNamHoc.Size = new System.Drawing.Size(156, 36);
-            this.cbbNamHoc.TabIndex = 31;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(318, 221);
+            this.label8.Location = new System.Drawing.Point(318, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 23);
             this.label8.TabIndex = 32;
             this.label8.Text = "(Tối đa 70)";
             // 
-            // cbbKiHoc
+            // lblKiHoc
             // 
-            this.cbbKiHoc.BackColor = System.Drawing.Color.Transparent;
-            this.cbbKiHoc.BorderRadius = 15;
-            this.cbbKiHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbKiHoc.DropDownHeight = 120;
-            this.cbbKiHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbKiHoc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbKiHoc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbKiHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbKiHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbKiHoc.IntegralHeight = false;
-            this.cbbKiHoc.ItemHeight = 30;
-            this.cbbKiHoc.Location = new System.Drawing.Point(199, 272);
-            this.cbbKiHoc.Name = "cbbKiHoc";
-            this.cbbKiHoc.Size = new System.Drawing.Size(96, 36);
-            this.cbbKiHoc.TabIndex = 33;
+            this.lblKiHoc.AutoSize = true;
+            this.lblKiHoc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKiHoc.Location = new System.Drawing.Point(194, 271);
+            this.lblKiHoc.Name = "lblKiHoc";
+            this.lblKiHoc.Size = new System.Drawing.Size(231, 23);
+            this.lblKiHoc.TabIndex = 33;
+            this.lblKiHoc.Text = "Chưa đủ dữ liệu để tính toán";
+            // 
+            // lblNamHoc
+            // 
+            this.lblNamHoc.AutoSize = true;
+            this.lblNamHoc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNamHoc.Location = new System.Drawing.Point(194, 321);
+            this.lblNamHoc.Name = "lblNamHoc";
+            this.lblNamHoc.Size = new System.Drawing.Size(231, 23);
+            this.lblNamHoc.TabIndex = 34;
+            this.lblNamHoc.Text = "Chưa đủ dữ liệu để tính toán";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel.BackGroundColor = System.Drawing.Color.Crimson;
+            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancel.BorderRadius = 40;
+            this.btnCancel.BorderSize = 0;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.Location = new System.Drawing.Point(512, 421);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(127, 40);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Huỷ bỏ";
+            this.btnCancel.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAddModuleClass
+            // 
+            this.btnAddModuleClass.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddModuleClass.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.btnAddModuleClass.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddModuleClass.BorderRadius = 40;
+            this.btnAddModuleClass.BorderSize = 0;
+            this.btnAddModuleClass.Enabled = false;
+            this.btnAddModuleClass.FlatAppearance.BorderSize = 0;
+            this.btnAddModuleClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddModuleClass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddModuleClass.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddModuleClass.Location = new System.Drawing.Point(157, 421);
+            this.btnAddModuleClass.Name = "btnAddModuleClass";
+            this.btnAddModuleClass.Size = new System.Drawing.Size(127, 40);
+            this.btnAddModuleClass.TabIndex = 19;
+            this.btnAddModuleClass.Text = "Tạo lớp";
+            this.btnAddModuleClass.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddModuleClass.UseVisualStyleBackColor = false;
+            this.btnAddModuleClass.Click += new System.EventHandler(this.btnAddModuleClass_Click);
             // 
             // frmAddModuleClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(812, 500);
-            this.Controls.Add(this.cbbKiHoc);
+            this.Controls.Add(this.lblNamHoc);
+            this.Controls.Add(this.lblKiHoc);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.cbbNamHoc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.txtSoLuongMax);
@@ -394,6 +379,7 @@
             this.Name = "frmAddModuleClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddModuleClass";
+            this.Load += new System.EventHandler(this.frmAddModuleClass_Load);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);
@@ -422,8 +408,8 @@
         private MyCustomControl.CustomButton btnAddStudent;
         private MyCustomControl.CustomButton btnAssignTeacher;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbNamHoc;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbKiHoc;
+        private System.Windows.Forms.Label lblKiHoc;
+        private System.Windows.Forms.Label lblNamHoc;
     }
 }

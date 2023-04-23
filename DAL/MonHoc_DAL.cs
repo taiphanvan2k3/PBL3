@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 namespace DAL
 {
@@ -19,6 +20,11 @@ namespace DAL
         private MonHoc_DAL()
         {
             db = new PBL3Entities();
+        }
+
+        public List<MON_HOC> GetAllMonHoc()
+        {
+            return db.MON_HOC.ToList();
         }
         public MON_HOC GetMonHocById(string MaMH)
         {

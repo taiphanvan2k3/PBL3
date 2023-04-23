@@ -443,6 +443,12 @@
     <EmbeddedResource Include="frmAddStudentIntoHomeroomClass.resx">
       <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuiz.resx">
+      <DependentUpon>frmQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestExam.resx">
+      <DependentUpon>frmTestExam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
     </EmbeddedResource>

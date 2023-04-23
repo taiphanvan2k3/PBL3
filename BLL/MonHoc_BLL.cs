@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -39,6 +40,21 @@ namespace BLL
             if (MonHoc_DAL.Instance.InsertSubject(NewSubject))
                 return 1;
             return 0;
+        }
+
+        public List<CBBItem> GetAllMonHoc()
+        {
+            List<MON_HOC> li = MonHoc_DAL.Instance.GetAllMonHoc();
+            List<CBBItem> res = new List<CBBItem>();
+            foreach (MON_HOC mh in li)
+            {
+                res.Add(new CBBItem()
+                {
+                    Id = mh.MaMH,
+                    Value = mh.TenMH
+                });
+            }
+            return res;
         }
     }
 }

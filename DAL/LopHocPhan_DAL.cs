@@ -22,10 +22,21 @@ namespace DAL
             db = new PBL3Entities();
         }
 
+        #region Thêm, xoá lớp học phần
+        public bool InsertModuleClass(LOP_HOC_PHAN lhp)
+        {
+            db.LOP_HOC_PHAN.Add(lhp);
+            return db.SaveChanges() > 0;
+        }
+
+
+        #endregion
         public int GetNumberOfStudentInClass(string MaLopHP)
         {
             return db.LOP_HOC_PHAN.Where(lhp => lhp.MaLopHP == MaLopHP).Select(lsh => lsh.SINHVIEN_LOPHOCPHAN.Count).FirstOrDefault();
         }
+
+
         /*public List<LopHocPhan_DTO> GetListHocPhanOfStudent(string MSSV, int KiHoc, int NamHoc)
         {
             //Lấy ra các môn học của sinh viên có MSSV ở KiHoc,NamHoc nào đó, rồi mới đi Join bảng
@@ -204,5 +215,7 @@ namespace DAL
             db.SINHVIEN_LOPHOCPHAN.RemoveRange(li);
             return db.SaveChanges() > 0;
         }
+
+
     }
 }
