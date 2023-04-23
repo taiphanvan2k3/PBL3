@@ -168,6 +168,12 @@
     <Compile Include="frmDesinEnterDigitCode.Designer.cs">
       <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuiz.Designer.cs">
+      <DependentUpon>frmQuiz.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmViewListAcc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudentIntoHomeroomClass.resx">
       <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuiz.resx">
+      <DependentUpon>frmQuiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
