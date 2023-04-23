@@ -2,19 +2,24 @@
 using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Management;
 using System.Windows.Forms;
+using System.Windows.Threading;
+using System.Management;
+using System.Windows.Threading;
+using System.Runtime.InteropServices;
+using System.Web.UI.WebControls;
 
 namespace GUI
 {
     public partial class frmQuiz : Form
     {
+        [DllImport("user32.dll")]
+        static extern bool SetWindowDisplayAffinity(IntPtr hWnd, uint dwAffinity);
+
+        const uint WDA_NONE = 0x00000000;
+        const uint WDA_MONITOR = 0x00000001;
         private Stopwatch stopwatch = new Stopwatch();
         private TimeSpan targetTime = TimeSpan.FromMinutes(50);
         public List<CauHoi_DTO1> questions;
@@ -22,6 +27,7 @@ namespace GUI
         public frmQuiz()
         {
             InitializeComponent();
+            SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
             questions = new List<CauHoi_DTO1>();
             selectedAnswers = new List<SelectedAnswer>();
         }
@@ -32,6 +38,7 @@ namespace GUI
         #endregion
         private void frmQuiz_Load(object sender, EventArgs e)
         {
+            
             lbTime.Text = targetTime.ToString(@"mm\:ss\:ff");
             stopwatch.Start();
             timer1.Start();

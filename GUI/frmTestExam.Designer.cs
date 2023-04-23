@@ -58,7 +58,7 @@
             this.radioButton4.Location = new System.Drawing.Point(3, 3);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(549, 106);
+            this.radioButton4.Size = new System.Drawing.Size(673, 119);
             this.radioButton4.TabIndex = 7;
             this.radioButton4.TabStop = true;
             this.radioButton4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -70,10 +70,10 @@
             this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton3.Location = new System.Drawing.Point(3, 122);
+            this.radioButton3.Location = new System.Drawing.Point(3, 135);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(549, 124);
+            this.radioButton3.Size = new System.Drawing.Size(673, 124);
             this.radioButton3.TabIndex = 6;
             this.radioButton3.TabStop = true;
             this.radioButton3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -85,10 +85,10 @@
             this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton2.Location = new System.Drawing.Point(3, 259);
+            this.radioButton2.Location = new System.Drawing.Point(3, 272);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(549, 132);
+            this.radioButton2.Size = new System.Drawing.Size(673, 132);
             this.radioButton2.TabIndex = 5;
             this.radioButton2.TabStop = true;
             this.radioButton2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -100,9 +100,9 @@
             this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton1.Location = new System.Drawing.Point(3, 404);
+            this.radioButton1.Location = new System.Drawing.Point(3, 417);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(549, 99);
+            this.radioButton1.Size = new System.Drawing.Size(673, 99);
             this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
             this.radioButton1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
