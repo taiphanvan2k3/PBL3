@@ -186,6 +186,12 @@
     <Compile Include="frmEnterPassToDoExam.Designer.cs">
       <DependentUpon>frmEnterPassToDoExam.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTestExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestExam.Designer.cs">
+      <DependentUpon>frmTestExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmViewDetailHomeroomClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,6 +388,12 @@
     <Compile Include="MyUserControls\UC_TeacherInfo.Designer.cs">
       <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_ViewHistoryDoExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ViewHistoryDoExam.Designer.cs">
+      <DependentUpon>UC_ViewHistoryDoExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_ViewHomeRoomClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -427,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEnterPassToDoExam.resx">
       <DependentUpon>frmEnterPassToDoExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestExam.resx">
+      <DependentUpon>frmTestExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewDetailHomeroomClass.resx">
       <DependentUpon>frmViewDetailHomeroomClass.cs</DependentUpon>
@@ -517,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_TeacherInfo.resx">
       <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_ViewHistoryDoExam.resx">
+      <DependentUpon>UC_ViewHistoryDoExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ViewHomeRoomClass.resx">
       <DependentUpon>UC_ViewHomeRoomClass.cs</DependentUpon>

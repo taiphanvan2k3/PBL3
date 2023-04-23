@@ -6,6 +6,10 @@ using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
+    /// <summary>
+    /// User control này được dùng để xem danh sách lớp sinh hoạt
+    /// trong giao diện sinh viên
+    /// </summary>
     public partial class UC_ViewHomeRoomClass : UserControl
     {
         public string MaLopSH { get; set; }

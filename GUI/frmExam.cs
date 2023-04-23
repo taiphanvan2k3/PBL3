@@ -18,6 +18,7 @@ namespace GUI
         private SelectionState CurrentState;
         UC_Calendar_New NewCalendar;
         UC_DoExam DoExam;
+        UC_ViewHistoryDoExam viewHistoryDoExam;
 
         private Size formOriginalSize;
 
@@ -99,8 +100,11 @@ namespace GUI
             {
                 CurrentState = SelectionState.DoExam;
                 pnlMain.Controls.Clear();
-                DoExam = new UC_DoExam();
-                DoExam.Dock = DockStyle.Fill;
+                if(DoExam == null)
+                {
+                    DoExam = new UC_DoExam();
+                    DoExam.Dock = DockStyle.Fill;
+                }
                 pnlMain.Controls.Add(DoExam);
             }
         }
@@ -111,6 +115,12 @@ namespace GUI
             {
                 CurrentState = SelectionState.ViewHistoryDoExam;
                 pnlMain.Controls.Clear();
+                if (viewHistoryDoExam == null)
+                {
+                    viewHistoryDoExam = new UC_ViewHistoryDoExam();
+                    viewHistoryDoExam.Dock= DockStyle.Fill;
+                }
+                pnlMain.Controls.Add(viewHistoryDoExam);
             }
         }
 
