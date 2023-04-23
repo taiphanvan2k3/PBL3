@@ -103,12 +103,14 @@ namespace GUI.MyUserControls
             }
             return 0;
         }
-        public String leng2(String s)
+
+        public string leng2(String s)
         {
             if (s.Length == 1)
                 return "0" + s;
             return s;
         }
+
         public int getDay(int month, int year)
         {
             int N = year - 1;
@@ -117,12 +119,14 @@ namespace GUI.MyUserControls
                 d += Nday(i, N + 1);
             return d;
         }
-        //Determine thứ
+
+        //Xác định thứ
         public int getThu(int month, int year)
         {
             //Cong them 2 de lay ra ten thu luon
             return getDay(month, year) % 7 + 2;
         }
+
         public void reset()
         {
             float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
@@ -138,6 +142,7 @@ namespace GUI.MyUserControls
                 }
             formOriginalSize = this.Size;
         }
+
         public int[,] update(int month, int year)
         {
             reset();

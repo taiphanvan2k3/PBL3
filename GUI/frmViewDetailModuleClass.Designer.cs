@@ -1,4 +1,4 @@
-﻿namespace GUI
+﻿    namespace GUI
 {
     partial class frmViewDetailModuleClass
     {
@@ -189,6 +189,7 @@
             this.Column1.HeaderText = "TT";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.Width = 100;
             this.Column1.ReadOnly = true;
             // 
             // Column2

@@ -180,6 +180,24 @@
     <Compile Include="frmDesinEnterDigitCode.Designer.cs">
       <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuiz.Designer.cs">
+      <DependentUpon>frmQuiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnterPassToDoExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnterPassToDoExam.Designer.cs">
+      <DependentUpon>frmEnterPassToDoExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestExam.Designer.cs">
+      <DependentUpon>frmTestExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmViewDetailHomeroomClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +316,12 @@
     <Compile Include="MyUserControls\UC_Day.Designer.cs">
       <DependentUpon>UC_Day.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_DoExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DoExam.Designer.cs">
+      <DependentUpon>UC_DoExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_MonthCalendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -370,6 +394,12 @@
     <Compile Include="MyUserControls\UC_TeacherInfo.Designer.cs">
       <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_ViewHistoryDoExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ViewHistoryDoExam.Designer.cs">
+      <DependentUpon>UC_ViewHistoryDoExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_ViewHomeRoomClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -412,9 +442,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudentIntoHomeroomClass.resx">
       <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmViewDetailHomeroomClass.resx">
-      <DependentUpon>frmViewDetailHomeroomClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAcc.resx">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
@@ -467,6 +494,9 @@
     <EmbeddedResource Include="MyUserControls\UC_Day.resx">
       <DependentUpon>UC_Day.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DoExam.resx">
+      <DependentUpon>UC_DoExam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_MonthCalendar.resx">
       <DependentUpon>UC_MonthCalendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -499,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_TeacherInfo.resx">
       <DependentUpon>UC_TeacherInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_ViewHistoryDoExam.resx">
+      <DependentUpon>UC_ViewHistoryDoExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ViewHomeRoomClass.resx">
       <DependentUpon>UC_ViewHomeRoomClass.cs</DependentUpon>
