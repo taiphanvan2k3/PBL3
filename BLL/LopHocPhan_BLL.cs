@@ -1,6 +1,8 @@
 ﻿using DAL;
 using DTO;
 using System.Collections.Generic;
+using System.Windows.Forms;
+
 namespace BLL
 {
     public class LopHocPhan_BLL
@@ -114,5 +116,30 @@ namespace BLL
         {
             return LopHocPhan_DAL.Instance.GetMaKhoaOfLHP(MaHP);
         }
+
+        #region các hàm dùng trong việc add,delete lớp học phần
+        public int InsertModuleClass(LopHocPhan_AdminEdit lhp)
+        {
+            bool CheckIsExist = GetLopHocPhanByMaHP(lhp.MaHP) != null;
+            if (!CheckIsExist)
+            {
+                LOP_HOC_PHAN NewModuleClass = new LOP_HOC_PHAN()
+                {
+                    MaMH = lhp.MaMH,
+                    MaLopHP = lhp.MaHP,
+                    NamHoc = lhp.NamHoc,
+                    KiHoc = lhp.KiHoc,
+                    SoLuongToiDa = lhp.SoLuongMax
+                };
+
+                //1: thêm thành công, 0: thêm thất bại
+                if (LopHocPhan_DAL.Instance.InsertModuleClass(NewModuleClass))
+                    return 1;
+                return 0;
+            }
+            //Đã có lớp học phần này rồi
+            return -1;
+        }
+        #endregion
     }
 }

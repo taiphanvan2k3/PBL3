@@ -26,12 +26,12 @@ namespace GUI
             string DapAnD = "Chắc là 0 :)";
             CauHoi_DTO c = new CauHoi_DTO(TenCauHoi, DapAnA, DapAnB, DapAnC, DapAnD, "AB");
             int idx = 0;
-            foreach (RadioButton rd in flowLayoutPanel1.Controls)
+            foreach (RadioButton rd in panelSingle.Controls)
             {
                 rd.Text = c.DapAnHienThi[idx++];
                 Size txtSize = TextRenderer.MeasureText(rd.Text, rd.Font, rd.ClientRectangle.Size, TextFormatFlags.WordBreak);
                 // Get the height of a single line of text
-                int lineHeight = radioButton1.Font.Height;
+                int lineHeight = radioButtonD.Font.Height;
 
                 // Calculate the number of lines required to display the text
                 int numLines = (int)Math.Ceiling((double)txtSize.Height / lineHeight);

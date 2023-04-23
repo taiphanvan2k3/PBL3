@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.circularPictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,45 +38,29 @@
             this.txtPassword = new GUI.MyCustomControl.CustomTextBox();
             this.txtUsername = new GUI.MyCustomControl.CustomTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.circularPictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMinisize = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.Color.DarkOrchid;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox1.BorderSize = 2;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
-            this.circularPictureBox1.Location = new System.Drawing.Point(225, 20);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 0;
-            this.circularPictureBox1.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(153, 183);
+            this.label2.Location = new System.Drawing.Point(144, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 31);
+            this.label2.Size = new System.Drawing.Size(309, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Chào mừng quay trở lại";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Location = new System.Drawing.Point(153, 288);
+            this.panel1.Location = new System.Drawing.Point(153, 296);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(294, 1);
             this.panel1.TabIndex = 3;
@@ -85,7 +68,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel2.Location = new System.Drawing.Point(153, 368);
+            this.panel2.Location = new System.Drawing.Point(153, 378);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(294, 1);
             this.panel2.TabIndex = 4;
@@ -94,11 +77,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label3.Location = new System.Drawing.Point(157, 223);
+            this.label3.Location = new System.Drawing.Point(155, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 21);
+            this.label3.Size = new System.Drawing.Size(104, 27);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tài khoản";
             // 
@@ -162,9 +145,9 @@
             this.txtPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtPassword.BorderRadius = 5;
             this.txtPassword.BorderSize = 1;
-            this.txtPassword.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Silver;
-            this.txtPassword.Location = new System.Drawing.Point(153, 330);
+            this.txtPassword.Location = new System.Drawing.Point(153, 331);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Multiline = false;
@@ -173,7 +156,7 @@
             this.txtPassword.PasswordChar = true;
             this.txtPassword.PlaceholderColor = System.Drawing.Color.Gray;
             this.txtPassword.PlaceholderText = "";
-            this.txtPassword.Size = new System.Drawing.Size(294, 38);
+            this.txtPassword.Size = new System.Drawing.Size(294, 46);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
@@ -186,9 +169,9 @@
             this.txtUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtUsername.BorderRadius = 5;
             this.txtUsername.BorderSize = 1;
-            this.txtUsername.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Silver;
-            this.txtUsername.Location = new System.Drawing.Point(153, 247);
+            this.txtUsername.Location = new System.Drawing.Point(153, 249);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.MaxLength = 32767;
             this.txtUsername.Multiline = false;
@@ -197,7 +180,7 @@
             this.txtUsername.PasswordChar = false;
             this.txtUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtUsername.PlaceholderText = "";
-            this.txtUsername.Size = new System.Drawing.Size(294, 38);
+            this.txtUsername.Size = new System.Drawing.Size(294, 46);
             this.txtUsername.TabIndex = 7;
             this.txtUsername.Texts = "";
             this.txtUsername.UnderlinedStyle = false;
@@ -207,13 +190,30 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label4.Location = new System.Drawing.Point(157, 307);
+            this.label4.Location = new System.Drawing.Point(155, 304);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 19);
+            this.label4.Size = new System.Drawing.Size(100, 27);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mật khẩu";
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.Color.DarkOrchid;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 2;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
+            this.circularPictureBox1.Location = new System.Drawing.Point(225, 20);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 0;
+            this.circularPictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -269,10 +269,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDesignLogin";
             this.Load += new System.EventHandler(this.frmDesignLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDesignLogin_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -12,6 +12,7 @@ namespace DTO
     /// </summary>
     public class LopHocPhan_AdminEdit
     {
+        public string MaMH { get; set; }
         public string MaHP { get; set; }
         public string TenHP { get; set; }
         public int SoTc { get; set; }

@@ -55,7 +55,7 @@
             this.gbSoCauDaLam.CustomBorderColor = System.Drawing.Color.LimeGreen;
             this.gbSoCauDaLam.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSoCauDaLam.ForeColor = System.Drawing.Color.White;
-            this.gbSoCauDaLam.Location = new System.Drawing.Point(1626, 245);
+            this.gbSoCauDaLam.Location = new System.Drawing.Point(1164, 273);
             this.gbSoCauDaLam.Name = "gbSoCauDaLam";
             this.gbSoCauDaLam.Size = new System.Drawing.Size(208, 127);
             this.gbSoCauDaLam.TabIndex = 3;
@@ -81,7 +81,7 @@
             this.gbTime.CustomBorderColor = System.Drawing.Color.CornflowerBlue;
             this.gbTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTime.ForeColor = System.Drawing.Color.White;
-            this.gbTime.Location = new System.Drawing.Point(1626, 79);
+            this.gbTime.Location = new System.Drawing.Point(1164, 111);
             this.gbTime.Name = "gbTime";
             this.gbTime.Size = new System.Drawing.Size(208, 127);
             this.gbTime.TabIndex = 5;
@@ -94,7 +94,7 @@
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
             this.lbTime.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbTime.Location = new System.Drawing.Point(28, 55);
+            this.lbTime.Location = new System.Drawing.Point(42, 55);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(152, 45);
             this.lbTime.TabIndex = 4;
@@ -107,15 +107,14 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lbCauHoi);
             this.panel1.Controls.Add(this.rbDapAnA);
             this.panel1.Controls.Add(this.rbDapAnB);
             this.panel1.Controls.Add(this.rbDapAnC);
             this.panel1.Controls.Add(this.rbDapAnD);
-            this.panel1.Location = new System.Drawing.Point(79, 134);
+            this.panel1.Location = new System.Drawing.Point(2, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1428, 579);
+            this.panel1.Size = new System.Drawing.Size(1040, 579);
             this.panel1.TabIndex = 13;
             // 
             // lbCauHoi
@@ -216,6 +215,7 @@
             // 
             // btnPre
             // 
+            this.btnPre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
             this.btnPre.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
             this.btnPre.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -225,7 +225,7 @@
             this.btnPre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPre.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPre.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPre.Location = new System.Drawing.Point(271, 735);
+            this.btnPre.Location = new System.Drawing.Point(200, 712);
             this.btnPre.Name = "btnPre";
             this.btnPre.Size = new System.Drawing.Size(302, 56);
             this.btnPre.TabIndex = 11;
@@ -235,6 +235,7 @@
             // 
             // btnNext
             // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
             this.btnNext.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
             this.btnNext.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -244,7 +245,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNext.Location = new System.Drawing.Point(917, 735);
+            this.btnNext.Location = new System.Drawing.Point(830, 712);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(302, 56);
             this.btnNext.TabIndex = 6;
@@ -255,7 +256,7 @@
             // frmQuiz
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1453, 819);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNopBai);
             this.Controls.Add(this.btnPre);
