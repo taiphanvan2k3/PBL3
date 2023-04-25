@@ -32,14 +32,11 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.lblTenCauHoi = new System.Windows.Forms.Label();
             this.lblSTTCauHoi = new System.Windows.Forms.Label();
-            this.btnNopBai = new GUI.MyCustomControl.CustomButton();
-            this.btnPreious = new GUI.MyCustomControl.CustomButton();
             this.panelMulti = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxB = new System.Windows.Forms.CheckBox();
             this.checkBoxA = new System.Windows.Forms.CheckBox();
             this.checkBoxC = new System.Windows.Forms.CheckBox();
             this.checkBoxD = new System.Windows.Forms.CheckBox();
-            this.btnNext = new GUI.MyCustomControl.CustomButton();
             this.gbTime = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.panelSingle = new System.Windows.Forms.FlowLayoutPanel();
@@ -50,11 +47,26 @@
             this.gbSoCauDaLam = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lbSoCauDaLam = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnNopBai = new GUI.MyCustomControl.CustomButton();
+            this.btnPreious = new GUI.MyCustomControl.CustomButton();
+            this.btnNext = new GUI.MyCustomControl.CustomButton();
+            this.panelTitle = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTenSV = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblNhomHP = new System.Windows.Forms.Label();
+            this.lblTenHP = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblLopSH = new System.Windows.Forms.Label();
+            this.lblMSSV = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelMulti.SuspendLayout();
             this.gbTime.SuspendLayout();
             this.panelSingle.SuspendLayout();
             this.gbSoCauDaLam.SuspendLayout();
+            this.panelTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
@@ -63,6 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.AutoScroll = true;
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelMain.Controls.Add(this.panelTitle);
             this.panelMain.Controls.Add(this.lblTenCauHoi);
             this.panelMain.Controls.Add(this.lblSTTCauHoi);
             this.panelMain.Controls.Add(this.btnNopBai);
@@ -74,13 +87,13 @@
             this.panelMain.Controls.Add(this.gbSoCauDaLam);
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1477, 762);
+            this.panelMain.Size = new System.Drawing.Size(1498, 762);
             this.panelMain.TabIndex = 0;
             // 
             // lblTenCauHoi
             // 
             this.lblTenCauHoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenCauHoi.Location = new System.Drawing.Point(85, 44);
+            this.lblTenCauHoi.Location = new System.Drawing.Point(77, 192);
             this.lblTenCauHoi.Name = "lblTenCauHoi";
             this.lblTenCauHoi.Size = new System.Drawing.Size(1108, 49);
             this.lblTenCauHoi.TabIndex = 25;
@@ -90,52 +103,11 @@
             // 
             this.lblSTTCauHoi.AutoSize = true;
             this.lblSTTCauHoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSTTCauHoi.Location = new System.Drawing.Point(44, 16);
+            this.lblSTTCauHoi.Location = new System.Drawing.Point(36, 164);
             this.lblSTTCauHoi.Name = "lblSTTCauHoi";
             this.lblSTTCauHoi.Size = new System.Drawing.Size(78, 28);
             this.lblSTTCauHoi.TabIndex = 24;
             this.lblSTTCauHoi.Text = "Câu hỏi";
-            // 
-            // btnNopBai
-            // 
-            this.btnNopBai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNopBai.BackColor = System.Drawing.Color.Red;
-            this.btnNopBai.BackGroundColor = System.Drawing.Color.Red;
-            this.btnNopBai.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnNopBai.BorderRadius = 20;
-            this.btnNopBai.BorderSize = 0;
-            this.btnNopBai.FlatAppearance.BorderSize = 0;
-            this.btnNopBai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNopBai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNopBai.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNopBai.Location = new System.Drawing.Point(1296, 686);
-            this.btnNopBai.Name = "btnNopBai";
-            this.btnNopBai.Size = new System.Drawing.Size(150, 47);
-            this.btnNopBai.TabIndex = 21;
-            this.btnNopBai.Text = "Nộp bài";
-            this.btnNopBai.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNopBai.UseVisualStyleBackColor = false;
-            this.btnNopBai.Click += new System.EventHandler(this.btnNopBai_Click);
-            // 
-            // btnPreious
-            // 
-            this.btnPreious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnPreious.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnPreious.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPreious.BorderRadius = 20;
-            this.btnPreious.BorderSize = 0;
-            this.btnPreious.FlatAppearance.BorderSize = 0;
-            this.btnPreious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreious.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreious.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPreious.Location = new System.Drawing.Point(167, 617);
-            this.btnPreious.Name = "btnPreious";
-            this.btnPreious.Size = new System.Drawing.Size(302, 56);
-            this.btnPreious.TabIndex = 20;
-            this.btnPreious.Text = "Trước đó";
-            this.btnPreious.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPreious.UseVisualStyleBackColor = false;
-            this.btnPreious.Click += new System.EventHandler(this.btnPreious_Click);
             // 
             // panelMulti
             // 
@@ -145,10 +117,10 @@
             this.panelMulti.Controls.Add(this.checkBoxA);
             this.panelMulti.Controls.Add(this.checkBoxC);
             this.panelMulti.Controls.Add(this.checkBoxD);
-            this.panelMulti.Location = new System.Drawing.Point(157, 103);
+            this.panelMulti.Location = new System.Drawing.Point(167, 246);
             this.panelMulti.Margin = new System.Windows.Forms.Padding(10);
             this.panelMulti.Name = "panelMulti";
-            this.panelMulti.Size = new System.Drawing.Size(990, 484);
+            this.panelMulti.Size = new System.Drawing.Size(990, 354);
             this.panelMulti.TabIndex = 22;
             // 
             // checkBoxB
@@ -158,7 +130,7 @@
             this.checkBoxB.Location = new System.Drawing.Point(10, 10);
             this.checkBoxB.Margin = new System.Windows.Forms.Padding(10, 10, 3, 3);
             this.checkBoxB.Name = "checkBoxB";
-            this.checkBoxB.Size = new System.Drawing.Size(965, 106);
+            this.checkBoxB.Size = new System.Drawing.Size(965, 77);
             this.checkBoxB.TabIndex = 1;
             this.checkBoxB.UseVisualStyleBackColor = false;
             // 
@@ -166,10 +138,10 @@
             // 
             this.checkBoxA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.checkBoxA.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxA.Location = new System.Drawing.Point(10, 129);
+            this.checkBoxA.Location = new System.Drawing.Point(10, 100);
             this.checkBoxA.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
             this.checkBoxA.Name = "checkBoxA";
-            this.checkBoxA.Size = new System.Drawing.Size(965, 106);
+            this.checkBoxA.Size = new System.Drawing.Size(965, 67);
             this.checkBoxA.TabIndex = 0;
             this.checkBoxA.UseVisualStyleBackColor = false;
             // 
@@ -177,10 +149,10 @@
             // 
             this.checkBoxC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.checkBoxC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxC.Location = new System.Drawing.Point(10, 248);
+            this.checkBoxC.Location = new System.Drawing.Point(10, 180);
             this.checkBoxC.Margin = new System.Windows.Forms.Padding(10, 3, 3, 10);
             this.checkBoxC.Name = "checkBoxC";
-            this.checkBoxC.Size = new System.Drawing.Size(965, 106);
+            this.checkBoxC.Size = new System.Drawing.Size(965, 82);
             this.checkBoxC.TabIndex = 2;
             this.checkBoxC.UseVisualStyleBackColor = false;
             // 
@@ -188,32 +160,12 @@
             // 
             this.checkBoxD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.checkBoxD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxD.Location = new System.Drawing.Point(10, 367);
+            this.checkBoxD.Location = new System.Drawing.Point(10, 275);
             this.checkBoxD.Margin = new System.Windows.Forms.Padding(10, 3, 3, 10);
             this.checkBoxD.Name = "checkBoxD";
-            this.checkBoxD.Size = new System.Drawing.Size(965, 106);
+            this.checkBoxD.Size = new System.Drawing.Size(965, 65);
             this.checkBoxD.TabIndex = 3;
             this.checkBoxD.UseVisualStyleBackColor = false;
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnNext.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnNext.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnNext.BorderRadius = 20;
-            this.btnNext.BorderSize = 0;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNext.Location = new System.Drawing.Point(805, 617);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(302, 56);
-            this.btnNext.TabIndex = 19;
-            this.btnNext.Text = "Tiếp theo";
-            this.btnNext.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // gbTime
             // 
@@ -251,10 +203,10 @@
             this.panelSingle.Controls.Add(this.radioButtonB);
             this.panelSingle.Controls.Add(this.radioButtonC);
             this.panelSingle.Controls.Add(this.radioButtonD);
-            this.panelSingle.Location = new System.Drawing.Point(157, 103);
+            this.panelSingle.Location = new System.Drawing.Point(167, 246);
             this.panelSingle.Margin = new System.Windows.Forms.Padding(10);
             this.panelSingle.Name = "panelSingle";
-            this.panelSingle.Size = new System.Drawing.Size(990, 484);
+            this.panelSingle.Size = new System.Drawing.Size(990, 354);
             this.panelSingle.TabIndex = 23;
             // 
             // radioButtonA
@@ -265,7 +217,7 @@
             this.radioButtonA.Location = new System.Drawing.Point(10, 10);
             this.radioButtonA.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
             this.radioButtonA.Name = "radioButtonA";
-            this.radioButtonA.Size = new System.Drawing.Size(965, 106);
+            this.radioButtonA.Size = new System.Drawing.Size(965, 77);
             this.radioButtonA.TabIndex = 7;
             this.radioButtonA.TabStop = true;
             this.radioButtonA.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -276,10 +228,10 @@
             this.radioButtonB.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.radioButtonB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButtonB.Location = new System.Drawing.Point(10, 129);
+            this.radioButtonB.Location = new System.Drawing.Point(10, 100);
             this.radioButtonB.Margin = new System.Windows.Forms.Padding(10, 3, 3, 10);
             this.radioButtonB.Name = "radioButtonB";
-            this.radioButtonB.Size = new System.Drawing.Size(965, 106);
+            this.radioButtonB.Size = new System.Drawing.Size(965, 77);
             this.radioButtonB.TabIndex = 6;
             this.radioButtonB.TabStop = true;
             this.radioButtonB.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -290,10 +242,10 @@
             this.radioButtonC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.radioButtonC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButtonC.Location = new System.Drawing.Point(10, 248);
+            this.radioButtonC.Location = new System.Drawing.Point(10, 190);
             this.radioButtonC.Margin = new System.Windows.Forms.Padding(10, 3, 3, 10);
             this.radioButtonC.Name = "radioButtonC";
-            this.radioButtonC.Size = new System.Drawing.Size(965, 106);
+            this.radioButtonC.Size = new System.Drawing.Size(965, 77);
             this.radioButtonC.TabIndex = 5;
             this.radioButtonC.TabStop = true;
             this.radioButtonC.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -304,10 +256,10 @@
             this.radioButtonD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.radioButtonD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButtonD.Location = new System.Drawing.Point(10, 367);
+            this.radioButtonD.Location = new System.Drawing.Point(10, 280);
             this.radioButtonD.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.radioButtonD.Name = "radioButtonD";
-            this.radioButtonD.Size = new System.Drawing.Size(965, 106);
+            this.radioButtonD.Size = new System.Drawing.Size(965, 77);
             this.radioButtonD.TabIndex = 4;
             this.radioButtonD.TabStop = true;
             this.radioButtonD.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -345,6 +297,193 @@
             this.timer1.Interval = 16;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnNopBai
+            // 
+            this.btnNopBai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNopBai.BackColor = System.Drawing.Color.Red;
+            this.btnNopBai.BackGroundColor = System.Drawing.Color.Red;
+            this.btnNopBai.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNopBai.BorderRadius = 20;
+            this.btnNopBai.BorderSize = 0;
+            this.btnNopBai.FlatAppearance.BorderSize = 0;
+            this.btnNopBai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNopBai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNopBai.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNopBai.Location = new System.Drawing.Point(1296, 689);
+            this.btnNopBai.Name = "btnNopBai";
+            this.btnNopBai.Size = new System.Drawing.Size(150, 47);
+            this.btnNopBai.TabIndex = 21;
+            this.btnNopBai.Text = "Nộp bài";
+            this.btnNopBai.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNopBai.UseVisualStyleBackColor = false;
+            this.btnNopBai.Click += new System.EventHandler(this.btnNopBai_Click);
+            // 
+            // btnPreious
+            // 
+            this.btnPreious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnPreious.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnPreious.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPreious.BorderRadius = 20;
+            this.btnPreious.BorderSize = 0;
+            this.btnPreious.FlatAppearance.BorderSize = 0;
+            this.btnPreious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreious.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreious.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPreious.Location = new System.Drawing.Point(167, 643);
+            this.btnPreious.Name = "btnPreious";
+            this.btnPreious.Size = new System.Drawing.Size(302, 56);
+            this.btnPreious.TabIndex = 20;
+            this.btnPreious.Text = "Trước đó";
+            this.btnPreious.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPreious.UseVisualStyleBackColor = false;
+            this.btnPreious.Click += new System.EventHandler(this.btnPreious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnNext.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnNext.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNext.BorderRadius = 20;
+            this.btnNext.BorderSize = 0;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNext.Location = new System.Drawing.Point(837, 643);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(302, 56);
+            this.btnNext.TabIndex = 19;
+            this.btnNext.Text = "Tiếp theo";
+            this.btnNext.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // panelTitle
+            // 
+            this.panelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTitle.BorderRadius = 10;
+            this.panelTitle.Controls.Add(this.lblMSSV);
+            this.panelTitle.Controls.Add(this.lblLopSH);
+            this.panelTitle.Controls.Add(this.label8);
+            this.panelTitle.Controls.Add(this.lblTenHP);
+            this.panelTitle.Controls.Add(this.lblNhomHP);
+            this.panelTitle.Controls.Add(this.label5);
+            this.panelTitle.Controls.Add(this.lblTenSV);
+            this.panelTitle.Controls.Add(this.label3);
+            this.panelTitle.Controls.Add(this.label2);
+            this.panelTitle.Controls.Add(this.label1);
+            this.panelTitle.CustomBorderColor = System.Drawing.Color.Lavender;
+            this.panelTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.panelTitle.Location = new System.Drawing.Point(237, 10);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(880, 151);
+            this.panelTitle.TabIndex = 26;
+            this.panelTitle.Text = "Thi giữa kì phân tích và thiết kế hướng đối tượng";
+            this.panelTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Học phần:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Mã số sinh viên:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(564, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Họ tên:";
+            // 
+            // lblTenSV
+            // 
+            this.lblTenSV.AutoSize = true;
+            this.lblTenSV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenSV.Location = new System.Drawing.Point(732, 51);
+            this.lblTenSV.Name = "lblTenSV";
+            this.lblTenSV.Size = new System.Drawing.Size(108, 23);
+            this.lblTenSV.TabIndex = 3;
+            this.lblTenSV.Text = "Phan Văn Tài";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(564, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 23);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Nhóm học phần:";
+            // 
+            // lblNhomHP
+            // 
+            this.lblNhomHP.AutoSize = true;
+            this.lblNhomHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhomHP.Location = new System.Drawing.Point(732, 86);
+            this.lblNhomHP.Name = "lblNhomHP";
+            this.lblNhomHP.Size = new System.Drawing.Size(99, 23);
+            this.lblNhomHP.TabIndex = 5;
+            this.lblNhomHP.Text = "OOAD21.13";
+            this.lblNhomHP.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // lblTenHP
+            // 
+            this.lblTenHP.AutoSize = true;
+            this.lblTenHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenHP.Location = new System.Drawing.Point(193, 51);
+            this.lblTenHP.Name = "lblTenHP";
+            this.lblTenHP.Size = new System.Drawing.Size(301, 23);
+            this.lblTenHP.TabIndex = 6;
+            this.lblTenHP.Text = "Phân tích và thiết kế hướng đối tượng";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(35, 119);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 23);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Lớp sinh hoạt:";
+            // 
+            // lblLopSH
+            // 
+            this.lblLopSH.AutoSize = true;
+            this.lblLopSH.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLopSH.Location = new System.Drawing.Point(193, 119);
+            this.lblLopSH.Name = "lblLopSH";
+            this.lblLopSH.Size = new System.Drawing.Size(101, 23);
+            this.lblLopSH.TabIndex = 8;
+            this.lblLopSH.Text = "21TCLC_DT3";
+            // 
+            // lblMSSV
+            // 
+            this.lblMSSV.AutoSize = true;
+            this.lblMSSV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMSSV.Location = new System.Drawing.Point(193, 86);
+            this.lblMSSV.Name = "lblMSSV";
+            this.lblMSSV.Size = new System.Drawing.Size(91, 23);
+            this.lblMSSV.TabIndex = 9;
+            this.lblMSSV.Text = "102210230";
+            // 
             // frmQuiz
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -356,13 +495,11 @@
             this.KeyPreview = true;
             this.Name = "frmQuiz";
             this.RightToLeftLayout = true;
-            this.Text = "Quiz";
-            this.TopMost = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuiz";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmQuiz_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmQuiz_KeyDown);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.panelMulti.ResumeLayout(false);
@@ -371,6 +508,8 @@
             this.panelSingle.ResumeLayout(false);
             this.gbSoCauDaLam.ResumeLayout(false);
             this.gbSoCauDaLam.PerformLayout();
+            this.panelTitle.ResumeLayout(false);
+            this.panelTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -398,5 +537,16 @@
         private Guna.UI2.WinForms.Guna2GroupBox gbSoCauDaLam;
         private System.Windows.Forms.Label lbSoCauDaLam;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2GroupBox panelTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMSSV;
+        private System.Windows.Forms.Label lblLopSH;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTenHP;
+        private System.Windows.Forms.Label lblNhomHP;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTenSV;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

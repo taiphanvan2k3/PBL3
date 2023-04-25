@@ -59,7 +59,7 @@ namespace GUI
                 "Câu hỏi gì dễ thế, bằng 3?\nEndC";
             DapAnC += "\n" + DapAnB;
             string DapAnD = "Chắc là 0 :)";
-            lblTenCauHoi.Text = DapAnB + "\n" + DapAnB;
+            lblTenCauHoi.Text = DapAnB + "\n" + DapAnB + "\n" + DapAnB + "\nx3";
             Random r = new Random();
             for (int i = 0; i < 10; i++)
             {
@@ -299,27 +299,9 @@ namespace GUI
             this.Close();
         }
 
-        private void frmQuiz_KeyDown(object sender, KeyEventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("right");
-            //if (e.KeyCode == Keys.Up)
-            //{
-            //    // Xử lý sự kiện nhấn phím mũi tên lên
-            //}
-            //else if (e.KeyCode == Keys.Down)
-            //{
-            //    // Xử lý sự kiện nhấn phím mũi tên xuống
-            //}
-            //else if (e.KeyCode == Keys.Left)
-            //{
-            //    // Xử lý sự kiện nhấn phím mũi tên trái
-            //    MessageBox.Show("left");
-            //}
-            //else if (e.KeyCode == Keys.Right)
-            //{
-            //    // Xử lý sự kiện nhấn phím mũi tên
-            //    MessageBox.Show("right");
-            //}
+
         }
     }
 }
