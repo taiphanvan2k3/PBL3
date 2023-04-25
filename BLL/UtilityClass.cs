@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
@@ -137,6 +138,21 @@ namespace BLL
                 res += str[7] + "-";
             }
             return res.Remove(res.Length - 1, 1);
+        }
+
+        public static int CalculateHeightOfControl(Control control)
+        {
+            Size txtSize = TextRenderer.MeasureText(control.Text, control.Font, control.ClientRectangle.Size, TextFormatFlags.WordBreak);
+
+            // Lấy chiều cao của một dòng văn bản dựa vào font của nó
+            int lineHeight = control.Font.Height;
+
+            //Tính toán số lượng hàng cần để hiển thị Text của control này
+            int numLines = (int)Math.Ceiling((double)txtSize.Height / lineHeight);
+
+            //Tính toán chiều cao (pixel) để hiển thị Text của control này
+            int textHeight = numLines * lineHeight;
+            return textHeight;
         }
     }
 }
