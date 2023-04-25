@@ -355,6 +355,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "frmQuiz";
+            this.RightToLeftLayout = true;
+            this.Text = "Quiz";
+            this.TopMost = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuiz";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
