@@ -15,7 +15,6 @@ namespace GUI
 {
     public partial class frmAssignTeacher : Form
     {
-        public bool checkHaveSchedule { get; set; }
         private const int maxRow = 6;
         private int currentPage, maxPage;
         private List<AssignTeacher> li;
@@ -29,7 +28,16 @@ namespace GUI
         {
             dtgv.Rows.Clear();
             dtgv.Refresh();
-            li = GiangVien_BLL.Instance.GetGiangVienWithNumberLHP();
+            //li = GiangVien_BLL.Instance.GetGiangVienWithNumberLHP();
+            if (CheckHasSchedule)
+                li = GiangVien_BLL.Instance.GetGiangVienWithNumberLHPPhuHop(tbMaHP.Texts, lbThu.Text, Convert.ToInt32(lbTietBD.Text.Substring(lbTietBD.Text.Length - 1)), Convert.ToInt32(lbTietBD.Text.Substring(lbTietKT.Text.Length - 1)));
+            else
+            {
+                string thu = ((cbbThu.SelectedText.ToString() != "") ? cbbThu.SelectedItem.ToString() : "");
+                int tietBD = ((cbbTietBD.SelectedItem != null) ? Convert.ToInt32(cbbTietBD.SelectedItem.ToString()) : 0);
+                int tietKT = ((cbbTietBD.SelectedItem != null) ? Convert.ToInt32(cbbTietKT.SelectedItem.ToString()) : 0);
+                li = GiangVien_BLL.Instance.GetGiangVienWithNumberLHPPhuHop(tbMaHP.Texts, thu, tietBD, tietKT);
+            }
             currentPage = 1;
             maxPage = (int)Math.Ceiling(li.Count * 1.0 / maxRow);
             helper = new SplitPageHelper<AssignTeacher>(maxRow, li);

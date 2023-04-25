@@ -153,6 +153,8 @@ namespace GUI
         private void btnAssignTeacher_Click(object sender, EventArgs e)
         {
             frmAssignTeacher frm = new frmAssignTeacher();
+            frm.CheckHasSchedule = false;
+
             frm.MaHP = lblMaHP.Text;
             frm.TenMH = cbbTenMH.SelectedItem.ToString();
             frm.ShowDialog();

@@ -91,8 +91,8 @@ namespace GUI
         {
             frmAssignTeacher frm = new frmAssignTeacher();
             if (lhp.Thu != "")
-                frm.checkHaveSchedule = true;
-            else frm.checkHaveSchedule = false;
+                frm.CheckHasSchedule = true;
+            else frm.CheckHasSchedule = false;
             frm.MaHP = txtMaHP.Text;
             frm.TenMH = txtTenMH.Texts;
             frm.MaGV = txtMaGV.Text;
@@ -110,6 +110,7 @@ namespace GUI
             }
             else
                 frm.CheckHasSchedule = false;
+            frm.CheckHasSchedule = false;
             frm.ShowDialog();
         }
 

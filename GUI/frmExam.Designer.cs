@@ -32,9 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.panelDangXuat = new System.Windows.Forms.Panel();
+            this.btnBackFrmStudent = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDarkMode = new FontAwesome.Sharp.IconButton();
             this.btnHistoryDoExam = new FontAwesome.Sharp.IconButton();
@@ -44,19 +48,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.panelDangXuat = new System.Windows.Forms.Panel();
             this.timerCheckClick = new System.Windows.Forms.Timer(this.components);
-            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBackFrmStudent = new Guna.UI2.WinForms.Guna2Button();
-            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.panel1.SuspendLayout();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.pnlMain.SuspendLayout();
+            this.panelDangXuat.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelDangXuat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,6 +82,24 @@
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(1463, 69);
             this.panelTitle.TabIndex = 3;
+            // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1383, 6);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
+            this.avatarTopRight.Click += new System.EventHandler(this.avatarTopRight_Click);
             // 
             // lblAvatar
             // 
@@ -119,6 +137,50 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1460, 728);
             this.pnlMain.TabIndex = 2;
+            // 
+            // panelDangXuat
+            // 
+            this.panelDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDangXuat.BackColor = System.Drawing.Color.OldLace;
+            this.panelDangXuat.Controls.Add(this.btnBackFrmStudent);
+            this.panelDangXuat.Controls.Add(this.btnDangXuat);
+            this.panelDangXuat.Location = new System.Drawing.Point(1228, 2);
+            this.panelDangXuat.Name = "panelDangXuat";
+            this.panelDangXuat.Size = new System.Drawing.Size(228, 108);
+            this.panelDangXuat.TabIndex = 0;
+            this.panelDangXuat.Visible = false;
+            // 
+            // btnBackFrmStudent
+            // 
+            this.btnBackFrmStudent.BorderRadius = 15;
+            this.btnBackFrmStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackFrmStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackFrmStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBackFrmStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBackFrmStudent.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackFrmStudent.ForeColor = System.Drawing.Color.White;
+            this.btnBackFrmStudent.Location = new System.Drawing.Point(9, 5);
+            this.btnBackFrmStudent.Name = "btnBackFrmStudent";
+            this.btnBackFrmStudent.Size = new System.Drawing.Size(213, 45);
+            this.btnBackFrmStudent.TabIndex = 1;
+            this.btnBackFrmStudent.Text = "Quay lại trang sinh viên";
+            this.btnBackFrmStudent.Click += new System.EventHandler(this.btnBackFrmStudent_Click);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BorderRadius = 15;
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(7, 56);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(215, 45);
+            this.btnDangXuat.TabIndex = 0;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panelMenu
             // 
@@ -292,72 +354,10 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // panelDangXuat
-            // 
-            this.panelDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDangXuat.BackColor = System.Drawing.Color.OldLace;
-            this.panelDangXuat.Controls.Add(this.btnBackFrmStudent);
-            this.panelDangXuat.Controls.Add(this.btnDangXuat);
-            this.panelDangXuat.Location = new System.Drawing.Point(1228, 2);
-            this.panelDangXuat.Name = "panelDangXuat";
-            this.panelDangXuat.Size = new System.Drawing.Size(228, 108);
-            this.panelDangXuat.TabIndex = 0;
-            this.panelDangXuat.Visible = false;
-            // 
             // timerCheckClick
             // 
             this.timerCheckClick.Interval = 10;
             this.timerCheckClick.Tick += new System.EventHandler(this.timerCheckClick_Tick);
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.BorderRadius = 15;
-            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Location = new System.Drawing.Point(7, 56);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(215, 45);
-            this.btnDangXuat.TabIndex = 0;
-            this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // btnBackFrmStudent
-            // 
-            this.btnBackFrmStudent.BorderRadius = 15;
-            this.btnBackFrmStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBackFrmStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBackFrmStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBackFrmStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBackFrmStudent.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackFrmStudent.ForeColor = System.Drawing.Color.White;
-            this.btnBackFrmStudent.Location = new System.Drawing.Point(9, 5);
-            this.btnBackFrmStudent.Name = "btnBackFrmStudent";
-            this.btnBackFrmStudent.Size = new System.Drawing.Size(213, 45);
-            this.btnBackFrmStudent.TabIndex = 1;
-            this.btnBackFrmStudent.Text = "Quay lại trang sinh viên";
-            this.btnBackFrmStudent.Click += new System.EventHandler(this.btnBackFrmStudent_Click);
-            // 
-            // avatarTopRight
-            // 
-            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
-            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.avatarTopRight.BorderSize = 2;
-            this.avatarTopRight.GradientAngle = 50F;
-            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1383, 6);
-            this.avatarTopRight.Name = "avatarTopRight";
-            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
-            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarTopRight.TabIndex = 3;
-            this.avatarTopRight.TabStop = false;
-            this.avatarTopRight.Click += new System.EventHandler(this.avatarTopRight_Click);
             // 
             // frmExam
             // 
@@ -373,12 +373,12 @@
             this.panel1.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.pnlMain.ResumeLayout(false);
+            this.panelDangXuat.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelDangXuat.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.ResumeLayout(false);
 
         }

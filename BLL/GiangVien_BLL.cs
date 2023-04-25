@@ -84,5 +84,25 @@ namespace BLL
         {
             GiangVien_DAL.Instance.AssignTeacherNoChangeSchedule(id, MaLHP);
         }
+        #region Get List GV Suitable To Assign
+        public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
+        {
+            List<AssignTeacher> li = new List<AssignTeacher>();
+            int stt = 1;
+            foreach (var i in GiangVien_DAL.Instance.GetGVPhuHopTKB(MaLHP,Thu,TietBD,TietKT))
+            {
+                li.Add(new AssignTeacher
+                {
+                    STT = stt,
+                    MaGV = i.MaGV,
+                    TenGV = i.TenGV,
+                    SDT = i.SDT,
+                    SoLuongHPPhuTrach = i.SoLuongHPPhuTrach
+                });
+                stt++;
+            }
+            return li;
+        }
+        #endregion
     }
 }
