@@ -41,6 +41,7 @@
           <Property Name="DapAnD" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="DapAnDung" Type="varchar" MaxLength="4" Nullable="false" />
           <Property Name="MaMH" Type="varchar" MaxLength="9" />
+          <Property Name="PhanLoai" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="CHUONG_TRINH_DAO_TAO">
           <Key>
@@ -88,10 +89,11 @@
           </Key>
           <Property Name="MaSV" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="MaBaiKiemTra" Type="int" Nullable="false" />
-          <Property Name="ThoiGianNopBai" Type="tinyint" Nullable="false" />
           <Property Name="SoCauDung" Type="tinyint" Nullable="false" />
           <Property Name="SoLanViPham" Type="tinyint" Nullable="false" />
           <Property Name="Diem" Type="float" Nullable="false" />
+          <Property Name="ThoiGianLamBai" Type="datetime" />
+          <Property Name="ThoiGianNopBai" Type="datetime" />
         </EntityType>
         <EntityType Name="LOP_HOC_PHAN">
           <Key>
@@ -722,6 +724,7 @@
           <Property Name="DapAnD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DapAnDung" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaMH" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="PhanLoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="BAIKIEMTRA_CAUHOI" Relationship="Self.FK__BAIKIEMTR__MaCau__76619304" FromRole="CAU_HOI" ToRole="BAIKIEMTRA_CAUHOI" />
           <NavigationProperty Name="MON_HOC" Relationship="Self.FK__CAU_HOI__MaMH__662B2B3B" FromRole="CAU_HOI" ToRole="MON_HOC" />
         </EntityType>
@@ -785,10 +788,11 @@
           </Key>
           <Property Name="MaSV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaBaiKiemTra" Type="Int32" Nullable="false" />
-          <Property Name="ThoiGianNopBai" Type="Byte" Nullable="false" />
           <Property Name="SoCauDung" Type="Byte" Nullable="false" />
           <Property Name="SoLanViPham" Type="Byte" Nullable="false" />
           <Property Name="Diem" Type="Double" Nullable="false" />
+          <Property Name="ThoiGianLamBai" Type="DateTime" Precision="3" />
+          <Property Name="ThoiGianNopBai" Type="DateTime" Precision="3" />
           <NavigationProperty Name="BAI_KIEM_TRA" Relationship="Self.FK_MaBaiKiemTra_LAMBKT" FromRole="LAM_BAI_KIEM_TRA" ToRole="BAI_KIEM_TRA" />
           <NavigationProperty Name="SINH_VIEN" Relationship="Self.FK_MaSV_LAMBKT" FromRole="LAM_BAI_KIEM_TRA" ToRole="SINH_VIEN" />
         </EntityType>
@@ -1446,6 +1450,7 @@
                 <ScalarProperty Name="DapAnD" ColumnName="DapAnD" />
                 <ScalarProperty Name="DapAnDung" ColumnName="DapAnDung" />
                 <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+                <ScalarProperty Name="PhanLoai" ColumnName="PhanLoai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1498,10 +1503,11 @@
               <MappingFragment StoreEntitySet="LAM_BAI_KIEM_TRA">
                 <ScalarProperty Name="MaSV" ColumnName="MaSV" />
                 <ScalarProperty Name="MaBaiKiemTra" ColumnName="MaBaiKiemTra" />
-                <ScalarProperty Name="ThoiGianNopBai" ColumnName="ThoiGianNopBai" />
                 <ScalarProperty Name="SoCauDung" ColumnName="SoCauDung" />
                 <ScalarProperty Name="SoLanViPham" ColumnName="SoLanViPham" />
                 <ScalarProperty Name="Diem" ColumnName="Diem" />
+                <ScalarProperty Name="ThoiGianLamBai" ColumnName="ThoiGianLamBai" />
+                <ScalarProperty Name="ThoiGianNopBai" ColumnName="ThoiGianNopBai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

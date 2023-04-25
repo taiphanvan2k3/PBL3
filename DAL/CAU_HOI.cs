@@ -28,6 +28,7 @@ namespace DAL
         public string DapAnD { get; set; }
         public string DapAnDung { get; set; }
         public string MaMH { get; set; }
+        public string PhanLoai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BAIKIEMTRA_CAUHOI> BAIKIEMTRA_CAUHOI { get; set; }

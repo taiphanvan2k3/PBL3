@@ -16,10 +16,11 @@ namespace DAL
     {
         public string MaSV { get; set; }
         public int MaBaiKiemTra { get; set; }
-        public byte ThoiGianNopBai { get; set; }
         public byte SoCauDung { get; set; }
         public byte SoLanViPham { get; set; }
         public double Diem { get; set; }
+        public Nullable<System.DateTime> ThoiGianLamBai { get; set; }
+        public Nullable<System.DateTime> ThoiGianNopBai { get; set; }
     
         public virtual BAI_KIEM_TRA BAI_KIEM_TRA { get; set; }
         public virtual SINH_VIEN SINH_VIEN { get; set; }
