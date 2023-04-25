@@ -3,16 +3,9 @@ using DTO;
 using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Management;
-using System.Windows.Forms;
-using System.Windows.Threading;
-using System.Management;
-using System.Windows.Threading;
 using System.Runtime.InteropServices;
-using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -308,25 +301,25 @@ namespace GUI
 
         private void frmQuiz_KeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show("right");
-            if (e.KeyCode == Keys.Up)
-            {
-                // Xử lý sự kiện nhấn phím mũi tên lên
-            }
-            else if (e.KeyCode == Keys.Down)
-            {
-                // Xử lý sự kiện nhấn phím mũi tên xuống
-            }
-            else if (e.KeyCode == Keys.Left)
-            {
-                // Xử lý sự kiện nhấn phím mũi tên trái
-                MessageBox.Show("left");
-            }
-            else if (e.KeyCode == Keys.Right)
-            {
-                // Xử lý sự kiện nhấn phím mũi tên
-                MessageBox.Show("right");
-            }
+            //MessageBox.Show("right");
+            //if (e.KeyCode == Keys.Up)
+            //{
+            //    // Xử lý sự kiện nhấn phím mũi tên lên
+            //}
+            //else if (e.KeyCode == Keys.Down)
+            //{
+            //    // Xử lý sự kiện nhấn phím mũi tên xuống
+            //}
+            //else if (e.KeyCode == Keys.Left)
+            //{
+            //    // Xử lý sự kiện nhấn phím mũi tên trái
+            //    MessageBox.Show("left");
+            //}
+            //else if (e.KeyCode == Keys.Right)
+            //{
+            //    // Xử lý sự kiện nhấn phím mũi tên
+            //    MessageBox.Show("right");
+            //}
         }
     }
 }
