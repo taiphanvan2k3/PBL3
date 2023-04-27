@@ -84,6 +84,22 @@ namespace BLL
         {
             GiangVien_DAL.Instance.AssignTeacherNoChangeSchedule(id, MaLHP);
         }
+        public List<string> GetListLHPByIDTeacher(string id)
+        {
+            return GiangVien_DAL.Instance.GetMaLopHPByID(id);
+        }
+        public void SendNoticeToLHP(string MaGV, string MaLHP, string TieuDe, string NoiDung, DateTime NgayTao)
+        {
+            GiangVien_DAL.Instance.SendNoticeToLHP(MaGV,MaLHP,TieuDe, NoiDung, NgayTao);
+        }
+        public bool CheckNoticeRedundanṭ̣̣̣(string MaGV, DateTime NgayTao, string MaLHP)
+        {
+            return GiangVien_DAL.Instance.CheckNoticeRedundanṭ̣̣̣(MaGV, NgayTao, MaLHP);
+        }
+        public void ReplaceNotice(string MaGV, DateTime NgayTao, string MaLHP, string TieuDe, string NoiDung)
+        {
+            GiangVien_DAL.Instance.ReplaceNotice(MaGV, NgayTao, MaLHP, TieuDe, NoiDung);
+        }
         #region Get List GV Suitable To Assign
         public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {

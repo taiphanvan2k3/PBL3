@@ -48,8 +48,8 @@
             this.btnCalendarDays = new System.Windows.Forms.Button();
             this.btnCalendarWeek = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
-            this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.btnDarkMode = new System.Windows.Forms.Button();
+            this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -247,6 +247,7 @@
             this.btnSendAnnounce.TabIndex = 14;
             this.btnSendAnnounce.Tag = "Gửi thông báo";
             this.btnSendAnnounce.UseVisualStyleBackColor = false;
+            this.btnSendAnnounce.Click += new System.EventHandler(this.btnSendAnnounce_Click);
             // 
             // btnManageClass
             // 
@@ -346,6 +347,25 @@
             this.btnCalendar.UseVisualStyleBackColor = false;
             this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
+            // btnDarkMode
+            // 
+            this.btnDarkMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
+            this.btnDarkMode.FlatAppearance.BorderSize = 0;
+            this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDarkMode.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDarkMode.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDarkMode.Image = global::GUI.Properties.Resources.DarkMode;
+            this.btnDarkMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDarkMode.Location = new System.Drawing.Point(3, 299);
+            this.btnDarkMode.Name = "btnDarkMode";
+            this.btnDarkMode.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnDarkMode.Size = new System.Drawing.Size(250, 68);
+            this.btnDarkMode.TabIndex = 19;
+            this.btnDarkMode.Tag = "Nền tối";
+            this.btnDarkMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDarkMode.UseVisualStyleBackColor = false;
+            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
+            // 
             // btnLogOut
             // 
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -368,25 +388,6 @@
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // btnDarkMode
-            // 
-            this.btnDarkMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
-            this.btnDarkMode.FlatAppearance.BorderSize = 0;
-            this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDarkMode.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDarkMode.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDarkMode.Image = global::GUI.Properties.Resources.DarkMode;
-            this.btnDarkMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.Location = new System.Drawing.Point(3, 299);
-            this.btnDarkMode.Name = "btnDarkMode";
-            this.btnDarkMode.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnDarkMode.Size = new System.Drawing.Size(250, 68);
-            this.btnDarkMode.TabIndex = 19;
-            this.btnDarkMode.Tag = "Nền tối";
-            this.btnDarkMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.UseVisualStyleBackColor = false;
-            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
             // 
             // frmTeacher
             // 

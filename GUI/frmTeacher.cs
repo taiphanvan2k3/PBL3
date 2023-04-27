@@ -18,14 +18,27 @@ namespace GUI
         private string ButtonClicked = "Home";
         private UC_TeacherInfo Info;
         private UC_CreateTestQuestions CreateQues;
-        public frmTeacher(string Account)
+        public frmTeacher()
         {
             InitializeComponent();
             CollapseMenu();
             Info = new UC_TeacherInfo();
-            CreateQues = new UC_CreateTestQuestions(Account);
-            LoadInfo(Account);
+            ID = "102BK0001";
+            CreateQues = new UC_CreateTestQuestions(ID);
+            LoadInfo(ID);
         }
+        public frmTeacher(string account)
+        {
+            InitializeComponent();
+            CollapseMenu();
+            Info = new UC_TeacherInfo();
+            ID = account;
+            CreateQues = new UC_CreateTestQuestions(account);
+            LoadInfo(ID);
+        }
+        #region Properties
+        string ID { get; set; }
+        #endregion
         #region Methods
         private void CollapseMenu()
         {
@@ -181,7 +194,14 @@ namespace GUI
             pnlMain.Controls.Clear();
             pnlMain.Controls.Add(CreateQues);
         }
-        #endregion
 
+        private void btnSendAnnounce_Click(object sender, EventArgs e)
+        {
+            UC_SendNoticeToModuleClass f = new UC_SendNoticeToModuleClass();
+            f.ID = ID;
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(f);
+        }
+        #endregion
     }
 }

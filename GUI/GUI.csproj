@@ -305,6 +305,12 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyUserControls\UC_SendNoticeToModuleClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_SendNoticeToModuleClass.Designer.cs">
+      <DependentUpon>UC_SendNoticeToModuleClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_Calendar_New.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -340,12 +346,6 @@
     </Compile>
     <Compile Include="MyUserControls\UC_ParentInfo.designer.cs">
       <DependentUpon>UC_ParentInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserControls\UC_SendMessage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_SendMessage.Designer.cs">
-      <DependentUpon>UC_SendMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_StudentInfoNew.cs">
       <SubType>UserControl</SubType>
@@ -518,6 +518,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ParentInfo.resx">
       <DependentUpon>UC_ParentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_SendNoticeToModuleClass.resx">
+      <DependentUpon>UC_SendNoticeToModuleClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_StudentInfoNew.resx">
       <DependentUpon>UC_StudentInfoNew.cs</DependentUpon>

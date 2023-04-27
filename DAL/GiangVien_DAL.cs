@@ -106,6 +106,64 @@ namespace DAL
                        mh.MaKhoa
                    }).Where(p=>p.MaLopHP == maLHP).Select(p=>p.MaKhoa).FirstOrDefault();
         }
+        public void SendNoticeToLHP(string MaGV, string MaLHP, string TieuDe, string NoiDung, DateTime NgayTao)
+        {
+            THONG_BAO NewThongBao = new THONG_BAO
+            {
+                TieuDe = TieuDe,
+                NDThongBao = NoiDung,
+                NgayTao = NgayTao,
+                MaGVThongBao = MaGV
+            };
+            db.THONG_BAO.Add(NewThongBao);
+            db.SaveChanges();
+            int matb = db.THONG_BAO.OrderByDescending(p => p.MaTB).Select(p => p.MaTB).FirstOrDefault();
+            THONGBAO_LOPHOCPHAN NewTBLHP = new THONGBAO_LOPHOCPHAN
+            {
+                MaLopHP = MaLHP,
+                //MaTB = db.THONG_BAO.Where(p => p.NgayTao == dt).Select(p => p.MaTB).FirstOrDefault()
+                MaTB = matb
+            };
+            db.THONGBAO_LOPHOCPHAN.Add(NewTBLHP);
+            db.SaveChanges();
+        }
+        //Kiểm tra nếu trong ngày đã gửi thông báo cho 1 lớp học phần đó rồi thì
+        //thay thế thông báo hoặc không gửi nữa 
+        public bool CheckNoticeRedundanṭ̣̣̣(string MaGV, DateTime NgayTao, string MaLHP)
+        {
+            var query = db.THONG_BAO
+                .Join(db.THONGBAO_LOPHOCPHAN, tb => tb.MaTB, tblhp => tblhp.MaTB , (tb,tblhp) => new
+                {
+                    tb.MaTB,
+                    tblhp.MaLopHP,
+                    tb.MaGVThongBao,
+                    tb.NgayTao
+                }).Where(p => p.MaGVThongBao == MaGV && p.MaLopHP == MaLHP && DbFunctions.TruncateTime(p.NgayTao) == NgayTao.Date)
+                .ToList();
+            //Bởi vì LinQ to entities k hỗ trợ lấy ra Date từ datetime trong Database nên phải dùng
+            //DbFunctions.TruncateTime(Datetime) để lấy ra phần ngày không chứa giờ
+            //Nếu tồn tại thông báo trong ngày thì trả về false
+            return (query.Count == 0 ? true : false);
+        }
+        //Thay thế thông báo 
+        public void ReplaceNotice(string MaGV, DateTime NgayTao, string MaLHP, string TieuDe, string NoiDung)
+        {
+            var query = db.THONG_BAO
+                .Join(db.THONGBAO_LOPHOCPHAN, tb => tb.MaTB, tblhp => tblhp.MaTB, (tb, tblhp) => new
+                {
+                    ThongBao = tb,
+                    tblhp.MaLopHP
+                })
+                .FirstOrDefault(p => p.ThongBao.MaGVThongBao == MaGV && p.MaLopHP == MaLHP && DbFunctions.TruncateTime(p.ThongBao.NgayTao) == NgayTao.Date);
+
+            if (query != null)
+            {
+                query.ThongBao.NgayTao = NgayTao;
+                query.ThongBao.TieuDe = TieuDe;
+                query.ThongBao.NDThongBao = NoiDung;
+                db.SaveChanges();
+            }
+        }
         #region Ver2
         public List<AssignTeacher> GetGVPhuHopTKB(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {
