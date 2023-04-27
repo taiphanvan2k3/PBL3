@@ -164,7 +164,6 @@
             this.lblNhomHP.Size = new System.Drawing.Size(99, 23);
             this.lblNhomHP.TabIndex = 5;
             this.lblNhomHP.Text = "OOAD21.13";
-            this.lblNhomHP.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 

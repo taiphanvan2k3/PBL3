@@ -3,12 +3,6 @@ using DTO;
 using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -23,6 +17,21 @@ namespace GUI
         {
             InitializeComponent();
             MoveFormHelper helper = new MoveFormHelper(this, panelTitle, labelTitle);
+        }
+
+        public frmAssignTeacher(string MaHP)
+        {
+            InitializeComponent();
+            MoveFormHelper helper = new MoveFormHelper(this, panelTitle, labelTitle);
+
+            LopHocPhan_AdminEdit lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
+            if (lhp != null && !string.IsNullOrEmpty(lhp.MaGV))
+            {
+                this.MaGV = lhp.MaGV;
+                this.TenGV = lhp.HoTenGV;
+                this.CheckHasSchedule = true;
+                this.tkb = new ThoiKhoaBieu_DTO(lhp.Thu, (int)lhp.TietBD, (int)lhp.TietKT, lhp.MaPhong);
+            }
         }
         public void LoadData()
         {
@@ -89,10 +98,11 @@ namespace GUI
         }
         public string Phong
         {
-            get => tbPhong.Text; 
+            get => tbPhong.Text;
             set => tbPhong.Text = value;
         }
         #endregion
+
         #region Events
         private void frm_AssignTeacher_Load(object sender, EventArgs e)
         {
@@ -102,7 +112,7 @@ namespace GUI
             dtgv.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtgv.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            if(CheckHasSchedule)
+            if (CheckHasSchedule)
             {
                 grbLichHocLabel.Visible = true;
                 grbLichHocCombobox.Visible = false;
@@ -122,10 +132,11 @@ namespace GUI
         {
             LoadData();
         }
+
         //Bắt sự kiện cho button chọn trong Datagridview
         private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == dtgv.Columns["xacNhan"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dtgv.Columns["xacNhan"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dtgv.Rows[e.RowIndex];
                 //Xử lí sự kiện khi nhấn button Phân công ở chỗ này. Xử lí theo row đã lấy ở dòng trên
@@ -136,7 +147,7 @@ namespace GUI
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            if(currentPage > 1)
+            if (currentPage > 1)
             {
                 dtgv.Rows.Clear();
                 dtgv.Refresh();
@@ -150,7 +161,7 @@ namespace GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if(currentPage < maxPage)
+            if (currentPage < maxPage)
             {
                 dtgv.Rows.Clear();
                 dtgv.Refresh();

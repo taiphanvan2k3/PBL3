@@ -97,7 +97,7 @@ namespace GUI
             frm.TenMH = txtTenMH.Texts;
             frm.MaGV = txtMaGV.Text;
             frm.TenGV = txtTenGV.Texts;
-            if(!string.IsNullOrEmpty(lhp.Thu))
+            if (!string.IsNullOrEmpty(lhp.Thu))
             {
                 frm.CheckHasSchedule = true;
                 frm.tkb = new ThoiKhoaBieu_DTO
@@ -164,9 +164,9 @@ namespace GUI
                 //Chỉ có thể thêm sinh viên khi lớp học phần này đã được xếp thời khoá biểu
                 //Một khi đã có thứ trong tuần thì chắc chắn đã có TietBD,TietKT nên có thể ép
                 //kiểu int? thành int
-                frmAddStudent frm = new frmAddStudent(lhp.MaHP, lhp.KiHoc, lhp.Thu,
+                frmAddStudentIntoModuleClass frm = new frmAddStudentIntoModuleClass(lhp.MaHP, lhp.SoLuongMax, lhp.KiHoc, lhp.Thu,
                     (int)lhp.TietBD, (int)lhp.TietKT);
-                frm.reloadDTGV += new frmAddStudent.ReloadParentForm(LoadDataGridView);
+                frm.reloadDTGV += new frmAddStudentIntoModuleClass.ReloadParentForm(LoadDataGridView);
                 frm.ShowDialog();
             }
             else
@@ -193,7 +193,7 @@ namespace GUI
                     {
                         CustomMessageBox.Show("Đã xoá thành công " + li.Count + "  sinh viên");
                         LoadDataGridView();
-                    }    
+                    }
                 }
                 else
                     CustomMessageBox.Show("Thao tác xoá đã bị huỷ.");

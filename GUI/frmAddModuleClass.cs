@@ -8,27 +8,33 @@ using System.Windows.Forms;
 
 namespace GUI
 {
+    /// <summary>
+    /// Form này dùng để tạo lớp học phần, sau khi tạo thì có thể phân công giảng viên dạy lớp đó
+    /// </summary>
     public partial class frmAddModuleClass : Form
     {
+        enum InsertState
+        {
+            ModuleClassIsExist,
+            ModuleClassIsNotExist,
+            InsertFail
+        }
+
+        private InsertState CurrentState;
         public frmAddModuleClass()
         {
             InitializeComponent();
             new MoveFormHelper(this, panelTitle, lblTitle);
         }
+
         #region  Utility functions
         private void DisableAllButtons()
         {
             //Chỉ enable AddStudent và AssignTeacher khi đã add thành công hoặc LHP đó đã có rồi
             btnAddModuleClass.Enabled = false;
-            btnAddStudent.Enabled = false;
             btnAssignTeacher.Enabled = false;
         }
 
-        private void EnableOptionButtons()
-        {
-            btnAddStudent.Enabled = true;
-            btnAssignTeacher.Enabled = true;
-        }
         private void SetBackgroundForErrorValue(Guna2TextBox txt)
         {
             txt.FillColor = Color.Red;
@@ -115,16 +121,50 @@ namespace GUI
             int result = LopHocPhan_BLL.Instance.InsertModuleClass(lhp);
             if (result == -1)
             {
+                //Nếu lớp đã tồn tại rồi thì cho phép thêm giảng viên vào
+                btnAssignTeacher.Enabled = true;
+                CurrentState = InsertState.ModuleClassIsExist;
                 CustomMessageBox.Show("Không thể thêm vì mã lớp học phần này đã tồn tại", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                EnableOptionButtons();
+
             }
             else if (result == 1)
             {
-                CustomMessageBox.Show("Thêm mới thành công lớp học phần vào hệ thống.", "Thông báo");
-                //Phải thêm giảng viên trước
                 btnAssignTeacher.Enabled = true;
+                CurrentState = InsertState.ModuleClassIsNotExist;
+                CustomMessageBox.Show("Thêm mới thành công lớp học phần vào hệ thống.", "Thông báo");
             }
+            else
+            {
+                CurrentState = InsertState.InsertFail;
+                CustomMessageBox.Show("Bị lỗi trong quá trình thêm.", "Lỗi",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAssignTeacher_Click(object sender, EventArgs e)
+        {
+            frmAssignTeacher frm;
+            if (CurrentState == InsertState.ModuleClassIsNotExist)
+            {
+                //Nếu lớp học phần vừa thao tác thêm thành công vào lớp học phần thì lúc này chưa có
+                //giảng viên nên frmAssignTeacher sẽ cho phép nhập thứ, tiết BĐ, tiết KT rồi phân công GV dạy
+                frm = new frmAssignTeacher();
+            }
+            else
+            {
+                //Nếu lớp học phần vừa định thêm đã có trong CSDL thì có khả năng lớp này đã phân công giảng viên
+                //dạy rồi nên frmAssignTeacher hiện ra có thể sẽ khác nếu lớp này đã được phân công GV
+
+                //Một khi lớp đã phân công giảng viên thì chỉ có thể thay đổi giảng viên chứ không thể thay đổi TKB
+                //vì việc thay đổi lại TKB ảnh hưởng đến việc xung đột lịch học của sinh viên
+                frm = new frmAssignTeacher(lblMaHP.Text);
+            }
+            
+            //Cả 2 cách hiển thị thì ban đầu đều hiển thị MaHP,TenMH hết nên set value chung
+            frm.MaHP = lblMaHP.Text;
+            frm.TenMH = cbbTenMH.SelectedItem.ToString();
+            frm.ShowDialog();
         }
 
         private void txtSoLuongMax_TextChanged(object sender, EventArgs e)
@@ -147,29 +187,6 @@ namespace GUI
             {
                 UnsetBackgroundForErrorValue(txtSoLuongMax);
                 btnAddModuleClass.Enabled = true;
-            }
-        }
-
-        private void btnAssignTeacher_Click(object sender, EventArgs e)
-        {
-            frmAssignTeacher frm = new frmAssignTeacher();
-            frm.CheckHasSchedule = false;
-
-            frm.MaHP = lblMaHP.Text;
-            frm.TenMH = cbbTenMH.SelectedItem.ToString();
-            frm.ShowDialog();
-        }
-
-        private void btnAddStudent_Click(object sender, EventArgs e)
-        {
-            if (lblMaHP.Text == "")
-            {
-                CustomMessageBox.Show("Không thể thêm sinh viên vì lớp học phần đang tạo chưa có mã học phần", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-
             }
         }
 

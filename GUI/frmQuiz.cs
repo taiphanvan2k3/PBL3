@@ -11,31 +11,31 @@ namespace GUI
 {
     public partial class frmQuiz : Form
     {
-        #region Tài làm
-        private List<CauHoi_DTO> questions;
+        public int MaBaiKiemTra { get; set; }
+        public string TenBaiKiemTra { set => panelTitle.Text = value; }
+        public string MaSV { set => lblMSSV.Text = value; }
+        public string TenSV { set => lblTenSV.Text = value; }
+        public string LopSH { set => lblLopSH.Text = value; }
+        public string MaHP { set => lblNhomHP.Text = value; }
+        public string TenHP { set => lblTenHP.Text = value; }
 
+        //Thời gian hoàn thành bài của sinh viên này
+        private DateTime StartTime { get; set; }
+        private DateTime SubmitTime { get; set; }
+        public int Time { get; set; }
+
+        //Các thuộc tính để ngăn chặn việc chuyển tab, quay màn hình,...
+        [DllImport("user32.dll")]
+        static extern bool SetWindowDisplayAffinity(IntPtr hWnd, uint dwAffinity);
+        const uint WDA_NONE = 0x00000000;
+        const uint WDA_MONITOR = 0x00000001;
+
+        private Stopwatch stopwatch = new Stopwatch();
+        private TimeSpan targetTime = TimeSpan.FromMinutes(50);
         //Số thứ tự câu hỏi hiện tại (đếm từ 1, khi nào cần truy cập vào mảng questions thì giảm 1 đi)
         private int CurrentIndex = 1;
         private int AnsweredQuestion = 0;
-
-
-        public SinhVien_DTO SinhVien { get; set; }
-
-        //Thời gian hoàn thành bài của sinh viên này
-        private DateTime StartTime;
-        private DateTime SubmitTime;
-        public int Time { get; set; }
-        #endregion
-
-        //Mạnh làm
-        [DllImport("user32.dll")]
-        static extern bool SetWindowDisplayAffinity(IntPtr hWnd, uint dwAffinity);
-
-        const uint WDA_NONE = 0x00000000;
-        const uint WDA_MONITOR = 0x00000001;
-        private Stopwatch stopwatch = new Stopwatch();
-        private TimeSpan targetTime = TimeSpan.FromMinutes(50);
-
+        private List<CauHoi_DTO> questions;
         public List<SelectedAnswer> selectedAnswers;
         public frmQuiz()
         {
@@ -84,6 +84,7 @@ namespace GUI
             lbTime.Text = targetTime.ToString(@"mm\:ss\:ff");
             stopwatch.Start();
             timer1.Start();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -190,6 +191,7 @@ namespace GUI
             int TotalHeight = 0;
             foreach (Control control in panel.Controls)
             {
+                control.Width = panel.Width - 20;
                 control.Text = question.DapAnHienThi[idx++];
                 control.Height = UtilityClass.CalculateHeightOfControl(control) + 10;
                 if (control == checkBoxD || control == radioButtonD)
@@ -203,6 +205,10 @@ namespace GUI
             btnPreious.Location = new System.Drawing.Point(btnPreious.Location.X, panel.Bounds.Bottom + 40);
             btnNext.Location = new System.Drawing.Point(btnNext.Location.X, panel.Bounds.Bottom + 40);
             panelMain.Height = btnPreious.Bounds.Bottom + 100;
+
+            //Do panel có thanh cuộn và chiều cao khá dài nên muốn mỗi lần di chuyển câu hỏi thì di chuyển
+            //lên phía trên cùng của panel nên phải Select() bất kì một control nào đó ở phía trên cùng 
+            panelTitle.Select();
         }
         private void CheckAnswered()
         {
@@ -297,11 +303,6 @@ namespace GUI
             MessageBox.Show(SoCauDung() + "");
             SubmitTime = DateTime.Now;
             this.Close();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressSelection_BLL.cs" />
+    <Compile Include="BaiKiemTra_BLL.cs" />
     <Compile Include="GetInformationAcc_BLL.cs" />
     <Compile Include="GiangVien_BLL.cs" />
     <Compile Include="Khoa_BLL.cs" />

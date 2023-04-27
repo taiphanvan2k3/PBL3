@@ -53,7 +53,7 @@ namespace DAL
                 if (sv.DiaChi != "")
                     nd.DiaChi = sv.DiaChi;
                 if (sv.EmailCaNhan != "")
-                    nd.EmailTruongCap = sv.EmailCaNhan;
+                    nd.EmailCaNhan = sv.EmailCaNhan;
                 if (sv.Sdt != "")
                     nd.Sdt = sv.Sdt;
                 if (sv.NoiSinh != "")

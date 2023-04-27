@@ -46,6 +46,7 @@
             this.pblEvent.Name = "pblEvent";
             this.pblEvent.Size = new System.Drawing.Size(162, 63);
             this.pblEvent.TabIndex = 1;
+            this.pblEvent.Click += new System.EventHandler(this.pblEvent_Click);
             // 
             // lbIfMore
             // 
@@ -94,6 +95,7 @@
             this.Controls.Add(this.pblEvent);
             this.Name = "UC_Day";
             this.Size = new System.Drawing.Size(162, 112);
+            this.Click += new System.EventHandler(this.pblEvent_Click);
             this.pblEvent.ResumeLayout(false);
             this.pblEvent.PerformLayout();
             this.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmAddStudent
+    partial class frmAddStudentIntoModuleClass
     {
         /// <summary>
         /// Required designer variable.

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -40,11 +43,16 @@ namespace GUI.MyUserControls
         int MONTH, YEAR;
         UC_Day[,] btn = new UC_Day[6, 7];
         string[,] dTime = new string[6, 7];
+
+        //Lưu lại vị trí [i,j] của button có ngày tương ứng trên ma trận
+        //vd Button ngày 1 nằm ở vị trí [0,4] thì thêm vào Dictionary <1,KeyValuePair<0,4>>
+        Dictionary<int, KeyValuePair<int, int>> IndexDayInMatrix;
         public UC_Calendar_New()
         {
             InitializeComponent();
             init();
             formOriginalSize = this.Size;
+            IndexDayInMatrix = new Dictionary<int, KeyValuePair<int, int>>();
         }
 
         #region Methods
@@ -60,27 +68,8 @@ namespace GUI.MyUserControls
                     btn[i, j].Dock = DockStyle.Fill;
                     btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
-                    btn[i, j].Click += buttonDate_Click;
                     tableLayoutPanel.Controls.Add(btn[i, j]);
                 }
-        }
-
-        public bool isLeapYear(int N)
-        {
-            if (N % 4 == 0 && N % 100 != 0)
-                return true;
-            if (N % 400 == 0)
-                return true;
-            return false;
-        }
-
-        //Determine number of day in the month
-        public int GetNumberOfDayInMonth(int month, int year)
-        {
-            int[] days = new int[] { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-            if (isLeapYear(year))
-                days[2] = 29;
-            return days[month];
         }
 
         public string leng2(String s)
@@ -94,9 +83,10 @@ namespace GUI.MyUserControls
             int N = year - 1;
             int d = N * 365 + N / 4 - N / 100 + N / 400;
             for (int i = 1; i < month; i++)
-                d += GetNumberOfDayInMonth(i, N + 1);
+                d += UtilityClass.GetNumberOfDayInMonth(i, N + 1);
             return d;
         }
+
         //Determine thứ
         public int getThu(int month, int year)
         {
@@ -125,19 +115,23 @@ namespace GUI.MyUserControls
             reset();
             int[,] a = new int[6, 7];
             int thu = getThu(month, year);
-            int day = GetNumberOfDayInMonth(month, year);
+            int day = UtilityClass.GetNumberOfDayInMonth(month, year);
             //Previous day
             int pday = 0;
             if (month > 1)
-                pday = GetNumberOfDayInMonth(month - 1, year);
+                pday = UtilityClass.GetNumberOfDayInMonth(month - 1, year);
             else
-                pday = GetNumberOfDayInMonth(12, year - 1);
+                pday = UtilityClass.GetNumberOfDayInMonth(12, year - 1);
             int start = thu - 1;
             if (start == 7)
                 start = 0;
+            if (IndexDayInMatrix.Count > 0)
+                IndexDayInMatrix.Clear();
             int I = 0, J = start;
             for (int i = 1; i <= day; i++)
             {
+                IndexDayInMatrix.Add(i, new KeyValuePair<int, int>(I, J));
+                btn[I, J].DateValue = (i + "").PadLeft(2, '0') + "/" + ((MONTH + "").PadLeft(2, '0')) + "/" + YEAR;
                 btn[I, J].Day = i.ToString();
                 btn[I, J].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
@@ -149,14 +143,14 @@ namespace GUI.MyUserControls
                 //Test đặt event 1 ngày 
                 if (i == 18 && month == 4 && year == 2023)
                 {
-                    btn[I, J].PanelEventColor = Color.FromArgb(255, 192, 128);
-                    btn[I, J].Exam = "Giữa kì";
+                    //btn[I, J].PanelEventColor = Color.FromArgb(255, 192, 128);
+                    btn[I, J].ExamName = "Giữa kì";
                     btn[I, J].IfMore = "+ 1 more";
                 }
                 if (i == 27 && month == 4 && year == 2023)
                 {
-                    btn[I, J].PanelEventColor = Color.SpringGreen;
-                    btn[I, J].Exam = "Cuối kì";
+                    //btn[I, J].PanelEventColor = Color.SpringGreen;
+                    btn[I, J].ExamName = "Cuối kì";
                     btn[I, J].IfMore = "+ 3 more";
                 }
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
@@ -171,7 +165,8 @@ namespace GUI.MyUserControls
                     I++;
                 }
             }
-            //Determine phần ngày của tháng trước đó
+
+            //Xác định phần ngày của tháng trước đó
             for (int i = start - 1; i >= 0; i--)
             {
                 btn[0, i].Day = (pday-- + "");
@@ -180,7 +175,8 @@ namespace GUI.MyUserControls
                 btn[0, i].ColorDay = ((colorBack == Color.White) ? Color.LightGray : colorBack);
                 btn[0, i].BoderDay = ((colorBack == Color.White) ? Color.LightGray : colorBack);
             }
-            //Determine phần ngày của tháng sau đó
+
+            //Xác định phần ngày của tháng sau đó
             int st = 1;
             while (!(I == 6 && J == 0))
             {
@@ -198,9 +194,32 @@ namespace GUI.MyUserControls
             }
             return a;
         }
+
+        private void LoadListExamInMonth()
+        {
+            List<BaiKiemTra_DTO> li = BaiKiemTra_BLL.Instance.GetListExamInMonth(MONTH, YEAR);
+            //MessageBox.Show("Số exam trong tháng hiện tại:" + li.Count);
+            foreach(BaiKiemTra_DTO bkt in li)
+            {
+                int day = bkt.ThoiGianBatDau.Day;
+             
+                //Lấy ra vị trí của button có ngày 'day' trong ma trận
+                KeyValuePair<int, int> pair = IndexDayInMatrix[day];
+                UC_Day tmp = btn[pair.Key, pair.Value];
+                tmp.listExams.Add(bkt);
+                if (string.IsNullOrEmpty(btn[pair.Key, pair.Value].ExamName))
+                    tmp.ExamName = bkt.MaLoaiKiemTra;
+                else
+                {
+                    tmp.NumberOfExam++;
+                    tmp.IfMore = "+ " + tmp.NumberOfExam + " More";
+                }
+            }
+        }
         public void LoadDays()
         {
             int[,] a = update(MONTH, YEAR);
+            LoadListExamInMonth();
             int check = 0;
             for (int i = 0; i < a.GetLength(0); i++)
             {
@@ -256,13 +275,8 @@ namespace GUI.MyUserControls
         #region Events
         private void Form2_Load(object sender, EventArgs e)
         {
+            //Gọi event buttonDay_Click để hiển thị lịch của tháng hiện tại
             buttonToday_Click(sender, e);
-        }
-
-        private void buttonDate_Click(object sender, EventArgs e)
-        {
-            UC_Day btn = sender as UC_Day;
-            MessageBox.Show(btn.Day + " " + btn.Size.Width + " " + btn.Size.Height);
         }
 
         private void buttonToday_Click(object sender, EventArgs e)
