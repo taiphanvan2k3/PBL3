@@ -245,5 +245,23 @@ namespace GUI
             uC_StudentInfoNew.Dock = DockStyle.Fill;
             panelShowDetail.Controls.Add(uC_StudentInfoNew);
         }
+
+        private void btnDoExam_Click(object sender, EventArgs e)
+        {
+            UtilityClass.OpenNewForm(this, new frmExam()
+            {
+                MaSV = this.MSSV,
+                TenSV = sv.Ho + " " + sv.Ten,
+                MaLopSH = sv.MaLopSH
+            });
+        }
+
+        private void lblAvatar_TextChanged(object sender, EventArgs e)
+        {
+            //Thay đổi lại vị trí của label hiển thị tên sv ở góc trên bên phải để tránh tràn nội dung
+            int width = TextRenderer.MeasureText(lblAvatar.Text, lblAvatar.Font).Width;
+            lblAvatar.Location = new Point(avatarTopRight.Location.X - width - 20, lblAvatar.Location.Y);
+            label1.Location = new Point(lblAvatar.Location.X, label1.Location.Y);
+        }
     }
 }

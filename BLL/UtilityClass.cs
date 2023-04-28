@@ -104,7 +104,8 @@ namespace BLL
 
             foreach (string name in ColumnNames)
             {
-                dtgv.Columns[name].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                if (!string.IsNullOrEmpty(name))
+                    dtgv.Columns[name].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             dtgv.Height = dtgv.ColumnHeadersHeight + NumberOfRow * dtgv.RowTemplate.Height;
         }

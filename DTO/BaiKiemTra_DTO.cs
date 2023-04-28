@@ -5,7 +5,6 @@ namespace DTO
 {
     public class BaiKiemTra_DTO
     {
-        [Browsable(false)]
         public int MaBaiKiemTra { get; set; }
 
         [Browsable(false)] //Test,Giữa kì, Cuối kì (để lấy cái này hiển thị lên ExamName của UC_Day
@@ -70,7 +69,8 @@ namespace DTO
         [DisplayName("Thời gian kết thúc")]
         public DateTime ThoiGianKetThuc { get; set; }
 
-        [Browsable(false)]
+        //Không thể dùng Browsable(false) mà phải Visible = false cột này
+        //Do ta vẫn muốn truy cập đến cột này nhưng chẳng qua không muốn hiển thị lên dtgv thôi
         public string MkBaiKiemTra { get; set; }
 
         [Browsable(false)]

@@ -34,7 +34,7 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblXinChao = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panelDangXuat = new System.Windows.Forms.Panel();
             this.btnBackFrmStudent = new Guna.UI2.WinForms.Guna2Button();
@@ -76,7 +76,7 @@
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
             this.panelTitle.Controls.Add(this.avatarTopRight);
             this.panelTitle.Controls.Add(this.lblAvatar);
-            this.panelTitle.Controls.Add(this.label1);
+            this.panelTitle.Controls.Add(this.lblXinChao);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(250, 0);
             this.panelTitle.Name = "panelTitle";
@@ -113,18 +113,18 @@
             this.lblAvatar.TabIndex = 2;
             this.lblAvatar.Text = "Phan Văn Tài";
             // 
-            // label1
+            // lblXinChao
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(1228, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Xin chào";
+            this.lblXinChao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblXinChao.AutoSize = true;
+            this.lblXinChao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
+            this.lblXinChao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXinChao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblXinChao.Location = new System.Drawing.Point(1228, 17);
+            this.lblXinChao.Name = "lblXinChao";
+            this.lblXinChao.Size = new System.Drawing.Size(66, 18);
+            this.lblXinChao.TabIndex = 1;
+            this.lblXinChao.Text = "Xin chào";
             // 
             // pnlMain
             // 
@@ -398,7 +398,7 @@
         private System.Windows.Forms.Panel panelTitle;
         private MyCustomControl.CircularPictureBox avatarTopRight;
         private System.Windows.Forms.Label lblAvatar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblXinChao;
         private System.Windows.Forms.Panel panelDangXuat;
         private System.Windows.Forms.Timer timerCheckClick;
         private Guna.UI2.WinForms.Guna2Button btnBackFrmStudent;

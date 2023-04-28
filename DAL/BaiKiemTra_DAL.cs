@@ -46,29 +46,47 @@ namespace DAL
         public List<BaiKiemTra_DTO> GetAllExamOfStudent(string MaSV)
         {
             // Lấy ra thông tin của tất cả các bài kiểm tra mà sinh viên đó có thể làm
-            var li = db.SINHVIEN_LOPHOCPHAN.Where(svhp => svhp.MaSV == MaSV)
+            //var li = db.SINHVIEN_LOPHOCPHAN.Where(svhp => svhp.MaSV == MaSV)
+            //    .Join(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
+            //    {
+            //        hp.MaLopHP,
+            //        hp.MON_HOC.TenMH
+            //    })
+            //    .GroupJoin(db.BAI_KIEM_TRA, hp => hp.MaLopHP, bkt => bkt.MaLopHP, (hp, bkt) => new
+            //    {
+            //        LopHP_tmp = hp,
+            //        BaiKiemTra_tmp = bkt.DefaultIfEmpty()
+            //    })
+            //    .SelectMany(i1 => i1.BaiKiemTra_tmp.Select(i2 => new BaiKiemTra_DTO
+            //    {
+            //        MaHP = i1.LopHP_tmp.MaLopHP,
+            //        TenMH = i1.LopHP_tmp.TenMH,
+            //        TieuDeBaiKiemTra = i2.TieuDeBaiKiemTra,
+            //        //SoCauHoi = i2.SoCauHoi,
+            //        //ThoiGianLamBai = i2.ThoiGianLamBai,
+            //        //ThoiGianBatDau = i2.NgayKiemTra,
+            //        //MkBaiKiemTra = i2.MkBaiKiemTra,
+            //        ChoPhepQuayLai = i2.ChoPhepQuayLai != null && (bool)i2.ChoPhepQuayLai
+            //    })).ToList();
+            
+            var li2 = db.SINHVIEN_LOPHOCPHAN.Where(svhp => svhp.MaSV == MaSV)
                 .Join(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
                 {
                     hp.MaLopHP,
                     hp.MON_HOC.TenMH
                 })
-                .GroupJoin(db.BAI_KIEM_TRA, hp => hp.MaLopHP, bkt => bkt.MaLopHP, (hp, bkt) => new
+                .Join(db.BAI_KIEM_TRA, hp => hp.MaLopHP, bkt => bkt.MaLopHP, (hp, bkt) => new BaiKiemTra_DTO
                 {
-                    LopHP_tmp = hp,
-                    BaiKiemTra_tmp = bkt.DefaultIfEmpty()
-                })
-                .SelectMany(i1 => i1.BaiKiemTra_tmp.Select(i2 => new BaiKiemTra_DTO
-                {
-                    MaHP = i1.LopHP_tmp.MaLopHP,
-                    TenMH = i1.LopHP_tmp.TenMH,
-                    TieuDeBaiKiemTra = i2.TieuDeBaiKiemTra,
-                    SoCauHoi = i2.SoCauHoi,
-                    ThoiGianLamBai = i2.ThoiGianLamBai,
-                    ThoiGianBatDau = i2.NgayKiemTra,
-                    MkBaiKiemTra = i2.MkBaiKiemTra,
-                    ChoPhepQuayLai = i2.ChoPhepQuayLai != null && (bool)i2.ChoPhepQuayLai
-                })).ToList();
-            return li;
+                    MaHP = hp.MaLopHP,
+                    TenMH = hp.TenMH,
+                    TieuDeBaiKiemTra = bkt.TieuDeBaiKiemTra,
+                    SoCauHoi = bkt.SoCauHoi,
+                    ThoiGianLamBai = bkt.ThoiGianLamBai,
+                    ThoiGianBatDau = bkt.NgayKiemTra,
+                    MkBaiKiemTra = bkt.MkBaiKiemTra,
+                    ChoPhepQuayLai = bkt.ChoPhepQuayLai != null && (bool)bkt.ChoPhepQuayLai
+                }).ToList();
+            return li2;
         }
 
 
