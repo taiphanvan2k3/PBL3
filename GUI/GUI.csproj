@@ -498,6 +498,9 @@
     <EmbeddedResource Include="MyUserControls\UC_Calendar_New.resx">
       <DependentUpon>UC_Calendar_New.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_CreateTestQuestions.resx">
+      <DependentUpon>UC_CreateTestQuestions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Day.resx">
       <DependentUpon>UC_Day.cs</DependentUpon>
     </EmbeddedResource>
