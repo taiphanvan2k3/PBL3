@@ -17,6 +17,7 @@ namespace GUI
         private int CurrentNumberStudent = 0;
         public delegate void ReloadParentForm();
         public ReloadParentForm reloadDTGV { get; set; }
+
         public frmAddStudentIntoHomeroomClass()
         {
             InitializeComponent();

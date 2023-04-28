@@ -8,6 +8,23 @@ namespace GUI
 {
     public partial class frmExam : Form
     {
+        public string MaSV { get; set; }
+        private string _TenSV { get; set; }
+
+        public string TenSV
+        {
+            get => _TenSV;
+            set
+            {
+                _TenSV = value;
+                lblAvatar.Text = value;
+                int width = lblAvatar.Width;
+                lblAvatar.Location = new Point(avatarTopRight.Location.X - width - 10, lblAvatar.Location.Y);
+                lblXinChao.Location = new Point(lblAvatar.Location.X, lblXinChao.Location.Y);
+            }
+        }
+
+        public string MaLopSH { get; set; }
         enum SelectionState
         {
             Home,
@@ -100,9 +117,14 @@ namespace GUI
             {
                 CurrentState = SelectionState.DoExam;
                 pnlMain.Controls.Clear();
-                if(DoExam == null)
+                if (DoExam == null)
                 {
-                    DoExam = new UC_DoExam();
+                    DoExam = new UC_DoExam()
+                    {
+                        MaSV = this.MaSV,
+                        TenSV = this.TenSV,
+                        LopSH = this.MaLopSH
+                    };
                     DoExam.Dock = DockStyle.Fill;
                 }
                 pnlMain.Controls.Add(DoExam);
@@ -118,7 +140,7 @@ namespace GUI
                 if (viewHistoryDoExam == null)
                 {
                     viewHistoryDoExam = new UC_ViewHistoryDoExam();
-                    viewHistoryDoExam.Dock= DockStyle.Fill;
+                    viewHistoryDoExam.Dock = DockStyle.Fill;
                 }
                 pnlMain.Controls.Add(viewHistoryDoExam);
             }
@@ -164,7 +186,7 @@ namespace GUI
             {
                 panelDangXuat.Visible = true;
                 timerCheckClick.Start();
-            }   
+            }
         }
 
         private void timerCheckClick_Tick(object sender, EventArgs e)

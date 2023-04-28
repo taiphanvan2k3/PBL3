@@ -41,7 +41,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoLuongMax = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnAddStudent = new GUI.MyCustomControl.CustomButton();
             this.btnAssignTeacher = new GUI.MyCustomControl.CustomButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -212,40 +211,15 @@
             // 
             this.guna2GroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox1.BorderRadius = 15;
-            this.guna2GroupBox1.Controls.Add(this.btnAddStudent);
             this.guna2GroupBox1.Controls.Add(this.btnAssignTeacher);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.DarkSlateGray;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(519, 212);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(519, 232);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(281, 161);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(281, 115);
             this.guna2GroupBox1.TabIndex = 29;
-            this.guna2GroupBox1.Text = "Các tuỳ chọn";
-            // 
-            // btnAddStudent
-            // 
-            this.btnAddStudent.BackColor = System.Drawing.Color.Tomato;
-            this.btnAddStudent.BackGroundColor = System.Drawing.Color.Tomato;
-            this.btnAddStudent.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddStudent.BorderRadius = 40;
-            this.btnAddStudent.BorderSize = 0;
-            this.btnAddStudent.Enabled = false;
-            this.btnAddStudent.FlatAppearance.BorderSize = 0;
-            this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStudent.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudent.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddStudent.Image = global::GUI.Properties.Resources.AddStudent;
-            this.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddStudent.Location = new System.Drawing.Point(16, 108);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnAddStudent.Size = new System.Drawing.Size(244, 40);
-            this.btnAddStudent.TabIndex = 30;
-            this.btnAddStudent.Text = "Thêm sinh viên";
-            this.btnAddStudent.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddStudent.UseVisualStyleBackColor = false;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            this.guna2GroupBox1.Text = "Tuỳ chọn khác";
             // 
             // btnAssignTeacher
             // 
@@ -405,7 +379,6 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuongMax;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private MyCustomControl.CustomButton btnAddStudent;
         private MyCustomControl.CustomButton btnAssignTeacher;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

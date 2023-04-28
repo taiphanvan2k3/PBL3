@@ -65,6 +65,7 @@
     <Compile Include="BAIKIEMTRA_CAUHOI.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
+    <Compile Include="BaiKiemTra_DAL.cs" />
     <Compile Include="BAI_KIEM_TRA.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>

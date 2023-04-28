@@ -104,7 +104,8 @@ namespace BLL
 
             foreach (string name in ColumnNames)
             {
-                dtgv.Columns[name].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                if (!string.IsNullOrEmpty(name))
+                    dtgv.Columns[name].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             dtgv.Height = dtgv.ColumnHeadersHeight + NumberOfRow * dtgv.RowTemplate.Height;
         }
@@ -153,6 +154,24 @@ namespace BLL
             //Tính toán chiều cao (pixel) để hiển thị Text của control này
             int textHeight = numLines * lineHeight;
             return textHeight;
+        }
+
+        public static bool isLeapYear(int N)
+        {
+            if (N % 4 == 0 && N % 100 != 0)
+                return true;
+            if (N % 400 == 0)
+                return true;
+            return false;
+        }
+
+        //Determine number of day in the month
+        public static int GetNumberOfDayInMonth(int month, int year)
+        {
+            int[] days = new int[] { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            if (isLeapYear(year))
+                days[2] = 29;
+            return days[month];
         }
     }
 }

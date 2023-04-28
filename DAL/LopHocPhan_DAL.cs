@@ -94,6 +94,7 @@ namespace DAL
         }*/
         public LopHocPhan_AdminEdit GetHocPhanByMaHP(string MaHP)
         {
+            //Trả về các thông tin cần như: mã HP, tênHP,SoTC,MaGV,HoGV,KiHoc,NamHoc,Thu,TietBD,TietKT
             //Trả về các thông tin cần thiết trong giao diện frmViewDetailModuleClass
             return db.LOP_HOC_PHAN.Where(i => i.MaLopHP == MaHP)
                 .GroupJoin(db.GIANG_VIEN, hp => hp.MaGV, gv => gv.MaGV, (hp, gv) => new
@@ -108,6 +109,7 @@ namespace DAL
                     i1.LopHP_tmp.MON_HOC.SoTC,
                     i1.LopHP_tmp.KiHoc,
                     i1.LopHP_tmp.NamHoc,
+                    i1.LopHP_tmp.SoLuongToiDa,
                     i2.MaGV,
                     HoGV = i2.NGUOI_DUNG.Ho,
                     TenGV = i2.NGUOI_DUNG.Ten
@@ -126,6 +128,7 @@ namespace DAL
                     KiHoc = i1.LopHP_tmp.KiHoc,
                     NamHoc = i1.LopHP_tmp.NamHoc,
                     HoTenGV = i1.LopHP_tmp.HoGV + " " + i1.LopHP_tmp.TenGV,
+                    SoLuongMax = i1.LopHP_tmp.SoLuongToiDa,
                     Thu = i2.Thu,
                     TietBD = i2.TietBD,
                     TietKT = i2.TietKetThuc,

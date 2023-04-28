@@ -46,6 +46,11 @@ namespace BLL
         }*/
         #endregion
 
+        /// <summary>
+        /// Trả về các thông tin cần như: mã HP, tênHP,SoTC,MaGV,HoGV,KiHoc,NamHoc,Thu,TietBD,TietKT
+        /// </summary>
+        /// <param name="MaHP"></param>
+        /// <returns></returns>
         public LopHocPhan_AdminEdit GetLopHocPhanByMaHP(string MaHP)
         {
             return LopHocPhan_DAL.Instance.GetHocPhanByMaHP(MaHP);

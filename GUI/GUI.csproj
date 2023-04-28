@@ -193,6 +193,12 @@
     <Compile Include="frmEnterPassToDoExam.Designer.cs">
       <DependentUpon>frmEnterPassToDoExam.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShowEventInDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowEventInDay.Designer.cs">
+      <DependentUpon>frmShowEventInDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTestExam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,11 +217,11 @@
     <Compile Include="frmViewListAcc.Designer.cs">
       <DependentUpon>frmViewListAcc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddStudent.cs">
+    <Compile Include="frmAddStudentIntoModuleClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddStudent.designer.cs">
-      <DependentUpon>frmAddStudent.cs</DependentUpon>
+    <Compile Include="frmAddStudentIntoModuleClass.designer.cs">
+      <DependentUpon>frmAddStudentIntoModuleClass.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCreateClassSection.cs">
       <SubType>Form</SubType>
@@ -447,6 +453,9 @@
     <EmbeddedResource Include="frmQuiz.resx">
       <DependentUpon>frmQuiz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShowEventInDay.resx">
+      <DependentUpon>frmShowEventInDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTestExam.resx">
       <DependentUpon>frmTestExam.cs</DependentUpon>
     </EmbeddedResource>
@@ -459,8 +468,8 @@
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddStudent.resx">
-      <DependentUpon>frmAddStudent.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddStudentIntoModuleClass.resx">
+      <DependentUpon>frmAddStudentIntoModuleClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreateClassSection.resx">
       <DependentUpon>frmCreateClassSection.cs</DependentUpon>

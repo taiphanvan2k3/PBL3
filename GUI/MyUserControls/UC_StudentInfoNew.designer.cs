@@ -59,18 +59,18 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pnlDiaChi = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSoDuong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.label3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlThongTinDaoTao = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtLopSH = new System.Windows.Forms.Label();
+            this.txtCTDT = new System.Windows.Forms.Label();
+            this.txtKhoa = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutRight = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.txtKhoa = new System.Windows.Forms.Label();
-            this.txtCTDT = new System.Windows.Forms.Label();
-            this.txtLopSH = new System.Windows.Forms.Label();
+            this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.panelLeft.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -565,21 +565,6 @@
             this.txtSoDuong.Size = new System.Drawing.Size(419, 40);
             this.txtSoDuong.TabIndex = 15;
             // 
-            // uC_AddressSelection
-            // 
-            this.uC_AddressSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_AddressSelection.BackColor = System.Drawing.Color.Moccasin;
-            this.uC_AddressSelection.Background = System.Drawing.Color.Moccasin;
-            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.IndianRed;
-            this.uC_AddressSelection.Location = new System.Drawing.Point(3, 90);
-            this.uC_AddressSelection.Name = "uC_AddressSelection";
-            this.uC_AddressSelection.QuanHuyen = "";
-            this.uC_AddressSelection.Size = new System.Drawing.Size(574, 177);
-            this.uC_AddressSelection.TabIndex = 24;
-            this.uC_AddressSelection.TinhThanhPho = "";
-            this.uC_AddressSelection.XaPhuong = "";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -626,6 +611,38 @@
             this.pnlThongTinDaoTao.TabIndex = 24;
             this.pnlThongTinDaoTao.Text = "Thông tin đào tạo";
             this.pnlThongTinDaoTao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtLopSH
+            // 
+            this.txtLopSH.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLopSH.AutoSize = true;
+            this.txtLopSH.BackColor = System.Drawing.Color.Transparent;
+            this.txtLopSH.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtLopSH.Location = new System.Drawing.Point(287, 143);
+            this.txtLopSH.Name = "txtLopSH";
+            this.txtLopSH.Size = new System.Drawing.Size(0, 23);
+            this.txtLopSH.TabIndex = 30;
+            // 
+            // txtCTDT
+            // 
+            this.txtCTDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCTDT.BackColor = System.Drawing.Color.Transparent;
+            this.txtCTDT.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtCTDT.Location = new System.Drawing.Point(287, 93);
+            this.txtCTDT.Name = "txtCTDT";
+            this.txtCTDT.Size = new System.Drawing.Size(310, 23);
+            this.txtCTDT.TabIndex = 29;
+            // 
+            // txtKhoa
+            // 
+            this.txtKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtKhoa.AutoSize = true;
+            this.txtKhoa.BackColor = System.Drawing.Color.Transparent;
+            this.txtKhoa.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtKhoa.Location = new System.Drawing.Point(287, 52);
+            this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.Size = new System.Drawing.Size(0, 23);
+            this.txtKhoa.TabIndex = 28;
             // 
             // label18
             // 
@@ -703,38 +720,20 @@
             this.btnSave.Text = "Lưu thông tin cá thân";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtKhoa
+            // uC_AddressSelection
             // 
-            this.txtKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtKhoa.AutoSize = true;
-            this.txtKhoa.BackColor = System.Drawing.Color.Transparent;
-            this.txtKhoa.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtKhoa.Location = new System.Drawing.Point(287, 52);
-            this.txtKhoa.Name = "txtKhoa";
-            this.txtKhoa.Size = new System.Drawing.Size(0, 23);
-            this.txtKhoa.TabIndex = 28;
-            // 
-            // txtCTDT
-            // 
-            this.txtCTDT.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCTDT.AutoSize = true;
-            this.txtCTDT.BackColor = System.Drawing.Color.Transparent;
-            this.txtCTDT.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtCTDT.Location = new System.Drawing.Point(287, 93);
-            this.txtCTDT.Name = "txtCTDT";
-            this.txtCTDT.Size = new System.Drawing.Size(0, 23);
-            this.txtCTDT.TabIndex = 29;
-            // 
-            // txtLopSH
-            // 
-            this.txtLopSH.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtLopSH.AutoSize = true;
-            this.txtLopSH.BackColor = System.Drawing.Color.Transparent;
-            this.txtLopSH.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtLopSH.Location = new System.Drawing.Point(287, 143);
-            this.txtLopSH.Name = "txtLopSH";
-            this.txtLopSH.Size = new System.Drawing.Size(0, 23);
-            this.txtLopSH.TabIndex = 30;
+            this.uC_AddressSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uC_AddressSelection.BackColor = System.Drawing.Color.Moccasin;
+            this.uC_AddressSelection.Background = System.Drawing.Color.Moccasin;
+            this.uC_AddressSelection.BorderColorComboBox = System.Drawing.Color.IndianRed;
+            this.uC_AddressSelection.Location = new System.Drawing.Point(3, 90);
+            this.uC_AddressSelection.Name = "uC_AddressSelection";
+            this.uC_AddressSelection.QuanHuyen = "";
+            this.uC_AddressSelection.Size = new System.Drawing.Size(574, 177);
+            this.uC_AddressSelection.TabIndex = 24;
+            this.uC_AddressSelection.TinhThanhPho = "";
+            this.uC_AddressSelection.XaPhuong = "";
             // 
             // UC_StudentInfoNew
             // 
