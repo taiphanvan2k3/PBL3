@@ -117,11 +117,11 @@ namespace DAL
             };
             db.THONG_BAO.Add(NewThongBao);
             db.SaveChanges();
+            //Sort r lấy cái đầu tiên là ra mã lớn nhất vừa thêm 
             int matb = db.THONG_BAO.OrderByDescending(p => p.MaTB).Select(p => p.MaTB).FirstOrDefault();
             THONGBAO_LOPHOCPHAN NewTBLHP = new THONGBAO_LOPHOCPHAN
             {
                 MaLopHP = MaLHP,
-                //MaTB = db.THONG_BAO.Where(p => p.NgayTao == dt).Select(p => p.MaTB).FirstOrDefault()
                 MaTB = matb
             };
             db.THONGBAO_LOPHOCPHAN.Add(NewTBLHP);
@@ -164,6 +164,17 @@ namespace DAL
                 db.SaveChanges();
             }
         }
+        public int GetNumberQuestionForMonHoc(string MaLHP)
+        {
+            string MaMH = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaLHP)
+                            .Join(db.MON_HOC, lhp => lhp.MaMH, mh => mh.MaMH, (lhp, mh) => new
+                            {
+                                lhp.MaMH,
+                                mh.TenMH
+                            }).Select(p => p.MaMH).FirstOrDefault();
+            return db.CAU_HOI.Where(p => p.MaMH == MaMH).Count();
+        }
+        public void CreateExam(string )
         #region Ver2
         public List<AssignTeacher> GetGVPhuHopTKB(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {

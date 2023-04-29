@@ -1,4 +1,5 @@
 ﻿using BLL;
+using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,8 +24,25 @@ namespace GUI.MyUserControls
             cbLopHocPhan.Items.Add("Chọn lớp học phần");
             cbLopHocPhan.Items.AddRange(GiangVien_BLL.Instance.GetClassSectionByID(id).ToArray());
             cbLopHocPhan.SelectedIndex = 0;
+            cbLoaiBaiKiemTra.SelectedIndex = 0;
+            cbSoLuongCauHoi.SelectedIndex = 0;
         }
-        private void guna2ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void btnTao_Click(object sender, EventArgs e)
+        {
+            if(tbTenBaiKiemTra.Texts == "")
+                CustomMessageBox.Show("Vui lòng nhập tên bài kiểm tra!");
+            else if(tbThoiGianLamBai.Texts == "")
+                CustomMessageBox.Show("Vui lòng nhập thời gian làm bài!");
+            else if(tbMatKhauLamBai.Texts == "")
+                CustomMessageBox.Show("Vui lòng nhập mật khẩu làm bài!");
+            else
+            {
+
+            }
+        }
+
+        private void btnDatLai_Click(object sender, EventArgs e)
         {
 
         }

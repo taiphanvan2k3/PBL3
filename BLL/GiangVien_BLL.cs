@@ -100,6 +100,7 @@ namespace BLL
         {
             GiangVien_DAL.Instance.ReplaceNotice(MaGV, NgayTao, MaLHP, TieuDe, NoiDung);
         }
+        
         #region Get List GV Suitable To Assign
         public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {

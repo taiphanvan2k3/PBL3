@@ -60,7 +60,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 115);
+            this.label1.Location = new System.Drawing.Point(164, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 28);
             this.label1.TabIndex = 1;
@@ -91,6 +91,7 @@
             this.tbTieuDe.ForeColor = System.Drawing.Color.Silver;
             this.tbTieuDe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTieuDe.Location = new System.Drawing.Point(306, 110);
+            this.tbTieuDe.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbTieuDe.Name = "tbTieuDe";
             this.tbTieuDe.PasswordChar = '\0';
             this.tbTieuDe.PlaceholderText = "";
@@ -165,7 +166,7 @@
             this.btnGui.UseVisualStyleBackColor = false;
             this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
             // 
-            // UC_SendAnnounceToModuleClass
+            // UC_SendNoticeToModuleClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -176,7 +177,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbbLHP);
-            this.Name = "UC_SendAnnounceToModuleClass";
+            this.Name = "UC_SendNoticeToModuleClass";
             this.Size = new System.Drawing.Size(1119, 663);
             this.Load += new System.EventHandler(this.UC_SendAnnounceToModuleClass_Load);
             this.ResumeLayout(false);

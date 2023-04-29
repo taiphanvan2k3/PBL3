@@ -36,9 +36,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblTenHP = new System.Windows.Forms.Label();
             this.lblNhomHP = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTitleNhomHP = new System.Windows.Forms.Label();
             this.lblTenSV = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTitleHoTen = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTenCauHoi = new System.Windows.Forms.Label();
@@ -100,9 +100,9 @@
             this.panelTitle.Controls.Add(this.label8);
             this.panelTitle.Controls.Add(this.lblTenHP);
             this.panelTitle.Controls.Add(this.lblNhomHP);
-            this.panelTitle.Controls.Add(this.label5);
+            this.panelTitle.Controls.Add(this.lblTitleNhomHP);
             this.panelTitle.Controls.Add(this.lblTenSV);
-            this.panelTitle.Controls.Add(this.label3);
+            this.panelTitle.Controls.Add(this.lblTitleHoTen);
             this.panelTitle.Controls.Add(this.label2);
             this.panelTitle.Controls.Add(this.label1);
             this.panelTitle.CustomBorderColor = System.Drawing.Color.Lavender;
@@ -114,6 +114,7 @@
             this.panelTitle.TabIndex = 26;
             this.panelTitle.Text = "Thi giữa kì phân tích và thiết kế hướng đối tượng";
             this.panelTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.panelTitle.SizeChanged += new System.EventHandler(this.panelTitle_SizeChanged);
             // 
             // lblMSSV
             // 
@@ -157,6 +158,7 @@
             // 
             // lblNhomHP
             // 
+            this.lblNhomHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNhomHP.AutoSize = true;
             this.lblNhomHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhomHP.Location = new System.Drawing.Point(732, 86);
@@ -165,18 +167,20 @@
             this.lblNhomHP.TabIndex = 5;
             this.lblNhomHP.Text = "OOAD21.13";
             // 
-            // label5
+            // lblTitleNhomHP
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(564, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 23);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Nhóm học phần:";
+            this.lblTitleNhomHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleNhomHP.AutoSize = true;
+            this.lblTitleNhomHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleNhomHP.Location = new System.Drawing.Point(564, 86);
+            this.lblTitleNhomHP.Name = "lblTitleNhomHP";
+            this.lblTitleNhomHP.Size = new System.Drawing.Size(142, 23);
+            this.lblTitleNhomHP.TabIndex = 4;
+            this.lblTitleNhomHP.Text = "Nhóm học phần:";
             // 
             // lblTenSV
             // 
+            this.lblTenSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTenSV.AutoSize = true;
             this.lblTenSV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenSV.Location = new System.Drawing.Point(732, 51);
@@ -185,15 +189,16 @@
             this.lblTenSV.TabIndex = 3;
             this.lblTenSV.Text = "Phan Văn Tài";
             // 
-            // label3
+            // lblTitleHoTen
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(564, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Họ tên:";
+            this.lblTitleHoTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleHoTen.AutoSize = true;
+            this.lblTitleHoTen.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleHoTen.Location = new System.Drawing.Point(564, 51);
+            this.lblTitleHoTen.Name = "lblTitleHoTen";
+            this.lblTitleHoTen.Size = new System.Drawing.Size(69, 23);
+            this.lblTitleHoTen.TabIndex = 2;
+            this.lblTitleHoTen.Text = "Họ tên:";
             // 
             // label2
             // 
@@ -379,7 +384,7 @@
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
             this.lbTime.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbTime.Location = new System.Drawing.Point(35, 55);
+            this.lbTime.Location = new System.Drawing.Point(27, 58);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(152, 45);
             this.lbTime.TabIndex = 4;
@@ -551,9 +556,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTenHP;
         private System.Windows.Forms.Label lblNhomHP;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTitleNhomHP;
         private System.Windows.Forms.Label lblTenSV;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTitleHoTen;
         private System.Windows.Forms.Label label2;
     }
 }

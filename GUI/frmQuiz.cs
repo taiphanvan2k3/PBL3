@@ -11,13 +11,14 @@ namespace GUI
 {
     public partial class frmQuiz : Form
     {
-        public int MaBaiKiemTra { get; set; }
-        public string TenBaiKiemTra { set => panelTitle.Text = value; }
         public string MaSV { set => lblMSSV.Text = value; }
         public string TenSV { set => lblTenSV.Text = value; }
         public string LopSH { set => lblLopSH.Text = value; }
         public string MaHP { set => lblNhomHP.Text = value; }
         public string TenHP { set => lblTenHP.Text = value; }
+        public int MaBaiKiemTra { get; set; }
+        public string TenBaiKiemTra { set => panelTitle.Text = value; }
+        public int ThoiGianLamBai { set => targetTime = TimeSpan.FromMinutes(value); }
 
         //Thời gian hoàn thành bài của sinh viên này
         private DateTime StartTime { get; set; }
@@ -31,7 +32,7 @@ namespace GUI
         const uint WDA_MONITOR = 0x00000001;
 
         private Stopwatch stopwatch = new Stopwatch();
-        private TimeSpan targetTime = TimeSpan.FromMinutes(50);
+        private TimeSpan targetTime;
         //Số thứ tự câu hỏi hiện tại (đếm từ 1, khi nào cần truy cập vào mảng questions thì giảm 1 đi)
         private int CurrentIndex = 1;
         private int AnsweredQuestion = 0;
@@ -81,7 +82,10 @@ namespace GUI
             LoadCauHoi();
             HienThiCauHoi(1);
             StartTime = DateTime.Now;
-            lbTime.Text = targetTime.ToString(@"mm\:ss\:ff");
+            //if (targetTime.Hours == 0)
+            //    lbTime.Text = targetTime.ToString(@"mm\:ss\:ff");
+            //else
+            lbTime.Text = targetTime.ToString(@"hh\:mm\:ss\:ff");
             stopwatch.Start();
             timer1.Start();
 
@@ -100,7 +104,10 @@ namespace GUI
             }
             else
             {
-                lbTime.Text = remainingTime.ToString(@"mm\:ss\:ff");
+                if (remainingTime.Hours == 0)
+                    lbTime.Text = remainingTime.ToString(@"mm\:ss\:ff");
+                else
+                    lbTime.Text = remainingTime.ToString(@"hh\:mm\:ss");
             }
         }
 
@@ -303,6 +310,18 @@ namespace GUI
             MessageBox.Show(SoCauDung() + "");
             SubmitTime = DateTime.Now;
             this.Close();
+        }
+
+        private void panelTitle_SizeChanged(object sender, EventArgs e)
+        {
+            //Thay đổi lại vị trí của các label tên sinh viên, nhóm HP khi panelTitle thay đổi kích thước
+            int distance = lblTenSV.Location.X - lblTitleHoTen.Location.X;
+            int NewPosX = panelTitle.Width * 13 / 20 ;
+            lblTitleHoTen.Location = new System.Drawing.Point(NewPosX, lblTitleHoTen.Location.Y);
+            lblTenSV.Location = new System.Drawing.Point(NewPosX + distance, lblTenSV.Location.Y);
+
+            lblTitleNhomHP.Location = new System.Drawing.Point(NewPosX, lblTitleNhomHP.Location.Y);
+            lblNhomHP.Location = new System.Drawing.Point(NewPosX + distance, lblNhomHP.Location.Y);
         }
     }
 }

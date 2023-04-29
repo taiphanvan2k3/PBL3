@@ -93,6 +93,7 @@
             this.lblAvatar.Size = new System.Drawing.Size(109, 20);
             this.lblAvatar.TabIndex = 2;
             this.lblAvatar.Text = "Phan Văn Tài";
+            this.lblAvatar.TextChanged += new System.EventHandler(this.lblAvatar_TextChanged);
             // 
             // label1
             // 
@@ -351,6 +352,7 @@
             this.btnDoExam.TabIndex = 2;
             this.btnDoExam.Text = "     Làm bài kiểm tra";
             this.btnDoExam.UseVisualStyleBackColor = false;
+            this.btnDoExam.Click += new System.EventHandler(this.btnDoExam_Click);
             // 
             // timerExpandClass
             // 
