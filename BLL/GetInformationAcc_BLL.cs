@@ -100,7 +100,7 @@ namespace BLL
                 NgaySinh = userInfo.NgaySinh,
                 GioiTinh = userInfo.GioiTinh,
                 DanToc = userInfo.DanToc,
-                QuocTich = userInfo.QuocTinh,
+                QuocTich = userInfo.QuocTich,
                 NoiSinh = userInfo.NoiSinh,
                 DiaChi = userInfo.DiaChi,
                 Sdt = userInfo.Sdt,

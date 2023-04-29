@@ -123,7 +123,7 @@ namespace GUI
             Info.EmailTruongCap = gv.EmailTruongCap;
             Info.SDT = gv.Sdt;
             Info.DanToc = gv.DanToc;
-            Info.QuocTich = gv.QuocTinh;
+            Info.QuocTich = gv.QuocTich;
             Info.NoiSinh = gv.NoiSinh;
             Info.CCCD = gv.MaCCCD;
             Info.SetDiaChi(gv.DiaChi);

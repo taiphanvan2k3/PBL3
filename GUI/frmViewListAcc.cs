@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using System.Reflection;
+using GUI.MyCustomControl;
+using Testexcel;
 
 namespace GUI
 {
@@ -192,13 +194,27 @@ namespace GUI
         #endregion
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddAccount frmAddAccStudent = new frmAddAccount(role);
-            frmAddAccStudent.ShowDialog();
 
-            frmAddAccStudent.FormClosed += (s, args) =>
+
+            DialogResult result = CustomMessageBox.Show("Lựa chọn chế độ muốn thêm tài khoản mới",
+                "Tạo Tài Khoản",
+                MessageBoxButtons.YesNoCancel, "Thủ Công", "Bằng Sheet", "Hủy");
+            if (result == DialogResult.Yes)
             {
-                this.Refresh();
-            };
+                frmAddAccount frmAddAccStudent = new frmAddAccount(role);
+                frmAddAccStudent.ShowDialog();
+            }
+            else if (result == DialogResult.No)
+            {
+                frmAddAccountByExcel frmAddAccountByExcel = new frmAddAccountByExcel(role);
+                frmAddAccountByExcel.ShowDialog();
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                // Code xử lý khi người dùng chọn Cancel
+            }
+
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

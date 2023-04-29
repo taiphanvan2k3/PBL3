@@ -50,7 +50,7 @@ namespace GUI
             SetFormSize();
             SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);//Set Default Buttons
         }
-        public frmMessageBox(string text, string caption, MessageBoxButtons buttons)
+        public frmMessageBox(string text, string caption, MessageBoxButtons buttons, string nameYes, string nameNo, string nameCacel)
         {
             InitializeComponent();
             InitializeItems();
@@ -58,7 +58,7 @@ namespace GUI
             this.labelMessage.Text = text;
             this.labelCaption.Text = caption;
             SetFormSize();
-            SetButtons(buttons, MessageBoxDefaultButton.Button1);//Set [Default Button 1]
+            SetButtons(buttons, MessageBoxDefaultButton.Button1, nameYes, nameNo, nameCacel);//Set [Default Button 1]
         }
         public frmMessageBox(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
@@ -101,7 +101,7 @@ namespace GUI
             int height = this.panelTitleBar.Height + this.labelMessage.Height + this.panelButtons.Height + this.panelBody.Padding.Top;
             this.Size = new Size(widht, height);
         }
-        private void SetButtons(MessageBoxButtons buttons, MessageBoxDefaultButton defaultButton)
+        private void SetButtons(MessageBoxButtons buttons, MessageBoxDefaultButton defaultButton, string nameYes = "", string nameNo = "", string nameCancel = "")
         {
             int xCenter = (this.panelButtons.Width - button1.Width) / 2;
             int yCenter = (this.panelButtons.Height - button1.Height) / 2;
@@ -181,20 +181,20 @@ namespace GUI
                     //Yes Button
                     button1.Visible = true;
                     button1.Location = new Point(xCenter - button1.Width - 5, yCenter);
-                    button1.Text = "Yes";
+                    button1.Text = nameYes;
                     button1.DialogResult = DialogResult.Yes;//Set DialogResult
 
                     //No Button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter, yCenter);
-                    button2.Text = "No";
+                    button2.Text = nameNo;
                     button2.DialogResult = DialogResult.No;//Set DialogResult
                     button2.BackColor = Color.IndianRed;
 
                     //Cancel Button
                     button3.Visible = true;
                     button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
-                    button3.Text = "Cancel";
+                    button3.Text = nameCancel;
                     button3.DialogResult = DialogResult.Cancel;//Set DialogResult
                     button3.BackColor = Color.DimGray;
 

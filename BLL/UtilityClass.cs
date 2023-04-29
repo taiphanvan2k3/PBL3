@@ -35,11 +35,11 @@ namespace BLL
 
         public static void sendEmail(string addressEmail, string digitcode)
         {
-            string senderEmail = "nngann2402@gmail.com";
+            string senderEmail = "doanpbl@gmail.com";
             string receiverEmail = addressEmail;
             string subject = "Digit code";
             string body = digitcode;
-            string senderPassword = "yagelshriaicnfvn";
+            string senderPassword = "vwuftouydjrqvvmy";
 
             var smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.UseDefaultCredentials = false;
