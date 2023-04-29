@@ -174,7 +174,7 @@ namespace DAL
                             }).Select(p => p.MaMH).FirstOrDefault();
             return db.CAU_HOI.Where(p => p.MaMH == MaMH).Count();
         }
-        public void CreateExam(string )
+        //public void CreateExam(string )
         #region Ver2
         public List<AssignTeacher> GetGVPhuHopTKB(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {
