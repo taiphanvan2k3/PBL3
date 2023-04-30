@@ -164,6 +164,10 @@ namespace DAL
                 db.SaveChanges();
             }
         }
+        /*public bool CheckTimeExamConflict(string MaGV, string MaLHP, DateTime TimeExam)
+        {
+            var query = db.BAI_KIEM_TRA.
+        }*/
         public int GetNumberQuestionForMonHoc(string MaLHP)
         {
             string MaMH = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaLHP)
@@ -174,7 +178,73 @@ namespace DAL
                             }).Select(p => p.MaMH).FirstOrDefault();
             return db.CAU_HOI.Where(p => p.MaMH == MaMH).Count();
         }
-        //public void CreateExam(string )
+        public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra, 
+                               byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
+        {
+            BAI_KIEM_TRA NewBKT = new BAI_KIEM_TRA
+            {
+                TenBaiKiemTra = TenBKT,
+                TieuDeBaiKiemTra = LoaiBaiKiemTra,
+                NgayKiemTra = NgayKiemTra,
+                ThoiGianLamBai = ThoiGianLamBai,
+                SoCauHoi = SoCauHoi,
+                MkBaiKiemTra = MatKhauLamBai,
+                ChoPhepQuayLai = ChoPhepQuayLai,
+                MaGV = MaGV,
+                MaLopHP = MaLHP
+            };
+            db.BAI_KIEM_TRA.Add(NewBKT);
+            db.SaveChanges();
+            //Sort r lấy cái đầu tiên là ra mã lớn nhất vừa thêm 
+            int MaBKT = db.BAI_KIEM_TRA.OrderByDescending(p => p.MaBaiKiemTra).Select(p => p.MaBaiKiemTra).FirstOrDefault();
+            int SoLuongCauHoi = GetNumberQuestionForMonHoc(MaLHP);
+            List<CAU_HOI> li = new List<CAU_HOI>();
+            //Nếu số câu hỏi có trong CSDL phù hợp nhiều hơn 2 lần số câu hỏi cần làm thì sẽ lấy ở mức gấp đôi số câu hỏi cần làm để random 
+            if(SoLuongCauHoi > SoCauHoi*2)
+                SoLuongCauHoi = SoCauHoi * 2;
+            //x => Guid.NewGuid() là phương thức lấy ngẫu nhiên record trong database theo method syntax in LinQ to entities 
+            li = db.CAU_HOI.OrderBy(x => Guid.NewGuid()).Take(SoLuongCauHoi).ToList();
+            foreach(var i in li)
+            {
+                BAIKIEMTRA_CAUHOI NewBKT_CH = new BAIKIEMTRA_CAUHOI
+                {
+                    MaBaiKiemTra = MaBKT,
+                    MaCauHoi = i.MaCauHoi
+                };
+                db.BAIKIEMTRA_CAUHOI.Add(NewBKT_CH);
+            }
+            db.SaveChanges();
+        }
+        public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
+        {
+            CAU_HOI NewCauHoi = new CAU_HOI
+            {
+                TenCauHoi = TenCauHoi,
+                DapAnA = DapAnA,
+                DapAnB = DapAnB,
+                DapAnC = DapAnC,
+                DapAnD = DapAnD,
+                DapAnDung = DapAnDung,
+                MaMH = MaMonHoc,
+                PhanLoai = PhanLoai
+            };
+            db.CAU_HOI.Add(NewCauHoi);
+            db.SaveChanges();
+        }
+        public List<CBBItem> GetMonHocInKhoaForGV(string MaGV)
+        {
+            return db.GIANG_VIEN.Where(gv => gv.MaGV == MaGV)
+                                .Join(db.LOP_HOC_PHAN, gv => gv.MaGV, lhp => lhp.MaGV, (gv, lhp) => new
+                                {
+                                    gv.MaGV,
+                                    lhp.MaLopHP,
+                                    lhp.MaMH
+                                }).Join(db.MON_HOC, lhp => lhp.MaMH, mh => mh.MaMH, (lhp, mh) => new
+                                {
+                                    lhp.MaMH,
+                                    mh.TenMH
+                                }).Select(mh => new CBBItem { Id = mh.MaMH, Value = mh.TenMH}).Distinct().ToList();
+        }
         #region Ver2
         public List<AssignTeacher> GetGVPhuHopTKB(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {

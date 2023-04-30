@@ -100,9 +100,26 @@ namespace BLL
         {
             GiangVien_DAL.Instance.ReplaceNotice(MaGV, NgayTao, MaLHP, TieuDe, NoiDung);
         }
-        
-        #region Get List GV Suitable To Assign
-        public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
+        public int GetNumberQuestionForMonHoc(string MaLHP)
+        {
+            return GiangVien_DAL.Instance.GetNumberQuestionForMonHoc(MaLHP);
+        }
+        public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
+                               byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
+        {
+            GiangVien_DAL.Instance.CreateExam(TenBKT, LoaiBaiKiemTra, ThoiGianLamBai, NgayKiemTra, SoCauHoi, MaLHP, 
+                                              MaGV, MatKhauLamBai, ChoPhepQuayLai);
+        }
+        public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
+        {
+            GiangVien_DAL.Instance.CreateQuestion(TenCauHoi,DapAnA,DapAnB,DapAnC,DapAnD,DapAnDung, MaMonHoc, PhanLoai);
+        }
+        public List<CBBItem> GetMonHocInKhoaForGV(string MaGV)
+        {
+            return GiangVien_DAL.Instance.GetMonHocInKhoaForGV(MaGV);
+        }
+            #region Get List GV Suitable To Assign
+            public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {
             List<AssignTeacher> li = new List<AssignTeacher>();
             int stt = 1;

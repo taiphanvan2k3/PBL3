@@ -42,7 +42,7 @@ namespace GUI
         {
             InitializeComponent();
             questions = new List<CauHoi_DTO>();
-            //SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
+            SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
             selectedAnswers = new List<SelectedAnswer>();
         }
 

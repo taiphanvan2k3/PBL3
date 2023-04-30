@@ -1,6 +1,6 @@
 ﻿namespace GUI.MyUserControls
 {
-    partial class UC_CreateTestQuestions
+    partial class UC_CreateExam
     {
         /// <summary> 
         /// Required designer variable.
@@ -45,7 +45,8 @@
             this.tbThoiGianLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.tbTenBaiKiemTra = new GUI.MyCustomControl.CustomTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpGioKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.chbAllowReturn = new Guna.UI2.WinForms.Guna2CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +63,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 200);
+            this.label2.Location = new System.Drawing.Point(24, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 23);
             this.label2.TabIndex = 3;
@@ -72,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(139, 388);
+            this.label3.Location = new System.Drawing.Point(22, 466);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 23);
             this.label3.TabIndex = 5;
@@ -82,7 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 299);
+            this.label4.Location = new System.Drawing.Point(24, 336);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 23);
             this.label4.TabIndex = 7;
@@ -92,7 +93,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(568, 99);
+            this.label6.Location = new System.Drawing.Point(648, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 23);
             this.label6.TabIndex = 11;
@@ -102,7 +103,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(568, 199);
+            this.label7.Location = new System.Drawing.Point(648, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 23);
             this.label7.TabIndex = 13;
@@ -125,7 +126,7 @@
             "Giữa kỳ",
             "Cuối kỳ",
             "Test"});
-            this.cbLoaiBaiKiemTra.Location = new System.Drawing.Point(208, 192);
+            this.cbLoaiBaiKiemTra.Location = new System.Drawing.Point(208, 211);
             this.cbLoaiBaiKiemTra.Name = "cbLoaiBaiKiemTra";
             this.cbLoaiBaiKiemTra.Size = new System.Drawing.Size(250, 36);
             this.cbLoaiBaiKiemTra.TabIndex = 16;
@@ -147,7 +148,7 @@
             "30",
             "40",
             "50"});
-            this.cbSoLuongCauHoi.Location = new System.Drawing.Point(763, 91);
+            this.cbSoLuongCauHoi.Location = new System.Drawing.Point(843, 91);
             this.cbSoLuongCauHoi.Name = "cbSoLuongCauHoi";
             this.cbSoLuongCauHoi.Size = new System.Drawing.Size(250, 36);
             this.cbSoLuongCauHoi.TabIndex = 18;
@@ -165,7 +166,7 @@
             this.cbLopHocPhan.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbLopHocPhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbLopHocPhan.ItemHeight = 30;
-            this.cbLopHocPhan.Location = new System.Drawing.Point(763, 191);
+            this.cbLopHocPhan.Location = new System.Drawing.Point(843, 210);
             this.cbLopHocPhan.Name = "cbLopHocPhan";
             this.cbLopHocPhan.Size = new System.Drawing.Size(250, 36);
             this.cbLopHocPhan.TabIndex = 19;
@@ -177,7 +178,7 @@
             this.dtpNgayKiemTra.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
             this.dtpNgayKiemTra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayKiemTra.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNgayKiemTra.Location = new System.Drawing.Point(338, 375);
+            this.dtpNgayKiemTra.Location = new System.Drawing.Point(208, 432);
             this.dtpNgayKiemTra.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayKiemTra.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayKiemTra.Name = "dtpNgayKiemTra";
@@ -189,7 +190,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(568, 291);
+            this.label8.Location = new System.Drawing.Point(648, 328);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(151, 23);
             this.label8.TabIndex = 25;
@@ -204,7 +205,7 @@
             this.tbMatKhauLamBai.BorderSize = 2;
             this.tbMatKhauLamBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMatKhauLamBai.ForeColor = System.Drawing.Color.DimGray;
-            this.tbMatKhauLamBai.Location = new System.Drawing.Point(763, 287);
+            this.tbMatKhauLamBai.Location = new System.Drawing.Point(843, 324);
             this.tbMatKhauLamBai.Margin = new System.Windows.Forms.Padding(4);
             this.tbMatKhauLamBai.MaxLength = 32767;
             this.tbMatKhauLamBai.Multiline = false;
@@ -229,7 +230,7 @@
             this.btnTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTao.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTao.Location = new System.Drawing.Point(578, 490);
+            this.btnTao.Location = new System.Drawing.Point(738, 622);
             this.btnTao.Name = "btnTao";
             this.btnTao.Size = new System.Drawing.Size(121, 40);
             this.btnTao.TabIndex = 15;
@@ -250,7 +251,7 @@
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatLai.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDatLai.Location = new System.Drawing.Point(308, 490);
+            this.btnDatLai.Location = new System.Drawing.Point(272, 622);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(121, 40);
             this.btnDatLai.TabIndex = 14;
@@ -269,7 +270,7 @@
             this.tbThoiGianLamBai.BorderSize = 2;
             this.tbThoiGianLamBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbThoiGianLamBai.ForeColor = System.Drawing.Color.DimGray;
-            this.tbThoiGianLamBai.Location = new System.Drawing.Point(208, 291);
+            this.tbThoiGianLamBai.Location = new System.Drawing.Point(208, 328);
             this.tbThoiGianLamBai.Margin = new System.Windows.Forms.Padding(4);
             this.tbThoiGianLamBai.MaxLength = 32767;
             this.tbThoiGianLamBai.Multiline = false;
@@ -310,34 +311,53 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(367, 299);
+            this.label9.Location = new System.Drawing.Point(367, 336);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 23);
             this.label9.TabIndex = 26;
             this.label9.Text = "(phút)";
             // 
-            // guna2DateTimePicker1
+            // dtpGioKT
             // 
-            this.guna2DateTimePicker1.BorderRadius = 10;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.CustomFormat = "hh:mm tt";
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.Chartreuse;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(651, 375);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShowUpDown = true;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(221, 36);
-            this.guna2DateTimePicker1.TabIndex = 28;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 4, 26, 23, 39, 58, 40);
+            this.dtpGioKT.BorderRadius = 10;
+            this.dtpGioKT.Checked = true;
+            this.dtpGioKT.CustomFormat = "hh:mm tt";
+            this.dtpGioKT.FillColor = System.Drawing.Color.Chartreuse;
+            this.dtpGioKT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpGioKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpGioKT.Location = new System.Drawing.Point(208, 492);
+            this.dtpGioKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpGioKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpGioKT.Name = "dtpGioKT";
+            this.dtpGioKT.ShowUpDown = true;
+            this.dtpGioKT.Size = new System.Drawing.Size(250, 36);
+            this.dtpGioKT.TabIndex = 28;
+            this.dtpGioKT.Value = new System.DateTime(2023, 4, 26, 23, 39, 58, 40);
             // 
-            // UC_CreateTestQuestions
+            // chbAllowReturn
+            // 
+            this.chbAllowReturn.AutoSize = true;
+            this.chbAllowReturn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbAllowReturn.CheckedState.BorderRadius = 0;
+            this.chbAllowReturn.CheckedState.BorderThickness = 0;
+            this.chbAllowReturn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbAllowReturn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbAllowReturn.Location = new System.Drawing.Point(652, 460);
+            this.chbAllowReturn.Name = "chbAllowReturn";
+            this.chbAllowReturn.Size = new System.Drawing.Size(187, 29);
+            this.chbAllowReturn.TabIndex = 30;
+            this.chbAllowReturn.Text = "Cho phép quay lại";
+            this.chbAllowReturn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbAllowReturn.UncheckedState.BorderRadius = 0;
+            this.chbAllowReturn.UncheckedState.BorderThickness = 0;
+            this.chbAllowReturn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // UC_CreateExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.chbAllowReturn);
+            this.Controls.Add(this.dtpGioKT);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbMatKhauLamBai);
@@ -355,8 +375,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbTenBaiKiemTra);
-            this.Name = "UC_CreateTestQuestions";
-            this.Size = new System.Drawing.Size(1119, 663);
+            this.Name = "UC_CreateExam";
+            this.Size = new System.Drawing.Size(1175, 730);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,6 +401,7 @@
         private System.Windows.Forms.Label label8;
         private MyCustomControl.CustomTextBox tbMatKhauLamBai;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpGioKT;
+        private Guna.UI2.WinForms.Guna2CheckBox chbAllowReturn;
     }
 }

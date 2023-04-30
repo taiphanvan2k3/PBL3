@@ -224,6 +224,12 @@
     <Compile Include="frmShowEventInDay.Designer.cs">
       <DependentUpon>frmShowEventInDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTaoCauHoiNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoCauHoiNew.Designer.cs">
+      <DependentUpon>frmTaoCauHoiNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTestExam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,11 +349,11 @@
     <Compile Include="MyUserControls\UC_Calendar_New.Designer.cs">
       <DependentUpon>UC_Calendar_New.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_CreateTestQuestions.cs">
+    <Compile Include="MyUserControls\UC_CreateExam.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControls\UC_CreateTestQuestions.Designer.cs">
-      <DependentUpon>UC_CreateTestQuestions.cs</DependentUpon>
+    <Compile Include="MyUserControls\UC_CreateExam.Designer.cs">
+      <DependentUpon>UC_CreateExam.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_Day.cs">
       <SubType>UserControl</SubType>
@@ -494,6 +500,9 @@
     <EmbeddedResource Include="frmShowEventInDay.resx">
       <DependentUpon>frmShowEventInDay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoCauHoiNew.resx">
+      <DependentUpon>frmTaoCauHoiNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTestExam.resx">
       <DependentUpon>frmTestExam.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,8 +554,8 @@
     <EmbeddedResource Include="MyUserControls\UC_Calendar_New.resx">
       <DependentUpon>UC_Calendar_New.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_CreateTestQuestions.resx">
-      <DependentUpon>UC_CreateTestQuestions.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControls\UC_CreateExam.resx">
+      <DependentUpon>UC_CreateExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Day.resx">
       <DependentUpon>UC_Day.cs</DependentUpon>
@@ -729,6 +738,9 @@
     <None Include="Resources\Yourname.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Near.png" />
+    <None Include="Resources\createExam.png" />
     <None Include="Resources\file1.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\upload1.png" />
