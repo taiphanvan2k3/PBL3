@@ -199,6 +199,7 @@ namespace GUI
                 PhanLoai = "Single";
             }
             GiangVien_BLL.Instance.CreateQuestion(tbQuestion.Texts, tbA.Texts, tbB.Texts, tbC.Texts, tbD.Texts, DapAnDung, ((CBBItem)cbMonHoc.SelectedItem).Id, PhanLoai);
+            CustomMessageBox.Show("Tạo câu hỏi thành công!");
         }
 
 
