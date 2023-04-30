@@ -49,5 +49,9 @@ namespace BLL
         {
             return LopSinhHoat_DAL.Instance.DeleteStudent(li);
         }
+        public List<InformationClass_DTO> GetInformationClasses()
+        {
+            return LopSinhHoat_DAL.Instance.GetInformationClasses();
+        }
     }
 }

@@ -210,17 +210,28 @@ namespace GUI
         // gắn datasource
         private void btnStudent_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewListAcc(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(), 0));
+            openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(), 0));
         }
         private void btnTeacher_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewListAcc(GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList(), 1));
+            openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList(), 1));
 
         }
+
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
+        }
+
+        private void btnHomeroomClass_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmViewListAccAndClass(LopSinhHoat_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), 2));
+        }
+
+        private void btnModuleClass_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.getInformation().Cast<object>().ToList(), 3));
         }
     }
 }

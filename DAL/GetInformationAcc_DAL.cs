@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,24 +78,36 @@ namespace DAL
                 return info;
             }
         }
-        public int GetCountStudent()
-        {
-            using (var context = new PBL3Entities())
-            {
-                var soLuongBanGhi = context.SINH_VIEN.Count();
-                return soLuongBanGhi;
 
+        public int getTheNumberOfStudentByFaculty(string maKhoa, string year)
+        {
+            using (var db = new PBL3Entities())
+            {
+                var result = from sv in db.SINH_VIEN
+                             join ctdt in db.CHUONG_TRINH_DAO_TAO on sv.MaCTDT equals ctdt.MaCTDT
+                             where ctdt.MaKhoa == maKhoa && sv.MaSV.Substring(3, sv.MaSV.Length - 7) == year
+                             group sv by ctdt.MaKhoa into g
+                             select new { MaKhoa = g.Key, SoLuongSinhVien = g.Count() };
+                var singleResult = result.SingleOrDefault(); // lấy ra đối tượng duy nhất trong result
+                if (singleResult != null)
+                {
+                    return singleResult.SoLuongSinhVien;
+                }
+                return 0;
             }
         }
-        public int GetCountTeacher()
-        {
-            using (var context = new PBL3Entities())
-            {
-                var soLuongBanGhi = context.GIANG_VIEN.Count();
-                return soLuongBanGhi;
 
+        public int getTheNumberOfTeacherByFaculty(string maKhoa)
+        {
+            using (var db = new PBL3Entities())
+            {
+                var result = (from gv in db.GIANG_VIEN
+                              where gv.MaKhoa == maKhoa
+                              select gv).Count();
+                return result;
             }
         }
+
         public void InsertLoginInfo(THONG_TIN_DANG_NHAP newLoginInfo)
         {
             using (var context = new PBL3Entities())

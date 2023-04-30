@@ -15,18 +15,19 @@ using Testexcel;
 
 namespace GUI
 {
-    public partial class frmViewListAcc : Form
+    public partial class frmViewListAccAndClass : Form
     {
         int TotalCheckBoxes = 0;
         int TotalCheckedCheckBoxes = 0;
         CheckBox HeaderCheckBox = null;
         bool IsHeaderCheckBoxClicked = false;
+        string maLop = "";
 
         List<string> listOfStudentCodesToDelete = new List<string>();
 
         private List<object> dt;
         private int role;
-        public frmViewListAcc(List<object> dt, int role)
+        public frmViewListAccAndClass(List<object> dt, int role)
         {
             InitializeComponent();
             HideButton();
@@ -42,6 +43,15 @@ namespace GUI
                 e.Cancel = true;
             }
         }
+        private void HideButton()
+        {
+            btnDelete.Visible = false;
+            btnEdit.Visible = false;
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void frmAddAccount_Load(object sender, EventArgs e)
         {
@@ -50,13 +60,33 @@ namespace GUI
             HeaderCheckBox.MouseClick += new MouseEventHandler(HeaderCheckBox_MouseClick);
             dgvViewAcc.CurrentCellDirtyStateChanged += new EventHandler(dgvSelectAll_CurrentCellDirtyStateChanged);
             dgvViewAcc.DataSource = dt;
+            switch(role)
+            {
+                case 0:
+                case 1:
+                    UtilityClass.SwapColumns(dgvViewAcc, 0, 1);
+                    break;
+                case 2:
+                    lbTitle.Text = "Quản lý lớp sinh hoạt";
+                    btnAdd.Text = "Thêm lớp học";
+                    btnEdit.Click -= btnEdit_Click;
+                    btnEdit.Click += btnEditHomeRoomClass_Click;
+                    break;
+                case 3:
+                    lbTitle.Text = "Quản lý lớp học phần";
+                    btnAdd.Text = "Thêm lớp học";
+                    btnAdd.Click -= btnAdd_Click;
+                    btnAdd.Click += btnAddHomeRoomClass_Click;
+                    btnEdit.Click -= btnEdit_Click;
+                    btnEdit.Click += btnEditMoudleClass_Click;
+                    break;
+            }
             BindGridView();
         }
 
         #region Thêm header checkbox
         private void BindGridView()
         {
-            UtilityClass.SwapColumns(dgvViewAcc, 0, 1);
             dgvViewAcc.CurrentCell = null;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.HeaderText = "";
@@ -120,7 +150,7 @@ namespace GUI
 
         #endregion
 
-        #region Sự kiện nhấn vào 1 ô 
+        #region Sự kiện nhấn vào 1 ô checkbox
         //Kiểm tra xem checkbox được đánh dấu ở header của datagridview có được chọn hay không.
         private void dgvViewAcc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -158,6 +188,7 @@ namespace GUI
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
                         TotalCheckedCheckBoxes++;
                         mssv = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        maLop = dgvViewAcc.Rows[e.RowIndex].Cells[1].Value.ToString();
                         listOfStudentCodesToDelete.Add(mssv);
                     }
                     else
@@ -192,10 +223,10 @@ namespace GUI
         }
 
         #endregion
+
+        #region Xử lý sự kiện CRUD tài khoản
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
-
             DialogResult result = CustomMessageBox.Show("Lựa chọn chế độ muốn thêm tài khoản mới",
                 "Tạo Tài Khoản",
                 MessageBoxButtons.YesNoCancel, "Thủ Công", "Bằng Sheet", "Hủy");
@@ -213,7 +244,6 @@ namespace GUI
             {
                 // Code xử lý khi người dùng chọn Cancel
             }
-
 
         }
 
@@ -254,19 +284,41 @@ namespace GUI
             }
 
         }
+        #endregion
 
-        private void HideButton()
+        #region Xử lý sự kiện CRUD lớp học
+
+        private void btnAddHomeRoomClass_Click(object sender, EventArgs e)
         {
-            btnDelete.Visible = false;
-            btnEdit.Visible = false;
+            frmAddModuleClass frmAddModuleClass = new frmAddModuleClass();
+            frmAddModuleClass.ShowDialog();
         }
-        private void button5_Click(object sender, EventArgs e)
+
+        private void btnEditHomeRoomClass_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
+            frmViewDetailHomeroomClass frmViewDetailHomeroomClass = new frmViewDetailHomeroomClass(maLop);
+            frmViewDetailHomeroomClass.ShowDialog();
+        }
+
+        private void btnEditMoudleClass_Click(object sender, EventArgs e)
+        {
+
+            frmViewDetailModuleClass frmViewDetailModuleClass = new frmViewDetailModuleClass(maLop);
+            frmViewDetailModuleClass.ShowDialog();
         }
 
 
 
 
+
+
+
+        #endregion
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

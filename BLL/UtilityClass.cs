@@ -63,7 +63,7 @@ namespace BLL
             var column1 = dataGridView.Columns[index1];
             var column2 = dataGridView.Columns[index2];
 
-            int temp = column1.DisplayIndex;
+            int temp = column1.DisplayIndex;    
             column1.DisplayIndex = column2.DisplayIndex;
             column2.DisplayIndex = temp;
         }

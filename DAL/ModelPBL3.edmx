@@ -104,7 +104,7 @@
           <Property Name="MaGV" Type="varchar" MaxLength="9" />
           <Property Name="KiHoc" Type="int" Nullable="false" />
           <Property Name="NamHoc" Type="int" Nullable="false" />
-          <Property Name="SoLuongToiDa" Type="int" Nullable="false" />
+          <Property Name="SoLuongToiDa" Type="int" />
         </EntityType>
         <EntityType Name="LOP_SINH_HOAT">
           <Key>
@@ -804,7 +804,7 @@
           <Property Name="MaGV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
           <Property Name="KiHoc" Type="Int32" Nullable="false" />
           <Property Name="NamHoc" Type="Int32" Nullable="false" />
-          <Property Name="SoLuongToiDa" Type="Int32" Nullable="false" />
+          <Property Name="SoLuongToiDa" Type="Int32" />
           <NavigationProperty Name="BAI_KIEM_TRA" Relationship="Self.FK_MaLopHP_BaiKT" FromRole="LOP_HOC_PHAN" ToRole="BAI_KIEM_TRA" />
           <NavigationProperty Name="GIANG_VIEN" Relationship="Self.FK_MaGV" FromRole="LOP_HOC_PHAN" ToRole="GIANG_VIEN" />
           <NavigationProperty Name="THONGBAO_LOPHOCPHAN" Relationship="Self.FK__THONGBAO___MaLop__72910220" FromRole="LOP_HOC_PHAN" ToRole="THONGBAO_LOPHOCPHAN" />
