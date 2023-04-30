@@ -61,7 +61,7 @@
             this.checkBoxSingleMulti.TabIndex = 2;
             this.checkBoxSingleMulti.Text = "Câu hỏi nhiều đáp án?";
             this.checkBoxSingleMulti.UseVisualStyleBackColor = true;
-            this.checkBoxSingleMulti.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxSingleMulti.CheckedChanged += new System.EventHandler(this.checkBoxSingleMulti_CheckedChanged);
             // 
             // panelDanhSachDapAn
             // 

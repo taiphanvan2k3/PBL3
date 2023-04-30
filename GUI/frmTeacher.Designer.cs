@@ -33,18 +33,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlManageClass = new System.Windows.Forms.Panel();
+            this.pnlViewCalendar = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.btnInfo = new FontAwesome.Sharp.IconButton();
-            this.pnlManageClass = new System.Windows.Forms.Panel();
             this.btnCreateQuestion = new System.Windows.Forms.Button();
+            this.btnCreateExam = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSendAnnounce = new System.Windows.Forms.Button();
             this.btnManageClass = new System.Windows.Forms.Button();
             this.btnChangeGrade = new System.Windows.Forms.Button();
-            this.pnlViewCalendar = new System.Windows.Forms.Panel();
             this.btnCalendarDays = new System.Windows.Forms.Button();
             this.btnCalendarWeek = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
@@ -53,17 +54,17 @@
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flPanel.SuspendLayout();
             this.pnlManageClass.SuspendLayout();
             this.pnlViewCalendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
             this.pnlMain.Location = new System.Drawing.Point(250, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1119, 663);
+            this.pnlMain.Size = new System.Drawing.Size(1175, 730);
             this.pnlMain.TabIndex = 2;
             // 
             // panel1
@@ -74,7 +75,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1372, 665);
+            this.panel1.Size = new System.Drawing.Size(1425, 735);
             this.panel1.TabIndex = 2;
             // 
             // panelMenu
@@ -86,7 +87,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 665);
+            this.panelMenu.Size = new System.Drawing.Size(250, 735);
             this.panelMenu.TabIndex = 1;
             // 
             // panel4
@@ -98,6 +99,43 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 76);
             this.panel4.TabIndex = 0;
+            // 
+            // flPanel
+            // 
+            this.flPanel.Controls.Add(this.btnHome);
+            this.flPanel.Controls.Add(this.btnInfo);
+            this.flPanel.Controls.Add(this.pnlManageClass);
+            this.flPanel.Controls.Add(this.pnlViewCalendar);
+            this.flPanel.Controls.Add(this.btnDarkMode);
+            this.flPanel.Location = new System.Drawing.Point(0, 76);
+            this.flPanel.Name = "flPanel";
+            this.flPanel.Size = new System.Drawing.Size(250, 585);
+            this.flPanel.TabIndex = 8;
+            // 
+            // pnlManageClass
+            // 
+            this.pnlManageClass.Controls.Add(this.btnCreateQuestion);
+            this.pnlManageClass.Controls.Add(this.btnCreateExam);
+            this.pnlManageClass.Controls.Add(this.button2);
+            this.pnlManageClass.Controls.Add(this.btnSendAnnounce);
+            this.pnlManageClass.Controls.Add(this.btnManageClass);
+            this.pnlManageClass.Controls.Add(this.btnChangeGrade);
+            this.pnlManageClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlManageClass.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlManageClass.Location = new System.Drawing.Point(3, 151);
+            this.pnlManageClass.Name = "pnlManageClass";
+            this.pnlManageClass.Size = new System.Drawing.Size(250, 68);
+            this.pnlManageClass.TabIndex = 7;
+            // 
+            // pnlViewCalendar
+            // 
+            this.pnlViewCalendar.Controls.Add(this.btnCalendarDays);
+            this.pnlViewCalendar.Controls.Add(this.btnCalendarWeek);
+            this.pnlViewCalendar.Controls.Add(this.btnCalendar);
+            this.pnlViewCalendar.Location = new System.Drawing.Point(3, 225);
+            this.pnlViewCalendar.Name = "pnlViewCalendar";
+            this.pnlViewCalendar.Size = new System.Drawing.Size(250, 68);
+            this.pnlViewCalendar.TabIndex = 9;
             // 
             // pictureBox1
             // 
@@ -125,18 +163,6 @@
             this.btnMenu.TabIndex = 8;
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // flPanel
-            // 
-            this.flPanel.Controls.Add(this.btnHome);
-            this.flPanel.Controls.Add(this.btnInfo);
-            this.flPanel.Controls.Add(this.pnlManageClass);
-            this.flPanel.Controls.Add(this.pnlViewCalendar);
-            this.flPanel.Controls.Add(this.btnDarkMode);
-            this.flPanel.Location = new System.Drawing.Point(0, 76);
-            this.flPanel.Name = "flPanel";
-            this.flPanel.Size = new System.Drawing.Size(250, 496);
-            this.flPanel.TabIndex = 8;
             // 
             // btnHome
             // 
@@ -182,20 +208,6 @@
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
-            // pnlManageClass
-            // 
-            this.pnlManageClass.Controls.Add(this.btnCreateQuestion);
-            this.pnlManageClass.Controls.Add(this.button2);
-            this.pnlManageClass.Controls.Add(this.btnSendAnnounce);
-            this.pnlManageClass.Controls.Add(this.btnManageClass);
-            this.pnlManageClass.Controls.Add(this.btnChangeGrade);
-            this.pnlManageClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlManageClass.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlManageClass.Location = new System.Drawing.Point(3, 151);
-            this.pnlManageClass.Name = "pnlManageClass";
-            this.pnlManageClass.Size = new System.Drawing.Size(250, 68);
-            this.pnlManageClass.TabIndex = 7;
-            // 
             // btnCreateQuestion
             // 
             this.btnCreateQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
@@ -205,14 +217,32 @@
             this.btnCreateQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCreateQuestion.Image = global::GUI.Properties.Resources.CreateQuestion;
             this.btnCreateQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateQuestion.Location = new System.Drawing.Point(26, 272);
+            this.btnCreateQuestion.Location = new System.Drawing.Point(26, 340);
             this.btnCreateQuestion.Name = "btnCreateQuestion";
             this.btnCreateQuestion.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnCreateQuestion.Size = new System.Drawing.Size(224, 68);
-            this.btnCreateQuestion.TabIndex = 16;
+            this.btnCreateQuestion.TabIndex = 17;
             this.btnCreateQuestion.Tag = "Tạo câu hỏi";
             this.btnCreateQuestion.UseVisualStyleBackColor = false;
             this.btnCreateQuestion.Click += new System.EventHandler(this.btnCreateQuestion_Click);
+            // 
+            // btnCreateExam
+            // 
+            this.btnCreateExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
+            this.btnCreateExam.FlatAppearance.BorderSize = 0;
+            this.btnCreateExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateExam.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateExam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCreateExam.Image = global::GUI.Properties.Resources.createExam;
+            this.btnCreateExam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateExam.Location = new System.Drawing.Point(26, 272);
+            this.btnCreateExam.Name = "btnCreateExam";
+            this.btnCreateExam.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnCreateExam.Size = new System.Drawing.Size(224, 68);
+            this.btnCreateExam.TabIndex = 16;
+            this.btnCreateExam.Tag = "Tạo bài kiểm tra";
+            this.btnCreateExam.UseVisualStyleBackColor = false;
+            this.btnCreateExam.Click += new System.EventHandler(this.btnCreateExam_Click);
             // 
             // button2
             // 
@@ -283,16 +313,6 @@
             this.btnChangeGrade.TabIndex = 12;
             this.btnChangeGrade.Tag = "Chỉnh sửa điểm";
             this.btnChangeGrade.UseVisualStyleBackColor = false;
-            // 
-            // pnlViewCalendar
-            // 
-            this.pnlViewCalendar.Controls.Add(this.btnCalendarDays);
-            this.pnlViewCalendar.Controls.Add(this.btnCalendarWeek);
-            this.pnlViewCalendar.Controls.Add(this.btnCalendar);
-            this.pnlViewCalendar.Location = new System.Drawing.Point(3, 225);
-            this.pnlViewCalendar.Name = "pnlViewCalendar";
-            this.pnlViewCalendar.Size = new System.Drawing.Size(250, 68);
-            this.pnlViewCalendar.TabIndex = 9;
             // 
             // btnCalendarDays
             // 
@@ -378,7 +398,7 @@
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogOut.IconSize = 30;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 597);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 667);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLogOut.Size = new System.Drawing.Size(250, 68);
@@ -392,7 +412,7 @@
             // frmTeacher
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1372, 665);
+            this.ClientSize = new System.Drawing.Size(1425, 735);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTeacher";
@@ -400,10 +420,10 @@
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flPanel.ResumeLayout(false);
             this.pnlManageClass.ResumeLayout(false);
             this.pnlViewCalendar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,7 +449,8 @@
         private System.Windows.Forms.Button btnCalendarDays;
         private System.Windows.Forms.Button btnCalendarWeek;
         private System.Windows.Forms.Button btnCalendar;
-        private System.Windows.Forms.Button btnCreateQuestion;
+        private System.Windows.Forms.Button btnCreateExam;
         private System.Windows.Forms.Button btnDarkMode;
+        private System.Windows.Forms.Button btnCreateQuestion;
     }
 }

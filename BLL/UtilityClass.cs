@@ -173,5 +173,26 @@ namespace BLL
                 days[2] = 29;
             return days[month];
         }
+        public static string GetDayOfWeekVietnamese(string DayOfWeek)
+        {
+            switch (DayOfWeek)
+            {
+                case "Monday":
+                    return "Thứ hai";
+                case "Tuesday":
+                    return "Thứ ba";
+                case "Wednesday":
+                    return "Thứ tư";
+                case "Thursday":
+                    return "Thứ năm";
+                case "Friday":
+                    return "Thứ sáu";
+                case "Saturday":
+                    return "Thứ bảy";
+                case "Sunday":
+                    return "Chủ nhật";
+            }
+            return "";
+        }
     }
 }
