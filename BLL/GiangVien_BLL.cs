@@ -37,7 +37,7 @@ namespace BLL
                     NgaySinh = nd.NgaySinh,
                     GioiTinh = nd.GioiTinh,
                     DanToc = nd.DanToc,
-                    QuocTinh = nd.QuocTich,
+                    QuocTich = nd.QuocTich,
                     NoiSinh = nd.NoiSinh,
                     DiaChi = nd.DiaChi,
                     Sdt = nd.Sdt,

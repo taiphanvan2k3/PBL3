@@ -38,10 +38,7 @@ namespace GUI
         {
             this.Dispose();
         }
-        private void LoadData()
-        {
 
-        }
         #region Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -115,10 +112,9 @@ namespace GUI
                 SinhVien_DTO svDT = new SinhVien_DTO();
                 GiangVien_DTO gvDT = new GiangVien_DTO();
 
-                int pass1 = random.Next(100000, 999999);
-                int pass2 = random.Next(100000, 999999);
-                passID = BCrypt.Net.BCrypt.HashString(pass1.ToString());
-                passEmai = BCrypt.Net.BCrypt.HashString(pass2.ToString());
+
+                passID = BCrypt.Net.BCrypt.HashString(txtCCCD.Texts.ToString());
+                passEmai = BCrypt.Net.BCrypt.HashString(txtCCCD.Texts.ToString());
 
                 THONG_TIN_DANG_NHAP_DTO ttdn = new THONG_TIN_DANG_NHAP_DTO();
 
@@ -135,7 +131,7 @@ namespace GUI
                     NgaySinh = dtpBirthday.Value,
                     GioiTinh = rbMen.Checked ? false : true,
                     DanToc = null,
-                    QuocTinh = null,
+                    QuocTich = null,
                     NoiSinh = null,
                     DiaChi = null,
                     Sdt = null,
@@ -164,7 +160,7 @@ namespace GUI
                     };
                     if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT) == true)
                     {
-                        MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + pass1 + "\n" + Email + "\n" + pass2);
+                        MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
                         var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                         if (result1 == DialogResult.Cancel)
                         {
@@ -200,7 +196,7 @@ namespace GUI
                     };
                     if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, gvDT) == true)
                     {
-                        MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + pass1 + "\n" + Email + "\n" + pass2);
+                        MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
                         var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                         if (result1 == DialogResult.Cancel)
                         {
@@ -255,10 +251,6 @@ namespace GUI
             }
         }
 
-        private void frmAddAccStudent_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            MessageBox.Show("Đã đóng");
-        }
 
         private void txtSurname_KeyPress(object sender, KeyPressEventArgs e)
         {

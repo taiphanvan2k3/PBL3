@@ -223,8 +223,8 @@ namespace GUI.MyUserControls
             else sv.DanToc = "";
 
             if (cbbQuocTich.SelectedIndex >= 0)
-                sv.QuocTinh = cbbQuocTich.SelectedItem.ToString();
-            else sv.QuocTinh = "";
+                sv.QuocTich = cbbQuocTich.SelectedItem.ToString();
+            else sv.QuocTich = "";
             if (SinhVien_BLL.UpdateStudentInfo(sv))
                 CustomMessageBox.Show("Cập nhật thông tin sinh viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
