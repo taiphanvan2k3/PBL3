@@ -27,6 +27,14 @@ namespace GUI
             new MoveFormHelper(this, panelTitle, labelTitle);
         }
 
+        public frmViewDetailModuleClass(string MaHP)
+        {
+            InitializeComponent();
+            this.MaHP = MaHP;
+            new MoveFormHelper(this, panelTitle, labelTitle);
+        }
+
+
         private void ChangeColumnProperties(int NumberOfRow)
         {
             dtgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -52,7 +60,6 @@ namespace GUI
         }
         public void LoadData()
         {
-            MaHP = "OOAD21.13";
             lhp = LopHocPhan_BLL.Instance.GetLopHocPhanByMaHP(MaHP);
             txtMaHP.Text = lhp.MaHP;
             txtTenMH.Texts = lhp.TenHP;

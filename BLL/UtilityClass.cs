@@ -35,11 +35,11 @@ namespace BLL
 
         public static void sendEmail(string addressEmail, string digitcode)
         {
-            string senderEmail = "nngann2402@gmail.com";
+            string senderEmail = "doanpbl@gmail.com";
             string receiverEmail = addressEmail;
             string subject = "Digit code";
             string body = digitcode;
-            string senderPassword = "yagelshriaicnfvn";
+            string senderPassword = "vwuftouydjrqvvmy";
 
             var smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.UseDefaultCredentials = false;
@@ -63,7 +63,7 @@ namespace BLL
             var column1 = dataGridView.Columns[index1];
             var column2 = dataGridView.Columns[index2];
 
-            int temp = column1.DisplayIndex;
+            int temp = column1.DisplayIndex;    
             column1.DisplayIndex = column2.DisplayIndex;
             column2.DisplayIndex = temp;
         }
@@ -173,6 +173,27 @@ namespace BLL
             if (isLeapYear(year))
                 days[2] = 29;
             return days[month];
+        }
+        public static string GetDayOfWeekVietnamese(string DayOfWeek)
+        {
+            switch (DayOfWeek)
+            {
+                case "Monday":
+                    return "Thứ hai";
+                case "Tuesday":
+                    return "Thứ ba";
+                case "Wednesday":
+                    return "Thứ tư";
+                case "Thursday":
+                    return "Thứ năm";
+                case "Friday":
+                    return "Thứ sáu";
+                case "Saturday":
+                    return "Thứ bảy";
+                case "Sunday":
+                    return "Chủ nhật";
+            }
+            return "";
         }
     }
 }

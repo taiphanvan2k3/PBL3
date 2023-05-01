@@ -223,8 +223,8 @@ namespace GUI
             if (sv.DanToc != "")
                 uC_StudentInfoNew.DanToc = sv.DanToc;
 
-            if (sv.QuocTinh != "")
-                uC_StudentInfoNew.QuocTinh = sv.QuocTinh;
+            if (sv.QuocTich != "")
+                uC_StudentInfoNew.QuocTinh = sv.QuocTich;
             uC_StudentInfoNew.Khoa = sv.Khoa;
             uC_StudentInfoNew.ChuongTrinhDaoTao = sv.TenCTDT;
             uC_StudentInfoNew.LopSinhHoat = sv.MaLopSH;

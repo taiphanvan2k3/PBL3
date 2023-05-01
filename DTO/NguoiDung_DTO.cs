@@ -12,7 +12,7 @@ namespace DTO
         public System.DateTime NgaySinh { get; set; }
         public bool GioiTinh { get; set; }
         public string DanToc { get; set; }
-        public string QuocTinh { get; set; }
+        public string QuocTich { get; set; }
         public string NoiSinh { get; set; }
         public string DiaChi { get; set; }
         public string Sdt { get; set; }
@@ -33,7 +33,7 @@ namespace DTO
             NgaySinh = ngaySinh;
             GioiTinh = gioiTinh;
             DanToc = danToc;
-            QuocTinh = quocTinh;
+            QuocTich = quocTinh;
             NoiSinh = noiSinh;
             DiaChi = diaChi;
             Sdt = sdt;

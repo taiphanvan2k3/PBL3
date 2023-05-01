@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gbDiaChi = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.uc_Address = new GUI.MyUserControls.UC_VerticalAddressSelection();
             this.gbTTLienHe = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.tbSDT = new GUI.MyCustomControl.CustomTextBox();
             this.tbEmailTruongCap = new GUI.MyCustomControl.CustomTextBox();
             this.tbEmailCaNhan = new GUI.MyCustomControl.CustomTextBox();
-            this.uc_Address = new GUI.MyUserControls.UC_VerticalAddressSelection();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panelGradient7 = new GUI.MyCustomControl.PanelGradient();
             this.tbQuocTich = new GUI.MyCustomControl.CustomTextBox();
             this.tbCCCD = new GUI.MyCustomControl.CustomTextBox();
@@ -47,7 +47,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panelGradient6 = new GUI.MyCustomControl.PanelGradient();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.lbNameKhoa = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -63,14 +62,15 @@
             this.lbNgaySinh = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pcbImageGV = new System.Windows.Forms.PictureBox();
             this.gbDiaChi.SuspendLayout();
             this.gbTTLienHe.SuspendLayout();
             this.panelGradient7.SuspendLayout();
             this.panelGradient6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelGradient1.SuspendLayout();
             this.panelGradient2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImageGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,12 +84,25 @@
             this.gbDiaChi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.gbDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.gbDiaChi.Location = new System.Drawing.Point(382, 262);
+            this.gbDiaChi.Location = new System.Drawing.Point(382, 322);
             this.gbDiaChi.Name = "gbDiaChi";
-            this.gbDiaChi.Size = new System.Drawing.Size(466, 240);
+            this.gbDiaChi.Size = new System.Drawing.Size(524, 240);
             this.gbDiaChi.TabIndex = 1;
             this.gbDiaChi.Text = "Địa chỉ";
             this.gbDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // uc_Address
+            // 
+            this.uc_Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
+            this.uc_Address.Background = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
+            this.uc_Address.BorderColorComboBox = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
+            this.uc_Address.Location = new System.Drawing.Point(3, 43);
+            this.uc_Address.Name = "uc_Address";
+            this.uc_Address.QuanHuyen = "";
+            this.uc_Address.Size = new System.Drawing.Size(437, 177);
+            this.uc_Address.TabIndex = 0;
+            this.uc_Address.TinhThanhPho = "";
+            this.uc_Address.XaPhuong = "";
             // 
             // gbTTLienHe
             // 
@@ -108,43 +121,10 @@
             this.gbTTLienHe.ForeColor = System.Drawing.Color.Black;
             this.gbTTLienHe.Location = new System.Drawing.Point(382, 13);
             this.gbTTLienHe.Name = "gbTTLienHe";
-            this.gbTTLienHe.Size = new System.Drawing.Size(723, 243);
+            this.gbTTLienHe.Size = new System.Drawing.Size(781, 281);
             this.gbTTLienHe.TabIndex = 2;
             this.gbTTLienHe.Text = "Thông tin liên hệ";
             this.gbTTLienHe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 178);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(47, 23);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "SDT:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 116);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(154, 23);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "Email trường cấp:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 59);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 23);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Email cá nhân:";
             // 
             // tbSDT
             // 
@@ -155,8 +135,9 @@
             this.tbSDT.BorderSize = 2;
             this.tbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSDT.ForeColor = System.Drawing.Color.DimGray;
-            this.tbSDT.Location = new System.Drawing.Point(180, 166);
+            this.tbSDT.Location = new System.Drawing.Point(180, 211);
             this.tbSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSDT.MaxLength = 32767;
             this.tbSDT.Multiline = false;
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.Padding = new System.Windows.Forms.Padding(7);
@@ -177,8 +158,9 @@
             this.tbEmailTruongCap.BorderSize = 2;
             this.tbEmailTruongCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmailTruongCap.ForeColor = System.Drawing.Color.DimGray;
-            this.tbEmailTruongCap.Location = new System.Drawing.Point(180, 108);
+            this.tbEmailTruongCap.Location = new System.Drawing.Point(180, 131);
             this.tbEmailTruongCap.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEmailTruongCap.MaxLength = 32767;
             this.tbEmailTruongCap.Multiline = false;
             this.tbEmailTruongCap.Name = "tbEmailTruongCap";
             this.tbEmailTruongCap.Padding = new System.Windows.Forms.Padding(7);
@@ -201,6 +183,7 @@
             this.tbEmailCaNhan.ForeColor = System.Drawing.Color.DimGray;
             this.tbEmailCaNhan.Location = new System.Drawing.Point(180, 52);
             this.tbEmailCaNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEmailCaNhan.MaxLength = 32767;
             this.tbEmailCaNhan.Multiline = false;
             this.tbEmailCaNhan.Name = "tbEmailCaNhan";
             this.tbEmailCaNhan.Padding = new System.Windows.Forms.Padding(7);
@@ -212,16 +195,38 @@
             this.tbEmailCaNhan.Texts = "";
             this.tbEmailCaNhan.UnderlinedStyle = false;
             // 
-            // uc_Address
+            // label16
             // 
-            this.uc_Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.uc_Address.Location = new System.Drawing.Point(3, 43);
-            this.uc_Address.Name = "uc_Address";
-            this.uc_Address.QuanHuyen = "";
-            this.uc_Address.Size = new System.Drawing.Size(437, 177);
-            this.uc_Address.TabIndex = 0;
-            this.uc_Address.TinhThanhPho = "Chọn Tỉnh/ Thành phố";
-            this.uc_Address.XaPhuong = "";
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(12, 219);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(47, 23);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "SDT:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(12, 139);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(154, 23);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Email trường cấp:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(12, 59);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(125, 23);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Email cá nhân:";
             // 
             // panelGradient7
             // 
@@ -239,9 +244,9 @@
             this.panelGradient7.GradientAngle = 90F;
             this.panelGradient7.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.panelGradient7.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.panelGradient7.Location = new System.Drawing.Point(385, 508);
+            this.panelGradient7.Location = new System.Drawing.Point(382, 582);
             this.panelGradient7.Name = "panelGradient7";
-            this.panelGradient7.Size = new System.Drawing.Size(723, 145);
+            this.panelGradient7.Size = new System.Drawing.Size(781, 145);
             this.panelGradient7.TabIndex = 7;
             // 
             // tbQuocTich
@@ -255,6 +260,7 @@
             this.tbQuocTich.ForeColor = System.Drawing.Color.DimGray;
             this.tbQuocTich.Location = new System.Drawing.Point(105, 86);
             this.tbQuocTich.Margin = new System.Windows.Forms.Padding(4);
+            this.tbQuocTich.MaxLength = 32767;
             this.tbQuocTich.Multiline = false;
             this.tbQuocTich.Name = "tbQuocTich";
             this.tbQuocTich.Padding = new System.Windows.Forms.Padding(7);
@@ -277,6 +283,7 @@
             this.tbCCCD.ForeColor = System.Drawing.Color.DimGray;
             this.tbCCCD.Location = new System.Drawing.Point(450, 86);
             this.tbCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCCCD.MaxLength = 32767;
             this.tbCCCD.Multiline = false;
             this.tbCCCD.Name = "tbCCCD";
             this.tbCCCD.Padding = new System.Windows.Forms.Padding(7);
@@ -299,6 +306,7 @@
             this.tbNoiSinh.ForeColor = System.Drawing.Color.DimGray;
             this.tbNoiSinh.Location = new System.Drawing.Point(450, 17);
             this.tbNoiSinh.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNoiSinh.MaxLength = 32767;
             this.tbNoiSinh.Multiline = false;
             this.tbNoiSinh.Name = "tbNoiSinh";
             this.tbNoiSinh.Padding = new System.Windows.Forms.Padding(7);
@@ -321,6 +329,7 @@
             this.tbDanToc.ForeColor = System.Drawing.Color.DimGray;
             this.tbDanToc.Location = new System.Drawing.Point(105, 17);
             this.tbDanToc.Margin = new System.Windows.Forms.Padding(4);
+            this.tbDanToc.MaxLength = 32767;
             this.tbDanToc.Multiline = false;
             this.tbDanToc.Name = "tbDanToc";
             this.tbDanToc.Padding = new System.Windows.Forms.Padding(7);
@@ -385,21 +394,10 @@
             this.panelGradient6.GradientAngle = 90F;
             this.panelGradient6.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.panelGradient6.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.panelGradient6.Location = new System.Drawing.Point(854, 262);
+            this.panelGradient6.Location = new System.Drawing.Point(912, 322);
             this.panelGradient6.Name = "panelGradient6";
             this.panelGradient6.Size = new System.Drawing.Size(251, 240);
             this.panelGradient6.TabIndex = 6;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::GUI.Properties.Resources.Yourname;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(219, 211);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // panelGradient1
             // 
@@ -418,7 +416,7 @@
             this.panelGradient1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.panelGradient1.Location = new System.Drawing.Point(12, 13);
             this.panelGradient1.Name = "panelGradient1";
-            this.panelGradient1.Size = new System.Drawing.Size(350, 640);
+            this.panelGradient1.Size = new System.Drawing.Size(350, 714);
             this.panelGradient1.TabIndex = 3;
             // 
             // lbNameKhoa
@@ -593,6 +591,17 @@
             this.lbName.TabIndex = 3;
             this.lbName.Text = "Trần Đình Mạnh";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::GUI.Properties.Resources.Near;
+            this.pictureBox2.Location = new System.Drawing.Point(17, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(219, 211);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // pcbImageGV
             // 
             this.pcbImageGV.BackColor = System.Drawing.Color.Transparent;
@@ -613,18 +622,18 @@
             this.Controls.Add(this.panelGradient6);
             this.Controls.Add(this.panelGradient1);
             this.Name = "UC_TeacherInfo";
-            this.Size = new System.Drawing.Size(1119, 663);
+            this.Size = new System.Drawing.Size(1175, 730);
             this.gbDiaChi.ResumeLayout(false);
             this.gbTTLienHe.ResumeLayout(false);
             this.gbTTLienHe.PerformLayout();
             this.panelGradient7.ResumeLayout(false);
             this.panelGradient7.PerformLayout();
             this.panelGradient6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelGradient1.ResumeLayout(false);
             this.panelGradient1.PerformLayout();
             this.panelGradient2.ResumeLayout(false);
             this.panelGradient2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImageGV)).EndInit();
             this.ResumeLayout(false);
 

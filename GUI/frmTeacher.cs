@@ -17,14 +17,15 @@ namespace GUI
     {
         private string ButtonClicked = "Home";
         private UC_TeacherInfo Info;
-        private UC_CreateTestQuestions CreateQues;
+        private UC_CreateExam CreateQues;
         public frmTeacher()
         {
             InitializeComponent();
             CollapseMenu();
             Info = new UC_TeacherInfo();
             ID = "102BK0001";
-            CreateQues = new UC_CreateTestQuestions(ID);
+            CreateQues = new UC_CreateExam(ID);
+            CreateQues.MaGV = ID;
             LoadInfo(ID);
         }
         public frmTeacher(string account)
@@ -33,7 +34,8 @@ namespace GUI
             CollapseMenu();
             Info = new UC_TeacherInfo();
             ID = account;
-            CreateQues = new UC_CreateTestQuestions(account);
+            CreateQues = new UC_CreateExam(ID);
+            CreateQues.MaGV = ID;
             LoadInfo(ID);
         }
         #region Properties
@@ -123,7 +125,7 @@ namespace GUI
             Info.EmailTruongCap = gv.EmailTruongCap;
             Info.SDT = gv.Sdt;
             Info.DanToc = gv.DanToc;
-            Info.QuocTich = gv.QuocTinh;
+            Info.QuocTich = gv.QuocTich;
             Info.NoiSinh = gv.NoiSinh;
             Info.CCCD = gv.MaCCCD;
             Info.SetDiaChi(gv.DiaChi);
@@ -161,7 +163,7 @@ namespace GUI
         {
             if (pnlManageClass.Height < 69)
             {
-                pnlManageClass.Height = 340;
+                pnlManageClass.Height = 408;
             }
             else
             {
@@ -191,8 +193,9 @@ namespace GUI
 
         private void btnCreateQuestion_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
-            pnlMain.Controls.Add(CreateQues);
+            frmTaoCauHoiNew f = new frmTaoCauHoiNew();
+            f.MaGV = ID;
+            f.ShowDialog();
         }
 
         private void btnSendAnnounce_Click(object sender, EventArgs e)
@@ -201,6 +204,12 @@ namespace GUI
             f.ID = ID;
             pnlMain.Controls.Clear();
             pnlMain.Controls.Add(f);
+        }
+
+        private void btnCreateExam_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(CreateQues);
         }
         #endregion
     }

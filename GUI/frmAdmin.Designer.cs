@@ -30,19 +30,19 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelClass = new System.Windows.Forms.Panel();
-            this.panelAdd = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnAcitivityClass = new FontAwesome.Sharp.IconButton();
-            this.btnClassSection = new FontAwesome.Sharp.IconButton();
+            this.btnModuleClass = new FontAwesome.Sharp.IconButton();
+            this.btnHomeroomClass = new FontAwesome.Sharp.IconButton();
             this.btnClass = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
+            this.panelAdd = new System.Windows.Forms.Panel();
             this.btnTeacher = new FontAwesome.Sharp.IconButton();
             this.btnStudent = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelClass.SuspendLayout();
             this.panelAdd.SuspendLayout();
@@ -70,87 +70,59 @@
             // panelClass
             // 
             this.panelClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
-            this.panelClass.Controls.Add(this.btnAcitivityClass);
-            this.panelClass.Controls.Add(this.btnClassSection);
+            this.panelClass.Controls.Add(this.btnModuleClass);
+            this.panelClass.Controls.Add(this.btnHomeroomClass);
             this.panelClass.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelClass.Location = new System.Drawing.Point(0, 360);
             this.panelClass.Name = "panelClass";
             this.panelClass.Size = new System.Drawing.Size(250, 121);
             this.panelClass.TabIndex = 15;
             // 
-            // panelAdd
+            // btnModuleClass
             // 
-            this.panelAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
-            this.panelAdd.Controls.Add(this.btnTeacher);
-            this.panelAdd.Controls.Add(this.btnStudent);
-            this.panelAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdd.Location = new System.Drawing.Point(0, 180);
-            this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(250, 120);
-            this.panelAdd.TabIndex = 12;
+            this.btnModuleClass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModuleClass.FlatAppearance.BorderSize = 0;
+            this.btnModuleClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModuleClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModuleClass.ForeColor = System.Drawing.Color.White;
+            this.btnModuleClass.IconChar = FontAwesome.Sharp.IconChar.UsersLine;
+            this.btnModuleClass.IconColor = System.Drawing.Color.White;
+            this.btnModuleClass.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModuleClass.IconSize = 30;
+            this.btnModuleClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModuleClass.Location = new System.Drawing.Point(0, 60);
+            this.btnModuleClass.Name = "btnModuleClass";
+            this.btnModuleClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnModuleClass.Size = new System.Drawing.Size(250, 60);
+            this.btnModuleClass.TabIndex = 13;
+            this.btnModuleClass.Tag = "Lớp sinh hoạt";
+            this.btnModuleClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModuleClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModuleClass.UseVisualStyleBackColor = true;
+            this.btnModuleClass.Click += new System.EventHandler(this.btnModuleClass_Click);
             // 
-            // panelLogo
+            // btnHomeroomClass
             // 
-            this.panelLogo.Controls.Add(this.btnMenu);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(250, 60);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1012, 673);
-            this.panelChildForm.TabIndex = 2;
-            // 
-            // btnAcitivityClass
-            // 
-            this.btnAcitivityClass.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAcitivityClass.FlatAppearance.BorderSize = 0;
-            this.btnAcitivityClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcitivityClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcitivityClass.ForeColor = System.Drawing.Color.White;
-            this.btnAcitivityClass.IconChar = FontAwesome.Sharp.IconChar.UsersLine;
-            this.btnAcitivityClass.IconColor = System.Drawing.Color.White;
-            this.btnAcitivityClass.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAcitivityClass.IconSize = 30;
-            this.btnAcitivityClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcitivityClass.Location = new System.Drawing.Point(0, 60);
-            this.btnAcitivityClass.Name = "btnAcitivityClass";
-            this.btnAcitivityClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAcitivityClass.Size = new System.Drawing.Size(250, 60);
-            this.btnAcitivityClass.TabIndex = 13;
-            this.btnAcitivityClass.Tag = "Lớp sinh hoạt";
-            this.btnAcitivityClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcitivityClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAcitivityClass.UseVisualStyleBackColor = true;
-            // 
-            // btnClassSection
-            // 
-            this.btnClassSection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClassSection.FlatAppearance.BorderSize = 0;
-            this.btnClassSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClassSection.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClassSection.ForeColor = System.Drawing.Color.White;
-            this.btnClassSection.IconChar = FontAwesome.Sharp.IconChar.UsersViewfinder;
-            this.btnClassSection.IconColor = System.Drawing.Color.White;
-            this.btnClassSection.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClassSection.IconSize = 30;
-            this.btnClassSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClassSection.Location = new System.Drawing.Point(0, 0);
-            this.btnClassSection.Name = "btnClassSection";
-            this.btnClassSection.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnClassSection.Size = new System.Drawing.Size(250, 60);
-            this.btnClassSection.TabIndex = 12;
-            this.btnClassSection.Tag = "Lớp học phần";
-            this.btnClassSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClassSection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClassSection.UseVisualStyleBackColor = true;
+            this.btnHomeroomClass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHomeroomClass.FlatAppearance.BorderSize = 0;
+            this.btnHomeroomClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeroomClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeroomClass.ForeColor = System.Drawing.Color.White;
+            this.btnHomeroomClass.IconChar = FontAwesome.Sharp.IconChar.UsersViewfinder;
+            this.btnHomeroomClass.IconColor = System.Drawing.Color.White;
+            this.btnHomeroomClass.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHomeroomClass.IconSize = 30;
+            this.btnHomeroomClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeroomClass.Location = new System.Drawing.Point(0, 0);
+            this.btnHomeroomClass.Name = "btnHomeroomClass";
+            this.btnHomeroomClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnHomeroomClass.Size = new System.Drawing.Size(250, 60);
+            this.btnHomeroomClass.TabIndex = 12;
+            this.btnHomeroomClass.Tag = "Lớp học phần";
+            this.btnHomeroomClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeroomClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHomeroomClass.UseVisualStyleBackColor = true;
+            this.btnHomeroomClass.Click += new System.EventHandler(this.btnHomeroomClass_Click);
             // 
             // btnClass
             // 
@@ -197,6 +169,17 @@
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // panelAdd
+            // 
+            this.panelAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
+            this.panelAdd.Controls.Add(this.btnTeacher);
+            this.panelAdd.Controls.Add(this.btnStudent);
+            this.panelAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAdd.Location = new System.Drawing.Point(0, 180);
+            this.panelAdd.Name = "panelAdd";
+            this.panelAdd.Size = new System.Drawing.Size(250, 120);
+            this.panelAdd.TabIndex = 12;
             // 
             // btnTeacher
             // 
@@ -290,6 +273,16 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.btnMenu);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 60);
+            this.panelLogo.TabIndex = 0;
+            // 
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -317,6 +310,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1012, 673);
+            this.panelChildForm.TabIndex = 2;
             // 
             // frmAdmin
             // 
@@ -357,8 +359,8 @@
         private FontAwesome.Sharp.IconButton btnClass;
         private FontAwesome.Sharp.IconButton btnStudent;
         private System.Windows.Forms.Panel panelClass;
-        private FontAwesome.Sharp.IconButton btnClassSection;
+        private FontAwesome.Sharp.IconButton btnHomeroomClass;
         private FontAwesome.Sharp.IconButton btnTeacher;
-        private FontAwesome.Sharp.IconButton btnAcitivityClass;
+        private FontAwesome.Sharp.IconButton btnModuleClass;
     }
 }

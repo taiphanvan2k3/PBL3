@@ -16,7 +16,7 @@ namespace GUI
             PreviousHeightOfTextboxCauHoi = textBoxCauHoi.MinimumSize.Height;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxSingleMulti_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxSingleMulti.Checked)
             {
@@ -134,5 +134,7 @@ namespace GUI
         {
             panelDanhSachDapAn.Height += 100;
         }
+
+
     }
 }

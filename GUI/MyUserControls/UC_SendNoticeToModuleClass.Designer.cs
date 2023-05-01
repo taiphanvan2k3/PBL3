@@ -178,7 +178,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbbLHP);
             this.Name = "UC_SendNoticeToModuleClass";
-            this.Size = new System.Drawing.Size(1119, 663);
+            this.Size = new System.Drawing.Size(1175, 730);
             this.Load += new System.EventHandler(this.UC_SendAnnounceToModuleClass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

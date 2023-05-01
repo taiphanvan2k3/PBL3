@@ -61,15 +61,15 @@ namespace BLL
             return newList;
         }
 
-        public int GetCountStudent()
-        {
-            return GetInformationAcc_DAL.Instance.GetCountStudent();
-        }
-        public int GetCountTeacher()
-        {
-            return GetInformationAcc_DAL.Instance.GetCountTeacher();
-        }
 
+        public int getTheNumberOfStudentByFaculty(string maKhoa, string year)
+        {
+            return GetInformationAcc_DAL.Instance.getTheNumberOfStudentByFaculty(maKhoa, year);
+        }
+        public int getTheNumberOfTeacherByFaculty(string maKhoa)
+        {
+            return GetInformationAcc_DAL.Instance.getTheNumberOfTeacherByFaculty(maKhoa);
+        }
         public void InsertLoginInfo(THONG_TIN_DANG_NHAP_DTO newLoginInfo)
         {
             THONG_TIN_DANG_NHAP ttdn = new THONG_TIN_DANG_NHAP();
@@ -100,7 +100,7 @@ namespace BLL
                 NgaySinh = userInfo.NgaySinh,
                 GioiTinh = userInfo.GioiTinh,
                 DanToc = userInfo.DanToc,
-                QuocTich = userInfo.QuocTinh,
+                QuocTich = userInfo.QuocTich,
                 NoiSinh = userInfo.NoiSinh,
                 DiaChi = userInfo.DiaChi,
                 Sdt = userInfo.Sdt,

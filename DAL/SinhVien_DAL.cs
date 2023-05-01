@@ -60,8 +60,8 @@ namespace DAL
                     nd.NoiSinh = sv.NoiSinh;
                 if (sv.DanToc != "")
                     nd.DanToc = sv.DanToc;
-                if (sv.QuocTinh != "")
-                    nd.QuocTich = sv.QuocTinh;
+                if (sv.QuocTich != "")
+                    nd.QuocTich = sv.QuocTich;
                 return db.SaveChanges() > 0;
             }
             return false;
