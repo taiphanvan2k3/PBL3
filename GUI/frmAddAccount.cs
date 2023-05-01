@@ -141,7 +141,7 @@ namespace GUI
 
                 if (role == 0)
                 {
-                    countRecord = GetInformationAcc_BLL.Instance.GetCountStudent();
+                    countRecord = GetInformationAcc_BLL.Instance.getTheNumberOfStudentByFaculty(MaKhoa, cmbYearOrLevel.SelectedItem.ToString().Substring(2));
                     countRecord++;
                     suffix = countRecord.ToString("D4");
                     ID_User = MaKhoa + cmbYearOrLevel.SelectedItem.ToString().Substring(2) + suffix;
@@ -176,7 +176,7 @@ namespace GUI
                 }
                 else
                 {
-                    countRecord = GetInformationAcc_BLL.Instance.GetCountTeacher();
+                    countRecord = GetInformationAcc_BLL.Instance.getTheNumberOfTeacherByFaculty(MaKhoa);
                     countRecord++;
                     suffix = countRecord.ToString("D4");
                     ID_User = MaKhoa + "BK" + suffix;

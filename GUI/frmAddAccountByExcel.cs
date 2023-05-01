@@ -123,8 +123,8 @@ namespace Testexcel
 
                 Random random = new Random();
 
-                int countSV = GetInformationAcc_BLL.Instance.GetCountStudent();
-                int countGV = GetInformationAcc_BLL.Instance.GetCountTeacher();
+                int countSV;
+                int countGV;
 
 
                 int countEror = 0;
@@ -183,8 +183,9 @@ namespace Testexcel
 
                             if (role == 0)
                             {
+                                countSV = GetInformationAcc_BLL.Instance.getTheNumberOfStudentByFaculty(row[0].ToString().Substring(0, 3), row[0].ToString().Substring(3));
                                 countSV++;
-                                maTk = row[0].ToString() + countSV.ToString();
+                                maTk = row[0].ToString() + countSV.ToString("D4");
                                 SinhVien_DTO svDT = new SinhVien_DTO()
                                 {
                                     MaNguoiDung = maTk,
@@ -204,8 +205,9 @@ namespace Testexcel
                             }
                             else
                             {
+                                countGV = GetInformationAcc_BLL.Instance.getTheNumberOfTeacherByFaculty(row[6].ToString());
                                 countGV++;
-                                maTk = row[0].ToString() + countGV.ToString();
+                                maTk = row[0].ToString() + countGV.ToString("D4"); ;
                                 GiangVien_DTO gvDT = new GiangVien_DTO()
                                 {
                                     MaNguoiDung = maTk,

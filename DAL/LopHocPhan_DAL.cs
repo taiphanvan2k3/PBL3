@@ -1,6 +1,8 @@
 ﻿using DTO;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 
 namespace DAL
 {
@@ -128,7 +130,7 @@ namespace DAL
                     KiHoc = i1.LopHP_tmp.KiHoc,
                     NamHoc = i1.LopHP_tmp.NamHoc,
                     HoTenGV = i1.LopHP_tmp.HoGV + " " + i1.LopHP_tmp.TenGV,
-                    SoLuongMax = i1.LopHP_tmp.SoLuongToiDa,
+                    SoLuongMax = (int)i1.LopHP_tmp.SoLuongToiDa,
                     Thu = i2.Thu,
                     TietBD = i2.TietBD,
                     TietKT = i2.TietKetThuc,
@@ -219,6 +221,27 @@ namespace DAL
             return db.SaveChanges() > 0;
         }
 
+
+        public List<InformationClass_DTO> getInformation()
+        {
+            var result = from lhp in db.LOP_HOC_PHAN
+                         join mh in db.MON_HOC on lhp.MaMH equals mh.MaMH
+                         join sv_lhp in db.SINHVIEN_LOPHOCPHAN on lhp.MaLopHP equals sv_lhp.MaLopHP into sv_lhps
+                         from sv_lhp in sv_lhps.DefaultIfEmpty()
+                         join nd in db.NGUOI_DUNG on lhp.MaGV equals nd.MaNguoiDung into nds
+                         from nd in nds.DefaultIfEmpty()
+                         group sv_lhp by new { lhp.MaLopHP, mh.TenMH, lhp.MaGV, nd.Ho, nd.Ten, lhp.SoLuongToiDa } into g
+                         select new InformationClass_DTO
+                         {
+                             maLop = g.Key.MaLopHP,
+                             tenLop = g.Key.TenMH,
+                             maGV = g.Key.MaGV ?? "Empty",
+                             hoTenGV = (g.Key.Ho ?? "Empty") + " " + g.Key.Ten,
+                             soLuongSV = g.Count(x => x.MaSV != null),
+                             soLuongToiDa = g.Key.SoLuongToiDa ?? 0
+                         };
+            return result.ToList();
+        }
 
     }
 }

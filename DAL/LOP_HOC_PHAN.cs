@@ -28,7 +28,7 @@ namespace DAL
         public string MaGV { get; set; }
         public int KiHoc { get; set; }
         public int NamHoc { get; set; }
-        public int SoLuongToiDa { get; set; }
+        public Nullable<int> SoLuongToiDa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BAI_KIEM_TRA> BAI_KIEM_TRA { get; set; }

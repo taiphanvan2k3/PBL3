@@ -86,5 +86,29 @@ namespace DAL
             }
             return db.SaveChanges();
         }
+
+        public List<InformationClass_DTO> GetInformationClasses()
+        {
+            var result = from lsh in db.LOP_SINH_HOAT
+                         join ctdt in db.CHUONG_TRINH_DAO_TAO on lsh.MaLopSH.Substring(2, lsh.MaLopSH.Length - 3) equals ctdt.MaCTDT
+                         join sv in db.SINH_VIEN on lsh.MaLopSH equals sv.MaLopSH into svGroup
+                         from sv in svGroup.DefaultIfEmpty()
+                         join nd in db.NGUOI_DUNG on lsh.MaGVCN equals nd.MaNguoiDung into ndGroup
+                         from nd in ndGroup.DefaultIfEmpty()
+                         group sv by new { lsh.MaLopSH, ctdt.TenCTDT, lsh.MaGVCN, nd.Ho, nd.Ten, lsh.SoLuongToiDa } into g
+                         select new InformationClass_DTO
+                         {
+                             maLop = g.Key.MaLopSH,
+                             tenLop = g.Key.MaLopSH.Substring(0, 2) + " " + g.Key.TenCTDT + " " + g.Key.MaLopSH.Substring(g.Key.MaLopSH.Length - 1),
+                             maGV = g.Key.MaGVCN,
+                             hoTenGV = g.FirstOrDefault().NGUOI_DUNG.Ho + " " + g.FirstOrDefault().NGUOI_DUNG.Ten,
+                             soLuongSV = g.Count(),
+                             soLuongToiDa = g.Key.SoLuongToiDa ?? 0
+                         };
+            return result.ToList();
+
+
+        }
+
     }
 }
