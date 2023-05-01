@@ -741,6 +741,7 @@
     <None Include="Resources\CreateQuestion.png" />
     <None Include="Resources\Calendar_week.png" />
     <None Include="Resources\AddStudent.png" />
+    <Content Include="Resources\backroud1.jpg" />
     <Content Include="Resources\ChangeGrade.png" />
     <None Include="Resources\Homeroom.png" />
     <None Include="Resources\SendAnnounce.png" />
