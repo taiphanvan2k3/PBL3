@@ -110,6 +110,10 @@ namespace BLL
             GiangVien_DAL.Instance.CreateExam(TenBKT, LoaiBaiKiemTra, ThoiGianLamBai, NgayKiemTra, SoCauHoi, MaLHP, 
                                               MaGV, MatKhauLamBai, ChoPhepQuayLai);
         }
+        public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
+        {
+            return GiangVien_DAL.Instance.CheckScheduleExamConflict(TimeExam, ThoiGianLamBai, MaLHPForAll);
+        }
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
         {
             GiangVien_DAL.Instance.CreateQuestion(TenCauHoi,DapAnA,DapAnB,DapAnC,DapAnD,DapAnDung, MaMonHoc, PhanLoai);

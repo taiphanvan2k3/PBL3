@@ -82,6 +82,9 @@ namespace GUI.MyUserControls
                 DataGridViewRow row = dtgv.Rows[e.RowIndex];
                 string tmp = row.Cells["ThoiGianLamBai_Show"].Value.ToString();
                 int minutes = Convert.ToInt32(tmp.Substring(0, tmp.IndexOf(" ")));
+
+                tmp = row.Cells["SoLuongCauHoi_Show"].Value.ToString();
+                int TongSoCau = Convert.ToInt32(tmp.Substring(0, tmp.IndexOf(" ")));
                 frmEnterPass = new frmEnterPassToDoExam
                 {
                     MaSV = this.MaSV,
@@ -92,6 +95,7 @@ namespace GUI.MyUserControls
                     MaBaiKiemTra = Convert.ToInt32(row.Cells["MaBaiKiemTra"].Value),
                     TenBaiKiemTra = row.Cells["TieuDeBaiKiemTra"].Value.ToString(),
                     MkBaiKiemTra = row.Cells["MkBaiKiemTra"].Value.ToString(),
+                    TongSoCauHoi = TongSoCau,
                     ThoiGianLamBai = minutes,
                     Location = new Point(700, 0),
                     StartPosition = FormStartPosition.Manual

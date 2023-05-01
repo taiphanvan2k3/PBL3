@@ -215,6 +215,16 @@ namespace DAL
             }
             db.SaveChanges();
         }
+        //MaLHPForAll example as OOAD21.13 -> MaLHPForAll is 21.13
+        public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
+        {
+            DateTime TimeLamBai = TimeExam.AddMinutes((double)ThoiGianLamBai);
+            var query = db.BAI_KIEM_TRA.Where(bkt => bkt.MaLopHP.Contains(MaLHPForAll)
+                                        && bkt.NgayKiemTra > TimeExam
+                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra,bkt.ThoiGianLamBai) < TimeLamBai).ToList();
+            return query.Count > 0;
+        }
+
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
         {
             CAU_HOI NewCauHoi = new CAU_HOI

@@ -18,6 +18,7 @@ namespace GUI
         public string TenBaiKiemTra { get; set; }
         public string MkBaiKiemTra { get; set; }
         public int ThoiGianLamBai { get; set; }
+        public int TongSoCauHoi { get; set; }
         #endregion
         public frmEnterPassToDoExam()
         {
@@ -53,6 +54,7 @@ namespace GUI
                         TenHP = this.TenLopHP,
                         MaBaiKiemTra = this.MaBaiKiemTra,
                         TenBaiKiemTra = this.TenBaiKiemTra,
+                        TongSoCauHoi = this.TongSoCauHoi,
                         ThoiGianLamBai = this.ThoiGianLamBai
                     });
                 }

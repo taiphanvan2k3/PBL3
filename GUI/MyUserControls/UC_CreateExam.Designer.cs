@@ -39,14 +39,14 @@
             this.cbLopHocPhan = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpNgayKiemTra = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtpGioKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.chbAllowReturn = new Guna.UI2.WinForms.Guna2CheckBox();
             this.tbMatKhauLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.btnTao = new GUI.MyCustomControl.CustomButton();
             this.btnDatLai = new GUI.MyCustomControl.CustomButton();
             this.tbThoiGianLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.tbTenBaiKiemTra = new GUI.MyCustomControl.CustomTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtpGioKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.chbAllowReturn = new Guna.UI2.WinForms.Guna2CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -123,6 +123,7 @@
             this.cbLoaiBaiKiemTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbLoaiBaiKiemTra.ItemHeight = 30;
             this.cbLoaiBaiKiemTra.Items.AddRange(new object[] {
+            "Chọn loại bài kiểm tra",
             "Giữa kỳ",
             "Cuối kỳ",
             "Test"});
@@ -145,6 +146,7 @@
             this.cbSoLuongCauHoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbSoLuongCauHoi.ItemHeight = 30;
             this.cbSoLuongCauHoi.Items.AddRange(new object[] {
+            "Chọn số câu hỏi",
             "30",
             "40",
             "50"});
@@ -196,6 +198,51 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Mật khẩu bài làm";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(367, 336);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 23);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "(phút)";
+            // 
+            // dtpGioKT
+            // 
+            this.dtpGioKT.BorderRadius = 10;
+            this.dtpGioKT.Checked = true;
+            this.dtpGioKT.CustomFormat = "hh:mm tt";
+            this.dtpGioKT.FillColor = System.Drawing.Color.Chartreuse;
+            this.dtpGioKT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpGioKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpGioKT.Location = new System.Drawing.Point(208, 492);
+            this.dtpGioKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpGioKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpGioKT.Name = "dtpGioKT";
+            this.dtpGioKT.ShowUpDown = true;
+            this.dtpGioKT.Size = new System.Drawing.Size(250, 36);
+            this.dtpGioKT.TabIndex = 28;
+            this.dtpGioKT.Value = new System.DateTime(2023, 4, 26, 23, 39, 58, 40);
+            // 
+            // chbAllowReturn
+            // 
+            this.chbAllowReturn.AutoSize = true;
+            this.chbAllowReturn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbAllowReturn.CheckedState.BorderRadius = 0;
+            this.chbAllowReturn.CheckedState.BorderThickness = 0;
+            this.chbAllowReturn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbAllowReturn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbAllowReturn.Location = new System.Drawing.Point(652, 460);
+            this.chbAllowReturn.Name = "chbAllowReturn";
+            this.chbAllowReturn.Size = new System.Drawing.Size(187, 29);
+            this.chbAllowReturn.TabIndex = 30;
+            this.chbAllowReturn.Text = "Cho phép quay lại";
+            this.chbAllowReturn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbAllowReturn.UncheckedState.BorderRadius = 0;
+            this.chbAllowReturn.UncheckedState.BorderThickness = 0;
+            this.chbAllowReturn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
             // tbMatKhauLamBai
             // 
             this.tbMatKhauLamBai.BackColor = System.Drawing.SystemColors.Window;
@@ -226,17 +273,20 @@
             this.btnTao.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnTao.BorderRadius = 20;
             this.btnTao.BorderSize = 0;
+            this.btnTao.Enabled = false;
             this.btnTao.FlatAppearance.BorderSize = 0;
             this.btnTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTao.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTao.Location = new System.Drawing.Point(738, 622);
+            this.btnTao.ForeColor = System.Drawing.Color.White;
+            this.btnTao.Image = global::GUI.Properties.Resources.Save;
+            this.btnTao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTao.Location = new System.Drawing.Point(717, 614);
             this.btnTao.Name = "btnTao";
-            this.btnTao.Size = new System.Drawing.Size(121, 40);
+            this.btnTao.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnTao.Size = new System.Drawing.Size(148, 55);
             this.btnTao.TabIndex = 15;
-            this.btnTao.Text = "Tạo";
-            this.btnTao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTao.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTao.Text = " Tạo";
+            this.btnTao.TextColor = System.Drawing.Color.White;
             this.btnTao.UseVisualStyleBackColor = false;
             this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
@@ -251,12 +301,11 @@
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatLai.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDatLai.Location = new System.Drawing.Point(272, 622);
+            this.btnDatLai.Location = new System.Drawing.Point(246, 614);
             this.btnDatLai.Name = "btnDatLai";
-            this.btnDatLai.Size = new System.Drawing.Size(121, 40);
+            this.btnDatLai.Size = new System.Drawing.Size(148, 55);
             this.btnDatLai.TabIndex = 14;
             this.btnDatLai.Text = "Đặt lại";
-            this.btnDatLai.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDatLai.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnDatLai.UseVisualStyleBackColor = false;
             this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
@@ -307,51 +356,6 @@
             this.tbTenBaiKiemTra.Texts = "";
             this.tbTenBaiKiemTra.UnderlinedStyle = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(367, 336);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 23);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "(phút)";
-            // 
-            // dtpGioKT
-            // 
-            this.dtpGioKT.BorderRadius = 10;
-            this.dtpGioKT.Checked = true;
-            this.dtpGioKT.CustomFormat = "hh:mm tt";
-            this.dtpGioKT.FillColor = System.Drawing.Color.Chartreuse;
-            this.dtpGioKT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpGioKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpGioKT.Location = new System.Drawing.Point(208, 492);
-            this.dtpGioKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpGioKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpGioKT.Name = "dtpGioKT";
-            this.dtpGioKT.ShowUpDown = true;
-            this.dtpGioKT.Size = new System.Drawing.Size(250, 36);
-            this.dtpGioKT.TabIndex = 28;
-            this.dtpGioKT.Value = new System.DateTime(2023, 4, 26, 23, 39, 58, 40);
-            // 
-            // chbAllowReturn
-            // 
-            this.chbAllowReturn.AutoSize = true;
-            this.chbAllowReturn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbAllowReturn.CheckedState.BorderRadius = 0;
-            this.chbAllowReturn.CheckedState.BorderThickness = 0;
-            this.chbAllowReturn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbAllowReturn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAllowReturn.Location = new System.Drawing.Point(652, 460);
-            this.chbAllowReturn.Name = "chbAllowReturn";
-            this.chbAllowReturn.Size = new System.Drawing.Size(187, 29);
-            this.chbAllowReturn.TabIndex = 30;
-            this.chbAllowReturn.Text = "Cho phép quay lại";
-            this.chbAllowReturn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbAllowReturn.UncheckedState.BorderRadius = 0;
-            this.chbAllowReturn.UncheckedState.BorderThickness = 0;
-            this.chbAllowReturn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
             // UC_CreateExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -375,6 +379,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbTenBaiKiemTra);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "UC_CreateExam";
             this.Size = new System.Drawing.Size(1175, 730);
             this.ResumeLayout(false);
