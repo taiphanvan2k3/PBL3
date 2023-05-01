@@ -404,5 +404,45 @@ namespace DAL
         //        return accountRoles;
         //    }
         //}
+
+        public int CountCHUONG_TRINH_DAO_TAO()
+        {
+            using (var dbContext = new PBL3Entities())
+            {
+                return dbContext.CHUONG_TRINH_DAO_TAO.Count();
+            }
+        }
+        public int CountNGUOI_DUNG()
+        {
+            using (var dbContext = new PBL3Entities())
+            {
+                return dbContext.NGUOI_DUNG.Count();
+            }
+        }
+        public int CountGIANG_VIEN()
+        {
+            using (var dbContext = new PBL3Entities())
+            {
+                return dbContext.GIANG_VIEN.Count();
+            }
+        }
+        public int CountSINH_VIEN()
+        {
+            using (var dbContext = new PBL3Entities())
+            {
+                return dbContext.SINH_VIEN.Count();
+            }
+        }
+        public int CountKHOA()
+        {
+            using (var dbContext = new PBL3Entities())
+            {
+                return dbContext.KHOAs.Count();
+            }
+        }
+
+
+
+
     }
 }

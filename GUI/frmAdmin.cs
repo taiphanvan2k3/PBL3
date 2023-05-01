@@ -128,6 +128,7 @@ namespace GUI
             //..
             //your codes
             //..
+            openChildForm(new frmDesignDashboard());
             hideSubMenu();
         }
 

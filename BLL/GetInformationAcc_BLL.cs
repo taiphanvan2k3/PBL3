@@ -220,6 +220,27 @@ namespace BLL
 
         }
 
+        public int CountCHUONG_TRINH_DAO_TAO()
+        {
+            return GetInformationAcc_DAL.Instance.CountCHUONG_TRINH_DAO_TAO();
+        }
+        public int CountNGUOI_DUNG()
+        {
+            return GetInformationAcc_DAL.Instance.CountNGUOI_DUNG();
+
+        }
+        public int CountGIANG_VIEN()
+        {
+            return GetInformationAcc_DAL.Instance.CountGIANG_VIEN();
+        }
+        public int CountSINH_VIEN()
+        {
+            return GetInformationAcc_DAL.Instance.CountSINH_VIEN();
+        }
+        public int CountKHOA()
+        {
+            return GetInformationAcc_DAL.Instance.CountKHOA();
+        }
 
     }
 }

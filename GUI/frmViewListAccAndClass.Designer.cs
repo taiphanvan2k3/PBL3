@@ -71,9 +71,9 @@
             this.panelContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
             this.panelContainer.Controls.Add(this.panel3);
             this.panelContainer.Controls.Add(this.panel1);
-            this.panelContainer.Location = new System.Drawing.Point(30, 70);
+            this.panelContainer.Location = new System.Drawing.Point(25, 50);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1200, 500);
+            this.panelContainer.Size = new System.Drawing.Size(1150, 500);
             this.panelContainer.TabIndex = 20;
             // 
             // panel3
@@ -82,7 +82,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 72);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1200, 428);
+            this.panel3.Size = new System.Drawing.Size(1150, 428);
             this.panel3.TabIndex = 21;
             // 
             // dgvViewAcc
@@ -121,7 +121,7 @@
             this.dgvViewAcc.RowHeadersWidth = 51;
             this.dgvViewAcc.RowTemplate.Height = 25;
             this.dgvViewAcc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViewAcc.Size = new System.Drawing.Size(1200, 428);
+            this.dgvViewAcc.Size = new System.Drawing.Size(1150, 428);
             this.dgvViewAcc.TabIndex = 19;
             this.dgvViewAcc.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvViewAcc_CellBeginEdit);
             this.dgvViewAcc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewAcc_CellClick);
@@ -135,7 +135,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 72);
+            this.panel1.Size = new System.Drawing.Size(1150, 72);
             this.panel1.TabIndex = 20;
             // 
             // panelButton
@@ -145,7 +145,7 @@
             this.panelButton.Controls.Add(this.btnDelete);
             this.panelButton.Controls.Add(this.btnAdd);
             this.panelButton.Controls.Add(this.btnEdit);
-            this.panelButton.Location = new System.Drawing.Point(694, 15);
+            this.panelButton.Location = new System.Drawing.Point(644, 15);
             this.panelButton.Name = "panelButton";
             this.panelButton.Size = new System.Drawing.Size(506, 51);
             this.panelButton.TabIndex = 18;
@@ -240,7 +240,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
