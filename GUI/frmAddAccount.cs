@@ -1,9 +1,11 @@
 ﻿using BLL;
 using DTO;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -28,10 +30,13 @@ namespace GUI
         private string passEmai = "";
 
         private int role;
-        public frmAddAccount(int role)
+
+        private string TaiKhoan;
+        public frmAddAccount(int role, string TaiKhoan)
         {
             InitializeComponent();
             this.role = role;
+            this.TaiKhoan = TaiKhoan;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -158,21 +163,35 @@ namespace GUI
                         MaCTDT = MaCTDT,
                         MaLopSH = null
                     };
-                    if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT) == true)
+
+                    if (TaiKhoan == "")
                     {
-                        MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
-                        var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
-                        if (result1 == DialogResult.Cancel)
+
+                        if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT) == true)
                         {
-                            this.Close();
+                            MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
+                            var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
+                            if (result1 == DialogResult.Cancel)
+                            {
+                                this.Close();
+                            }
+                            else
+                            {
+                                ReturnEmpty();
+                            }
                         }
                         else
-                        {
-                            ReturnEmpty();
-                        }
+                            MessageBox.Show("Thêm bị lỗi! Vui lòng kiểm tra lại thông tin");
                     }
                     else
-                        MessageBox.Show("Thêm bị lỗi! Vui lòng kiểm tra lại thông tin");
+                    {
+                        if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan,ttdn, nd, svDT) == true)
+                        {
+                            MessageBox.Show("Thêm cập nhật tài khoản sinh viên thành công");
+                        }
+                        else
+                            MessageBox.Show("Cập nhật bị lỗi! Vui lòng kiểm tra lại thông tin");
+                    }
                 }
                 else
                 {
@@ -194,52 +213,180 @@ namespace GUI
                         Luong = null,
                         MaKhoa = MaKhoa,
                     };
-                    if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, gvDT) == true)
+                    if (TaiKhoan == "")
                     {
-                        MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
-                        var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
-                        if (result1 == DialogResult.Cancel)
+
+                        if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, gvDT) == true)
                         {
-                            this.Close();
+                            MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
+                            var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
+                            if (result1 == DialogResult.Cancel)
+                            {
+                                this.Close();
+                            }
+                            else
+                            {
+                                ReturnEmpty();
+                            }
                         }
                         else
-                        {
-                            ReturnEmpty();
-                        }
+                            MessageBox.Show("Thêm bị lỗi! Vui lòng kiểm tra lại thông tin");
                     }
-                    else
-                        MessageBox.Show("Thêm bị lỗi! Vui lòng kiểm tra lại thông tin");
+                    else {
+                        if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan, ttdn, nd, gvDT) == true)
+                        {
+                            MessageBox.Show("Thêm cập nhật tài khoản giảng viên thành công");
+                        }
+                        else
+                            MessageBox.Show("Cập nhật bị lỗi! Vui lòng kiểm tra lại thông tin");
+                    }
+
                 }
             }
         }
 
         private void frmAddAccStudent_Load(object sender, EventArgs e)
         {
-            if (role == 0)
+            switch (role)
             {
-                List<string> list = new List<string>()
+                case 0:
+                    List<string> list = new List<string>()
+                        {
+                           "2018", "2019", "2020", "2021", "2022", "2023"
+                        };
+                    cmbYearOrLevel.Items.AddRange(list.ToArray());
+                    foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
+                    {
+                        cmbList.Items.Add(item.TenCTDT);
+                    }
+                    break;
+                case 1:
+                    lbFacultyOrProgram.Text = "Tên khoa";
+                    lbYearOrLevel.Text = "Trình độ";
+                    List<string> trinhDo = new List<string>()
+                        {
+                            "Tiến sĩ", "Thạc Sĩ", "Phó Giáo Sư - Tiến sĩ", "Giáo sư - Tiến sĩ"
+                        };
+                    cmbYearOrLevel.Items.AddRange(trinhDo.ToArray());
+                    foreach (var item in GetInformationAcc_BLL.Instance.GetListFaculty())
+                    {
+                        cmbList.Items.Add(item.TenKhoa);
+                    }
+                    break;
+            }
+            if (TaiKhoan != "")
+            {
+                panelEdit.Visible = true;
+                txtIDAcc.Texts = TaiKhoan;
+                txtIDAcc.Enabled = false;
+                cmbList.Enabled = false;
+                txtSurname.Enabled = false;
+                txtName.Enabled = false;
+                txtCCCD.Enabled = false;
+                string valueItem = "";
+                string valueYearOrLevel = "";
+                string name;
+                switch (role)
                 {
-                    "2020", "2021", "2022", "2023"
-                };
-                cmbYearOrLevel.Items.AddRange(list.ToArray());
-                foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
-                {
-                    cmbList.Items.Add(item.TenCTDT);
+                    case 0:
+                        name = "";
+                        InformationStudent_DTO informationStudent = GetInformationAcc_BLL.Instance.GetInformationStudentByID(TaiKhoan);
+                        string[] nameParts = informationStudent.Ten.Split(' ');
+                        txtCCCD.Texts = informationStudent.MaCCCD;
+                        for (int i = 0; i < nameParts.Length - 1; i++)
+                        {
+                            name += nameParts[i] + " ";
+                        }
+                        txtSurname.Texts = name;
+                        txtName.Texts = nameParts[nameParts.Length - 1];
+                        dtpBirthday.Value = informationStudent.NgaySinh;
+                        if (informationStudent.GioiTinh)
+                        {
+                            rbWomen.Checked = true;
+                        }
+                        else
+                        {
+                            rbMen.Checked = true;
+                        }
+
+                        foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
+                        {
+                            if (informationStudent.MaCTDT == item.MaCTDT.ToString())
+                            {
+                                valueItem = item.TenCTDT.ToString();
+                                break;
+                            }
+                        }
+                        foreach (object item in cmbList.Items)
+                        {
+                            if (item.ToString().Equals(valueItem))
+                            {
+                                cmbList.SelectedItem = item;
+                                break;
+                            }
+                        }
+                        valueYearOrLevel = "20" + TaiKhoan.Substring(3, TaiKhoan.Length - 7);
+                        foreach (object item in cmbYearOrLevel.Items)
+                        {
+                            if (item.ToString().Equals(valueYearOrLevel))
+                            {
+                                cmbYearOrLevel.SelectedItem = item;
+                                break;
+                            }
+                        }
+                        cmbYearOrLevel.Enabled = false;
+                        break;
+                    case 1:
+                        name = "";
+                        InformationTeacher_DTO informationTeacher = GetInformationAcc_BLL.Instance.GetInformationTeacherByID(TaiKhoan);
+                        string[] namePartsTeacher = informationTeacher.Ten.Split(' ');
+                        txtCCCD.Texts = informationTeacher.MaCCCD;
+                        for (int i = 0; i < namePartsTeacher.Length - 1; i++)
+                        {
+                            name += namePartsTeacher[i] + " ";
+                        }
+                        txtSurname.Texts = name;
+                        dtpBirthday.Value = informationTeacher.NgaySinh;
+                        if (informationTeacher.GioiTinh)
+                        {
+                            rbWomen.Checked = true;
+                        }
+                        else
+                        {
+                            rbMen.Checked = true;
+                        }
+
+                        foreach (var item in GetInformationAcc_BLL.Instance.GetListFaculty())
+                        {
+                            if (informationTeacher.MaKhoa == item.MaKhoa.ToString())
+                            {
+                                valueItem = item.TenKhoa.ToString();
+                                break;
+                            }
+                        }
+                        foreach (object item in cmbList.Items)
+                        {
+                            if (item.ToString().Equals(valueItem))
+                            {
+                                cmbList.SelectedItem = item;
+                                break;
+                            }
+                        }
+                        foreach (object item in cmbYearOrLevel.Items)
+                        {
+                            if (item.ToString().Equals(informationTeacher.TrinhDo))
+                            {
+                                cmbYearOrLevel.SelectedItem = item;
+                                break;
+                            }
+                        }
+                        break;
                 }
             }
             else
             {
-                lbFacultyOrProgram.Text = "Tên khoa";
-                lbYearOrLevel.Text = "Trình độ";
-                List<string> trinhDo = new List<string>()
-                {
-                    "Tiến sĩ", "Thạc Sĩ", "Phó Giáo Sư - Tiến sĩ", "Giáo sư - Tiến sĩ"
-                };
-                cmbYearOrLevel.Items.AddRange(trinhDo.ToArray());
-                foreach (var item in GetInformationAcc_BLL.Instance.GetListFaculty())
-                {
-                    cmbList.Items.Add(item.TenKhoa);
-                }
+                panelContainer.Location = new Point(10, 35);
+                this.Size = new Size(500, 750);
             }
         }
 

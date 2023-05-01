@@ -20,6 +20,7 @@ namespace DAL
                 return _Instance;
             }
         }
+        // Lấy danh sách sinh viên
         public List<InformationStudent_DTO> GetAccountStudentList()
         {
             using (var context = new PBL3Entities())
@@ -39,7 +40,7 @@ namespace DAL
                 return query.ToList();
             }
         }
-
+        // Lấy danh sách giảng viên
         public List<InformationTeacher_DTO> GetAccountTeacherList()
         {
             using (var context = new PBL3Entities())
@@ -60,6 +61,57 @@ namespace DAL
             }
         }
 
+        // Lấy thông tin 1 tài khoản giảng viên theo ID
+        public InformationTeacher_DTO GetInformationTeacherByID(string id)
+        {
+            using (var context = new PBL3Entities())
+            {
+                var query = from tt in context.THONG_TIN_DANG_NHAP
+                            join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
+                            join gv in context.GIANG_VIEN on nd.MaNguoiDung equals gv.MaGV
+                            where tt.TaiKhoan == id
+                            select new InformationTeacher_DTO
+                            {
+                                TaiKhoan = tt.TaiKhoan,
+                                VaiTro = tt.VaiTro,
+                                Ten = nd.Ho + " " + nd.Ten,
+                                MaCCCD = nd.MaCCCD,
+                                NgaySinh = nd.NgaySinh,
+                                GioiTinh = nd.GioiTinh,
+                                EmailTruongCap = nd.EmailTruongCap,
+                                TrinhDo = gv.TrinhDo,
+                                MaKhoa = gv.MaKhoa
+                            };
+                return query.FirstOrDefault();
+            }
+        }
+
+
+        // Lấy thông tin 1 tài khoản sinh viên theo ID
+        public InformationStudent_DTO GetInformationStudentByID(string id)
+        {
+            using (var context = new PBL3Entities())
+            {
+                var query = from tt in context.THONG_TIN_DANG_NHAP
+                            join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
+                            join sv in context.SINH_VIEN on nd.MaNguoiDung equals sv.MaSV
+                            where tt.TaiKhoan == id
+                            select new InformationStudent_DTO
+                            {
+                                TaiKhoan = tt.TaiKhoan,
+                                VaiTro = tt.VaiTro,
+                                Ten = nd.Ho + " " + nd.Ten,
+                                MaCCCD = nd.MaCCCD,
+                                NgaySinh = nd.NgaySinh,
+                                GioiTinh = nd.GioiTinh,
+                                EmailTruongCap = nd.EmailTruongCap,
+                                MaCTDT = sv.MaCTDT
+                            };
+                return query.FirstOrDefault();
+            }
+        }
+
+        // Lấy danh sách chương trình đào tạo
         public List<CHUONG_TRINH_DAO_TAO> GetListEducationProgram()
         {
             using (var context = new PBL3Entities())
@@ -69,6 +121,8 @@ namespace DAL
 
             }
         }
+
+        // Lấy danh sách khoa
         public List<KHOA> GetListFaculty()
         {
             using (var context = new PBL3Entities())
@@ -79,6 +133,7 @@ namespace DAL
             }
         }
 
+        // Đếm số lượng sinh viên theo từng khoa và khóa
         public int getTheNumberOfStudentByFaculty(string maKhoa, string year)
         {
             using (var db = new PBL3Entities())
@@ -96,7 +151,7 @@ namespace DAL
                 return 0;
             }
         }
-
+        // Đếm số lượng giảng viên theo khoa
         public int getTheNumberOfTeacherByFaculty(string maKhoa)
         {
             using (var db = new PBL3Entities())
@@ -108,24 +163,8 @@ namespace DAL
             }
         }
 
-        public void InsertLoginInfo(THONG_TIN_DANG_NHAP newLoginInfo)
-        {
-            using (var context = new PBL3Entities())
-            {
-                context.THONG_TIN_DANG_NHAP.Add(newLoginInfo);
-                context.SaveChanges();
-            }
-        }
 
-        public void InsertLoginInfo(NGUOI_DUNG newLoginInfo)
-        {
-            using (var context = new PBL3Entities())
-            {
-                context.NGUOI_DUNG.Add(newLoginInfo);
-                context.SaveChanges();
-            }
-        }
-
+        // Thêm tài khoản mới
         public bool InsertData(THONG_TIN_DANG_NHAP loginInfo, NGUOI_DUNG userInfo, object specificInfo)
         {
             bool success = false;
@@ -163,6 +202,67 @@ namespace DAL
                             context.GIANG_VIEN.Add(teacherInfo);
                         }
                         context.SaveChanges();
+                        // Lưu các thay đổi vào database
+                        transaction.Commit();
+                        success = true;
+                    }
+                    catch
+                    {
+                        // Rollback transaction nếu có lỗi
+                        transaction.Rollback();
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
+        public bool UpdateData(string taiKhoan, THONG_TIN_DANG_NHAP newLoginInfo, NGUOI_DUNG newUserInfo, object newSpecificInfo)
+        {
+            bool success = false;
+            using (PBL3Entities context = new PBL3Entities())
+            {
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        THONG_TIN_DANG_NHAP oldLoginInfo = context.THONG_TIN_DANG_NHAP.FirstOrDefault(t => t.TaiKhoan == taiKhoan);
+                        if (oldLoginInfo != null)
+                        {
+                            // Cập nhật thông tin đăng nhập
+                            oldLoginInfo.MkUngDung = newLoginInfo.MkUngDung;
+                            context.SaveChanges();
+                            var oldUserInfo = context.NGUOI_DUNG.FirstOrDefault(t => t.MaNguoiDung == oldLoginInfo.TaiKhoan);
+                            if (oldUserInfo != null)
+                            {
+                                oldUserInfo.Ho = newUserInfo.Ho;
+                                oldUserInfo.Ten = newUserInfo.Ten;
+                                oldUserInfo.NgaySinh = newUserInfo.NgaySinh;
+                                oldUserInfo.GioiTinh = newUserInfo.GioiTinh;
+                                context.SaveChanges();
+                                if (newSpecificInfo.GetType() == typeof(SINH_VIEN))
+                                {
+                                    var oldStudentInfo = context.SINH_VIEN.FirstOrDefault(t => t.MaSV == oldUserInfo.MaNguoiDung);
+                                    if (oldStudentInfo != null)
+                                    {
+                                        var studentInfo = (SINH_VIEN)newSpecificInfo;
+                                        oldStudentInfo.MaCTDT = studentInfo.MaCTDT;
+                                        context.SaveChanges();
+                                    }
+
+                                }
+                                else if (newSpecificInfo.GetType() == typeof(GIANG_VIEN))
+                                {
+                                    var oldTeacherInfo = context.GIANG_VIEN.FirstOrDefault(t => t.MaGV == oldUserInfo.MaNguoiDung);
+                                    if (oldTeacherInfo != null)
+                                    {
+                                        var teacherInfo = (GIANG_VIEN)newSpecificInfo;
+                                        oldTeacherInfo.MaKhoa = teacherInfo.MaKhoa;
+                                        oldTeacherInfo.TrinhDo = teacherInfo.TrinhDo;
+                                        context.SaveChanges();
+                                    }
+                                }
+                            }
+                        }
                         // Lưu các thay đổi vào database
                         transaction.Commit();
                         success = true;

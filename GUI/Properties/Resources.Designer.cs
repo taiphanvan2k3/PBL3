@@ -343,16 +343,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap file1 {
-            get {
-                object obj = ResourceManager.GetObject("file1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap graduation_cap {
             get {
                 object obj = ResourceManager.GetObject("graduation-cap", resourceCulture);

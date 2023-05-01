@@ -20,7 +20,17 @@ namespace DTO
         public string Ten { get; set; }
         [DisplayName("Email")]
         public string EmailTruongCap { get; set; }
-       
+
+        [DisplayName("Ngày sinh")]
+        public DateTime NgaySinh { get; set; }
+
+        [DisplayName("Giới tính")]
+        public bool GioiTinh { get; set; }
+        [DisplayName("Mã Khoa")]
+        public string MaKhoa { get; set; }
+
+
+
 
 
     }
