@@ -305,6 +305,12 @@
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyUserControls\UC_FinishDoExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_FinishDoExam.Designer.cs">
+      <DependentUpon>UC_FinishDoExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_SendNoticeToModuleClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -515,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DoExam.resx">
       <DependentUpon>UC_DoExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_FinishDoExam.resx">
+      <DependentUpon>UC_FinishDoExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_MonthCalendar.resx">
       <DependentUpon>UC_MonthCalendar.cs</DependentUpon>

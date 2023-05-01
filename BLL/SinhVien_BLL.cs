@@ -109,5 +109,9 @@ namespace BLL
         }
         #endregion
 
+        public static List<KetQuaHocTap> GetKetQuaHocTap(string MaSV)
+        {
+            return SinhVien_DAL.GetKetQuaHocTap(MaSV);
+        }
     }
 }

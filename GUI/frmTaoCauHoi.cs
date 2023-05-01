@@ -1,4 +1,5 @@
-﻿using GUI.MyUserControls;
+﻿using BLL;
+using GUI.MyUserControls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -7,10 +8,12 @@ namespace GUI
 {
     public partial class frmTaoCauHoi : Form
     {
+        private int PreviousHeightOfTextboxCauHoi;
         private List<UC_DapAnControl> dsDapAn;
         public frmTaoCauHoi()
         {
             InitializeComponent();
+            PreviousHeightOfTextboxCauHoi = textBoxCauHoi.MinimumSize.Height;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -37,7 +40,7 @@ namespace GUI
                 UC_DapAnControl da = new UC_DapAnControl() { STT = i };
                 da.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                 panelDanhSachDapAn.Controls.Add(da);
-                
+
                 dsDapAn.Add(da);
             }
         }
@@ -90,7 +93,30 @@ namespace GUI
         {
             if (textBoxCauHoi.Text == "")
                 labelCheck.Visible = true;
-            else labelCheck.Visible = false;
+            else
+            {
+                int HeightText = UtilityClass.CalculateHeightOfControl(textBoxCauHoi);
+                if (HeightText > textBoxCauHoi.Height)
+                {
+                    int offset = HeightText - textBoxCauHoi.Height;
+                    textBoxCauHoi.Height = HeightText;
+                    panelDanhSachDapAn.Location = new System.Drawing.Point(panelDanhSachDapAn.Location.X,
+                                                    panelDanhSachDapAn.Location.Y + offset);
+                    this.Height += offset;
+                    PreviousHeightOfTextboxCauHoi = HeightText;
+                }
+                else if (HeightText < PreviousHeightOfTextboxCauHoi && HeightText >=
+                                                                    textBoxCauHoi.MinimumSize.Height)
+                {
+                    int offset = PreviousHeightOfTextboxCauHoi - HeightText;
+                    textBoxCauHoi.Height = HeightText;
+                    panelDanhSachDapAn.Location = new System.Drawing.Point(panelDanhSachDapAn.Location.X,
+                                                   panelDanhSachDapAn.Location.Y - offset);
+                    this.Height -= offset;
+                    PreviousHeightOfTextboxCauHoi = HeightText;
+                }
+                labelCheck.Visible = false;
+            }
         }
 
         private void customButton2_Click(object sender, EventArgs e)
@@ -101,9 +127,12 @@ namespace GUI
         private void panelDanhSachDapAn_Resize(object sender, EventArgs e)
         {
             foreach (UC_DapAnControl uc in panelDanhSachDapAn.Controls)
-            {
-                uc.Width = panelDanhSachDapAn.Width - 10;
-            }
+                uc.Width = panelDanhSachDapAn.Width;
+        }
+
+        private void customButton1_Click_1(object sender, EventArgs e)
+        {
+            panelDanhSachDapAn.Height += 100;
         }
     }
 }

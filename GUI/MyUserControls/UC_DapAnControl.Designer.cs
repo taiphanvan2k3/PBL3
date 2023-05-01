@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDapAn = new System.Windows.Forms.TextBox();
             this.labelCheck = new System.Windows.Forms.Label();
             this.labelCauHoi = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtDapAn
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDapAn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119)))));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(91, 21);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(471, 96);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtDapAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(87)))), ((int)(((byte)(119)))));
+            this.txtDapAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDapAn.ForeColor = System.Drawing.Color.White;
+            this.txtDapAn.Location = new System.Drawing.Point(91, 21);
+            this.txtDapAn.MinimumSize = new System.Drawing.Size(471, 96);
+            this.txtDapAn.Multiline = true;
+            this.txtDapAn.Name = "txtDapAn";
+            this.txtDapAn.Size = new System.Drawing.Size(471, 96);
+            this.txtDapAn.TabIndex = 1;
+            this.txtDapAn.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // labelCheck
             // 
@@ -53,7 +54,7 @@
             this.labelCheck.AutoSize = true;
             this.labelCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCheck.ForeColor = System.Drawing.Color.Red;
-            this.labelCheck.Location = new System.Drawing.Point(574, 54);
+            this.labelCheck.Location = new System.Drawing.Point(574, 62);
             this.labelCheck.Name = "labelCheck";
             this.labelCheck.Size = new System.Drawing.Size(16, 20);
             this.labelCheck.TabIndex = 2;
@@ -76,8 +77,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(153)))), ((int)(((byte)(174)))));
             this.Controls.Add(this.labelCauHoi);
             this.Controls.Add(this.labelCheck);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDapAn);
             this.Font = new System.Drawing.Font("Symbol", 8.25F);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UC_DapAnControl";
             this.Size = new System.Drawing.Size(601, 135);
             this.ResumeLayout(false);
@@ -86,7 +88,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDapAn;
         private System.Windows.Forms.Label labelCheck;
         private System.Windows.Forms.Label labelCauHoi;
     }

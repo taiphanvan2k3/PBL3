@@ -132,6 +132,7 @@ namespace BLL
         }
         public static string SplitCongThucTinhDiem(string input)
         {
+            //Vd [BT]*0.2 + [GK]*0.2 + [CK]*0.6 thì trả về kết quả là 2-2-6
             string[] ds = input.Split(new string[] { " + " }, StringSplitOptions.RemoveEmptyEntries);
             string res = "";
             foreach (string str in ds)

@@ -83,7 +83,7 @@ namespace DAL
             return KiHocHienTai;
         }
 
-        public static List<LopHocPhan_DTO>GetLichHocTrongTuan(string MaSV,int KiHoc)
+        public static List<LopHocPhan_DTO> GetLichHocTrongTuan(string MaSV, int KiHoc)
         {
             //Một khi đã thêm được sv vào lớp học phần thì lúc này chắc chắn đã phân công GV rồi
             //nên không sợ chưa có GiangVien, đỡ phải GroupJoin với GIANG_VIEN. Và một khi phân công được
@@ -115,5 +115,100 @@ namespace DAL
             return li;
         }
         #endregion
+
+        /// <summary>
+        /// Dùng để trả về kết quả học tập của sinh viên
+        /// </summary>
+        /// <param name="MaSV"></param>
+        /// <returns></returns>
+        public static List<KetQuaHocTap> GetKetQuaHocTap(string MaSV)
+        {
+            var li = db.SINHVIEN_LOPHOCPHAN.Where(sv => sv.MaSV == MaSV)
+                .Join(db.LOP_HOC_PHAN, sv => sv.MaLopHP, hp => hp.MaLopHP, (sv, hp) => new
+                {
+                    //Lấy ra các lớp học phần mà sinh viên này học
+                    hp.MaLopHP,
+                    hp.MON_HOC.TenMH,
+                    hp.KiHoc,
+                    hp.NamHoc,
+                    hp.MON_HOC.SoTC,
+                    hp.MON_HOC.CtTinhDiem
+                })
+                .GroupJoin(db.BAI_KIEM_TRA, hp => hp.MaLopHP, bkt => bkt.MaLopHP, (hp, bkt) => new
+                {
+                    //Do cũng có thể 1 lớp học phần chưa có bài kiểm tra nào nên phải dùng Left join
+                    LopHP_tmp = hp,
+                    BaiKiemTra_tmp = bkt.DefaultIfEmpty()
+                })
+                .SelectMany(i1 => i1.BaiKiemTra_tmp.Select(i2 => new
+                {
+                    i1.LopHP_tmp.MaLopHP,
+                    i1.LopHP_tmp.TenMH,
+                    i1.LopHP_tmp.KiHoc,
+                    i1.LopHP_tmp.NamHoc,
+                    i1.LopHP_tmp.SoTC,
+                    i1.LopHP_tmp.CtTinhDiem,
+                    i2.MaBaiKiemTra,
+                    //LoaiBaiKiemTra (Test, Giữa kì, Cuối kì)
+                    LoaiBaiKiemTra = i2.TenBaiKiemTra
+                }))
+                .GroupJoin(db.LAM_BAI_KIEM_TRA, bkt => bkt.MaBaiKiemTra, lambkt => lambkt.MaBaiKiemTra, (bkt, lambkt) => new
+                {
+                    //Cũng có thể có bài kiểm tra rồi nhưng sinh viên này chưa làm thì cũng chưa có điểm
+                    BaiKiemTra_tmp = bkt,
+                    LamBaiKiemTra_tmp = lambkt.Where(p => p.MaSV == MaSV).DefaultIfEmpty()
+                })
+                .SelectMany(i1 => i1.LamBaiKiemTra_tmp.Select(i2 => new
+                {
+                    i2.MaSV,
+                    i1.BaiKiemTra_tmp.MaLopHP,
+                    i1.BaiKiemTra_tmp.TenMH,
+                    i1.BaiKiemTra_tmp.KiHoc,
+                    i1.BaiKiemTra_tmp.NamHoc,
+                    i1.BaiKiemTra_tmp.SoTC,
+                    i1.BaiKiemTra_tmp.CtTinhDiem,
+                    i1.BaiKiemTra_tmp.LoaiBaiKiemTra,
+                    Diem = (double?)i2.Diem
+                })).ToList();
+            Dictionary<string, KetQuaHocTap> dict = new Dictionary<string, KetQuaHocTap>();
+            List<KetQuaHocTap> res = new List<KetQuaHocTap>();
+            foreach (var item in li)
+            {
+                KetQuaHocTap kq;
+                bool checkIsExist = false;
+                if (dict.ContainsKey(item.MaLopHP))
+                {
+                    kq = dict[item.MaLopHP];
+                    checkIsExist = true;
+                }
+                else
+                {
+                    kq = new KetQuaHocTap()
+                    {
+                        MaLopHP = item.MaLopHP,
+                        TenMH = item.TenMH,
+                        SoTC = item.SoTC,
+                        KiHoc = item.KiHoc,
+                        NamHoc = item.NamHoc + " - " + (item.NamHoc + 1),
+                        CtTinhDiem = item.CtTinhDiem
+                    };
+                }
+                if (item.LoaiBaiKiemTra == "Test" && item.Diem != null)
+                    kq.DiemBTs.Add((double)item.Diem);
+                else if (item.LoaiBaiKiemTra == "Giữa kì")
+                    kq.GK = item.Diem;
+                else if (item.LoaiBaiKiemTra == "Cuối kì")
+                    kq.CK = item.Diem;
+                else if (item.LoaiBaiKiemTra == "Quá trình")
+                    kq.QT = item.Diem;
+                else kq.DA = item.Diem;
+                if (!checkIsExist)
+                {
+                    res.Add(kq);
+                    dict.Add(item.MaLopHP, kq);
+                }
+            }
+            return res;
+        }
     }
 }
