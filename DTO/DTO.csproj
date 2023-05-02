@@ -64,6 +64,7 @@
     <Compile Include="InformationClass_DTO.cs" />
     <Compile Include="InformationStudent_DTO.cs" />
     <Compile Include="InformationTeacher_DTO.cs" />
+    <Compile Include="KetQuaHocTap.cs" />
     <Compile Include="KetQuaLamKiemTra_SVLHP.cs" />
     <Compile Include="KetQuaLamKiemTra.cs" />
     <Compile Include="KHOA_DTO.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="SinhVienLSH_View.cs" />
     <Compile Include="SinhVien_DTO.cs" />
     <Compile Include="ThoiKhoaBieu_DTO.cs" />
+    <Compile Include="ThongBao_DTO.cs" />
     <Compile Include="THONG_TIN_DANG_NHAP_DTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

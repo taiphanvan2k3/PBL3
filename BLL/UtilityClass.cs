@@ -63,7 +63,7 @@ namespace BLL
             var column1 = dataGridView.Columns[index1];
             var column2 = dataGridView.Columns[index2];
 
-            int temp = column1.DisplayIndex;    
+            int temp = column1.DisplayIndex;
             column1.DisplayIndex = column2.DisplayIndex;
             column2.DisplayIndex = temp;
         }
@@ -132,6 +132,7 @@ namespace BLL
         }
         public static string SplitCongThucTinhDiem(string input)
         {
+            //Vd [BT]*0.2 + [GK]*0.2 + [CK]*0.6 thì trả về kết quả là 2-2-6
             string[] ds = input.Split(new string[] { " + " }, StringSplitOptions.RemoveEmptyEntries);
             string res = "";
             foreach (string str in ds)
@@ -191,6 +192,50 @@ namespace BLL
                     return "Thứ bảy";
                 case "Sunday":
                     return "Chủ nhật";
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Trả về CN;T2;T3;... để hiển thị trên lblShowDateTime ở giao diện DailyShoolSchedule
+        /// và DailyWorkSchedule
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public static string GetDayOfWeekVietnameseShortString(DateTime dt)
+        {
+            if (dt.DayOfWeek == DayOfWeek.Sunday)
+                return "CN";
+            DayOfWeek[] ds = { DayOfWeek.Sunday,DayOfWeek.Sunday,DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday,
+                                DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday };
+            string res = null;
+            for (int i = 2; i <= 7; i++)
+            {
+                if (dt.DayOfWeek == ds[i])
+                    res = "T" + i;
+            }
+            return res;
+        }
+
+        /// <summary>
+        /// Chuyển CN -> Chủ nhật
+        /// T2 -> Thứ hai,...
+        /// </summary>
+        /// <param name="dow"></param>
+        /// <returns></returns>
+        public static string GetDayOfWeekVietNameseLongString(string dow)
+        {
+            if (dow == "CN")
+                return "Chủ nhật";
+            string[] ds = new string[]
+            {
+                "","","hai","ba","tư","năm","sáu","bảy"
+            };
+            for (int i = 2; i <= 7; i++)
+            {
+                string tmp = i + "";
+                if (dow.Contains(tmp))
+                    return "Thứ " + ds[i];
             }
             return "";
         }

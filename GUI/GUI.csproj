@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
@@ -127,6 +130,7 @@
       <HintPath>..\packages\System.Text.Encoding.CodePages.7.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -140,6 +144,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDesignDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesignDashboard.Designer.cs">
+      <DependentUpon>frmDesignDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +233,12 @@
     </Compile>
     <Compile Include="frmShowEventInDay.Designer.cs">
       <DependentUpon>frmShowEventInDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowListStudentInModuleClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowListStudentInModuleClass.Designer.cs">
+      <DependentUpon>frmShowListStudentInModuleClass.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTaoCauHoiNew.cs">
       <SubType>Form</SubType>
@@ -336,6 +352,24 @@
     </Compile>
     <Compile Include="MyCustomControl\SmoothRoundedCorners.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DailyWorkSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DailyWorkSchedule.Designer.cs">
+      <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_FinishDoExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_FinishDoExam.Designer.cs">
+      <DependentUpon>UC_FinishDoExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_Notification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_Notification.Designer.cs">
+      <DependentUpon>UC_Notification.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_SendNoticeToModuleClass.cs">
       <SubType>UserControl</SubType>
@@ -451,11 +485,23 @@
     <Compile Include="MyUserControls\UC_ViewListModuleClass.Designer.cs">
       <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_ViewListNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ViewListNotifications.Designer.cs">
+      <DependentUpon>UC_ViewListNotifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_WeeklySchoolSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControls\UC_WeeklySchoolSchedule.Designer.cs">
       <DependentUpon>UC_WeeklySchoolSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_WeeklyWorkSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_WeeklyWorkSchedule.Designer.cs">
+      <DependentUpon>UC_WeeklyWorkSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -465,6 +511,24 @@
     <Compile Include="testData.Designer.cs">
       <DependentUpon>testData.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmDesignDashboard.resx">
+      <DependentUpon>frmDesignDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowListStudentInModuleClass.resx">
+      <DependentUpon>frmShowListStudentInModuleClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DailyWorkSchedule.resx">
+      <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_Notification.resx">
+      <DependentUpon>UC_Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_ViewListNotifications.resx">
+      <DependentUpon>UC_ViewListNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_WeeklyWorkSchedule.resx">
+      <DependentUpon>UC_WeeklyWorkSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="testData.resx">
       <DependentUpon>testData.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,6 +626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DoExam.resx">
       <DependentUpon>UC_DoExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_FinishDoExam.resx">
+      <DependentUpon>UC_FinishDoExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_MonthCalendar.resx">
       <DependentUpon>UC_MonthCalendar.cs</DependentUpon>
@@ -738,6 +805,14 @@
     <None Include="Resources\Yourname.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\university.png" />
+    <None Include="Resources\programming-course.png" />
+    <None Include="Resources\graduated %281%29.png" />
+    <None Include="Resources\teacher %282%29.png" />
+    <None Include="Resources\teacher %281%29.png" />
+    <None Include="Resources\teacher.png" />
+    <None Include="Resources\graduated.png" />
+    <None Include="Resources\user %283%29.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\Near.png" />
     <None Include="Resources\createExam.png" />
@@ -768,8 +843,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

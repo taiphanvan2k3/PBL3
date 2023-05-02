@@ -26,6 +26,7 @@ namespace GUI.MyUserControls
         private void UC_DoExam_Load(object sender, EventArgs e)
         {
             List<BaiKiemTra_DTO> li = BaiKiemTra_BLL.Instance.GetAllExamOfStudent("102210043");
+            //Add thêm bài kiểm tra để dễ test
             li.Add(new BaiKiemTra_DTO()
             {
                 MaBaiKiemTra = 1,
@@ -82,6 +83,8 @@ namespace GUI.MyUserControls
                 DataGridViewRow row = dtgv.Rows[e.RowIndex];
                 string tmp = row.Cells["ThoiGianLamBai_Show"].Value.ToString();
                 int minutes = Convert.ToInt32(tmp.Substring(0, tmp.IndexOf(" ")));
+                tmp = row.Cells["SoLuongCauHoi_Show"].Value.ToString();
+                int TongSoCau = Convert.ToInt32(tmp.Substring(0, tmp.IndexOf(" ")));
                 frmEnterPass = new frmEnterPassToDoExam
                 {
                     MaSV = this.MaSV,
@@ -92,6 +95,7 @@ namespace GUI.MyUserControls
                     MaBaiKiemTra = Convert.ToInt32(row.Cells["MaBaiKiemTra"].Value),
                     TenBaiKiemTra = row.Cells["TieuDeBaiKiemTra"].Value.ToString(),
                     MkBaiKiemTra = row.Cells["MkBaiKiemTra"].Value.ToString(),
+                    TongSoCauHoi = TongSoCau,
                     ThoiGianLamBai = minutes,
                     Location = new Point(700, 0),
                     StartPosition = FormStartPosition.Manual
@@ -140,6 +144,12 @@ namespace GUI.MyUserControls
 
         private void timerPopupForm_Tick(object sender, EventArgs e)
         {
+            if(frmEnterPass.Location.Y>= this.Location.Y + 100)
+            {
+                timerPopupForm.Stop();
+                return;
+            }
+
             while (frmEnterPass.Location.Y < this.Location.Y + 100)
             {
                 frmEnterPass.Location = new Point(frmEnterPass.Location.X, frmEnterPass.Location.Y + 1);

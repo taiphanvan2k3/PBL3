@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using GUI.MyCustomControl;
+using GUI.MyUserControls;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,12 +20,11 @@ namespace GUI
         public int MaBaiKiemTra { get; set; }
         public string TenBaiKiemTra { set => panelTitle.Text = value; }
         public int ThoiGianLamBai { set => targetTime = TimeSpan.FromMinutes(value); }
-
+        public int TongSoCauHoi { get; set; }
         //Thời gian hoàn thành bài của sinh viên này
         private DateTime StartTime { get; set; }
         private DateTime SubmitTime { get; set; }
-        public int Time { get; set; }
-
+        private int SoLanViPham { get; set; } = 0;
         //Các thuộc tính để ngăn chặn việc chuyển tab, quay màn hình,...
         [DllImport("user32.dll")]
         static extern bool SetWindowDisplayAffinity(IntPtr hWnd, uint dwAffinity);
@@ -41,6 +41,7 @@ namespace GUI
         public frmQuiz()
         {
             InitializeComponent();
+            targetTime = TimeSpan.FromMinutes(50); // test thôi
             questions = new List<CauHoi_DTO>();
             SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
             selectedAnswers = new List<SelectedAnswer>();
@@ -82,13 +83,8 @@ namespace GUI
             LoadCauHoi();
             HienThiCauHoi(1);
             StartTime = DateTime.Now;
-            //if (targetTime.Hours == 0)
-            //    lbTime.Text = targetTime.ToString(@"mm\:ss\:ff");
-            //else
-            lbTime.Text = targetTime.ToString(@"hh\:mm\:ss\:ff");
             stopwatch.Start();
             timer1.Start();
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -98,6 +94,7 @@ namespace GUI
 
             if (remainingTime <= TimeSpan.Zero)
             {
+                stopwatch.Stop();
                 timer1.Stop();
                 lbTime.Text = "00:00:00";
                 CustomMessageBox.Show("Hết giờ");
@@ -276,7 +273,7 @@ namespace GUI
         {
             if (CurrentIndex > 1)
             {
-                //Trước khi di chuyển qua câu hỏi khác thì phải kiểm tra câu hiện tại có được chọn
+                // Trước khi di chuyển qua câu hỏi khác thì phải kiểm tra câu hiện tại có được chọn
                 //hay chưa để cập nhật lại trạng thái
                 CheckAnswered();
                 CurrentIndex--;
@@ -306,17 +303,32 @@ namespace GUI
         private void btnNopBai_Click(object sender, EventArgs e)
         {
             CheckAnswered();
+            // Tắt tính năng không cho phép chụp màn hình sau khi thi xong
+            SetWindowDisplayAffinity(this.Handle, WDA_NONE);
             timer1.Stop();
-            MessageBox.Show(SoCauDung() + "");
+            stopwatch.Stop();
             SubmitTime = DateTime.Now;
-            this.Close();
+            int SoCauDung = this.SoCauDung();
+            panelMain.Controls.Clear();
+            UC_FinishDoExam finish = new UC_FinishDoExam()
+            {
+                StartTime = this.StartTime,
+                EndTime = SubmitTime,
+                SoCauDung = SoCauDung,
+                TongSoCauHoi = this.TongSoCauHoi,
+                SoLanViPham = this.SoLanViPham,
+                DiemSo = 10.0 * SoCauDung / this.TongSoCauHoi,
+            };
+            finish.Dock = DockStyle.Fill;
+            panelMain.Height = this.Height;
+            panelMain.Controls.Add(finish);
         }
 
         private void panelTitle_SizeChanged(object sender, EventArgs e)
         {
             //Thay đổi lại vị trí của các label tên sinh viên, nhóm HP khi panelTitle thay đổi kích thước
             int distance = lblTenSV.Location.X - lblTitleHoTen.Location.X;
-            int NewPosX = panelTitle.Width * 13 / 20 ;
+            int NewPosX = panelTitle.Width * 13 / 20;
             lblTitleHoTen.Location = new System.Drawing.Point(NewPosX, lblTitleHoTen.Location.Y);
             lblTenSV.Location = new System.Drawing.Point(NewPosX + distance, lblTenSV.Location.Y);
 

@@ -67,8 +67,9 @@
             // 
             this.panelDanhSachDapAn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDanhSachDapAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelDanhSachDapAn.BackColor = System.Drawing.Color.Transparent;
             this.panelDanhSachDapAn.Location = new System.Drawing.Point(25, 116);
+            this.panelDanhSachDapAn.Margin = new System.Windows.Forms.Padding(0);
             this.panelDanhSachDapAn.Name = "panelDanhSachDapAn";
             this.panelDanhSachDapAn.Size = new System.Drawing.Size(609, 564);
             this.panelDanhSachDapAn.TabIndex = 2;
@@ -150,6 +151,7 @@
             this.textBoxCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCauHoi.ForeColor = System.Drawing.Color.White;
             this.textBoxCauHoi.Location = new System.Drawing.Point(118, 18);
+            this.textBoxCauHoi.MinimumSize = new System.Drawing.Size(470, 82);
             this.textBoxCauHoi.Multiline = true;
             this.textBoxCauHoi.Name = "textBoxCauHoi";
             this.textBoxCauHoi.Size = new System.Drawing.Size(470, 82);
@@ -279,6 +281,7 @@
             // frmTaoCauHoi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(153)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(897, 719);
             this.Controls.Add(this.btnExit);
@@ -291,7 +294,7 @@
             this.Controls.Add(this.panelDanhSachDapAn);
             this.Controls.Add(this.checkBoxSingleMulti);
             this.Name = "frmTaoCauHoi";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo câu hỏi";
             this.Load += new System.EventHandler(this.FormTaoCauHoi_Load);
             this.groupBoxSingleChoice.ResumeLayout(false);

@@ -203,7 +203,7 @@
             this.btnUploadFile.FlatAppearance.BorderSize = 0;
             this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.btnUploadFile.Image = global::GUI.Properties.Resources.file1;
+            this.btnUploadFile.Image = global::GUI.Properties.Resources.file;
             this.btnUploadFile.Location = new System.Drawing.Point(192, 17);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(77, 82);

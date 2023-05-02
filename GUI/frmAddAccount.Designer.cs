@@ -39,15 +39,21 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lbYearOrLevel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.txtName = new GUI.MyCustomControl.CustomTextBox();
+            this.txtSurname = new GUI.MyCustomControl.CustomTextBox();
             this.cmbYearOrLevel = new GUI.MyCustomControl.CustomComboBox();
             this.txtCCCD = new GUI.MyCustomControl.CustomTextBox();
-            this.cmbList = new GUI.MyCustomControl.CustomComboBox();
-            this.rbWomen = new GUI.MyCustomControl.CustomRadioButton();
-            this.rbMen = new GUI.MyCustomControl.CustomRadioButton();
             this.dtpBirthday = new GUI.MyCustomControl.CustomDatetimePicker();
-            this.txtSurname = new GUI.MyCustomControl.CustomTextBox();
+            this.cmbList = new GUI.MyCustomControl.CustomComboBox();
+            this.rbMen = new GUI.MyCustomControl.CustomRadioButton();
+            this.rbWomen = new GUI.MyCustomControl.CustomRadioButton();
+            this.panelEdit = new System.Windows.Forms.Panel();
+            this.txtIDAcc = new GUI.MyCustomControl.CustomTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
+            this.panelContainer.SuspendLayout();
+            this.panelEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -75,7 +81,7 @@
             this.Hủy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Hủy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hủy.ForeColor = System.Drawing.Color.LightGray;
-            this.Hủy.Location = new System.Drawing.Point(43, 694);
+            this.Hủy.Location = new System.Drawing.Point(43, 744);
             this.Hủy.Margin = new System.Windows.Forms.Padding(4);
             this.Hủy.Name = "Hủy";
             this.Hủy.Size = new System.Drawing.Size(200, 49);
@@ -91,7 +97,7 @@
             this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnADD.ForeColor = System.Drawing.Color.LightGray;
-            this.btnADD.Location = new System.Drawing.Point(251, 694);
+            this.btnADD.Location = new System.Drawing.Point(251, 744);
             this.btnADD.Margin = new System.Windows.Forms.Padding(4);
             this.btnADD.Name = "btnADD";
             this.btnADD.Size = new System.Drawing.Size(200, 49);
@@ -106,7 +112,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(51, 33);
+            this.label3.Location = new System.Drawing.Point(34, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 25);
             this.label3.TabIndex = 19;
@@ -118,7 +124,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(51, 126);
+            this.label1.Location = new System.Drawing.Point(34, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 25);
             this.label1.TabIndex = 20;
@@ -130,7 +136,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(51, 220);
+            this.label2.Location = new System.Drawing.Point(34, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 22;
@@ -142,7 +148,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(51, 315);
+            this.label4.Location = new System.Drawing.Point(34, 295);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 25);
             this.label4.TabIndex = 25;
@@ -154,7 +160,7 @@
             this.lbFacultyOrProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.lbFacultyOrProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFacultyOrProgram.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbFacultyOrProgram.Location = new System.Drawing.Point(51, 407);
+            this.lbFacultyOrProgram.Location = new System.Drawing.Point(34, 387);
             this.lbFacultyOrProgram.Name = "lbFacultyOrProgram";
             this.lbFacultyOrProgram.Size = new System.Drawing.Size(295, 25);
             this.lbFacultyOrProgram.TabIndex = 27;
@@ -176,7 +182,7 @@
             this.lbYearOrLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.lbYearOrLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbYearOrLevel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbYearOrLevel.Location = new System.Drawing.Point(51, 519);
+            this.lbYearOrLevel.Location = new System.Drawing.Point(34, 499);
             this.lbYearOrLevel.Name = "lbYearOrLevel";
             this.lbYearOrLevel.Size = new System.Drawing.Size(151, 25);
             this.lbYearOrLevel.TabIndex = 31;
@@ -188,11 +194,33 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Location = new System.Drawing.Point(255, 33);
+            this.label5.Location = new System.Drawing.Point(238, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 25);
             this.label5.TabIndex = 33;
             this.label5.Text = "Tên";
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.txtName);
+            this.panelContainer.Controls.Add(this.txtSurname);
+            this.panelContainer.Controls.Add(this.label5);
+            this.panelContainer.Controls.Add(this.label3);
+            this.panelContainer.Controls.Add(this.cmbYearOrLevel);
+            this.panelContainer.Controls.Add(this.label1);
+            this.panelContainer.Controls.Add(this.lbYearOrLevel);
+            this.panelContainer.Controls.Add(this.label2);
+            this.panelContainer.Controls.Add(this.txtCCCD);
+            this.panelContainer.Controls.Add(this.dtpBirthday);
+            this.panelContainer.Controls.Add(this.cmbList);
+            this.panelContainer.Controls.Add(this.rbMen);
+            this.panelContainer.Controls.Add(this.lbFacultyOrProgram);
+            this.panelContainer.Controls.Add(this.label4);
+            this.panelContainer.Controls.Add(this.rbWomen);
+            this.panelContainer.Location = new System.Drawing.Point(10, 110);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(480, 600);
+            this.panelContainer.TabIndex = 35;
             // 
             // txtName
             // 
@@ -203,7 +231,7 @@
             this.txtName.BorderSize = 1;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Lavender;
-            this.txtName.Location = new System.Drawing.Point(260, 69);
+            this.txtName.Location = new System.Drawing.Point(254, 49);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.MaxLength = 32767;
             this.txtName.Multiline = false;
@@ -218,6 +246,30 @@
             this.txtName.UnderlinedStyle = false;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
             // 
+            // txtSurname
+            // 
+            this.txtSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtSurname.BorderColor = System.Drawing.Color.Lavender;
+            this.txtSurname.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSurname.BorderRadius = 5;
+            this.txtSurname.BorderSize = 1;
+            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurname.ForeColor = System.Drawing.Color.Lavender;
+            this.txtSurname.Location = new System.Drawing.Point(33, 49);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSurname.MaxLength = 32767;
+            this.txtSurname.Multiline = false;
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSurname.PasswordChar = false;
+            this.txtSurname.PlaceholderColor = System.Drawing.Color.Lavender;
+            this.txtSurname.PlaceholderText = "Họ";
+            this.txtSurname.Size = new System.Drawing.Size(180, 40);
+            this.txtSurname.TabIndex = 17;
+            this.txtSurname.Texts = "";
+            this.txtSurname.UnderlinedStyle = false;
+            this.txtSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
+            // 
             // cmbYearOrLevel
             // 
             this.cmbYearOrLevel.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -230,7 +282,7 @@
             this.cmbYearOrLevel.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.cmbYearOrLevel.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cmbYearOrLevel.ListTextColor = System.Drawing.Color.DimGray;
-            this.cmbYearOrLevel.Location = new System.Drawing.Point(50, 566);
+            this.cmbYearOrLevel.Location = new System.Drawing.Point(33, 546);
             this.cmbYearOrLevel.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbYearOrLevel.Name = "cmbYearOrLevel";
             this.cmbYearOrLevel.Padding = new System.Windows.Forms.Padding(1);
@@ -247,7 +299,7 @@
             this.txtCCCD.BorderSize = 1;
             this.txtCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCCCD.ForeColor = System.Drawing.Color.Lavender;
-            this.txtCCCD.Location = new System.Drawing.Point(50, 165);
+            this.txtCCCD.Location = new System.Drawing.Point(33, 145);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(4);
             this.txtCCCD.MaxLength = 12;
             this.txtCCCD.Multiline = false;
@@ -262,6 +314,21 @@
             this.txtCCCD.UnderlinedStyle = false;
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
+            // dtpBirthday
+            // 
+            this.dtpBirthday.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dtpBirthday.BorderSize = 0;
+            this.dtpBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthday.Location = new System.Drawing.Point(33, 238);
+            this.dtpBirthday.MaxDate = new System.DateTime(2074, 12, 31, 0, 0, 0, 0);
+            this.dtpBirthday.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthday.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(400, 35);
+            this.dtpBirthday.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.dtpBirthday.TabIndex = 23;
+            this.dtpBirthday.TextColor = System.Drawing.Color.Lavender;
+            // 
             // cmbList
             // 
             this.cmbList.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -274,7 +341,7 @@
             this.cmbList.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.cmbList.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cmbList.ListTextColor = System.Drawing.Color.DimGray;
-            this.cmbList.Location = new System.Drawing.Point(50, 449);
+            this.cmbList.Location = new System.Drawing.Point(33, 429);
             this.cmbList.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbList.Name = "cmbList";
             this.cmbList.Padding = new System.Windows.Forms.Padding(1);
@@ -283,30 +350,13 @@
             this.cmbList.Texts = "";
             this.cmbList.OnSelectedIndexChanged += new System.EventHandler(this.cmbList_OnSelectedIndexChanged);
             // 
-            // rbWomen
-            // 
-            this.rbWomen.AutoSize = true;
-            this.rbWomen.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rbWomen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbWomen.ForeColor = System.Drawing.Color.Silver;
-            this.rbWomen.Location = new System.Drawing.Point(161, 357);
-            this.rbWomen.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbWomen.Name = "rbWomen";
-            this.rbWomen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbWomen.Size = new System.Drawing.Size(61, 24);
-            this.rbWomen.TabIndex = 26;
-            this.rbWomen.TabStop = true;
-            this.rbWomen.Text = "Nữ";
-            this.rbWomen.UnCheckedColor = System.Drawing.Color.Lavender;
-            this.rbWomen.UseVisualStyleBackColor = true;
-            // 
             // rbMen
             // 
             this.rbMen.AutoSize = true;
             this.rbMen.CheckedColor = System.Drawing.Color.MediumSlateBlue;
             this.rbMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbMen.ForeColor = System.Drawing.Color.Silver;
-            this.rbMen.Location = new System.Drawing.Point(56, 357);
+            this.rbMen.Location = new System.Drawing.Point(39, 337);
             this.rbMen.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbMen.Name = "rbMen";
             this.rbMen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -317,66 +367,76 @@
             this.rbMen.UnCheckedColor = System.Drawing.Color.Lavender;
             this.rbMen.UseVisualStyleBackColor = true;
             // 
-            // dtpBirthday
+            // rbWomen
             // 
-            this.dtpBirthday.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.dtpBirthday.BorderSize = 0;
-            this.dtpBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBirthday.Location = new System.Drawing.Point(50, 258);
-            this.dtpBirthday.MaxDate = new System.DateTime(2074, 12, 31, 0, 0, 0, 0);
-            this.dtpBirthday.MinDate = new System.DateTime(1983, 1, 1, 0, 0, 0, 0);
-            this.dtpBirthday.MinimumSize = new System.Drawing.Size(4, 35);
-            this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Size = new System.Drawing.Size(400, 35);
-            this.dtpBirthday.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.dtpBirthday.TabIndex = 23;
-            this.dtpBirthday.TextColor = System.Drawing.Color.Lavender;
+            this.rbWomen.AutoSize = true;
+            this.rbWomen.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbWomen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbWomen.ForeColor = System.Drawing.Color.Silver;
+            this.rbWomen.Location = new System.Drawing.Point(144, 337);
+            this.rbWomen.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbWomen.Name = "rbWomen";
+            this.rbWomen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbWomen.Size = new System.Drawing.Size(61, 24);
+            this.rbWomen.TabIndex = 26;
+            this.rbWomen.TabStop = true;
+            this.rbWomen.Text = "Nữ";
+            this.rbWomen.UnCheckedColor = System.Drawing.Color.Lavender;
+            this.rbWomen.UseVisualStyleBackColor = true;
             // 
-            // txtSurname
+            // panelEdit
             // 
-            this.txtSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.txtSurname.BorderColor = System.Drawing.Color.Lavender;
-            this.txtSurname.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtSurname.BorderRadius = 5;
-            this.txtSurname.BorderSize = 1;
-            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.ForeColor = System.Drawing.Color.Lavender;
-            this.txtSurname.Location = new System.Drawing.Point(50, 69);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSurname.MaxLength = 32767;
-            this.txtSurname.Multiline = false;
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSurname.PasswordChar = false;
-            this.txtSurname.PlaceholderColor = System.Drawing.Color.Lavender;
-            this.txtSurname.PlaceholderText = "Họ";
-            this.txtSurname.Size = new System.Drawing.Size(180, 40);
-            this.txtSurname.TabIndex = 17;
-            this.txtSurname.Texts = "";
-            this.txtSurname.UnderlinedStyle = false;
-            this.txtSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
+            this.panelEdit.Controls.Add(this.txtIDAcc);
+            this.panelEdit.Controls.Add(this.label6);
+            this.panelEdit.Location = new System.Drawing.Point(10, 35);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.Size = new System.Drawing.Size(480, 74);
+            this.panelEdit.TabIndex = 36;
+            this.panelEdit.Visible = false;
+            // 
+            // txtIDAcc
+            // 
+            this.txtIDAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtIDAcc.BorderColor = System.Drawing.Color.Lavender;
+            this.txtIDAcc.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtIDAcc.BorderRadius = 5;
+            this.txtIDAcc.BorderSize = 1;
+            this.txtIDAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDAcc.ForeColor = System.Drawing.Color.Lavender;
+            this.txtIDAcc.Location = new System.Drawing.Point(33, 29);
+            this.txtIDAcc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIDAcc.MaxLength = 12;
+            this.txtIDAcc.Multiline = false;
+            this.txtIDAcc.Name = "txtIDAcc";
+            this.txtIDAcc.Padding = new System.Windows.Forms.Padding(7);
+            this.txtIDAcc.PasswordChar = false;
+            this.txtIDAcc.PlaceholderColor = System.Drawing.Color.Lavender;
+            this.txtIDAcc.PlaceholderText = "ID";
+            this.txtIDAcc.Size = new System.Drawing.Size(400, 40);
+            this.txtIDAcc.TabIndex = 30;
+            this.txtIDAcc.Texts = "";
+            this.txtIDAcc.UnderlinedStyle = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Location = new System.Drawing.Point(34, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 25);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "ID";
             // 
             // frmAddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(500, 750);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbYearOrLevel);
-            this.Controls.Add(this.lbYearOrLevel);
-            this.Controls.Add(this.txtCCCD);
-            this.Controls.Add(this.cmbList);
-            this.Controls.Add(this.lbFacultyOrProgram);
-            this.Controls.Add(this.rbWomen);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.rbMen);
-            this.Controls.Add(this.dtpBirthday);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtSurname);
+            this.ClientSize = new System.Drawing.Size(500, 800);
+            this.Controls.Add(this.panelEdit);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.Hủy);
             this.Controls.Add(this.btnADD);
             this.Controls.Add(this.panelTitleBar);
@@ -386,8 +446,11 @@
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.frmAddAccStudent_Load);
             this.panelTitleBar.ResumeLayout(false);
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
+            this.panelEdit.ResumeLayout(false);
+            this.panelEdit.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -411,5 +474,9 @@
         private MyCustomControl.CustomComboBox cmbYearOrLevel;
         private System.Windows.Forms.Label label5;
         private MyCustomControl.CustomTextBox txtName;
+        private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Panel panelEdit;
+        private System.Windows.Forms.Label label6;
+        private MyCustomControl.CustomTextBox txtIDAcc;
     }
 }
