@@ -83,6 +83,7 @@
     <Compile Include="SinhVienLSH_View.cs" />
     <Compile Include="SinhVien_DTO.cs" />
     <Compile Include="ThoiKhoaBieu_DTO.cs" />
+    <Compile Include="ThongBao_DTO.cs" />
     <Compile Include="THONG_TIN_DANG_NHAP_DTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -46,7 +46,7 @@
             this.cbbLHP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLHP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbLHP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbLHP.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.cbbLHP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLHP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbLHP.ItemHeight = 30;
             this.cbbLHP.Items.AddRange(new object[] {
@@ -90,13 +90,13 @@
             this.tbTieuDe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTieuDe.ForeColor = System.Drawing.Color.Silver;
             this.tbTieuDe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTieuDe.Location = new System.Drawing.Point(306, 110);
-            this.tbTieuDe.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbTieuDe.Location = new System.Drawing.Point(306, 108);
+            this.tbTieuDe.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbTieuDe.Name = "tbTieuDe";
             this.tbTieuDe.PasswordChar = '\0';
             this.tbTieuDe.PlaceholderText = "";
             this.tbTieuDe.SelectedText = "";
-            this.tbTieuDe.Size = new System.Drawing.Size(623, 38);
+            this.tbTieuDe.Size = new System.Drawing.Size(623, 46);
             this.tbTieuDe.TabIndex = 3;
             this.tbTieuDe.Enter += new System.EventHandler(this.tbTieuDe_Enter);
             this.tbTieuDe.Leave += new System.EventHandler(this.tbTieuDe_Leave);
@@ -168,8 +168,7 @@
             // 
             // UC_SendNoticeToModuleClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tbNoiDung);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnGui);

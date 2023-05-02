@@ -57,7 +57,7 @@ namespace GUI.MyUserControls
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             DateTime date = dateTimePicker.Value;
-            lblShowDateTime.Text = GetDayOfWeek(date) + " -" + dateTimePicker.Value.ToShortDateString();
+            lblShowDateTime.Text = GetDayOfWeek(date) + " - " + dateTimePicker.Value.ToShortDateString();
         }
 
         private void LoadData()

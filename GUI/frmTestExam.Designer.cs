@@ -28,30 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uC_FinishDoExam1 = new GUI.MyUserControls.UC_FinishDoExam();
+            this.uC_DailyWorkSchedule1 = new GUI.MyUserControls.UC_DailyWorkSchedule();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // uC_FinishDoExam1
+            // uC_DailyWorkSchedule1
             // 
-            this.uC_FinishDoExam1.BackColor = System.Drawing.SystemColors.Window;
-            this.uC_FinishDoExam1.DiemSo = 0D;
-            this.uC_FinishDoExam1.EndTime = new System.DateTime(((long)(0)));
-            this.uC_FinishDoExam1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.uC_FinishDoExam1.Location = new System.Drawing.Point(12, 12);
-            this.uC_FinishDoExam1.Name = "uC_FinishDoExam1";
-            this.uC_FinishDoExam1.Size = new System.Drawing.Size(1387, 435);
-            this.uC_FinishDoExam1.SoCauDung = 0;
-            this.uC_FinishDoExam1.SoLanViPham = 0;
-            this.uC_FinishDoExam1.StartTime = new System.DateTime(((long)(0)));
-            this.uC_FinishDoExam1.TabIndex = 0;
-            this.uC_FinishDoExam1.TongSoCauHoi = 0;
+            this.uC_DailyWorkSchedule1.BackColor = System.Drawing.Color.White;
+            this.uC_DailyWorkSchedule1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_DailyWorkSchedule1.Location = new System.Drawing.Point(0, 0);
+            this.uC_DailyWorkSchedule1.MaGV = "102BK0001";
+            this.uC_DailyWorkSchedule1.Name = "uC_DailyWorkSchedule1";
+            this.uC_DailyWorkSchedule1.Size = new System.Drawing.Size(1198, 555);
+            this.uC_DailyWorkSchedule1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(883, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // frmTestExam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1419, 459);
-            this.Controls.Add(this.uC_FinishDoExam1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1198, 555);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uC_DailyWorkSchedule1);
             this.Name = "frmTestExam";
             this.Text = "frmTestExam";
             this.Load += new System.EventHandler(this.frmTestExam_Load);
@@ -61,6 +67,7 @@
 
         #endregion
 
-        private MyUserControls.UC_FinishDoExam uC_FinishDoExam1;
+        private MyUserControls.UC_DailyWorkSchedule uC_DailyWorkSchedule1;
+        private System.Windows.Forms.Button button1;
     }
 }

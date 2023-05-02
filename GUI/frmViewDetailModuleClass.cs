@@ -24,6 +24,7 @@ namespace GUI
         public frmViewDetailModuleClass()
         {
             InitializeComponent();
+            this.MaHP = "LTNet21.13";
             new MoveFormHelper(this, panelTitle, labelTitle);
         }
 

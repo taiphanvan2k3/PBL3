@@ -99,12 +99,12 @@ namespace DAL
         public string GetMaKhoaByMaLHP(string maLHP)
         {
             return db.LOP_HOC_PHAN
-                   .Join(db.MON_HOC, lhp => lhp.MaMH, mh => mh.MaMH, (lhp,mh) => new
+                   .Join(db.MON_HOC, lhp => lhp.MaMH, mh => mh.MaMH, (lhp, mh) => new
                    {
                        lhp.MaLopHP,
                        mh.MaMH,
                        mh.MaKhoa
-                   }).Where(p=>p.MaLopHP == maLHP).Select(p=>p.MaKhoa).FirstOrDefault();
+                   }).Where(p => p.MaLopHP == maLHP).Select(p => p.MaKhoa).FirstOrDefault();
         }
         public void SendNoticeToLHP(string MaGV, string MaLHP, string TieuDe, string NoiDung, DateTime NgayTao)
         {
@@ -132,7 +132,7 @@ namespace DAL
         public bool CheckNoticeRedundanṭ̣̣̣(string MaGV, DateTime NgayTao, string MaLHP)
         {
             var query = db.THONG_BAO
-                .Join(db.THONGBAO_LOPHOCPHAN, tb => tb.MaTB, tblhp => tblhp.MaTB , (tb,tblhp) => new
+                .Join(db.THONGBAO_LOPHOCPHAN, tb => tb.MaTB, tblhp => tblhp.MaTB, (tb, tblhp) => new
                 {
                     tb.MaTB,
                     tblhp.MaLopHP,
@@ -178,7 +178,7 @@ namespace DAL
                             }).Select(p => p.MaMH).FirstOrDefault();
             return db.CAU_HOI.Where(p => p.MaMH == MaMH).Count();
         }
-        public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra, 
+        public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
                                byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
         {
             BAI_KIEM_TRA NewBKT = new BAI_KIEM_TRA
@@ -200,11 +200,11 @@ namespace DAL
             int SoLuongCauHoi = GetNumberQuestionForMonHoc(MaLHP);
             List<CAU_HOI> li = new List<CAU_HOI>();
             //Nếu số câu hỏi có trong CSDL phù hợp nhiều hơn 2 lần số câu hỏi cần làm thì sẽ lấy ở mức gấp đôi số câu hỏi cần làm để random 
-            if(SoLuongCauHoi > SoCauHoi*2)
+            if (SoLuongCauHoi > SoCauHoi * 2)
                 SoLuongCauHoi = SoCauHoi * 2;
             //x => Guid.NewGuid() là phương thức lấy ngẫu nhiên record trong database theo method syntax in LinQ to entities 
             li = db.CAU_HOI.OrderBy(x => Guid.NewGuid()).Take(SoLuongCauHoi).ToList();
-            foreach(var i in li)
+            foreach (var i in li)
             {
                 BAIKIEMTRA_CAUHOI NewBKT_CH = new BAIKIEMTRA_CAUHOI
                 {
@@ -221,7 +221,7 @@ namespace DAL
             DateTime TimeLamBai = TimeExam.AddMinutes((double)ThoiGianLamBai);
             var query = db.BAI_KIEM_TRA.Where(bkt => bkt.MaLopHP.Contains(MaLHPForAll)
                                         && bkt.NgayKiemTra > TimeExam
-                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra,bkt.ThoiGianLamBai) < TimeLamBai).ToList();
+                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeLamBai).ToList();
             return query.Count > 0;
         }
 
@@ -253,27 +253,27 @@ namespace DAL
                                 {
                                     lhp.MaMH,
                                     mh.TenMH
-                                }).Select(mh => new CBBItem { Id = mh.MaMH, Value = mh.TenMH}).Distinct().ToList();
+                                }).Select(mh => new CBBItem { Id = mh.MaMH, Value = mh.TenMH }).Distinct().ToList();
         }
         #region Ver2
         public List<AssignTeacher> GetGVPhuHopTKB(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {
             string MaKhoa = GetMaKhoaByMaLHP(MaLHP);
-             List<string> li1 = db.GIANG_VIEN.Where(gv => gv.MaKhoa == MaKhoa).Select(p => p.MaGV).ToList();
+            List<string> li1 = db.GIANG_VIEN.Where(gv => gv.MaKhoa == MaKhoa).Select(p => p.MaGV).ToList();
 
-             List<string>li2=db.GIANG_VIEN.Where(gv=>gv.MaKhoa==MaKhoa)
-                .Join(db.LOP_HOC_PHAN, gv => gv.MaGV, lhp => lhp.MaGV, (gv, lhp) => new
-                {
-                    gv.MaGV,
-                    lhp.MaLopHP
-                })
-                .Join(db.THOI_KHOA_BIEU,gv=>gv.MaLopHP,tkb=>tkb.MaLopHP,(gv,tkb)=> new
-                {
-                    gv.MaGV,
-                    tkb.Thu,
-                    tkb.TietBD,
-                    tkb.TietKetThuc
-                }).Where(p=>p.Thu==Thu && !(p.TietBD>TietKT || p.TietKetThuc<TietBD)).Select(p=>p.MaGV).ToList();
+            List<string> li2 = db.GIANG_VIEN.Where(gv => gv.MaKhoa == MaKhoa)
+               .Join(db.LOP_HOC_PHAN, gv => gv.MaGV, lhp => lhp.MaGV, (gv, lhp) => new
+               {
+                   gv.MaGV,
+                   lhp.MaLopHP
+               })
+               .Join(db.THOI_KHOA_BIEU, gv => gv.MaLopHP, tkb => tkb.MaLopHP, (gv, tkb) => new
+               {
+                   gv.MaGV,
+                   tkb.Thu,
+                   tkb.TietBD,
+                   tkb.TietKetThuc
+               }).Where(p => p.Thu == Thu && !(p.TietBD > TietKT || p.TietKetThuc < TietBD)).Select(p => p.MaGV).ToList();
             List<string> li = li1.Except(li2).ToList();
             return db.GIANG_VIEN
                 .Join(db.NGUOI_DUNG, gv => gv.MaGV, nd => nd.MaNguoiDung, (gv, nd) => new
@@ -296,6 +296,42 @@ namespace DAL
                     SDT = grp.Key.Sdt,
                     SoLuongHPPhuTrach = grp.Count(x => x.LopHocPhan != null)
                 }).ToList();
+        }
+        #endregion
+
+        #region 2/5/2023 Tài làm xem lịch dạy giảng viên. 
+        public List<LopHocPhan_DTO> GetWorkScheduleInWeek(string MaGV, int NamHoc, bool IsKiChan)
+        {
+            //Với việc xem lịch dạy giảng viên thì xem dựa vào năm học hiện tại + kì chẵn/lẻ
+            return db.LOP_HOC_PHAN.Where(hp => hp.MaGV == MaGV)
+                .Join(db.THOI_KHOA_BIEU, hp => hp.MaLopHP, tkb => tkb.MaLopHP, (hp, tkb) => new LopHocPhan_DTO
+                {
+                    MaHP = hp.MaLopHP,
+                    TenHP = hp.MON_HOC.TenMH,
+                    KiHoc = hp.KiHoc,
+                    NamHoc = hp.NamHoc,
+                    tkb = new ThoiKhoaBieu_DTO()
+                    {
+                        Phong = tkb.MaPhongHoc,
+                        Thu = tkb.Thu,
+                        TietBD = tkb.TietBD,
+                        TietKT = tkb.TietKetThuc
+                    }
+                }).Where(p => p.NamHoc == NamHoc && (IsKiChan ? p.KiHoc % 2 == 0 : p.KiHoc % 2 == 1)).ToList();
+        }
+
+        public List<KeyValuePair<int, int>> GetAllKiHocNamHocGVDay(string MaGV)
+        {
+            var li = db.LOP_HOC_PHAN.Where(hp => hp.MaGV == MaGV)
+                .Select(p => new
+                {
+                    p.NamHoc,
+                    KiHoc = p.KiHoc % 2 == 0 ? 2 : 1
+                }).OrderBy(p => p.NamHoc).ThenBy(p => p.KiHoc).Distinct();
+            List<KeyValuePair<int, int>> res = new List<KeyValuePair<int, int>>();
+            foreach (var item in li)
+                res.Add(new KeyValuePair<int, int>(item.KiHoc, item.NamHoc));
+            return res;
         }
         #endregion
     }
