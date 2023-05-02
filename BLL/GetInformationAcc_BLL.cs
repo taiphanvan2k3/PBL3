@@ -241,6 +241,20 @@ namespace BLL
         {
             return GetInformationAcc_DAL.Instance.CountKHOA();
         }
+        public List<KeyValuePair<string, int>> StuentByYearList()
+        {
+            return GetInformationAcc_DAL.Instance.StuentByYearList();
+        }
+        public List<KeyValuePair<string, int>> StudentCountByFaculty()
+        {
+            return GetInformationAcc_DAL.Instance.StudentCountByFaculty();
+
+        }
+        public List<KeyValuePair<string, int>> LevelOfTeacherList()
+        {
+            return GetInformationAcc_DAL.Instance.LevelOfTeacherList();
+
+        }
 
     }
 }

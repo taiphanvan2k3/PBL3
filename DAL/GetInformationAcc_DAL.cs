@@ -443,6 +443,51 @@ namespace DAL
 
 
 
+        // Lấy ra số học sinh theo năm 
+        public List<KeyValuePair<string, int>> StuentByYearList()
+        {
+            using (var context = new PBL3Entities())
+            {
+                var studentCounts = context.SINH_VIEN
+                    .GroupBy(sv => sv.MaSV.Substring(3, 2))
+                    .Select(g => new { Khoa = g.Key, SoSinhVien = g.Count() })
+                    .ToDictionary(x => x.Khoa, x => x.SoSinhVien)
+                    .Select(x => new KeyValuePair<string, int>("20" + x.Key, x.Value))
+                    .ToList();
+
+                return studentCounts;
+            }
+        }
+
+        public List<KeyValuePair<string, int>> StudentCountByFaculty()
+        {
+            using (var context = new PBL3Entities())
+            {
+                var sinhvienCounts = context.SINH_VIEN
+                    .Join(context.KHOAs, sv => sv.MaSV.Substring(0, 3), kh => kh.MaKhoa, (sv, kh) => new { SV = sv, KH = kh })
+                    .GroupBy(x => x.KH.TenKhoa)
+                    .Select(g => new { TenKhoa = g.Key, SoSinhVien = g.Count() })
+                    .ToDictionary(x => x.TenKhoa, x => x.SoSinhVien)
+                    .Select(x => new KeyValuePair<string, int>(x.Key, x.Value))
+                    .ToList();
+
+                return sinhvienCounts;
+            }
+        }
+
+        public List<KeyValuePair<string, int>> LevelOfTeacherList()
+        {
+            using (var context = new PBL3Entities())
+            {
+                var studentCounts = context.GIANG_VIEN
+                    .GroupBy(gv => gv.TrinhDo)
+                    .Select(g => new { TrinhDo = g.Key, SoSinhVien = g.Count() })
+                    .ToDictionary(x => x.TrinhDo, x => x.SoSinhVien)
+                    .Select(x => new KeyValuePair<string, int>(x.Key, x.Value))
+                    .ToList();
+                return studentCounts;
+            }
+        }
 
     }
 }
