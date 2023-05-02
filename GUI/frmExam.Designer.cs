@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1713, 797);
+            this.panel1.Size = new System.Drawing.Size(1763, 884);
             this.panel1.TabIndex = 1;
             // 
             // panelTitle
@@ -80,7 +80,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(250, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(1463, 69);
+            this.panelTitle.Size = new System.Drawing.Size(1513, 69);
             this.panelTitle.TabIndex = 3;
             // 
             // avatarTopRight
@@ -93,7 +93,7 @@
             this.avatarTopRight.BorderSize = 2;
             this.avatarTopRight.GradientAngle = 50F;
             this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1383, 6);
+            this.avatarTopRight.Location = new System.Drawing.Point(1433, 6);
             this.avatarTopRight.Name = "avatarTopRight";
             this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
             this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +107,7 @@
             this.lblAvatar.AutoSize = true;
             this.lblAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
             this.lblAvatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvatar.Location = new System.Drawing.Point(1225, 38);
+            this.lblAvatar.Location = new System.Drawing.Point(1275, 38);
             this.lblAvatar.Name = "lblAvatar";
             this.lblAvatar.Size = new System.Drawing.Size(109, 20);
             this.lblAvatar.TabIndex = 2;
@@ -120,7 +120,7 @@
             this.lblXinChao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
             this.lblXinChao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXinChao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblXinChao.Location = new System.Drawing.Point(1228, 17);
+            this.lblXinChao.Location = new System.Drawing.Point(1278, 17);
             this.lblXinChao.Name = "lblXinChao";
             this.lblXinChao.Size = new System.Drawing.Size(66, 18);
             this.lblXinChao.TabIndex = 1;
@@ -135,7 +135,7 @@
             this.pnlMain.Controls.Add(this.panelDangXuat);
             this.pnlMain.Location = new System.Drawing.Point(251, 69);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1460, 728);
+            this.pnlMain.Size = new System.Drawing.Size(1510, 815);
             this.pnlMain.TabIndex = 2;
             // 
             // panelDangXuat
@@ -144,7 +144,7 @@
             this.panelDangXuat.BackColor = System.Drawing.Color.OldLace;
             this.panelDangXuat.Controls.Add(this.btnBackFrmStudent);
             this.panelDangXuat.Controls.Add(this.btnDangXuat);
-            this.panelDangXuat.Location = new System.Drawing.Point(1228, 2);
+            this.panelDangXuat.Location = new System.Drawing.Point(1278, 2);
             this.panelDangXuat.Name = "panelDangXuat";
             this.panelDangXuat.Size = new System.Drawing.Size(228, 108);
             this.panelDangXuat.TabIndex = 0;
@@ -194,7 +194,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 797);
+            this.panelMenu.Size = new System.Drawing.Size(250, 884);
             this.panelMenu.TabIndex = 1;
             // 
             // btnDarkMode
@@ -257,7 +257,7 @@
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogOut.IconSize = 30;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 703);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 790);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLogOut.Size = new System.Drawing.Size(250, 94);
@@ -361,8 +361,9 @@
             // 
             // frmExam
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1713, 797);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1763, 884);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(1300, 712);
             this.Name = "frmExam";

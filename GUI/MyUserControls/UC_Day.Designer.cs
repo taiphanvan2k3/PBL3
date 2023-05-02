@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pblEvent = new System.Windows.Forms.Panel();
+            this.pnlEvent = new System.Windows.Forms.Panel();
             this.lbIfMore = new System.Windows.Forms.Label();
             this.lbExam = new System.Windows.Forms.Label();
             this.btnDay = new GUI.MyCustomControl.CustomButton();
-            this.pblEvent.SuspendLayout();
+            this.pnlEvent.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pblEvent
+            // pnlEvent
             // 
-            this.pblEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pblEvent.BackColor = System.Drawing.Color.Transparent;
-            this.pblEvent.Controls.Add(this.lbIfMore);
-            this.pblEvent.Controls.Add(this.lbExam);
-            this.pblEvent.Location = new System.Drawing.Point(0, 41);
-            this.pblEvent.Name = "pblEvent";
-            this.pblEvent.Size = new System.Drawing.Size(162, 63);
-            this.pblEvent.TabIndex = 1;
-            this.pblEvent.Click += new System.EventHandler(this.pblEvent_Click);
+            this.pnlEvent.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEvent.Controls.Add(this.lbIfMore);
+            this.pnlEvent.Controls.Add(this.lbExam);
+            this.pnlEvent.Location = new System.Drawing.Point(0, 41);
+            this.pnlEvent.Name = "pnlEvent";
+            this.pnlEvent.Size = new System.Drawing.Size(162, 63);
+            this.pnlEvent.TabIndex = 1;
+            this.pnlEvent.Click += new System.EventHandler(this.pblEvent_Click);
             // 
             // lbIfMore
             // 
@@ -92,18 +92,18 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.btnDay);
-            this.Controls.Add(this.pblEvent);
+            this.Controls.Add(this.pnlEvent);
             this.Name = "UC_Day";
             this.Size = new System.Drawing.Size(162, 112);
             this.Click += new System.EventHandler(this.pblEvent_Click);
-            this.pblEvent.ResumeLayout(false);
-            this.pblEvent.PerformLayout();
+            this.pnlEvent.ResumeLayout(false);
+            this.pnlEvent.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pblEvent;
+        private System.Windows.Forms.Panel pnlEvent;
         private System.Windows.Forms.Label lbIfMore;
         private System.Windows.Forms.Label lbExam;
         private MyCustomControl.CustomButton btnDay;

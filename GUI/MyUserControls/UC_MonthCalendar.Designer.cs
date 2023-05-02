@@ -42,6 +42,7 @@
             this.customButton3 = new GUI.MyCustomControl.CustomButton();
             this.customButton2 = new GUI.MyCustomControl.CustomButton();
             this.customButton1 = new GUI.MyCustomControl.CustomButton();
+            this.customButton4 = new GUI.MyCustomControl.CustomButton();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -189,11 +190,11 @@
             this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customButton3.ForeColor = System.Drawing.Color.Black;
-            this.customButton3.Location = new System.Drawing.Point(211, 387);
+            this.customButton3.Location = new System.Drawing.Point(227, 387);
             this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(86, 36);
+            this.customButton3.Size = new System.Drawing.Size(72, 36);
             this.customButton3.TabIndex = 30;
-            this.customButton3.Text = "End-Term";
+            this.customButton3.Text = "Cuối kỳ";
             this.customButton3.TextColor = System.Drawing.Color.Black;
             this.customButton3.UseVisualStyleBackColor = false;
             // 
@@ -209,11 +210,11 @@
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customButton2.ForeColor = System.Drawing.Color.Black;
-            this.customButton2.Location = new System.Drawing.Point(105, 387);
+            this.customButton2.Location = new System.Drawing.Point(153, 387);
             this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(86, 36);
+            this.customButton2.Size = new System.Drawing.Size(72, 36);
             this.customButton2.TabIndex = 29;
-            this.customButton2.Text = "Mid-Term";
+            this.customButton2.Text = "Giữa kỳ";
             this.customButton2.TextColor = System.Drawing.Color.Black;
             this.customButton2.UseVisualStyleBackColor = false;
             // 
@@ -229,19 +230,40 @@
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(3, 387);
+            this.customButton1.Location = new System.Drawing.Point(1, 387);
             this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(86, 36);
+            this.customButton1.Size = new System.Drawing.Size(77, 36);
             this.customButton1.TabIndex = 28;
-            this.customButton1.Text = "Today";
+            this.customButton1.Text = "Hôm nay";
             this.customButton1.TextColor = System.Drawing.Color.Black;
             this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.Color.Gold;
+            this.customButton4.BackGroundColor = System.Drawing.Color.Gold;
+            this.customButton4.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.customButton4.BorderRadius = 36;
+            this.customButton4.BorderSize = 3;
+            this.customButton4.Enabled = false;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton4.ForeColor = System.Drawing.Color.Black;
+            this.customButton4.Location = new System.Drawing.Point(79, 387);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(72, 36);
+            this.customButton4.TabIndex = 31;
+            this.customButton4.Text = "Test";
+            this.customButton4.TextColor = System.Drawing.Color.Black;
+            this.customButton4.UseVisualStyleBackColor = false;
             // 
             // UC_MonthCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.customButton4);
             this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.customButton1);
@@ -281,5 +303,6 @@
         private MyCustomControl.CustomButton customButton1;
         private MyCustomControl.CustomButton customButton2;
         private MyCustomControl.CustomButton customButton3;
+        private MyCustomControl.CustomButton customButton4;
     }
 }

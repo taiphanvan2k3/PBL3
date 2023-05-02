@@ -183,8 +183,8 @@ namespace DAL
         {
             BAI_KIEM_TRA NewBKT = new BAI_KIEM_TRA
             {
-                TenBaiKiemTra = TenBKT,
-                TieuDeBaiKiemTra = LoaiBaiKiemTra,
+                TenBaiKiemTra = LoaiBaiKiemTra,
+                TieuDeBaiKiemTra = TenBKT,
                 NgayKiemTra = NgayKiemTra,
                 ThoiGianLamBai = ThoiGianLamBai,
                 SoCauHoi = SoCauHoi,
