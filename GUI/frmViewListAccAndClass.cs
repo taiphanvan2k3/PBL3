@@ -22,6 +22,8 @@ namespace GUI
         CheckBox HeaderCheckBox = null;
         bool IsHeaderCheckBoxClicked = false;
         string maLop = "";
+        string maID = "";
+
 
         List<string> listOfStudentCodesToDelete = new List<string>();
 
@@ -60,11 +62,16 @@ namespace GUI
             HeaderCheckBox.MouseClick += new MouseEventHandler(HeaderCheckBox_MouseClick);
             dgvViewAcc.CurrentCellDirtyStateChanged += new EventHandler(dgvSelectAll_CurrentCellDirtyStateChanged);
             dgvViewAcc.DataSource = dt;
-            switch(role)
+            BindGridView();
+
+            switch (role)
             {
                 case 0:
                 case 1:
-                    UtilityClass.SwapColumns(dgvViewAcc, 0, 1);
+                    UtilityClass.SwapColumns(dgvViewAcc, 1, 2);
+                    dgvViewAcc.Columns[7].Visible = false;
+                    dgvViewAcc.Columns[8].Visible = false;
+                    dgvViewAcc.Columns[9].Visible = false;
                     break;
                 case 2:
                     lbTitle.Text = "Quản lý lớp sinh hoạt";
@@ -81,7 +88,6 @@ namespace GUI
                     btnEdit.Click += btnEditMoudleClass_Click;
                     break;
             }
-            BindGridView();
         }
 
         #region Thêm header checkbox
@@ -174,7 +180,6 @@ namespace GUI
         {
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
-                string mssv;
                 DataGridViewCheckBoxCell checkCell = dgvViewAcc.Rows[e.RowIndex].Cells["checkBoxColumn"] as DataGridViewCheckBoxCell;
                 if (checkCell != null)
                 {
@@ -187,17 +192,17 @@ namespace GUI
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
                         TotalCheckedCheckBoxes++;
-                        mssv = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        maID = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
                         maLop = dgvViewAcc.Rows[e.RowIndex].Cells[1].Value.ToString();
-                        listOfStudentCodesToDelete.Add(mssv);
+                        listOfStudentCodesToDelete.Add(maID);
                     }
                     else
                     {
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
                         dgvViewAcc.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.FromName("ActiveCaption");
                         TotalCheckedCheckBoxes--;
-                        mssv = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        listOfStudentCodesToDelete.Remove(mssv);
+                        maID = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        listOfStudentCodesToDelete.Remove(maID);
                     }
 
                     if (TotalCheckedCheckBoxes > 1)
@@ -232,7 +237,7 @@ namespace GUI
                 MessageBoxButtons.YesNoCancel, "Thủ Công", "Bằng Sheet", "Hủy");
             if (result == DialogResult.Yes)
             {
-                frmAddAccount frmAddAccStudent = new frmAddAccount(role);
+                frmAddAccount frmAddAccStudent = new frmAddAccount(role, "");
                 frmAddAccStudent.ShowDialog();
             }
             else if (result == DialogResult.No)
@@ -307,18 +312,12 @@ namespace GUI
             frmViewDetailModuleClass frmViewDetailModuleClass = new frmViewDetailModuleClass(maLop);
             frmViewDetailModuleClass.ShowDialog();
         }
-
-
-
-
-
-
-
         #endregion
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            frmAddAccount frmAddAccStudent = new frmAddAccount(role, maID);
+            frmAddAccStudent.ShowDialog();
         }
     }
 }

@@ -25,6 +25,7 @@ namespace GUI
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+
         }
 
         private struct RGBColors
@@ -125,9 +126,7 @@ namespace GUI
         {
 
             ActivateButton(sender, RGBColors.color1);
-            //..
-            //your codes
-            //..
+            openChildForm(new frmDesignDashboard());
             hideSubMenu();
         }
 
@@ -218,10 +217,10 @@ namespace GUI
 
         }
 
-
         private void frmAdmin_Load(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
+            btnHome.PerformClick();
         }
 
         private void btnHomeroomClass_Click(object sender, EventArgs e)

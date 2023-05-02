@@ -123,6 +123,17 @@ namespace GUI.MyCustomControl
             //Refresh text
             lblText.Text = cmbList.Text;
         }
+        private int FindString(ComboBox comboBox, string searchText)
+        {
+            int index = comboBox.FindStringExact(searchText);
+            if (index != -1)
+            {
+                comboBox.SelectedIndex = index;
+            }
+            return index;
+        }
+
+
         //-> Draw icon
         private void Icon_Paint(object sender, PaintEventArgs e)
         {

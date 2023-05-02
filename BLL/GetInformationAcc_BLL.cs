@@ -29,6 +29,17 @@ namespace BLL
         {
             return GetInformationAcc_DAL.Instance.GetAccountTeacherList();
         }
+
+        public InformationStudent_DTO GetInformationStudentByID(string id)
+        {
+            return GetInformationAcc_DAL.Instance.GetInformationStudentByID(id);
+        }
+
+        public InformationTeacher_DTO GetInformationTeacherByID(string id)
+        {
+            return GetInformationAcc_DAL.Instance.GetInformationTeacherByID(id);
+        }
+
         public List<CHUONG_TRINH_DAO_TAO_DTO> GetListEducationProgram()
         {
             List<CHUONG_TRINH_DAO_TAO_DTO> newList = new List<CHUONG_TRINH_DAO_TAO_DTO>();
@@ -70,15 +81,7 @@ namespace BLL
         {
             return GetInformationAcc_DAL.Instance.getTheNumberOfTeacherByFaculty(maKhoa);
         }
-        public void InsertLoginInfo(THONG_TIN_DANG_NHAP_DTO newLoginInfo)
-        {
-            THONG_TIN_DANG_NHAP ttdn = new THONG_TIN_DANG_NHAP();
-            ttdn.TaiKhoan = newLoginInfo.TaiKhoan;
-            ttdn.MkUngDung = newLoginInfo.MkUngDung;
-            ttdn.VaiTro = newLoginInfo.VaiTro;
-            ttdn.MaXacThucDeLayLaiMK = newLoginInfo.MaXacThucDeLayLaiMK;
-            GetInformationAcc_DAL.Instance.InsertLoginInfo(ttdn);
-        }
+
 
         public bool InsertData(THONG_TIN_DANG_NHAP_DTO loginInfo, NguoiDung_DTO userInfo, object specificInfo)
         {
@@ -134,10 +137,66 @@ namespace BLL
                 };
                 specificInfo = gv;
             }
-
             return GetInformationAcc_DAL.Instance.InsertData(tndn, nd, specificInfo);
-
         }
+
+        public bool UpdateData(string taiKhoan, THONG_TIN_DANG_NHAP_DTO newLoginInfo, NguoiDung_DTO newUserInfo, object newSpecificInfo)
+        {
+
+            THONG_TIN_DANG_NHAP tndn = new THONG_TIN_DANG_NHAP
+            {
+                TaiKhoan = newLoginInfo.TaiKhoan,
+                VaiTro = newLoginInfo.VaiTro,
+                MkUngDung = newLoginInfo.MkUngDung,
+                MaXacThucDeLayLaiMK = newLoginInfo.MaXacThucDeLayLaiMK
+            };
+            NGUOI_DUNG nd = new NGUOI_DUNG()
+            {
+                MaNguoiDung = newUserInfo.MaNguoiDung,
+                Ho = newUserInfo.Ho,
+                Ten = newUserInfo.Ten,
+                MaCCCD = newUserInfo.MaCCCD,
+                AnhCaNhan = newUserInfo.AnhCaNhan,
+                NgaySinh = newUserInfo.NgaySinh,
+                GioiTinh = newUserInfo.GioiTinh,
+                DanToc = newUserInfo.DanToc,
+                QuocTich = newUserInfo.QuocTich,
+                NoiSinh = newUserInfo.NoiSinh,
+                DiaChi = newUserInfo.DiaChi,
+                Sdt = newUserInfo.Sdt,
+                EmailCaNhan = newUserInfo.EmailCaNhan,
+                EmailTruongCap = newUserInfo.EmailTruongCap,
+                MkEmailTruongCap = newUserInfo.MkEmailTruongCap
+            };
+
+            if (newSpecificInfo.GetType() == typeof(SinhVien_DTO))
+            {
+                SinhVien_DTO svDt = new SinhVien_DTO();
+                svDt = (SinhVien_DTO)newSpecificInfo;
+                SINH_VIEN sv = new SINH_VIEN()
+                {
+                    MaSV = svDt.MaNguoiDung,
+                    MaLopSH = svDt.MaLopSH,
+                    MaCTDT = svDt.MaCTDT
+                };
+                newSpecificInfo = sv;
+            }
+            else if (newSpecificInfo.GetType() == typeof(GiangVien_DTO))
+            {
+                GiangVien_DTO gtDt = new GiangVien_DTO();
+                gtDt = (GiangVien_DTO)newSpecificInfo;
+                GIANG_VIEN gv = new GIANG_VIEN()
+                {
+                    MaGV = gtDt.MaNguoiDung,
+                    TrinhDo = gtDt.TrinhDo,
+                    Luong = gtDt.Luong,
+                    MaKhoa = gtDt.MaKhoa
+                };
+                newSpecificInfo = gv;
+            }
+            return GetInformationAcc_DAL.Instance.UpdateData(taiKhoan, tndn, nd, newSpecificInfo);
+        }
+
 
         public bool DeleteData(int role, string maTaiKhoan)
         {
@@ -161,6 +220,41 @@ namespace BLL
 
         }
 
+        public int CountCHUONG_TRINH_DAO_TAO()
+        {
+            return GetInformationAcc_DAL.Instance.CountCHUONG_TRINH_DAO_TAO();
+        }
+        public int CountNGUOI_DUNG()
+        {
+            return GetInformationAcc_DAL.Instance.CountNGUOI_DUNG();
+
+        }
+        public int CountGIANG_VIEN()
+        {
+            return GetInformationAcc_DAL.Instance.CountGIANG_VIEN();
+        }
+        public int CountSINH_VIEN()
+        {
+            return GetInformationAcc_DAL.Instance.CountSINH_VIEN();
+        }
+        public int CountKHOA()
+        {
+            return GetInformationAcc_DAL.Instance.CountKHOA();
+        }
+        public List<KeyValuePair<string, int>> StuentByYearList()
+        {
+            return GetInformationAcc_DAL.Instance.StuentByYearList();
+        }
+        public List<KeyValuePair<string, int>> StudentCountByFaculty()
+        {
+            return GetInformationAcc_DAL.Instance.StudentCountByFaculty();
+
+        }
+        public List<KeyValuePair<string, int>> LevelOfTeacherList()
+        {
+            return GetInformationAcc_DAL.Instance.LevelOfTeacherList();
+
+        }
 
     }
 }
