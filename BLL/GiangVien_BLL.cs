@@ -122,8 +122,15 @@ namespace BLL
         {
             return GiangVien_DAL.Instance.GetMonHocInKhoaForGV(MaGV);
         }
-            #region Get List GV Suitable To Assign
-            public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
+
+        public List<CBBItem> GetTeacherByFaculuty(string idFaculuty, string nameFaculuty)
+        {
+            return GiangVien_DAL.Instance.GetTeacherByFaculuty(idFaculuty, nameFaculuty);
+
+        }
+
+        #region Get List GV Suitable To Assign
+        public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {
             List<AssignTeacher> li = new List<AssignTeacher>();
             int stt = 1;

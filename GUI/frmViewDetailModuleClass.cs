@@ -206,5 +206,7 @@ namespace GUI
                     CustomMessageBox.Show("Thao tác xoá đã bị huỷ.");
             }
         }
+
+
     }
 }

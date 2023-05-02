@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 
 namespace DAL
 {
@@ -298,5 +299,21 @@ namespace DAL
                 }).ToList();
         }
         #endregion
+
+        public List<CBBItem> GetTeacherByFaculuty(string idFaculuty, string nameFaculuty)
+        {
+            var result = from nd in db.NGUOI_DUNG
+                         join gv in db.GIANG_VIEN on nd.MaNguoiDung equals gv.MaGV
+                        where gv.MaKhoa == idFaculuty
+                             && !db.LOP_SINH_HOAT.Any(lsh => lsh.MaGVCN == gv.MaGV && lsh.MaLopSH.Contains(nameFaculuty))
+                         select new CBBItem
+                         {
+                            Id = nd.MaNguoiDung,
+                            Value = nd.MaNguoiDung + " - " + nd.Ho + " " + nd.Ten
+                         };
+
+            return result.ToList();
+        }
+
     }
 }

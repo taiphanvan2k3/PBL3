@@ -30,8 +30,11 @@ namespace GUI
         private string passEmai = "";
 
         private int role;
-
         private string TaiKhoan;
+
+        // Khai báo delegate và event
+        public delegate void DataAddedSuccessHandler();
+        public event DataAddedSuccessHandler DataAddedSuccessEvent;
         public frmAddAccount(int role, string TaiKhoan)
         {
             InitializeComponent();
@@ -167,13 +170,15 @@ namespace GUI
                     if (TaiKhoan == "")
                     {
 
-                        if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT) == true)
+                        if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT))
                         {
                             MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
                             var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                             if (result1 == DialogResult.Cancel)
                             {
                                 this.Close();
+                                // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+                                DataAddedSuccessEvent?.Invoke();
                             }
                             else
                             {
@@ -185,9 +190,11 @@ namespace GUI
                     }
                     else
                     {
-                        if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan,ttdn, nd, svDT) == true)
+                        if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan, ttdn, nd, svDT))
                         {
                             MessageBox.Show("Thêm cập nhật tài khoản sinh viên thành công");
+                            // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+                            DataAddedSuccessEvent?.Invoke();
                         }
                         else
                             MessageBox.Show("Cập nhật bị lỗi! Vui lòng kiểm tra lại thông tin");
@@ -216,13 +223,15 @@ namespace GUI
                     if (TaiKhoan == "")
                     {
 
-                        if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, gvDT) == true)
+                        if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, gvDT))
                         {
                             MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
                             var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                             if (result1 == DialogResult.Cancel)
                             {
                                 this.Close();
+                                // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+                                DataAddedSuccessEvent?.Invoke();
                             }
                             else
                             {
@@ -233,9 +242,11 @@ namespace GUI
                             MessageBox.Show("Thêm bị lỗi! Vui lòng kiểm tra lại thông tin");
                     }
                     else {
-                        if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan, ttdn, nd, gvDT) == true)
+                        if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan, ttdn, nd, gvDT))
                         {
                             MessageBox.Show("Thêm cập nhật tài khoản giảng viên thành công");
+                            // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+                            DataAddedSuccessEvent?.Invoke();
                         }
                         else
                             MessageBox.Show("Cập nhật bị lỗi! Vui lòng kiểm tra lại thông tin");

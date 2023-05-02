@@ -53,5 +53,20 @@ namespace BLL
         {
             return LopSinhHoat_DAL.Instance.GetInformationClasses();
         }
+        public int GetLastNumberInMaLopSH(string maLop)
+        {
+            return LopSinhHoat_DAL.Instance.GetLastNumberInMaLopSH(maLop);
+        }
+
+        public bool AddNewHomeroomClass(string idClass, string idTeacher, int numberMax)
+        {
+            LOP_SINH_HOAT newLsh = new LOP_SINH_HOAT()
+            {
+                MaLopSH = idClass,
+                MaGVCN = idTeacher,
+                SoLuongToiDa = numberMax
+            };
+            return LopSinhHoat_DAL.Instance.AddNewHomeroomClass(newLsh);
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace GUI
             SetFormSize();
             SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);//Set Default Buttons
         }
-        public frmMessageBox(string text, string caption, MessageBoxButtons buttons, string nameYes, string nameNo, string nameCacel)
+        public frmMessageBox(string text, string caption, MessageBoxButtons buttons, string nameYes = "", string nameNo = "", string nameCacel = "")
         {
             InitializeComponent();
             InitializeItems();

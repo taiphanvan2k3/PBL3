@@ -148,9 +148,9 @@ namespace BLL
         #endregion
 
 
-        public List<InformationClass_DTO> getInformation()
+        public List<InformationClass_DTO> GetInformationClasses()
         {
-            return LopHocPhan_DAL.Instance.getInformation();
+            return LopHocPhan_DAL.Instance.GetInformationClasses();
         }
     }
 }

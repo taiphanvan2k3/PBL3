@@ -96,18 +96,42 @@ namespace DAL
                          join nd in db.NGUOI_DUNG on lsh.MaGVCN equals nd.MaNguoiDung into ndGroup
                          from nd in ndGroup.DefaultIfEmpty()
                          group sv by new { lsh.MaLopSH, ctdt.TenCTDT, lsh.MaGVCN, nd.Ho, nd.Ten, lsh.SoLuongToiDa } into g
+                         orderby g.Key.MaLopSH
                          select new InformationClass_DTO
                          {
                              maLop = g.Key.MaLopSH,
                              tenLop = g.Key.MaLopSH.Substring(0, 2) + " " + g.Key.TenCTDT + " " + g.Key.MaLopSH.Substring(g.Key.MaLopSH.Length - 1),
                              maGV = g.Key.MaGVCN,
-                             hoTenGV = g.FirstOrDefault().NGUOI_DUNG.Ho + " " + g.FirstOrDefault().NGUOI_DUNG.Ten,
+                             hoTenGV = g.Key.Ho + " " + g.Key.Ten,
                              soLuongSV = g.Count(),
                              soLuongToiDa = g.Key.SoLuongToiDa ?? 0
                          };
             return result.ToList();
+        }
+        public int GetLastNumberInMaLopSH(string maLop)
+        {
+            using (var context = new PBL3Entities())
+            {
+                var result = context.LOP_SINH_HOAT
+                    .Where(lsh => lsh.MaLopSH.StartsWith(maLop))
+                    .OrderByDescending(lsh => lsh.MaLopSH)
+                    .Select(lsh => lsh.MaLopSH.Substring(lsh.MaLopSH.Length - 1))
+                    .FirstOrDefault();
+                if (int.TryParse(result, out int lastNumber))
+                {
+                    return lastNumber;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
 
-
+        public bool AddNewHomeroomClass(LOP_SINH_HOAT lsh)
+        {
+            db.LOP_SINH_HOAT.Add(lsh);
+            return db.SaveChanges() > 0;
         }
 
     }

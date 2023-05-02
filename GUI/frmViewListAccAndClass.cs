@@ -54,7 +54,24 @@ namespace GUI
         {
             this.Close();
         }
-
+        private void loadData()
+        {
+            switch (role)
+            {
+                case 0:
+                    dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountStudentList();
+                    break;
+                case 1:
+                    dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountTeacherList();
+                    break;
+                case 2:
+                    dgvViewAcc.DataSource = LopSinhHoat_BLL.Instance.GetInformationClasses();
+                    break;
+                case 3:
+                    dgvViewAcc.DataSource = LopSinhHoat_BLL.Instance.GetInformationClasses();
+                    break;
+            }
+        }
         private void frmAddAccount_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'pBL3DataSet.NGUOI_DUNG' table. You can move, or remove it, as needed.
@@ -74,8 +91,11 @@ namespace GUI
                     dgvViewAcc.Columns[9].Visible = false;
                     break;
                 case 2:
+                    dgvViewAcc.Columns[3].Visible = false;
                     lbTitle.Text = "Quản lý lớp sinh hoạt";
                     btnAdd.Text = "Thêm lớp học";
+                    btnAdd.Click -= btnAdd_Click;
+                    btnAdd.Click += btnAddHomeroomClass_Click;
                     btnEdit.Click -= btnEdit_Click;
                     btnEdit.Click += btnEditHomeRoomClass_Click;
                     break;
@@ -83,7 +103,7 @@ namespace GUI
                     lbTitle.Text = "Quản lý lớp học phần";
                     btnAdd.Text = "Thêm lớp học";
                     btnAdd.Click -= btnAdd_Click;
-                    btnAdd.Click += btnAddHomeRoomClass_Click;
+                    btnAdd.Click += btnAddMoudleClass_Click;
                     btnEdit.Click -= btnEdit_Click;
                     btnEdit.Click += btnEditMoudleClass_Click;
                     break;
@@ -238,7 +258,11 @@ namespace GUI
             if (result == DialogResult.Yes)
             {
                 frmAddAccount frmAddAccStudent = new frmAddAccount(role, "");
+                // Đăng ký sự kiện DataAddedSuccessEvent và gán method loadData vào
+                frmAddAccStudent.DataAddedSuccessEvent += loadData;
                 frmAddAccStudent.ShowDialog();
+
+
             }
             else if (result == DialogResult.No)
             {
@@ -289,21 +313,20 @@ namespace GUI
             }
 
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmAddAccount frmAddAccStudent = new frmAddAccount(role, maID);
+            frmAddAccStudent.ShowDialog();
+        }
         #endregion
 
-        #region Xử lý sự kiện CRUD lớp học
+        #region Xử lý sự kiện CRUD lớp học phần
 
-        private void btnAddHomeRoomClass_Click(object sender, EventArgs e)
+        private void btnAddMoudleClass_Click(object sender, EventArgs e)
         {
             frmAddModuleClass frmAddModuleClass = new frmAddModuleClass();
             frmAddModuleClass.ShowDialog();
-        }
-
-        private void btnEditHomeRoomClass_Click(object sender, EventArgs e)
-        {
-            
-            frmViewDetailHomeroomClass frmViewDetailHomeroomClass = new frmViewDetailHomeroomClass(maLop);
-            frmViewDetailHomeroomClass.ShowDialog();
         }
 
         private void btnEditMoudleClass_Click(object sender, EventArgs e)
@@ -314,10 +337,19 @@ namespace GUI
         }
         #endregion
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        #region  Xử lý sự kiện CRUD lớp sinh hoạt
+        private void btnEditHomeRoomClass_Click(object sender, EventArgs e)
         {
-            frmAddAccount frmAddAccStudent = new frmAddAccount(role, maID);
-            frmAddAccStudent.ShowDialog();
+            frmViewDetailHomeroomClass frmViewDetailHomeroomClass = new frmViewDetailHomeroomClass(maLop);
+            frmViewDetailHomeroomClass.ShowDialog();
         }
+        private void btnAddHomeroomClass_Click(object sender, EventArgs e)
+        {
+            frmAddHomeroomClass frmAddHomeroomClass = new frmAddHomeroomClass();
+            frmAddHomeroomClass.ShowDialog();
+        }
+        #endregion
+
+
     }
 }

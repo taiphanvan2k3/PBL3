@@ -222,19 +222,22 @@ namespace DAL
         }
 
 
-        public List<InformationClass_DTO> getInformation()
+        public List<InformationClass_DTO> GetInformationClasses()
         {
             var result = from lhp in db.LOP_HOC_PHAN
                          join mh in db.MON_HOC on lhp.MaMH equals mh.MaMH
+                         join kh in db.KHOAs on mh.MaKhoa equals kh.MaKhoa
                          join sv_lhp in db.SINHVIEN_LOPHOCPHAN on lhp.MaLopHP equals sv_lhp.MaLopHP into sv_lhps
                          from sv_lhp in sv_lhps.DefaultIfEmpty()
                          join nd in db.NGUOI_DUNG on lhp.MaGV equals nd.MaNguoiDung into nds
                          from nd in nds.DefaultIfEmpty()
-                         group sv_lhp by new { lhp.MaLopHP, mh.TenMH, lhp.MaGV, nd.Ho, nd.Ten, lhp.SoLuongToiDa } into g
+                         group sv_lhp by new { lhp.MaLopHP, mh.TenMH, kh.TenKhoa, lhp.MaGV, nd.Ho, nd.Ten, lhp.SoLuongToiDa } into g
+                         orderby g.Key.TenKhoa
                          select new InformationClass_DTO
                          {
                              maLop = g.Key.MaLopHP,
                              tenLop = g.Key.TenMH,
+                             tenKhoa = g.Key.TenKhoa,
                              maGV = g.Key.MaGV ?? "Empty",
                              hoTenGV = (g.Key.Ho ?? "Empty") + " " + g.Key.Ten,
                              soLuongSV = g.Count(x => x.MaSV != null),

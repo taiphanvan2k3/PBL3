@@ -13,6 +13,8 @@ namespace DTO
         public string maLop { get; set; }
         [DisplayName("Tên lớp")]
         public string tenLop { get; set; }
+        [DisplayName("Tên Khoa")]
+        public string tenKhoa { get; set; }
         [DisplayName("Mã GV")]
         public string maGV { get; set; }
         [DisplayName("Họ và tên")]

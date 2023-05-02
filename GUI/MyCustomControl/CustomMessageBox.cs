@@ -23,7 +23,7 @@ namespace GUI.MyCustomControl
                 result = frm.ShowDialog();
             return result;
         }
-        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, string nameYes, string nameNo, string nameCancel)
+        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, string nameYes = "", string nameNo = "", string nameCancel = "")
         {
             DialogResult result;
             using (var frm = new frmMessageBox(text, caption, buttons, nameYes, nameNo, nameCancel))

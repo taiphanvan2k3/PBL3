@@ -217,12 +217,6 @@ namespace GUI
 
         }
 
-        private void frmAdmin_Load(object sender, EventArgs e)
-        {
-            this.IsMdiContainer = true;
-            btnHome.PerformClick();
-        }
-
         private void btnHomeroomClass_Click(object sender, EventArgs e)
         {
             openChildForm(new frmViewListAccAndClass(LopSinhHoat_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), 2));
@@ -230,7 +224,14 @@ namespace GUI
 
         private void btnModuleClass_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.getInformation().Cast<object>().ToList(), 3));
+            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), 3));
         }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            btnHome.PerformClick();
+        }
+
     }
 }
