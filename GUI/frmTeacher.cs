@@ -201,7 +201,7 @@ namespace GUI
         private void btnSendAnnounce_Click(object sender, EventArgs e)
         {
             UC_SendNoticeToModuleClass f = new UC_SendNoticeToModuleClass();
-            f.ID = ID;
+            f.MaGV = ID;
             pnlMain.Controls.Clear();
             pnlMain.Controls.Add(f);
         }

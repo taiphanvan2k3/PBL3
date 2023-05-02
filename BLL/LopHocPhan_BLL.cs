@@ -1,7 +1,7 @@
 ﻿using DAL;
 using DTO;
+using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace BLL
 {
@@ -151,6 +151,11 @@ namespace BLL
         public List<InformationClass_DTO> GetInformationClasses()
         {
             return LopHocPhan_DAL.Instance.GetInformationClasses();
+        }
+
+        public List<ThongBao_DTO> GetNotificationsInSpecificBound(string MaSV, DateTime StartDateFilter)
+        {
+            return LopHocPhan_DAL.Instance.GetNotificationsInSpecificBound(MaSV, StartDateFilter);
         }
     }
 }

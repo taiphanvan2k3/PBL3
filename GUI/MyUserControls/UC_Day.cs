@@ -50,10 +50,12 @@ namespace GUI.MyUserControls
             get => lbExam.Text;
             set
             {
-                if (value == "Giữa kì")
+                if (value == "Giữa kỳ")
                     this.PanelEventColor = Color.FromArgb(255, 192, 128);
-                else if (value == "Cuối kì")
+                else if (value == "Cuối kỳ")
                     this.PanelEventColor = Color.SpringGreen;
+                else if (value == "Test")
+                    this.PanelEventColor = Color.Gold;
                 lbExam.Text = value;
 
             }
@@ -65,8 +67,8 @@ namespace GUI.MyUserControls
         }
         public Color PanelEventColor
         {
-            get => pblEvent.BackColor;
-            set => pblEvent.BackColor = value;
+            get => pnlEvent.BackColor;
+            set => pnlEvent.BackColor = value;
         }
         #endregion
 

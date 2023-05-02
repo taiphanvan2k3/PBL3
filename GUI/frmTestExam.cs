@@ -1,8 +1,5 @@
-﻿using BLL;
-using DTO;
+﻿using GUI.MyUserControls;
 using System;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
@@ -48,6 +45,14 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             //dataGridView1.DataSource = SinhVien_BLL.GetKetQuaHocTap("102210043");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            UC_WeeklyWorkSchedule uc = new UC_WeeklyWorkSchedule();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
     }
 }

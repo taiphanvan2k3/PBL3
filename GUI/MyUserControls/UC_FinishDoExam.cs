@@ -20,9 +20,6 @@ namespace GUI.MyUserControls
         public int SoLanViPham { get; set; }
         public double DiemSo { get; set; }
 
-        //Đếm ngược thời gian ẩn thông báo "Lưu ảnh thành công"
-        private Stopwatch stopwatch;
-        private TimeSpan targetTime;
         public UC_FinishDoExam()
         {
             InitializeComponent();
@@ -59,33 +56,14 @@ namespace GUI.MyUserControls
                 {
                     string fileName = open.FileName;
                     screenShot.Save(fileName);
-                    targetTime = TimeSpan.FromSeconds(5);
-                    timer.Start();
+                    //targetTime = TimeSpan.FromSeconds(5);
+                    //timer.Start();
+                    iconCheckSaveImage.Visible = true;
                 }
             }
             catch (Exception)
             {
                 throw;
-            }
-        }
-
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            if (!iconCheckSaveImage.Visible)
-            {
-                iconCheckSaveImage.Visible = true;
-                stopwatch = new Stopwatch();
-                stopwatch.Start();
-            }
-
-            TimeSpan ellapse = stopwatch.Elapsed;
-            TimeSpan remainingTime = targetTime - ellapse;
-            if (remainingTime <= TimeSpan.Zero)
-            {
-                iconCheckSaveImage.Visible = false;
-                timer.Stop();
-                stopwatch.Stop();
             }
         }
     }

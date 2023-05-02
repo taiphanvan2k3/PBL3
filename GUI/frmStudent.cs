@@ -31,7 +31,8 @@ namespace GUI
             Home,
             DailySchoolSchedule,
             WeeklySchoolSchedule,
-            ViewHomeRoomClass
+            ViewHomeRoomClass,
+            ViewNotifications
         }
 
         #region Danh sách UC bỏ vào các tab
@@ -39,6 +40,7 @@ namespace GUI
         UC_DailySchoolSchedule dailySchoolSchedule;
         UC_WeeklySchoolSchedule weeklySchoolSchedule;
         UC_ViewHomeRoomClass viewHomeRoomClass;
+        UC_ViewListNotifications viewListNotifications;
         SelectionState state;
         #endregion
 
@@ -256,6 +258,21 @@ namespace GUI
             });
         }
 
+        private void btnXemThongBao_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.ViewNotifications)
+            {
+                state = SelectionState.ViewNotifications;
+                panelShowDetail.Controls.Clear();
+                if (viewListNotifications == null)
+                {
+                    viewListNotifications = new UC_ViewListNotifications(MSSV);
+                    viewListNotifications.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(viewListNotifications);
+            }
+        }
+
         private void lblAvatar_TextChanged(object sender, EventArgs e)
         {
             //Thay đổi lại vị trí của label hiển thị tên sv ở góc trên bên phải để tránh tràn nội dung
@@ -263,5 +280,6 @@ namespace GUI
             lblAvatar.Location = new Point(avatarTopRight.Location.X - width - 20, lblAvatar.Location.Y);
             label1.Location = new Point(lblAvatar.Location.X, label1.Location.Y);
         }
+
     }
 }

@@ -1,8 +1,7 @@
 ﻿using DTO;
+using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 
 namespace DAL
 {
@@ -141,6 +140,8 @@ namespace DAL
         public List<SinhVienLHP_View> GetSinhVienInLHP(string MaHP)
         {
             //Trả về danh sách sinh viên hiển thị lên dtgv của frmViewDetailModuleClass
+            //Danh sách này cũng được dùng để hiển thị danh sách sinh viên khi GV bấm vào xem danh
+            //sách lớp ở giao diện GV
             var li = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP)
                 .Join(db.SINHVIEN_LOPHOCPHAN, hp => hp.MaLopHP, sv => sv.MaLopHP, (hp, sv) => new
                 {
@@ -246,5 +247,42 @@ namespace DAL
             return result.ToList();
         }
 
+        public List<ThongBao_DTO> GetNotificationsInSpecificBound(string MaSV, DateTime StartDateFilter)
+        {
+            //Nếu so sánh trực tiếp thì có thể không ra kết quả như mong đợi vì toán tử >=,.. của DateTime
+            //so sánh cả phần giờ, phút, giây
+            StartDateFilter = new DateTime(StartDateFilter.Year, StartDateFilter.Month, StartDateFilter.Day);
+            return db.SINHVIEN_LOPHOCPHAN.Where(sv => sv.MaSV == MaSV)
+                .Join(db.LOP_HOC_PHAN, sv => sv.MaLopHP, hp => hp.MaLopHP, (sv, hp) => new
+                {
+                    hp.MaLopHP,
+                    hp.MON_HOC.TenMH
+                })
+                .Join(db.THONGBAO_LOPHOCPHAN, hp => hp.MaLopHP, tb_lhp => tb_lhp.MaLopHP, (hp, tb_lhp) => new
+                {
+                    hp.MaLopHP,
+                    hp.TenMH,
+                    tb_lhp.MaTB
+                })
+                .Join(db.THONG_BAO, tb_lhp => tb_lhp.MaTB, tb => tb.MaTB, (tb_lhp, tb) => new
+                {
+                    tb_lhp.MaLopHP,
+                    tb_lhp.TenMH,
+                    tb.NgayTao,
+                    tb.TieuDe,
+                    tb.NDThongBao,
+                    tb.MaGVThongBao
+                }).Where(p => p.NgayTao >= StartDateFilter)
+                .Join(db.NGUOI_DUNG, tb => tb.MaGVThongBao, nd => nd.MaNguoiDung, (tb, nd) => new ThongBao_DTO
+                {
+                    MaLopHP = tb.MaLopHP,
+                    TenMonHoc = tb.TenMH,
+                    NgayTao = (DateTime)tb.NgayTao,
+                    TieuDe = tb.TieuDe,
+                    NoiDung = tb.NDThongBao,
+                    TenGV = nd.Ho + " " + nd.Ten,
+                    CheckGender = nd.GioiTinh ? "Thầy" : "Cô"
+                }).ToList();
+        }
     }
 }

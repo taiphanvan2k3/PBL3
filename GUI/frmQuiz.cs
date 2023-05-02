@@ -94,6 +94,7 @@ namespace GUI
 
             if (remainingTime <= TimeSpan.Zero)
             {
+                stopwatch.Stop();
                 timer1.Stop();
                 lbTime.Text = "00:00:00";
                 CustomMessageBox.Show("Hết giờ");
@@ -272,7 +273,7 @@ namespace GUI
         {
             if (CurrentIndex > 1)
             {
-                //Trước khi di chuyển qua câu hỏi khác thì phải kiểm tra câu hiện tại có được chọn
+                // Trước khi di chuyển qua câu hỏi khác thì phải kiểm tra câu hiện tại có được chọn
                 //hay chưa để cập nhật lại trạng thái
                 CheckAnswered();
                 CurrentIndex--;
@@ -302,7 +303,10 @@ namespace GUI
         private void btnNopBai_Click(object sender, EventArgs e)
         {
             CheckAnswered();
+            // Tắt tính năng không cho phép chụp màn hình sau khi thi xong
+            SetWindowDisplayAffinity(this.Handle, WDA_NONE);
             timer1.Stop();
+            stopwatch.Stop();
             SubmitTime = DateTime.Now;
             int SoCauDung = this.SoCauDung();
             panelMain.Controls.Clear();

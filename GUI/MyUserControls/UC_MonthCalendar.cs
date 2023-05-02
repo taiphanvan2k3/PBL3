@@ -173,17 +173,6 @@ namespace GUI.MyUserControls
                     btn[I, J].BorderColor = Color.DeepSkyBlue;
                     btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
                 }
-                //Test đặt event 1 ngày 
-                if (i == 18 && month == 4 && year == 2023)
-                {
-                    btn[I, J].BackColor = Color.FromArgb(255, 192, 128);
-                    btn[I, J].BorderColor = Color.Red;
-                }
-                if (i == 27 && month == 4 && year == 2023)
-                {
-                    btn[I, J].BackColor = Color.SpringGreen;
-                    btn[I, J].BorderColor = Color.FromArgb(0, 192, 0);
-                }
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year != YEAR && MONTH == month + 1 && i == day)
                 {

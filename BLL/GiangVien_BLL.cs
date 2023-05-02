@@ -2,9 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -15,7 +12,7 @@ namespace BLL
         {
             get
             {
-                if(_Instance == null)
+                if (_Instance == null)
                     _Instance = new GiangVien_BLL();
                 return _Instance;
             }
@@ -23,7 +20,7 @@ namespace BLL
         public GiangVien_DTO GetGiangVienById(string id)
         {
             GIANG_VIEN gv = GiangVien_DAL.Instance.GetGiangVienByID(id);
-            if(gv != null)
+            if (gv != null)
             {
                 NGUOI_DUNG nd = gv.NGUOI_DUNG;
                 KHOA k = gv.KHOA;
@@ -58,7 +55,7 @@ namespace BLL
         {
             List<AssignTeacher> li = new List<AssignTeacher>();
             int stt = 1;
-            foreach(var i in GiangVien_DAL.Instance.GetGiangVienWithNumberLHP())
+            foreach (var i in GiangVien_DAL.Instance.GetGiangVienWithNumberLHP())
             {
                 li.Add(new AssignTeacher
                 {
@@ -90,7 +87,7 @@ namespace BLL
         }
         public void SendNoticeToLHP(string MaGV, string MaLHP, string TieuDe, string NoiDung, DateTime NgayTao)
         {
-            GiangVien_DAL.Instance.SendNoticeToLHP(MaGV,MaLHP,TieuDe, NoiDung, NgayTao);
+            GiangVien_DAL.Instance.SendNoticeToLHP(MaGV, MaLHP, TieuDe, NoiDung, NgayTao);
         }
         public bool CheckNoticeRedundanṭ̣̣̣(string MaGV, DateTime NgayTao, string MaLHP)
         {
@@ -107,17 +104,20 @@ namespace BLL
         public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
                                byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
         {
-            GiangVien_DAL.Instance.CreateExam(TenBKT, LoaiBaiKiemTra, ThoiGianLamBai, NgayKiemTra, SoCauHoi, MaLHP, 
+            GiangVien_DAL.Instance.CreateExam(TenBKT, LoaiBaiKiemTra, ThoiGianLamBai, NgayKiemTra, SoCauHoi, MaLHP,
                                               MaGV, MatKhauLamBai, ChoPhepQuayLai);
         }
+
         public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
         {
             return GiangVien_DAL.Instance.CheckScheduleExamConflict(TimeExam, ThoiGianLamBai, MaLHPForAll);
         }
+
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
         {
-            GiangVien_DAL.Instance.CreateQuestion(TenCauHoi,DapAnA,DapAnB,DapAnC,DapAnD,DapAnDung, MaMonHoc, PhanLoai);
+            GiangVien_DAL.Instance.CreateQuestion(TenCauHoi, DapAnA, DapAnB, DapAnC, DapAnD, DapAnDung, MaMonHoc, PhanLoai);
         }
+
         public List<CBBItem> GetMonHocInKhoaForGV(string MaGV)
         {
             return GiangVien_DAL.Instance.GetMonHocInKhoaForGV(MaGV);
@@ -134,7 +134,7 @@ namespace BLL
         {
             List<AssignTeacher> li = new List<AssignTeacher>();
             int stt = 1;
-            foreach (var i in GiangVien_DAL.Instance.GetGVPhuHopTKB(MaLHP,Thu,TietBD,TietKT))
+            foreach (var i in GiangVien_DAL.Instance.GetGVPhuHopTKB(MaLHP, Thu, TietBD, TietKT))
             {
                 li.Add(new AssignTeacher
                 {
@@ -147,6 +147,38 @@ namespace BLL
                 stt++;
             }
             return li;
+        }
+        #endregion
+
+        #region Xem lịch dạy của giảng viên
+        public List<LopHocPhan_DTO> GetWorkScheduleInWeek(string MaGV, int NamHoc, bool IsKiChan)
+        {
+            List<LopHocPhan_DTO> li = GiangVien_DAL.Instance.GetWorkScheduleInWeek(MaGV, NamHoc, IsKiChan);
+            int STT = 1;
+            foreach (LopHocPhan_DTO hp in li)
+                hp.STT = STT++;
+            return li;
+        }
+
+        public List<LopHocPhan_DTO> GetWorkScheduleByDateOfWeek(string MaGV, int NamHoc, string Thu, bool IsKiChan)
+        {
+            List<LopHocPhan_DTO> li = GiangVien_DAL.Instance.GetWorkScheduleInWeek(MaGV, NamHoc, IsKiChan);
+            List<LopHocPhan_DTO> res = new List<LopHocPhan_DTO>();
+            int STT = 1;
+            foreach (LopHocPhan_DTO hp in li)
+            {
+                if (hp.tkb.Thu == Thu)
+                {
+                    hp.STT = STT++;
+                    res.Add(hp);
+                }
+            }
+            return res;
+        }
+
+        public List<KeyValuePair<int, int>> GetAllKiHocNamHocGVDay(string MaGV)
+        {
+            return GiangVien_DAL.Instance.GetAllKiHocNamHocGVDay(MaGV);
         }
         #endregion
     }

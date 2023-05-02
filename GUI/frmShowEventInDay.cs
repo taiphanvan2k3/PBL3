@@ -21,6 +21,8 @@ namespace GUI
         {
             labelTitle.Text = "Danh sách các bài kiểm tra ngày " + Date;
             dtgv.DataSource = listExams;
+            dtgv.Columns["MaBaiKiemTra"].Visible = false;
+            dtgv.Columns["MkBaiKiemTra"].Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

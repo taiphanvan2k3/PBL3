@@ -1,13 +1,8 @@
 ﻿using BLL;
 using GUI.MyCustomControl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -19,12 +14,32 @@ namespace GUI.MyUserControls
             InitializeComponent();
         }
         #region Properties
-        public string ID { get; set; }
+        public string MaGV { get; set; }
+
+        //Nếu chỉ thông báo đến 1 lớp HP cụ thể nào đó
+        public bool IsNoticeToSpecificModuleClass { get; set; }
+        public string MaLopHP { get; set; }
         #endregion
+
+        public void HideCombobox()
+        {
+            cbbLHP.Visible = false;
+            cbbLHP.Items.Clear();
+            cbbLHP.Items.Add(MaLopHP);
+            cbbLHP.SelectedIndex = 0;
+        }
+
         private void UC_SendAnnounceToModuleClass_Load(object sender, EventArgs e)
         {
-            cbbLHP.SelectedIndex = 0;
-            cbbLHP.Items.AddRange(GiangVien_BLL.Instance.GetListLHPByIDTeacher(ID).ToArray());
+            if (IsNoticeToSpecificModuleClass)
+            {
+                HideCombobox();
+            }
+            else
+            {
+                cbbLHP.SelectedIndex = 0;
+                cbbLHP.Items.AddRange(GiangVien_BLL.Instance.GetListLHPByIDTeacher(MaGV).ToArray());
+            }
         }
 
         private void tbTieuDe_Enter(object sender, EventArgs e)
@@ -65,7 +80,7 @@ namespace GUI.MyUserControls
 
         private void btnGui_Click(object sender, EventArgs e)
         {
-            if(cbbLHP.SelectedItem.ToString() == "Danh sách LHP")
+            if (cbbLHP.SelectedItem.ToString() == "Danh sách LHP")
             {
                 CustomMessageBox.Show("Vui lòng chọn lớp học phần!");
             }
@@ -80,19 +95,19 @@ namespace GUI.MyUserControls
             else
             {
                 DateTime dt = DateTime.Now;
-                if (GiangVien_BLL.Instance.CheckNoticeRedundanṭ̣̣̣(ID, dt, cbbLHP.SelectedItem.ToString()))
+                if (GiangVien_BLL.Instance.CheckNoticeRedundanṭ̣̣̣(MaGV, dt, cbbLHP.SelectedItem.ToString()))
                 {
-                    GiangVien_BLL.Instance.SendNoticeToLHP(ID, cbbLHP.SelectedItem.ToString(), tbTieuDe.Text, tbNoiDung.Texts, dt);
+                    GiangVien_BLL.Instance.SendNoticeToLHP(MaGV, cbbLHP.SelectedItem.ToString(), tbTieuDe.Text, tbNoiDung.Texts, dt);
                     CustomMessageBox.Show("Gửi thông báo thành công!");
                 }
                 else
                 {
-                    if(MessageBox.Show("Bạn có muốn thay thế thông báo đã gửi vào lớp học phần này trong hôm nay!","Tồn tại thông báo trong ngày",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Bạn có muốn thay thế thông báo đã gửi vào lớp học phần này trong hôm nay!", "Tồn tại thông báo trong ngày", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        GiangVien_BLL.Instance.ReplaceNotice(ID, dt, cbbLHP.SelectedItem.ToString(), tbTieuDe.Text, tbNoiDung.Texts);
+                        GiangVien_BLL.Instance.ReplaceNotice(MaGV, dt, cbbLHP.SelectedItem.ToString(), tbTieuDe.Text, tbNoiDung.Texts);
                     }
                 }
-                
+
             }
 
         }
@@ -105,5 +120,6 @@ namespace GUI.MyUserControls
             tbNoiDung.ForeColor = Color.Silver;
             cbbLHP.SelectedIndex = 0;
         }
+
     }
 }

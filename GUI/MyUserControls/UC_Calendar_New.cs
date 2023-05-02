@@ -1,5 +1,7 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -42,8 +44,9 @@ namespace GUI.MyUserControls
 
         int MONTH, YEAR;
         UC_Day[,] btn = new UC_Day[6, 7];
+        CustomButton[,] btnM = new CustomButton[6, 7];
         string[,] dTime = new string[6, 7];
-
+        List<BaiKiemTra_DTO> li = new List<BaiKiemTra_DTO>();
         //Lưu lại vị trí [i,j] của button có ngày tương ứng trên ma trận
         //vd Button ngày 1 nằm ở vị trí [0,4] thì thêm vào Dictionary <1,KeyValuePair<0,4>>
         Dictionary<int, KeyValuePair<int, int>> IndexDayInMatrix;
@@ -64,6 +67,20 @@ namespace GUI.MyUserControls
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
+                    //Calendar small
+                    btnM[i, j] = new CustomButton();
+                    btnM[i, j].BorderSize = 1;
+                    btnM[i, j].BorderColor = Color.LightGray;
+                    btnM[i, j].BorderRadius = 40;
+                    btnM[i, j].Font = new Font("Lucida Handwriting", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btnM[i, j].Size = new Size(152, 82);
+                    btnM[i, j].FlatStyle = FlatStyle.Flat;
+                    btnM[i, j].FlatAppearance.BorderSize = 1;
+                    btnM[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
+                    btnM[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                    btnM[i, j].Click += buttonDate_Click;
+                    tableLayoutPanelM.Controls.Add(btnM[i, j]);
+                    //Calendar big
                     btn[i, j] = new UC_Day();
                     btn[i, j].Dock = DockStyle.Fill;
                     btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
@@ -100,6 +117,16 @@ namespace GUI.MyUserControls
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 7; j++)
                 {
+                    //Calendar small
+                    btnM[i, j].Enabled = true;
+                    btnM[i, j].BorderSize = 1;
+                    btnM[i, j].Font = new Font("Segoe UI", 8F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Bold)), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btnM[i, j].BorderColor = Color.LightGray;
+                    btnM[i, j].Size = new Size((int)(btn[i, j].Width * xRatio), (int)(btn[i, j].Height * yRatio));
+                    btnM[i, j].Location = new Point((int)(btn[i, j].Location.X * xRatio), (int)(btn[i, j].Location.Y * yRatio));
+                    btnM[i, j].BackColor = ((colorBack == Color.White) ? Color.WhiteSmoke : Color.FromArgb(58, 59, 60));
+                    btnM[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.WhiteSmoke);
+                    //Calendar big
                     btn[i, j].ColorDay = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].BoderDay = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].Size = new Size((int)(btn[i, j].Width * xRatio), (int)(btn[i, j].Height * yRatio));
@@ -131,31 +158,29 @@ namespace GUI.MyUserControls
             for (int i = 1; i <= day; i++)
             {
                 IndexDayInMatrix.Add(i, new KeyValuePair<int, int>(I, J));
+                //Calendar small
+                btnM[I, J].Text = i.ToString();
+                //Calendar big
                 btn[I, J].DateValue = (i + "").PadLeft(2, '0') + "/" + ((MONTH + "").PadLeft(2, '0')) + "/" + YEAR;
                 btn[I, J].Day = i.ToString();
                 btn[I, J].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btn[I, J].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 if (i == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
                 {
+                    //Calendar small
+                    btnM[I, J].BorderSize = 3;
+                    btnM[I, J].BorderColor = Color.DeepSkyBlue;
+                    btnM[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
+                    //Calendar big
                     btn[I, J].ColorDay = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
                     btn[I, J].BoderDay = ((colorBack == Color.White) ? Color.DeepSkyBlue : Color.FromArgb(238, 191, 109));
-                }
-                //Test đặt event 1 ngày 
-                if (i == 18 && month == 4 && year == 2023)
-                {
-                    //btn[I, J].PanelEventColor = Color.FromArgb(255, 192, 128);
-                    btn[I, J].ExamName = "Giữa kì";
-                    btn[I, J].IfMore = "+ 1 more";
-                }
-                if (i == 27 && month == 4 && year == 2023)
-                {
-                    //btn[I, J].PanelEventColor = Color.SpringGreen;
-                    btn[I, J].ExamName = "Cuối kì";
-                    btn[I, J].IfMore = "+ 3 more";
                 }
                 dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year != YEAR && MONTH == month + 1 && i == day)
                 {
+                    //Calendar small
+                    btnM[I, J].BackColor = Color.Cyan;
+                    //Calendar big
                     btn[I, J].BackColor = Color.Cyan;
                 }
                 J++;
@@ -169,6 +194,11 @@ namespace GUI.MyUserControls
             //Xác định phần ngày của tháng trước đó
             for (int i = start - 1; i >= 0; i--)
             {
+                //Calendar small
+                btnM[0, i].Enabled = false;
+                btnM[0, i].Text = (pday-- + "");
+                btnM[0, i].BackColor = ((colorBack == Color.White) ? Color.LightGray : colorBack);
+                //Calendar big
                 btn[0, i].Day = (pday-- + "");
                 btn[0, i].ColorTextDay = ((colorBack == Color.White) ? Color.Gray : colorBack);
                 btn[0, i].BackColor = ((colorBack == Color.White) ? Color.LightGray : colorBack);
@@ -180,6 +210,11 @@ namespace GUI.MyUserControls
             int st = 1;
             while (!(I == 6 && J == 0))
             {
+                //Calendar small
+                btnM[I, J].Enabled = false;
+                btnM[I, J].Text = (st++ + "");
+                btnM[I, J].BackColor = ((colorBack == Color.White) ? Color.LightGray : colorBack);
+                //Calendar big
                 btn[I, J].Day = (st++ + "");
                 btn[I, J].ColorTextDay = ((colorBack == Color.White) ? Color.Gray : colorBack);
                 btn[I, J].BackColor = ((colorBack == Color.White) ? Color.LightGray : colorBack);
@@ -197,7 +232,7 @@ namespace GUI.MyUserControls
 
         private void LoadListExamInMonth()
         {
-            List<BaiKiemTra_DTO> li = BaiKiemTra_BLL.Instance.GetListExamInMonth(MONTH, YEAR);
+            li = BaiKiemTra_BLL.Instance.GetListExamInMonth(MONTH, YEAR);
             //MessageBox.Show("Số exam trong tháng hiện tại:" + li.Count);
             foreach(BaiKiemTra_DTO bkt in li)
             {
@@ -208,7 +243,27 @@ namespace GUI.MyUserControls
                 UC_Day tmp = btn[pair.Key, pair.Value];
                 tmp.listExams.Add(bkt);
                 if (string.IsNullOrEmpty(btn[pair.Key, pair.Value].ExamName))
+                {
                     tmp.ExamName = bkt.MaLoaiKiemTra;
+                    if (bkt.MaLoaiKiemTra == "Giữa kỳ")
+                    {
+                        btnM[pair.Key, pair.Value].BackColor = Color.FromArgb(255, 192, 128);
+                        btnM[pair.Key, pair.Value].BorderSize = 3;
+                        btnM[pair.Key, pair.Value].BorderColor = Color.Red;
+                    }
+                    else if (bkt.MaLoaiKiemTra == "Cuối kỳ")
+                    {
+                        btnM[pair.Key, pair.Value].BackColor = Color.SpringGreen;
+                        btnM[pair.Key, pair.Value].BorderSize = 3;
+                        btnM[pair.Key, pair.Value].BorderColor = Color.FromArgb(0, 192, 0);
+                    }
+                    else if (bkt.MaLoaiKiemTra == "Test")
+                    {
+                        btnM[pair.Key, pair.Value].BackColor = Color.Gold;
+                        btnM[pair.Key, pair.Value].BorderSize = 3;
+                        btnM[pair.Key, pair.Value].BorderColor = Color.DarkGoldenrod;
+                    }
+                }
                 else
                 {
                     tmp.NumberOfExam++;
@@ -278,12 +333,27 @@ namespace GUI.MyUserControls
             //Gọi event buttonDay_Click để hiển thị lịch của tháng hiện tại
             buttonToday_Click(sender, e);
         }
-
+        private void buttonDate_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if(button.BackColor != Color.LightGray)
+            {
+                KeyValuePair<int, int> pair = IndexDayInMatrix[Convert.ToInt32(button.Text)];
+                UC_Day day = btn[pair.Key, pair.Value];
+                lbLoaiBaiKiemTra.Text = day.ExamName;
+                lbCacLopCoBaiKiemTra.Text = "";
+                foreach(BaiKiemTra_DTO bkt in day.listExams)
+                {
+                    lbCacLopCoBaiKiemTra.Text += bkt.TieuDeBaiKiemTra + "\n";
+                }
+            }
+        }
         private void buttonToday_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             MONTH = now.Month;
             YEAR = now.Year;
+            btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
         }
@@ -296,6 +366,7 @@ namespace GUI.MyUserControls
                 YEAR++;
                 MONTH = 1;
             }
+            btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
         }
@@ -308,6 +379,7 @@ namespace GUI.MyUserControls
                 YEAR--;
                 MONTH = 12;
             }
+            btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             lbDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
         }
