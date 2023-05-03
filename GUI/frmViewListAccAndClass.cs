@@ -376,7 +376,6 @@ namespace GUI
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             previousValue = txtSearch.Text;
-
         }
 
 
@@ -392,7 +391,7 @@ namespace GUI
                 if (autotext.Contains(txtSearch.Text))
                 {
                     string[] parts = txtSearch.Text.Split(new string[] { " - " }, StringSplitOptions.None);
-                    switch(role)
+                    switch (role)
                     {
                         case 0:
                         case 1:
@@ -411,9 +410,6 @@ namespace GUI
                             frmViewDetailModuleClass.ShowDialog();
                             break;
                     }
- 
-
-
                 }
             }
         }
