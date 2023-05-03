@@ -247,6 +247,11 @@ namespace DAL
             return result.ToList();
         }
 
+        public int CountModuleClass()
+        {
+            return db.LOP_HOC_PHAN.Count();
+        }
+
         public List<ThongBao_DTO> GetNotificationsInSpecificBound(string MaSV, DateTime StartDateFilter)
         {
             //Nếu so sánh trực tiếp thì có thể không ra kết quả như mong đợi vì toán tử >=,.. của DateTime

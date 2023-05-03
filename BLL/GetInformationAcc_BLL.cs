@@ -253,7 +253,10 @@ namespace BLL
         public List<KeyValuePair<string, int>> LevelOfTeacherList()
         {
             return GetInformationAcc_DAL.Instance.LevelOfTeacherList();
-
+        }
+        public List<string> GetAllUser()
+        {
+            return GetInformationAcc_DAL.Instance.GetAllUser();
         }
 
     }

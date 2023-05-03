@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace DAL
                             join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
                             join sv in context.SINH_VIEN on nd.MaNguoiDung equals sv.MaSV
                             select new InformationStudent_DTO
-                            {
+                            {   
                                 TaiKhoan = tt.TaiKhoan,
                                 VaiTro = tt.VaiTro,
                                 Ten = nd.Ho + " " + nd.Ten,
@@ -486,6 +487,14 @@ namespace DAL
                     .Select(x => new KeyValuePair<string, int>(x.Key, x.Value))
                     .ToList();
                 return studentCounts;
+            }
+        }
+        public List<string> GetAllUser()
+        {
+            using (var contex = new PBL3Entities())
+            {
+                var nguoiDungList = contex.NGUOI_DUNG.Select(nd => nd.MaNguoiDung + " - " + nd.Ho + " " + nd.Ten).ToList();
+                return nguoiDungList;
             }
         }
 

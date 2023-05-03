@@ -35,6 +35,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvViewAcc = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelButton = new System.Windows.Forms.Panel();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
@@ -80,9 +81,9 @@
             // 
             this.panel3.Controls.Add(this.dgvViewAcc);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 72);
+            this.panel3.Location = new System.Drawing.Point(0, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1150, 428);
+            this.panel3.Size = new System.Drawing.Size(1150, 400);
             this.panel3.TabIndex = 21;
             // 
             // dgvViewAcc
@@ -121,7 +122,7 @@
             this.dgvViewAcc.RowHeadersWidth = 51;
             this.dgvViewAcc.RowTemplate.Height = 25;
             this.dgvViewAcc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViewAcc.Size = new System.Drawing.Size(1150, 428);
+            this.dgvViewAcc.Size = new System.Drawing.Size(1150, 400);
             this.dgvViewAcc.TabIndex = 19;
             this.dgvViewAcc.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvViewAcc_CellBeginEdit);
             this.dgvViewAcc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewAcc_CellClick);
@@ -130,13 +131,41 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.panelButton);
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 72);
+            this.panel1.Size = new System.Drawing.Size(1150, 100);
             this.panel1.TabIndex = 20;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Location = new System.Drawing.Point(8, 54);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.PlaceholderText = "Tìm kiếm";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(230, 35);
+            this.txtSearch.TabIndex = 19;
+            this.txtSearch.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guna2TextBox1_KeyDown);
             // 
             // panelButton
             // 
@@ -147,7 +176,7 @@
             this.panelButton.Controls.Add(this.btnEdit);
             this.panelButton.Location = new System.Drawing.Point(644, 15);
             this.panelButton.Name = "panelButton";
-            this.panelButton.Size = new System.Drawing.Size(506, 51);
+            this.panelButton.Size = new System.Drawing.Size(506, 79);
             this.panelButton.TabIndex = 18;
             // 
             // btnDelete
@@ -162,7 +191,7 @@
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelete.IconSize = 30;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(200, 14);
+            this.btnDelete.Location = new System.Drawing.Point(200, 39);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDelete.Size = new System.Drawing.Size(104, 35);
@@ -187,7 +216,7 @@
             this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdd.IconSize = 30;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(292, 14);
+            this.btnAdd.Location = new System.Drawing.Point(292, 39);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdd.Size = new System.Drawing.Size(211, 35);
@@ -211,7 +240,7 @@
             this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEdit.IconSize = 30;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(44, 14);
+            this.btnEdit.Location = new System.Drawing.Point(44, 39);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEdit.Size = new System.Drawing.Size(160, 35);
@@ -227,11 +256,11 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(210, 29);
+            this.lbTitle.Size = new System.Drawing.Size(247, 38);
             this.lbTitle.TabIndex = 17;
             this.lbTitle.Text = "Quản lý tài khoản";
             // 
@@ -269,5 +298,6 @@
         private FontAwesome.Sharp.IconButton btnAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvViewAcc;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
     }
 }

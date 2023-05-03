@@ -12,6 +12,7 @@ using DTO;
 using System.Reflection;
 using GUI.MyCustomControl;
 using Testexcel;
+using Guna.UI2.WinForms;
 
 namespace GUI
 {
@@ -23,6 +24,11 @@ namespace GUI
         bool IsHeaderCheckBoxClicked = false;
         string maLop = "";
         string maID = "";
+
+        // Phục vụ tìm kiếm
+        private AutoCompleteStringCollection autotext;
+        private string previousValue;
+
 
 
         List<string> listOfStudentCodesToDelete = new List<string>();
@@ -80,15 +86,27 @@ namespace GUI
             dgvViewAcc.CurrentCellDirtyStateChanged += new EventHandler(dgvSelectAll_CurrentCellDirtyStateChanged);
             dgvViewAcc.DataSource = dt;
             BindGridView();
-
+            autotext = new AutoCompleteStringCollection();
+            txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
             switch (role)
             {
                 case 0:
+                    UtilityClass.SwapColumns(dgvViewAcc, 1, 2);
+                    dgvViewAcc.Columns[7].Visible = false;
+                    dgvViewAcc.Columns[8].Visible = false;
+                    dgvViewAcc.Columns[9].Visible = false;
+                    autotext.AddRange(dt.Select(x => ((InformationStudent_DTO)x).TaiKhoan + " - " + ((InformationStudent_DTO)x).Ten).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
+                    break;
                 case 1:
                     UtilityClass.SwapColumns(dgvViewAcc, 1, 2);
                     dgvViewAcc.Columns[7].Visible = false;
                     dgvViewAcc.Columns[8].Visible = false;
                     dgvViewAcc.Columns[9].Visible = false;
+                    autotext.AddRange(dt.Select(x => ((InformationTeacher_DTO)x).TaiKhoan + " - " + ((InformationTeacher_DTO)x).Ten).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
+
                     break;
                 case 2:
                     dgvViewAcc.Columns[3].Visible = false;
@@ -98,6 +116,8 @@ namespace GUI
                     btnAdd.Click += btnAddHomeroomClass_Click;
                     btnEdit.Click -= btnEdit_Click;
                     btnEdit.Click += btnEditHomeRoomClass_Click;
+                    autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
                     break;
                 case 3:
                     lbTitle.Text = "Quản lý lớp học phần";
@@ -106,6 +126,8 @@ namespace GUI
                     btnAdd.Click += btnAddMoudleClass_Click;
                     btnEdit.Click -= btnEdit_Click;
                     btnEdit.Click += btnEditMoudleClass_Click;
+                    autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
                     break;
             }
         }
@@ -347,6 +369,53 @@ namespace GUI
         {
             frmAddHomeroomClass frmAddHomeroomClass = new frmAddHomeroomClass();
             frmAddHomeroomClass.ShowDialog();
+        }
+        #endregion
+
+        #region Tìm kiếm trên datagridview
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            previousValue = txtSearch.Text;
+
+        }
+
+
+        private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+            {
+                if (txtSearch.Text != previousValue)
+                {
+                    previousValue = txtSearch.Text;
+                    return;
+                }
+                if (autotext.Contains(txtSearch.Text))
+                {
+                    string[] parts = txtSearch.Text.Split(new string[] { " - " }, StringSplitOptions.None);
+                    switch(role)
+                    {
+                        case 0:
+                        case 1:
+                            txtSearch.Text = "";
+                            frmAddAccount frmAddAccount = new frmAddAccount(role, parts[0]);
+                            frmAddAccount.ShowDialog();
+                            break;
+                        case 2:
+                            txtSearch.Text = "";
+                            frmViewDetailHomeroomClass frmViewDetailHomeroomClass = new frmViewDetailHomeroomClass(parts[0] + " - " + parts[1]);
+                            frmViewDetailHomeroomClass.ShowDialog();
+                            break;
+                        case 3:
+                            txtSearch.Text = "";
+                            frmViewDetailModuleClass frmViewDetailModuleClass = new frmViewDetailModuleClass(parts[0]);
+                            frmViewDetailModuleClass.ShowDialog();
+                            break;
+                    }
+ 
+
+
+                }
+            }
         }
         #endregion
 
