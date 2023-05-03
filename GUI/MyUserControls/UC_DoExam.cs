@@ -23,36 +23,18 @@ namespace GUI.MyUserControls
             InitializeComponent();
         }
 
-        private void UC_DoExam_Load(object sender, EventArgs e)
+        public void LoadData()
         {
-            List<BaiKiemTra_DTO> li = BaiKiemTra_BLL.Instance.GetAllExamOfStudent("102210043");
-            //Add thêm bài kiểm tra để dễ test
-            li.Add(new BaiKiemTra_DTO()
-            {
-                MaBaiKiemTra = 1,
-                MaHP = "OOP21.13",
-                TenMH = "Lập trình hướng đối tượng",
-                TieuDeBaiKiemTra = "Thi giữa kì OOP",
-                SoCauHoi = 50,
-                ThoiGianLamBai = 50,
-                ThoiGianBatDau = DateTime.Now,
-                MkBaiKiemTra = "Gk2113"
-            });
-
-            li.Add(new BaiKiemTra_DTO()
-            {
-                MaBaiKiemTra = 2,
-                MaHP = "OOAD21.13",
-                TenMH = "Phân tích và thiết kế hướng đối tượng",
-                TieuDeBaiKiemTra = "Bài test 01",
-                SoCauHoi = 100,
-                ThoiGianLamBai = 90,
-                ThoiGianBatDau = DateTime.Now,
-                MkBaiKiemTra = "Test01OOAD"
-            });
+            List<BaiKiemTra_DTO> li = BaiKiemTra_BLL.Instance.GetAllExamOfStudent(MaSV);
             dtgv.Columns.Clear();
             dtgv.DataSource = li;
         }
+
+        private void UC_DoExam_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         private void UC_DoExam_SizeChanged(object sender, EventArgs e)
         {
             //Mỗi khi UC này thay đổi kích thước thì chiều cao của header sẽ bị thay đổi do đó nếu muốn
@@ -63,8 +45,12 @@ namespace GUI.MyUserControls
         private void ChangeColumnsProperty()
         {
             dtgv.Columns["MaHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dtgv.Columns["tenMH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dtgv.Columns["LamBai"].Width = 50;
+            dtgv.Columns["tenMH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dtgv.Columns["SoLuongCauHoi_Show"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Columns["ThoiGianLamBai_Show"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Columns["ThoiGianBatDau"].Width = 130;
+            dtgv.Columns["ThoiGianKetThuc"].Width = 130;
+            dtgv.Columns["LamBai"].Width = 80;
         }
 
         private void dtgv_DataSourceChanged(object sender, EventArgs e)
@@ -98,7 +84,8 @@ namespace GUI.MyUserControls
                     TongSoCauHoi = TongSoCau,
                     ThoiGianLamBai = minutes,
                     Location = new Point(700, 0),
-                    StartPosition = FormStartPosition.Manual
+                    StartPosition = FormStartPosition.Manual,
+                    ucDoExam = this
                 };
                 timerPopupForm.Start();
                 frmEnterPass.ShowDialog();
@@ -144,7 +131,7 @@ namespace GUI.MyUserControls
 
         private void timerPopupForm_Tick(object sender, EventArgs e)
         {
-            if(frmEnterPass.Location.Y>= this.Location.Y + 100)
+            if (frmEnterPass.Location.Y >= this.Location.Y + 100)
             {
                 timerPopupForm.Stop();
                 return;

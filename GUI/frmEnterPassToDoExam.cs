@@ -9,6 +9,7 @@ namespace GUI
     public partial class frmEnterPassToDoExam : Form
     {
         #region Danh sách các thuộc tính cần thiết để truyền giữa các form, đỡ truy vấn lại
+        public UserControl ucDoExam { get; set; }
         public string MaSV { get; set; }
         public string TenSV { get; set; }
         public string MaLopSH { get; set; }
@@ -20,6 +21,7 @@ namespace GUI
         public int ThoiGianLamBai { get; set; }
         public int TongSoCauHoi { get; set; }
         #endregion
+
         public frmEnterPassToDoExam()
         {
             InitializeComponent();
@@ -45,6 +47,7 @@ namespace GUI
                                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (res == DialogResult.OK)
                 {
+
                     UtilityClass.OpenNewForm(this, new frmQuiz()
                     {
                         MaSV = this.MaSV,
@@ -55,7 +58,8 @@ namespace GUI
                         MaBaiKiemTra = this.MaBaiKiemTra,
                         TenBaiKiemTra = this.TenBaiKiemTra,
                         TongSoCauHoi = this.TongSoCauHoi,
-                        ThoiGianLamBai = this.ThoiGianLamBai
+                        ThoiGianLamBai = this.ThoiGianLamBai,
+                        ucDoExam = this.ucDoExam,
                     });
                 }
             }

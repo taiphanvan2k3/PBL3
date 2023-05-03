@@ -1,7 +1,6 @@
 ﻿using BLL;
 using DTO;
 using GUI.MyCustomControl;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,6 +11,7 @@ namespace GUI.MyUserControls
     public partial class UC_Calendar_New : UserControl
     {
         #region Properties
+        public string MaSV { get; set; }
         private Size formOriginalSize;
         private Color colorBack;
         public Color ColorBack
@@ -152,6 +152,9 @@ namespace GUI.MyUserControls
             int start = thu - 1;
             if (start == 7)
                 start = 0;
+
+            //Mỗi lần load lại lịch thì cũng Clear cái Dictionary chứa toạ độ của các button trong ma trận
+            //trước đó
             if (IndexDayInMatrix.Count > 0)
                 IndexDayInMatrix.Clear();
             int I = 0, J = start;
@@ -232,12 +235,11 @@ namespace GUI.MyUserControls
 
         private void LoadListExamInMonth()
         {
-            li = BaiKiemTra_BLL.Instance.GetListExamInMonth(MONTH, YEAR);
-            //MessageBox.Show("Số exam trong tháng hiện tại:" + li.Count);
-            foreach(BaiKiemTra_DTO bkt in li)
+            li = BaiKiemTra_BLL.Instance.GetListExamInMonth(MaSV, MONTH, YEAR);
+            foreach (BaiKiemTra_DTO bkt in li)
             {
                 int day = bkt.ThoiGianBatDau.Day;
-             
+
                 //Lấy ra vị trí của button có ngày 'day' trong ma trận
                 KeyValuePair<int, int> pair = IndexDayInMatrix[day];
                 UC_Day tmp = btn[pair.Key, pair.Value];
@@ -336,13 +338,13 @@ namespace GUI.MyUserControls
         private void buttonDate_Click(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            if(button.BackColor != Color.LightGray)
+            if (button.BackColor != Color.LightGray)
             {
                 KeyValuePair<int, int> pair = IndexDayInMatrix[Convert.ToInt32(button.Text)];
                 UC_Day day = btn[pair.Key, pair.Value];
                 lbLoaiBaiKiemTra.Text = day.ExamName;
                 lbCacLopCoBaiKiemTra.Text = "";
-                foreach(BaiKiemTra_DTO bkt in day.listExams)
+                foreach (BaiKiemTra_DTO bkt in day.listExams)
                 {
                     lbCacLopCoBaiKiemTra.Text += bkt.TieuDeBaiKiemTra + "\n";
                 }

@@ -196,15 +196,17 @@ namespace DAL
             };
             db.BAI_KIEM_TRA.Add(NewBKT);
             db.SaveChanges();
+
             //Sort r lấy cái đầu tiên là ra mã lớn nhất vừa thêm 
             int MaBKT = db.BAI_KIEM_TRA.OrderByDescending(p => p.MaBaiKiemTra).Select(p => p.MaBaiKiemTra).FirstOrDefault();
             int SoLuongCauHoi = GetNumberQuestionForMonHoc(MaLHP);
-            List<CAU_HOI> li = new List<CAU_HOI>();
+
             //Nếu số câu hỏi có trong CSDL phù hợp nhiều hơn 2 lần số câu hỏi cần làm thì sẽ lấy ở mức gấp đôi số câu hỏi cần làm để random 
             if (SoLuongCauHoi > SoCauHoi * 2)
                 SoLuongCauHoi = SoCauHoi * 2;
+
             //x => Guid.NewGuid() là phương thức lấy ngẫu nhiên record trong database theo method syntax in LinQ to entities 
-            li = db.CAU_HOI.OrderBy(x => Guid.NewGuid()).Take(SoLuongCauHoi).ToList();
+            List<CAU_HOI> li = db.CAU_HOI.OrderBy(x => Guid.NewGuid()).Take(SoLuongCauHoi).ToList();
             foreach (var i in li)
             {
                 BAIKIEMTRA_CAUHOI NewBKT_CH = new BAIKIEMTRA_CAUHOI
@@ -216,6 +218,7 @@ namespace DAL
             }
             db.SaveChanges();
         }
+
         //MaLHPForAll example as OOAD21.13 -> MaLHPForAll is 21.13
         public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
         {
@@ -256,6 +259,7 @@ namespace DAL
                                     mh.TenMH
                                 }).Select(mh => new CBBItem { Id = mh.MaMH, Value = mh.TenMH }).Distinct().ToList();
         }
+
         #region Ver2
         public List<AssignTeacher> GetGVPhuHopTKB(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {
