@@ -1,5 +1,5 @@
-﻿using System;
-using System.Diagnostics;
+﻿using DTO;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,7 +7,18 @@ namespace GUI.MyUserControls
 {
     public partial class UC_FinishDoExam : UserControl
     {
-        public string MaSV { set => lblMSSV.Text = value; }
+        #region Các thuộc tính truyền từ frmEnterPassToDoExam qua
+        private string _MaSV { get; set; }
+        public string MaSV
+        {
+            get => _MaSV;
+            set
+            {
+                _MaSV = value;
+                lblMSSV.Text = value;
+            }
+        }
+
         public string TenSV { set => lblTenSV.Text = value; }
         public string LopSH { set => lblLopSH.Text = value; }
         public string MaHP { set => lblNhomHP.Text = value; }
@@ -19,6 +30,7 @@ namespace GUI.MyUserControls
         public int SoCauDung { get; set; }
         public int SoLanViPham { get; set; }
         public double DiemSo { get; set; }
+        #endregion
 
         public UC_FinishDoExam()
         {
@@ -27,7 +39,12 @@ namespace GUI.MyUserControls
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Form ParentForm = this.ParentForm;
+            frmQuiz ParentForm = this.ParentForm as frmQuiz;
+            
+            //Vì frmEnterPassToDoExam bị dispose trước đó nên đành truyền user control này lần lượt
+            //qua các form để có thể reload lại user control này sau khi sv hoàn thành bài thi
+            UC_DoExam uc = ParentForm.ucDoExam as UC_DoExam;
+            uc.LoadData();
             ParentForm.Dispose();
         }
 

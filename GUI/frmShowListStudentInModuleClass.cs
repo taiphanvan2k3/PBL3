@@ -8,6 +8,7 @@ namespace GUI
 {
     /// <summary>
     /// Chỉ có nhiệm vụ show ra danh sách sinh viên của 1 lớp học phần nào đó
+    /// khi giảng viên nhấn vào xem danh sách lớp HP khi đang xem lịch dạy
     /// </summary>
     public partial class frmShowListStudentInModuleClass : Form
     {

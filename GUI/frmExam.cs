@@ -1,4 +1,5 @@
-﻿using GUI.MyUserControls;
+﻿using BLL;
+using GUI.MyUserControls;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -48,6 +49,12 @@ namespace GUI
             formOriginalSize = this.Size;
         }
 
+        public UserControl GetUserControlIsActive()
+        {
+            UserControl uc = pnlMain.Controls[0] as UserControl;
+            return uc;
+        }
+
         private void btnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
@@ -90,7 +97,7 @@ namespace GUI
             CurrentState = SelectionState.Home;
             if (NewCalendar == null)
             {
-                NewCalendar = new UC_Calendar_New();
+                NewCalendar = new UC_Calendar_New() { MaSV = this.MaSV };
                 NewCalendar.Dock = DockStyle.Fill;
             }
             pnlMain.Controls.Add(NewCalendar);
@@ -126,6 +133,10 @@ namespace GUI
                         LopSH = this.MaLopSH
                     };
                     DoExam.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    DoExam.LoadData();
                 }
                 pnlMain.Controls.Add(DoExam);
             }
@@ -203,12 +214,12 @@ namespace GUI
 
         private void btnBackFrmStudent_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            UtilityClass.OpenNewForm(this, new frmStudent(MaSV));
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            UtilityClass.OpenNewForm(this, new frmDesignLogin());
         }
     }
 }

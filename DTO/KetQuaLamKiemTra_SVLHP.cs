@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DTO
 {
     /// <summary>
-    /// Lớp này dùng để lưu kết quả làm bài của các sinh viên khi làm một bài kiểm tra nào đó
+    /// Hiển thị kết quả làm bài của các sinh viên trong một lớp học phần nào đó, giảng viên sẽ có
+    /// giao diện để xem kết quả làm bài của các sinh viên tại 1 bài kiểm tra nào đó do mình tạo ra
     /// </summary>
     public class KetQuaLamKiemTra_SVLHP
     {
@@ -18,7 +15,7 @@ namespace DTO
         [DisplayName("Tên sinh viên")]
         public string HoTenSV { get; set; }
 
-        [DisplayName("Lớp sinh hoạt")]        
+        [DisplayName("Lớp sinh hoạt")]
         public string LopSH { get; set; }
 
         [DisplayName("Thời gian làm bài")]

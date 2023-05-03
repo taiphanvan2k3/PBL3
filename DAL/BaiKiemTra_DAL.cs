@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -45,31 +46,32 @@ namespace DAL
 
         public List<BaiKiemTra_DTO> GetAllExamOfStudent(string MaSV)
         {
-            // Lấy ra thông tin của tất cả các bài kiểm tra mà sinh viên đó có thể làm
-            //var li = db.SINHVIEN_LOPHOCPHAN.Where(svhp => svhp.MaSV == MaSV)
-            //    .Join(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
-            //    {
-            //        hp.MaLopHP,
-            //        hp.MON_HOC.TenMH
-            //    })
-            //    .GroupJoin(db.BAI_KIEM_TRA, hp => hp.MaLopHP, bkt => bkt.MaLopHP, (hp, bkt) => new
-            //    {
-            //        LopHP_tmp = hp,
-            //        BaiKiemTra_tmp = bkt.DefaultIfEmpty()
-            //    })
-            //    .SelectMany(i1 => i1.BaiKiemTra_tmp.Select(i2 => new BaiKiemTra_DTO
-            //    {
-            //        MaHP = i1.LopHP_tmp.MaLopHP,
-            //        TenMH = i1.LopHP_tmp.TenMH,
-            //        TieuDeBaiKiemTra = i2.TieuDeBaiKiemTra,
-            //        //SoCauHoi = i2.SoCauHoi,
-            //        //ThoiGianLamBai = i2.ThoiGianLamBai,
-            //        //ThoiGianBatDau = i2.NgayKiemTra,
-            //        //MkBaiKiemTra = i2.MkBaiKiemTra,
-            //        ChoPhepQuayLai = i2.ChoPhepQuayLai != null && (bool)i2.ChoPhepQuayLai
-            //    })).ToList();
-            
-            var li2 = db.SINHVIEN_LOPHOCPHAN.Where(svhp => svhp.MaSV == MaSV)
+            /*
+            lấy ra thông tin của tất cả các bài kiểm tra mà sinh viên đó có thể làm
+            var li = db.sinhvien_lophocphan.where(svhp => svhp.masv == masv)
+                .join(db.lop_hoc_phan, svhp => svhp.malophp, hp => hp.malophp, (svhp, hp) => new
+                {
+                    hp.malophp,
+                    hp.mon_hoc.tenmh
+                })
+                .groupjoin(db.bai_kiem_tra, hp => hp.malophp, bkt => bkt.malophp, (hp, bkt) => new
+                {
+                    lophp_tmp = hp,
+                    baikiemtra_tmp = bkt.defaultifempty()
+                })
+                .selectmany(i1 => i1.baikiemtra_tmp.select(i2 => new baikiemtra_dto
+                {
+                    mahp = i1.lophp_tmp.malophp,
+                    tenmh = i1.lophp_tmp.tenmh,
+                    tieudebaikiemtra = i2.tieudebaikiemtra,
+                    //socauhoi = i2.socauhoi,
+                    //thoigianlambai = i2.thoigianlambai,
+                    //thoigianbatdau = i2.ngaykiemtra,
+                    //mkbaikiemtra = i2.mkbaikiemtra,
+                    chophepquaylai = i2.chophepquaylai != null && (bool)i2.chophepquaylai
+                })).tolist();
+            */
+            var li = db.SINHVIEN_LOPHOCPHAN.Where(svhp => svhp.MaSV == MaSV)
                 .Join(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
                 {
                     hp.MaLopHP,
@@ -79,14 +81,22 @@ namespace DAL
                 {
                     MaHP = hp.MaLopHP,
                     TenMH = hp.TenMH,
+                    MaBaiKiemTra = bkt.MaBaiKiemTra,
                     TieuDeBaiKiemTra = bkt.TieuDeBaiKiemTra,
                     SoCauHoi = bkt.SoCauHoi,
                     ThoiGianLamBai = bkt.ThoiGianLamBai,
                     ThoiGianBatDau = bkt.NgayKiemTra,
                     MkBaiKiemTra = bkt.MkBaiKiemTra,
                     ChoPhepQuayLai = bkt.ChoPhepQuayLai != null && (bool)bkt.ChoPhepQuayLai
-                }).ToList();
-            return li2;
+                })
+                .ToList();
+            List<BaiKiemTra_DTO> res = new List<BaiKiemTra_DTO>();
+            foreach (BaiKiemTra_DTO bkt in li)
+            {
+                if (db.LAM_BAI_KIEM_TRA.Find(MaSV, bkt.MaBaiKiemTra) == null)
+                    res.Add(bkt);
+            }
+            return res;
         }
 
 
@@ -161,24 +171,40 @@ namespace DAL
             return li;
         }
 
-        public List<BaiKiemTra_DTO> GetListExamInMonth(DateTime startDate, DateTime endDate)
+        public List<BaiKiemTra_DTO> GetListExamInMonth(string MaSV, DateTime startDate, DateTime endDate)
         {
-            var li = db.BAI_KIEM_TRA.Where(bkt => startDate <= bkt.NgayKiemTra
-                                           && bkt.NgayKiemTra <= endDate)
-            .Select(p => new BaiKiemTra_DTO()
-            {
-                //MaLoaiKiemTra: GK,CK,Test
-                MaLoaiKiemTra = p.TenBaiKiemTra,
+            //Lấy ra tất cả lịch kiểm tra của các lớp HP mà sinh viên này đang theo học trong phạm vi 1 tháng
+            var li = db.SINHVIEN_LOPHOCPHAN.Where(sv => sv.MaSV == MaSV)
+                .Join(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, lhp => lhp.MaLopHP, (svhp, lhp) => new
+                {
+                    lhp.MaLopHP,
+                    lhp.MON_HOC.TenMH
+                })
+                .Join(db.BAI_KIEM_TRA, lhp => lhp.MaLopHP, bkt => bkt.MaLopHP, (lhp, bkt) => new BaiKiemTra_DTO
+                {
+                    //MaLoaiKiemTra: GK,CK,Test
+                    MaLoaiKiemTra = bkt.TenBaiKiemTra,
 
-                //TieuDeBaiKiemTra: kiểm tra giữa kì OOP
-                TieuDeBaiKiemTra = p.TieuDeBaiKiemTra,
-                MaHP = p.MaLopHP,
-                TenMH = p.LOP_HOC_PHAN.MON_HOC.TenMH,
-                SoCauHoi = p.SoCauHoi,
-                ThoiGianLamBai = p.ThoiGianLamBai,
-                ThoiGianBatDau = p.NgayKiemTra
-            }).ToList();
+                    //TieuDeBaiKiemTra: kiểm tra giữa kì OOP
+                    TieuDeBaiKiemTra = bkt.TieuDeBaiKiemTra,
+                    MaHP = bkt.MaLopHP,
+                    TenMH = lhp.TenMH,
+                    SoCauHoi = bkt.SoCauHoi,
+
+                    //ThoiGianBatDau là thời gian bắt đầu mở đề này
+                    ThoiGianBatDau = bkt.NgayKiemTra,
+
+                    //ThoiGianLamBai là khoảng thời gian tối đa để làm đề này, đơn vị tính (phút)
+                    ThoiGianLamBai = bkt.ThoiGianLamBai
+                })
+                .Where(bkt => startDate <= bkt.ThoiGianBatDau && bkt.ThoiGianBatDau <= endDate).ToList();
             return li;
+        }
+
+        public void SaveResultOfDoExam(LAM_BAI_KIEM_TRA lambkt)
+        {
+            db.LAM_BAI_KIEM_TRA.Add(lambkt);
+            db.SaveChanges();
         }
     }
 }

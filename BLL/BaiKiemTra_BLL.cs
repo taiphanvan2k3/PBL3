@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -58,12 +59,27 @@ namespace BLL
             return BaiKiemTra_DAL.Instance.GetKetQuaKiemTra_LHP(MaBaiKiemTra);
         }
 
-        public List<BaiKiemTra_DTO> GetListExamInMonth(int month, int year)
+        public List<BaiKiemTra_DTO> GetListExamInMonth(string MaSV, int month, int year)
         {
             DateTime startDate = new DateTime(year, month, 1);
             int maxDay = UtilityClass.GetNumberOfDayInMonth(month, year);
             DateTime endDate = new DateTime(year, month, maxDay);
-            return BaiKiemTra_DAL.Instance.GetListExamInMonth(startDate, endDate);
+            return BaiKiemTra_DAL.Instance.GetListExamInMonth(MaSV, startDate, endDate);
+        }
+
+        public void SaveResultOfDoExam(KetQuaLamKiemTra kq)
+        {
+            LAM_BAI_KIEM_TRA lambkt = new LAM_BAI_KIEM_TRA()
+            {
+                MaSV = kq.MaSV,
+                MaBaiKiemTra = kq.MaBaiKiemTra,
+                SoCauDung = (byte)kq.SoCauDung,
+                SoLanViPham = (byte)kq.SoLanViPham,
+                ThoiGianLamBai = kq.ThoiGianLamBai,
+                ThoiGianNopBai = kq.ThoiGianNopBai,
+                Diem = kq.Diem
+            };
+            BaiKiemTra_DAL.Instance.SaveResultOfDoExam(lambkt);
         }
     }
 }

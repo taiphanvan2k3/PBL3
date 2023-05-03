@@ -12,7 +12,17 @@ namespace GUI
 {
     public partial class frmQuiz : Form
     {
-        public string MaSV { set => lblMSSV.Text = value; }
+        public UserControl ucDoExam { get; set; }
+        private string _MaSV { get; set; }
+        public string MaSV
+        {
+            get => _MaSV;
+            set
+            {
+                _MaSV = value;
+                lblMSSV.Text = value;
+            }
+        }
         public string TenSV { set => lblTenSV.Text = value; }
         public string LopSH { set => lblLopSH.Text = value; }
         public string MaHP { set => lblNhomHP.Text = value; }
@@ -21,10 +31,12 @@ namespace GUI
         public string TenBaiKiemTra { set => panelTitle.Text = value; }
         public int ThoiGianLamBai { set => targetTime = TimeSpan.FromMinutes(value); }
         public int TongSoCauHoi { get; set; }
+
         //Thời gian hoàn thành bài của sinh viên này
         private DateTime StartTime { get; set; }
         private DateTime SubmitTime { get; set; }
         private int SoLanViPham { get; set; } = 0;
+
         //Các thuộc tính để ngăn chặn việc chuyển tab, quay màn hình,...
         [DllImport("user32.dll")]
         static extern bool SetWindowDisplayAffinity(IntPtr hWnd, uint dwAffinity);
@@ -33,11 +45,12 @@ namespace GUI
 
         private Stopwatch stopwatch = new Stopwatch();
         private TimeSpan targetTime;
+
         //Số thứ tự câu hỏi hiện tại (đếm từ 1, khi nào cần truy cập vào mảng questions thì giảm 1 đi)
         private int CurrentIndex = 1;
         private int AnsweredQuestion = 0;
         private List<CauHoi_DTO> questions;
-        public List<SelectedAnswer> selectedAnswers;
+        public List<SelectedAnswer> selectedAnswers; // không dùng
         public frmQuiz()
         {
             InitializeComponent();
@@ -73,10 +86,12 @@ namespace GUI
                 questions.Add(c);
             }
         }
+
         private void LoadCauHoi()
         {
             testGiaoDien();
         }
+
         private void frmQuiz_Load(object sender, EventArgs e)
         {
             //Load tất cả câu hỏi của bộ đề và hiển thị
@@ -300,6 +315,7 @@ namespace GUI
                 res += (cauHoi.CheckCorrectAnswer()) ? 1 : 0;
             return res;
         }
+
         private void btnNopBai_Click(object sender, EventArgs e)
         {
             CheckAnswered();
@@ -307,8 +323,24 @@ namespace GUI
             SetWindowDisplayAffinity(this.Handle, WDA_NONE);
             timer1.Stop();
             stopwatch.Stop();
+
             SubmitTime = DateTime.Now;
             int SoCauDung = this.SoCauDung();
+
+            //Lưu kết quả làm bài vào CSDL trước khi thoát
+            KetQuaLamKiemTra kq = new KetQuaLamKiemTra()
+            {
+                MaSV = this.MaSV,
+                MaBaiKiemTra = this.MaBaiKiemTra,
+                SoCauDung = SoCauDung,
+                SoLanViPham = this.SoLanViPham,
+                ThoiGianLamBai = this.StartTime,
+                ThoiGianNopBai = SubmitTime,
+                Diem = 10.0 * SoCauDung / this.TongSoCauHoi
+            };
+            BaiKiemTra_BLL.Instance.SaveResultOfDoExam(kq);
+
+            //Hiển thị UC xem kết quả
             panelMain.Controls.Clear();
             UC_FinishDoExam finish = new UC_FinishDoExam()
             {

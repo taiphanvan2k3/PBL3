@@ -23,6 +23,8 @@ namespace GUI
             dtgv.DataSource = listExams;
             dtgv.Columns["MaBaiKiemTra"].Visible = false;
             dtgv.Columns["MkBaiKiemTra"].Visible = false;
+            dtgv.Columns["MaHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgv.Columns["TenMH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
