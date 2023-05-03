@@ -71,7 +71,19 @@ namespace GUI.MyUserControls
             set => pnlEvent.BackColor = value;
         }
         #endregion
-
+        public void SeeMore()
+        {
+            if (!string.IsNullOrEmpty(DateValue))
+            {
+                MessageBox.Show("Số bài kiểm tra trong ngày:" + listExams.Count);
+                Form frmExam = this.ParentForm;
+                frmShowEventInDay frm = new frmShowEventInDay();
+                frm.Date = DateValue;
+                frm.listExams = listExams;
+                frm.Location = new Point(frmExam.Location.X + (frmExam.Width - frm.Width) / 2, frmExam.Location.Y + 100);
+                frm.ShowDialog();
+            }
+        }
         private void pblEvent_Click(object sender, System.EventArgs e)
         {
             if (!string.IsNullOrEmpty(DateValue))

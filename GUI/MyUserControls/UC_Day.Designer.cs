@@ -46,7 +46,7 @@
             this.pnlEvent.Name = "pnlEvent";
             this.pnlEvent.Size = new System.Drawing.Size(162, 63);
             this.pnlEvent.TabIndex = 1;
-            this.pnlEvent.Click += new System.EventHandler(this.pblEvent_Click);
+            //this.pnlEvent.Click += new System.EventHandler(this.pblEvent_Click);
             // 
             // lbIfMore
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.pnlEvent);
             this.Name = "UC_Day";
             this.Size = new System.Drawing.Size(162, 112);
-            this.Click += new System.EventHandler(this.pblEvent_Click);
+            //this.Click += new System.EventHandler(this.pblEvent_Click);
             this.pnlEvent.ResumeLayout(false);
             this.pnlEvent.PerformLayout();
             this.ResumeLayout(false);
