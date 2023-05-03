@@ -14,6 +14,12 @@ namespace GUI.MyUserControls
 {
     public partial class UC_MonthCalendar : UserControl
     {
+        public event EventHandler ButtonPrevious;
+        public event EventHandler ButtonToday;
+        public event EventHandler ButtonNext;
+        public event EventHandler ButtonDate;
+        public UC_Calendar_New UC_Calendar { get; set; }
+        public CustomButton[,] btn = new CustomButton[6, 7];
         private Size formOriginalSize;
         private Color colorBack;
         public Color ColorBack
@@ -31,10 +37,10 @@ namespace GUI.MyUserControls
                 lbFriday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSaturday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSunday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
-                btnPrevious.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
-                btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                //btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
+                //btnPrevious.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
+                //btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
+                //btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btnDate.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 btnDate.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btnDate.ForeColor = (colorBack == Color.White) ? Color.FromArgb(13, 87, 119) : Color.FromArgb(227, 111, 38);
@@ -43,7 +49,6 @@ namespace GUI.MyUserControls
             }
         }
         int MONTH, YEAR;
-        CustomButton[,] btn = new CustomButton[6, 7];
         //Button[,] btn = new Button[6, 7];
         String[,] dTime = new String[6, 7];
         public UC_MonthCalendar()
@@ -264,9 +269,11 @@ namespace GUI.MyUserControls
         private void buttonDate_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            MessageBox.Show(btn.Text + " " + btn.Size.Width + " " + btn.Size.Height);
+            //MessageBox.Show(btn.Text + " " + btn.Size.Width + " " + btn.Size.Height);
+            UC_Calendar.ButtonDateMonth = btn;
+            ButtonDate.Invoke(this, e);
         }
-        private void buttonToday_Click(object sender, EventArgs e)
+        public void LoadTodayDate()
         {
             DateTime now = DateTime.Now;
             MONTH = now.Month;
@@ -274,13 +281,33 @@ namespace GUI.MyUserControls
             btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
         }
+        /*private void buttonToday_Click(object sender, EventArgs e)
+        {
+            ButtonToday.Invoke(this, e);
+            LoadTodayDate();
+        }*/
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            buttonToday_Click(sender, e);
+            LoadTodayDate();
         }
-
-        private void btnNext_Click(object sender, EventArgs e)
+        public void LoadPreviousDate()
+        {
+            MONTH--;
+            if (MONTH == 0)
+            {
+                YEAR--;
+                MONTH = 12;
+            }
+            btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
+            LoadDays();
+        }
+        /*private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            ButtonPrevious.Invoke(this, e);
+            LoadPreviousDate();
+        }*/
+        public void LoadNextDate()
         {
             MONTH++;
             if (MONTH == 13)
@@ -291,6 +318,11 @@ namespace GUI.MyUserControls
             btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
         }
+        /*private void btnNext_Click(object sender, EventArgs e)
+        {
+            ButtonNext.Invoke(this, e);
+            LoadNextDate();
+        }*/
 
         private void UC_Calendar_Resize(object sender, EventArgs e)
         {
@@ -331,28 +363,16 @@ namespace GUI.MyUserControls
             posX = offset + btn[0, 6].Location.X + (btn[0, 1].Width - lbSaturday.Width) / 2;
             lbSaturday.Location = new Point(posX, lbSunday.Location.Y);
 
-            btnNext.Size = new Size((int)(btnNext.Width * xRatio), (int)(btnNext.Height * yRatio));
-            btnNext.Location = new Point((int)(btnNext.Location.X * xRatio), (int)(btnNext.Location.Y * yRatio));
+            //btnNext.Size = new Size((int)(btnNext.Width * xRatio), (int)(btnNext.Height * yRatio));
+            //btnNext.Location = new Point((int)(btnNext.Location.X * xRatio), (int)(btnNext.Location.Y * yRatio));
 
-            btnPrevious.Size = new Size((int)(btnPrevious.Width * xRatio), (int)(btnPrevious.Height * yRatio));
-            btnPrevious.Location = new Point((int)(btnPrevious.Location.X * xRatio), (int)(btnPrevious.Location.Y * yRatio));
+            //btnPrevious.Size = new Size((int)(btnPrevious.Width * xRatio), (int)(btnPrevious.Height * yRatio));
+            //btnPrevious.Location = new Point((int)(btnPrevious.Location.X * xRatio), (int)(btnPrevious.Location.Y * yRatio));
 
             btnDate.Size = new Size((int)(btnDate.Width * xRatio), (int)(btnDate.Height * yRatio));
             btnDate.Location = new Point((int)(btnDate.Location.X * xRatio), (int)(btnDate.Location.Y * yRatio));
 
             formOriginalSize = this.Size;
-        }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            MONTH--;
-            if (MONTH == 0)
-            {
-                YEAR--;
-                MONTH = 12;
-            }
-            btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
-            LoadDays();
         }
         #endregion
     }
