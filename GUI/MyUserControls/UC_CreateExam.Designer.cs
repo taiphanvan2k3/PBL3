@@ -43,10 +43,10 @@
             this.dtpGioKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.chbAllowReturn = new Guna.UI2.WinForms.Guna2CheckBox();
             this.tbMatKhauLamBai = new GUI.MyCustomControl.CustomTextBox();
-            this.btnTao = new GUI.MyCustomControl.CustomButton();
             this.btnDatLai = new GUI.MyCustomControl.CustomButton();
             this.tbThoiGianLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.tbTenBaiKiemTra = new GUI.MyCustomControl.CustomTextBox();
+            this.btnTao = new GUI.MyCustomControl.CustomButton();
             this.SuspendLayout();
             // 
             // label1
@@ -266,30 +266,6 @@
             this.tbMatKhauLamBai.Texts = "";
             this.tbMatKhauLamBai.UnderlinedStyle = false;
             // 
-            // btnTao
-            // 
-            this.btnTao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTao.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTao.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnTao.BorderRadius = 20;
-            this.btnTao.BorderSize = 0;
-            this.btnTao.Enabled = false;
-            this.btnTao.FlatAppearance.BorderSize = 0;
-            this.btnTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTao.ForeColor = System.Drawing.Color.White;
-            this.btnTao.Image = global::GUI.Properties.Resources.Save;
-            this.btnTao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTao.Location = new System.Drawing.Point(717, 614);
-            this.btnTao.Name = "btnTao";
-            this.btnTao.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnTao.Size = new System.Drawing.Size(148, 55);
-            this.btnTao.TabIndex = 15;
-            this.btnTao.Text = " Tạo";
-            this.btnTao.TextColor = System.Drawing.Color.White;
-            this.btnTao.UseVisualStyleBackColor = false;
-            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
-            // 
             // btnDatLai
             // 
             this.btnDatLai.BackColor = System.Drawing.Color.Black;
@@ -355,6 +331,30 @@
             this.tbTenBaiKiemTra.TabIndex = 0;
             this.tbTenBaiKiemTra.Texts = "";
             this.tbTenBaiKiemTra.UnderlinedStyle = false;
+            // 
+            // btnTao
+            // 
+            this.btnTao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTao.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTao.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnTao.BorderRadius = 20;
+            this.btnTao.BorderSize = 0;
+            this.btnTao.Enabled = false;
+            this.btnTao.FlatAppearance.BorderSize = 0;
+            this.btnTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTao.ForeColor = System.Drawing.Color.White;
+            this.btnTao.Image = global::GUI.Properties.Resources.Save1;
+            this.btnTao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTao.Location = new System.Drawing.Point(717, 614);
+            this.btnTao.Name = "btnTao";
+            this.btnTao.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnTao.Size = new System.Drawing.Size(148, 55);
+            this.btnTao.TabIndex = 15;
+            this.btnTao.Text = "Tạo";
+            this.btnTao.TextColor = System.Drawing.Color.White;
+            this.btnTao.UseVisualStyleBackColor = false;
+            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
             // UC_CreateExam
             // 
