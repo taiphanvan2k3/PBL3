@@ -46,7 +46,7 @@ namespace GUI
                 {
                     if (account.VaiTro == "Giáo viên")
                     {
-                        //102BK0001 123456
+                        //102BK0001 Abc123
                         CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
                         frm = new frmTeacher(txtUsername.Texts);
                     }
@@ -55,6 +55,7 @@ namespace GUI
                         //101190001 123Abc
                         //101180002 123457
                         //101180003 123458
+                        //102210043 Abc123
                         CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
                         frm = new frmStudent(account.TaiKhoan);
                     }

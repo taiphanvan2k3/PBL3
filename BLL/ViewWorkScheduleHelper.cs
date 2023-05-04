@@ -46,7 +46,7 @@ namespace BLL
             dtgv.Columns["XemDanhSach"].DefaultCellStyle.Padding = new Padding(padding1, 5, padding1, 5);
 
             int WidthColumnThongBao = dtgv.Columns["ThongBao"].Width;
-            int padding2 = (WidthColumnThongBao - 90) / 2;
+            int padding2 = (WidthColumnThongBao - 100) / 2;
             dtgv.Columns["ThongBao"].DefaultCellStyle.Padding = new Padding(padding2, 5, padding2, 5);
         }
 
@@ -71,7 +71,7 @@ namespace BLL
                     else
                     {
                         buttonText = "Thông báo";
-                        buttonWidth = 90;
+                        buttonWidth = 100;
                     }
 
                     buttonBounds.Width = buttonWidth;

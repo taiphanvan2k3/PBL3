@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbYear = new GUI.MyCustomControl.CustomComboBox();
+            this.cmbProgramingList = new GUI.MyCustomControl.CustomComboBox();
+            this.cmbListFacluty = new GUI.MyCustomControl.CustomComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new GUI.MyCustomControl.CustomButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAdd = new GUI.MyCustomControl.CustomButton();
+            this.cmbTeacher = new GUI.MyCustomControl.CustomComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbYear = new GUI.MyCustomControl.CustomComboBox();
-            this.cmbProgramingList = new GUI.MyCustomControl.CustomComboBox();
-            this.cmbListFacluty = new GUI.MyCustomControl.CustomComboBox();
-            this.btnCancel = new GUI.MyCustomControl.CustomButton();
-            this.btnAdd = new GUI.MyCustomControl.CustomButton();
-            this.cmbTeacher = new GUI.MyCustomControl.CustomComboBox();
-            this.txtNumberMaxStudent = new GUI.MyCustomControl.CustomTextBox();
             this.labelErr = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNumberMaxStudent = new GUI.MyCustomControl.CustomTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,134 +87,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 500);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 49);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Thêm mới lớp sinh hoạt";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(50, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên khoa";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(50, 126);
-            this.label3.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(280, 31);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên chương trình đào tạo";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(50, 199);
-            this.label4.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 31);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Khóa nhập học";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(400, 399);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 101);
-            this.panel2.TabIndex = 26;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnAdd);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 399);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(400, 101);
-            this.panel3.TabIndex = 27;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(50, 269);
-            this.label6.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(249, 31);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Giảng viên chủ nhiệm";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(50, 339);
-            this.label5.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 31);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Số lượng tối đa";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.labelErr);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.txtNumberMaxStudent);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(400, 329);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(400, 70);
-            this.panel4.TabIndex = 34;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(246, 19);
-            this.label7.Margin = new System.Windows.Forms.Padding(0, 10, 50, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 27);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "(Tối đa 50)";
             // 
             // cmbYear
             // 
@@ -293,6 +165,76 @@
             this.cmbListFacluty.Texts = "";
             this.cmbListFacluty.OnSelectedIndexChanged += new System.EventHandler(this.cmbListFacluty_OnSelectedIndexChanged);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 49);
+            this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(344, 41);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Thêm mới lớp sinh hoạt";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(50, 59);
+            this.label2.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên khoa";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(50, 126);
+            this.label3.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(280, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tên chương trình đào tạo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(50, 199);
+            this.label4.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 31);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Khóa nhập học";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(400, 399);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(400, 101);
+            this.panel2.TabIndex = 26;
+            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Crimson;
@@ -312,6 +254,16 @@
             this.btnCancel.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnAdd);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 399);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(400, 101);
+            this.panel3.TabIndex = 27;
             // 
             // btnAdd
             // 
@@ -356,6 +308,67 @@
             this.cmbTeacher.Texts = "";
             this.cmbTeacher.OnSelectedIndexChanged += new System.EventHandler(this.cmbProgramingList_OnSelectedIndexChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(50, 269);
+            this.label6.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(249, 31);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Giảng viên chủ nhiệm";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(50, 339);
+            this.label5.Margin = new System.Windows.Forms.Padding(50, 10, 0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 31);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Số lượng tối đa";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.labelErr);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.txtNumberMaxStudent);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(400, 329);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(400, 70);
+            this.panel4.TabIndex = 34;
+            // 
+            // labelErr
+            // 
+            this.labelErr.AutoSize = true;
+            this.labelErr.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErr.ForeColor = System.Drawing.Color.Firebrick;
+            this.labelErr.Location = new System.Drawing.Point(164, 19);
+            this.labelErr.Margin = new System.Windows.Forms.Padding(0, 10, 50, 0);
+            this.labelErr.Name = "labelErr";
+            this.labelErr.Size = new System.Drawing.Size(41, 27);
+            this.labelErr.TabIndex = 38;
+            this.labelErr.Text = "Lỗi";
+            this.labelErr.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(246, 19);
+            this.label7.Margin = new System.Windows.Forms.Padding(0, 10, 50, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 27);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "(Tối đa 50)";
+            // 
             // txtNumberMaxStudent
             // 
             this.txtNumberMaxStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
@@ -381,19 +394,6 @@
             this.txtNumberMaxStudent.UnderlinedStyle = false;
             this.txtNumberMaxStudent._TextChanged += new System.EventHandler(this.txtNumberMaxStudent__TextChanged);
             this.txtNumberMaxStudent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumberMaxStudent_KeyPress);
-            // 
-            // labelErr
-            // 
-            this.labelErr.AutoSize = true;
-            this.labelErr.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErr.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelErr.Location = new System.Drawing.Point(164, 19);
-            this.labelErr.Margin = new System.Windows.Forms.Padding(0, 10, 50, 0);
-            this.labelErr.Name = "labelErr";
-            this.labelErr.Size = new System.Drawing.Size(41, 27);
-            this.labelErr.TabIndex = 38;
-            this.labelErr.Text = "Lỗi";
-            this.labelErr.Visible = false;
             // 
             // frmAddHomeroomClass
             // 
