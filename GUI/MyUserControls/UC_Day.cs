@@ -75,7 +75,7 @@ namespace GUI.MyUserControls
         {
             if (!string.IsNullOrEmpty(DateValue))
             {
-                MessageBox.Show("Số bài kiểm tra trong ngày:" + listExams.Count);
+                //MessageBox.Show("Số bài kiểm tra trong ngày:" + listExams.Count);
                 Form frmExam = this.ParentForm;
                 frmShowEventInDay frm = new frmShowEventInDay();
                 frm.Date = DateValue;

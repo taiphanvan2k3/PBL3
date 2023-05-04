@@ -218,17 +218,39 @@ namespace DAL
             }
             db.SaveChanges();
         }
-
+        public ThoiKhoaBieu_DTO GetScheduleForTKB(string MaLHP)
+        {
+            var query = db.THOI_KHOA_BIEU.Where(p => p.MaLopHP == MaLHP).Select(p => new ThoiKhoaBieu_DTO
+            {
+                Thu = p.Thu,
+                TietBD = p.TietBD
+            }).FirstOrDefault();
+            return query;
+        }
         //MaLHPForAll example as OOAD21.13 -> MaLHPForAll is 21.13
-        public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
+        /*public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
         {
             DateTime TimeLamBai = TimeExam.AddMinutes((double)ThoiGianLamBai);
             var query = db.BAI_KIEM_TRA.Where(bkt => bkt.MaLopHP.Contains(MaLHPForAll)
                                         && bkt.NgayKiemTra > TimeExam
                                         && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeLamBai).ToList();
             return query.Count > 0;
+        }*/
+        public List<string> GetListSVForLHP(string MaLHP)
+        {
+            return db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaLopHP == MaLHP).Select(p => p.MaSV).Distinct().ToList();
         }
-
+        //Lấy ra các lớp học phần mà sinh viên trong lớp học phần cần tạo bài kiểm tra học và kiểm tra xung đột trên các lớp đó 
+        public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHP)
+        {
+            DateTime TimeLamBai = TimeExam.AddMinutes((double)ThoiGianLamBai);
+            List<string> list = GetListSVForLHP(MaLHP);
+            var ListLHP = db.SINHVIEN_LOPHOCPHAN.Where(x => list.Contains(x.MaSV)).Select(x => x.MaLopHP).Distinct().ToList();
+            var query = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
+                                        && bkt.NgayKiemTra > TimeExam
+                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeLamBai).ToList();
+            return query.Count > 0;
+        }
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
         {
             CAU_HOI NewCauHoi = new CAU_HOI

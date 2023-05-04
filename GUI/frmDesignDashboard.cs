@@ -24,8 +24,6 @@ namespace GUI
             lbCountAcc.Text = GetInformationAcc_BLL.Instance.CountNGUOI_DUNG().ToString();
             lblNumberStudent.Text = GetInformationAcc_BLL.Instance.CountSINH_VIEN().ToString();
             lbNumberTeacher.Text = GetInformationAcc_BLL.Instance.CountGIANG_VIEN().ToString();
-            lbNumberPrograming.Text = GetInformationAcc_BLL.Instance.CountCHUONG_TRINH_DAO_TAO().ToString();
-            lbFaculty.Text = GetInformationAcc_BLL.Instance.CountKHOA().ToString();
             chartStudentByYear.DataSource = GetInformationAcc_BLL.Instance.StuentByYearList();
             chartStudentByYear.Series[0].XValueMember = "Key";
             chartStudentByYear.Series[0].YValueMembers = "Value";

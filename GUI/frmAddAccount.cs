@@ -357,6 +357,7 @@ namespace GUI
                             name += namePartsTeacher[i] + " ";
                         }
                         txtSurname.Texts = name;
+                        txtName.Texts = namePartsTeacher[namePartsTeacher.Length - 1];
                         dtpBirthday.Value = informationTeacher.NgaySinh;
                         if (informationTeacher.GioiTinh)
                         {

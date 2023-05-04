@@ -42,6 +42,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dtpGioKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.chbAllowReturn = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.cbTuanKiemTra = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbMatKhauLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.btnTao = new GUI.MyCustomControl.CustomButton();
             this.btnDatLai = new GUI.MyCustomControl.CustomButton();
@@ -243,6 +244,33 @@
             this.chbAllowReturn.UncheckedState.BorderThickness = 0;
             this.chbAllowReturn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
+            // cbTuanKiemTra
+            // 
+            this.cbTuanKiemTra.BackColor = System.Drawing.Color.Transparent;
+            this.cbTuanKiemTra.BorderColor = System.Drawing.Color.Black;
+            this.cbTuanKiemTra.BorderRadius = 10;
+            this.cbTuanKiemTra.BorderThickness = 2;
+            this.cbTuanKiemTra.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTuanKiemTra.DropDownHeight = 150;
+            this.cbTuanKiemTra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTuanKiemTra.DropDownWidth = 250;
+            this.cbTuanKiemTra.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTuanKiemTra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTuanKiemTra.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTuanKiemTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbTuanKiemTra.IntegralHeight = false;
+            this.cbTuanKiemTra.ItemHeight = 30;
+            this.cbTuanKiemTra.Items.AddRange(new object[] {
+            "Chọn số câu hỏi",
+            "30",
+            "40",
+            "50"});
+            this.cbTuanKiemTra.Location = new System.Drawing.Point(205, 460);
+            this.cbTuanKiemTra.Name = "cbTuanKiemTra";
+            this.cbTuanKiemTra.Size = new System.Drawing.Size(291, 36);
+            this.cbTuanKiemTra.TabIndex = 31;
+            this.cbTuanKiemTra.Visible = false;
+            // 
             // tbMatKhauLamBai
             // 
             this.tbMatKhauLamBai.BackColor = System.Drawing.SystemColors.Window;
@@ -278,14 +306,14 @@
             this.btnTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTao.ForeColor = System.Drawing.Color.White;
-            this.btnTao.Image = global::GUI.Properties.Resources.Save;
+            this.btnTao.Image = global::GUI.Properties.Resources.Save1;
             this.btnTao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTao.Location = new System.Drawing.Point(717, 614);
             this.btnTao.Name = "btnTao";
             this.btnTao.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnTao.Size = new System.Drawing.Size(148, 55);
             this.btnTao.TabIndex = 15;
-            this.btnTao.Text = " Tạo";
+            this.btnTao.Text = "Tạo";
             this.btnTao.TextColor = System.Drawing.Color.White;
             this.btnTao.UseVisualStyleBackColor = false;
             this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
@@ -360,6 +388,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbTuanKiemTra);
             this.Controls.Add(this.chbAllowReturn);
             this.Controls.Add(this.dtpGioKT);
             this.Controls.Add(this.label9);
@@ -408,5 +437,6 @@
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpGioKT;
         private Guna.UI2.WinForms.Guna2CheckBox chbAllowReturn;
+        private Guna.UI2.WinForms.Guna2ComboBox cbTuanKiemTra;
     }
 }

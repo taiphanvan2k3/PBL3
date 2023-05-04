@@ -48,8 +48,8 @@
             this.tbB = new GUI.MyCustomControl.CustomTextBox();
             this.panelGradient1 = new GUI.MyCustomControl.PanelGradient();
             this.tbA = new GUI.MyCustomControl.CustomTextBox();
-            this.btnCreateQues = new GUI.MyCustomControl.CustomButton();
             this.cbMonHoc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnCreateQues = new GUI.MyCustomControl.CustomButton();
             this.pnlChooseAnswer.SuspendLayout();
             this.panelGradient4.SuspendLayout();
             this.panelGradient3.SuspendLayout();
@@ -358,30 +358,6 @@
             this.tbA.Enter += new System.EventHandler(this.tbA_Enter);
             this.tbA.Leave += new System.EventHandler(this.tbA_Leave);
             // 
-            // btnCreateQues
-            // 
-            this.btnCreateQues.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCreateQues.BackGroundColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCreateQues.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCreateQues.BorderRadius = 20;
-            this.btnCreateQues.BorderSize = 0;
-            this.btnCreateQues.Enabled = false;
-            this.btnCreateQues.FlatAppearance.BorderSize = 0;
-            this.btnCreateQues.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateQues.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateQues.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateQues.Image = global::GUI.Properties.Resources.Save;
-            this.btnCreateQues.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateQues.Location = new System.Drawing.Point(969, 719);
-            this.btnCreateQues.Name = "btnCreateQues";
-            this.btnCreateQues.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCreateQues.Size = new System.Drawing.Size(164, 55);
-            this.btnCreateQues.TabIndex = 5;
-            this.btnCreateQues.Text = "Tạo";
-            this.btnCreateQues.TextColor = System.Drawing.Color.Black;
-            this.btnCreateQues.UseVisualStyleBackColor = false;
-            this.btnCreateQues.Click += new System.EventHandler(this.btnCreateQues_Click);
-            // 
             // cbMonHoc
             // 
             this.cbMonHoc.BackColor = System.Drawing.Color.Transparent;
@@ -397,6 +373,30 @@
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(490, 36);
             this.cbMonHoc.TabIndex = 6;
+            // 
+            // btnCreateQues
+            // 
+            this.btnCreateQues.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCreateQues.BackGroundColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCreateQues.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCreateQues.BorderRadius = 20;
+            this.btnCreateQues.BorderSize = 0;
+            this.btnCreateQues.Enabled = false;
+            this.btnCreateQues.FlatAppearance.BorderSize = 0;
+            this.btnCreateQues.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateQues.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateQues.ForeColor = System.Drawing.Color.Black;
+            this.btnCreateQues.Image = global::GUI.Properties.Resources.Save1;
+            this.btnCreateQues.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateQues.Location = new System.Drawing.Point(969, 719);
+            this.btnCreateQues.Name = "btnCreateQues";
+            this.btnCreateQues.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCreateQues.Size = new System.Drawing.Size(164, 55);
+            this.btnCreateQues.TabIndex = 5;
+            this.btnCreateQues.Text = "A";
+            this.btnCreateQues.TextColor = System.Drawing.Color.Black;
+            this.btnCreateQues.UseVisualStyleBackColor = false;
+            this.btnCreateQues.Click += new System.EventHandler(this.btnCreateQues_Click);
             // 
             // frmTaoCauHoiNew
             // 
