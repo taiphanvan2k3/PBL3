@@ -485,11 +485,11 @@
     <Compile Include="MyUserControls\UC_ViewHomeRoomClass.Designer.cs">
       <DependentUpon>UC_ViewHomeRoomClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_ViewListModuleClass.cs">
+    <Compile Include="MyUserControls\UC_ViewListModuleClass_SVRole.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControls\UC_ViewListModuleClass.Designer.cs">
-      <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
+    <Compile Include="MyUserControls\UC_ViewListModuleClass_SVRole.Designer.cs">
+      <DependentUpon>UC_ViewListModuleClass_SVRole.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_ViewListNotifications.cs">
       <SubType>UserControl</SubType>
@@ -681,8 +681,8 @@
     <EmbeddedResource Include="MyUserControls\UC_ViewHomeRoomClass.resx">
       <DependentUpon>UC_ViewHomeRoomClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass.resx">
-      <DependentUpon>UC_ViewListModuleClass.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControls\UC_ViewListModuleClass_SVRole.resx">
+      <DependentUpon>UC_ViewListModuleClass_SVRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_WeeklySchoolSchedule.resx">
       <DependentUpon>UC_WeeklySchoolSchedule.cs</DependentUpon>
@@ -852,8 +852,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
-if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

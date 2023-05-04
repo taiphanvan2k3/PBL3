@@ -94,7 +94,10 @@ namespace BLL
 
         public static List<LopHocPhan_DTO> GetLichHocTrongTuan(string MaSV, int KiHoc)
         {
-            return SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
+            List<LopHocPhan_DTO> li= SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
+            for (int i = 0; i < li.Count; i++)
+                li[i].STT = i + 1;
+            return li;
         }
         public static List<LopHocPhan_DTO> GetLichHocTrongNgay(string MaSV, int KiHoc, string Thu)
         {

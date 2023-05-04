@@ -26,12 +26,14 @@ namespace GUI
             this.MSSV = MSSV;
             state = SelectionState.Home;
         }
+
         private enum SelectionState
         {
             Home,
             DailySchoolSchedule,
             WeeklySchoolSchedule,
             ViewHomeRoomClass,
+            ViewListModuleClass,
             ViewNotifications
         }
 
@@ -40,7 +42,9 @@ namespace GUI
         UC_DailySchoolSchedule dailySchoolSchedule;
         UC_WeeklySchoolSchedule weeklySchoolSchedule;
         UC_ViewHomeRoomClass viewHomeRoomClass;
+        UC_ViewListModuleClass_SVRole viewListModuleClass;
         UC_ViewListNotifications viewListNotifications;
+
         SelectionState state;
         #endregion
 
@@ -130,81 +134,15 @@ namespace GUI
                 panelShowDetail.Width -= (237 - 58);
             }
         }
+
+        private void lblAvatar_TextChanged(object sender, EventArgs e)
+        {
+            //Thay đổi lại vị trí của label hiển thị tên sv ở góc trên bên phải để tránh tràn nội dung
+            int width = TextRenderer.MeasureText(lblAvatar.Text, lblAvatar.Font).Width;
+            lblAvatar.Location = new Point(avatarTopRight.Location.X - width - 20, lblAvatar.Location.Y);
+            label1.Location = new Point(lblAvatar.Location.X, label1.Location.Y);
+        }
         #endregion
-
-
-        private void btnXemLichTrongNgay_Click(object sender, EventArgs e)
-        {
-            if (state != SelectionState.DailySchoolSchedule)
-            {
-                state = SelectionState.DailySchoolSchedule;
-                panelShowDetail.Controls.Clear();
-                if (dailySchoolSchedule == null)
-                {
-                    dailySchoolSchedule = new UC_DailySchoolSchedule();
-                    dailySchoolSchedule.MSSV = MSSV;
-                    dailySchoolSchedule.Dock = DockStyle.Fill;
-                }
-                panelShowDetail.Controls.Add(dailySchoolSchedule);
-            }
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            if (state != SelectionState.Home)
-            {
-                state = SelectionState.Home;
-                panelShowDetail.Controls.Clear();
-                panelShowDetail.Controls.Add(uC_StudentInfoNew);
-            }
-        }
-
-        private void btnLopSH_Click(object sender, EventArgs e)
-        {
-            if (state != SelectionState.ViewHomeRoomClass)
-            {
-                state = SelectionState.ViewHomeRoomClass;
-                panelShowDetail.Controls.Clear();
-                if (viewHomeRoomClass == null)
-                {
-                    viewHomeRoomClass = new UC_ViewHomeRoomClass();
-                    viewHomeRoomClass.MaLopSH = sv.MaLopSH;
-                    viewHomeRoomClass.Dock = DockStyle.Fill;
-                }
-                panelShowDetail.Controls.Add(viewHomeRoomClass);
-                //Gọi thủ công hàm LoadData để load lại dữ liệu tránh trường hợp sinh viên khác thay đổi
-                //thông tin của họ rồi mà vẫn lấy lại dữ liệu cũ trên datagridview lớp sinh hoạt
-                viewHomeRoomClass.LoadData();
-            }
-        }
-
-        private void btnXemTKB_Click(object sender, EventArgs e)
-        {
-            if (state != SelectionState.WeeklySchoolSchedule)
-            {
-                state = SelectionState.WeeklySchoolSchedule;
-                panelShowDetail.Controls.Clear();
-                if (weeklySchoolSchedule == null)
-                {
-                    weeklySchoolSchedule = new UC_WeeklySchoolSchedule();
-                    weeklySchoolSchedule.MSSV = MSSV;
-                    weeklySchoolSchedule.Dock = DockStyle.Fill;
-                }
-                panelShowDetail.Controls.Add(weeklySchoolSchedule);
-            }
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            /*
-             * Khi gọi this.Close() thì đóng form hiện tại do đó giả sử
-             * gọi MessageBox.Show("abc"); thì MessageBox.Show("abc"); không thực hiện được
-             * Bởi vì form đã bị đóng nên các thao tác trên form không còn được hỗ trợ nữa,
-             * và chú ý là Close() thôi chứ chưa Dispose() nên vd ở 1 lớp nào đó vẫn có thể truy cập
-             * đến thuộc tính của form này thông qua đối tượng của form
-             */
-            UtilityClass.OpenNewForm(this, new frmDesignLogin());
-        }
 
         private void LoadStudentInfo()
         {
@@ -248,6 +186,50 @@ namespace GUI
             panelShowDetail.Controls.Add(uC_StudentInfoNew);
         }
 
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.Home)
+            {
+                state = SelectionState.Home;
+                panelShowDetail.Controls.Clear();
+                panelShowDetail.Controls.Add(uC_StudentInfoNew);
+            }
+        }
+
+        private void btnLopSH_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.ViewHomeRoomClass)
+            {
+                state = SelectionState.ViewHomeRoomClass;
+                panelShowDetail.Controls.Clear();
+                if (viewHomeRoomClass == null)
+                {
+                    viewHomeRoomClass = new UC_ViewHomeRoomClass();
+                    viewHomeRoomClass.MaLopSH = sv.MaLopSH;
+                    viewHomeRoomClass.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(viewHomeRoomClass);
+                //Gọi thủ công hàm LoadData để load lại dữ liệu tránh trường hợp sinh viên khác thay đổi
+                //thông tin của họ rồi mà vẫn lấy lại dữ liệu cũ trên datagridview lớp sinh hoạt
+                viewHomeRoomClass.LoadData();
+            }
+        }
+
+        private void btnLopHP_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.ViewListModuleClass)
+            {
+                state = SelectionState.ViewListModuleClass;
+                panelShowDetail.Controls.Clear();
+                if (viewListModuleClass == null)
+                {
+                    viewListModuleClass = new UC_ViewListModuleClass_SVRole() { MaSV = this.MSSV };
+                    viewListModuleClass.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(viewListModuleClass);
+            }
+        }
+
         private void btnDoExam_Click(object sender, EventArgs e)
         {
             UtilityClass.OpenNewForm(this, new frmExam()
@@ -256,6 +238,38 @@ namespace GUI
                 TenSV = sv.Ho + " " + sv.Ten,
                 MaLopSH = sv.MaLopSH
             });
+        }
+
+        private void btnXemLichTrongNgay_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.DailySchoolSchedule)
+            {
+                state = SelectionState.DailySchoolSchedule;
+                panelShowDetail.Controls.Clear();
+                if (dailySchoolSchedule == null)
+                {
+                    dailySchoolSchedule = new UC_DailySchoolSchedule();
+                    dailySchoolSchedule.MSSV = MSSV;
+                    dailySchoolSchedule.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(dailySchoolSchedule);
+            }
+        }
+
+        private void btnXemTKB_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.WeeklySchoolSchedule)
+            {
+                state = SelectionState.WeeklySchoolSchedule;
+                panelShowDetail.Controls.Clear();
+                if (weeklySchoolSchedule == null)
+                {
+                    weeklySchoolSchedule = new UC_WeeklySchoolSchedule();
+                    weeklySchoolSchedule.MSSV = MSSV;
+                    weeklySchoolSchedule.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(weeklySchoolSchedule);
+            }
         }
 
         private void btnXemThongBao_Click(object sender, EventArgs e)
@@ -273,13 +287,16 @@ namespace GUI
             }
         }
 
-        private void lblAvatar_TextChanged(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            //Thay đổi lại vị trí của label hiển thị tên sv ở góc trên bên phải để tránh tràn nội dung
-            int width = TextRenderer.MeasureText(lblAvatar.Text, lblAvatar.Font).Width;
-            lblAvatar.Location = new Point(avatarTopRight.Location.X - width - 20, lblAvatar.Location.Y);
-            label1.Location = new Point(lblAvatar.Location.X, label1.Location.Y);
+            /*
+             * Khi gọi this.Close() thì đóng form hiện tại do đó giả sử
+             * gọi MessageBox.Show("abc"); thì MessageBox.Show("abc"); không thực hiện được
+             * Bởi vì form đã bị đóng nên các thao tác trên form không còn được hỗ trợ nữa,
+             * và chú ý là Close() thôi chứ chưa Dispose() nên vd ở 1 lớp nào đó vẫn có thể truy cập
+             * đến thuộc tính của form này thông qua đối tượng của form
+             */
+            UtilityClass.OpenNewForm(this, new frmDesignLogin());
         }
-
     }
 }

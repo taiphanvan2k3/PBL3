@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.dtgv = new System.Windows.Forms.DataGridView();
-            this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaiKiemTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianLamBai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LamBai = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelButton = new System.Windows.Forms.Panel();
             this.separator = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -88,33 +80,26 @@
             this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgv.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dtgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHP,
-            this.TenHP,
-            this.BaiKiemTra,
-            this.SoLuongCauHoi,
-            this.ThoiGianLamBai,
-            this.StartEndTime,
-            this.LamBai});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgv.EnableHeadersVisualStyles = false;
             this.dtgv.Location = new System.Drawing.Point(5, 5);
             this.dtgv.Margin = new System.Windows.Forms.Padding(5, 5, 3, 3);
@@ -130,67 +115,6 @@
             this.dtgv.DataSourceChanged += new System.EventHandler(this.dtgv_DataSourceChanged);
             this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellContentClick);
             this.dtgv.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgv_CellPainting);
-            // 
-            // MaHP
-            // 
-            this.MaHP.HeaderText = "Mã học phần";
-            this.MaHP.MinimumWidth = 6;
-            this.MaHP.Name = "MaHP";
-            this.MaHP.ReadOnly = true;
-            this.MaHP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // TenHP
-            // 
-            this.TenHP.HeaderText = "Học phần";
-            this.TenHP.MinimumWidth = 6;
-            this.TenHP.Name = "TenHP";
-            this.TenHP.ReadOnly = true;
-            this.TenHP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // BaiKiemTra
-            // 
-            this.BaiKiemTra.HeaderText = "Bài kiểm tra";
-            this.BaiKiemTra.MinimumWidth = 6;
-            this.BaiKiemTra.Name = "BaiKiemTra";
-            this.BaiKiemTra.ReadOnly = true;
-            this.BaiKiemTra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // SoLuongCauHoi
-            // 
-            this.SoLuongCauHoi.HeaderText = "Số lượng câu hỏi";
-            this.SoLuongCauHoi.MinimumWidth = 6;
-            this.SoLuongCauHoi.Name = "SoLuongCauHoi";
-            this.SoLuongCauHoi.ReadOnly = true;
-            this.SoLuongCauHoi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ThoiGianLamBai
-            // 
-            this.ThoiGianLamBai.HeaderText = "Thời gian làm bài";
-            this.ThoiGianLamBai.MinimumWidth = 6;
-            this.ThoiGianLamBai.Name = "ThoiGianLamBai";
-            this.ThoiGianLamBai.ReadOnly = true;
-            this.ThoiGianLamBai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // StartEndTime
-            // 
-            this.StartEndTime.HeaderText = "Khung giờ";
-            this.StartEndTime.MinimumWidth = 6;
-            this.StartEndTime.Name = "StartEndTime";
-            this.StartEndTime.ReadOnly = true;
-            this.StartEndTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // LamBai
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LamBai.DefaultCellStyle = dataGridViewCellStyle2;
-            this.LamBai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LamBai.HeaderText = "Làm bài";
-            this.LamBai.MinimumWidth = 6;
-            this.LamBai.Name = "LamBai";
-            this.LamBai.ReadOnly = true;
-            this.LamBai.Text = "Làm bài";
-            this.LamBai.UseColumnTextForButtonValue = true;
             // 
             // panelButton
             // 
@@ -273,7 +197,6 @@
             this.Name = "UC_DoExam";
             this.Size = new System.Drawing.Size(1008, 528);
             this.Load += new System.EventHandler(this.UC_DoExam_Load);
-            this.SizeChanged += new System.EventHandler(this.UC_DoExam_SizeChanged);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.flowPanel.ResumeLayout(false);
@@ -289,13 +212,6 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.DataGridView dtgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BaiKiemTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongCauHoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianLamBai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartEndTime;
-        private System.Windows.Forms.DataGridViewButtonColumn LamBai;
         private System.Windows.Forms.Timer timerPopupForm;
         private System.Windows.Forms.FlowLayoutPanel flowPanel;
         private System.Windows.Forms.Panel panelButton;

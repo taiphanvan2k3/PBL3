@@ -18,6 +18,7 @@ namespace GUI.MyUserControls
         public string LopSH { get; set; }
 
         private frmEnterPassToDoExam frmEnterPass;
+        private bool IsInitted = false;
         public UC_DoExam()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace GUI.MyUserControls
         public void LoadData()
         {
             List<BaiKiemTra_DTO> li = BaiKiemTra_BLL.Instance.GetAllExamOfStudent(MaSV);
-            dtgv.Columns.Clear();
             dtgv.DataSource = li;
         }
 
@@ -35,22 +35,9 @@ namespace GUI.MyUserControls
             LoadData();
         }
 
-        private void UC_DoExam_SizeChanged(object sender, EventArgs e)
-        {
-            //Mỗi khi UC này thay đổi kích thước thì chiều cao của header sẽ bị thay đổi do đó nếu muốn
-            //chiều cao của dtgv vừa khít với số lượng dòng thì phải đi tính toán lại Height của dtgv trong event này
-            dtgv.Height = dtgv.ColumnHeadersHeight + dtgv.RowCount * dtgv.RowTemplate.Height;
-        }
-
         private void ChangeColumnsProperty()
         {
-            dtgv.Columns["MaHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dtgv.Columns["tenMH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dtgv.Columns["SoLuongCauHoi_Show"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dtgv.Columns["ThoiGianLamBai_Show"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dtgv.Columns["ThoiGianBatDau"].Width = 130;
-            dtgv.Columns["ThoiGianKetThuc"].Width = 130;
-            dtgv.Columns["LamBai"].Width = 80;
         }
 
         private void dtgv_DataSourceChanged(object sender, EventArgs e)
@@ -58,7 +45,11 @@ namespace GUI.MyUserControls
             //Vì vẫn muốn hai cột bị ẩn đi nhưng vẫn có thể truy cập được nên sẽ không sử dụng Browsable(false)
             dtgv.Columns["MkBaiKiemTra"].Visible = false;
             dtgv.Columns["MaBaiKiemTra"].Visible = false;
-            dtgv.Columns.Add(new DataGridViewButtonColumn() { HeaderText = "Làm bài", Name = "LamBai" });
+            if (!IsInitted)
+            {
+                dtgv.Columns.Add(new DataGridViewButtonColumn() { HeaderText = "Làm bài", Name = "LamBai" });
+                IsInitted = true;
+            }
             ChangeColumnsProperty();
         }
 
@@ -148,6 +139,5 @@ namespace GUI.MyUserControls
             dtgv.Width = flowPanel.Width - 5;
             panelButton.Width = flowPanel.Width - 5;
         }
-
     }
 }

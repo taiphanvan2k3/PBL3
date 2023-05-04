@@ -1,5 +1,4 @@
-﻿using DTO;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -41,11 +40,12 @@ namespace GUI.MyUserControls
         {
             frmQuiz ParentForm = this.ParentForm as frmQuiz;
             
-            //Vì frmEnterPassToDoExam bị dispose trước đó nên đành truyền user control này lần lượt
+            //Vì frmEnterPassToDoExam bị close trước đó nên đành truyền user control này lần lượt
             //qua các form để có thể reload lại user control này sau khi sv hoàn thành bài thi
             UC_DoExam uc = ParentForm.ucDoExam as UC_DoExam;
-            uc.LoadData();
-            ParentForm.Dispose();
+            if (uc != null)
+                uc.LoadData();
+            ParentForm.Close();
         }
 
         private void UC_FinishDoExam_Load(object sender, EventArgs e)
