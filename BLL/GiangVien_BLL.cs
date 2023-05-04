@@ -108,9 +108,9 @@ namespace BLL
                                               MaGV, MatKhauLamBai, ChoPhepQuayLai);
         }
 
-        public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
+        public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHP)
         {
-            return GiangVien_DAL.Instance.CheckScheduleExamConflict(TimeExam, ThoiGianLamBai, MaLHPForAll);
+            return GiangVien_DAL.Instance.CheckScheduleExamConflict(TimeExam, ThoiGianLamBai, MaLHP);
         }
 
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
@@ -127,6 +127,10 @@ namespace BLL
         {
             return GiangVien_DAL.Instance.GetTeacherByFaculuty(idFaculuty, nameFaculuty);
 
+        }
+        public ThoiKhoaBieu_DTO GetScheduleForTKB(string MaLHP)
+        {
+            return GiangVien_DAL.Instance.GetScheduleForTKB(MaLHP);
         }
 
         #region Get List GV Suitable To Assign

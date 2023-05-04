@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
@@ -238,6 +239,69 @@ namespace BLL
                     return "Thứ " + ds[i];
             }
             return "";
+        }
+        /// <summary>
+        /// Dùng để tính số thứ tự tuần trong năm 
+        /// </summary>
+        /// <param name="dow"></param>
+        /// <returns></returns>
+        public static DateTime FirstDateOfWeekISO8601(int year, int weekOfYear)
+        {
+            DateTime jan1 = new DateTime(year, 1, 1);
+            //Lấy Thursday trừ đi bởi vì tính theo chuẩn ISO8601
+            int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
+
+            DateTime firstThursday = jan1.AddDays(daysOffset);
+            var cal = CultureInfo.CurrentCulture.Calendar;
+            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
+            var weekNum = weekOfYear;
+            if (firstWeek <= 1)
+            {
+                weekNum -= 1;
+            }
+
+            var result = firstThursday.AddDays(weekNum * 7);
+
+            return result.AddDays(-3);
+        }
+        public static int ConvertDayOfWeekToNumber(string DayOfWeek)
+        {
+            switch (DayOfWeek)
+            {
+                case "Thứ hai":
+                    return 2;
+                case "Thứ ba":
+                    return 3;
+                case "Thứ tư":
+                    return 4;
+                case "Thứ năm":
+                    return 5;
+                case "Thứ sáu":
+                    return 6;
+                case "Thứ bảy":
+                    return 7;
+                case "Chủ nhật":
+                    return 8;
+            }
+            return -1;
+        }
+        public static int GetHourExamWithTietBD(int TietBD)
+        {
+            switch (TietBD)
+            {
+                case 1: return 7;
+                case 2: return 8;
+                case 3: return 9;
+                case 4: return 10;
+                case 5: return 11;
+                case 6: return 13;
+                case 7: return 14;
+                case 8: return 15;
+                case 9: return 16;
+                case 10: return 17;
+            }
+            return -1;
         }
     }
 }
