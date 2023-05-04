@@ -153,6 +153,11 @@ namespace BLL
             return LopHocPhan_DAL.Instance.GetInformationClasses();
         }
 
+        public int CountMoudleClass()
+        {
+            return LopHocPhan_DAL.Instance.CountModuleClass();
+        }
+
         public List<ThongBao_DTO> GetNotificationsInSpecificBound(string MaSV, DateTime StartDateFilter)
         {
             return LopHocPhan_DAL.Instance.GetNotificationsInSpecificBound(MaSV, StartDateFilter);

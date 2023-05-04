@@ -103,7 +103,7 @@ namespace DAL
                              tenLop = g.Key.MaLopSH.Substring(0, 2) + " " + g.Key.TenCTDT + " " + g.Key.MaLopSH.Substring(g.Key.MaLopSH.Length - 1),
                              maGV = g.Key.MaGVCN,
                              hoTenGV = g.Key.Ho + " " + g.Key.Ten,
-                             soLuongSV = g.Count(),
+                             soLuongSV = g.Count(x => x.MaSV != null),
                              soLuongToiDa = g.Key.SoLuongToiDa ?? 0
                          };
             return result.ToList();
@@ -132,6 +132,11 @@ namespace DAL
         {
             db.LOP_SINH_HOAT.Add(lsh);
             return db.SaveChanges() > 0;
+        }
+
+        public int CountClassroom()
+        {
+            return db.LOP_SINH_HOAT.Count();   
         }
 
     }

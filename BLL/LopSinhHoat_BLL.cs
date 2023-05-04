@@ -68,5 +68,9 @@ namespace BLL
             };
             return LopSinhHoat_DAL.Instance.AddNewHomeroomClass(newLsh);
         }
+        public int CountClassroom()
+        {
+            return LopSinhHoat_BLL.Instance.CountClassroom();
+        }
     }
 }
