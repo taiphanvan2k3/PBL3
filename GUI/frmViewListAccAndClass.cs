@@ -116,6 +116,8 @@ namespace GUI
                     btnAdd.Click += btnAddHomeroomClass_Click;
                     btnEdit.Click -= btnEdit_Click;
                     btnEdit.Click += btnEditHomeRoomClass_Click;
+                    btnDelete.Click -= btnDelete_Click;
+                    btnDelete.Click += btnDeleteHomeroomClass_Click;
                     autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
@@ -126,6 +128,8 @@ namespace GUI
                     btnAdd.Click += btnAddMoudleClass_Click;
                     btnEdit.Click -= btnEdit_Click;
                     btnEdit.Click += btnEditMoudleClass_Click;
+                    btnDelete.Click -= btnDelete_Click;
+                    btnDelete.Click += btnDeleteMoudleClass_Click;
                     autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
@@ -357,6 +361,18 @@ namespace GUI
             frmViewDetailModuleClass frmViewDetailModuleClass = new frmViewDetailModuleClass(maLop);
             frmViewDetailModuleClass.ShowDialog();
         }
+
+        private void btnDeleteMoudleClass_Click(object sender, EventArgs e)
+        {
+            if (LopHocPhan_BLL.Instance.DeleteMoudleClass(maLop))
+            {
+                CustomMessageBox.Show("Xóa lớp học phần thành công", "Thông báo");
+            }
+            else
+            {
+                CustomMessageBox.Show("Xóa lớp học phần không thành công vì lớp học đang tồn tại sinh viên", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region  Xử lý sự kiện CRUD lớp sinh hoạt
@@ -369,6 +385,17 @@ namespace GUI
         {
             frmAddHomeroomClass frmAddHomeroomClass = new frmAddHomeroomClass();
             frmAddHomeroomClass.ShowDialog();
+        }
+        private void btnDeleteHomeroomClass_Click(object sender, EventArgs e)
+        {
+            if (LopSinhHoat_BLL.Instance.DeleteHomeroomClass(maLop))
+            {
+                CustomMessageBox.Show("Xóa lớp học phần thành công", "Thông báo");
+            }
+            else
+            {
+                CustomMessageBox.Show("Xóa lớp học phần không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
 

@@ -139,5 +139,27 @@ namespace DAL
             return db.LOP_SINH_HOAT.Count();   
         }
 
+        public bool DeleteHomeroomClass(string idHomeroomClass)
+        {
+            bool success = false;
+            using (var context = new PBL3Entities())
+            {
+                var homeroomClassInfo = context.LOP_SINH_HOAT.FirstOrDefault(l => l.MaLopSH == idHomeroomClass);
+                if (homeroomClassInfo != null)
+                {
+                    try
+                    {
+                        context.LOP_SINH_HOAT.Remove(homeroomClassInfo);
+                        context.SaveChanges();
+                        success = true;
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
     }
 }

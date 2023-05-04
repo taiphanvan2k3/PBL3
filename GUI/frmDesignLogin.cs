@@ -22,6 +22,7 @@ namespace GUI
         public frmDesignLogin()
         {
             InitializeComponent();
+            UtilityClass.EnableDragForm(this);
             btnSignIn.Enabled = false;
         }
 
@@ -69,12 +70,7 @@ namespace GUI
         }
         private void frmDesignLogin_KeyDown(object sender, KeyEventArgs e)
         {
-            // Kiểm tra nếu phím được nhấn là phím Enter và control đang được focus là username hoặc password
-            if (e.KeyCode == Keys.Enter && (txtUsername.Focused || txtPassword.Focused))
-            {
-                // Thực hiện hành động đăng nhập
-                Login();
-            }
+
         }
         private void btnSignIn_Click(object sender, EventArgs e)
         {

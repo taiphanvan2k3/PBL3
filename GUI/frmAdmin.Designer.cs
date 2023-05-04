@@ -39,15 +39,15 @@
             this.btnStudent = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelClass.SuspendLayout();
             this.panelAdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -95,7 +95,8 @@
             this.btnModuleClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnModuleClass.Size = new System.Drawing.Size(250, 60);
             this.btnModuleClass.TabIndex = 13;
-            this.btnModuleClass.Tag = "Lớp sinh hoạt";
+            this.btnModuleClass.TabStop = false;
+            this.btnModuleClass.Tag = "Lớp học phần";
             this.btnModuleClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModuleClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModuleClass.UseVisualStyleBackColor = true;
@@ -118,7 +119,7 @@
             this.btnHomeroomClass.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnHomeroomClass.Size = new System.Drawing.Size(250, 60);
             this.btnHomeroomClass.TabIndex = 12;
-            this.btnHomeroomClass.Tag = "Lớp học phần";
+            this.btnHomeroomClass.Tag = "Lớp sinh hoạt";
             this.btnHomeroomClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeroomClass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHomeroomClass.UseVisualStyleBackColor = true;
@@ -273,25 +274,15 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // panelChildForm
+            // panelLogo
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1012, 673);
-            this.panelChildForm.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panelLogo.Controls.Add(this.btnMenu);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 60);
+            this.panelLogo.TabIndex = 0;
             // 
             // btnMenu
             // 
@@ -310,15 +301,25 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnExpandMenu_Click);
             // 
-            // panelLogo
+            // pictureBox1
             // 
-            this.panelLogo.Controls.Add(this.btnMenu);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(250, 60);
-            this.panelLogo.TabIndex = 0;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.LogoPBL3;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1012, 673);
+            this.panelChildForm.TabIndex = 2;
             // 
             // frmAdmin
             // 
@@ -339,8 +340,8 @@
             this.panelMenu.ResumeLayout(false);
             this.panelClass.ResumeLayout(false);
             this.panelAdd.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

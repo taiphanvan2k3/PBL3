@@ -107,11 +107,11 @@
             // 
             this.btnForgetPass.AutoSize = true;
             this.btnForgetPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnForgetPass.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetPass.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetPass.ForeColor = System.Drawing.Color.White;
-            this.btnForgetPass.Location = new System.Drawing.Point(238, 494);
+            this.btnForgetPass.Location = new System.Drawing.Point(229, 492);
             this.btnForgetPass.Name = "btnForgetPass";
-            this.btnForgetPass.Size = new System.Drawing.Size(128, 19);
+            this.btnForgetPass.Size = new System.Drawing.Size(146, 24);
             this.btnForgetPass.TabIndex = 25;
             this.btnForgetPass.Text = "Quên mật khẩu?";
             this.btnForgetPass.Click += new System.EventHandler(this.btnForgetPass_Click);
@@ -264,12 +264,12 @@
             this.Controls.Add(this.btnMinisize);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MaximizeBox = false;
             this.Name = "frmDesignLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDesignLogin";
             this.Load += new System.EventHandler(this.frmDesignLogin_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDesignLogin_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();

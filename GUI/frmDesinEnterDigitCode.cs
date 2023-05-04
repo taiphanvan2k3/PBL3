@@ -53,10 +53,6 @@ namespace GUI
 
         private void frmDesinEnterDigitCode_Load(object sender, EventArgs e)
         {
-
-            // Gửi mail ngày khi load được vào form
-            UtilityClass.sendEmail(email, acc.MaXacThucDeLayLaiMK);
-
             // Bắt đầu đếm ngược khi Form được load
             countdownTimer.Start();
 

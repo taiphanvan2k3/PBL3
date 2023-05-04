@@ -34,13 +34,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbCountdown = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtNumberCode = new GUI.MyCustomControl.CustomTextBox();
+            this.btnBack = new GUI.MyCustomControl.CustomButton();
+            this.btnContinue = new GUI.MyCustomControl.CustomButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNumberCode = new GUI.MyCustomControl.CustomTextBox();
-            this.btnBack = new GUI.MyCustomControl.CustomButton();
-            this.btnContinue = new GUI.MyCustomControl.CustomButton();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,11 +68,11 @@
             // 
             this.btnSendBackAgain.AutoSize = true;
             this.btnSendBackAgain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSendBackAgain.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendBackAgain.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendBackAgain.ForeColor = System.Drawing.Color.White;
             this.btnSendBackAgain.Location = new System.Drawing.Point(26, 293);
             this.btnSendBackAgain.Name = "btnSendBackAgain";
-            this.btnSendBackAgain.Size = new System.Drawing.Size(156, 19);
+            this.btnSendBackAgain.Size = new System.Drawing.Size(183, 24);
             this.btnSendBackAgain.TabIndex = 32;
             this.btnSendBackAgain.Text = "Chưa nhận được mã?";
             this.btnSendBackAgain.Click += new System.EventHandler(this.btnSendBackAgain_Click);
@@ -93,7 +93,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label6.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label6.Location = new System.Drawing.Point(538, 183);
+            this.label6.Location = new System.Drawing.Point(538, 185);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(20, 24);
             this.label6.TabIndex = 31;
@@ -114,57 +114,13 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.label4.Location = new System.Drawing.Point(303, 184);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 21);
+            this.label4.Size = new System.Drawing.Size(198, 27);
             this.label4.TabIndex = 29;
             this.label4.Text = "Mã còn hiệu lực sau:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label3.Location = new System.Drawing.Point(25, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã này gồm 6 số.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label2.Location = new System.Drawing.Point(25, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(441, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Vui lòng kiểm tra mã trong email của bạn.";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel2.Location = new System.Drawing.Point(3, 250);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 1);
-            this.panel2.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(22, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 31);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nhập mã bảo mật";
             // 
             // txtNumberCode
             // 
@@ -173,7 +129,7 @@
             this.txtNumberCode.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtNumberCode.BorderRadius = 10;
             this.txtNumberCode.BorderSize = 2;
-            this.txtNumberCode.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumberCode.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumberCode.ForeColor = System.Drawing.Color.DimGray;
             this.txtNumberCode.Location = new System.Drawing.Point(30, 169);
             this.txtNumberCode.Margin = new System.Windows.Forms.Padding(10);
@@ -184,7 +140,7 @@
             this.txtNumberCode.PasswordChar = false;
             this.txtNumberCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtNumberCode.PlaceholderText = "Nhập mã";
-            this.txtNumberCode.Size = new System.Drawing.Size(254, 46);
+            this.txtNumberCode.Size = new System.Drawing.Size(254, 53);
             this.txtNumberCode.TabIndex = 28;
             this.txtNumberCode.Texts = "";
             this.txtNumberCode.UnderlinedStyle = false;
@@ -200,7 +156,7 @@
             this.btnBack.BorderSize = 0;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnBack.Location = new System.Drawing.Point(319, 276);
             this.btnBack.Name = "btnBack";
@@ -220,7 +176,7 @@
             this.btnContinue.BorderSize = 0;
             this.btnContinue.FlatAppearance.BorderSize = 0;
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnContinue.Location = new System.Drawing.Point(432, 276);
             this.btnContinue.Name = "btnContinue";
@@ -231,8 +187,53 @@
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnSend_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label3.Location = new System.Drawing.Point(25, 135);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 31);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã này gồm 6 số.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.Location = new System.Drawing.Point(25, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(462, 31);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Vui lòng kiểm tra mã trong email của bạn.";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.Location = new System.Drawing.Point(3, 250);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(600, 1);
+            this.panel2.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(22, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 41);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nhập mã bảo mật";
+            // 
             // frmDesinEnterDigitCode
             // 
+            this.AcceptButton = this.btnContinue;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::GUI.Properties.Resources.backroud1;

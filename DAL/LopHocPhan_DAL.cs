@@ -252,6 +252,29 @@ namespace DAL
             return db.LOP_HOC_PHAN.Count();
         }
 
+        public bool DeleteModuleClass(string idMoudleClass)
+        {
+            bool success = false;
+            using (var context = new PBL3Entities())
+            {
+                var moudleClassInfo = context.LOP_HOC_PHAN.FirstOrDefault(l => l.MaLopHP == idMoudleClass);
+                if (moudleClassInfo != null)
+                {
+                    try
+                    {
+                        context.LOP_HOC_PHAN.Remove(moudleClassInfo);
+                        context.SaveChanges();
+                        success = true;
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
+
         public List<ThongBao_DTO> GetNotificationsInSpecificBound(string MaSV, DateTime StartDateFilter)
         {
             //Nếu so sánh trực tiếp thì có thể không ra kết quả như mong đợi vì toán tử >=,.. của DateTime
