@@ -133,7 +133,7 @@
             this.dtgv.ReadOnly = true;
             this.dtgv.RowHeadersVisible = false;
             this.dtgv.RowHeadersWidth = 51;
-            this.dtgv.RowTemplate.Height = 30;
+            this.dtgv.RowTemplate.Height = 40;
             this.dtgv.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv.Size = new System.Drawing.Size(1145, 284);
