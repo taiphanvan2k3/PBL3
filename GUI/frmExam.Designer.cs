@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.lblXinChao = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
@@ -49,14 +48,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.timerCheckClick = new System.Windows.Forms.Timer(this.components);
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.panel1.SuspendLayout();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.panelDangXuat.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,24 +82,6 @@
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(1513, 69);
             this.panelTitle.TabIndex = 3;
-            // 
-            // avatarTopRight
-            // 
-            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
-            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.avatarTopRight.BorderSize = 2;
-            this.avatarTopRight.GradientAngle = 50F;
-            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1433, 6);
-            this.avatarTopRight.Name = "avatarTopRight";
-            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
-            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarTopRight.TabIndex = 3;
-            this.avatarTopRight.TabStop = false;
-            this.avatarTopRight.Click += new System.EventHandler(this.avatarTopRight_Click);
             // 
             // lblAvatar
             // 
@@ -359,6 +341,24 @@
             this.timerCheckClick.Interval = 10;
             this.timerCheckClick.Tick += new System.EventHandler(this.timerCheckClick_Tick);
             // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1433, 6);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(57, 57);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
+            this.avatarTopRight.Click += new System.EventHandler(this.avatarTop_Click);
+            // 
             // frmExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -370,16 +370,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExam";
             this.Load += new System.EventHandler(this.frmExam_Load);
-            this.Resize += new System.EventHandler(this.frmExam_Resize);
             this.panel1.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.panelDangXuat.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.ResumeLayout(false);
 
         }

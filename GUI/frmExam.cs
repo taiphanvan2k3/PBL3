@@ -178,21 +178,16 @@ namespace GUI
             }*/
         }
 
-        private void frmExam_Resize(object sender, EventArgs e)
+        private void avatarTop_Click(object sender, EventArgs e)
         {
-            /*
-            float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
-            float yRatio = (float)(this.Height) / (float)(formOriginalSize.Height);
-            pnlMain.Size = new Size((int)(pnlMain.Width * xRatio), (int)(pnlMain.Height * yRatio));
-            panelMenu.Location = new Point((int)(panelMenu.Location.X * xRatio), (int)(panelMenu.Location.Y * yRatio));
-            calendar.Size = new Size((int)(calendar.Width * xRatio), (int)(calendar.Height * yRatio));
-            calendar.Location = new Point((int)(calendar.Location.X * xRatio), (int)(calendar.Location.Y * yRatio));
-            calendar.LoadDays();
-            formOriginalSize = this.Size;*/
-        }
+            if (!pnlMain.Controls.Contains(panelDangXuat))
+            {
+                pnlMain.Controls.Add(panelDangXuat);
+                panelDangXuat.BringToFront();
+                panelDangXuat.Location = new Point(pnlMain.Width - panelDangXuat.Width, 2);
+                panelDangXuat.Visible = false;
+            }
 
-        private void avatarTopRight_Click(object sender, EventArgs e)
-        {
             if (!panelDangXuat.Visible)
             {
                 panelDangXuat.Visible = true;
