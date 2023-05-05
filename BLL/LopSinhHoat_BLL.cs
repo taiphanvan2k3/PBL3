@@ -72,5 +72,9 @@ namespace BLL
         {
             return LopSinhHoat_BLL.Instance.CountClassroom();
         }
+        public bool DeleteHomeroomClass(string idHomeroomClass)
+        {
+            return LopSinhHoat_DAL.Instance.DeleteHomeroomClass(idHomeroomClass);
+        }
     }
 }

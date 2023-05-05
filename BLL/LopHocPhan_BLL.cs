@@ -162,5 +162,10 @@ namespace BLL
         {
             return LopHocPhan_DAL.Instance.GetNotificationsInSpecificBound(MaSV, StartDateFilter);
         }
+
+        public bool DeleteMoudleClass(string idClass)
+        {
+            return LopHocPhan_DAL.Instance.DeleteModuleClass(idClass);
+        }
     }
 }

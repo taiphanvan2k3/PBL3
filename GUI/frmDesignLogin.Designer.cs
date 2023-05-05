@@ -34,13 +34,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.btnForgetPass = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnMinisize = new FontAwesome.Sharp.IconButton();
             this.btnSignIn = new GUI.MyCustomControl.CustomButton();
             this.txtPassword = new GUI.MyCustomControl.CustomTextBox();
             this.txtUsername = new GUI.MyCustomControl.CustomTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.circularPictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.btnMinisize = new FontAwesome.Sharp.IconButton();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -107,16 +107,66 @@
             // 
             this.btnForgetPass.AutoSize = true;
             this.btnForgetPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnForgetPass.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetPass.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetPass.ForeColor = System.Drawing.Color.White;
-            this.btnForgetPass.Location = new System.Drawing.Point(238, 494);
+            this.btnForgetPass.Location = new System.Drawing.Point(229, 492);
             this.btnForgetPass.Name = "btnForgetPass";
-            this.btnForgetPass.Size = new System.Drawing.Size(128, 19);
+            this.btnForgetPass.Size = new System.Drawing.Size(146, 24);
             this.btnForgetPass.TabIndex = 25;
             this.btnForgetPass.Text = "Quên mật khẩu?";
             this.btnForgetPass.Click += new System.EventHandler(this.btnForgetPass_Click);
             this.btnForgetPass.MouseLeave += new System.EventHandler(this.btnForgetPass_MouseLeave);
             this.btnForgetPass.MouseHover += new System.EventHandler(this.btnForgetPass_MouseHover);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label4.Location = new System.Drawing.Point(155, 304);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 27);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Mật khẩu";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
+            this.btnClose.IconColor = System.Drawing.Color.IndianRed;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 30;
+            this.btnClose.Location = new System.Drawing.Point(970, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinisize
+            // 
+            this.btnMinisize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMinisize.FlatAppearance.BorderSize = 0;
+            this.btnMinisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinisize.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinisize.ForeColor = System.Drawing.Color.White;
+            this.btnMinisize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinisize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnMinisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinisize.IconSize = 30;
+            this.btnMinisize.Location = new System.Drawing.Point(940, 0);
+            this.btnMinisize.Name = "btnMinisize";
+            this.btnMinisize.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnMinisize.Size = new System.Drawing.Size(30, 30);
+            this.btnMinisize.TabIndex = 11;
+            this.btnMinisize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinisize.UseVisualStyleBackColor = false;
+            this.btnMinisize.Click += new System.EventHandler(this.btnMinisize_Click);
             // 
             // btnSignIn
             // 
@@ -186,18 +236,6 @@
             this.txtUsername.UnderlinedStyle = false;
             this.txtUsername._TextChanged += new System.EventHandler(this.txtUsername__TextChanged);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label4.Location = new System.Drawing.Point(155, 304);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 27);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mật khẩu";
-            // 
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -215,46 +253,9 @@
             this.circularPictureBox1.TabIndex = 0;
             this.circularPictureBox1.TabStop = false;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
-            this.btnClose.IconColor = System.Drawing.Color.IndianRed;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 30;
-            this.btnClose.Location = new System.Drawing.Point(970, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMinisize
-            // 
-            this.btnMinisize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMinisize.FlatAppearance.BorderSize = 0;
-            this.btnMinisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinisize.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinisize.ForeColor = System.Drawing.Color.White;
-            this.btnMinisize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinisize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnMinisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinisize.IconSize = 30;
-            this.btnMinisize.Location = new System.Drawing.Point(940, 0);
-            this.btnMinisize.Name = "btnMinisize";
-            this.btnMinisize.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.btnMinisize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinisize.TabIndex = 11;
-            this.btnMinisize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinisize.UseVisualStyleBackColor = false;
-            this.btnMinisize.Click += new System.EventHandler(this.btnMinisize_Click);
-            // 
             // frmDesignLogin
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::GUI.Properties.Resources.backroud1;
@@ -264,12 +265,12 @@
             this.Controls.Add(this.btnMinisize);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MaximizeBox = false;
             this.Name = "frmDesignLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDesignLogin";
             this.Load += new System.EventHandler(this.frmDesignLogin_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDesignLogin_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();

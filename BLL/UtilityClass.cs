@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
@@ -36,13 +37,14 @@ namespace BLL
             return Regex.Split(address, " - ");
         }
 
-        public static void sendEmail(string addressEmail, string digitcode)
+        public static string sendEmail(string addressEmail, string digitcode)
         {
-            string senderEmail = "doanpbl@gmail.com";
+            
+            string senderEmail = "nngann2402@gmail.com";
             string receiverEmail = addressEmail;
             string subject = "Digit code";
             string body = digitcode;
-            string senderPassword = "vwuftouydjrqvvmy";
+            string senderPassword = "fsjdkhdximrlvusc";
 
             var smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.UseDefaultCredentials = false;
@@ -54,11 +56,11 @@ namespace BLL
             try
             {
                 smtpClient.Send(mailMessage);
-                MessageBox.Show("Đã gửi email thành công!");
+                return null;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Gửi email thất bại: " + ex.Message);
+                return ex.Message;
             }
         }
         public static void SwapColumns(DataGridView dataGridView, int index1, int index2)
@@ -304,6 +306,21 @@ namespace BLL
                 case 10: return 17;
             }
             return -1;
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        public static void EnableDragForm(System.Windows.Forms.Control control)
+        {
+            control.MouseDown += (sender, e) =>
+            {
+                ReleaseCapture();
+                SendMessage((sender as System.Windows.Forms.Control).FindForm().Handle, 0x112, 0xf012, 0);
+            };
         }
 
         public static Image ConvertByteArrayToImage(byte[] bytes)

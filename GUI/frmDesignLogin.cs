@@ -22,6 +22,7 @@ namespace GUI
         public frmDesignLogin()
         {
             InitializeComponent();
+            UtilityClass.EnableDragForm(this);
             btnSignIn.Enabled = false;
         }
 
@@ -45,7 +46,7 @@ namespace GUI
                 {
                     if (account.VaiTro == "Giáo viên")
                     {
-                        //102BK0001 123456
+                        //102BK0001 Abc123
                         CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Giảng viên");
                         frm = new frmTeacher(txtUsername.Texts);
                     }
@@ -54,6 +55,7 @@ namespace GUI
                         //101190001 123Abc
                         //101180002 123457
                         //101180003 123458
+                        //102210043 Abc123
                         CustomMessageBox.Show("Bạn đang đăng nhập với vai trò Sinh viên");
                         frm = new frmStudent(account.TaiKhoan);
                     }
@@ -69,12 +71,7 @@ namespace GUI
         }
         private void frmDesignLogin_KeyDown(object sender, KeyEventArgs e)
         {
-            // Kiểm tra nếu phím được nhấn là phím Enter và control đang được focus là username hoặc password
-            if (e.KeyCode == Keys.Enter && (txtUsername.Focused || txtPassword.Focused))
-            {
-                // Thực hiện hành động đăng nhập
-                Login();
-            }
+
         }
         private void btnSignIn_Click(object sender, EventArgs e)
         {

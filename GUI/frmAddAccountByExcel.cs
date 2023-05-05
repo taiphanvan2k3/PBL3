@@ -320,9 +320,9 @@ namespace Testexcel
 
             UserCredential credential;
             string[] scopes = { SheetsService.Scope.SpreadsheetsReadonly };
-
+            string filePath = Path.Combine("..","..", "..", "BLL", "credentials.json");
             using (var stream =
-               new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
+               new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 string credPath = "token.json";
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
