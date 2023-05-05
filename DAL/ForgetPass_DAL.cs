@@ -67,7 +67,6 @@ namespace DAL
             return false;
         }
 
-
         // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công hoặc sau 120s kể từ lúc gửi mã
         public bool resetVerification(string email)
         {
