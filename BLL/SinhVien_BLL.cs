@@ -38,6 +38,7 @@ namespace BLL
                     MaNguoiDung = nd.MaNguoiDung,
                     Ho = nd.Ho,
                     Ten = nd.Ten,
+                    AnhCaNhan = nd.AnhCaNhan,
                     NgaySinh = nd.NgaySinh,
                     NoiSinh = nd.NoiSinh,
                     GioiTinh = nd.GioiTinh,
@@ -94,16 +95,16 @@ namespace BLL
 
         public static List<LopHocPhan_DTO> GetLichHocTrongTuan(string MaSV, int KiHoc)
         {
-            List<LopHocPhan_DTO> li= SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
+            List<LopHocPhan_DTO> li = SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
             for (int i = 0; i < li.Count; i++)
                 li[i].STT = i + 1;
             return li;
         }
         public static List<LopHocPhan_DTO> GetLichHocTrongNgay(string MaSV, int KiHoc, string Thu)
         {
-            var li= SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
+            var li = SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
             List<LopHocPhan_DTO> res = new List<LopHocPhan_DTO>();
-            foreach(LopHocPhan_DTO lhp in li)
+            foreach (LopHocPhan_DTO lhp in li)
             {
                 if (lhp.tkb.Thu == Thu)
                     res.Add(lhp);

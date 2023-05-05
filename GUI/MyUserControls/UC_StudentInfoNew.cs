@@ -2,6 +2,7 @@
 using DTO;
 using GUI.MyCustomControl;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -10,11 +11,22 @@ namespace GUI.MyUserControls
     {
         public string MSSV { get; set; }
         public UC_ParentInfo nextPage { get; set; }
+        private Image CurrentImage { get; set; }
+        private byte[] bytesImage = null;
         #region Properties
         public string LabelMSSV
         {
             get => lblMSSV.Text;
             set => lblMSSV.Text = value;
+        }
+
+        public Image Avatar
+        {
+            set
+            {
+                pictureBox1.Image = value;
+                CurrentImage = value;
+            }
         }
         public string HoVaTen
         {
@@ -225,8 +237,36 @@ namespace GUI.MyUserControls
             if (cbbQuocTich.SelectedIndex >= 0)
                 sv.QuocTich = cbbQuocTich.SelectedItem.ToString();
             else sv.QuocTich = "";
+
+            if (bytesImage != null)
+                sv.AnhCaNhan = bytesImage;
             if (SinhVien_BLL.UpdateStudentInfo(sv))
+            {
+                CurrentImage = pictureBox1.Image;
+                frmStudent frm = this.ParentForm as frmStudent;
+                frm.ChangeAvatarTopRight(CurrentImage);
                 CustomMessageBox.Show("Cập nhật thông tin sinh viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnUploadAvatar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog()
+            {
+                Filter = "Image files(*.jpg;.*png)|*.jpg;*.png",
+                Multiselect = false
+            };
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                Image img = Image.FromFile(open.FileName);
+                pictureBox1.Image = img;
+                bytesImage = UtilityClass.ConvertImageToByteArray(img);
+            }
+        }
+
+        private void UC_StudentInfoNew_ParentChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Image = CurrentImage;
         }
     }
 }
