@@ -62,6 +62,8 @@ namespace DAL
                     nd.DanToc = sv.DanToc;
                 if (sv.QuocTich != "")
                     nd.QuocTich = sv.QuocTich;
+                if (sv.AnhCaNhan != null)
+                    nd.AnhCaNhan = sv.AnhCaNhan;
                 return db.SaveChanges() > 0;
             }
             return false;

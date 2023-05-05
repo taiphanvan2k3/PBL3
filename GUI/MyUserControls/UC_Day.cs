@@ -13,7 +13,7 @@ namespace GUI.MyUserControls
             listExams = new List<BaiKiemTra_DTO>();
         }
         #region Properties
-        public List<BaiKiemTra_DTO> listExams;
+        public List<BaiKiemTra_DTO> listExams { get; set; }
         public string DateValue { get; set; }
         public int NumberOfExam { get; set; } = 0;
         public string Day

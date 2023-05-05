@@ -151,6 +151,20 @@ namespace GUI
             uC_StudentInfoNew.HoVaTen = sv.Ho + " " + sv.Ten;
             lblAvatar.Text = sv.Ho + " " + sv.Ten;
             uC_StudentInfoNew.GioiTinh = sv.GioiTinh;
+            if (sv.AnhCaNhan == null)
+            {
+                if (sv.GioiTinh)
+                    avatarTopRight.Image = GUI.Properties.Resources.studentAvatar;
+                else
+                    avatarTopRight.Image = GUI.Properties.Resources.GirlStudentDefault;
+
+            }
+            else
+            {
+                avatarTopRight.Image = UtilityClass.ConvertByteArrayToImage(sv.AnhCaNhan);
+            }
+            uC_StudentInfoNew.Avatar = avatarTopRight.Image;
+
             uC_StudentInfoNew.NgaySinh = sv.NgaySinh.ToShortDateString();
             uC_StudentInfoNew.NoiSinh = sv.NoiSinh;
             uC_StudentInfoNew.CCCD = sv.MaCCCD;
@@ -236,7 +250,8 @@ namespace GUI
             {
                 MaSV = this.MSSV,
                 TenSV = sv.Ho + " " + sv.Ten,
-                MaLopSH = sv.MaLopSH
+                MaLopSH = sv.MaLopSH,
+                Avatar = avatarTopRight.Image
             });
         }
 
@@ -297,6 +312,11 @@ namespace GUI
              * đến thuộc tính của form này thông qua đối tượng của form
              */
             UtilityClass.OpenNewForm(this, new frmDesignLogin());
+        }
+
+        public void ChangeAvatarTopRight(Image img)
+        {
+            avatarTopRight.Image = img;
         }
     }
 }

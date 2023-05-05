@@ -57,12 +57,17 @@ namespace DTO
         private DateTime _ThoiGianBatDau { get; set; }
 
         [DisplayName("Thời gian bắt đầu")]
-        public DateTime ThoiGianBatDau {
+        public DateTime ThoiGianBatDau
+        {
             get => _ThoiGianBatDau;
             set
             {
                 _ThoiGianBatDau = value;
-                ThoiGianKetThuc = value.AddMinutes(ThoiGianLamBai + 30);
+
+                //Phải tách ra như vậy, chứ nếu AddMinutes > 60p thì nó chỉ add được 60p
+                int totalMinutes = ThoiGianLamBai + 30;
+                ThoiGianKetThuc = value.AddMinutes(totalMinutes % 60);
+                ThoiGianKetThuc = ThoiGianKetThuc.AddHours(totalMinutes / 60);
             }
         }
 

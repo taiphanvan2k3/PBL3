@@ -26,6 +26,10 @@ namespace GUI
         }
 
         public string MaLopSH { get; set; }
+        public Image Avatar
+        {
+            set => avatarTopRight.Image = value;
+        }
         enum SelectionState
         {
             Home,

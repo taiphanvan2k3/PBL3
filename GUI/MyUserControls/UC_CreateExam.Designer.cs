@@ -148,6 +148,9 @@
             this.cbSoLuongCauHoi.ItemHeight = 30;
             this.cbSoLuongCauHoi.Items.AddRange(new object[] {
             "Chọn số câu hỏi",
+            "5",
+            "10",
+            "15",
             "30",
             "40",
             "50"});

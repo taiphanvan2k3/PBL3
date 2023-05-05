@@ -343,6 +343,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GirlStudentDefault {
+            get {
+                object obj = ResourceManager.GetObject("GirlStudentDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap graduated {
             get {
                 object obj = ResourceManager.GetObject("graduated", resourceCulture);
@@ -696,6 +706,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap upload1 {
             get {
                 object obj = ResourceManager.GetObject("upload1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UploadImage {
+            get {
+                object obj = ResourceManager.GetObject("UploadImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

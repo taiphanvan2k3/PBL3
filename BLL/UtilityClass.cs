@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Globalization;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
@@ -319,6 +321,24 @@ namespace BLL
                 ReleaseCapture();
                 SendMessage((sender as System.Windows.Forms.Control).FindForm().Handle, 0x112, 0xf012, 0);
             };
+        }
+
+        public static Image ConvertByteArrayToImage(byte[] bytes)
+        {
+            using(MemoryStream ms = new MemoryStream(bytes))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        public static byte[]ConvertImageToByteArray(Image img)
+        {
+            using(MemoryStream ms= new MemoryStream())
+            {
+                //Lưu hình ảnh này dưới dạng một mảng các byte
+                img.Save(ms, ImageFormat.Png);
+                return ms.ToArray();
+            }
         }
     }
 }
