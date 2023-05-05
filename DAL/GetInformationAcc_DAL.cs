@@ -137,30 +137,44 @@ namespace DAL
         // Đếm số lượng sinh viên theo từng khoa và khóa
         public int getTheNumberOfStudentByFaculty(string maKhoa, string year)
         {
-            using (var db = new PBL3Entities())
+            using (var context = new PBL3Entities())
             {
-                var result = from sv in db.SINH_VIEN
-                             join ctdt in db.CHUONG_TRINH_DAO_TAO on sv.MaCTDT equals ctdt.MaCTDT
-                             where ctdt.MaKhoa == maKhoa && sv.MaSV.Substring(3, sv.MaSV.Length - 7) == year
-                             group sv by ctdt.MaKhoa into g
-                             select new { MaKhoa = g.Key, SoLuongSinhVien = g.Count() };
-                var singleResult = result.SingleOrDefault(); // lấy ra đối tượng duy nhất trong result
-                if (singleResult != null)
-                {
-                    return singleResult.SoLuongSinhVien;
-                }
-                return 0;
+                var query = from sv in context.SINH_VIEN
+                            where sv.MaSV.StartsWith(maKhoa) && sv.MaSV.Substring(3, 2).Equals(year)
+                            select (sv.MaSV.Substring(5));
+                string result = query.DefaultIfEmpty("0").Max();
+                return int.Parse(result);
             }
+
+            //using (var db = new PBL3Entities())
+            //{
+            //    var result = from sv in db.SINH_VIEN
+            //                 join ctdt in db.CHUONG_TRINH_DAO_TAO on sv.MaCTDT equals ctdt.MaCTDT
+            //                 where ctdt.MaKhoa == maKhoa && sv.MaSV.Substring(3, sv.MaSV.Length - 7) == year
+            //                 group sv by ctdt.MaKhoa into g
+            //                 select new { MaKhoa = g.Key, SoLuongSinhVien = g.Count() };
+            //    var singleResult = result.SingleOrDefault(); // lấy ra đối tượng duy nhất trong result
+            //    if (singleResult != null)
+            //    {
+            //        return singleResult.SoLuongSinhVien;
+            //    }
+            //    return 0;
+            //}
         }
         // Đếm số lượng giảng viên theo khoa
         public int getTheNumberOfTeacherByFaculty(string maKhoa)
         {
             using (var db = new PBL3Entities())
             {
-                var result = (from gv in db.GIANG_VIEN
-                              where gv.MaKhoa == maKhoa
-                              select gv).Count();
-                return result;
+                //var result = (from gv in db.GIANG_VIEN
+                //              where gv.MaKhoa == maKhoa
+                //              select gv).Count();
+                //return result;
+                var query = from gv in db.GIANG_VIEN
+                             where gv.MaGV.StartsWith(maKhoa)
+                             select (gv.MaGV.Substring(5));
+                string result = query.DefaultIfEmpty("0").Max();
+                return int.Parse(result);
             }
         }
 
