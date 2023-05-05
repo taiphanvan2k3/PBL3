@@ -101,7 +101,7 @@
             this.btnADD.Margin = new System.Windows.Forms.Padding(4);
             this.btnADD.Name = "btnADD";
             this.btnADD.Size = new System.Drawing.Size(200, 49);
-            this.btnADD.TabIndex = 15;
+            this.btnADD.TabIndex = 10;
             this.btnADD.Text = "Thêm ";
             this.btnADD.UseVisualStyleBackColor = false;
             this.btnADD.Click += new System.EventHandler(this.btnADD_Click_1);
@@ -241,7 +241,7 @@
             this.txtName.PlaceholderColor = System.Drawing.Color.Lavender;
             this.txtName.PlaceholderText = "Tên";
             this.txtName.Size = new System.Drawing.Size(180, 40);
-            this.txtName.TabIndex = 34;
+            this.txtName.TabIndex = 3;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = false;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
@@ -265,7 +265,7 @@
             this.txtSurname.PlaceholderColor = System.Drawing.Color.Lavender;
             this.txtSurname.PlaceholderText = "Họ";
             this.txtSurname.Size = new System.Drawing.Size(180, 40);
-            this.txtSurname.TabIndex = 17;
+            this.txtSurname.TabIndex = 2;
             this.txtSurname.Texts = "";
             this.txtSurname.UnderlinedStyle = false;
             this.txtSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
@@ -287,7 +287,7 @@
             this.cmbYearOrLevel.Name = "cmbYearOrLevel";
             this.cmbYearOrLevel.Padding = new System.Windows.Forms.Padding(1);
             this.cmbYearOrLevel.Size = new System.Drawing.Size(400, 40);
-            this.cmbYearOrLevel.TabIndex = 32;
+            this.cmbYearOrLevel.TabIndex = 9;
             this.cmbYearOrLevel.Texts = "";
             // 
             // txtCCCD
@@ -309,7 +309,7 @@
             this.txtCCCD.PlaceholderColor = System.Drawing.Color.Lavender;
             this.txtCCCD.PlaceholderText = "Căn cước công dân";
             this.txtCCCD.Size = new System.Drawing.Size(400, 40);
-            this.txtCCCD.TabIndex = 29;
+            this.txtCCCD.TabIndex = 4;
             this.txtCCCD.Texts = "";
             this.txtCCCD.UnderlinedStyle = false;
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
@@ -326,7 +326,7 @@
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(400, 35);
             this.dtpBirthday.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.dtpBirthday.TabIndex = 23;
+            this.dtpBirthday.TabIndex = 5;
             this.dtpBirthday.TextColor = System.Drawing.Color.Lavender;
             // 
             // cmbList
@@ -346,7 +346,7 @@
             this.cmbList.Name = "cmbList";
             this.cmbList.Padding = new System.Windows.Forms.Padding(1);
             this.cmbList.Size = new System.Drawing.Size(400, 40);
-            this.cmbList.TabIndex = 28;
+            this.cmbList.TabIndex = 8;
             this.cmbList.Texts = "";
             this.cmbList.OnSelectedIndexChanged += new System.EventHandler(this.cmbList_OnSelectedIndexChanged);
             // 
@@ -361,7 +361,7 @@
             this.rbMen.Name = "rbMen";
             this.rbMen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbMen.Size = new System.Drawing.Size(75, 24);
-            this.rbMen.TabIndex = 24;
+            this.rbMen.TabIndex = 6;
             this.rbMen.TabStop = true;
             this.rbMen.Text = "Nam";
             this.rbMen.UnCheckedColor = System.Drawing.Color.Lavender;
@@ -378,7 +378,7 @@
             this.rbWomen.Name = "rbWomen";
             this.rbWomen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbWomen.Size = new System.Drawing.Size(61, 24);
-            this.rbWomen.TabIndex = 26;
+            this.rbWomen.TabIndex = 7;
             this.rbWomen.TabStop = true;
             this.rbWomen.Text = "Nữ";
             this.rbWomen.UnCheckedColor = System.Drawing.Color.Lavender;
@@ -413,7 +413,7 @@
             this.txtIDAcc.PlaceholderColor = System.Drawing.Color.Lavender;
             this.txtIDAcc.PlaceholderText = "ID";
             this.txtIDAcc.Size = new System.Drawing.Size(400, 40);
-            this.txtIDAcc.TabIndex = 30;
+            this.txtIDAcc.TabIndex = 1;
             this.txtIDAcc.Texts = "";
             this.txtIDAcc.UnderlinedStyle = false;
             // 
