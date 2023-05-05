@@ -46,7 +46,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(1395, 50);
+            this.panelTitle.Size = new System.Drawing.Size(1436, 50);
             this.panelTitle.TabIndex = 11;
             // 
             // btnClose
@@ -60,7 +60,7 @@
             this.btnClose.IconColor = System.Drawing.Color.DimGray;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 30;
-            this.btnClose.Location = new System.Drawing.Point(1342, 9);
+            this.btnClose.Location = new System.Drawing.Point(1383, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(41, 37);
             this.btnClose.TabIndex = 12;
@@ -108,13 +108,13 @@
             this.dtgv.RowHeadersVisible = false;
             this.dtgv.RowHeadersWidth = 51;
             this.dtgv.RowTemplate.Height = 30;
-            this.dtgv.Size = new System.Drawing.Size(1303, 213);
+            this.dtgv.Size = new System.Drawing.Size(1344, 213);
             this.dtgv.TabIndex = 12;
             // 
             // frmShowEventInDay
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1395, 291);
+            this.ClientSize = new System.Drawing.Size(1436, 323);
             this.Controls.Add(this.dtgv);
             this.Controls.Add(this.panelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
