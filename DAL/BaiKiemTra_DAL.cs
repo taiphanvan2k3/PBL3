@@ -191,11 +191,11 @@ namespace DAL
                     TenMH = lhp.TenMH,
                     SoCauHoi = bkt.SoCauHoi,
 
-                    //ThoiGianBatDau là thời gian bắt đầu mở đề này
-                    ThoiGianBatDau = bkt.NgayKiemTra,
-
                     //ThoiGianLamBai là khoảng thời gian tối đa để làm đề này, đơn vị tính (phút)
-                    ThoiGianLamBai = bkt.ThoiGianLamBai
+                    ThoiGianLamBai = bkt.ThoiGianLamBai,
+
+                    //ThoiGianBatDau là thời gian bắt đầu mở đề này
+                    ThoiGianBatDau = bkt.NgayKiemTra    
                 })
                 .Where(bkt => startDate <= bkt.ThoiGianBatDau && bkt.ThoiGianBatDau <= endDate).ToList();
             return li;

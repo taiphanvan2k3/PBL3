@@ -49,7 +49,6 @@
             this.lblMSSV = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHoVaTen = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlThongTinLienLac = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmailTruongCap = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,19 +66,21 @@
             this.txtKhoa = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutRight = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUploadAvatar = new GUI.MyCustomControl.CustomButton();
             this.uC_AddressSelection = new GUI.MyUserControls.UC_VerticalAddressSelection();
+            this.pictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
             this.panelLeft.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlThongTinLienLac.SuspendLayout();
             this.pnlDiaChi.SuspendLayout();
             this.pnlThongTinDaoTao.SuspendLayout();
             this.flowLayoutRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -87,11 +88,12 @@
             this.panelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelLeft.BorderRadius = 20;
+            this.panelLeft.Controls.Add(this.pictureBox1);
+            this.panelLeft.Controls.Add(this.btnUploadAvatar);
             this.panelLeft.Controls.Add(this.flowLayoutPanel);
             this.panelLeft.Controls.Add(this.lblMSSV);
             this.panelLeft.Controls.Add(this.label2);
             this.panelLeft.Controls.Add(this.lblHoVaTen);
-            this.panelLeft.Controls.Add(this.pictureBox1);
             this.panelLeft.Location = new System.Drawing.Point(26, 5);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(444, 747);
@@ -375,17 +377,6 @@
             this.lblHoVaTen.Text = "Phan Văn Tài";
             this.lblHoVaTen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.pictureBox1.Location = new System.Drawing.Point(127, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 193);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlThongTinLienLac
             // 
             this.pnlThongTinLienLac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -668,25 +659,6 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Khoa:";
             // 
-            // btnNextPage
-            // 
-            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNextPage.BorderRadius = 10;
-            this.btnNextPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNextPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNextPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNextPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNextPage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextPage.ForeColor = System.Drawing.Color.White;
-            this.btnNextPage.Image = global::GUI.Properties.Resources.nextPage;
-            this.btnNextPage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNextPage.Location = new System.Drawing.Point(1101, 670);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(145, 45);
-            this.btnNextPage.TabIndex = 25;
-            this.btnNextPage.Text = "    Trang sau";
-            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
-            // 
             // flowLayoutRight
             // 
             this.flowLayoutRight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -720,6 +692,47 @@
             this.btnSave.Text = "Lưu thông tin cá thân";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnNextPage
+            // 
+            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextPage.BorderRadius = 10;
+            this.btnNextPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNextPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNextPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNextPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNextPage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPage.ForeColor = System.Drawing.Color.White;
+            this.btnNextPage.Image = global::GUI.Properties.Resources.nextPage;
+            this.btnNextPage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnNextPage.Location = new System.Drawing.Point(1101, 670);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(145, 45);
+            this.btnNextPage.TabIndex = 25;
+            this.btnNextPage.Text = "    Trang sau";
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnUploadAvatar
+            // 
+            this.btnUploadAvatar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUploadAvatar.BackGroundColor = System.Drawing.Color.SkyBlue;
+            this.btnUploadAvatar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnUploadAvatar.BorderRadius = 40;
+            this.btnUploadAvatar.BorderSize = 0;
+            this.btnUploadAvatar.FlatAppearance.BorderSize = 0;
+            this.btnUploadAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadAvatar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadAvatar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUploadAvatar.Image = global::GUI.Properties.Resources.UploadImage;
+            this.btnUploadAvatar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUploadAvatar.Location = new System.Drawing.Point(332, 131);
+            this.btnUploadAvatar.Name = "btnUploadAvatar";
+            this.btnUploadAvatar.Size = new System.Drawing.Size(99, 81);
+            this.btnUploadAvatar.TabIndex = 12;
+            this.btnUploadAvatar.Text = "         \r\nThay đổi ảnh";
+            this.btnUploadAvatar.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUploadAvatar.UseVisualStyleBackColor = false;
+            this.btnUploadAvatar.Click += new System.EventHandler(this.btnUploadAvatar_Click);
+            // 
             // uC_AddressSelection
             // 
             this.uC_AddressSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -735,6 +748,23 @@
             this.uC_AddressSelection.TinhThanhPho = "";
             this.uC_AddressSelection.XaPhuong = "";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBox1.BorderSize = 2;
+            this.pictureBox1.GradientAngle = 50F;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.pictureBox1.InitialImage = global::GUI.Properties.Resources.studentAvatar;
+            this.pictureBox1.Location = new System.Drawing.Point(127, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // UC_StudentInfoNew
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -745,6 +775,7 @@
             this.Controls.Add(this.flowLayoutRight);
             this.Name = "UC_StudentInfoNew";
             this.Size = new System.Drawing.Size(1249, 758);
+            this.ParentChanged += new System.EventHandler(this.UC_StudentInfoNew_ParentChanged);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             this.flowLayoutPanel.ResumeLayout(false);
@@ -752,7 +783,6 @@
             this.pnlBottom.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlThongTinLienLac.ResumeLayout(false);
             this.pnlThongTinLienLac.PerformLayout();
             this.pnlDiaChi.ResumeLayout(false);
@@ -760,6 +790,7 @@
             this.pnlThongTinDaoTao.ResumeLayout(false);
             this.pnlThongTinDaoTao.PerformLayout();
             this.flowLayoutRight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -767,7 +798,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelLeft;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblMSSV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHoVaTen;
@@ -809,5 +839,7 @@
         private System.Windows.Forms.Label txtLopSH;
         private System.Windows.Forms.Label txtCTDT;
         private System.Windows.Forms.Label txtKhoa;
+        private MyCustomControl.CustomButton btnUploadAvatar;
+        private MyCustomControl.CircularPictureBox pictureBox1;
     }
 }

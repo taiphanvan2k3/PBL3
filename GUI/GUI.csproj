@@ -817,6 +817,8 @@
     <None Include="Resources\Yourname.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UploadImage.png" />
+    <None Include="Resources\GirlStudentDefault.png" />
     <None Include="Resources\Save1.png" />
     <None Include="Resources\university.png" />
     <None Include="Resources\programming-course.png" />

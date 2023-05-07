@@ -52,6 +52,7 @@ namespace DAL
         {
             var thongTinDangNhap = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
             if (thongTinDangNhap == null) return false;
+            else if (thongTinDangNhap.MaXacThucDeLayLaiMK == null) return false;
             return thongTinDangNhap.MaXacThucDeLayLaiMK.Equals(maXacThuc);
         }
         // Cập nhật lại mật khẩu
@@ -65,7 +66,6 @@ namespace DAL
             }
             return false;
         }
-
 
         // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công hoặc sau 120s kể từ lúc gửi mã
         public bool resetVerification(string email)
