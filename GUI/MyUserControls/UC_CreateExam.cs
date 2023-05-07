@@ -124,7 +124,7 @@ namespace GUI.MyUserControls
                     string input = cbTuanKiemTra.SelectedItem.ToString();
                     Match match = Regex.Match(input, @"\((\d{2}/\d{2}/\d{4}) ->");
                     string date = match.Groups[1].Value;
-                    DateExam = Convert.ToDateTime(date);
+                    DateExam = DateTime.ParseExact(date, "dd/MM/yyyy", null); 
                     var tkb = GiangVien_BLL.Instance.GetScheduleForTKB(cbLopHocPhan.SelectedItem.ToString());
                     DateExam.AddDays(UtilityClass.ConvertDayOfWeekToNumber(tkb.Thu) - 2);
                     DateExam = new DateTime(DateExam.Year, DateExam.Month, DateExam.Day, UtilityClass.GetHourExamWithTietBD(tkb.TietBD), 0, 0);
@@ -150,6 +150,7 @@ namespace GUI.MyUserControls
                                                           Convert.ToByte(tbThoiGianLamBai.Texts), DateExam,
                                                           Convert.ToByte(cbSoLuongCauHoi.SelectedItem.ToString()), cbLopHocPhan.SelectedItem.ToString(),
                                                           MaGV, tbMatKhauLamBai.Texts, chbAllowReturn.Checked);
+                            CustomMessageBox.Show("Tạo bài kiểm tra thành công!");
                         }
                     }
                 }

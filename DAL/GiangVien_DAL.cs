@@ -247,8 +247,8 @@ namespace DAL
             List<string> list = GetListSVForLHP(MaLHP);
             var ListLHP = db.SINHVIEN_LOPHOCPHAN.Where(x => list.Contains(x.MaSV)).Select(x => x.MaLopHP).Distinct().ToList();
             var query = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
-                                        && bkt.NgayKiemTra > TimeExam
-                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeLamBai).ToList();
+                                        && bkt.NgayKiemTra >= TimeExam
+                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeLamBai).ToList();
             return query.Count > 0;
         }
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)

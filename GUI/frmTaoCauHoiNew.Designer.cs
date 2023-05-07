@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaoCauHoiNew));
             this.label1 = new System.Windows.Forms.Label();
             this.pnlChooseAnswer = new System.Windows.Forms.Panel();
             this.rbD = new System.Windows.Forms.RadioButton();
@@ -414,6 +415,7 @@
             this.Controls.Add(this.panelGradient3);
             this.Controls.Add(this.panelGradient2);
             this.Controls.Add(this.panelGradient1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTaoCauHoiNew";
             this.Text = "frmTaoCauHoiNew";
             this.Load += new System.EventHandler(this.frmTaoCauHoiNew_Load);

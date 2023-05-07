@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudent));
             this.panel3 = new System.Windows.Forms.Panel();
             this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
@@ -495,6 +496,7 @@
             this.Controls.Add(this.panelShowDetail);
             this.Controls.Add(this.panelMenuTong);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1550, 950);
             this.Name = "frmStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -80,7 +80,7 @@ namespace GUI
                 {
                     lbMessagebox.Visible = false;
                     CustomMessageBox.Show("Đã tìm thấy tài khoản!\nĐang trong quá trình gửi mail. Vui lòng đợi trong giây lát.", "Thông báo");
-                    pnlProgressBar.Visible = false;
+                    pnlProgressBar.Visible = true;
                     backgroundWorker1.RunWorkerAsync(acc.MaXacThucDeLayLaiMK);
                 }
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddStudentIntoModuleClass));
             this.label1 = new System.Windows.Forms.Label();
             this.pnlUpload = new GUI.MyCustomControl.PanelGradient();
             this.lblImgUpload = new System.Windows.Forms.Label();
@@ -152,7 +153,7 @@
             this.txtIdStudent.UnderlinedStyle = false;
             this.txtIdStudent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdStudent_KeyDown);
             // 
-            // frmAddStudent
+            // frmAddStudentIntoModuleClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(491, 334);
@@ -161,7 +162,8 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtIdStudent);
             this.Controls.Add(this.label1);
-            this.Name = "frmAddStudent";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmAddStudentIntoModuleClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddStudent";
             this.pnlUpload.ResumeLayout(false);

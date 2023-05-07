@@ -16,8 +16,6 @@ namespace GUI
     public partial class frmTeacher : Form
     {
         private string ButtonClicked = "Home";
-        private UC_TeacherInfo Info;
-        private UC_CreateExam CreateQues;
         public frmTeacher()
         {
             InitializeComponent();
@@ -38,6 +36,12 @@ namespace GUI
             CreateQues.MaGV = ID;
             LoadInfo(ID);
         }
+        #region List đối tượng menu
+        private UC_TeacherInfo Info;
+        private UC_CreateExam CreateQues;
+        private UC_DailyWorkSchedule DailySchedule;
+        private UC_WeeklyWorkSchedule WeeklySchedule;
+        #endregion
         #region Properties
         string ID { get; set; }
         #endregion
@@ -211,6 +215,22 @@ namespace GUI
             pnlMain.Controls.Clear();
             pnlMain.Controls.Add(CreateQues);
         }
+
+        private void btnCalendarDays_Click(object sender, EventArgs e)
+        {
+            DailySchedule = new UC_DailyWorkSchedule();
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(DailySchedule);
+        }
+
+        private void btnCalendarWeek_Click(object sender, EventArgs e)
+        {
+            WeeklySchedule = new UC_WeeklyWorkSchedule();
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(WeeklySchedule);
+        }
         #endregion
+
+
     }
 }
