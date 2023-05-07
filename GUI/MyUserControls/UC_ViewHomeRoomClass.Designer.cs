@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCenter = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.cbbListLSH = new Guna.UI2.WinForms.Guna2ComboBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnFirstPage = new FontAwesome.Sharp.IconButton();
             this.lbCurrentPage = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCenter.BackColor = System.Drawing.Color.Transparent;
             this.panelCenter.BorderRadius = 25;
+            this.panelCenter.Controls.Add(this.cbbListLSH);
             this.panelCenter.Controls.Add(this.iconButton1);
             this.panelCenter.Controls.Add(this.btnFirstPage);
             this.panelCenter.Controls.Add(this.lbCurrentPage);
@@ -68,6 +70,24 @@
             this.panelCenter.Name = "panelCenter";
             this.panelCenter.Size = new System.Drawing.Size(1080, 667);
             this.panelCenter.TabIndex = 1;
+            // 
+            // cbbListLSH
+            // 
+            this.cbbListLSH.BackColor = System.Drawing.Color.Transparent;
+            this.cbbListLSH.BorderRadius = 10;
+            this.cbbListLSH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbListLSH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbListLSH.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbListLSH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbListLSH.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbListLSH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbListLSH.ItemHeight = 30;
+            this.cbbListLSH.Location = new System.Drawing.Point(789, 14);
+            this.cbbListLSH.Name = "cbbListLSH";
+            this.cbbListLSH.Size = new System.Drawing.Size(199, 36);
+            this.cbbListLSH.TabIndex = 42;
+            this.cbbListLSH.Visible = false;
+            this.cbbListLSH.SelectedIndexChanged += new System.EventHandler(this.cbbListLSH_SelectedIndexChanged);
             // 
             // iconButton1
             // 
@@ -256,5 +276,6 @@
         private FontAwesome.Sharp.IconButton btnNext;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnFirstPage;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbListLSH;
     }
 }

@@ -37,11 +37,10 @@
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.btnInfo = new FontAwesome.Sharp.IconButton();
             this.pnlManageClass = new System.Windows.Forms.Panel();
             this.btnCreateQuestion = new System.Windows.Forms.Button();
             this.btnCreateExam = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHomeRoomClass = new System.Windows.Forms.Button();
             this.btnSendAnnounce = new System.Windows.Forms.Button();
             this.btnManageClass = new System.Windows.Forms.Button();
             this.btnChangeGrade = new System.Windows.Forms.Button();
@@ -62,6 +61,9 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMain.Location = new System.Drawing.Point(250, 2);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1175, 730);
@@ -130,7 +132,6 @@
             // flPanel
             // 
             this.flPanel.Controls.Add(this.btnHome);
-            this.flPanel.Controls.Add(this.btnInfo);
             this.flPanel.Controls.Add(this.pnlManageClass);
             this.flPanel.Controls.Add(this.pnlViewCalendar);
             this.flPanel.Controls.Add(this.btnDarkMode);
@@ -161,39 +162,17 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // btnInfo
-            // 
-            this.btnInfo.FlatAppearance.BorderSize = 0;
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfo.ForeColor = System.Drawing.Color.White;
-            this.btnInfo.IconChar = FontAwesome.Sharp.IconChar.Person;
-            this.btnInfo.IconColor = System.Drawing.Color.White;
-            this.btnInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInfo.IconSize = 30;
-            this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfo.Location = new System.Drawing.Point(3, 77);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnInfo.Size = new System.Drawing.Size(250, 68);
-            this.btnInfo.TabIndex = 6;
-            this.btnInfo.Tag = "Thông tin cá nhân";
-            this.btnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInfo.UseVisualStyleBackColor = true;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
-            // 
             // pnlManageClass
             // 
             this.pnlManageClass.Controls.Add(this.btnCreateQuestion);
             this.pnlManageClass.Controls.Add(this.btnCreateExam);
-            this.pnlManageClass.Controls.Add(this.button2);
+            this.pnlManageClass.Controls.Add(this.btnHomeRoomClass);
             this.pnlManageClass.Controls.Add(this.btnSendAnnounce);
             this.pnlManageClass.Controls.Add(this.btnManageClass);
             this.pnlManageClass.Controls.Add(this.btnChangeGrade);
             this.pnlManageClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlManageClass.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlManageClass.Location = new System.Drawing.Point(3, 151);
+            this.pnlManageClass.Location = new System.Drawing.Point(3, 77);
             this.pnlManageClass.Name = "pnlManageClass";
             this.pnlManageClass.Size = new System.Drawing.Size(250, 68);
             this.pnlManageClass.TabIndex = 7;
@@ -234,22 +213,23 @@
             this.btnCreateExam.UseVisualStyleBackColor = false;
             this.btnCreateExam.Click += new System.EventHandler(this.btnCreateExam_Click);
             // 
-            // button2
+            // btnHomeRoomClass
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Image = global::GUI.Properties.Resources.Homeroom;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(26, 204);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(224, 68);
-            this.button2.TabIndex = 15;
-            this.button2.Tag = "Lớp sinh hoạt";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnHomeRoomClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
+            this.btnHomeRoomClass.FlatAppearance.BorderSize = 0;
+            this.btnHomeRoomClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeRoomClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeRoomClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnHomeRoomClass.Image = global::GUI.Properties.Resources.Homeroom;
+            this.btnHomeRoomClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeRoomClass.Location = new System.Drawing.Point(26, 204);
+            this.btnHomeRoomClass.Name = "btnHomeRoomClass";
+            this.btnHomeRoomClass.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnHomeRoomClass.Size = new System.Drawing.Size(224, 68);
+            this.btnHomeRoomClass.TabIndex = 15;
+            this.btnHomeRoomClass.Tag = "Lớp sinh hoạt";
+            this.btnHomeRoomClass.UseVisualStyleBackColor = false;
+            this.btnHomeRoomClass.Click += new System.EventHandler(this.btnHomeRoomClass_Click);
             // 
             // btnSendAnnounce
             // 
@@ -303,13 +283,14 @@
             this.btnChangeGrade.TabIndex = 12;
             this.btnChangeGrade.Tag = "Chỉnh sửa điểm";
             this.btnChangeGrade.UseVisualStyleBackColor = false;
+            this.btnChangeGrade.Click += new System.EventHandler(this.btnChangeGrade_Click);
             // 
             // pnlViewCalendar
             // 
             this.pnlViewCalendar.Controls.Add(this.btnCalendarDays);
             this.pnlViewCalendar.Controls.Add(this.btnCalendarWeek);
             this.pnlViewCalendar.Controls.Add(this.btnCalendar);
-            this.pnlViewCalendar.Location = new System.Drawing.Point(3, 225);
+            this.pnlViewCalendar.Location = new System.Drawing.Point(3, 151);
             this.pnlViewCalendar.Name = "pnlViewCalendar";
             this.pnlViewCalendar.Size = new System.Drawing.Size(250, 68);
             this.pnlViewCalendar.TabIndex = 9;
@@ -378,7 +359,7 @@
             this.btnDarkMode.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnDarkMode.Image = global::GUI.Properties.Resources.DarkMode;
             this.btnDarkMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.Location = new System.Drawing.Point(3, 299);
+            this.btnDarkMode.Location = new System.Drawing.Point(3, 225);
             this.btnDarkMode.Name = "btnDarkMode";
             this.btnDarkMode.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnDarkMode.Size = new System.Drawing.Size(250, 68);
@@ -417,8 +398,10 @@
             this.ClientSize = new System.Drawing.Size(1425, 735);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1443, 782);
             this.Name = "frmTeacher";
             this.Text = "Teacher";
+            this.Load += new System.EventHandler(this.frmTeacher_Load);
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -436,7 +419,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnLogOut;
-        private FontAwesome.Sharp.IconButton btnInfo;
         private FontAwesome.Sharp.IconButton btnHome;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -445,7 +427,7 @@
         private System.Windows.Forms.Panel pnlManageClass;
         private System.Windows.Forms.Panel pnlViewCalendar;
         private System.Windows.Forms.Button btnChangeGrade;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHomeRoomClass;
         private System.Windows.Forms.Button btnSendAnnounce;
         private System.Windows.Forms.Button btnManageClass;
         private System.Windows.Forms.Button btnCalendarDays;

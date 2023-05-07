@@ -132,7 +132,14 @@ namespace BLL
         {
             return GiangVien_DAL.Instance.GetScheduleForTKB(MaLHP);
         }
-
+        public List<string> GetMaLSHForGiangVien(string MaGiangVien)
+        {
+            return GiangVien_DAL.Instance.GetMaLSHForGiangVien(MaGiangVien);
+        }
+        public bool UpdateTeacherInfo(GiangVien_DTO gv)
+        {
+            return GiangVien_DAL.Instance.UpdateTeacherInfo(gv);
+        }
         #region Get List GV Suitable To Assign
         public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {

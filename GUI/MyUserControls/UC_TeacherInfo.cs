@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +15,27 @@ namespace GUI.MyUserControls
 {
     public partial class UC_TeacherInfo : UserControl
     {
+        private Image CurrentImage { get; set; }
+        private byte[] bytesImage = null;
         public UC_TeacherInfo()
         {
             InitializeComponent();
-            
+            LoadCBBNoiSinh();
+            LoadCBBDanToc_QuocTich();
         }
         #region Properites
         public string IdTeacher
         {
             get => lbIdGV.Text;
             set => lbIdGV.Text = value;
+        }
+        public Image Avatar
+        {
+            set
+            {
+                pcbImageGV.Image = value;
+                CurrentImage = value;
+            }
         }
         public string Name
         {
@@ -72,32 +84,135 @@ namespace GUI.MyUserControls
         }
         public string DanToc
         {
-            get => tbDanToc.Texts;
-            set => tbDanToc.Texts = value;
+            get
+            {
+                if (cbbDanToc.SelectedIndex >= 0)
+                    return cbbDanToc.Text;
+                return "empty";
+            }
+            set => cbbDanToc.SelectedItem = value;
         }
+
         public string QuocTich
         {
-            get => tbQuocTich.Texts; 
-            set => tbQuocTich.Texts = value;
+            get
+            {
+                if (cbbQuocTich.SelectedIndex >= 0)
+                    return cbbQuocTich.Text;
+                return "empty";
+            }
+            set => cbbQuocTich.SelectedItem = value;
         }
-        public string NoiSinh
+        /*public string NoiSinh
         {
             get => tbNoiSinh.Texts;
             set => tbNoiSinh.Texts = value;
+        }*/
+        public string NoiSinh
+        {
+            get
+            {
+                if (cbbNoiSinh.SelectedIndex >= 0)
+                    return cbbNoiSinh.Text;
+                return "empty";
+            }
+            set => cbbNoiSinh.SelectedItem = value;
         }
         public string CCCD
         { 
             get => tbCCCD.Texts; 
             set => tbCCCD.Texts = value;
         }
+        public void LoadCBBNoiSinh()
+        {
+            cbbNoiSinh.Items.AddRange(AddressSelection_BLL.Instance.GetAllTinhThanh().ToArray());
+        }
+        private void LoadCBBDanToc_QuocTich()
+        {
+            cbbDanToc.Items.AddRange(UtilityClass.GetDanToc());
+            cbbQuocTich.Items.AddRange(UtilityClass.GetQuocTich());
+        }
+
         public void SetDiaChi(string address)
         {
-            if(address != null)
+            //string[] parts = UtilityClass.SplitAddress(address);
+            //uc_Address.TinhThanhPho = parts[0];
+            //uc_Address.QuanHuyen = parts[1];
+            //uc_Address.XaPhuong = parts[2];
+            UC_Address.SetDiaChi(address);
+        }
+
+        private void pnlRight_Resize(object sender, EventArgs e)
+        {
+            //int offset = gbTTLienHe.Location.Y;
+            //int heightRemains = pnlRight.Height - gbTTLienHe.Height
+            //                                      - pnlAddress.Height - pnlInfoAnother.Height;
+            //gbTTLienHe.Width = pnlRight.Width - 10;
+            //gbTTLienHe.Height += (heightRemains - 4 * offset) / 3;
+
+            ////Không thay đổi chiều cao cho pnlDiaChi, vì thay đổi nữa thì khoảng trống dư quá nhiều
+            //pnlAddress.Width = gbTTLienHe.Width;
+
+            //pnlInfoAnother.Width = gbTTLienHe.Width;
+            //pnlInfoAnother.Height += (heightRemains - 4 * offset) / 3;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            GiangVien_DTO gv = new GiangVien_DTO();
+            gv.MaNguoiDung = IdTeacher;
+            string address = "";
+            if (UC_Address.TinhThanhPho != "" && UC_Address.QuanHuyen != "" && UC_Address.XaPhuong != "")
             {
-                string[] parts = UtilityClass.SplitAddress(address);
-                uc_Address.TinhThanhPho = parts[0];
-                uc_Address.QuanHuyen = parts[1];
-                uc_Address.XaPhuong = parts[2];
+                address += UC_Address.TinhThanhPho + " - " + UC_Address.QuanHuyen + " - " + UC_Address.XaPhuong;
+                gv.DiaChi = address;
+            }
+            else
+            {
+                CustomMessageBox.Show("Phần thông tin địa chỉ không được lưu vì chưa nhập đầy đủ.");
+                gv.DiaChi = "";
+            }
+            gv.EmailCaNhan = tbEmailCaNhan.Text;
+            gv.Sdt = tbSDT.Text;
+            if (cbbNoiSinh.SelectedIndex >= 0)
+                gv.NoiSinh = cbbNoiSinh.SelectedItem.ToString();
+            else gv.NoiSinh = "";
+
+            if (cbbDanToc.SelectedIndex >= 0)
+                gv.DanToc = cbbDanToc.SelectedItem.ToString();
+            else gv.DanToc = "";
+
+            if (cbbQuocTich.SelectedIndex >= 0)
+                gv.QuocTich = cbbQuocTich.SelectedItem.ToString();
+            else gv.QuocTich = "";
+
+            if (bytesImage != null)
+                gv.AnhCaNhan = bytesImage;
+            if (GiangVien_BLL.Instance.UpdateTeacherInfo(gv))
+            {
+                CurrentImage = pcbImageGV.Image;
+                CustomMessageBox.Show("Cập nhật thông tin sinh viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void cbbNoiSinh_Click(object sender, EventArgs e)
+        {
+            if (cbbNoiSinh.Items.Count == 0)
+                LoadCBBNoiSinh();
+        }
+
+        private void btnUploadAvatar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog()
+            {
+                Filter = "Image files(*.jpg;.*png)|*.jpg;*.png",
+                Multiselect = false
+            };
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                Image img = Image.FromFile(open.FileName);
+                pcbImageGV.Image = img;
+                bytesImage = UtilityClass.ConvertImageToByteArray(img);
             }
         }
         #endregion

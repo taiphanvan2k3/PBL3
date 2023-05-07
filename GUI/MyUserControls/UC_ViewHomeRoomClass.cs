@@ -17,6 +17,8 @@ namespace GUI.MyUserControls
         private int currentPage, maxPage;
         private List<SinhVienLSH_View> li;
         private SplitPageHelper<SinhVienLSH_View> helper;
+        //Thuộc tính này dùng cho giảng viên 
+        public List<string> ListMaLSH { get; set; }
         public UC_ViewHomeRoomClass()
         {
             InitializeComponent();
@@ -46,6 +48,9 @@ namespace GUI.MyUserControls
 
         public void LoadData()
         {
+            if(ListMaLSH != null)
+                if (ListMaLSH.Count > 1)
+                    cbbListLSH.Visible = true;
             //Hàm này sẽ được gọi thủ công sau khi UC này được add vào panel
             li = SinhVien_BLL.GetSinhVienInLopSH(MaLopSH);
             lblSoLuongSV.Text = "Danh sách này có: " + li.Count + " sinh viên.";
@@ -56,12 +61,19 @@ namespace GUI.MyUserControls
             helper = new SplitPageHelper<SinhVienLSH_View>(maxRow, li);
             dtgv.DataSource = helper.GetRecords(currentPage);
         }
-
-        #region Không còn dùng
         private void UC_ViewHomeRoomClass_Load(object sender, EventArgs e)
         {
             //Nếu dùng Load thì có thể sẽ không nhất quán dữ liệu vì hàm load chỉ được gọi duy nhất một lần
+            //Nhưng giờ dùng để load combobox lớp sinh hoạt cho phần giảng viên xem
+            if (ListMaLSH != null)
+            {
+                cbbListLSH.Items.AddRange(ListMaLSH.ToArray());
+                cbbListLSH.SelectedIndex = 0;
+                LoadData();
+            }
         }
+        #region Không còn dùng
+
 
         private void UC_ViewHomeRoomClass_Paint(object sender, PaintEventArgs e)
         {
@@ -95,6 +107,12 @@ namespace GUI.MyUserControls
         {
             currentPage = maxPage;
             dtgv.DataSource = helper.GetRecords(currentPage);
+        }
+
+        private void cbbListLSH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MaLopSH = cbbListLSH.SelectedItem.ToString();
+            LoadData();
         }
 
         private void dtgv_DataSourceChanged(object sender, EventArgs e)

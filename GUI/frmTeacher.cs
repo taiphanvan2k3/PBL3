@@ -15,15 +15,15 @@ namespace GUI
 {
     public partial class frmTeacher : Form
     {
-        private string ButtonClicked = "Home";
+        private string ButtonClicked = "";
         public frmTeacher()
         {
             InitializeComponent();
             CollapseMenu();
             Info = new UC_TeacherInfo();
             ID = "102BK0001";
-            CreateQues = new UC_CreateExam(ID);
-            CreateQues.MaGV = ID;
+            CreateExam = new UC_CreateExam(ID);
+            CreateExam.MaGV = ID;
             LoadInfo(ID);
         }
         public frmTeacher(string account)
@@ -32,15 +32,17 @@ namespace GUI
             CollapseMenu();
             Info = new UC_TeacherInfo();
             ID = account;
-            CreateQues = new UC_CreateExam(ID);
-            CreateQues.MaGV = ID;
+            CreateExam = new UC_CreateExam(ID);
+            CreateExam.MaGV = ID;
             LoadInfo(ID);
         }
         #region List đối tượng menu
         private UC_TeacherInfo Info;
-        private UC_CreateExam CreateQues;
+        private UC_CreateExam CreateExam;
         private UC_DailyWorkSchedule DailySchedule;
         private UC_WeeklyWorkSchedule WeeklySchedule;
+        private UC_ViewHomeRoomClass HomeRoomClass;
+        private UC_SendNoticeToModuleClass SendNoticeToModuleClass;
         #endregion
         #region Properties
         string ID { get; set; }
@@ -133,9 +135,32 @@ namespace GUI
             Info.NoiSinh = gv.NoiSinh;
             Info.CCCD = gv.MaCCCD;
             Info.SetDiaChi(gv.DiaChi);
+            if (gv.AnhCaNhan == null)
+            {
+                if (gv.GioiTinh)
+                    Info.Avatar = GUI.Properties.Resources.studentAvatar;
+                else
+                    Info.Avatar = GUI.Properties.Resources.GirlStudentDefault;
+
+            }
+            else
+            {
+                Info.Avatar = UtilityClass.ConvertByteArrayToImage(gv.AnhCaNhan);
+            }
+            if (ButtonClicked != "Home")
+            {
+                ButtonClicked = "Home";
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(Info);
+            }
         }
         #endregion
         #region Events
+        private void frmTeacher_Load(object sender, EventArgs e)
+        {
+            Info.Dock = DockStyle.Fill;
+        }
+        
         private void btnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
@@ -145,22 +170,15 @@ namespace GUI
             //Clear hết control trong panel chứa các chức năng trên màn hình
             if(ButtonClicked != "Home")
             {
+                ButtonClicked = "Home";
                 pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(Info);
             }
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             UtilityClass.OpenNewForm(this, new frmDesignLogin());
-        }
-
-        private void btnInfo_Click(object sender, EventArgs e)
-        {
-            if (ButtonClicked != "Thông tin cá nhân")
-            {
-                pnlMain.Controls.Clear();
-                pnlMain.Controls.Add(Info);
-            }
         }
 
         private void btnManageClass_Click(object sender, EventArgs e)
@@ -191,8 +209,14 @@ namespace GUI
         {
             if (ButtonClicked != "Nền tối")
             {
+                ButtonClicked = "Nền tối";
                 pnlMain.Controls.Clear();
             }
+        }
+
+        private void btnChangeGrade_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnCreateQuestion_Click(object sender, EventArgs e)
@@ -204,33 +228,61 @@ namespace GUI
 
         private void btnSendAnnounce_Click(object sender, EventArgs e)
         {
-            UC_SendNoticeToModuleClass f = new UC_SendNoticeToModuleClass();
-            f.MaGV = ID;
-            pnlMain.Controls.Clear();
-            pnlMain.Controls.Add(f);
+            SendNoticeToModuleClass = new UC_SendNoticeToModuleClass();
+            if (ButtonClicked != "Gửi thông báo")
+            {
+                ButtonClicked = "Gửi thông báo";
+                SendNoticeToModuleClass.MaGV = ID;
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(SendNoticeToModuleClass);
+            }
         }
-
+        
+        private void btnHomeRoomClass_Click(object sender, EventArgs e)
+        {
+            HomeRoomClass = new UC_ViewHomeRoomClass();
+            HomeRoomClass.ListMaLSH = GiangVien_BLL.Instance.GetMaLSHForGiangVien(ID);
+            if (ButtonClicked != "Lớp sinh hoạt")
+            {
+                ButtonClicked = "Lớp sinh hoạt";
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(HomeRoomClass);
+            }
+        }
         private void btnCreateExam_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
-            pnlMain.Controls.Add(CreateQues);
+            if (ButtonClicked != "Tạo bài kiểm tra")
+            {
+                ButtonClicked = "Tạo bài kiểm tra";
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(CreateExam);
+            }
         }
 
         private void btnCalendarDays_Click(object sender, EventArgs e)
         {
             DailySchedule = new UC_DailyWorkSchedule();
-            pnlMain.Controls.Clear();
-            pnlMain.Controls.Add(DailySchedule);
+            if (ButtonClicked != "Lịch theo ngày")
+            {
+                ButtonClicked = "Lịch theo ngày";
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(DailySchedule);
+            }
         }
 
         private void btnCalendarWeek_Click(object sender, EventArgs e)
         {
             WeeklySchedule = new UC_WeeklyWorkSchedule();
-            pnlMain.Controls.Clear();
-            pnlMain.Controls.Add(WeeklySchedule);
+            if (ButtonClicked != "Lịch theo tuần")
+            {
+                ButtonClicked = "Lịch theo tuần";
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(WeeklySchedule);
+            }
         }
+
         #endregion
 
-
+       
     }
 }
