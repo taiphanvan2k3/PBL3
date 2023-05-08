@@ -18,7 +18,19 @@ namespace GUI.MyUserControls
             }
         }
 
-        public string TenSV { set => lblTenSV.Text = value; }
+        public string TenSV
+        {
+            set
+            {
+                lblTenSV.Text = value;
+                int offset = lblTenSV.Location.X - lblTitleHoTen.Location.X;
+                lblTenSV.Location = new Point(panelMain.Width - lblTenSV.Width - 20, lblTenSV.Location.Y);
+                lblTitleHoTen.Location = new Point(lblTenSV.Location.X - offset, lblTitleHoTen.Location.Y);
+
+                lblTitleNhomHP.Location = new Point(lblTitleHoTen.Location.X, lblTitleNhomHP.Location.Y);
+                lblNhomHP.Location = new Point(lblTenSV.Location.X, lblNhomHP.Location.Y);
+            }
+        }
         public string LopSH { set => lblLopSH.Text = value; }
         public string MaHP { set => lblNhomHP.Text = value; }
         public string TenHP { set => lblTenHP.Text = value; }
@@ -39,7 +51,7 @@ namespace GUI.MyUserControls
         private void btnClose_Click(object sender, EventArgs e)
         {
             frmQuiz ParentForm = this.ParentForm as frmQuiz;
-            
+
             //Vì frmEnterPassToDoExam bị close trước đó nên đành truyền user control này lần lượt
             //qua các form để có thể reload lại user control này sau khi sv hoàn thành bài thi
             UC_DoExam uc = ParentForm.ucDoExam as UC_DoExam;
@@ -73,8 +85,6 @@ namespace GUI.MyUserControls
                 {
                     string fileName = open.FileName;
                     screenShot.Save(fileName);
-                    //targetTime = TimeSpan.FromSeconds(5);
-                    //timer.Start();
                     iconCheckSaveImage.Visible = true;
                 }
             }

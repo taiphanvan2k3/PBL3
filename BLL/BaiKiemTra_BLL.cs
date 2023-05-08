@@ -3,7 +3,6 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace BLL
 {
@@ -22,12 +21,11 @@ namespace BLL
 
         private BaiKiemTra_BLL() { }
 
-        public List<CauHoi_DTO> GetListQuestionInExam(int MaBaiKiemTra)
+        public List<CauHoi_DTO> GetListQuestionInExam(int MaBaiKiemTra, int TongSoCau)
         {
             //Lấy ra danh sách câu hỏi của bài kiểm tra
-            return BaiKiemTra_DAL.Instance.GetListQuestionInExam(MaBaiKiemTra);
+            return BaiKiemTra_DAL.Instance.GetListQuestionInExam(MaBaiKiemTra, TongSoCau);
         }
-
 
         /// <summary>
         /// Lấy ra thông tin của tất cả các bài kiểm tra mà sinh viên đó có thể làm
