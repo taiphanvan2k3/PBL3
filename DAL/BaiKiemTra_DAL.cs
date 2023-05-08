@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace DAL
 {
@@ -25,23 +24,44 @@ namespace DAL
             db = new PBL3Entities();
         }
 
-        public List<CauHoi_DTO> GetListQuestionInExam(int MaBaiKiemTra)
+        public List<CauHoi_DTO> GetListQuestionInExam(int MaBaiKiemTra, int TongSoCau)
         {
+            string LoaiBaiKiemTra = GetLoaiBaiKiemTra(MaBaiKiemTra);
             var li = db.BAIKIEMTRA_CAUHOI.Where(i => i.MaBaiKiemTra == MaBaiKiemTra)
             .Join(db.CAU_HOI, bkt => bkt.MaCauHoi, ch => ch.MaCauHoi, (bkt, ch) => new
             {
+                MaPhanLoaiCauHoi = ch.PhanLoai,
                 ch.TenCauHoi,
                 ch.DapAnA,
                 ch.DapAnB,
                 ch.DapAnC,
                 ch.DapAnD,
                 ch.DapAnDung
-            }).ToList();
+            })
+            //Nếu là bài Test thì chỉ lấy các bài thuộc phạm vi Test
+            //Nếu là GK thì lấy các câu hỏi của Test và GK
+            //Còn nếu là CK thì lấy câu nào cũng được
+            .Where(p => (LoaiBaiKiemTra == "Test" && p.MaPhanLoaiCauHoi == "Test") ||
+                        (LoaiBaiKiemTra == "GK" && p.MaPhanLoaiCauHoi != "CK") ||
+                        LoaiBaiKiemTra == "CK")
+            .OrderBy(ch => Guid.NewGuid()).Take(TongSoCau).ToList();
 
             List<CauHoi_DTO> res = new List<CauHoi_DTO>();
             foreach (var p in li)
                 res.Add(new CauHoi_DTO(p.TenCauHoi, p.DapAnA, p.DapAnB, p.DapAnC, p.DapAnD, p.DapAnDung));
             return res;
+        }
+
+        public string GetLoaiBaiKiemTra(int MaBaiKiemTra)
+        {
+            //Lấy ra loại bài kiểm tra (Test,Giữa kỳ,Cuối kỳ) 
+            string tmp = db.BAI_KIEM_TRA.Where(bkt => bkt.MaBaiKiemTra == MaBaiKiemTra)
+                   .Select(p => p.TenBaiKiemTra).FirstOrDefault();
+            if (tmp == "Giữa kỳ")
+                return "GK";
+            else if (tmp == "Cuối kỳ")
+                return "CK";
+            return tmp; //Test
         }
 
         public List<BaiKiemTra_DTO> GetAllExamOfStudent(string MaSV)
@@ -195,7 +215,7 @@ namespace DAL
                     ThoiGianLamBai = bkt.ThoiGianLamBai,
 
                     //ThoiGianBatDau là thời gian bắt đầu mở đề này
-                    ThoiGianBatDau = bkt.NgayKiemTra    
+                    ThoiGianBatDau = bkt.NgayKiemTra
                 })
                 .Where(bkt => startDate <= bkt.ThoiGianBatDau && bkt.ThoiGianBatDau <= endDate).ToList();
             return li;

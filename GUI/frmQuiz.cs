@@ -55,9 +55,9 @@ namespace GUI
         {
             InitializeComponent();
             targetTime = TimeSpan.FromMinutes(50); // test thôi
-            questions = new List<CauHoi_DTO>();
             SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
             selectedAnswers = new List<SelectedAnswer>();
+            //LoadCauHoi();
         }
 
         private void testGiaoDien()
@@ -89,7 +89,8 @@ namespace GUI
 
         private void LoadCauHoi()
         {
-            testGiaoDien();
+            //testGiaoDien();
+            questions = BaiKiemTra_BLL.Instance.GetListQuestionInExam(MaBaiKiemTra, TongSoCauHoi);
         }
 
         private void frmQuiz_Load(object sender, EventArgs e)
@@ -182,8 +183,10 @@ namespace GUI
 
         private void HienThiCauHoi(int STT)
         {
-            lblSTTCauHoi.Text = "Câu " + STT + "/" + questions.Count;
             CauHoi_DTO question = questions[STT - 1];
+            lblSTTCauHoi.Text = "Câu " + STT + "/" + questions.Count;
+            lblTenCauHoi.Text = question.TenCauHoi;
+
             FlowLayoutPanel panel = null;
             if (question.IsSingleQuestion)
             {
@@ -344,6 +347,12 @@ namespace GUI
             panelMain.Controls.Clear();
             UC_FinishDoExam finish = new UC_FinishDoExam()
             {
+                MaSV = this.MaSV,
+                TenSV = lblTenSV.Text,
+                LopSH = lblLopSH.Text,
+                MaHP = lblNhomHP.Text,
+                TenHP = lblTenHP.Text,
+                TenBaiKiemTra = panelTitle.Text,
                 StartTime = this.StartTime,
                 EndTime = SubmitTime,
                 SoCauDung = SoCauDung,
