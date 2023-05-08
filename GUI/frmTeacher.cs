@@ -24,6 +24,7 @@ namespace GUI
             ID = "102BK0001";
             CreateExam = new UC_CreateExam(ID);
             CreateExam.MaGV = ID;
+            CreateExam.Dock = DockStyle.Fill;
             LoadInfo(ID);
         }
         public frmTeacher(string account)
@@ -34,6 +35,7 @@ namespace GUI
             ID = account;
             CreateExam = new UC_CreateExam(ID);
             CreateExam.MaGV = ID;
+            CreateExam.Dock = DockStyle.Fill;
             LoadInfo(ID);
         }
         #region List đối tượng menu
@@ -228,11 +230,15 @@ namespace GUI
 
         private void btnSendAnnounce_Click(object sender, EventArgs e)
         {
-            SendNoticeToModuleClass = new UC_SendNoticeToModuleClass();
             if (ButtonClicked != "Gửi thông báo")
             {
                 ButtonClicked = "Gửi thông báo";
-                SendNoticeToModuleClass.MaGV = ID;
+                if(SendNoticeToModuleClass == null)
+                {
+                    SendNoticeToModuleClass = new UC_SendNoticeToModuleClass();
+                    SendNoticeToModuleClass.Dock = DockStyle.Fill;
+                    SendNoticeToModuleClass.MaGV = ID;
+                }
                 pnlMain.Controls.Clear();
                 pnlMain.Controls.Add(SendNoticeToModuleClass);
             }
@@ -240,11 +246,15 @@ namespace GUI
         
         private void btnHomeRoomClass_Click(object sender, EventArgs e)
         {
-            HomeRoomClass = new UC_ViewHomeRoomClass();
-            HomeRoomClass.ListMaLSH = GiangVien_BLL.Instance.GetMaLSHForGiangVien(ID);
             if (ButtonClicked != "Lớp sinh hoạt")
             {
                 ButtonClicked = "Lớp sinh hoạt";
+                if(HomeRoomClass == null)
+                {
+                    HomeRoomClass = new UC_ViewHomeRoomClass();
+                    HomeRoomClass.ListMaLSH = GiangVien_BLL.Instance.GetMaLSHForGiangVien(ID);
+                    HomeRoomClass.Dock = DockStyle.Fill;
+                }
                 pnlMain.Controls.Clear();
                 pnlMain.Controls.Add(HomeRoomClass);
             }
@@ -261,10 +271,14 @@ namespace GUI
 
         private void btnCalendarDays_Click(object sender, EventArgs e)
         {
-            DailySchedule = new UC_DailyWorkSchedule();
             if (ButtonClicked != "Lịch theo ngày")
             {
                 ButtonClicked = "Lịch theo ngày";
+                if (SendNoticeToModuleClass == null)
+                {
+                    DailySchedule = new UC_DailyWorkSchedule();
+                    DailySchedule.Dock = DockStyle.Fill;
+                }
                 pnlMain.Controls.Clear();
                 pnlMain.Controls.Add(DailySchedule);
             }
@@ -272,10 +286,14 @@ namespace GUI
 
         private void btnCalendarWeek_Click(object sender, EventArgs e)
         {
-            WeeklySchedule = new UC_WeeklyWorkSchedule();
             if (ButtonClicked != "Lịch theo tuần")
             {
                 ButtonClicked = "Lịch theo tuần";
+                if (SendNoticeToModuleClass == null)
+                {
+                    WeeklySchedule = new UC_WeeklyWorkSchedule();
+                    WeeklySchedule.Dock = DockStyle.Fill;
+                }
                 pnlMain.Controls.Clear();
                 pnlMain.Controls.Add(WeeklySchedule);
             }

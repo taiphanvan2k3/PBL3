@@ -121,5 +121,22 @@ namespace GUI.MyUserControls
             cbbLHP.SelectedIndex = 0;
         }
 
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            //offset là khoảng cách giữa các panel với nhau trong flowpanel
+            int offset = panel1.Location.Y;
+            int heightRemains = flowLayoutPanel1.Height - panel1.Height
+                                                  - panel2.Height - panel3.Height - panel4.Height;
+            panel1.Width = flowLayoutPanel1.Width - 10;
+
+            //Không thay đổi chiều cao cho pnlDiaChi, vì thay đổi nữa thì khoảng trống dư quá nhiều
+            panel2.Width = panel1.Width;
+
+            panel3.Width = panel1.Width;
+            panel3.Height += (heightRemains - 4 * offset) / 3;
+
+            panel4.Width = panel1.Width;
+            panel4.Height += (heightRemains - 4 * offset) / 3;
+        }
     }
 }

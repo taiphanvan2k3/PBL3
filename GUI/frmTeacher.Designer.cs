@@ -131,6 +131,8 @@
             // 
             // flPanel
             // 
+            this.flPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.flPanel.Controls.Add(this.btnHome);
             this.flPanel.Controls.Add(this.pnlManageClass);
             this.flPanel.Controls.Add(this.pnlViewCalendar);
