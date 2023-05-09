@@ -43,14 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTenCauHoi = new System.Windows.Forms.Label();
             this.lblSTTCauHoi = new System.Windows.Forms.Label();
-            this.btnNopBai = new GUI.MyCustomControl.CustomButton();
-            this.btnPreious = new GUI.MyCustomControl.CustomButton();
             this.panelMulti = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxB = new System.Windows.Forms.CheckBox();
             this.checkBoxA = new System.Windows.Forms.CheckBox();
             this.checkBoxC = new System.Windows.Forms.CheckBox();
             this.checkBoxD = new System.Windows.Forms.CheckBox();
-            this.btnNext = new GUI.MyCustomControl.CustomButton();
             this.gbTime = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.panelSingle = new System.Windows.Forms.FlowLayoutPanel();
@@ -61,6 +58,9 @@
             this.gbSoCauDaLam = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lbSoCauDaLam = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnNopBai = new GUI.MyCustomControl.CustomButton();
+            this.btnPreious = new GUI.MyCustomControl.CustomButton();
+            this.btnNext = new GUI.MyCustomControl.CustomButton();
             this.panelMain.SuspendLayout();
             this.panelTitle.SuspendLayout();
             this.panelMulti.SuspendLayout();
@@ -241,47 +241,6 @@
             this.lblSTTCauHoi.TabIndex = 24;
             this.lblSTTCauHoi.Text = "Câu hỏi";
             // 
-            // btnNopBai
-            // 
-            this.btnNopBai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNopBai.BackColor = System.Drawing.Color.Red;
-            this.btnNopBai.BackGroundColor = System.Drawing.Color.Red;
-            this.btnNopBai.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnNopBai.BorderRadius = 20;
-            this.btnNopBai.BorderSize = 0;
-            this.btnNopBai.FlatAppearance.BorderSize = 0;
-            this.btnNopBai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNopBai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNopBai.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNopBai.Location = new System.Drawing.Point(1296, 689);
-            this.btnNopBai.Name = "btnNopBai";
-            this.btnNopBai.Size = new System.Drawing.Size(150, 47);
-            this.btnNopBai.TabIndex = 21;
-            this.btnNopBai.Text = "Nộp bài";
-            this.btnNopBai.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNopBai.UseVisualStyleBackColor = false;
-            this.btnNopBai.Click += new System.EventHandler(this.btnNopBai_Click);
-            // 
-            // btnPreious
-            // 
-            this.btnPreious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnPreious.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnPreious.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPreious.BorderRadius = 20;
-            this.btnPreious.BorderSize = 0;
-            this.btnPreious.FlatAppearance.BorderSize = 0;
-            this.btnPreious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreious.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreious.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPreious.Location = new System.Drawing.Point(167, 643);
-            this.btnPreious.Name = "btnPreious";
-            this.btnPreious.Size = new System.Drawing.Size(302, 56);
-            this.btnPreious.TabIndex = 20;
-            this.btnPreious.Text = "Trước đó";
-            this.btnPreious.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPreious.UseVisualStyleBackColor = false;
-            this.btnPreious.Click += new System.EventHandler(this.btnPreious_Click);
-            // 
             // panelMulti
             // 
             this.panelMulti.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -341,27 +300,6 @@
             this.checkBoxD.Size = new System.Drawing.Size(965, 65);
             this.checkBoxD.TabIndex = 3;
             this.checkBoxD.UseVisualStyleBackColor = false;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnNext.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.btnNext.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnNext.BorderRadius = 20;
-            this.btnNext.BorderSize = 0;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNext.Location = new System.Drawing.Point(837, 643);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(302, 56);
-            this.btnNext.TabIndex = 19;
-            this.btnNext.Text = "Tiếp theo";
-            this.btnNext.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // gbTime
             // 
@@ -494,6 +432,68 @@
             // 
             this.timer1.Interval = 16;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnNopBai
+            // 
+            this.btnNopBai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNopBai.BackColor = System.Drawing.Color.Red;
+            this.btnNopBai.BackGroundColor = System.Drawing.Color.Red;
+            this.btnNopBai.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNopBai.BorderRadius = 20;
+            this.btnNopBai.BorderSize = 0;
+            this.btnNopBai.FlatAppearance.BorderSize = 0;
+            this.btnNopBai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNopBai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNopBai.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNopBai.Location = new System.Drawing.Point(1296, 689);
+            this.btnNopBai.Name = "btnNopBai";
+            this.btnNopBai.Size = new System.Drawing.Size(150, 47);
+            this.btnNopBai.TabIndex = 21;
+            this.btnNopBai.Text = "Nộp bài";
+            this.btnNopBai.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNopBai.UseVisualStyleBackColor = false;
+            this.btnNopBai.Click += new System.EventHandler(this.btnNopBai_Click);
+            // 
+            // btnPreious
+            // 
+            this.btnPreious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnPreious.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnPreious.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPreious.BorderRadius = 20;
+            this.btnPreious.BorderSize = 0;
+            this.btnPreious.FlatAppearance.BorderSize = 0;
+            this.btnPreious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreious.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreious.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPreious.Location = new System.Drawing.Point(167, 643);
+            this.btnPreious.Name = "btnPreious";
+            this.btnPreious.Size = new System.Drawing.Size(302, 56);
+            this.btnPreious.TabIndex = 20;
+            this.btnPreious.Text = "Trước đó";
+            this.btnPreious.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPreious.UseVisualStyleBackColor = false;
+            this.btnPreious.Click += new System.EventHandler(this.btnPreious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnNext.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btnNext.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNext.BorderRadius = 20;
+            this.btnNext.BorderSize = 0;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNext.Location = new System.Drawing.Point(837, 643);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(302, 56);
+            this.btnNext.TabIndex = 19;
+            this.btnNext.Text = "Tiếp theo";
+            this.btnNext.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // frmQuiz
             // 

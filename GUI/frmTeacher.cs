@@ -161,6 +161,7 @@ namespace GUI
         private void frmTeacher_Load(object sender, EventArgs e)
         {
             Info.Dock = DockStyle.Fill;
+            CollapseMenu();
         }
         
         private void btnMenu_Click(object sender, EventArgs e)
