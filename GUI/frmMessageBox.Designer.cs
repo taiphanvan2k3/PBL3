@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMessageBox));
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.labelCaption = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -201,6 +202,7 @@
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.panelTitleBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(461, 174);
             this.Name = "frmMessageBox";

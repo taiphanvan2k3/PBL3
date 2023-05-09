@@ -526,6 +526,9 @@
     <EmbeddedResource Include="frmShowListStudentInModuleClass.resx">
       <DependentUpon>frmShowListStudentInModuleClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmViewDetailHomeroomClass.resx">
+      <DependentUpon>frmViewDetailHomeroomClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailyWorkSchedule.resx">
       <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
     </EmbeddedResource>

@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewDetailModuleClass));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -189,7 +190,6 @@
             this.Column1.HeaderText = "TT";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 100;
             this.Column1.ReadOnly = true;
             // 
             // Column2
@@ -754,6 +754,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelGradient1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmViewDetailModuleClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frm_ViewDetailModuleClass";

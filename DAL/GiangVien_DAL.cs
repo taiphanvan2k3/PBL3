@@ -247,8 +247,8 @@ namespace DAL
             List<string> list = GetListSVForLHP(MaLHP);
             var ListLHP = db.SINHVIEN_LOPHOCPHAN.Where(x => list.Contains(x.MaSV)).Select(x => x.MaLopHP).Distinct().ToList();
             var query = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
-                                        && bkt.NgayKiemTra > TimeExam
-                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeLamBai).ToList();
+                                        && bkt.NgayKiemTra >= TimeExam
+                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeLamBai).ToList();
             return query.Count > 0;
         }
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
@@ -280,6 +280,34 @@ namespace DAL
                                     lhp.MaMH,
                                     mh.TenMH
                                 }).Select(mh => new CBBItem { Id = mh.MaMH, Value = mh.TenMH }).Distinct().ToList();
+        }
+        public List<string> GetMaLSHForGiangVien(string MaGiangVien)
+        {
+            return db.LOP_SINH_HOAT.Where(lsh => lsh.MaGVCN == MaGiangVien).Select(p => p.MaLopSH).ToList();
+        }
+        public bool UpdateTeacherInfo(GiangVien_DTO gv)
+        {
+            //Hàm này dùng trong frmStudent để cập nhật thông tin cá nhân
+            NGUOI_DUNG nd = db.NGUOI_DUNG.Where(p => p.MaNguoiDung == gv.MaNguoiDung).FirstOrDefault();
+            if (nd != null)
+            {
+                if (gv.DiaChi != "")
+                    nd.DiaChi = gv.DiaChi;
+                if (gv.EmailCaNhan != "")
+                    nd.EmailCaNhan = gv.EmailCaNhan;
+                if (gv.Sdt != "")
+                    nd.Sdt = gv.Sdt;
+                if (gv.NoiSinh != "")
+                    nd.NoiSinh = gv.NoiSinh;
+                if (gv.DanToc != "")
+                    nd.DanToc = gv.DanToc;
+                if (gv.QuocTich != "")
+                    nd.QuocTich = gv.QuocTich;
+                if (gv.AnhCaNhan != null)
+                    nd.AnhCaNhan = gv.AnhCaNhan;
+                return db.SaveChanges() > 0;
+            }
+            return false;
         }
 
         #region Ver2

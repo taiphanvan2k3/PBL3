@@ -124,7 +124,7 @@ namespace GUI.MyUserControls
                     string input = cbTuanKiemTra.SelectedItem.ToString();
                     Match match = Regex.Match(input, @"\((\d{2}/\d{2}/\d{4}) ->");
                     string date = match.Groups[1].Value;
-                    DateExam = Convert.ToDateTime(date);
+                    DateExam = DateTime.ParseExact(date, "dd/MM/yyyy", null); 
                     var tkb = GiangVien_BLL.Instance.GetScheduleForTKB(cbLopHocPhan.SelectedItem.ToString());
                     DateExam.AddDays(UtilityClass.ConvertDayOfWeekToNumber(tkb.Thu) - 2);
                     DateExam = new DateTime(DateExam.Year, DateExam.Month, DateExam.Day, UtilityClass.GetHourExamWithTietBD(tkb.TietBD), 0, 0);
@@ -150,6 +150,7 @@ namespace GUI.MyUserControls
                                                           Convert.ToByte(tbThoiGianLamBai.Texts), DateExam,
                                                           Convert.ToByte(cbSoLuongCauHoi.SelectedItem.ToString()), cbLopHocPhan.SelectedItem.ToString(),
                                                           MaGV, tbMatKhauLamBai.Texts, chbAllowReturn.Checked);
+                            CustomMessageBox.Show("Tạo bài kiểm tra thành công!");
                         }
                     }
                 }
@@ -167,6 +168,42 @@ namespace GUI.MyUserControls
             chbAllowReturn.Checked = false;
             dtpNgayKiemTra.Value = DateTime.Now;
             dtpGioKT.Value = DateTime.Now;
+        }
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            int offset = flowLayout2.Location.Y;
+            int heightRemains = flowLayoutPanel1.Height - flowLayout2.Height
+                                                  - flowLayout3.Height - flowLayout4.Height - flowLayout5.Height - flowLayout6.Height;
+            flowLayout2.Width = flowLayoutPanel1.Width - 10;
+
+            //Không thay đổi chiều cao cho pnlDiaChi, vì thay đổi nữa thì khoảng trống dư quá nhiều
+            flowLayout3.Width = flowLayout2.Width;
+            //flowLayout3.Height += (heightRemains - 4 * offset) / 3;
+
+            flowLayout4.Width = flowLayout2.Width;
+            //flowLayout4.Height += (heightRemains - 4 * offset) / 3;
+
+            flowLayout5.Width = flowLayout2.Width;
+            //flowLayout5.Height += (heightRemains - 4 * offset) / 3;
+
+            flowLayout6.Width = flowLayout2.Width;
+            //flowLayout6.Height += (heightRemains - 4 * offset) / 3;
+
+            pnlTenBaiKT.Width = flowLayout2.Width / 2 - 10;
+            pnlSoLuongCauHoi.Width = pnlTenBaiKT.Width;
+
+            pnlLoaiBKT.Width = flowLayout3.Width / 2 - 10;
+            pnlLHP.Width = pnlLoaiBKT.Width;
+
+            pnlThoiGianLamBai.Width = flowLayout4.Width / 2 - 10;
+            pnlMatKhauLamBai.Width = pnlThoiGianLamBai.Width;
+
+            pnlThoiGianKiemTra.Width = flowLayout5.Width / 2 - 10;
+            pnlChoPHepQuayLai.Width = pnlThoiGianKiemTra.Width;
+
+            pnlDatLai.Width = flowLayout6.Width / 2 - 10;
+            pnlTao.Width = pnlDatLai.Width;
         }
     }
 }
