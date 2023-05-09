@@ -16,17 +16,18 @@ namespace DAL
             }
         }
 
-        private PBL3Entities modelPBL3Entities1 = new PBL3Entities();
-
         public THONG_TIN_DANG_NHAP login(string username, string password)
         {
-            var account = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
-            if (account != null)
+            using (var context = new PBL3Entities())
             {
-                if (BCrypt.Net.BCrypt.Verify(password, account.MkUngDung))
-                    return account;
+                var account = context.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
+                if (account != null)
+                {
+                    if (BCrypt.Net.BCrypt.Verify(password, account.MkUngDung))
+                        return account;
+                }
+                return null;
             }
-            return null;
         }
 
         public THONG_TIN_DANG_NHAP CheckUsernameExist(string username)
@@ -41,15 +42,16 @@ namespace DAL
 
         public void UpdateAllCodesToNull()
         {
-
-            var userInfoList = modelPBL3Entities1.THONG_TIN_DANG_NHAP.ToList();
-
-            foreach (var userInfo in userInfoList)
+            using (var context = new PBL3Entities())
             {
-                userInfo.MaXacThucDeLayLaiMK = null;
-            }
+                var userInfoList = context.THONG_TIN_DANG_NHAP.ToList();
 
-            modelPBL3Entities1.SaveChanges();
+                foreach (var userInfo in userInfoList)
+                {
+                    userInfo.MaXacThucDeLayLaiMK = null;
+                }
+                context.SaveChanges();
+            }
         }
 
     }

@@ -268,5 +268,11 @@ namespace GUI.MyUserControls
         {
             pictureBox1.Image = CurrentImage;
         }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePassword = new frmChangePassword(MSSV);
+            frmChangePassword.ShowDialog();
+        }
     }
 }

@@ -227,7 +227,6 @@
             this.Name = "frmDesignFindAcc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDesignLogin";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             this.pnlProgressBar.ResumeLayout(false);

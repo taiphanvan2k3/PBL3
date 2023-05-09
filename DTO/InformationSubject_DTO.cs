@@ -7,21 +7,15 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class MonHoc_DTO
+    public class InformationSubject_DTO
     {
         [DisplayName("Mã môn học")]
-        public string MaMH { get; set; }
-
+        public string MaMh { get; set; }
         [DisplayName("Tên môn học")]
-        public string TenMH { get; set; }
-
+        public string TenMh { get; set; }
         [DisplayName("Số tín chỉ")]
         public int SoTC { get; set; }
-
-        [DisplayName("Công thức tính điểm")]
-        public string CtTinhDiem { get; set; }
-
-        [Browsable(false)]
-        public string MaKhoa { get; set; }
+        [DisplayName("Khoa")]
+        public string TenKhoa { get; set; }
     }
 }

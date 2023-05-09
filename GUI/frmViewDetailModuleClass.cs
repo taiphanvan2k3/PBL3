@@ -21,6 +21,10 @@ namespace GUI
         private int CurrentPage = 1;
         private int MaxPage;
         private SplitPageHelper<SinhVienLHP_View> helper;
+
+        // Khai báo delegate và event
+        public delegate void DataAddedSuccessHandler();
+        public event DataAddedSuccessHandler DataAddedSuccessEvent;
         public frmViewDetailModuleClass()
         {
             InitializeComponent();
@@ -87,6 +91,8 @@ namespace GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+            DataAddedSuccessEvent?.Invoke();
         }
 
         private void frm_ViewDetailModuleClass_Load(object sender, EventArgs e)

@@ -66,6 +66,7 @@
     <Compile Include="GiangVien_DTO.cs" />
     <Compile Include="InformationClass_DTO.cs" />
     <Compile Include="InformationStudent_DTO.cs" />
+    <Compile Include="InformationSubject_DTO.cs" />
     <Compile Include="InformationTeacher_DTO.cs" />
     <Compile Include="KetQuaHocTap.cs" />
     <Compile Include="KetQuaLamKiemTra_SVLHP.cs" />

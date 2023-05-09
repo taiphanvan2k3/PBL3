@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panelLeft = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
-            this.btnUploadAvatar = new GUI.MyCustomControl.CustomButton();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlBottom = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblCCCD = new System.Windows.Forms.Label();
@@ -72,8 +70,10 @@
             this.flowLayoutRight = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChangePass = new GUI.MyCustomControl.CustomButton();
+            this.pictureBox1 = new GUI.MyCustomControl.CircularPictureBox();
+            this.btnUploadAvatar = new GUI.MyCustomControl.CustomButton();
             this.panelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -81,6 +81,7 @@
             this.pnlDiaChi.SuspendLayout();
             this.pnlThongTinDaoTao.SuspendLayout();
             this.flowLayoutRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -88,6 +89,7 @@
             this.panelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelLeft.BorderRadius = 20;
+            this.panelLeft.Controls.Add(this.btnChangePass);
             this.panelLeft.Controls.Add(this.pictureBox1);
             this.panelLeft.Controls.Add(this.btnUploadAvatar);
             this.panelLeft.Controls.Add(this.flowLayoutPanel);
@@ -98,45 +100,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(444, 747);
             this.panelLeft.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBox1.BorderSize = 2;
-            this.pictureBox1.GradientAngle = 50F;
-            this.pictureBox1.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.pictureBox1.InitialImage = global::GUI.Properties.Resources.studentAvatar;
-            this.pictureBox1.Location = new System.Drawing.Point(127, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnUploadAvatar
-            // 
-            this.btnUploadAvatar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnUploadAvatar.BackGroundColor = System.Drawing.Color.SkyBlue;
-            this.btnUploadAvatar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUploadAvatar.BorderRadius = 40;
-            this.btnUploadAvatar.BorderSize = 0;
-            this.btnUploadAvatar.FlatAppearance.BorderSize = 0;
-            this.btnUploadAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadAvatar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadAvatar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUploadAvatar.Image = global::GUI.Properties.Resources.UploadImage;
-            this.btnUploadAvatar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUploadAvatar.Location = new System.Drawing.Point(332, 131);
-            this.btnUploadAvatar.Name = "btnUploadAvatar";
-            this.btnUploadAvatar.Size = new System.Drawing.Size(99, 81);
-            this.btnUploadAvatar.TabIndex = 12;
-            this.btnUploadAvatar.Text = "         \r\nThay đổi ảnh";
-            this.btnUploadAvatar.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUploadAvatar.UseVisualStyleBackColor = false;
-            this.btnUploadAvatar.Click += new System.EventHandler(this.btnUploadAvatar_Click);
             // 
             // flowLayoutPanel
             // 
@@ -765,6 +728,67 @@
             this.btnNextPage.Text = "    Trang sau";
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
+            // btnChangePass
+            // 
+            this.btnChangePass.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnChangePass.BackGroundColor = System.Drawing.Color.SkyBlue;
+            this.btnChangePass.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnChangePass.BorderRadius = 40;
+            this.btnChangePass.BorderSize = 0;
+            this.btnChangePass.FlatAppearance.BorderSize = 0;
+            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangePass.Image = global::GUI.Properties.Resources.password__1_;
+            this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnChangePass.Location = new System.Drawing.Point(16, 129);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(99, 81);
+            this.btnChangePass.TabIndex = 14;
+            this.btnChangePass.Text = "         \r\nThay đổi mật khẩu";
+            this.btnChangePass.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangePass.UseVisualStyleBackColor = false;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBox1.BorderSize = 2;
+            this.pictureBox1.GradientAngle = 50F;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.pictureBox1.InitialImage = global::GUI.Properties.Resources.studentAvatar;
+            this.pictureBox1.Location = new System.Drawing.Point(127, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnUploadAvatar
+            // 
+            this.btnUploadAvatar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUploadAvatar.BackGroundColor = System.Drawing.Color.SkyBlue;
+            this.btnUploadAvatar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnUploadAvatar.BorderRadius = 40;
+            this.btnUploadAvatar.BorderSize = 0;
+            this.btnUploadAvatar.FlatAppearance.BorderSize = 0;
+            this.btnUploadAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadAvatar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadAvatar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUploadAvatar.Image = global::GUI.Properties.Resources.UploadImage;
+            this.btnUploadAvatar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUploadAvatar.Location = new System.Drawing.Point(332, 131);
+            this.btnUploadAvatar.Name = "btnUploadAvatar";
+            this.btnUploadAvatar.Size = new System.Drawing.Size(99, 81);
+            this.btnUploadAvatar.TabIndex = 12;
+            this.btnUploadAvatar.Text = "         \r\nThay đổi ảnh";
+            this.btnUploadAvatar.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUploadAvatar.UseVisualStyleBackColor = false;
+            this.btnUploadAvatar.Click += new System.EventHandler(this.btnUploadAvatar_Click);
+            // 
             // UC_StudentInfoNew
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -778,7 +802,6 @@
             this.ParentChanged += new System.EventHandler(this.UC_StudentInfoNew_ParentChanged);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
@@ -791,6 +814,7 @@
             this.pnlThongTinDaoTao.ResumeLayout(false);
             this.pnlThongTinDaoTao.PerformLayout();
             this.flowLayoutRight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -841,5 +865,6 @@
         private System.Windows.Forms.Label txtKhoa;
         private MyCustomControl.CustomButton btnUploadAvatar;
         private MyCustomControl.CircularPictureBox pictureBox1;
+        private MyCustomControl.CustomButton btnChangePass;
     }
 }

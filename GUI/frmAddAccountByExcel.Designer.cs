@@ -295,7 +295,8 @@
             // 
             // frmAddAccountByExcel
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(500, 818);
             this.Controls.Add(this.pnlProgressBar);

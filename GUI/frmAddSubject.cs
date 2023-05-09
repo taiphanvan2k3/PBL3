@@ -9,10 +9,17 @@ namespace GUI
 {
     public partial class frmAddSubject : Form
     {
-        public frmAddSubject()
+
+        private string maMH { get; set; }
+        // Khai báo delegate và event
+        public delegate void DataAddedSuccessHandler();
+        public event DataAddedSuccessHandler DataAddedSuccessEvent;
+        
+        public frmAddSubject(string maMH)
         {
             InitializeComponent();
             new MoveFormHelper(this, panelTitle, lblTitle);
+            this.maMH = maMH;
         }
 
         private void txtTenMH_TextChanged(object sender, EventArgs e)
@@ -42,6 +49,8 @@ namespace GUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+            DataAddedSuccessEvent?.Invoke();
         }
 
         private string GetCongThucTinhDiem()
@@ -107,7 +116,13 @@ namespace GUI
 
         private void frmAddSubject_Load(object sender, EventArgs e)
         {
+
             cbbKhoa.Items.AddRange(Khoa_BLL.Instance.GetAllKhoa().ToArray());
+            if (maMH != "")
+            {
+
+            }
+
         }
     }
 }

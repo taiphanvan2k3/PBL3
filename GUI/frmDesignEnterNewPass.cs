@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,18 +31,12 @@ namespace GUI
             btnContinue.Enabled = isValidPassword;
             this.acc = acc;
             this.email = email;
+            UtilityClass.EnableDragForm(this);
+
         }
 
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+
 
         private void txtNewPass__TextChanged(object sender, EventArgs e)
         {
@@ -118,13 +113,13 @@ namespace GUI
         {
             if (ForgetPass_BLL.Instance.updatePass(acc.TaiKhoan, txtNewPass.Texts.ToString()))
             {
-                MessageBox.Show("Bạn đã thay đổi mật khẩu thành công!\nQuay trở lại trang chủ để tiến hành đăng nhập!");
+                CustomMessageBox.Show("Bạn đã thay đổi mật khẩu thành công!\nQuay trở lại trang chủ để tiến hành đăng nhập!", "Thông báo");
                 ForgetPass_BLL.Instance.resetVerification_BLL(email);
                 UtilityClass.OpenNewForm(this, new frmDesignLogin());
             }
             else
             {
-                MessageBox.Show("Bạn đã thay đổi mật khẩu không thành công");
+                CustomMessageBox.Show("Bạn đã thay đổi mật khẩu không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -74,7 +74,10 @@ namespace GUI
                     dgvViewAcc.DataSource = LopSinhHoat_BLL.Instance.GetInformationClasses();
                     break;
                 case 3:
-                    dgvViewAcc.DataSource = LopSinhHoat_BLL.Instance.GetInformationClasses();
+                    dgvViewAcc.DataSource = LopHocPhan_BLL.Instance.GetInformationClasses();
+                    break;
+                case 4:
+                    dgvViewAcc.DataSource = LopHocPhan_BLL.Instance.getListSubjects();
                     break;
             }
         }
@@ -131,6 +134,18 @@ namespace GUI
                     btnDelete.Click -= btnDelete_Click;
                     btnDelete.Click += btnDeleteMoudleClass_Click;
                     autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
+                    break;
+                case 4:
+                    lbTitle.Text = "Quản lý môn học";
+                    btnAdd.Text = "Thêm môn học";
+                    btnAdd.Click -= btnAdd_Click;
+                    btnAdd.Click += btnAddSubject_Click;
+                    btnEdit.Click -= btnEdit_Click;
+                    //btnEdit.Click += btnEditMoudleClass_Click;
+                    btnDelete.Click -= btnDelete_Click;
+                    //btnDelete.Click += btnDeleteMoudleClass_Click;
+                    autotext.AddRange(dt.Select(x => ((InformationSubject_DTO)x).TenMh).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
             }
@@ -250,23 +265,30 @@ namespace GUI
                         maID = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
                         listOfStudentCodesToDelete.Remove(maID);
                     }
-
-                    if (TotalCheckedCheckBoxes > 1)
+                    if (role == 4)
                     {
-                        // Nếu chọn nhiều hàng
-                        btnEdit.Visible = false;
-                        btnDelete.Visible = true;
-                    }
-                    else if (TotalCheckedCheckBoxes == 1)
-                    {
-                        // Nếu chỉ chọn một hàng
-                        btnEdit.Visible = true;
-                        btnDelete.Visible = true;
+                        HideButton();
                     }
                     else
                     {
-                        // Không chọn hàng nào
-                        HideButton();
+
+                        if (TotalCheckedCheckBoxes > 1)
+                        {
+                            // Nếu chọn nhiều hàng
+                            btnEdit.Visible = false;
+                            btnDelete.Visible = true;
+                        }
+                        else if (TotalCheckedCheckBoxes == 1)
+                        {
+                            // Nếu chỉ chọn một hàng
+                            btnEdit.Visible = true;
+                            btnDelete.Visible = true;
+                        }
+                        else
+                        {
+                            // Không chọn hàng nào
+                            HideButton();
+                        }
                     }
                 }
 
@@ -293,6 +315,7 @@ namespace GUI
             else if (result == DialogResult.No)
             {
                 frmAddAccountByExcel frmAddAccountByExcel = new frmAddAccountByExcel(role);
+                frmAddAccountByExcel.DataAddedSuccessEvent += loadData;
                 frmAddAccountByExcel.ShowDialog();
             }
             else if (result == DialogResult.Cancel)
@@ -343,6 +366,7 @@ namespace GUI
         private void btnEdit_Click(object sender, EventArgs e)
         {
             frmAddAccount frmAddAccStudent = new frmAddAccount(role, maID);
+            frmAddAccStudent.DataAddedSuccessEvent += loadData;
             frmAddAccStudent.ShowDialog();
         }
         #endregion
@@ -352,6 +376,7 @@ namespace GUI
         private void btnAddMoudleClass_Click(object sender, EventArgs e)
         {
             frmAddModuleClass frmAddModuleClass = new frmAddModuleClass();
+            frmAddModuleClass.DataAddedSuccessEvent += loadData;
             frmAddModuleClass.ShowDialog();
         }
 
@@ -359,6 +384,7 @@ namespace GUI
         {
 
             frmViewDetailModuleClass frmViewDetailModuleClass = new frmViewDetailModuleClass(maLop);
+            frmViewDetailModuleClass.DataAddedSuccessEvent += loadData;
             frmViewDetailModuleClass.ShowDialog();
         }
 
@@ -367,6 +393,7 @@ namespace GUI
             if (LopHocPhan_BLL.Instance.DeleteMoudleClass(maLop))
             {
                 CustomMessageBox.Show("Xóa lớp học phần thành công", "Thông báo");
+                loadData();
             }
             else
             {
@@ -379,11 +406,13 @@ namespace GUI
         private void btnEditHomeRoomClass_Click(object sender, EventArgs e)
         {
             frmViewDetailHomeroomClass frmViewDetailHomeroomClass = new frmViewDetailHomeroomClass(maLop);
+            frmViewDetailHomeroomClass.DataAddedSuccessEvent += loadData;
             frmViewDetailHomeroomClass.ShowDialog();
         }
         private void btnAddHomeroomClass_Click(object sender, EventArgs e)
         {
             frmAddHomeroomClass frmAddHomeroomClass = new frmAddHomeroomClass();
+            frmAddHomeroomClass.DataAddedSuccessEvent += loadData;
             frmAddHomeroomClass.ShowDialog();
         }
         private void btnDeleteHomeroomClass_Click(object sender, EventArgs e)
@@ -391,11 +420,21 @@ namespace GUI
             if (LopSinhHoat_BLL.Instance.DeleteHomeroomClass(maLop))
             {
                 CustomMessageBox.Show("Xóa lớp học phần thành công", "Thông báo");
+                loadData();
             }
             else
             {
                 CustomMessageBox.Show("Xóa lớp học phần không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        #endregion
+
+        #region Xử lý sự kiện CRUD môn học
+        private void btnAddSubject_Click(object sender, EventArgs e)
+        {
+            frmAddSubject frmAddSubject = new frmAddSubject("");
+            frmAddSubject.DataAddedSuccessEvent += loadData;
+            frmAddSubject.ShowDialog();
         }
         #endregion
 

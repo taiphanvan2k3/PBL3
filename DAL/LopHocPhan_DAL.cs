@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace DAL
@@ -312,5 +313,22 @@ namespace DAL
                     CheckGender = nd.GioiTinh ? "Thầy" : "Cô"
                 }).ToList();
         }
+
+        public List<InformationSubject_DTO> getListSubjects()
+        {
+            var result = db.MON_HOC
+                .Join(db.KHOAs, mh => mh.MaKhoa, kh => kh.MaKhoa, (mh, kh) => new {MH = mh, KH = kh})
+                .OrderBy(x => x.KH.TenKhoa)
+                .Select(x => new InformationSubject_DTO
+                {
+                    MaMh =  x.MH.MaMH,
+                    TenMh =  x.MH.TenMH,
+                    SoTC = x.MH.SoTC,
+                    TenKhoa = x.KH.TenKhoa
+                })
+                .ToList();
+            return result;
+        }
+
     }
 }

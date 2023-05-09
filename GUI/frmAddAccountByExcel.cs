@@ -29,7 +29,11 @@ namespace Testexcel
         private System.Data.DataTable dtExcel;
         private int role;
         int checkBtn;
-        
+
+        // Khai báo delegate và event
+        public delegate void DataAddedSuccessHandler();
+        public event DataAddedSuccessHandler DataAddedSuccessEvent;
+
         public frmAddAccountByExcel(int role)
         {
             InitializeComponent();
@@ -48,6 +52,9 @@ namespace Testexcel
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+            DataAddedSuccessEvent?.Invoke();
+
         }
 
         #region Thêm button vào trong textbox

@@ -233,5 +233,9 @@ namespace GUI
             btnHome.PerformClick();
         }
 
+        private void btnSubject_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.getListSubjects().Cast<object>().ToList(), 4));
+        }
     }
 }

@@ -215,6 +215,14 @@ namespace GUI.MyUserControls
                 bytesImage = UtilityClass.ConvertImageToByteArray(img);
             }
         }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePassword = new frmChangePassword(IdTeacher);
+            frmChangePassword.ShowDialog();
+        }
+
+
         #endregion
         /*void LoadInfo(string Account)
         {
