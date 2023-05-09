@@ -27,8 +27,11 @@ namespace DAL
         #region Thêm, xoá lớp học phần
         public bool InsertModuleClass(LOP_HOC_PHAN lhp)
         {
-            db.LOP_HOC_PHAN.Add(lhp);
-            return db.SaveChanges() > 0;
+            using (var context = new PBL3Entities())
+            {
+                context.LOP_HOC_PHAN.Add(lhp);
+                return context.SaveChanges() > 0;
+            }
         }
 
 

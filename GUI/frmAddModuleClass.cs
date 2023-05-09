@@ -85,11 +85,12 @@ namespace GUI
                 }
                 else
                 {
+                    
                     UnsetBackgroundForErrorValue(txtNhomHP);
                     btnAddModuleClass.Enabled = true;
                     int CurrentYear = DateTime.Now.Year;
                     int CurrentMonth = DateTime.Now.Month;
-                    if (CurrentMonth >= 1 && CurrentMonth <= 4)
+                    if (CurrentMonth >= 1 && CurrentMonth <= 5)
                     {
                         //Kì chẵn
                         lblKiHoc.Text = tmp + "";
@@ -100,6 +101,11 @@ namespace GUI
                         //Kì lẻ và đã qua năm học mới
                         lblKiHoc.Text = (tmp + 1) + "";
                         lblNamHoc.Text = (CurrentYear) + " - " + (CurrentYear + 1);
+                    }
+                    else
+                    {
+                        CustomMessageBox.Show("Đây không phải là thời điểm tạo lớp học phần", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnAddModuleClass.Enabled = false;
                     }
                 }
             }
