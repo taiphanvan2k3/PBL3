@@ -65,19 +65,34 @@ namespace GUI
             switch (role)
             {
                 case 0:
-                    dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountStudentList();
+                    dt = GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList();
+                    dgvViewAcc.DataSource = dt;
+                    autotext.AddRange(dt.Select(x => ((InformationStudent_DTO)x).TaiKhoan + " - " + ((InformationStudent_DTO)x).Ten).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
                     break;
                 case 1:
-                    dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountTeacherList();
+                    dt = GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList();
+                    dgvViewAcc.DataSource = dt;
+                    autotext.AddRange(dt.Select(x => ((InformationTeacher_DTO)x).TaiKhoan + " - " + ((InformationTeacher_DTO)x).Ten).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
                     break;
                 case 2:
-                    dgvViewAcc.DataSource = LopSinhHoat_BLL.Instance.GetInformationClasses();
+                    dt = LopSinhHoat_BLL.Instance.GetInformationClasses().Cast<object>().ToList();
+                    dgvViewAcc.DataSource = dt;
+                    autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
                     break;
                 case 3:
-                    dgvViewAcc.DataSource = LopHocPhan_BLL.Instance.GetInformationClasses();
+                    dt = LopHocPhan_BLL.Instance.GetInformationClasses().Cast<object>().ToList();
+                    dgvViewAcc.DataSource = dt;
+                    autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
                     break;
                 case 4:
-                    dgvViewAcc.DataSource = LopHocPhan_BLL.Instance.getListSubjects();
+                    dt = LopHocPhan_BLL.Instance.getListSubjects().Cast<object>().ToList();
+                    dgvViewAcc.DataSource = dt;
+                    autotext.AddRange(dt.Select(x => ((InformationSubject_DTO)x).TenMh).ToArray());
+                    txtSearch.AutoCompleteCustomSource = autotext;
                     break;
             }
         }
@@ -109,7 +124,6 @@ namespace GUI
                     dgvViewAcc.Columns[9].Visible = false;
                     autotext.AddRange(dt.Select(x => ((InformationTeacher_DTO)x).TaiKhoan + " - " + ((InformationTeacher_DTO)x).Ten).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
-
                     break;
                 case 2:
                     dgvViewAcc.Columns[3].Visible = false;
@@ -382,7 +396,6 @@ namespace GUI
 
         private void btnEditMoudleClass_Click(object sender, EventArgs e)
         {
-
             frmViewDetailModuleClass frmViewDetailModuleClass = new frmViewDetailModuleClass(maLop);
             frmViewDetailModuleClass.DataAddedSuccessEvent += loadData;
             frmViewDetailModuleClass.ShowDialog();
