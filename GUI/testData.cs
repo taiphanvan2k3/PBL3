@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -35,14 +36,14 @@ namespace GUI
         {
             // TODO: This line of code loads data into the 'pBL3DataSet.GIANG_VIEN' table. You can move, or remove it, as needed.
 
-            dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountStudentList(); 
-            autotext = new AutoCompleteStringCollection();
-            List<object> dt = new List<object>();
-            dt = GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList();
-            autotext.AddRange(dt.Select(x => ((InformationStudent_DTO)x).TaiKhoan + " - " + ((InformationStudent_DTO)x).Ten).ToArray());
-            guna2TextBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            guna2TextBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            guna2TextBox1.AutoCompleteCustomSource = autotext;
+            //dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountStudentList(); 
+            //autotext = new AutoCompleteStringCollection();
+            //List<object> dt = new List<object>();
+            //dt = GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList();
+            //autotext.AddRange(dt.Select(x => ((InformationStudent_DTO)x).TaiKhoan + " - " + ((InformationStudent_DTO)x).Ten).ToArray());
+            //guna2TextBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //guna2TextBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //guna2TextBox1.AutoCompleteCustomSource = autotext;
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -76,6 +77,45 @@ namespace GUI
 
 
             }
+        }
+
+        private DataTable readTXT()
+        {
+            DataTable dt = new DataTable();
+            for (int i = 1; i <= 5; i++)
+            {
+                dt.Columns.Add("Column " + i);
+            }
+            for (int i = 1; i <= 50; i++)
+            {
+                dt.Rows.Add(dt.NewRow());
+            }
+            MessageBox.Show(dt.Rows.Count.ToString());
+
+            // Đọc dữ liệu từ file văn bản và gán vào DataTable
+            int row = 0;
+            int collum = 0;
+            int d = 0;
+            StreamReader sr = new StreamReader("C:\\Users\\TEMP.THANHNGAN13.005\\Documents\\dethi.txt");
+            while (!sr.EndOfStream && row < dt.Rows.Count)
+            {
+                string[] values = sr.ReadLine().Split('\t');
+                dt.Rows[row][collum] = values[0];
+                collum++;
+                d++;
+                if (d % 5 == 0)
+                {
+                    row++;
+                    collum = 0;
+                }
+            }
+            sr.Close();
+            return dt;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dgvViewAcc.DataSource = readTXT();  
         }
     }
 }
