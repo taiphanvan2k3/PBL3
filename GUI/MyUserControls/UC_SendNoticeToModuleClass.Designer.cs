@@ -35,6 +35,16 @@
             this.tbNoiDung = new GUI.MyCustomControl.CustomTextBox();
             this.btnLamMoi = new GUI.MyCustomControl.CustomButton();
             this.btnGui = new GUI.MyCustomControl.CustomButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbbLHP
@@ -51,7 +61,7 @@
             this.cbbLHP.ItemHeight = 30;
             this.cbbLHP.Items.AddRange(new object[] {
             "Danh sách LHP"});
-            this.cbbLHP.Location = new System.Drawing.Point(131, 50);
+            this.cbbLHP.Location = new System.Drawing.Point(3, 3);
             this.cbbLHP.Name = "cbbLHP";
             this.cbbLHP.Size = new System.Drawing.Size(176, 36);
             this.cbbLHP.TabIndex = 0;
@@ -60,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 113);
+            this.label1.Location = new System.Drawing.Point(3, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 28);
             this.label1.TabIndex = 1;
@@ -70,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(164, 187);
+            this.label2.Location = new System.Drawing.Point(4, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 28);
             this.label2.TabIndex = 2;
@@ -78,6 +88,9 @@
             // 
             // tbTieuDe
             // 
+            this.tbTieuDe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTieuDe.BorderRadius = 10;
             this.tbTieuDe.BorderThickness = 2;
             this.tbTieuDe.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -90,7 +103,7 @@
             this.tbTieuDe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTieuDe.ForeColor = System.Drawing.Color.Silver;
             this.tbTieuDe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTieuDe.Location = new System.Drawing.Point(306, 108);
+            this.tbTieuDe.Location = new System.Drawing.Point(145, 12);
             this.tbTieuDe.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbTieuDe.Name = "tbTieuDe";
             this.tbTieuDe.PasswordChar = '\0';
@@ -103,6 +116,9 @@
             // 
             // tbNoiDung
             // 
+            this.tbNoiDung.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNoiDung.BackColor = System.Drawing.SystemColors.Window;
             this.tbNoiDung.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.tbNoiDung.BorderFocusColor = System.Drawing.Color.DodgerBlue;
@@ -110,7 +126,7 @@
             this.tbNoiDung.BorderSize = 2;
             this.tbNoiDung.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNoiDung.ForeColor = System.Drawing.Color.Silver;
-            this.tbNoiDung.Location = new System.Drawing.Point(306, 187);
+            this.tbNoiDung.Location = new System.Drawing.Point(146, 27);
             this.tbNoiDung.Margin = new System.Windows.Forms.Padding(4);
             this.tbNoiDung.MaxLength = 32767;
             this.tbNoiDung.Multiline = true;
@@ -128,6 +144,7 @@
             // 
             // btnLamMoi
             // 
+            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLamMoi.BackColor = System.Drawing.Color.Black;
             this.btnLamMoi.BackGroundColor = System.Drawing.Color.Black;
             this.btnLamMoi.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -137,9 +154,9 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLamMoi.Location = new System.Drawing.Point(766, 515);
+            this.btnLamMoi.Location = new System.Drawing.Point(551, 13);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(125, 40);
+            this.btnLamMoi.Size = new System.Drawing.Size(130, 40);
             this.btnLamMoi.TabIndex = 6;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.TextColor = System.Drawing.Color.WhiteSmoke;
@@ -148,6 +165,7 @@
             // 
             // btnGui
             // 
+            this.btnGui.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGui.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnGui.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnGui.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -157,30 +175,93 @@
             this.btnGui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGui.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGui.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGui.Location = new System.Drawing.Point(347, 515);
+            this.btnGui.Location = new System.Drawing.Point(126, 13);
             this.btnGui.Name = "btnGui";
-            this.btnGui.Size = new System.Drawing.Size(125, 40);
+            this.btnGui.Size = new System.Drawing.Size(130, 40);
             this.btnGui.TabIndex = 5;
             this.btnGui.Text = "Gửi";
             this.btnGui.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnGui.UseVisualStyleBackColor = false;
             this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.cbbLHP);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(798, 66);
+            this.panel1.TabIndex = 8;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(107, 62);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(801, 609);
+            this.flowLayoutPanel1.TabIndex = 9;
+            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tbTieuDe);
+            this.panel2.Location = new System.Drawing.Point(3, 75);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(798, 66);
+            this.panel2.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.tbNoiDung);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(3, 147);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(798, 385);
+            this.panel3.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.btnLamMoi);
+            this.panel4.Controls.Add(this.btnGui);
+            this.panel4.Location = new System.Drawing.Point(3, 538);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(798, 66);
+            this.panel4.TabIndex = 10;
+            // 
             // UC_SendNoticeToModuleClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.tbNoiDung);
-            this.Controls.Add(this.btnLamMoi);
-            this.Controls.Add(this.btnGui);
-            this.Controls.Add(this.tbTieuDe);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbbLHP);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UC_SendNoticeToModuleClass";
             this.Size = new System.Drawing.Size(1175, 730);
             this.Load += new System.EventHandler(this.UC_SendAnnounceToModuleClass_Load);
+            this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -193,5 +274,10 @@
         private MyCustomControl.CustomButton btnGui;
         private MyCustomControl.CustomButton btnLamMoi;
         private MyCustomControl.CustomTextBox tbNoiDung;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

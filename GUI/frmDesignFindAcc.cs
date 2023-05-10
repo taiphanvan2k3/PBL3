@@ -24,21 +24,9 @@ namespace GUI
             InitializeComponent();
             btnSend.Enabled = false; // Không cho phép nhấn nút
             this.ActiveControl = label1;
+            UtilityClass.EnableDragForm(this);
 
         }
-
-
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-       
 
         private void btnBack_Click(object sender, EventArgs e)
         {

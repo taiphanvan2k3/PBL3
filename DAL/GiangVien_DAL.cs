@@ -179,6 +179,11 @@ namespace DAL
                             }).Select(p => p.MaMH).FirstOrDefault();
             return db.CAU_HOI.Where(p => p.MaMH == MaMH).Count();
         }
+        public bool CheckExamGKOrCKExist(string MaLHP, string LoaiBaiKiemTra)
+        {
+            var query = db.BAI_KIEM_TRA.Where(x => x.MaLopHP == MaLHP && x.TenBaiKiemTra == LoaiBaiKiemTra).ToList();
+            return query.Count > 0;
+        }
         public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
                                byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
         {
@@ -204,9 +209,15 @@ namespace DAL
             //Nếu số câu hỏi có trong CSDL phù hợp nhiều hơn 2 lần số câu hỏi cần làm thì sẽ lấy ở mức gấp đôi số câu hỏi cần làm để random 
             if (SoLuongCauHoi > SoCauHoi * 2)
                 SoLuongCauHoi = SoCauHoi * 2;
-
+            string PhanLoai;
+            if (LoaiBaiKiemTra == "Cuối kỳ")
+                PhanLoai = "CK";
+            else if (LoaiBaiKiemTra == "Giữa kỳ")
+                PhanLoai = "GK";
+            else
+                PhanLoai = LoaiBaiKiemTra;
             //x => Guid.NewGuid() là phương thức lấy ngẫu nhiên record trong database theo method syntax in LinQ to entities 
-            List<CAU_HOI> li = db.CAU_HOI.OrderBy(x => Guid.NewGuid()).Take(SoLuongCauHoi).ToList();
+            List<CAU_HOI> li = db.CAU_HOI.OrderBy(x => Guid.NewGuid()).Take(SoLuongCauHoi).Where(x => x.PhanLoai == PhanLoai).ToList();
             foreach (var i in li)
             {
                 BAIKIEMTRA_CAUHOI NewBKT_CH = new BAIKIEMTRA_CAUHOI

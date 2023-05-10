@@ -102,7 +102,7 @@ namespace DAL
                     MaHP = hp.MaLopHP,
                     TenMH = hp.TenMH,
                     MaBaiKiemTra = bkt.MaBaiKiemTra,
-                    TieuDeBaiKiemTra = bkt.TieuDeBaiKiemTra,
+                    TieuDeBaiKiemTra = bkt.TenBaiKiemTra,
                     SoCauHoi = bkt.SoCauHoi,
                     ThoiGianLamBai = bkt.ThoiGianLamBai,
                     ThoiGianBatDau = bkt.NgayKiemTra,

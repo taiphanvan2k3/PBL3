@@ -38,6 +38,7 @@ namespace GUI
         public frmAddAccount(int role, string TaiKhoan)
         {
             InitializeComponent();
+            UtilityClass.EnableDragForm(panelContainer);
             this.role = role;
             this.TaiKhoan = TaiKhoan;
         }
@@ -47,20 +48,7 @@ namespace GUI
             this.Dispose();
         }
 
-        #region Drag Form
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        #endregion
 
         private void cmbList_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -111,7 +99,7 @@ namespace GUI
             Random random = new Random();
             int countRecord = 0;
             string suffix = "";
-            if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1 || txtSurname.Texts == null || txtSurname.Texts == null || txtCCCD.Texts.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
+            if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1 || txtSurname.Texts.ToString() == "" || txtName.Texts.ToString() == "" || txtCCCD.Texts.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin");
             }
@@ -192,7 +180,7 @@ namespace GUI
                     {
                         if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan, ttdn, nd, svDT))
                         {
-                            MessageBox.Show("Thêm cập nhật tài khoản sinh viên thành công");
+                            MessageBox.Show("Cập nhật tài khoản sinh viên thành công");
                             // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
                             DataAddedSuccessEvent?.Invoke();
                         }
@@ -244,7 +232,7 @@ namespace GUI
                     else {
                         if (GetInformationAcc_BLL.Instance.UpdateData(TaiKhoan, ttdn, nd, gvDT))
                         {
-                            MessageBox.Show("Thêm cập nhật tài khoản giảng viên thành công");
+                            MessageBox.Show("Cập nhật tài khoản giảng viên thành công");
                             // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
                             DataAddedSuccessEvent?.Invoke();
                         }
@@ -291,9 +279,6 @@ namespace GUI
                 txtIDAcc.Texts = TaiKhoan;
                 txtIDAcc.Enabled = false;
                 cmbList.Enabled = false;
-                txtSurname.Enabled = false;
-                txtName.Enabled = false;
-                txtCCCD.Enabled = false;
                 string valueItem = "";
                 string valueYearOrLevel = "";
                 string name;

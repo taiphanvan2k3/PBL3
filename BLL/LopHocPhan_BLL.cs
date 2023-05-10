@@ -167,5 +167,9 @@ namespace BLL
         {
             return LopHocPhan_DAL.Instance.DeleteModuleClass(idClass);
         }
+        public List<InformationSubject_DTO> getListSubjects()
+        {
+            return LopHocPhan_DAL.Instance.getListSubjects();
+        }
     }
 }

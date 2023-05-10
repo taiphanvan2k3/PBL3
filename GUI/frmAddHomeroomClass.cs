@@ -18,6 +18,10 @@ namespace GUI
 {
     public partial class frmAddHomeroomClass : Form
     {
+
+        // Khai báo delegate và event
+        public delegate void DataAddedSuccessHandler();
+        public event DataAddedSuccessHandler DataAddedSuccessEvent;
         public frmAddHomeroomClass()
         {
             InitializeComponent();
@@ -111,6 +115,8 @@ namespace GUI
                 else if (result == DialogResult.No)
                 {
                     this.Close();
+                    // Gọi event để thông báo cho formViewAcc cập nhật dữ liệu
+                    DataAddedSuccessEvent?.Invoke();
                 }
             }
             else

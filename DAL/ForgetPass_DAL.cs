@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -24,60 +25,71 @@ namespace DAL
             }
         }
 
-        private PBL3Entities modelPBL3Entities1 = new PBL3Entities();
 
 
         // Gửi 1 mã đến mail 
         public THONG_TIN_DANG_NHAP SendPass(string email)
         {
-            var user = modelPBL3Entities1.NGUOI_DUNG.SingleOrDefault(p => p.EmailTruongCap.Equals(email));
-            if (user != null)
-            {
-                var account = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(user.MaNguoiDung));
-                if (account != null)
+            using (var context = new PBL3Entities()) {
+                var user = context.NGUOI_DUNG.SingleOrDefault(p => p.EmailTruongCap.Equals(email));
+                if (user != null)
                 {
-                    Random random = new Random();
-                    int randomNumber = random.Next(100000, 999999);
-                    account.MaXacThucDeLayLaiMK = randomNumber.ToString();
-                    modelPBL3Entities1.SaveChanges();
-                    return account;
+                    var account = context.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(user.MaNguoiDung));
+                    if (account != null)
+                    {
+                        Random random = new Random();
+                        int randomNumber = random.Next(100000, 999999);
+                        account.MaXacThucDeLayLaiMK = randomNumber.ToString();
+                        context.SaveChanges();
+                        return account;
+                    }
+                    else
+                        return null;
                 }
-                else
-                    return null;
+                return null;
             }
-            return null;
         }
 
         public bool isValid(string username, string maXacThuc)
         {
-            var thongTinDangNhap = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
-            if (thongTinDangNhap == null) return false;
-            else if (thongTinDangNhap.MaXacThucDeLayLaiMK == null) return false;
-            return thongTinDangNhap.MaXacThucDeLayLaiMK.Equals(maXacThuc);
+            using (var context = new PBL3Entities())
+            {
+                var thongTinDangNhap = context.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
+                if (thongTinDangNhap == null) return false;
+                else if (thongTinDangNhap.MaXacThucDeLayLaiMK == null) return false;
+                return thongTinDangNhap.MaXacThucDeLayLaiMK.Equals(maXacThuc);
+            }
         }
         // Cập nhật lại mật khẩu
         public bool updatePass(string username,string pass)
         {
-            var thongTinDangNhap = modelPBL3Entities1.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
-            if (thongTinDangNhap != null) {
-                thongTinDangNhap.MkUngDung = BCrypt.Net.BCrypt.HashString(pass);
-                modelPBL3Entities1.SaveChanges();
-                return true;
+            using (var context = new PBL3Entities())
+            {
+                var thongTinDangNhap = context.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
+                if (thongTinDangNhap != null)
+                {
+                    thongTinDangNhap.MkUngDung = BCrypt.Net.BCrypt.HashString(pass);
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            return false;
         }
 
         // Hàm này sẽ reset lại mã xác nhận thành null khi đổi mật khẩu thành công hoặc sau 120s kể từ lúc gửi mã
         public bool resetVerification(string email)
         {
-            THONG_TIN_DANG_NHAP userInfo = SendPass(email);
-            if (userInfo != null)
+            using (var context = new PBL3Entities())
             {
-                userInfo.MaXacThucDeLayLaiMK = null;
-                modelPBL3Entities1.SaveChanges();
-                return true;
+                THONG_TIN_DANG_NHAP userInfo = SendPass(email);
+                if (userInfo != null)
+                {
+                    userInfo.MaXacThucDeLayLaiMK = null;
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            return false;
         }
 
     }

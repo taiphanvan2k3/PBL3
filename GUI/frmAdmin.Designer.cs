@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelClass = new System.Windows.Forms.Panel();
+            this.btnSubject = new FontAwesome.Sharp.IconButton();
             this.btnModuleClass = new FontAwesome.Sharp.IconButton();
             this.btnHomeroomClass = new FontAwesome.Sharp.IconButton();
             this.btnClass = new FontAwesome.Sharp.IconButton();
@@ -71,13 +72,38 @@
             // panelClass
             // 
             this.panelClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(87)))), ((int)(((byte)(118)))));
+            this.panelClass.Controls.Add(this.btnSubject);
             this.panelClass.Controls.Add(this.btnModuleClass);
             this.panelClass.Controls.Add(this.btnHomeroomClass);
             this.panelClass.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelClass.Location = new System.Drawing.Point(0, 360);
             this.panelClass.Name = "panelClass";
-            this.panelClass.Size = new System.Drawing.Size(250, 121);
+            this.panelClass.Size = new System.Drawing.Size(250, 182);
             this.panelClass.TabIndex = 15;
+            // 
+            // btnSubject
+            // 
+            this.btnSubject.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubject.FlatAppearance.BorderSize = 0;
+            this.btnSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubject.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubject.ForeColor = System.Drawing.Color.White;
+            this.btnSubject.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btnSubject.IconColor = System.Drawing.Color.White;
+            this.btnSubject.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSubject.IconSize = 30;
+            this.btnSubject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubject.Location = new System.Drawing.Point(0, 120);
+            this.btnSubject.Name = "btnSubject";
+            this.btnSubject.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSubject.Size = new System.Drawing.Size(250, 60);
+            this.btnSubject.TabIndex = 14;
+            this.btnSubject.TabStop = false;
+            this.btnSubject.Tag = "Môn học";
+            this.btnSubject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSubject.UseVisualStyleBackColor = true;
+            this.btnSubject.Click += new System.EventHandler(this.btnSubject_Click);
             // 
             // btnModuleClass
             // 
@@ -365,5 +391,6 @@
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton btnSubject;
     }
 }

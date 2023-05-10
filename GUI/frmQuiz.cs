@@ -55,7 +55,7 @@ namespace GUI
         {
             InitializeComponent();
             targetTime = TimeSpan.FromMinutes(50); // test thôi
-            SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
+            //SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
             selectedAnswers = new List<SelectedAnswer>();
             //LoadCauHoi();
         }

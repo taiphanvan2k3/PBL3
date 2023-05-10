@@ -20,6 +20,10 @@ namespace GUI
             InsertFail
         }
 
+        // Khai báo delegate và event
+        public delegate void DataAddedSuccessHandler();
+        public event DataAddedSuccessHandler DataAddedSuccessEvent;
+
         private InsertState CurrentState;
         public frmAddModuleClass()
         {
@@ -81,11 +85,12 @@ namespace GUI
                 }
                 else
                 {
+                    
                     UnsetBackgroundForErrorValue(txtNhomHP);
                     btnAddModuleClass.Enabled = true;
                     int CurrentYear = DateTime.Now.Year;
                     int CurrentMonth = DateTime.Now.Month;
-                    if (CurrentMonth >= 1 && CurrentMonth <= 4)
+                    if (CurrentMonth >= 1 && CurrentMonth <= 5)
                     {
                         //Kì chẵn
                         lblKiHoc.Text = tmp + "";
@@ -96,6 +101,11 @@ namespace GUI
                         //Kì lẻ và đã qua năm học mới
                         lblKiHoc.Text = (tmp + 1) + "";
                         lblNamHoc.Text = (CurrentYear) + " - " + (CurrentYear + 1);
+                    }
+                    else
+                    {
+                        CustomMessageBox.Show("Đây không phải là thời điểm tạo lớp học phần", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnAddModuleClass.Enabled = false;
                     }
                 }
             }
@@ -110,14 +120,14 @@ namespace GUI
         private void btnAddModuleClass_Click(object sender, EventArgs e)
         {
             CBBItem itemMH = cbbTenMH.SelectedItem as CBBItem;
-            LopHocPhan_AdminEdit lhp = new LopHocPhan_AdminEdit()
-            {
-                MaMH = itemMH.Id,
-                MaHP = lblMaHP.Text,
-                KiHoc = Convert.ToInt32(lblKiHoc.Text),
-                NamHoc = Convert.ToInt32(lblNamHoc.Text.Substring(0, lblNamHoc.Text.IndexOf(" "))),
-                SoLuongMax = Convert.ToInt32(txtSoLuongMax.Text)
-            };
+            LopHocPhan_AdminEdit lhp = new LopHocPhan_AdminEdit();
+
+            lhp.MaMH = itemMH.Id;
+            lhp.MaHP = lblMaHP.Text;
+            lhp.KiHoc = Convert.ToInt32(lblKiHoc.Text);
+            lhp.NamHoc = Convert.ToInt32(lblNamHoc.Text.Substring(0, lblNamHoc.Text.IndexOf(" ")));
+            lhp.SoLuongMax = Convert.ToInt32(txtSoLuongMax.Text);
+            
             int result = LopHocPhan_BLL.Instance.InsertModuleClass(lhp);
             if (result == -1)
             {
@@ -193,6 +203,7 @@ namespace GUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            DataAddedSuccessEvent?.Invoke();
         }
 
         private void cbbTenMH_SelectedIndexChanged(object sender, EventArgs e)

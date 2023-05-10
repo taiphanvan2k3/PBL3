@@ -101,11 +101,17 @@ namespace BLL
         {
             return GiangVien_DAL.Instance.GetNumberQuestionForMonHoc(MaLHP);
         }
-        public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
+        public bool CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
                                byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
         {
-            GiangVien_DAL.Instance.CreateExam(TenBKT, LoaiBaiKiemTra, ThoiGianLamBai, NgayKiemTra, SoCauHoi, MaLHP,
+            if (GiangVien_DAL.Instance.CheckExamGKOrCKExist(MaLHP, LoaiBaiKiemTra))
+                return false;
+            else
+            {
+                GiangVien_DAL.Instance.CreateExam(TenBKT, LoaiBaiKiemTra, ThoiGianLamBai, NgayKiemTra, SoCauHoi, MaLHP,
                                               MaGV, MatKhauLamBai, ChoPhepQuayLai);
+                return true;
+            }
         }
 
         public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHP)
