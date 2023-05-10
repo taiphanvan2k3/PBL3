@@ -509,6 +509,12 @@
     <Compile Include="MyUserControls\UC_WeeklyWorkSchedule.Designer.cs">
       <DependentUpon>UC_WeeklyWorkSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_XemKetQuaHocTap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_XemKetQuaHocTap.Designer.cs">
+      <DependentUpon>UC_XemKetQuaHocTap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testData.cs">
@@ -540,6 +546,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_WeeklyWorkSchedule.resx">
       <DependentUpon>UC_WeeklyWorkSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_XemKetQuaHocTap.resx">
+      <DependentUpon>UC_XemKetQuaHocTap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testData.resx">
       <DependentUpon>testData.cs</DependentUpon>

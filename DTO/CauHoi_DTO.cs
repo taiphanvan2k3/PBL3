@@ -79,7 +79,6 @@ namespace DTO
                 if (DapAnChon[i] != DapAnDung[i])
                     return false;
             }
-
             return true;
         }
     }

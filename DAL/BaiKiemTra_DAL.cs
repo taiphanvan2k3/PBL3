@@ -61,7 +61,7 @@ namespace DAL
                 return "GK";
             else if (tmp == "Cuối kỳ")
                 return "CK";
-            return tmp; //Test
+            return "Test";
         }
 
         public List<BaiKiemTra_DTO> GetAllExamOfStudent(string MaSV)

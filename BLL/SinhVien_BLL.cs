@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DTO;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -116,6 +117,28 @@ namespace BLL
         public static List<KetQuaHocTap> GetKetQuaHocTap(string MaSV)
         {
             return SinhVien_DAL.GetKetQuaHocTap(MaSV);
+        }
+
+        public static List<string> GetListKiHocLoadCBB(string MaSV)
+        {
+            List<string>res= new List<string>();
+            int NamNhapHoc = Convert.ToInt32(MaSV.Substring(3, 2)) + 2000;
+            int NamHienTai = DateTime.Now.Year;
+            int stt = 1;
+            for (int i = NamNhapHoc; i <= NamHienTai - 1; i++)
+            {
+                string str1 = "Học kỳ " + (stt++) + " ( năm học " + i + "-" + (i + 1) + " )";
+                string str2 = "Học kỳ " + (stt++) + " ( năm học " + i + "-" + (i + 1) + " )";
+                res.AddRange(new string[]
+                {
+                    str1,str2
+                });
+            }
+
+            int CurrentMonth = DateTime.Now.Month;
+            if (CurrentMonth >= 8 && CurrentMonth <= 11)
+                res.Add("Học kỳ " + stt + " ( năm học " + NamHienTai + "-" + (NamHienTai + 1) + " )");
+            return res;
         }
     }
 }

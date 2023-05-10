@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -171,9 +172,12 @@ namespace DAL
                     i1.BaiKiemTra_tmp.CtTinhDiem,
                     i1.BaiKiemTra_tmp.LoaiBaiKiemTra,
                     Diem = (double?)i2.Diem
-                })).ToList();
+                })).OrderBy(p=>p.KiHoc).ToList();
+
+            //Dùng Dictionary ở đây để lấy ra KetQuaHocTap của 1 lớp HP nào đó một cách nhanh chóng
             Dictionary<string, KetQuaHocTap> dict = new Dictionary<string, KetQuaHocTap>();
             List<KetQuaHocTap> res = new List<KetQuaHocTap>();
+            int STT = 1;
             foreach (var item in li)
             {
                 KetQuaHocTap kq;
@@ -197,15 +201,16 @@ namespace DAL
                 }
                 if (item.LoaiBaiKiemTra == "Test" && item.Diem != null)
                     kq.DiemBTs.Add((double)item.Diem);
-                else if (item.LoaiBaiKiemTra == "Giữa kì")
+                else if (item.LoaiBaiKiemTra == "Giữa kỳ")
                     kq.GK = item.Diem;
-                else if (item.LoaiBaiKiemTra == "Cuối kì")
+                else if (item.LoaiBaiKiemTra == "Cuối kỳ")
                     kq.CK = item.Diem;
                 else if (item.LoaiBaiKiemTra == "Quá trình")
                     kq.QT = item.Diem;
                 else kq.DA = item.Diem;
                 if (!checkIsExist)
                 {
+                    kq.STT = STT++;
                     res.Add(kq);
                     dict.Add(item.MaLopHP, kq);
                 }

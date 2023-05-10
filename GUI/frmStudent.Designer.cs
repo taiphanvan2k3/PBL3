@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudent));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
@@ -50,6 +51,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnXemThongBao = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnXemKqHocTap = new FontAwesome.Sharp.IconButton();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnDoExam = new FontAwesome.Sharp.IconButton();
             this.timerExpandClass = new System.Windows.Forms.Timer(this.components);
             this.timerExpandCalendar = new System.Windows.Forms.Timer(this.components);
@@ -57,9 +60,9 @@
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panelMenuTong = new System.Windows.Forms.Panel();
             this.panelShowDetail = new System.Windows.Forms.Panel();
-            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.panelCalendar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,9 +71,9 @@
             this.panelLop.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMenuTong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +88,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1532, 69);
             this.panel3.TabIndex = 2;
+            // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1452, 1);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(65, 65);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
             // 
             // lblAvatar
             // 
@@ -189,6 +209,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panelCalendar);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel5);
+            this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(228, 591);
@@ -347,7 +368,7 @@
             this.btnXemThongBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemThongBao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
-            this.btnXemThongBao.IconChar = FontAwesome.Sharp.IconChar.Twitch;
+            this.btnXemThongBao.IconChar = FontAwesome.Sharp.IconChar.Bell;
             this.btnXemThongBao.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnXemThongBao.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXemThongBao.IconSize = 35;
@@ -356,17 +377,45 @@
             this.btnXemThongBao.Name = "btnXemThongBao";
             this.btnXemThongBao.Size = new System.Drawing.Size(210, 48);
             this.btnXemThongBao.TabIndex = 3;
-            this.btnXemThongBao.Text = "   Xem thông báo";
+            this.btnXemThongBao.Text = "    Xem thông báo";
             this.btnXemThongBao.UseVisualStyleBackColor = false;
             this.btnXemThongBao.Click += new System.EventHandler(this.btnXemThongBao_Click);
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btnDoExam);
+            this.panel5.Controls.Add(this.btnXemKqHocTap);
             this.panel5.Location = new System.Drawing.Point(3, 319);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(217, 55);
             this.panel5.TabIndex = 5;
+            // 
+            // btnXemKqHocTap
+            // 
+            this.btnXemKqHocTap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
+            this.btnXemKqHocTap.FlatAppearance.BorderSize = 0;
+            this.btnXemKqHocTap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemKqHocTap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemKqHocTap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnXemKqHocTap.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btnXemKqHocTap.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
+            this.btnXemKqHocTap.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXemKqHocTap.IconSize = 35;
+            this.btnXemKqHocTap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemKqHocTap.Location = new System.Drawing.Point(2, 3);
+            this.btnXemKqHocTap.Name = "btnXemKqHocTap";
+            this.btnXemKqHocTap.Size = new System.Drawing.Size(210, 48);
+            this.btnXemKqHocTap.TabIndex = 3;
+            this.btnXemKqHocTap.Text = "      Xem KQ học tập";
+            this.btnXemKqHocTap.UseVisualStyleBackColor = false;
+            this.btnXemKqHocTap.Click += new System.EventHandler(this.btnXemKqHocTap_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnDoExam);
+            this.panel6.Location = new System.Drawing.Point(3, 380);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(217, 55);
+            this.panel6.TabIndex = 6;
             // 
             // btnDoExam
             // 
@@ -380,7 +429,7 @@
             this.btnDoExam.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoExam.IconSize = 35;
             this.btnDoExam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoExam.Location = new System.Drawing.Point(2, 5);
+            this.btnDoExam.Location = new System.Drawing.Point(4, 4);
             this.btnDoExam.Name = "btnDoExam";
             this.btnDoExam.Size = new System.Drawing.Size(210, 48);
             this.btnDoExam.TabIndex = 2;
@@ -453,23 +502,6 @@
             this.panelShowDetail.Size = new System.Drawing.Size(1293, 831);
             this.panelShowDetail.TabIndex = 11;
             // 
-            // avatarTopRight
-            // 
-            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
-            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.avatarTopRight.BorderSize = 2;
-            this.avatarTopRight.GradientAngle = 50F;
-            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1452, 1);
-            this.avatarTopRight.Name = "avatarTopRight";
-            this.avatarTopRight.Size = new System.Drawing.Size(65, 65);
-            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarTopRight.TabIndex = 3;
-            this.avatarTopRight.TabStop = false;
-            // 
             // circularPictureBox
             // 
             this.circularPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -504,6 +536,7 @@
             this.Load += new System.EventHandler(this.frmStudent_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.panelCalendar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -512,9 +545,9 @@
             this.panelLop.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelMenuTong.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -550,5 +583,7 @@
         private MyCustomControl.CircularPictureBox avatarTopRight;
         private FontAwesome.Sharp.IconButton btnXemThongBao;
         private System.Windows.Forms.Panel panel5;
+        private FontAwesome.Sharp.IconButton btnXemKqHocTap;
+        private System.Windows.Forms.Panel panel6;
     }
 }

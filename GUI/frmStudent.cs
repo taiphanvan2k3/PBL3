@@ -34,7 +34,8 @@ namespace GUI
             WeeklySchoolSchedule,
             ViewHomeRoomClass,
             ViewListModuleClass,
-            ViewNotifications
+            ViewNotifications,
+            ViewResultOfLearning
         }
 
         #region Danh sách UC bỏ vào các tab
@@ -44,7 +45,7 @@ namespace GUI
         UC_ViewHomeRoomClass viewHomeRoomClass;
         UC_ViewListModuleClass_SVRole viewListModuleClass;
         UC_ViewListNotifications viewListNotifications;
-
+        UC_XemKetQuaHocTap viewResultOfLearning;
         SelectionState state;
         #endregion
 
@@ -299,6 +300,22 @@ namespace GUI
                     viewListNotifications.Dock = DockStyle.Fill;
                 }
                 panelShowDetail.Controls.Add(viewListNotifications);
+            }
+        }
+
+        private void btnXemKqHocTap_Click(object sender, EventArgs e)
+        {
+            if (state != SelectionState.ViewResultOfLearning)
+            {
+                btnExpandMenu_Click(sender, e);
+                state = SelectionState.ViewResultOfLearning;
+                panelShowDetail.Controls.Clear();
+                if (viewResultOfLearning == null)
+                {
+                    viewResultOfLearning = new UC_XemKetQuaHocTap() { MaSV = this.MSSV };
+                    viewResultOfLearning.Dock = DockStyle.Fill;
+                }
+                panelShowDetail.Controls.Add(viewResultOfLearning);
             }
         }
 

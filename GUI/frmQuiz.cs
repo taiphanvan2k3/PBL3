@@ -62,6 +62,7 @@ namespace GUI
 
         private void testGiaoDien()
         {
+            questions = new List<CauHoi_DTO>();
             string TenCauHoi = "Hãy trả lời câu hỏi siêu dễ sau: 1+1=?";
             string DapAnA = "Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi." +
                 "Tất nhiên là bằng 2 rồi. Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi.Tất nhiên là bằng 2 rồi." +
@@ -91,6 +92,8 @@ namespace GUI
         {
             //testGiaoDien();
             questions = BaiKiemTra_BLL.Instance.GetListQuestionInExam(MaBaiKiemTra, TongSoCauHoi);
+            if (questions.Count == 0)
+                testGiaoDien();
         }
 
         private void frmQuiz_Load(object sender, EventArgs e)
