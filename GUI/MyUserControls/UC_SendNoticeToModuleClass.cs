@@ -20,7 +20,11 @@ namespace GUI.MyUserControls
         public bool IsNoticeToSpecificModuleClass { get; set; }
         public string MaLopHP { get; set; }
         #endregion
-
+        public void HideRefreshButton()
+        {
+            btnLamMoi.Visible = false;
+            btnExit.Visible = true;
+        }
         public void HideCombobox()
         {
             cbbLHP.Visible = false;
@@ -137,6 +141,12 @@ namespace GUI.MyUserControls
 
             panel4.Width = panel1.Width;
             panel4.Height += (heightRemains - 4 * offset) / 3;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Form f = this.ParentForm;
+            f.Close();
         }
     }
 }

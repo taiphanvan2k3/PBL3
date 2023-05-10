@@ -45,8 +45,6 @@ namespace GUI.MyUserControls
         public Button ButtonDateMonth { get; set; }
         int MONTH, YEAR;
         UC_Day[,] btn = new UC_Day[6, 7];
-        CustomButton[,] btnM = new CustomButton[6, 7];
-        string[,] dTime = new string[6, 7];
         List<BaiKiemTra_DTO> li = new List<BaiKiemTra_DTO>();
 
         //Lưu lại vị trí [i,j] của button có ngày tương ứng trên ma trận
@@ -62,9 +60,6 @@ namespace GUI.MyUserControls
             init();
             formOriginalSize = this.Size;
             IndexDayInMatrix = new Dictionary<int, KeyValuePair<int, int>>();
-            //UC_MonthCa.ButtonPrevious += btnPrevious_Click;
-            //UC_MonthCa.ButtonToday += buttonToday_Click;
-            //UC_MonthCa.ButtonNext += btnNext_Click;
             UC_MonthCa.ButtonDate += buttonDate_Click;
             UC_MonthCa.UC_Calendar = this;
             DayChoosing = 0;
@@ -104,13 +99,6 @@ namespace GUI.MyUserControls
             }
         }
 
-        public string leng2(String s)
-        {
-            if (s.Length == 1)
-                return "0" + s;
-            return s;
-        }
-
         public int getDay(int month, int year)
         {
             int N = year - 1;
@@ -141,12 +129,11 @@ namespace GUI.MyUserControls
                     btn[i, j].BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                     btn[i, j].ColorTextDay = ((colorBack == Color.White) ? Color.Black : Color.White);
                     btn[i, j].HandleClickOnUC += UC_Calendar_New_Click;
-                    dTime[i, j] = "";
                 }
             formOriginalSize = this.Size;
         }
 
-        public int[,] update(int month, int year)
+        public void update(int month, int year)
         {
             reset();
             int[,] a = new int[6, 7];
@@ -179,7 +166,6 @@ namespace GUI.MyUserControls
                     btn[I, J].ColorDay = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
                     btn[I, J].BoderDay = ((colorBack == Color.White) ? Color.DeepSkyBlue : Color.FromArgb(238, 191, 109));
                 }
-                dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year != YEAR && MONTH == month + 1 && i == day)
                 {
                     btn[I, J].BackColor = Color.Cyan;
@@ -218,7 +204,6 @@ namespace GUI.MyUserControls
                     I++;
                 }
             }
-            return a;
         }
 
         private void LoadListExamInMonth()
@@ -264,34 +249,8 @@ namespace GUI.MyUserControls
 
         public void LoadDays()
         {
-            int[,] a = update(MONTH, YEAR);
+            update(MONTH, YEAR);
             LoadListExamInMonth();
-            //int check = 0;
-            //for (int i = 0; i < a.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < a.GetLength(1); j++)
-            //    {
-            //        if (check == 0 && (j != 0 && a[i, j] < a[i, j - 1]))
-            //        {
-            //            check++;
-            //        }
-            //        if (check == 1)
-            //        {
-            //            if (j != 6)
-            //            {
-            //                if (a[i, j] > a[i, j + 1])
-            //                    check++;
-            //            }
-            //            else
-            //            {
-            //                if (i == 5)
-            //                    check++;
-            //                else if (a[i, j] > a[i + 1, 0])
-            //                    check++;
-            //            }
-            //        }
-            //    }
-            //}
             lbLoaiBaiKiemTra.Text = "";
             lbCacLopCoBaiKiemTra.Text = "";
             DayChoosing = 0;

@@ -275,7 +275,7 @@ namespace GUI
             if (ButtonClicked != "Lịch theo ngày")
             {
                 ButtonClicked = "Lịch theo ngày";
-                if (SendNoticeToModuleClass == null)
+                if (DailySchedule == null)
                 {
                     DailySchedule = new UC_DailyWorkSchedule();
                     DailySchedule.Dock = DockStyle.Fill;
@@ -290,7 +290,7 @@ namespace GUI
             if (ButtonClicked != "Lịch theo tuần")
             {
                 ButtonClicked = "Lịch theo tuần";
-                if (SendNoticeToModuleClass == null)
+                if (WeeklySchedule == null)
                 {
                     WeeklySchedule = new UC_WeeklyWorkSchedule();
                     WeeklySchedule.Dock = DockStyle.Fill;

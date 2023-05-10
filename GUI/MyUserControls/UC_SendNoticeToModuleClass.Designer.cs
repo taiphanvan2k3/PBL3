@@ -40,6 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnExit = new GUI.MyCustomControl.CustomButton();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -154,10 +155,10 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLamMoi.Location = new System.Drawing.Point(551, 13);
+            this.btnLamMoi.Location = new System.Drawing.Point(531, 13);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(130, 40);
-            this.btnLamMoi.TabIndex = 6;
+            this.btnLamMoi.TabIndex = 7;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -175,7 +176,7 @@
             this.btnGui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGui.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGui.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGui.Location = new System.Drawing.Point(126, 13);
+            this.btnGui.Location = new System.Drawing.Point(202, 13);
             this.btnGui.Name = "btnGui";
             this.btnGui.Size = new System.Drawing.Size(130, 40);
             this.btnGui.TabIndex = 5;
@@ -197,17 +198,15 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(107, 62);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 58);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(801, 609);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 617);
             this.flowLayoutPanel1.TabIndex = 9;
             this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
             // 
@@ -240,6 +239,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.btnExit);
             this.panel4.Controls.Add(this.btnLamMoi);
             this.panel4.Controls.Add(this.btnGui);
             this.panel4.Location = new System.Drawing.Point(3, 538);
@@ -247,12 +247,35 @@
             this.panel4.Size = new System.Drawing.Size(798, 66);
             this.panel4.TabIndex = 10;
             // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExit.BackColor = System.Drawing.Color.Black;
+            this.btnExit.BackGroundColor = System.Drawing.Color.Black;
+            this.btnExit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnExit.BorderRadius = 20;
+            this.btnExit.BorderSize = 0;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.Location = new System.Drawing.Point(531, 13);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(130, 40);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Visible = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // UC_SendNoticeToModuleClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UC_SendNoticeToModuleClass";
-            this.Size = new System.Drawing.Size(1175, 730);
+            this.Size = new System.Drawing.Size(841, 730);
             this.Load += new System.EventHandler(this.UC_SendAnnounceToModuleClass_Load);
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -279,5 +302,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private MyCustomControl.CustomButton btnExit;
     }
 }

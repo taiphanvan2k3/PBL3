@@ -1,4 +1,5 @@
-﻿using GUI.MyCustomControl;
+﻿using BLL;
+using GUI.MyCustomControl;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -7,9 +8,6 @@ namespace GUI.MyUserControls
 {
     public partial class UC_MonthCalendar : UserControl
     {
-        //public event EventHandler ButtonPrevious;
-        //public event EventHandler ButtonToday;
-        //public event EventHandler ButtonNext;
         public event EventHandler ButtonDate;
 
         public UC_Calendar_New UC_Calendar { get; set; }
@@ -31,10 +29,6 @@ namespace GUI.MyUserControls
                 lbFriday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSaturday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 lbSunday.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                //btnPrevious.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
-                //btnPrevious.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
-                //btnNext.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
-                //btnNext.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btnDate.BackColor = ((colorBack == Color.White) ? Color.White : Color.FromArgb(58, 59, 60));
                 btnDate.ForeColor = ((colorBack == Color.White) ? Color.Black : Color.White);
                 btnDate.ForeColor = (colorBack == Color.White) ? Color.FromArgb(13, 87, 119) : Color.FromArgb(227, 111, 38);
@@ -43,8 +37,6 @@ namespace GUI.MyUserControls
             }
         }
         int MONTH, YEAR;
-        //Button[,] btn = new Button[6, 7];
-        String[,] dTime = new String[6, 7];
         public UC_MonthCalendar()
         {
             InitializeComponent();
@@ -84,45 +76,12 @@ namespace GUI.MyUserControls
             return false;
         }
 
-        //Determine number of day in the month
-        public int Nday(int month, int year)
-        {
-            switch (month)
-            {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    return 31;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    return 30;
-                case 2:
-                    if (isLeapYear(year))
-                        return 29;
-                    return 28;
-            }
-            return 0;
-        }
-
-        public string leng2(String s)
-        {
-            if (s.Length == 1)
-                return "0" + s;
-            return s;
-        }
-
         public int getDay(int month, int year)
         {
             int N = year - 1;
             int d = N * 365 + N / 4 - N / 100 + N / 400;
             for (int i = 1; i < month; i++)
-                d += Nday(i, N + 1);
+                d += UtilityClass.GetNumberOfDayInMonth(i, N + 1);
             return d;
         }
 
@@ -146,23 +105,22 @@ namespace GUI.MyUserControls
                     btn[i, j].Location = new Point((int)(btn[i, j].Location.X * xRatio), (int)(btn[i, j].Location.Y * yRatio));
                     btn[i, j].BackColor = ((colorBack == Color.White) ? Color.WhiteSmoke : Color.FromArgb(58, 59, 60));
                     btn[i, j].ForeColor = ((colorBack == Color.White) ? Color.Black : Color.WhiteSmoke);
-                    dTime[i, j] = "";
                 }
             formOriginalSize = this.Size;
         }
 
-        public int[,] update(int month, int year)
+        public void update(int month, int year)
         {
             reset();
             int[,] a = new int[6, 7];
             int thu = getThu(month, year);
-            int day = Nday(month, year);
+            int day = UtilityClass.GetNumberOfDayInMonth(month, year);
             //Previous day
             int pday = 0;
             if (month > 1)
-                pday = Nday(month - 1, year);
+                pday = UtilityClass.GetNumberOfDayInMonth(month - 1, year);
             else
-                pday = Nday(12, year - 1);
+                pday = UtilityClass.GetNumberOfDayInMonth(12, year - 1);
             int start = thu - 1;
             if (start == 7)
                 start = 0;
@@ -178,7 +136,6 @@ namespace GUI.MyUserControls
                     btn[I, J].BorderColor = Color.DeepSkyBlue;
                     btn[I, J].BackColor = ((colorBack == Color.White) ? Color.FromArgb(215, 249, 249) : Color.FromArgb(238, 191, 109));
                 }
-                dTime[I, J] = leng2(i + "") + "-" + leng2(month + "") + "-" + year;
                 if (year != YEAR && MONTH == month + 1 && i == day)
                 {
                     btn[I, J].BackColor = Color.Cyan;
@@ -211,38 +168,11 @@ namespace GUI.MyUserControls
                     I++;
                 }
             }
-            return a;
         }
 
         public void LoadDays()
         {
-            int[,] a = update(MONTH, YEAR);
-            int check = 0;
-            for (int i = 0; i < a.GetLength(0); i++)
-            {
-                for (int j = 0; j < a.GetLength(1); j++)
-                {
-                    if (check == 0 && (j != 0 && a[i, j] < a[i, j - 1]))
-                    {
-                        check++;
-                    }
-                    if (check == 1)
-                    {
-                        if (j != 6)
-                        {
-                            if (a[i, j] > a[i, j + 1])
-                                check++;
-                        }
-                        else
-                        {
-                            if (i == 5)
-                                check++;
-                            else if (a[i, j] > a[i + 1, 0])
-                                check++;
-                        }
-                    }
-                }
-            }
+            update(MONTH, YEAR);
         }
 
         private string GetStringMonth(int month)

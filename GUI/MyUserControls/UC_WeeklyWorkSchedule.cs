@@ -1,6 +1,7 @@
 ﻿using BLL;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -51,10 +52,13 @@ namespace GUI.MyUserControls
         {
             Form frmSendNotification = new Form()
             {
-                Width = 1175,
-                Height = 700,
+                Width = 950,
+                Height = 735,
                 Text = "Thông báo đến lớp học phần " + MaLopHP,
-                StartPosition = FormStartPosition.CenterScreen
+                StartPosition = FormStartPosition.CenterScreen,
+                AutoScaleMode = AutoScaleMode.None,
+                FormBorderStyle = FormBorderStyle.None,
+                BackColor = Color.WhiteSmoke
             };
             UC_SendNoticeToModuleClass uC_SendNotification = new UC_SendNoticeToModuleClass()
             {
@@ -62,6 +66,7 @@ namespace GUI.MyUserControls
                 IsNoticeToSpecificModuleClass = true,
                 MaLopHP = MaLopHP,
             };
+            uC_SendNotification.HideRefreshButton();
             uC_SendNotification.Dock = DockStyle.Fill;
             frmSendNotification.Controls.Add(uC_SendNotification);
             frmSendNotification.ShowDialog();
