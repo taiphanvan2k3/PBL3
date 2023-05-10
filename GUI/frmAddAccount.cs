@@ -38,7 +38,7 @@ namespace GUI
         public frmAddAccount(int role, string TaiKhoan)
         {
             InitializeComponent();
-            UtilityClass.EnableDragForm(this);
+            UtilityClass.EnableDragForm(panelContainer);
             this.role = role;
             this.TaiKhoan = TaiKhoan;
         }
@@ -99,7 +99,7 @@ namespace GUI
             Random random = new Random();
             int countRecord = 0;
             string suffix = "";
-            if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1 || txtSurname.Texts == null || txtSurname.Texts == null || txtCCCD.Texts.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
+            if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1 || txtSurname.Texts.ToString() == "" || txtName.Texts.ToString() == "" || txtCCCD.Texts.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin");
             }
@@ -279,9 +279,6 @@ namespace GUI
                 txtIDAcc.Texts = TaiKhoan;
                 txtIDAcc.Enabled = false;
                 cmbList.Enabled = false;
-                txtSurname.Enabled = false;
-                txtName.Enabled = false;
-                txtCCCD.Enabled = false;
                 string valueItem = "";
                 string valueYearOrLevel = "";
                 string name;

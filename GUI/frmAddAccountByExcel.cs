@@ -37,6 +37,7 @@ namespace Testexcel
         public frmAddAccountByExcel(int role)
         {
             InitializeComponent();
+            UtilityClass.EnableDragForm(this);
             this.role = role;
         }
 
