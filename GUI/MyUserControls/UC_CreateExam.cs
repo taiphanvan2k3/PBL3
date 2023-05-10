@@ -146,11 +146,13 @@ namespace GUI.MyUserControls
                         }
                         else
                         {
-                            GiangVien_BLL.Instance.CreateExam(tbTenBaiKiemTra.Texts, cbLoaiBaiKiemTra.SelectedItem.ToString(),
+                            if(GiangVien_BLL.Instance.CreateExam(tbTenBaiKiemTra.Texts, cbLoaiBaiKiemTra.SelectedItem.ToString(),
                                                           Convert.ToByte(tbThoiGianLamBai.Texts), DateExam,
                                                           Convert.ToByte(cbSoLuongCauHoi.SelectedItem.ToString()), cbLopHocPhan.SelectedItem.ToString(),
-                                                          MaGV, tbMatKhauLamBai.Texts, chbAllowReturn.Checked);
-                            CustomMessageBox.Show("Tạo bài kiểm tra thành công!");
+                                                          MaGV, tbMatKhauLamBai.Texts, chbAllowReturn.Checked))
+                                CustomMessageBox.Show("Tạo bài kiểm tra thành công!");
+                            else
+                                CustomMessageBox.Show("Bài kiểm tra " + cbLoaiBaiKiemTra.SelectedItem.ToString() + " của lớp " + cbLopHocPhan.SelectedItem.ToString() + " đã tồn tại!");
                         }
                     }
                 }
