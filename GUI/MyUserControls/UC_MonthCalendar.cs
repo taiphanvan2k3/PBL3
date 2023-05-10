@@ -1,23 +1,17 @@
 ﻿using GUI.MyCustomControl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Data.Entity.Infrastructure.Design.Executor;
 
 namespace GUI.MyUserControls
 {
     public partial class UC_MonthCalendar : UserControl
     {
-        public event EventHandler ButtonPrevious;
-        public event EventHandler ButtonToday;
-        public event EventHandler ButtonNext;
+        //public event EventHandler ButtonPrevious;
+        //public event EventHandler ButtonToday;
+        //public event EventHandler ButtonNext;
         public event EventHandler ButtonDate;
+
         public UC_Calendar_New UC_Calendar { get; set; }
         public CustomButton[,] btn = new CustomButton[6, 7];
         private Size formOriginalSize;
@@ -79,6 +73,7 @@ namespace GUI.MyUserControls
                     tableLayoutPanel1.Controls.Add(btn[i, j]);
                 }
         }
+
         //Kiem tra nam nhuan
         public bool isLeapYear(int N)
         {
@@ -88,6 +83,7 @@ namespace GUI.MyUserControls
                 return true;
             return false;
         }
+
         //Determine number of day in the month
         public int Nday(int month, int year)
         {
@@ -113,12 +109,14 @@ namespace GUI.MyUserControls
             }
             return 0;
         }
-        public String leng2(String s)
+
+        public string leng2(String s)
         {
             if (s.Length == 1)
                 return "0" + s;
             return s;
         }
+
         public int getDay(int month, int year)
         {
             int N = year - 1;
@@ -127,12 +125,13 @@ namespace GUI.MyUserControls
                 d += Nday(i, N + 1);
             return d;
         }
-        //Determine thứ
+
         public int getThu(int month, int year)
         {
-            //Cong them 2 de lay ra ten thu luon
+            //Lấy thứ trong tuần
             return getDay(month, year) % 7 + 2;
         }
+
         public void reset()
         {
             float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
@@ -151,6 +150,7 @@ namespace GUI.MyUserControls
                 }
             formOriginalSize = this.Size;
         }
+
         public int[,] update(int month, int year)
         {
             reset();
@@ -190,13 +190,15 @@ namespace GUI.MyUserControls
                     I++;
                 }
             }
-            //Determine phần ngày của tháng trước đó
+
+            //Xác định phần ngày của tháng trước đó
             for (int i = start - 1; i >= 0; i--)
             {
                 btn[0, i].Text = (pday-- + "");
                 btn[0, i].BackColor = ((colorBack == Color.White) ? Color.LightGray : colorBack);
             }
-            //Determine phần ngày của tháng sau đó
+
+            //Xác định phần ngày của tháng sau đó
             int st = 1;
             while (!(I == 6 && J == 0))
             {
@@ -211,6 +213,7 @@ namespace GUI.MyUserControls
             }
             return a;
         }
+
         public void LoadDays()
         {
             int[,] a = update(MONTH, YEAR);
@@ -249,30 +252,16 @@ namespace GUI.MyUserControls
             return ds[month];
         }
 
-        private string GetDateOnButton(Button e)
-        {
-            string res = "";
-            /*
-             * 28/2/2023: hello
-             * select *from baiKiemTra
-             * where month(ngaykiemtra)=@p1 and year(ngaykiemtra)=@p2
-             * Mình sẽ truyền @p1 -> giá trị tháng hiện tại, @p2 -> giá trị của năm hiện tại
-             * -> Trả về 1 List<Job> trong đó Job chứa DateTime, tên sự kiện, 
-             * for cho button, mỗi button đi vào List kiếm , nếu xuất hiện sự kiện thì break
-             * hiển thị form và add sự kiện vào cho form hiển thị
-             */
-            return res;
-        }
         #endregion
-        //Events
+
         #region Events
         private void buttonDate_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            //MessageBox.Show(btn.Text + " " + btn.Size.Width + " " + btn.Size.Height);
             UC_Calendar.ButtonDateMonth = btn;
             ButtonDate.Invoke(this, e);
         }
+
         public void LoadTodayDate()
         {
             DateTime now = DateTime.Now;
@@ -281,6 +270,7 @@ namespace GUI.MyUserControls
             btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
         }
+
         /*private void buttonToday_Click(object sender, EventArgs e)
         {
             ButtonToday.Invoke(this, e);
@@ -291,6 +281,7 @@ namespace GUI.MyUserControls
         {
             LoadTodayDate();
         }
+
         public void LoadPreviousDate()
         {
             MONTH--;
@@ -302,6 +293,7 @@ namespace GUI.MyUserControls
             btnDate.Text = GetStringMonth(MONTH) + "  " + YEAR;
             LoadDays();
         }
+
         /*private void btnPrevious_Click(object sender, EventArgs e)
         {
             ButtonPrevious.Invoke(this, e);

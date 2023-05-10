@@ -1,4 +1,5 @@
 ﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -13,7 +14,12 @@ namespace GUI.MyUserControls
             listExams = new List<BaiKiemTra_DTO>();
         }
         #region Properties
+        public event EventHandler HandleClickOnUC;
         public List<BaiKiemTra_DTO> listExams { get; set; }
+
+        /// <summary>
+        /// DateValue vd 1/1/2023
+        /// </summary>
         public string DateValue { get; set; }
         public int NumberOfExam { get; set; } = 0;
         public string Day
@@ -96,6 +102,11 @@ namespace GUI.MyUserControls
                 frm.Location = new Point(frmExam.Location.X + (frmExam.Width - frm.Width) / 2, frmExam.Location.Y + 100);
                 frm.ShowDialog();
             }
+        }
+
+        private void UC_Day_Click(object sender, System.EventArgs e)
+        {
+            HandleClickOnUC.Invoke(this, e);
         }
     }
 }

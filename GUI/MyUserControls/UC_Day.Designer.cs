@@ -46,7 +46,7 @@
             this.pnlEvent.Name = "pnlEvent";
             this.pnlEvent.Size = new System.Drawing.Size(162, 63);
             this.pnlEvent.TabIndex = 1;
-            //this.pnlEvent.Click += new System.EventHandler(this.pblEvent_Click);
+            this.pnlEvent.Click += new System.EventHandler(this.UC_Day_Click);
             // 
             // lbIfMore
             // 
@@ -57,6 +57,7 @@
             this.lbIfMore.Name = "lbIfMore";
             this.lbIfMore.Size = new System.Drawing.Size(0, 20);
             this.lbIfMore.TabIndex = 1;
+            this.lbIfMore.Click += new System.EventHandler(this.UC_Day_Click);
             // 
             // lbExam
             // 
@@ -66,6 +67,7 @@
             this.lbExam.Name = "lbExam";
             this.lbExam.Size = new System.Drawing.Size(0, 20);
             this.lbExam.TabIndex = 0;
+            this.lbExam.Click += new System.EventHandler(this.UC_Day_Click);
             // 
             // btnDay
             // 
@@ -87,6 +89,7 @@
             this.btnDay.Text = "30";
             this.btnDay.TextColor = System.Drawing.Color.Black;
             this.btnDay.UseVisualStyleBackColor = false;
+            this.btnDay.Click += new System.EventHandler(this.UC_Day_Click);
             // 
             // UC_Day
             // 
@@ -95,7 +98,6 @@
             this.Controls.Add(this.pnlEvent);
             this.Name = "UC_Day";
             this.Size = new System.Drawing.Size(162, 112);
-            //this.Click += new System.EventHandler(this.pblEvent_Click);
             this.pnlEvent.ResumeLayout(false);
             this.pnlEvent.PerformLayout();
             this.ResumeLayout(false);
