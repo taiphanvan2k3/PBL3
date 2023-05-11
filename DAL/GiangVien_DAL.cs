@@ -239,15 +239,6 @@ namespace DAL
             }).FirstOrDefault();
             return query;
         }
-        //MaLHPForAll example as OOAD21.13 -> MaLHPForAll is 21.13
-        /*public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHPForAll)
-        {
-            DateTime TimeLamBai = TimeExam.AddMinutes((double)ThoiGianLamBai);
-            var query = db.BAI_KIEM_TRA.Where(bkt => bkt.MaLopHP.Contains(MaLHPForAll)
-                                        && bkt.NgayKiemTra > TimeExam
-                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeLamBai).ToList();
-            return query.Count > 0;
-        }*/
         public List<string> GetListSVForLHP(string MaLHP)
         {
             return db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaLopHP == MaLHP).Select(p => p.MaSV).Distinct().ToList();
@@ -259,8 +250,10 @@ namespace DAL
             List<string> list = GetListSVForLHP(MaLHP);
             var ListLHP = db.SINHVIEN_LOPHOCPHAN.Where(x => list.Contains(x.MaSV)).Select(x => x.MaLopHP).Distinct().ToList();
             var query = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
-                                        && bkt.NgayKiemTra >= TimeExam
-                                        && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeLamBai).ToList();
+                                        && ((bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeLamBai && bkt.NgayKiemTra <= TimeLamBai) 
+                                            || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeLamBai) 
+                                            || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeLamBai && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeExam) 
+                                            || (bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeLamBai))).ToList();
             return query.Count > 0;
         }
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
