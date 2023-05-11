@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDesinEnterDigitCode));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.btnSendBackAgain = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -242,6 +243,7 @@
             this.Controls.Add(this.panelLogin);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDesinEnterDigitCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangePassword));
             this.txtOldPass = new GUI.MyCustomControl.CustomTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtConfirmPass = new GUI.MyCustomControl.CustomTextBox();
@@ -372,6 +373,7 @@
             this.ClientSize = new System.Drawing.Size(600, 350);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmChangePassword";

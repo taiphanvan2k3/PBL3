@@ -194,6 +194,10 @@ namespace GUI
             {
                 pnlManageClass.Height = 68;
             }
+            if (pnlViewCalendar.Height >= 69)
+            {
+                pnlViewCalendar.Height = 68;
+            }
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
@@ -205,6 +209,10 @@ namespace GUI
             else
             {
                 pnlViewCalendar.Height = 68;
+            }
+            if (pnlManageClass.Height >= 69)
+            {
+                pnlManageClass.Height = 68;
             }
         }
 

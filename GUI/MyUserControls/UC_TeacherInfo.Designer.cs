@@ -92,7 +92,6 @@
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(797, 713);
             this.pnlRight.TabIndex = 4;
-            this.pnlRight.Resize += new System.EventHandler(this.pnlRight_Resize);
             // 
             // gbDiaChi
             // 
@@ -227,7 +226,7 @@
             // tbCCCD
             // 
             this.tbCCCD.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbCCCD.BorderColor = System.Drawing.Color.Red;
+            this.tbCCCD.BorderColor = System.Drawing.Color.Black;
             this.tbCCCD.BorderFocusColor = System.Drawing.Color.HotPink;
             this.tbCCCD.BorderRadius = 8;
             this.tbCCCD.BorderSize = 2;
@@ -318,7 +317,7 @@
             // tbSDT
             // 
             this.tbSDT.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbSDT.BorderColor = System.Drawing.Color.Red;
+            this.tbSDT.BorderColor = System.Drawing.Color.Black;
             this.tbSDT.BorderFocusColor = System.Drawing.Color.HotPink;
             this.tbSDT.BorderRadius = 8;
             this.tbSDT.BorderSize = 2;
@@ -341,7 +340,7 @@
             // tbEmailTruongCap
             // 
             this.tbEmailTruongCap.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbEmailTruongCap.BorderColor = System.Drawing.Color.Red;
+            this.tbEmailTruongCap.BorderColor = System.Drawing.Color.Black;
             this.tbEmailTruongCap.BorderFocusColor = System.Drawing.Color.HotPink;
             this.tbEmailTruongCap.BorderRadius = 8;
             this.tbEmailTruongCap.BorderSize = 2;
@@ -365,7 +364,7 @@
             // tbEmailCaNhan
             // 
             this.tbEmailCaNhan.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbEmailCaNhan.BorderColor = System.Drawing.Color.Red;
+            this.tbEmailCaNhan.BorderColor = System.Drawing.Color.Black;
             this.tbEmailCaNhan.BorderFocusColor = System.Drawing.Color.HotPink;
             this.tbEmailCaNhan.BorderRadius = 8;
             this.tbEmailCaNhan.BorderSize = 2;

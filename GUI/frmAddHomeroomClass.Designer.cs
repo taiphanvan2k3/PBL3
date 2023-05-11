@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddHomeroomClass));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbYear = new GUI.MyCustomControl.CustomComboBox();
             this.cmbProgramingList = new GUI.MyCustomControl.CustomComboBox();
@@ -403,6 +404,7 @@
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddHomeroomClass";
             this.Text = "frmAddHomeroomClass";
             this.Load += new System.EventHandler(this.frmAddHomeroomClass_Load);
