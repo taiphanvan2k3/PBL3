@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDesignEnterNewPass));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.btnNotShow2 = new FontAwesome.Sharp.IconButton();
             this.btnDoNotShow = new FontAwesome.Sharp.IconButton();
@@ -293,6 +294,7 @@
             this.Controls.Add(this.panelLogin);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDesignEnterNewPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

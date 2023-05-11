@@ -106,7 +106,7 @@ namespace GUI.MyUserControls
                 }
                 else
                 {
-                    if (MessageBox.Show("Bạn có muốn thay thế thông báo đã gửi vào lớp học phần này trong hôm nay!", "Tồn tại thông báo trong ngày", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (CustomMessageBox.Show("Bạn có muốn thay thế thông báo đã gửi vào lớp học phần này trong hôm nay!", "Tồn tại thông báo trong ngày", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         GiangVien_BLL.Instance.ReplaceNotice(MaGV, dt, cbbLHP.SelectedItem.ToString(), tbTieuDe.Text, tbNoiDung.Texts);
                     }

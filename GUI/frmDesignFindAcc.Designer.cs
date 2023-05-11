@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDesignFindAcc));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.pnlProgressBar = new System.Windows.Forms.Panel();
             this.lblProgress = new System.Windows.Forms.Label();
@@ -223,6 +224,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDesignFindAcc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

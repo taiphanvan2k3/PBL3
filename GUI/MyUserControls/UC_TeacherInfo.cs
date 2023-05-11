@@ -103,11 +103,6 @@ namespace GUI.MyUserControls
             }
             set => cbbQuocTich.SelectedItem = value;
         }
-        /*public string NoiSinh
-        {
-            get => tbNoiSinh.Texts;
-            set => tbNoiSinh.Texts = value;
-        }*/
         public string NoiSinh
         {
             get
@@ -123,6 +118,8 @@ namespace GUI.MyUserControls
             get => tbCCCD.Texts; 
             set => tbCCCD.Texts = value;
         }
+        #endregion
+        #region Methods
         public void LoadCBBNoiSinh()
         {
             cbbNoiSinh.Items.AddRange(AddressSelection_BLL.Instance.GetAllTinhThanh().ToArray());
@@ -135,26 +132,7 @@ namespace GUI.MyUserControls
 
         public void SetDiaChi(string address)
         {
-            //string[] parts = UtilityClass.SplitAddress(address);
-            //uc_Address.TinhThanhPho = parts[0];
-            //uc_Address.QuanHuyen = parts[1];
-            //uc_Address.XaPhuong = parts[2];
             UC_Address.SetDiaChi(address);
-        }
-
-        private void pnlRight_Resize(object sender, EventArgs e)
-        {
-            //int offset = gbTTLienHe.Location.Y;
-            //int heightRemains = pnlRight.Height - gbTTLienHe.Height
-            //                                      - pnlAddress.Height - pnlInfoAnother.Height;
-            //gbTTLienHe.Width = pnlRight.Width - 10;
-            //gbTTLienHe.Height += (heightRemains - 4 * offset) / 3;
-
-            ////Không thay đổi chiều cao cho pnlDiaChi, vì thay đổi nữa thì khoảng trống dư quá nhiều
-            //pnlAddress.Width = gbTTLienHe.Width;
-
-            //pnlInfoAnother.Width = gbTTLienHe.Width;
-            //pnlInfoAnother.Height += (heightRemains - 4 * offset) / 3;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -224,24 +202,5 @@ namespace GUI.MyUserControls
 
 
         #endregion
-        /*void LoadInfo(string Account)
-        {
-            GiangVien_DTO gv = GiangVienBLL.Instance.GetGiangVienById(Account);
-            lbName.Text = gv.Ten;
-            lbIdGV.Text = gv.MaNguoiDung;
-            lbNameKhoa.Text = gv.Khoa;
-            lbNgaySinh.Text = gv.NgaySinh.ToShortDateString();
-            lbGioiTinh.Text = (gv.GioiTinh) ? "Nam" : "Nữ";
-            lbTrinhDo.Text = gv.TrinhDo;
-            lbLuong.Text = gv.Luong.ToString();
-            tbEmailCaNhan.Texts = gv.EmailCaNhan;
-            tbEmailTruongCap.Texts = gv.EmailTruongCap;
-            tbSDT.Texts = gv.Sdt;
-            tbDanToc.Texts = gv.DanToc;
-            tbQuocTich.Texts = gv.QuocTinh;
-            tbNoiSinh.Texts = gv.NoiSinh;
-            tbCCCD.Texts = gv.MaCCCD;
-            SetDiaChi(gv.DiaChi);
-        }*/
     }
 }
