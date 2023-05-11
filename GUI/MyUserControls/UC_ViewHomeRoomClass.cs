@@ -17,6 +17,7 @@ namespace GUI.MyUserControls
         private int currentPage, maxPage;
         private List<SinhVienLSH_View> li;
         private SplitPageHelper<SinhVienLSH_View> helper;
+
         //Thuộc tính này dùng cho giảng viên 
         public List<string> ListMaLSH { get; set; }
         public UC_ViewHomeRoomClass()
@@ -49,8 +50,12 @@ namespace GUI.MyUserControls
         public void LoadData()
         {
             if(ListMaLSH != null)
+            {
+                //Hiển ra combobox để lựa chọn lớp sinh hoạt GV muốn xem (chỉ có ở vai trò GV)
                 if (ListMaLSH.Count > 1)
                     cbbListLSH.Visible = true;
+            }
+
             //Hàm này sẽ được gọi thủ công sau khi UC này được add vào panel
             li = SinhVien_BLL.GetSinhVienInLopSH(MaLopSH);
             lblSoLuongSV.Text = "Danh sách này có: " + li.Count + " sinh viên.";
@@ -61,6 +66,7 @@ namespace GUI.MyUserControls
             helper = new SplitPageHelper<SinhVienLSH_View>(maxRow, li);
             dtgv.DataSource = helper.GetRecords(currentPage);
         }
+
         private void UC_ViewHomeRoomClass_Load(object sender, EventArgs e)
         {
             //Nếu dùng Load thì có thể sẽ không nhất quán dữ liệu vì hàm load chỉ được gọi duy nhất một lần
@@ -73,14 +79,13 @@ namespace GUI.MyUserControls
             }
         }
         #region Không còn dùng
-
-
         private void UC_ViewHomeRoomClass_Paint(object sender, PaintEventArgs e)
         {
             //Nếu dùng hàm Paint thì mỗi lần phóng to, thu nhỏ nó lại gọi lại hàm Paint này nên việc
             //load lại data là không cần thiết
         }
         #endregion
+
         private void btnPrev_Click(object sender, EventArgs e)
         {
             if (currentPage > 1)
@@ -89,6 +94,7 @@ namespace GUI.MyUserControls
                 dtgv.DataSource = helper.GetRecords(currentPage);
             }
         }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currentPage < maxPage)
@@ -97,6 +103,7 @@ namespace GUI.MyUserControls
                 dtgv.DataSource = helper.GetRecords(currentPage);
             }
         }
+
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             currentPage = 1;
@@ -109,6 +116,7 @@ namespace GUI.MyUserControls
             dtgv.DataSource = helper.GetRecords(currentPage);
         }
 
+        //Dùng cho giảng viên xem danh sách lớp chủ nhiệm của họ
         private void cbbListLSH_SelectedIndexChanged(object sender, EventArgs e)
         {
             MaLopSH = cbbListLSH.SelectedItem.ToString();

@@ -10,8 +10,16 @@ namespace GUI.MyUserControls
     public partial class UC_StudentInfoNew : UserControl
     {
         public string MSSV { get; set; }
+
+        //UC_StudentInfoNew sẽ lưu UC_ParentInfo (đóng vai trò như trang sau),
+        //còn UC_ParentInfo sẽ lưu UC_StudentInfoNew (đóng vai trò như trang trước) để việc di chuyển
+        //giữa hai trang này nhanh chóng, đỡ phải tạo lại user control rồi load lên giao diện
         public UC_ParentInfo nextPage { get; set; }
+
+        //CurrentImage chính là ảnh lưu trong CSDL
         private Image CurrentImage { get; set; }
+
+        //bytesImage lưu một mảng các byte của ảnh được chọn từ OpenFileDialog, để lát gán vào sv.AnhCaNhan
         private byte[] bytesImage = null;
         #region Properties
         public string LabelMSSV
@@ -149,11 +157,15 @@ namespace GUI.MyUserControls
         }
         public void SetDiaChi(string address)
         {
-            //string[] tmp = UtilityClass.SplitAddress(address);
-            //uC_AddressSelection.Init();
-            //uC_AddressSelection.TinhThanhPho = tmp[0];
-            //uC_AddressSelection.QuanHuyen = tmp[1];
-            //uC_AddressSelection.XaPhuong = tmp[2];
+            /*
+            string[] tmp = UtilityClass.SplitAddress(address);
+            uC_AddressSelection.Init();
+            uC_AddressSelection.TinhThanhPho = tmp[0];
+            uC_AddressSelection.QuanHuyen = tmp[1];
+            uC_AddressSelection.XaPhuong = tmp[2];
+            */
+
+            //Chuyển tiếp địa chỉ từ frmStudent qua uc_AddressSelection để load lên các combobox
             uC_AddressSelection.SetDiaChi(address);
         }
         #endregion
@@ -166,13 +178,16 @@ namespace GUI.MyUserControls
         private void flowLayoutRight_Resize(object sender, EventArgs e)
         {
             //Khi flowpanel thay đổi kích thước thì phải thay đổi là kích thước của các panel bên trong
-            //vì các panel trong flowpanel không thể tự Anchor
+            //vì các panel trong flowpanel tuy đã Anchor nhưng không tự động resize
 
             //offset là khoảng cách giữa các panel với nhau trong flowpanel
             int offset = pnlThongTinDaoTao.Location.Y;
             int heightRemains = flowLayoutRight.Height - pnlThongTinDaoTao.Height
                                                   - pnlDiaChi.Height - pnlThongTinLienLac.Height;
             pnlThongTinDaoTao.Width = flowLayoutRight.Width - 10;
+
+            //flowpanel gồm 4 panel bên trong và giữa chúng có các offset nên để tính toán xem
+            //chiều cao của mỗi panel sẽ tăng bao nhiều thì sử dụng (heightRemains - 4 * offset) / 3;
             pnlThongTinDaoTao.Height += (heightRemains - 4 * offset) / 3;
 
             //Không thay đổi chiều cao cho pnlDiaChi, vì thay đổi nữa thì khoảng trống dư quá nhiều
@@ -181,6 +196,7 @@ namespace GUI.MyUserControls
             pnlThongTinLienLac.Width = pnlThongTinDaoTao.Width;
             pnlThongTinLienLac.Height += (heightRemains - 4 * offset) / 3;
         }
+
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (nextPage == null)
@@ -194,6 +210,7 @@ namespace GUI.MyUserControls
             }
             if (Parent is Panel)
             {
+                //Lấy ra panel chứa this, xoá toàn bộ controls trong panel đó rồi add UC_ParentInfo vào
                 Panel pnl = Parent as Panel;
                 pnl.Controls.Clear();
                 pnl.Controls.Add(nextPage);
@@ -202,6 +219,8 @@ namespace GUI.MyUserControls
 
         private void cbbNoiSinh_Click(object sender, EventArgs e)
         {
+            //Nếu trước đó chưa có dữ liệu về nơi sinh của sinh viên thì hiện tại cbbNoiSinh đang trống
+            //Nên bây giờ khi click vào combobox này thì load danh sách nơi sinh ra
             if (cbbNoiSinh.Items.Count == 0)
                 LoadCBBNoiSinh();
         }
@@ -242,7 +261,11 @@ namespace GUI.MyUserControls
                 sv.AnhCaNhan = bytesImage;
             if (SinhVien_BLL.UpdateStudentInfo(sv))
             {
+                //Nếu đã cập nhật xong thì CurrentImage chính là ảnh lưu trong CSDL
                 CurrentImage = pictureBox1.Image;
+
+                //Sau khi cập nhật ảnh cá nhân ở user control này thì lấy ra ParentForm của nó để thay đổi
+                //avatar góc trên bên phải
                 frmStudent frm = this.ParentForm as frmStudent;
                 frm.ChangeAvatarTopRight(CurrentImage);
                 CustomMessageBox.Show("Cập nhật thông tin sinh viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -266,6 +289,8 @@ namespace GUI.MyUserControls
 
         private void UC_StudentInfoNew_ParentChanged(object sender, EventArgs e)
         {
+            //Làm như này để giả sử đã mở file chọn ảnh lên rồi nhưng chưa bấm nút lưu thì khi chuyển lại tab
+            //này thì vẫn giữ lại ảnh cũ trước khi chọn ảnh mới
             pictureBox1.Image = CurrentImage;
         }
 

@@ -14,22 +14,7 @@ namespace GUI.MyUserControls
 
         private void LoadCBB()
         {
-            int NamNhapHoc = Convert.ToInt32(MSSV.Substring(3, 2)) + 2000;
-            int NamHienTai = DateTime.Now.Year;
-            int stt = 1;
-            for (int i = NamNhapHoc; i <= NamHienTai - 1; i++)
-            {
-                string str1 = "Học kỳ " + (stt++) + " ( năm học " + i + "-" + (i + 1) + " )";
-                string str2 = "Học kỳ " + (stt++) + " ( năm học " + i + "-" + (i + 1) + " )";
-                cbbHocKy.Items.AddRange(new string[]
-                {
-                    str1,str2
-                });
-            }
-
-            int CurrentMonth = DateTime.Now.Month;
-            if (CurrentMonth >= 8 && CurrentMonth <= 11)
-                cbbHocKy.Items.Add("Học kỳ " + stt + " ( năm học " + NamHienTai + "-" + (NamHienTai + 1) + " )");
+            cbbHocKy.Items.AddRange(SinhVien_BLL.GetListKiHocLoadCBB(MSSV).ToArray());
             cbbHocKy.SelectedIndex = cbbHocKy.Items.Count - 1;
         }
 

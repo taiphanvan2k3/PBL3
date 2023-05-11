@@ -59,6 +59,8 @@ namespace GUI.MyUserControls
                     };
                     dtgv.Columns.Add(viewListColumn);
 
+                    //Đánh dấu là đã thêm 2 cột ButtonColumn vào dtgv, tránh việc mỗi lần SelectedIndexChanged
+                    //thì lại thêm 2 cột đó vào nữa
                     IsInitted = true;
                 }
                 dtgv.Columns["STT"].Width = 100;
@@ -87,6 +89,10 @@ namespace GUI.MyUserControls
                     int buttonHeight = 23;
 
                     string buttonText = "Xem";
+
+                    /*Thay đổi Width,Height trên buttonBounds không ảnh hưởng đến e.Bounds
+                    vì e.Bounds chỉ có get chứ không có set nên e.Bounds chỉ là value chứ không phải variable
+                    Nên chỉ có thể lấy giá trị ra từ nó chứ không thể set vào*/
                     buttonBounds.Width = buttonWidth;
                     buttonBounds.Height = buttonHeight;
 

@@ -23,6 +23,11 @@ namespace GUI.MyUserControls
             SendKeys.Send("%{Down}");
         }
 
+        /// <summary>
+        /// Hiển thị thứ dưới dạng T2,T3,...,CN lên lblShowDateTime
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         private string GetDayOfWeek(DateTime dt)
         {
             if (dt.DayOfWeek == DayOfWeek.Sunday)
@@ -38,6 +43,11 @@ namespace GUI.MyUserControls
             return res;
         }
 
+        /// <summary>
+        /// Trả về thứ trong tuần (Thứ hai, Thứ ba,...,Chủ nhật) 
+        /// </summary>
+        /// <param name="dow"></param>
+        /// <returns></returns>
         private string GetDayOfWeekLongString(string dow)
         {
             if (dow == "CN")
@@ -65,6 +75,8 @@ namespace GUI.MyUserControls
             string Thu = GetDayOfWeekLongString(GetDayOfWeek(dateTimePicker.Value));
             if (KiHocHienTai == 0)
                 KiHocHienTai = SinhVien_BLL.GetKiHocHienTai(MSSV);
+            
+            //Chỉ hiển thị lịch học trong ngày khi sinh viên đã học một môn nào đó
             if (KiHocHienTai != 0)
             {
                 List<LopHocPhan_DTO> li = SinhVien_BLL.GetLichHocTrongNgay(MSSV, KiHocHienTai, Thu);
@@ -73,6 +85,7 @@ namespace GUI.MyUserControls
                 dtgv.DataSource = li;
             }
         }
+
         private void btnXemLich_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -87,6 +100,7 @@ namespace GUI.MyUserControls
             dtgv.Columns["tkb"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 
         }
+
         private void dtgv_DataSourceChanged(object sender, EventArgs e)
         {
             ChangeColumnProperties();

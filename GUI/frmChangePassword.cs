@@ -102,7 +102,7 @@ namespace GUI
             }
             else
             {
-                CustomMessageBox.Show("Vui òng nhập đúng mật khẩu cũ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CustomMessageBox.Show("Vui lòng nhập đúng mật khẩu cũ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void txtNewPass__TextChanged(object sender, EventArgs e)

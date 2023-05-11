@@ -1,7 +1,6 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 
 namespace DAL
@@ -34,69 +33,34 @@ namespace DAL
             }
         }
 
-
+        public bool DeleteModuleClass(string idMoudleClass)
+        {
+            bool success = false;
+            using (var context = new PBL3Entities())
+            {
+                var moudleClassInfo = context.LOP_HOC_PHAN.FirstOrDefault(l => l.MaLopHP == idMoudleClass);
+                if (moudleClassInfo != null)
+                {
+                    try
+                    {
+                        context.LOP_HOC_PHAN.Remove(moudleClassInfo);
+                        context.SaveChanges();
+                        success = true;
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
         #endregion
         public int GetNumberOfStudentInClass(string MaLopHP)
         {
             return db.LOP_HOC_PHAN.Where(lhp => lhp.MaLopHP == MaLopHP).Select(lsh => lsh.SINHVIEN_LOPHOCPHAN.Count).FirstOrDefault();
         }
 
-
-        /*public List<LopHocPhan_DTO> GetListHocPhanOfStudent(string MSSV, int KiHoc, int NamHoc)
-        {
-            //Lấy ra các môn học của sinh viên có MSSV ở KiHoc,NamHoc nào đó, rồi mới đi Join bảng
-            var li = db.SINHVIEN_LOPHOCPHAN.Where(i => i.MaSV == MSSV && i.KiHoc == KiHoc && i.NamHoc == NamHoc)
-                .Join(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, lhp => lhp.MaLopHP, (svhp, lhp) => new
-                {
-                    svhp.MaLopHP,
-                    lhp.MON_HOC.SoTC,
-                    TenHP = lhp.MON_HOC.TenMH,
-                    lhp.MaGV
-                })
-                .Join(db.GIANG_VIEN, hp => hp.MaGV, gv => gv.MaGV, (hp, gv) => new
-                {
-                    hp.MaLopHP,
-                    hp.TenHP,
-                    hp.SoTC,
-                    HoGV = gv.NGUOI_DUNG.Ho,
-                    TenGV = gv.NGUOI_DUNG.Ten
-                })
-                .Join(db.THOI_KHOA_BIEU, hp => hp.MaLopHP, tkb => tkb.MaLopHP, (hp, tkb) => new
-                {
-                    hp.MaLopHP,
-                    hp.TenHP,
-                    hp.SoTC,
-                    hp.HoGV,
-                    hp.TenGV,
-                    tkb.Thu,
-                    tkb.TietBD,
-                    tkb.TietKetThuc,
-                    tkb.MaPhongHoc
-                });
-            List<LopHocPhan_DTO> res = new List<LopHocPhan_DTO>();
-
-            int stt = 0;
-            foreach (var i in li)
-            {
-                stt++;
-                res.Add(new LopHocPhan_DTO()
-                {
-                    STT = stt,
-                    MaHP = i.MaLopHP,
-                    TenHP = i.TenHP,
-                    SoTC = i.SoTC,
-                    TenGV = i.HoGV + " " + i.TenGV,
-                    tkb = new ThoiKhoaBieu_DTO(i.Thu, i.TietBD, i.TietBD, i.MaLopHP)
-                });
-            }
-            return res;
-        }*/
-
-        /*public int GetKiHocHienTai(string MSSV)
-        {
-            return db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaSV == MSSV).OrderByDescending(p => p.KiHoc)
-                .Select(p => p.KiHoc).FirstOrDefault();
-        }*/
         public LopHocPhan_AdminEdit GetHocPhanByMaHP(string MaHP)
         {
             //Trả về các thông tin cần như: mã HP, tênHP,SoTC,MaGV,HoGV,KiHoc,NamHoc,Thu,TietBD,TietKT
@@ -143,9 +107,10 @@ namespace DAL
 
         public List<SinhVienLHP_View> GetSinhVienInLHP(string MaHP)
         {
-            //Trả về danh sách sinh viên hiển thị lên dtgv của frmViewDetailModuleClass
-            //Danh sách này cũng được dùng để hiển thị danh sách sinh viên khi GV bấm vào xem danh
-            //sách lớp ở giao diện GV
+            /*Trả về danh sách sinh viên hiển thị lên dtgv của frmViewDetailModuleClass
+            Danh sách này cũng được dùng để hiển thị danh sách sinh viên khi GV bấm vào xem danh
+            sách lớp ở giao diện GV
+            */
             var li = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP)
                 .Join(db.SINHVIEN_LOPHOCPHAN, hp => hp.MaLopHP, sv => sv.MaLopHP, (hp, sv) => new
                 {
@@ -164,11 +129,11 @@ namespace DAL
         public bool UpdateSoTC(string MaHP, int SoTC)
         {
             string MaMH = db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaHP).Select(p => p.MaMH).FirstOrDefault();
+
             //Nếu GetMonHocById từ MonHoc_DAL rồi cập nhật SoTC rồi lấy db.SaveChanges() ở đây thì sẽ không
             //thực hiện bất kì việc cập nhật nào vì 2 đối tượng db ở 2 lớp DAL là khác nhau
             return MonHoc_DAL.Instance.UpdateSoTC(MaMH, SoTC);
         }
-
 
         /// <summary>
         /// Hàm này phục vụ cho việc add sinh viên vào lớp học phần
@@ -226,7 +191,6 @@ namespace DAL
             return db.SaveChanges() > 0;
         }
 
-
         public List<InformationClass_DTO> GetInformationClasses()
         {
             var result = from lhp in db.LOP_HOC_PHAN
@@ -256,29 +220,6 @@ namespace DAL
             return db.LOP_HOC_PHAN.Count();
         }
 
-        public bool DeleteModuleClass(string idMoudleClass)
-        {
-            bool success = false;
-            using (var context = new PBL3Entities())
-            {
-                var moudleClassInfo = context.LOP_HOC_PHAN.FirstOrDefault(l => l.MaLopHP == idMoudleClass);
-                if (moudleClassInfo != null)
-                {
-                    try
-                    {
-                        context.LOP_HOC_PHAN.Remove(moudleClassInfo);
-                        context.SaveChanges();
-                        success = true;
-                    }
-                    catch
-                    {
-                        success = false;
-                    }
-                }
-            }
-            return success;
-        }
-
         public List<ThongBao_DTO> GetNotificationsInSpecificBound(string MaSV, DateTime StartDateFilter)
         {
             //Nếu so sánh trực tiếp thì có thể không ra kết quả như mong đợi vì toán tử >=,.. của DateTime
@@ -304,7 +245,8 @@ namespace DAL
                     tb.TieuDe,
                     tb.NDThongBao,
                     tb.MaGVThongBao
-                }).Where(p => p.NgayTao >= StartDateFilter)
+                })
+                .Where(p => p.NgayTao >= StartDateFilter)
                 .Join(db.NGUOI_DUNG, tb => tb.MaGVThongBao, nd => nd.MaNguoiDung, (tb, nd) => new ThongBao_DTO
                 {
                     MaLopHP = tb.MaLopHP,
@@ -320,18 +262,17 @@ namespace DAL
         public List<InformationSubject_DTO> getListSubjects()
         {
             var result = db.MON_HOC
-                .Join(db.KHOAs, mh => mh.MaKhoa, kh => kh.MaKhoa, (mh, kh) => new {MH = mh, KH = kh})
+                .Join(db.KHOAs, mh => mh.MaKhoa, kh => kh.MaKhoa, (mh, kh) => new { MH = mh, KH = kh })
                 .OrderBy(x => x.KH.TenKhoa)
                 .Select(x => new InformationSubject_DTO
                 {
-                    MaMh =  x.MH.MaMH,
-                    TenMh =  x.MH.TenMH,
+                    MaMh = x.MH.MaMH,
+                    TenMh = x.MH.TenMH,
                     SoTC = x.MH.SoTC,
                     TenKhoa = x.KH.TenKhoa
                 })
                 .ToList();
             return result;
         }
-
     }
 }

@@ -10,11 +10,6 @@ namespace DAL
     {
         private static PBL3Entities db = new PBL3Entities();
 
-        public static List<string> GetAllTinhThanh()
-        {
-            return db.cities.Select(p => p.tinhThanhPho).ToList();
-        }
-
         public static bool CheckIdStudentExist(string MSSV)
         {
             return db.THONG_TIN_DANG_NHAP.Where(p => p.TaiKhoan == MSSV
@@ -159,6 +154,12 @@ namespace DAL
                 {
                     //Cũng có thể có bài kiểm tra rồi nhưng sinh viên này chưa làm thì cũng chưa có điểm
                     BaiKiemTra_tmp = bkt,
+
+                    /*Đang thực hiện truy vấn theo chiều từ BaiKiemTra->LamBaiKiemTra
+                    Do đó sẽ lấy ra tất cả lịch sử làm bài của CÁC SINH VIÊN làm bài kiểm tra đó
+                    => Cần phải thêm một bước Where ở đây và dùng DefaultIfEmpty() để nếu sinh viên này
+                    chưa làm bài kiểm tra đó thì vẫn hiển thị thông tin của lớp học phần đó
+                    */
                     LamBaiKiemTra_tmp = lambkt.Where(p => p.MaSV == MaSV).DefaultIfEmpty()
                 })
                 .SelectMany(i1 => i1.LamBaiKiemTra_tmp.Select(i2 => new
@@ -172,10 +173,14 @@ namespace DAL
                     i1.BaiKiemTra_tmp.CtTinhDiem,
                     i1.BaiKiemTra_tmp.LoaiBaiKiemTra,
                     Diem = (double?)i2.Diem
+                    //Nếu để Where(p => p.MaSV == MaSV) ngay sau SelectMany này thì kết quả
+                    //trả về chỉ các bản ghi nào mà sinh viên có làm bài kiểm tra của lớp học phần đó 
                 })).OrderBy(p=>p.KiHoc).ToList();
 
             //Dùng Dictionary ở đây để lấy ra KetQuaHocTap của 1 lớp HP nào đó một cách nhanh chóng
             Dictionary<string, KetQuaHocTap> dict = new Dictionary<string, KetQuaHocTap>();
+
+            //Gộp kết quả làm bài của các bài kiểm tra vào theo từng lớp học phần
             List<KetQuaHocTap> res = new List<KetQuaHocTap>();
             int STT = 1;
             foreach (var item in li)
@@ -217,7 +222,5 @@ namespace DAL
             }
             return res;
         }
-
-
     }
 }

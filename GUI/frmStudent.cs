@@ -27,6 +27,7 @@ namespace GUI
             state = SelectionState.Home;
         }
 
+        //Dùng enum để lưu lại trạng thái user control nào đang được add vào panel để show
         private enum SelectionState
         {
             Home,
@@ -104,34 +105,48 @@ namespace GUI
 
         //Hai biến bool này để lưu trạng thái đóng mở của panelLop, panelCalendar
         //để khi panelMenuTong đưa về trạng thái mở rộng ban đầu thì hiển thị lại trạng thái đóng, mở tương
-        //ứng đó
+        //ứng của 2 panel đó
         private bool isExpandingClass = false;
         private bool isExpandingCalendar = false;
         private void btnExpandMenu_Click(object sender, EventArgs e)
         {
             if (panelMenuTong.Width == 237)
             {
+                //Khi menu trái có chiều rộng 237 và thực hiện nhấn vào button expand menu thì
+                //thực hiện thu hẹp menu trái
                 originalLocationOfBtnMenuExpand = btnExpandMenu.Location;
                 pictureBoxMenu.Visible = false;
                 btnExpandMenu.Location = pictureBoxMenu.Location;
                 panelMenuTong.Width = 58;
+
+                //Khi thu hẹp menu trái thì đồng thời thu gọn lại trạng thái xổ xuống của tab "Xem lịch" và "Lớp"
                 if (isExpandingCalendar)
                     panelCalendar.Height = panelCalendar.MinimumSize.Height;
                 if (isExpandingClass)
                     panelLop.Height = panelLop.MinimumSize.Height;
-                panelShowDetail.Location = new Point(panelShowDetail.Location.X - (237 - 58), panelShowDetail.Location.Y);
+
+                //Di chuyển panel về phía bên trái vì lúc này menu đã được thu gọn
+                //và khoảng dịch chuyển cũng chính là offset = "chiều rộng ban đầu" - "chiều rộng sau thu hẹp"
+                panelShowDetail.Location = new Point(panelShowDetail.Location.X - (237 - 58), 
+                                                panelShowDetail.Location.Y);
                 panelShowDetail.Width += (237 - 58);
             }
             else
             {
+                //Thực hiện mở rộng menu trái
                 panelMenuTong.Width = 237;
                 pictureBoxMenu.Visible = true;
                 btnExpandMenu.Location = originalLocationOfBtnMenuExpand;
+
+                //Do có lưu lại trạng thái đóng mở của các tab nên khi mở rộng lại menu trái thì dựa
+                //vào trạng thái đó mà thực hiện xổ xuống các tab "Xem lịch", "Lớp"
                 if (isExpandingCalendar)
                     panelCalendar.Height = panelCalendar.MaximumSize.Height;
                 if (isExpandingClass)
                     panelLop.Height = panelLop.MaximumSize.Height;
-                panelShowDetail.Location = new Point(panelShowDetail.Location.X + (237 - 58), panelShowDetail.Location.Y);
+
+                panelShowDetail.Location = new Point(panelShowDetail.Location.X + (237 - 58), 
+                                           panelShowDetail.Location.Y);
                 panelShowDetail.Width -= (237 - 58);
             }
         }
@@ -139,9 +154,10 @@ namespace GUI
         private void lblAvatar_TextChanged(object sender, EventArgs e)
         {
             //Thay đổi lại vị trí của label hiển thị tên sv ở góc trên bên phải để tránh tràn nội dung
+            //qua avatar góc trên bên phải
             int width = TextRenderer.MeasureText(lblAvatar.Text, lblAvatar.Font).Width;
             lblAvatar.Location = new Point(avatarTopRight.Location.X - width - 20, lblAvatar.Location.Y);
-            label1.Location = new Point(lblAvatar.Location.X, label1.Location.Y);
+            lblXinChao.Location = new Point(lblAvatar.Location.X, lblXinChao.Location.Y);
         }
         #endregion
 
@@ -154,11 +170,11 @@ namespace GUI
             uC_StudentInfoNew.GioiTinh = sv.GioiTinh;
             if (sv.AnhCaNhan == null)
             {
+                //Nếu sinh viên chưa có ảnh thì lấy ảnh mặc định bỏ vào
                 if (sv.GioiTinh)
                     avatarTopRight.Image = GUI.Properties.Resources.studentAvatar;
                 else
                     avatarTopRight.Image = GUI.Properties.Resources.GirlStudentDefault;
-
             }
             else
             {
@@ -180,6 +196,9 @@ namespace GUI
 
             if (sv.QuocTich != "")
                 uC_StudentInfoNew.QuocTinh = sv.QuocTich;
+
+            //Truyền các dữ liệu đã truy vấn được ở đây qua user control để đỡ phải truy vấn lại
+            //từ đầu -> Cải thiện hiệu suất hơn
             uC_StudentInfoNew.Khoa = sv.Khoa;
             uC_StudentInfoNew.ChuongTrinhDaoTao = sv.TenCTDT;
             uC_StudentInfoNew.LopSinhHoat = sv.MaLopSH;
@@ -194,6 +213,8 @@ namespace GUI
         }
         private void frmStudent_Load(object sender, EventArgs e)
         {
+            //Ban đầu khi mới chạy chương trình thì UC_StudentInfo sẽ được add vào đầu tiên,
+            //kèm với load dữ liệu vào user control đó
             LoadStudentInfo();
             panelShowDetail.Controls.Clear();
             uC_StudentInfoNew.MSSV = MSSV;

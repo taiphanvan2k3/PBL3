@@ -33,7 +33,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblXinChao = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
             this.panelCalendar = new System.Windows.Forms.Panel();
             this.btnXemTKB = new FontAwesome.Sharp.IconButton();
@@ -82,7 +82,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
             this.panel3.Controls.Add(this.avatarTopRight);
             this.panel3.Controls.Add(this.lblAvatar);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblXinChao);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -119,18 +119,18 @@
             this.lblAvatar.Text = "Phan Văn Tài";
             this.lblAvatar.TextChanged += new System.EventHandler(this.lblAvatar_TextChanged);
             // 
-            // label1
+            // lblXinChao
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(1297, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Xin chào";
+            this.lblXinChao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblXinChao.AutoSize = true;
+            this.lblXinChao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(250)))));
+            this.lblXinChao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXinChao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblXinChao.Location = new System.Drawing.Point(1297, 17);
+            this.lblXinChao.Name = "lblXinChao";
+            this.lblXinChao.Size = new System.Drawing.Size(66, 18);
+            this.lblXinChao.TabIndex = 1;
+            this.lblXinChao.Text = "Xin chào";
             // 
             // btnCalendar
             // 
@@ -574,7 +574,7 @@
         private System.Windows.Forms.Timer timerExpandClass;
         private System.Windows.Forms.Timer timerExpandCalendar;
         private System.Windows.Forms.Label lblAvatar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblXinChao;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnLogOut;
         private System.Windows.Forms.PictureBox pictureBoxMenu;

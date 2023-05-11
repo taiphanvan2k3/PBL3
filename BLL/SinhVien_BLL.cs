@@ -61,6 +61,9 @@ namespace BLL
         public static List<SinhVienLSH_View> GetSinhVienInLopSH(string MaLopSH)
         {
             List<SINH_VIEN> li = SinhVien_DAL.GetSinhVienInLopSH(MaLopSH);
+
+            //Thực hiện chuyển đối tượng từ SINHVIEN -> SinhVienLSH_View vì GUI chỉ thao tác được
+            //với các đối tượng ở DTO, không thao tác được với các Entity ở DAL
             List<SinhVienLSH_View> res = new List<SinhVienLSH_View>();
             int stt = 1;
             foreach (SINH_VIEN sv in li)
@@ -101,8 +104,10 @@ namespace BLL
                 li[i].STT = i + 1;
             return li;
         }
+
         public static List<LopHocPhan_DTO> GetLichHocTrongNgay(string MaSV, int KiHoc, string Thu)
         {
+            //Tận dụng lại lịch học trong tuần để lấy ra lịch học trong ngày
             var li = SinhVien_DAL.GetLichHocTrongTuan(MaSV, KiHoc);
             List<LopHocPhan_DTO> res = new List<LopHocPhan_DTO>();
             foreach (LopHocPhan_DTO lhp in li)
