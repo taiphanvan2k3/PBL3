@@ -394,7 +394,7 @@
             this.btnCreateQues.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnCreateQues.Size = new System.Drawing.Size(164, 55);
             this.btnCreateQues.TabIndex = 5;
-            this.btnCreateQues.Text = "A";
+            this.btnCreateQues.Text = "Tạo";
             this.btnCreateQues.TextColor = System.Drawing.Color.Black;
             this.btnCreateQues.UseVisualStyleBackColor = false;
             this.btnCreateQues.Click += new System.EventHandler(this.btnCreateQues_Click);
