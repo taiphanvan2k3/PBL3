@@ -76,9 +76,11 @@ namespace GUI.MyUserControls
             Form frmSendNotification = new Form()
             {
                 Width = 1175,
-                Height = 700,
+                Height = 800,
                 Text = "Thông báo đến lớp học phần " + MaLopHP,
-                StartPosition = FormStartPosition.CenterScreen
+                StartPosition = FormStartPosition.CenterScreen,
+                MaximumSize = new System.Drawing.Size(1175, 800),
+                MinimumSize = new System.Drawing.Size(1175, 800)
             };
             UC_SendNoticeToModuleClass uC_SendNotification = new UC_SendNoticeToModuleClass()
             {

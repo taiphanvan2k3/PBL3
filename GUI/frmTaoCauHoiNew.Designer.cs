@@ -434,6 +434,8 @@
             this.Controls.Add(this.panelGradient2);
             this.Controls.Add(this.panelGradient1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1198, 841);
+            this.MinimumSize = new System.Drawing.Size(1198, 841);
             this.Name = "frmTaoCauHoiNew";
             this.Text = "frmTaoCauHoiNew";
             this.Load += new System.EventHandler(this.frmTaoCauHoiNew_Load);
