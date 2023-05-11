@@ -342,7 +342,7 @@ namespace GUI
                 SoLanViPham = this.SoLanViPham,
                 ThoiGianLamBai = this.StartTime,
                 ThoiGianNopBai = SubmitTime,
-                Diem = 10.0 * SoCauDung / this.TongSoCauHoi
+                Diem = Math.Round(10.0 * SoCauDung / this.TongSoCauHoi,2)
             };
             BaiKiemTra_BLL.Instance.SaveResultOfDoExam(kq);
 
@@ -361,7 +361,7 @@ namespace GUI
                 SoCauDung = SoCauDung,
                 TongSoCauHoi = this.TongSoCauHoi,
                 SoLanViPham = this.SoLanViPham,
-                DiemSo = 10.0 * SoCauDung / this.TongSoCauHoi,
+                DiemSo = Math.Round(10.0 * SoCauDung / this.TongSoCauHoi, 2)
             };
             finish.Dock = DockStyle.Fill;
             panelMain.Height = this.Height;

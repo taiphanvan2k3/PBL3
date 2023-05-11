@@ -120,9 +120,9 @@ namespace DAL
         }
 
 
-        public List<KetQuaLamKiemTra> GetKetQuaLamBaiTheoKi(string MaSV, int? KiHoc = null)
+        public List<KetQuaLamKiemTra> GetAllKetQuaLamBai(string MaSV)
         {
-            // Trả về kết quả làm bài kiểm tra của sinh viên theo kì
+            // Trả về kết quả làm bài kiểm tra của sinh viên
             return db.LAM_BAI_KIEM_TRA.Where(sv => sv.MaSV == MaSV)
                 .Join(db.BAI_KIEM_TRA, lamkt => lamkt.MaBaiKiemTra, baikt => baikt.MaBaiKiemTra, (lamkt, baikt) => new
                 {
@@ -149,7 +149,6 @@ namespace DAL
                     Diem = bkt.Diem,
                     SoLanViPham = bkt.SoLanViPham,
                 }).ToList();
-            //.Where(p => KiHoc == null || p.KiHoc == (int)KiHoc)
         }
 
         public List<KetQuaLamKiemTra_SVLHP> GetKetQuaKiemTra_LHP(int MaBaiKiemTra)

@@ -158,6 +158,9 @@ namespace GUI
                     viewHistoryDoExam = new UC_ViewHistoryDoExam() { MaSV = this.MaSV };
                     viewHistoryDoExam.Dock = DockStyle.Fill;
                 }
+
+                //Gọi phương thức này để cập nhật lại dữ liệu mỗi khi bấm vào tab xem lịch sử này
+                viewHistoryDoExam.LoadData();
                 pnlMain.Controls.Add(viewHistoryDoExam);
             }
         }
