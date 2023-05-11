@@ -33,18 +33,24 @@ namespace GUI
             tbC._TextChanged += CheckAllConditions;
             tbD._TextChanged += CheckAllConditions;
             cbMonHoc.SelectedIndexChanged += CheckAllConditions;
+            cbPhanLoai.SelectedIndexChanged += CheckAllConditions;
         }
         public string MaGV { get; set;  }
         private void frmTaoCauHoiNew_Load(object sender, EventArgs e)
         {
             cbMonHoc.Items.Add("Chọn môn học");
             cbMonHoc.Items.AddRange(GiangVien_BLL.Instance.GetMonHocInKhoaForGV(MaGV).ToArray());
+            string[] str = { "Chọn phân loại", "Giữa kỳ", "Cuối kỳ", "Test" };
+            cbPhanLoai.Items.AddRange(str);
             cbMonHoc.SelectedIndex = 0;
         }
         //Xử lí sự kiện enable button tạo câu hỏi 
         private void CheckAllConditions(object sender, EventArgs e)
         {
             bool MonHocChoosed = !(cbMonHoc.SelectedItem.ToString() == "Chọn môn học" );
+            if(cbPhanLoai.SelectedIndex == -1)
+                cbPhanLoai.SelectedIndex = 0;
+            bool PhanLoaiChoosed = !(cbPhanLoai.SelectedItem.ToString() == "Chọn phân loại");
             bool allRbOrChbChecked;
             if(!tgMultiAnswer.Checked)
                 allRbOrChbChecked = rbA.Checked || rbB.Checked || rbC.Checked || rbD.Checked;
@@ -56,7 +62,7 @@ namespace GUI
                                   (tbC.ForeColor == Color.Black && tbC.Texts != "") &&
                                   (tbD.ForeColor == Color.Black && tbD.Texts != "");
 
-            btnCreateQues.Enabled = MonHocChoosed && allRbOrChbChecked && allTextEntered;
+            btnCreateQues.Enabled = MonHocChoosed && PhanLoaiChoosed && allRbOrChbChecked && allTextEntered;
         }
         private void tbQuestion_Enter(object sender, EventArgs e)
         {
@@ -181,23 +187,13 @@ namespace GUI
         private void btnCreateQues_Click(object sender, EventArgs e)
         {
             string DapAnDung = "";
-            string PhanLoai;
-            if(tgMultiAnswer.Checked)
-            {
-                DapAnDung += chbA.Checked ? "a" : "";
-                DapAnDung += chbB.Checked ? "b" : "";
-                DapAnDung += chbC.Checked ? "c" : "";
-                DapAnDung += chbD.Checked ? "d" : "";
-                PhanLoai = "Multi";
-            }
-            else
-            {
-                DapAnDung += rbA.Checked ? "a" : "";
-                DapAnDung += rbB.Checked ? "b" : "";
-                DapAnDung += rbC.Checked ? "c" : "";
-                DapAnDung += rbD.Checked ? "d" : "";
-                PhanLoai = "Single";
-            }
+            string PhanLoai = "";
+            if (cbPhanLoai.SelectedItem.ToString() == "Giữa kỳ")
+                PhanLoai = "GK";
+            else if (cbPhanLoai.SelectedItem.ToString() == "Cuối kỳ")
+                PhanLoai = "CK";
+            else if (cbPhanLoai.SelectedItem.ToString() == "Cuối kỳ")
+                PhanLoai = "Test";
             GiangVien_BLL.Instance.CreateQuestion(tbQuestion.Texts, tbA.Texts, tbB.Texts, tbC.Texts, tbD.Texts, DapAnDung, ((CBBItem)cbMonHoc.SelectedItem).Id, PhanLoai);
             CustomMessageBox.Show("Tạo câu hỏi thành công!");
         }
