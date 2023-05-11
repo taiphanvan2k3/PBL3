@@ -19,7 +19,6 @@ namespace GUI.MyUserControls
             InitializeComponent();
         }
 
-
         private void UC_XemKetQuaHocTap_Load(object sender, EventArgs e)
         {
             kqHocTap = SinhVien_BLL.GetKetQuaHocTap(MaSV);

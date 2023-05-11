@@ -67,25 +67,32 @@ namespace GUI.MyUserControls
         }
         #endregion
 
-        private void UC_ViewHistoryDoExam_Load(object sender, EventArgs e)
+        public void LoadData()
         {
-            kqLamBai = BaiKiemTra_BLL.Instance.GetKetQuaLambaiTheoDieuKien(MaSV, null, null);
+            kqLamBai = BaiKiemTra_BLL.Instance.GetAllKetQuaLamBai(MaSV);
             if (kqLamBai.Count > 0)
             {
                 AutoCompleteText = new AutoCompleteStringCollection();
                 AutoCompleteText.AddRange(kqLamBai.Select(p => p.TenMH + " - " + p.MaHP).Distinct().ToArray());
                 txtTenHP.AutoCompleteCustomSource = AutoCompleteText;
             }
+            cbbKiHoc.Items.Clear();
             cbbKiHoc.Items.Add("Xem tất cả");
             cbbKiHoc.Items.AddRange(SinhVien_BLL.GetListKiHocLoadCBB(MaSV).ToArray());
-            kqLamBai.AddRange(kqLamBai);
-            kqLamBai.AddRange(kqLamBai);
 
             //Hiển thị dữ liệu lên datagridview
             maxPage = (int)Math.Ceiling(kqLamBai.Count * 1.0 / maxRow);
             currentPage = 1;
             helper = new SplitPageHelper<KetQuaLamKiemTra>(maxRow, kqLamBai);
             cbbKiHoc.SelectedIndex = 0;
+        }
+
+        private void UC_ViewHistoryDoExam_Load(object sender, EventArgs e)
+        {
+            //Tạo riêng ra phương thức LoadData mà không viết vào event load vì
+            //event load chỉ gọi duy nhất 1 lần lúc tạo user control, nhưng muốn mỗi lần chuyển tab
+            //thì cập nhật lại giao diện nên sẽ gọi phương thức này mỗi khi bấm vào tab xem lịch sử
+            LoadData();
         }
 
         private void cbbKiHoc_SelectedIndexChanged(object sender, EventArgs e)

@@ -39,18 +39,16 @@ namespace BLL
         }
 
         /// <summary>
-        /// Trả về kết quả làm bài kiểm tra của sinh viên theo kì
+        /// Trả về kết quả làm bài của tất cả bài kiểm tra mà sinh viên
+        /// đã làm để hiển thị lên dtgv của UC_ViewHistoryDoExam
         /// </summary>
         /// <param name="MaSV"></param>
         /// <param name="KiHoc"></param>
         /// <param name="TenHP"></param>
         /// <returns></returns>
-        public List<KetQuaLamKiemTra> GetKetQuaLambaiTheoDieuKien(string MaSV, int? KiHoc = null, string TenHP = null)
+        public List<KetQuaLamKiemTra> GetAllKetQuaLamBai(string MaSV)
         {
-            var li = BaiKiemTra_DAL.Instance.GetKetQuaLamBaiTheoKi(MaSV, KiHoc);
-            if (TenHP == null)
-                return li;
-            return li.Where(p => p.TenMH == TenHP).ToList();
+            return BaiKiemTra_DAL.Instance.GetAllKetQuaLamBai(MaSV);
         }
 
         /// <summary>
