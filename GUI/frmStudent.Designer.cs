@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudent));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.lblXinChao = new System.Windows.Forms.Label();
             this.btnCalendar = new FontAwesome.Sharp.IconButton();
@@ -60,9 +59,9 @@
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panelMenuTong = new System.Windows.Forms.Panel();
             this.panelShowDetail = new System.Windows.Forms.Panel();
+            this.avatarTopRight = new GUI.MyCustomControl.CircularPictureBox();
             this.circularPictureBox = new GUI.MyCustomControl.CircularPictureBox();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             this.panelCalendar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,6 +73,7 @@
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMenuTong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,23 +88,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1532, 69);
             this.panel3.TabIndex = 2;
-            // 
-            // avatarTopRight
-            // 
-            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
-            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.avatarTopRight.BorderSize = 2;
-            this.avatarTopRight.GradientAngle = 50F;
-            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.avatarTopRight.Location = new System.Drawing.Point(1452, 1);
-            this.avatarTopRight.Name = "avatarTopRight";
-            this.avatarTopRight.Size = new System.Drawing.Size(65, 65);
-            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarTopRight.TabIndex = 3;
-            this.avatarTopRight.TabStop = false;
             // 
             // lblAvatar
             // 
@@ -212,7 +195,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(228, 591);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(228, 710);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // panel1
@@ -453,9 +436,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
             this.panel2.Controls.Add(this.btnLogOut);
-            this.panel2.Location = new System.Drawing.Point(3, 604);
+            this.panel2.Location = new System.Drawing.Point(3, 730);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(228, 297);
+            this.panel2.Size = new System.Drawing.Size(228, 171);
             this.panel2.TabIndex = 8;
             // 
             // btnLogOut
@@ -470,7 +453,7 @@
             this.btnLogOut.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(142)))));
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 239);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 113);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(205, 50);
             this.btnLogOut.TabIndex = 0;
@@ -501,6 +484,23 @@
             this.panelShowDetail.Name = "panelShowDetail";
             this.panelShowDetail.Size = new System.Drawing.Size(1293, 831);
             this.panelShowDetail.TabIndex = 11;
+            // 
+            // avatarTopRight
+            // 
+            this.avatarTopRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.avatarTopRight.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.avatarTopRight.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.avatarTopRight.BorderColor2 = System.Drawing.Color.HotPink;
+            this.avatarTopRight.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.avatarTopRight.BorderSize = 2;
+            this.avatarTopRight.GradientAngle = 50F;
+            this.avatarTopRight.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.avatarTopRight.Location = new System.Drawing.Point(1452, 1);
+            this.avatarTopRight.Name = "avatarTopRight";
+            this.avatarTopRight.Size = new System.Drawing.Size(65, 65);
+            this.avatarTopRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarTopRight.TabIndex = 3;
+            this.avatarTopRight.TabStop = false;
             // 
             // circularPictureBox
             // 
@@ -536,7 +536,6 @@
             this.Load += new System.EventHandler(this.frmStudent_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             this.panelCalendar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -548,6 +547,7 @@
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelMenuTong.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatarTopRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
 
