@@ -143,6 +143,7 @@ namespace DAL
                 .ToList();
             //Bởi vì LinQ to entities k hỗ trợ lấy ra Date từ datetime trong Database nên phải dùng
             //DbFunctions.TruncateTime(Datetime) để lấy ra phần ngày không chứa giờ
+
             //Nếu tồn tại thông báo trong ngày thì trả về false
             return (query.Count == 0 ? true : false);
         }
@@ -298,7 +299,6 @@ namespace DAL
         }
         public bool UpdateTeacherInfo(GiangVien_DTO gv)
         {
-            //Hàm này dùng trong frmStudent để cập nhật thông tin cá nhân
             NGUOI_DUNG nd = db.NGUOI_DUNG.Where(p => p.MaNguoiDung == gv.MaNguoiDung).FirstOrDefault();
             if (nd != null)
             {

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
@@ -87,6 +88,12 @@ namespace BLL
         {
             return new string[] { "Việt Nam", "Lào", "Campuchia", "Thái Lan", "Malaysia", "Myanmar", "Philippines",
                 "Đông Timor", "Brunei", "Singapore" };
+            /*return CultureInfo.GetCultures(CultureTypes.SpecificCultures)
+            .Select(x => new RegionInfo(x.LCID))
+            .Select(x => x.DisplayName)
+            .Distinct()
+            .OrderBy(x => x)
+            .ToArray();*/
         }
 
         public static string GetAddressFromUCAddressSelection(string SoDuong, string TinhThanhPho,

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnterPassToDoExam));
             this.label1 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -182,6 +183,7 @@
             this.Controls.Add(this.separator);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEnterPassToDoExam";
             this.Text = "frmEnterPassToDoExam";
             this.ResumeLayout(false);

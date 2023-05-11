@@ -30,10 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShowListStudentInModuleClass));
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.lblSoLuongSV = new System.Windows.Forms.Label();
             this.btnPrevious = new GUI.MyCustomControl.CustomButton();
             this.btnNext = new GUI.MyCustomControl.CustomButton();
@@ -93,17 +94,6 @@
             this.panelTitle.Size = new System.Drawing.Size(1102, 50);
             this.panelTitle.TabIndex = 23;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblTitle.Location = new System.Drawing.Point(15, 10);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(331, 28);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Danh sách sinh viên lớp học phần";
-            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -118,6 +108,17 @@
             this.btnClose.TabIndex = 9;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblTitle.Location = new System.Drawing.Point(15, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(331, 28);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Danh sách sinh viên lớp học phần";
             // 
             // lblSoLuongSV
             // 
@@ -179,6 +180,7 @@
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.dtgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmShowListStudentInModuleClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmShowListStudentInModuleClass";

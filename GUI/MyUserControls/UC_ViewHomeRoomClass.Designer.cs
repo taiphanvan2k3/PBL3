@@ -73,6 +73,7 @@
             // 
             // cbbListLSH
             // 
+            this.cbbListLSH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbListLSH.BackColor = System.Drawing.Color.Transparent;
             this.cbbListLSH.BorderRadius = 10;
             this.cbbListLSH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
