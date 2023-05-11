@@ -240,12 +240,6 @@
     <Compile Include="frmEnterPassToDoExam.Designer.cs">
       <DependentUpon>frmEnterPassToDoExam.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSendNotification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSendNotification.Designer.cs">
-      <DependentUpon>frmSendNotification.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmShowEventInDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -546,9 +540,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEnterPassToDoExam.resx">
       <DependentUpon>frmEnterPassToDoExam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSendNotification.resx">
-      <DependentUpon>frmSendNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowListStudentInModuleClass.resx">
       <DependentUpon>frmShowListStudentInModuleClass.cs</DependentUpon>
