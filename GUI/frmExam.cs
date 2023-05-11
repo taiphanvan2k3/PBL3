@@ -150,11 +150,12 @@ namespace GUI
         {
             if (CurrentState != SelectionState.ViewHistoryDoExam)
             {
+                btnMenu_Click(sender, e);
                 CurrentState = SelectionState.ViewHistoryDoExam;
                 pnlMain.Controls.Clear();
                 if (viewHistoryDoExam == null)
                 {
-                    viewHistoryDoExam = new UC_ViewHistoryDoExam();
+                    viewHistoryDoExam = new UC_ViewHistoryDoExam() { MaSV = this.MaSV };
                     viewHistoryDoExam.Dock = DockStyle.Fill;
                 }
                 pnlMain.Controls.Add(viewHistoryDoExam);

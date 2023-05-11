@@ -13,6 +13,11 @@ namespace BLL
             this.li = li;
         }
 
+        public void ChangeList(List<T> list)
+        {
+            this.li = list;
+        }
+
         public List<T> GetRecords(int page)
         {
             int start = MaxRow * (page - 1);

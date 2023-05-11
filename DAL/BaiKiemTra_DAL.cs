@@ -120,7 +120,7 @@ namespace DAL
         }
 
 
-        public List<KetQuaLamKiemTra> GetKetQuaLambaiTheoKi(string MaSV, int KiHoc)
+        public List<KetQuaLamKiemTra> GetKetQuaLamBaiTheoKi(string MaSV, int? KiHoc = null)
         {
             // Trả về kết quả làm bài kiểm tra của sinh viên theo kì
             return db.LAM_BAI_KIEM_TRA.Where(sv => sv.MaSV == MaSV)
@@ -141,14 +141,15 @@ namespace DAL
                     TenMH = lhp.MON_HOC.TenMH,
                     TenBaiKiemTra = bkt.TenBaiKiemTra,
                     KiHoc = lhp.KiHoc,
-                    NamHoc = lhp.NamHoc + " - " + lhp.NamHoc,
+                    NamHoc = lhp.NamHoc + " - " + (lhp.NamHoc + 1),
                     ThoiGianLamBai = (DateTime)bkt.ThoiGianLamBai,
                     ThoiGianNopBai = (DateTime)bkt.ThoiGianNopBai,
                     TongSoCau = bkt.TongSocau,
                     SoCauDung = bkt.SoCauDung,
                     Diem = bkt.Diem,
                     SoLanViPham = bkt.SoLanViPham,
-                }).Where(p => p.KiHoc == KiHoc).ToList();
+                }).ToList();
+            //.Where(p => KiHoc == null || p.KiHoc == (int)KiHoc)
         }
 
         public List<KetQuaLamKiemTra_SVLHP> GetKetQuaKiemTra_LHP(int MaBaiKiemTra)

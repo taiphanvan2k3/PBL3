@@ -1,17 +1,30 @@
-﻿using FontAwesome.Sharp;
+﻿using BLL;
+using DTO;
+using FontAwesome.Sharp;
 using System;
-using System.Drawing;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
 {
     public partial class UC_ViewHistoryDoExam : UserControl
     {
+        // Phục vụ tìm kiếm
+        private AutoCompleteStringCollection AutoCompleteText;
+
+        private SplitPageHelper<KetQuaLamKiemTra> helper;
+        private const int maxRow = 8;
+        private int currentPage, maxPage;
+
+        private List<KetQuaLamKiemTra> kqLamBai;
+        public string MaSV { get; set; }
         public UC_ViewHistoryDoExam()
         {
             InitializeComponent();
         }
 
+        #region Các event liên quan đến giao diện
         private void btnExpandPanelSearch_Click(object sender, EventArgs e)
         {
             if (btnExpandPanelSearch.IconChar == IconChar.AngleDown)
@@ -42,24 +55,122 @@ namespace GUI.MyUserControls
 
         private void flowLayoutPanelMain_Resize(object sender, EventArgs e)
         {
-            int orginalWidthOfPanelSearch = panelSearch.Width;
             //Do các control bên trong flowLayout không thể tự anchor nên phải resize thủ công
-            panelSearch.Width = flowLayoutPanelMain.Width - 10;
-            panelShow.Width = flowLayoutPanelMain.Width - 10;
-
-            //Thay đổi vị trí của các textbox, combobox ko set anchor trước đó
-            double ratio = panelSearch.Width * 1.0 / orginalWidthOfPanelSearch;
-            lblHocKy.Location = new Point((int)(lblHocKy.Location.X * ratio), lblHocKy.Location.Y);
-            cbbHocKy.Location = new Point(lblHocKy.Location.X, cbbHocKy.Location.Y);
-
-            lblHocphan.Location = new Point((int)(lblHocphan.Location.X * ratio), lblHocphan.Location.Y);
-            txtTenHP.Location = new Point(lblHocphan.Location.X, txtTenHP.Location.Y);
+            panelSearch.Width = flowLayoutPanelMain.Width - 20;
+            panelShow.Width = flowLayoutPanelMain.Width - 20;
         }
 
-        private void panelDTGV_Paint(object sender, PaintEventArgs e)
+        private void panelDTGV_SizeChanged(object sender, EventArgs e)
         {
             //Do các control bên trong flowLayout không thể tự anchor nên phải resize thủ công
             dtgv.Width = panelDTGV.Width - 20;
+        }
+        #endregion
+
+        private void UC_ViewHistoryDoExam_Load(object sender, EventArgs e)
+        {
+            kqLamBai = BaiKiemTra_BLL.Instance.GetKetQuaLambaiTheoDieuKien(MaSV, null, null);
+            if (kqLamBai.Count > 0)
+            {
+                AutoCompleteText = new AutoCompleteStringCollection();
+                AutoCompleteText.AddRange(kqLamBai.Select(p => p.TenMH + " - " + p.MaHP).Distinct().ToArray());
+                txtTenHP.AutoCompleteCustomSource = AutoCompleteText;
+            }
+            cbbKiHoc.Items.Add("Xem tất cả");
+            cbbKiHoc.Items.AddRange(SinhVien_BLL.GetListKiHocLoadCBB(MaSV).ToArray());
+            kqLamBai.AddRange(kqLamBai);
+            kqLamBai.AddRange(kqLamBai);
+
+            //Hiển thị dữ liệu lên datagridview
+            maxPage = (int)Math.Ceiling(kqLamBai.Count * 1.0 / maxRow);
+            currentPage = 1;
+            helper = new SplitPageHelper<KetQuaLamKiemTra>(maxRow, kqLamBai);
+            cbbKiHoc.SelectedIndex = 0;
+        }
+
+        private void cbbKiHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idx = cbbKiHoc.SelectedIndex;
+            List<KetQuaLamKiemTra> li;
+            if (idx == 0)
+                li = kqLamBai;
+            else
+                li = kqLamBai.Where(i => i.KiHoc == idx).ToList();
+            ChangeListOfSplitPageHelper(li);
+            dtgv.Columns["TenMH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dtgv.Columns["ThoiGianLamBai"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dtgv.Columns["ThoiGianNopBai"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dtgv.Columns["TenBaiKiemTra"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dtgv.Columns["SoLanViPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        }
+
+        private void ChangeListOfSplitPageHelper(List<KetQuaLamKiemTra> li)
+        {
+            //Vì lúc này kết quả sau khi lọc đã không còn giống với List kqLamBai
+            //nên phải thay đổi List mà helper đang giữ để di chuyển trang đúng trên danh sách
+            //vừa lọc ra
+            helper.ChangeList(li);
+            currentPage = 1;
+            if (li.Count != 0)
+            {
+                maxPage = (int)Math.Ceiling(li.Count * 1.0 / maxRow);
+                dtgv.DataSource = helper.GetRecords(currentPage);
+            }
+            else
+            {
+                maxPage = 1;
+
+                //Biết li.Count==0 rồi nhưng vẫn gán vào DataSource để cập nhật lại
+                //dtgv và label trang
+                dtgv.DataSource = li;
+            }
+        }
+
+        private void dtgv_DataSourceChanged(object sender, EventArgs e)
+        {
+            lblPage.Text = "Trang " + currentPage + "/" + maxPage;
+            int CurrentRow = dtgv.RowCount;
+            if (CurrentRow < 5)
+                CurrentRow = 5;
+            dtgv.Height = dtgv.ColumnHeadersHeight + CurrentRow * dtgv.RowTemplate.Height;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtTenHP.Text != "")
+            {
+                //Nếu combobox đang là xem tất cả thì IsFilterAll = true
+                bool IsFilterAll = true;
+                if (cbbKiHoc.SelectedIndex > 0)
+                    IsFilterAll = false;
+                string[] ds = txtTenHP.Text.Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries);
+                var li = kqLamBai.Where(p => p.TenMH == ds[0] && p.MaHP == ds[1]
+                && (IsFilterAll || p.KiHoc == cbbKiHoc.SelectedIndex)).ToList();
+                ChangeListOfSplitPageHelper(li);
+            }
+            else
+            {
+                //Nếu như textbox trống thì lọc theo combobox
+                cbbKiHoc_SelectedIndexChanged(sender, e);
+            }
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                dtgv.DataSource = helper.GetRecords(currentPage);
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < maxPage)
+            {
+                currentPage++;
+                dtgv.DataSource = helper.GetRecords(currentPage);
+            }
         }
     }
 }
