@@ -51,6 +51,7 @@
             this.tbA = new GUI.MyCustomControl.CustomTextBox();
             this.cbMonHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCreateQues = new GUI.MyCustomControl.CustomButton();
+            this.cbPhanLoai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlChooseAnswer.SuspendLayout();
             this.panelGradient4.SuspendLayout();
             this.panelGradient3.SuspendLayout();
@@ -399,12 +400,29 @@
             this.btnCreateQues.UseVisualStyleBackColor = false;
             this.btnCreateQues.Click += new System.EventHandler(this.btnCreateQues_Click);
             // 
+            // cbPhanLoai
+            // 
+            this.cbPhanLoai.BackColor = System.Drawing.Color.Transparent;
+            this.cbPhanLoai.BorderRadius = 10;
+            this.cbPhanLoai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPhanLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPhanLoai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPhanLoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPhanLoai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbPhanLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbPhanLoai.ItemHeight = 30;
+            this.cbPhanLoai.Location = new System.Drawing.Point(896, 21);
+            this.cbPhanLoai.Name = "cbPhanLoai";
+            this.cbPhanLoai.Size = new System.Drawing.Size(218, 36);
+            this.cbPhanLoai.TabIndex = 7;
+            // 
             // frmTaoCauHoiNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(188)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1180, 794);
+            this.Controls.Add(this.cbPhanLoai);
             this.Controls.Add(this.cbMonHoc);
             this.Controls.Add(this.btnCreateQues);
             this.Controls.Add(this.pnlChooseAnswer);
@@ -416,6 +434,8 @@
             this.Controls.Add(this.panelGradient2);
             this.Controls.Add(this.panelGradient1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1198, 841);
+            this.MinimumSize = new System.Drawing.Size(1198, 841);
             this.Name = "frmTaoCauHoiNew";
             this.Text = "frmTaoCauHoiNew";
             this.Load += new System.EventHandler(this.frmTaoCauHoiNew_Load);
@@ -454,5 +474,6 @@
         private System.Windows.Forms.CheckBox chbA;
         private MyCustomControl.CustomButton btnCreateQues;
         private Guna.UI2.WinForms.Guna2ComboBox cbMonHoc;
+        private Guna.UI2.WinForms.Guna2ComboBox cbPhanLoai;
     }
 }

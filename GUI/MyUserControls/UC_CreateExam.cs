@@ -95,18 +95,6 @@ namespace GUI.MyUserControls
         private void btnTao_Click(object sender, EventArgs e)
         {
             byte TGLamBai;
-            /*if(tbTenBaiKiemTra.Texts == "")
-                CustomMessageBox.Show("Vui lòng nhập tên bài kiểm tra!");
-            else if(tbThoiGianLamBai.Texts == "")
-                CustomMessageBox.Show("Vui lòng nhập thời gian làm bài!");
-            else if (byte.TryParse(tbThoiGianLamBai.Texts,out TGLamBai) == false)
-                CustomMessageBox.Show("Thời gian làm bài nhập không hợp lệ!");
-            else if(tbMatKhauLamBai.Texts == "")
-                CustomMessageBox.Show("Vui lòng nhập mật khẩu làm bài!");
-            else if(tbMatKhauLamBai.Texts == "")
-                CustomMessageBox.Show("Vui lòng nhập mật khẩu làm bài!");
-            else if(cbLopHocPhan.SelectedItem.ToString() == "Chọn lớp học phần")
-                CustomMessageBox.Show("Vui lòng nhập chọn lớp học phần!");*/
             if (byte.TryParse(tbThoiGianLamBai.Texts, out TGLamBai) == false)
                 CustomMessageBox.Show("Thời gian làm bài nhập không hợp lệ!");
             else
