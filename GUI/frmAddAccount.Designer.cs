@@ -41,10 +41,10 @@
             this.lbYearOrLevel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.txtName = new GUI.MyCustomControl.CustomTextBox();
-            this.txtSurname = new GUI.MyCustomControl.CustomTextBox();
+            this.txtCCCD_1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSurname_1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName_1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbYearOrLevel = new GUI.MyCustomControl.CustomComboBox();
-            this.txtCCCD = new GUI.MyCustomControl.CustomTextBox();
             this.dtpBirthday = new GUI.MyCustomControl.CustomDatetimePicker();
             this.cmbList = new GUI.MyCustomControl.CustomComboBox();
             this.rbMen = new GUI.MyCustomControl.CustomRadioButton();
@@ -202,15 +202,15 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.txtName);
-            this.panelContainer.Controls.Add(this.txtSurname);
+            this.panelContainer.Controls.Add(this.txtCCCD_1);
+            this.panelContainer.Controls.Add(this.txtSurname_1);
+            this.panelContainer.Controls.Add(this.txtName_1);
             this.panelContainer.Controls.Add(this.label5);
             this.panelContainer.Controls.Add(this.label3);
             this.panelContainer.Controls.Add(this.cmbYearOrLevel);
             this.panelContainer.Controls.Add(this.label1);
             this.panelContainer.Controls.Add(this.lbYearOrLevel);
             this.panelContainer.Controls.Add(this.label2);
-            this.panelContainer.Controls.Add(this.txtCCCD);
             this.panelContainer.Controls.Add(this.dtpBirthday);
             this.panelContainer.Controls.Add(this.cmbList);
             this.panelContainer.Controls.Add(this.rbMen);
@@ -222,53 +222,71 @@
             this.panelContainer.Size = new System.Drawing.Size(480, 600);
             this.panelContainer.TabIndex = 35;
             // 
-            // txtName
+            // txtCCCD_1
             // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.txtName.BorderColor = System.Drawing.Color.Lavender;
-            this.txtName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtName.BorderRadius = 5;
-            this.txtName.BorderSize = 1;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.Lavender;
-            this.txtName.Location = new System.Drawing.Point(254, 49);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtName.MaxLength = 32767;
-            this.txtName.Multiline = false;
-            this.txtName.Name = "txtName";
-            this.txtName.Padding = new System.Windows.Forms.Padding(7);
-            this.txtName.PasswordChar = false;
-            this.txtName.PlaceholderColor = System.Drawing.Color.Lavender;
-            this.txtName.PlaceholderText = "Tên";
-            this.txtName.Size = new System.Drawing.Size(180, 40);
-            this.txtName.TabIndex = 3;
-            this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = false;
-            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
+            this.txtCCCD_1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCCCD_1.DefaultText = "";
+            this.txtCCCD_1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCCCD_1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCCCD_1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCCCD_1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCCCD_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtCCCD_1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCCCD_1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD_1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCCCD_1.Location = new System.Drawing.Point(33, 149);
+            this.txtCCCD_1.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCCCD_1.Name = "txtCCCD_1";
+            this.txtCCCD_1.PasswordChar = '\0';
+            this.txtCCCD_1.PlaceholderText = "Căn cước công dân";
+            this.txtCCCD_1.SelectedText = "";
+            this.txtCCCD_1.Size = new System.Drawing.Size(400, 40);
+            this.txtCCCD_1.TabIndex = 36;
+            this.txtCCCD_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
-            // txtSurname
+            // txtSurname_1
             // 
-            this.txtSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.txtSurname.BorderColor = System.Drawing.Color.Lavender;
-            this.txtSurname.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtSurname.BorderRadius = 5;
-            this.txtSurname.BorderSize = 1;
-            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.ForeColor = System.Drawing.Color.Lavender;
-            this.txtSurname.Location = new System.Drawing.Point(33, 49);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSurname.MaxLength = 32767;
-            this.txtSurname.Multiline = false;
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSurname.PasswordChar = false;
-            this.txtSurname.PlaceholderColor = System.Drawing.Color.Lavender;
-            this.txtSurname.PlaceholderText = "Họ";
-            this.txtSurname.Size = new System.Drawing.Size(180, 40);
-            this.txtSurname.TabIndex = 2;
-            this.txtSurname.Texts = "";
-            this.txtSurname.UnderlinedStyle = false;
-            this.txtSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
+            this.txtSurname_1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSurname_1.DefaultText = "";
+            this.txtSurname_1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSurname_1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSurname_1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSurname_1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSurname_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtSurname_1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSurname_1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurname_1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSurname_1.Location = new System.Drawing.Point(34, 43);
+            this.txtSurname_1.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSurname_1.Name = "txtSurname_1";
+            this.txtSurname_1.PasswordChar = '\0';
+            this.txtSurname_1.PlaceholderText = "Họ";
+            this.txtSurname_1.SelectedText = "";
+            this.txtSurname_1.Size = new System.Drawing.Size(180, 40);
+            this.txtSurname_1.TabIndex = 35;
+            this.txtSurname_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
+            // 
+            // txtName_1
+            // 
+            this.txtName_1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName_1.DefaultText = "";
+            this.txtName_1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName_1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName_1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName_1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtName_1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName_1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName_1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName_1.Location = new System.Drawing.Point(254, 43);
+            this.txtName_1.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName_1.Name = "txtName_1";
+            this.txtName_1.PasswordChar = '\0';
+            this.txtName_1.PlaceholderText = "Tên";
+            this.txtName_1.SelectedText = "";
+            this.txtName_1.Size = new System.Drawing.Size(180, 40);
+            this.txtName_1.TabIndex = 34;
+            this.txtName_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
             // 
             // cmbYearOrLevel
             // 
@@ -289,30 +307,6 @@
             this.cmbYearOrLevel.Size = new System.Drawing.Size(400, 40);
             this.cmbYearOrLevel.TabIndex = 9;
             this.cmbYearOrLevel.Texts = "";
-            // 
-            // txtCCCD
-            // 
-            this.txtCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.txtCCCD.BorderColor = System.Drawing.Color.Lavender;
-            this.txtCCCD.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtCCCD.BorderRadius = 5;
-            this.txtCCCD.BorderSize = 1;
-            this.txtCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD.ForeColor = System.Drawing.Color.Lavender;
-            this.txtCCCD.Location = new System.Drawing.Point(33, 145);
-            this.txtCCCD.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCCCD.MaxLength = 12;
-            this.txtCCCD.Multiline = false;
-            this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Padding = new System.Windows.Forms.Padding(7);
-            this.txtCCCD.PasswordChar = false;
-            this.txtCCCD.PlaceholderColor = System.Drawing.Color.Lavender;
-            this.txtCCCD.PlaceholderText = "Căn cước công dân";
-            this.txtCCCD.Size = new System.Drawing.Size(400, 40);
-            this.txtCCCD.TabIndex = 4;
-            this.txtCCCD.Texts = "";
-            this.txtCCCD.UnderlinedStyle = false;
-            this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
             // dtpBirthday
             // 
@@ -459,7 +453,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button Hủy;
         private System.Windows.Forms.Button btnADD;
-        private MyCustomControl.CustomTextBox txtSurname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -469,15 +462,16 @@
         private MyCustomControl.CustomRadioButton rbWomen;
         private System.Windows.Forms.Label lbFacultyOrProgram;
         private MyCustomControl.CustomComboBox cmbList;
-        private MyCustomControl.CustomTextBox txtCCCD;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lbYearOrLevel;
         private MyCustomControl.CustomComboBox cmbYearOrLevel;
         private System.Windows.Forms.Label label5;
-        private MyCustomControl.CustomTextBox txtName;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.Label label6;
         private MyCustomControl.CustomTextBox txtIDAcc;
+        private Guna.UI2.WinForms.Guna2TextBox txtSurname_1;
+        private Guna.UI2.WinForms.Guna2TextBox txtName_1;
+        private Guna.UI2.WinForms.Guna2TextBox txtCCCD_1;
     }
 }
