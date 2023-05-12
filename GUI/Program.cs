@@ -14,8 +14,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTeacher());
-            Console.WriteLine();
+            Application.Run(new frmDesignLogin());
         }
     }
 }
