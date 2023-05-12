@@ -99,7 +99,7 @@ namespace GUI.MyUserControls
             else
             {
                 DateTime dt = DateTime.Now;
-                if (GiangVien_BLL.Instance.CheckNoticeRedundanṭ̣̣̣(MaGV, dt, cbbLHP.SelectedItem.ToString()))
+                if (!GiangVien_BLL.Instance.CheckNoticeRedundanṭ̣̣̣(MaGV, dt, cbbLHP.SelectedItem.ToString()))
                 {
                     GiangVien_BLL.Instance.SendNoticeToLHP(MaGV, cbbLHP.SelectedItem.ToString(), tbTieuDe.Text, tbNoiDung.Texts, dt);
                     CustomMessageBox.Show("Gửi thông báo thành công!");

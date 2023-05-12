@@ -79,7 +79,7 @@ namespace GUI.MyUserControls
 
             btnTao.Enabled = allComboboxChoosed && allTextEntered;
 
-            if(cbLoaiBaiKiemTra.SelectedItem == "Giữa kỳ" || cbLoaiBaiKiemTra.SelectedItem == "Test")
+            if(cbLoaiBaiKiemTra.SelectedItem.ToString() == "Giữa kỳ" || cbLoaiBaiKiemTra.SelectedItem.ToString() == "Test")
             {
                 cbTuanKiemTra.Visible = true;
                 dtpNgayKiemTra.Visible = false;
@@ -92,6 +92,7 @@ namespace GUI.MyUserControls
                 dtpGioKT.Visible = true;
             }
         }
+
         private void btnTao_Click(object sender, EventArgs e)
         {
             byte TGLamBai;
@@ -117,6 +118,7 @@ namespace GUI.MyUserControls
                     DateExam.AddDays(UtilityClass.ConvertDayOfWeekToNumber(tkb.Thu) - 2);
                     DateExam = new DateTime(DateExam.Year, DateExam.Month, DateExam.Day, UtilityClass.GetHourExamWithTietBD(tkb.TietBD), 0, 0);
                 }
+
                 if (DateExam < DateTime.Now)
                     CustomMessageBox.Show("Thời gian thi không hợp lệ!");
                 else

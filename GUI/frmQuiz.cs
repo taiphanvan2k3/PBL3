@@ -37,7 +37,7 @@ namespace GUI
         private DateTime SubmitTime { get; set; }
         private int SoLanViPham { get; set; } = 0;
 
-        //Các thuộc tính để ngăn chặn việc chuyển tab, quay màn hình,...
+        //Các thuộc tính để ngăn chặn việc quay, chụp màn hình,... (Ngăn chuyển tab là dùng thuộc tính TopMost = true)
         [DllImport("user32.dll")]
         static extern bool SetWindowDisplayAffinity(IntPtr hWnd, uint dwAffinity);
         const uint WDA_NONE = 0x00000000;

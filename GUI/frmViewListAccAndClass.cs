@@ -21,7 +21,7 @@ namespace GUI
         int TotalCheckBoxes = 0;
         int TotalCheckedCheckBoxes = 0;
         CheckBox HeaderCheckBox = null;
-        bool IsHeaderCheckBoxClicked = false;
+        //bool IsHeaderCheckBoxClicked = false;
         string maLop = "";
         string maID = "";
 
@@ -217,7 +217,7 @@ namespace GUI
 
         private void HeaderCheckBoxClick(CheckBox HCheckBox)
         {
-            IsHeaderCheckBoxClicked = true;
+            //IsHeaderCheckBoxClicked = true;
 
             foreach (DataGridViewRow Row in dgvViewAcc.Rows)
             {
@@ -225,7 +225,7 @@ namespace GUI
             }
             dgvViewAcc.RefreshEdit();
             TotalCheckedCheckBoxes = HCheckBox.Checked ? TotalCheckBoxes : 0;
-            IsHeaderCheckBoxClicked = false;
+            //IsHeaderCheckBoxClicked = false;
         }
 
 

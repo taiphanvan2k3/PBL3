@@ -37,7 +37,7 @@ namespace GUI.MyUserControls
                 CurrentImage = value;
             }
         }
-        public string Name
+        public string TenGV
         {
             get => lbName.Text;
             set => lbName.Text = value;

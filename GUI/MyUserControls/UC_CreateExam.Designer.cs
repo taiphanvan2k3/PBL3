@@ -46,24 +46,24 @@
             this.pnlSoLuongCauHoi = new System.Windows.Forms.Panel();
             this.pnlLHP = new System.Windows.Forms.Panel();
             this.pnlMatKhauLamBai = new System.Windows.Forms.Panel();
+            this.tbMatKhauLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.pnlChoPHepQuayLai = new System.Windows.Forms.Panel();
             this.pnlTao = new System.Windows.Forms.Panel();
+            this.btnTao = new GUI.MyCustomControl.CustomButton();
             this.pnlTenBaiKT = new System.Windows.Forms.Panel();
+            this.tbTenBaiKiemTra = new GUI.MyCustomControl.CustomTextBox();
             this.pnlLoaiBKT = new System.Windows.Forms.Panel();
             this.pnlThoiGianLamBai = new System.Windows.Forms.Panel();
+            this.tbThoiGianLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.pnlThoiGianKiemTra = new System.Windows.Forms.Panel();
             this.pnlDatLai = new System.Windows.Forms.Panel();
+            this.btnDatLai = new GUI.MyCustomControl.CustomButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayout2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayout3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayout4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayout5 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayout6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tbTenBaiKiemTra = new GUI.MyCustomControl.CustomTextBox();
-            this.tbThoiGianLamBai = new GUI.MyCustomControl.CustomTextBox();
-            this.tbMatKhauLamBai = new GUI.MyCustomControl.CustomTextBox();
-            this.btnDatLai = new GUI.MyCustomControl.CustomButton();
-            this.btnTao = new GUI.MyCustomControl.CustomButton();
             this.pnlSoLuongCauHoi.SuspendLayout();
             this.pnlLHP.SuspendLayout();
             this.pnlMatKhauLamBai.SuspendLayout();
@@ -164,7 +164,7 @@
             "Test"});
             this.cbLoaiBaiKiemTra.Location = new System.Drawing.Point(190, 31);
             this.cbLoaiBaiKiemTra.Name = "cbLoaiBaiKiemTra";
-            this.cbLoaiBaiKiemTra.Size = new System.Drawing.Size(250, 36);
+            this.cbLoaiBaiKiemTra.Size = new System.Drawing.Size(252, 36);
             this.cbLoaiBaiKiemTra.TabIndex = 16;
             // 
             // cbSoLuongCauHoi
@@ -212,7 +212,7 @@
             this.cbLopHocPhan.ItemHeight = 30;
             this.cbLopHocPhan.Location = new System.Drawing.Point(199, 31);
             this.cbLopHocPhan.Name = "cbLopHocPhan";
-            this.cbLopHocPhan.Size = new System.Drawing.Size(250, 36);
+            this.cbLopHocPhan.Size = new System.Drawing.Size(257, 36);
             this.cbLopHocPhan.TabIndex = 19;
             // 
             // dtpNgayKiemTra
@@ -351,6 +351,31 @@
             this.pnlMatKhauLamBai.Size = new System.Drawing.Size(479, 111);
             this.pnlMatKhauLamBai.TabIndex = 34;
             // 
+            // tbMatKhauLamBai
+            // 
+            this.tbMatKhauLamBai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMatKhauLamBai.BackColor = System.Drawing.SystemColors.Window;
+            this.tbMatKhauLamBai.BorderColor = System.Drawing.Color.Black;
+            this.tbMatKhauLamBai.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbMatKhauLamBai.BorderRadius = 10;
+            this.tbMatKhauLamBai.BorderSize = 2;
+            this.tbMatKhauLamBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMatKhauLamBai.ForeColor = System.Drawing.Color.DimGray;
+            this.tbMatKhauLamBai.Location = new System.Drawing.Point(199, 33);
+            this.tbMatKhauLamBai.Margin = new System.Windows.Forms.Padding(4);
+            this.tbMatKhauLamBai.MaxLength = 32767;
+            this.tbMatKhauLamBai.Multiline = false;
+            this.tbMatKhauLamBai.Name = "tbMatKhauLamBai";
+            this.tbMatKhauLamBai.Padding = new System.Windows.Forms.Padding(7);
+            this.tbMatKhauLamBai.PasswordChar = false;
+            this.tbMatKhauLamBai.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbMatKhauLamBai.PlaceholderText = "";
+            this.tbMatKhauLamBai.Size = new System.Drawing.Size(257, 35);
+            this.tbMatKhauLamBai.TabIndex = 24;
+            this.tbMatKhauLamBai.Texts = "";
+            this.tbMatKhauLamBai.UnderlinedStyle = false;
+            // 
             // pnlChoPHepQuayLai
             // 
             this.pnlChoPHepQuayLai.Controls.Add(this.chbAllowReturn);
@@ -369,6 +394,30 @@
             this.pnlTao.Size = new System.Drawing.Size(479, 113);
             this.pnlTao.TabIndex = 36;
             // 
+            // btnTao
+            // 
+            this.btnTao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTao.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTao.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnTao.BorderRadius = 20;
+            this.btnTao.BorderSize = 0;
+            this.btnTao.Enabled = false;
+            this.btnTao.FlatAppearance.BorderSize = 0;
+            this.btnTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTao.ForeColor = System.Drawing.Color.White;
+            this.btnTao.Image = global::GUI.Properties.Resources.Save1;
+            this.btnTao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTao.Location = new System.Drawing.Point(171, 32);
+            this.btnTao.Name = "btnTao";
+            this.btnTao.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnTao.Size = new System.Drawing.Size(148, 55);
+            this.btnTao.TabIndex = 15;
+            this.btnTao.Text = "Tạo";
+            this.btnTao.TextColor = System.Drawing.Color.White;
+            this.btnTao.UseVisualStyleBackColor = false;
+            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
+            // 
             // pnlTenBaiKT
             // 
             this.pnlTenBaiKT.BackColor = System.Drawing.Color.Transparent;
@@ -378,6 +427,31 @@
             this.pnlTenBaiKT.Name = "pnlTenBaiKT";
             this.pnlTenBaiKT.Size = new System.Drawing.Size(479, 101);
             this.pnlTenBaiKT.TabIndex = 32;
+            // 
+            // tbTenBaiKiemTra
+            // 
+            this.tbTenBaiKiemTra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTenBaiKiemTra.BackColor = System.Drawing.SystemColors.Window;
+            this.tbTenBaiKiemTra.BorderColor = System.Drawing.Color.Black;
+            this.tbTenBaiKiemTra.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbTenBaiKiemTra.BorderRadius = 10;
+            this.tbTenBaiKiemTra.BorderSize = 2;
+            this.tbTenBaiKiemTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenBaiKiemTra.ForeColor = System.Drawing.Color.DimGray;
+            this.tbTenBaiKiemTra.Location = new System.Drawing.Point(189, 28);
+            this.tbTenBaiKiemTra.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTenBaiKiemTra.MaxLength = 32767;
+            this.tbTenBaiKiemTra.Multiline = false;
+            this.tbTenBaiKiemTra.Name = "tbTenBaiKiemTra";
+            this.tbTenBaiKiemTra.Padding = new System.Windows.Forms.Padding(7);
+            this.tbTenBaiKiemTra.PasswordChar = false;
+            this.tbTenBaiKiemTra.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbTenBaiKiemTra.PlaceholderText = "";
+            this.tbTenBaiKiemTra.Size = new System.Drawing.Size(253, 35);
+            this.tbTenBaiKiemTra.TabIndex = 0;
+            this.tbTenBaiKiemTra.Texts = "";
+            this.tbTenBaiKiemTra.UnderlinedStyle = false;
             // 
             // pnlLoaiBKT
             // 
@@ -402,6 +476,31 @@
             this.pnlThoiGianLamBai.Size = new System.Drawing.Size(479, 111);
             this.pnlThoiGianLamBai.TabIndex = 34;
             // 
+            // tbThoiGianLamBai
+            // 
+            this.tbThoiGianLamBai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbThoiGianLamBai.BackColor = System.Drawing.SystemColors.Window;
+            this.tbThoiGianLamBai.BorderColor = System.Drawing.Color.Black;
+            this.tbThoiGianLamBai.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbThoiGianLamBai.BorderRadius = 10;
+            this.tbThoiGianLamBai.BorderSize = 2;
+            this.tbThoiGianLamBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThoiGianLamBai.ForeColor = System.Drawing.Color.DimGray;
+            this.tbThoiGianLamBai.Location = new System.Drawing.Point(190, 33);
+            this.tbThoiGianLamBai.Margin = new System.Windows.Forms.Padding(4);
+            this.tbThoiGianLamBai.MaxLength = 32767;
+            this.tbThoiGianLamBai.Multiline = false;
+            this.tbThoiGianLamBai.Name = "tbThoiGianLamBai";
+            this.tbThoiGianLamBai.Padding = new System.Windows.Forms.Padding(7);
+            this.tbThoiGianLamBai.PasswordChar = false;
+            this.tbThoiGianLamBai.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbThoiGianLamBai.PlaceholderText = "";
+            this.tbThoiGianLamBai.Size = new System.Drawing.Size(252, 35);
+            this.tbThoiGianLamBai.TabIndex = 6;
+            this.tbThoiGianLamBai.Texts = "";
+            this.tbThoiGianLamBai.UnderlinedStyle = false;
+            // 
             // pnlThoiGianKiemTra
             // 
             this.pnlThoiGianKiemTra.Controls.Add(this.dtpNgayKiemTra);
@@ -422,6 +521,26 @@
             this.pnlDatLai.Name = "pnlDatLai";
             this.pnlDatLai.Size = new System.Drawing.Size(480, 113);
             this.pnlDatLai.TabIndex = 36;
+            // 
+            // btnDatLai
+            // 
+            this.btnDatLai.BackColor = System.Drawing.Color.Black;
+            this.btnDatLai.BackGroundColor = System.Drawing.Color.Black;
+            this.btnDatLai.BorderColor = System.Drawing.Color.Black;
+            this.btnDatLai.BorderRadius = 20;
+            this.btnDatLai.BorderSize = 0;
+            this.btnDatLai.FlatAppearance.BorderSize = 0;
+            this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatLai.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDatLai.Location = new System.Drawing.Point(161, 32);
+            this.btnDatLai.Name = "btnDatLai";
+            this.btnDatLai.Size = new System.Drawing.Size(148, 55);
+            this.btnDatLai.TabIndex = 14;
+            this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDatLai.UseVisualStyleBackColor = false;
+            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -498,125 +617,6 @@
             this.flowLayout6.Name = "flowLayout6";
             this.flowLayout6.Size = new System.Drawing.Size(977, 121);
             this.flowLayout6.TabIndex = 43;
-            // 
-            // tbTenBaiKiemTra
-            // 
-            this.tbTenBaiKiemTra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTenBaiKiemTra.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTenBaiKiemTra.BorderColor = System.Drawing.Color.Black;
-            this.tbTenBaiKiemTra.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbTenBaiKiemTra.BorderRadius = 10;
-            this.tbTenBaiKiemTra.BorderSize = 2;
-            this.tbTenBaiKiemTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenBaiKiemTra.ForeColor = System.Drawing.Color.DimGray;
-            this.tbTenBaiKiemTra.Location = new System.Drawing.Point(189, 28);
-            this.tbTenBaiKiemTra.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTenBaiKiemTra.MaxLength = 32767;
-            this.tbTenBaiKiemTra.Multiline = false;
-            this.tbTenBaiKiemTra.Name = "tbTenBaiKiemTra";
-            this.tbTenBaiKiemTra.Padding = new System.Windows.Forms.Padding(7);
-            this.tbTenBaiKiemTra.PasswordChar = false;
-            this.tbTenBaiKiemTra.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbTenBaiKiemTra.PlaceholderText = "";
-            this.tbTenBaiKiemTra.Size = new System.Drawing.Size(253, 35);
-            this.tbTenBaiKiemTra.TabIndex = 0;
-            this.tbTenBaiKiemTra.Texts = "";
-            this.tbTenBaiKiemTra.UnderlinedStyle = false;
-            // 
-            // tbThoiGianLamBai
-            // 
-            this.tbThoiGianLamBai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbThoiGianLamBai.BackColor = System.Drawing.SystemColors.Window;
-            this.tbThoiGianLamBai.BorderColor = System.Drawing.Color.Black;
-            this.tbThoiGianLamBai.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbThoiGianLamBai.BorderRadius = 10;
-            this.tbThoiGianLamBai.BorderSize = 2;
-            this.tbThoiGianLamBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbThoiGianLamBai.ForeColor = System.Drawing.Color.DimGray;
-            this.tbThoiGianLamBai.Location = new System.Drawing.Point(190, 33);
-            this.tbThoiGianLamBai.Margin = new System.Windows.Forms.Padding(4);
-            this.tbThoiGianLamBai.MaxLength = 32767;
-            this.tbThoiGianLamBai.Multiline = false;
-            this.tbThoiGianLamBai.Name = "tbThoiGianLamBai";
-            this.tbThoiGianLamBai.Padding = new System.Windows.Forms.Padding(7);
-            this.tbThoiGianLamBai.PasswordChar = false;
-            this.tbThoiGianLamBai.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbThoiGianLamBai.PlaceholderText = "";
-            this.tbThoiGianLamBai.Size = new System.Drawing.Size(249, 35);
-            this.tbThoiGianLamBai.TabIndex = 6;
-            this.tbThoiGianLamBai.Texts = "";
-            this.tbThoiGianLamBai.UnderlinedStyle = false;
-            // 
-            // tbMatKhauLamBai
-            // 
-            this.tbMatKhauLamBai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbMatKhauLamBai.BackColor = System.Drawing.SystemColors.Window;
-            this.tbMatKhauLamBai.BorderColor = System.Drawing.Color.Black;
-            this.tbMatKhauLamBai.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbMatKhauLamBai.BorderRadius = 10;
-            this.tbMatKhauLamBai.BorderSize = 2;
-            this.tbMatKhauLamBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMatKhauLamBai.ForeColor = System.Drawing.Color.DimGray;
-            this.tbMatKhauLamBai.Location = new System.Drawing.Point(199, 33);
-            this.tbMatKhauLamBai.Margin = new System.Windows.Forms.Padding(4);
-            this.tbMatKhauLamBai.MaxLength = 32767;
-            this.tbMatKhauLamBai.Multiline = false;
-            this.tbMatKhauLamBai.Name = "tbMatKhauLamBai";
-            this.tbMatKhauLamBai.Padding = new System.Windows.Forms.Padding(7);
-            this.tbMatKhauLamBai.PasswordChar = false;
-            this.tbMatKhauLamBai.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbMatKhauLamBai.PlaceholderText = "";
-            this.tbMatKhauLamBai.Size = new System.Drawing.Size(250, 35);
-            this.tbMatKhauLamBai.TabIndex = 24;
-            this.tbMatKhauLamBai.Texts = "";
-            this.tbMatKhauLamBai.UnderlinedStyle = false;
-            // 
-            // btnDatLai
-            // 
-            this.btnDatLai.BackColor = System.Drawing.Color.Black;
-            this.btnDatLai.BackGroundColor = System.Drawing.Color.Black;
-            this.btnDatLai.BorderColor = System.Drawing.Color.Black;
-            this.btnDatLai.BorderRadius = 20;
-            this.btnDatLai.BorderSize = 0;
-            this.btnDatLai.FlatAppearance.BorderSize = 0;
-            this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatLai.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDatLai.Location = new System.Drawing.Point(161, 32);
-            this.btnDatLai.Name = "btnDatLai";
-            this.btnDatLai.Size = new System.Drawing.Size(148, 55);
-            this.btnDatLai.TabIndex = 14;
-            this.btnDatLai.Text = "Đặt lại";
-            this.btnDatLai.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDatLai.UseVisualStyleBackColor = false;
-            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
-            // 
-            // btnTao
-            // 
-            this.btnTao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTao.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTao.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnTao.BorderRadius = 20;
-            this.btnTao.BorderSize = 0;
-            this.btnTao.Enabled = false;
-            this.btnTao.FlatAppearance.BorderSize = 0;
-            this.btnTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTao.ForeColor = System.Drawing.Color.White;
-            this.btnTao.Image = global::GUI.Properties.Resources.Save1;
-            this.btnTao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTao.Location = new System.Drawing.Point(171, 32);
-            this.btnTao.Name = "btnTao";
-            this.btnTao.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnTao.Size = new System.Drawing.Size(148, 55);
-            this.btnTao.TabIndex = 15;
-            this.btnTao.Text = "Tạo";
-            this.btnTao.TextColor = System.Drawing.Color.White;
-            this.btnTao.UseVisualStyleBackColor = false;
-            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
             // UC_CreateExam
             // 
