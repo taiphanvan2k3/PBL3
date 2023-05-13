@@ -68,11 +68,9 @@ namespace GUI
             }
         }
 
-
-
-
         private void btnSend_Click(object sender, EventArgs e)
         {
+            //Kiểm tra xem đã nhập đúng mã xác thực chưa
             if (ForgetPass_BLL.Instance.CheckValid(acc.TaiKhoan, txtNumberCode.Texts.ToString()))
             {
                 UtilityClass.OpenNewForm(this, new frmDesignEnterNewPass(acc, email));
@@ -108,6 +106,7 @@ namespace GUI
             btnSendBackAgain.Font = new Font(btnSendBackAgain.Font, FontStyle.Regular);
             btnSendBackAgain.ForeColor = Color.White;
         }
+
         private void btnSendBackAgain_Click(object sender, EventArgs e)
         {
             // Reset lại đồng hồ đếm ngược

@@ -26,18 +26,19 @@ namespace DAL
         {
             using (var context = new PBL3Entities())
             {
-                var query = from tt in context.THONG_TIN_DANG_NHAP
-                            join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
-                            join sv in context.SINH_VIEN on nd.MaNguoiDung equals sv.MaSV
-                            select new InformationStudent_DTO
-                            {   
-                                TaiKhoan = tt.TaiKhoan,
-                                VaiTro = tt.VaiTro,
-                                Ten = nd.Ho + " " + nd.Ten,
-                                MaCCCD = nd.MaCCCD,
-                                EmailTruongCap = nd.EmailTruongCap,
-                                MaCTDT = sv.MaCTDT
-                            };
+                var query = context.THONG_TIN_DANG_NHAP
+                    .Join(context.NGUOI_DUNG, tt => tt.TaiKhoan, nd => nd.MaNguoiDung, (tt, nd) => new { tt, nd })
+                    .Join(context.SINH_VIEN, t => t.nd.MaNguoiDung, sv => sv.MaSV, (t, sv) => new { t.tt, t.nd, sv })
+                    .Select(s => new InformationStudent_DTO
+                    {
+                        TaiKhoan = s.tt.TaiKhoan,
+                        VaiTro = s.tt.VaiTro,
+                        Ten = s.nd.Ho + " " + s.nd.Ten,
+                        MaCCCD = s.nd.MaCCCD,
+                        EmailTruongCap = s.nd.EmailTruongCap,
+                        MaCTDT = s.sv.MaCTDT
+                    });
+
                 return query.ToList();
             }
         }
@@ -46,19 +47,19 @@ namespace DAL
         {
             using (var context = new PBL3Entities())
             {
-                var query = from tt in context.THONG_TIN_DANG_NHAP
-                            join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
-                            join gv in context.GIANG_VIEN on nd.MaNguoiDung equals gv.MaGV
-                            select new InformationTeacher_DTO
-                            {
-                                TaiKhoan = tt.TaiKhoan,
-                                VaiTro = tt.VaiTro,
-                                Ten = nd.Ho + " " + nd.Ten,
-                                MaCCCD = nd.MaCCCD,
-                                EmailTruongCap = nd.EmailTruongCap,
-                                TrinhDo = gv.TrinhDo
-                            };
-                return query.ToList();
+                var query = context.THONG_TIN_DANG_NHAP
+                    .Join(context.NGUOI_DUNG, tt => tt.TaiKhoan, nd => nd.MaNguoiDung, (tt, nd) => new { tt, nd })
+                    .Join(context.GIANG_VIEN, t => t.nd.MaNguoiDung, gv => gv.MaGV, (t, gv) => new { t.tt, t.nd, gv })
+                    .Select(s => new InformationTeacher_DTO
+                    {
+                        TaiKhoan = s.tt.TaiKhoan,
+                        VaiTro = s.tt.VaiTro,
+                        Ten = s.nd.Ho + " " + s.nd.Ten,
+                        MaCCCD = s.nd.MaCCCD,
+                        EmailTruongCap = s.nd.EmailTruongCap,
+                        TrinhDo = s.gv.TrinhDo
+                    });
+                return query.ToList(); 
             }
         }
 
@@ -474,6 +475,7 @@ namespace DAL
             }
         }
 
+        // Lấy ra số sinh viên theo khoa
         public List<KeyValuePair<string, int>> StudentCountByFaculty()
         {
             using (var context = new PBL3Entities())
