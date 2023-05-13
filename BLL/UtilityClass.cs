@@ -40,12 +40,11 @@ namespace BLL
 
         public static string sendEmail(string addressEmail, string digitcode)
         {
-            
             string senderEmail = "nngann2402@gmail.com";
             string receiverEmail = addressEmail;
             string subject = "Digit code";
             string body = digitcode;
-            string senderPassword = "fsjdkhdximrlvusc";
+            string senderPassword = "qjxdnmnjvezvejns";
 
             var smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.UseDefaultCredentials = false;

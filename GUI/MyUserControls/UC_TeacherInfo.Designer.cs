@@ -696,7 +696,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.pnlRight);
-            this.Name = "UC_TeacherInfo";
+            this.TenGV = "UC_TeacherInfo";
             this.Size = new System.Drawing.Size(1175, 730);
             this.pnlRight.ResumeLayout(false);
             this.gbDiaChi.ResumeLayout(false);

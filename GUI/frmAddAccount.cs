@@ -83,9 +83,9 @@ namespace GUI
         }
         private void ReturnEmpty()
         {
-            txtSurname.Texts = "";
-            txtName.Texts = "";
-            txtCCCD.Texts = "";
+            txtSurname_1.Text = "";
+            txtName_1.Text = "";
+            txtCCCD_1.Text = "";
             cmbList.SelectedIndex = -1;
             cmbYearOrLevel.SelectedIndex = -1;
             rbMen.Checked = rbWomen.Checked = false;
@@ -99,9 +99,14 @@ namespace GUI
             Random random = new Random();
             int countRecord = 0;
             string suffix = "";
-            if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1 || txtSurname.Texts.ToString() == "" || txtName.Texts.ToString() == "" || txtCCCD.Texts.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
+            if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1 
+                //|| txtSurname.Texts.ToString() == "" || txtName.Texts.ToString() == ""
+                || txtSurname_1.Text.ToString() == "" || txtName_1.Text.ToString() == ""
+                || txtCCCD_1.Text.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin");
+                MessageBox.Show(txtSurname_1.Text.ToString());
+                MessageBox.Show(txtName_1.Text.ToString());
             }
             else
             {
@@ -109,8 +114,8 @@ namespace GUI
                 GiangVien_DTO gvDT = new GiangVien_DTO();
 
 
-                passID = BCrypt.Net.BCrypt.HashString(txtCCCD.Texts.ToString());
-                passEmai = BCrypt.Net.BCrypt.HashString(txtCCCD.Texts.ToString());
+                passID = BCrypt.Net.BCrypt.HashString(txtCCCD_1.Text.ToString());
+                passEmai = BCrypt.Net.BCrypt.HashString(txtCCCD_1.Text.ToString());
 
                 THONG_TIN_DANG_NHAP_DTO ttdn = new THONG_TIN_DANG_NHAP_DTO();
 
@@ -120,9 +125,9 @@ namespace GUI
 
                 NguoiDung_DTO nd = new NguoiDung_DTO()
                 {
-                    Ho = txtSurname.Texts.ToString(),
-                    Ten = txtName.Texts.ToString(),
-                    MaCCCD = txtCCCD.Texts.ToString(),
+                    Ho = txtSurname_1.Text.ToString(),
+                    Ten = txtName_1.Text.ToString(),
+                    MaCCCD = txtCCCD_1.Text.ToString(),
                     AnhCaNhan = null,
                     NgaySinh = dtpBirthday.Value,
                     GioiTinh = rbMen.Checked ? false : true,
@@ -160,7 +165,7 @@ namespace GUI
 
                         if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT))
                         {
-                            MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
+                            MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD_1.Text.ToString() + "\n" + Email + "\n" + txtCCCD_1.Text.ToString());
                             var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                             if (result1 == DialogResult.Cancel)
                             {
@@ -213,7 +218,7 @@ namespace GUI
 
                         if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, gvDT))
                         {
-                            MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD.Texts.ToString() + "\n" + Email + "\n" + txtCCCD.Texts.ToString());
+                            MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD_1.Text.ToString() + "\n" + Email + "\n" + txtCCCD_1.Text.ToString());
                             var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                             if (result1 == DialogResult.Cancel)
                             {
@@ -279,6 +284,7 @@ namespace GUI
                 txtIDAcc.Texts = TaiKhoan;
                 txtIDAcc.Enabled = false;
                 cmbList.Enabled = false;
+                btnADD.Text = "Chỉnh sửa";
                 string valueItem = "";
                 string valueYearOrLevel = "";
                 string name;
@@ -288,13 +294,13 @@ namespace GUI
                         name = "";
                         InformationStudent_DTO informationStudent = GetInformationAcc_BLL.Instance.GetInformationStudentByID(TaiKhoan);
                         string[] nameParts = informationStudent.Ten.Split(' ');
-                        txtCCCD.Texts = informationStudent.MaCCCD;
+                        txtCCCD_1.Text = informationStudent.MaCCCD;
                         for (int i = 0; i < nameParts.Length - 1; i++)
                         {
                             name += nameParts[i] + " ";
                         }
-                        txtSurname.Texts = name;
-                        txtName.Texts = nameParts[nameParts.Length - 1];
+                        txtSurname_1.Text = name;
+                        txtName_1.Text = nameParts[nameParts.Length - 1];
                         dtpBirthday.Value = informationStudent.NgaySinh;
                         if (informationStudent.GioiTinh)
                         {
@@ -336,13 +342,13 @@ namespace GUI
                         name = "";
                         InformationTeacher_DTO informationTeacher = GetInformationAcc_BLL.Instance.GetInformationTeacherByID(TaiKhoan);
                         string[] namePartsTeacher = informationTeacher.Ten.Split(' ');
-                        txtCCCD.Texts = informationTeacher.MaCCCD;
+                        txtCCCD_1.Text = informationTeacher.MaCCCD;
                         for (int i = 0; i < namePartsTeacher.Length - 1; i++)
                         {
                             name += namePartsTeacher[i] + " ";
                         }
-                        txtSurname.Texts = name;
-                        txtName.Texts = namePartsTeacher[namePartsTeacher.Length - 1];
+                        txtSurname_1.Text = name;
+                        txtName_1.Text = namePartsTeacher[namePartsTeacher.Length - 1];
                         dtpBirthday.Value = informationTeacher.NgaySinh;
                         if (informationTeacher.GioiTinh)
                         {
@@ -403,5 +409,7 @@ namespace GUI
                 e.Handled = true;
             }
         }
+
+
     }
 }

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 
 namespace DAL
 {
@@ -144,8 +143,8 @@ namespace DAL
             //Bởi vì LinQ to entities k hỗ trợ lấy ra Date từ datetime trong Database nên phải dùng
             //DbFunctions.TruncateTime(Datetime) để lấy ra phần ngày không chứa giờ
 
-            //Nếu tồn tại thông báo trong ngày thì trả về false
-            return (query.Count == 0 ? true : false);
+            //Nếu tồn tại thông báo trong ngày thì trả về true
+            return query.Count != 0;
         }
         //Thay thế thông báo 
         public void ReplaceNotice(string MaGV, DateTime NgayTao, string MaLHP, string TieuDe, string NoiDung)
@@ -246,15 +245,26 @@ namespace DAL
         //Lấy ra các lớp học phần mà sinh viên trong lớp học phần cần tạo bài kiểm tra học và kiểm tra xung đột trên các lớp đó 
         public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHP)
         {
-            DateTime TimeLamBai = TimeExam.AddMinutes((double)ThoiGianLamBai);
+            DateTime TimeKetThuc = TimeExam.AddMinutes((double)ThoiGianLamBai);
+
+            //Lấy ra danh sách sinh viên trong lớp học phần muốn tạo bài kiểm tra
             List<string> list = GetListSVForLHP(MaLHP);
+
+            //Lấy ra danh sách các lớp học phần mà mỗi sinh viên trong lớp đó học 
             var ListLHP = db.SINHVIEN_LOPHOCPHAN.Where(x => list.Contains(x.MaSV)).Select(x => x.MaLopHP).Distinct().ToList();
-            var query = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
-                                        && ((bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeLamBai && bkt.NgayKiemTra <= TimeLamBai) 
-                                            || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeLamBai) 
-                                            || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeLamBai && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeExam) 
-                                            || (bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeLamBai))).ToList();
-            return query.Count > 0;
+
+            //Lấy ra các bài kiểm tra thuộc trong danh sách lớp học phần vừa lấy và kiểm tra xung đột thời gian thi 
+            /*var query = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
+            && ((bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeKetThuc
+                && bkt.NgayKiemTra <= TimeKetThuc)
+            || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeKetThuc)
+            || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeKetThuc
+                && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeExam)
+            || (bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeKetThuc))).ToList();*/
+            var query1 = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
+                                                && !(DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeExam 
+                                                      || bkt.NgayKiemTra > TimeKetThuc)).ToList();
+            return query1.Count > 0;
         }
         public void CreateQuestion(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD, string DapAnDung, string MaMonHoc, string PhanLoai)
         {
@@ -362,12 +372,12 @@ namespace DAL
         {
             var result = from nd in db.NGUOI_DUNG
                          join gv in db.GIANG_VIEN on nd.MaNguoiDung equals gv.MaGV
-                        where gv.MaKhoa == idFaculuty
-                             && !db.LOP_SINH_HOAT.Any(lsh => lsh.MaGVCN == gv.MaGV && lsh.MaLopSH.Contains(nameFaculuty))
+                         where gv.MaKhoa == idFaculuty
+                              && !db.LOP_SINH_HOAT.Any(lsh => lsh.MaGVCN == gv.MaGV && lsh.MaLopSH.Contains(nameFaculuty))
                          select new CBBItem
                          {
-                            Id = nd.MaNguoiDung,
-                            Value = nd.MaNguoiDung + " - " + nd.Ho + " " + nd.Ten
+                             Id = nd.MaNguoiDung,
+                             Value = nd.MaNguoiDung + " - " + nd.Ho + " " + nd.Ten
                          };
 
             return result.ToList();

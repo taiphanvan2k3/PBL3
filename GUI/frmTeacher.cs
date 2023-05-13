@@ -122,7 +122,7 @@ namespace GUI
         void LoadInfo(string Account)
         {
             GiangVien_DTO gv = GiangVien_BLL.Instance.GetGiangVienById(Account);
-            Info.Name = gv.Ho + " " + gv.Ten;
+            Info.TenGV = gv.Ho + " " + gv.Ten;
             Info.IdTeacher = gv.MaNguoiDung;
             Info.Khoa = gv.MaKhoa;
             Info.NgaySinh = gv.NgaySinh.ToShortDateString();
@@ -286,6 +286,7 @@ namespace GUI
                 if (DailySchedule == null)
                 {
                     DailySchedule = new UC_DailyWorkSchedule();
+                    DailySchedule.MaGV = ID;
                     DailySchedule.Dock = DockStyle.Fill;
                 }
                 pnlMain.Controls.Clear();
@@ -301,6 +302,7 @@ namespace GUI
                 if (WeeklySchedule == null)
                 {
                     WeeklySchedule = new UC_WeeklyWorkSchedule();
+                    WeeklySchedule.MaGV = ID;
                     WeeklySchedule.Dock = DockStyle.Fill;
                 }
                 pnlMain.Controls.Clear();

@@ -136,7 +136,6 @@ namespace GUI
             showSubMenu(panelAdd);
         }
 
-
         private void btnExpandMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
@@ -214,7 +213,6 @@ namespace GUI
         private void btnTeacher_Click(object sender, EventArgs e)
         {
             openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList(), 1));
-
         }
 
         private void btnHomeroomClass_Click(object sender, EventArgs e)
