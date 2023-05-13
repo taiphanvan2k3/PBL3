@@ -49,8 +49,12 @@ namespace GUI.MyUserControls
                 {
                     DateTime start = UtilityClass.FirstDateOfWeekISO8601(year, i);
                     DateTime end = start.AddDays(6);
-                    //Thêm tuần vào list
-                    weeks.Add("Tuần " + $"{i.ToString().PadLeft(2, '0')} ({start.ToString("dd/MM/yyyy")} -> {end.ToString("dd/MM/yyyy")})");
+                    //Chỉ thêm những tuần sau hiện tại vào list
+                    if(end >= DateTime.Now)
+                    {
+                        //Thêm tuần vào list
+                        weeks.Add("Tuần " + $"{i.ToString().PadLeft(2, '0')} ({start.ToString("dd/MM/yyyy")} -> {end.ToString("dd/MM/yyyy")})");
+                    }
                 }
             }
             else
@@ -59,9 +63,12 @@ namespace GUI.MyUserControls
                 {
                     DateTime start = UtilityClass.FirstDateOfWeekISO8601(year, i);
                     DateTime end = start.AddDays(6);
-
-                    //Thêm tuần vào list
-                    weeks.Add("Tuần " + $"{i.ToString().PadLeft(2, '0')} ({start.ToString("dd/MM/yyyy")} -> {end.ToString("dd/MM/yyyy")})");
+                    //Chỉ thêm những tuần sau hiện tại vào list
+                    if (end >= DateTime.Now)
+                    {
+                        //Thêm tuần vào list
+                        weeks.Add("Tuần " + $"{i.ToString().PadLeft(2, '0')} ({start.ToString("dd/MM/yyyy")} -> {end.ToString("dd/MM/yyyy")})");
+                    }
                 }
             }
 

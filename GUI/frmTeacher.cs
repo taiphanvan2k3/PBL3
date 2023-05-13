@@ -22,9 +22,6 @@ namespace GUI
             CollapseMenu();
             Info = new UC_TeacherInfo();
             ID = "102BK0001";
-            CreateExam = new UC_CreateExam(ID);
-            CreateExam.MaGV = ID;
-            CreateExam.Dock = DockStyle.Fill;
             LoadInfo(ID);
         }
         public frmTeacher(string account)
@@ -33,9 +30,6 @@ namespace GUI
             CollapseMenu();
             Info = new UC_TeacherInfo();
             ID = account;
-            CreateExam = new UC_CreateExam(ID);
-            CreateExam.MaGV = ID;
-            CreateExam.Dock = DockStyle.Fill;
             LoadInfo(ID);
         }
         #region List đối tượng menu
@@ -273,6 +267,12 @@ namespace GUI
             if (ButtonClicked != "Tạo bài kiểm tra")
             {
                 ButtonClicked = "Tạo bài kiểm tra";
+                if(CreateExam == null)
+                {
+                    CreateExam = new UC_CreateExam(ID);
+                    CreateExam.MaGV = ID;
+                    CreateExam.Dock = DockStyle.Fill;
+                }
                 pnlMain.Controls.Clear();
                 pnlMain.Controls.Add(CreateExam);
             }

@@ -259,38 +259,45 @@ namespace Testexcel
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            string filePath = (string)e.Argument;
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook wb;
-            Worksheet ws;
-            wb = excel.Workbooks.Open(filePath);
-            ws = wb.Worksheets[1];
-            Range usedRange = ws.UsedRange;
-            object[,] data = usedRange.Value;
-            System.Data.DataTable dt = new System.Data.DataTable();
-            for (int i = 1; i <= usedRange.Columns.Count; i++)
+            try
             {
-                string columnName = Convert.ToString(data[1, i]);
-                if (!string.IsNullOrEmpty(columnName))
+                string filePath = (string)e.Argument;
+                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+                Workbook wb;
+                Worksheet ws;
+                wb = excel.Workbooks.Open(filePath);
+                ws = wb.Worksheets[1];
+                Range usedRange = ws.UsedRange;
+                object[,] data = usedRange.Value;
+                System.Data.DataTable dt = new System.Data.DataTable();
+                for (int i = 1; i <= usedRange.Columns.Count; i++)
                 {
-                    dt.Columns.Add(columnName);
+                    string columnName = Convert.ToString(data[1, i]);
+                    if (!string.IsNullOrEmpty(columnName))
+                    {
+                        dt.Columns.Add(columnName);
+                    }
                 }
+                for (int i = 2; i <= usedRange.Rows.Count; i++)
+                {
+                    DataRow tempRow = dt.NewRow();
+                    for (int j = 1; j <= usedRange.Columns.Count; j++)
+                    {
+                        tempRow[j - 1] = data[i, j];
+                    }
+                    dt.Rows.Add(tempRow);
+                    // Report progress
+                    int progressPercentage = (i * 100) / usedRange.Rows.Count;
+                    backgroundWorkerLoadFileLocal.ReportProgress(progressPercentage);
+                }
+                e.Result = dt;
+                wb.Close();
+                excel.Quit();
             }
-            for (int i = 2; i <= usedRange.Rows.Count; i++)
+            catch(Exception ex)
             {
-                DataRow tempRow = dt.NewRow();
-                for (int j = 1; j <= usedRange.Columns.Count; j++)
-                {
-                    tempRow[j - 1] = data[i, j];
-                }
-                dt.Rows.Add(tempRow);
-                // Report progress
-                int progressPercentage = (i * 100) / usedRange.Rows.Count;
-                backgroundWorkerLoadFileLocal.ReportProgress(progressPercentage);
+                CustomMessageBox.Show(ex.Message);
             }
-            e.Result = dt;
-            wb.Close();
-            excel.Quit();
         }
 
 

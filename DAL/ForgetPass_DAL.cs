@@ -87,7 +87,9 @@ namespace DAL
         {
             using (var context = new PBL3Entities())
             {
-                THONG_TIN_DANG_NHAP userInfo = SendPass(email);
+                //THONG_TIN_DANG_NHAP userInfo = SendPass(email);
+                string taiKhoan = SendPass(email).TaiKhoan.ToString();
+                var userInfo = context.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(taiKhoan));
                 if (userInfo != null)
                 {
                     userInfo.MaXacThucDeLayLaiMK = null;
