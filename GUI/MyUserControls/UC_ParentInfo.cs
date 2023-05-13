@@ -93,9 +93,11 @@ namespace GUI.MyUserControls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string address = UtilityClass.GetAddressFromUCAddressSelection(txtSoDuong.Text, uC_AddressSelection.TinhThanhPho,
-                uC_AddressSelection.QuanHuyen, uC_AddressSelection.XaPhuong);
+            string address = UtilityClass.GetAddressFromUCAddressSelection(txtSoDuong.Text, 
+                uC_AddressSelection.TinhThanhPho, uC_AddressSelection.QuanHuyen, uC_AddressSelection.XaPhuong);
             string resultOfSave = "";
+
+            //Vì (MaSV,TenPH) là khoá chính trong bảng Phu_Huynh nên phải kiểm tra tenPH có khác "" trước khi lưu
             if (txtTenCha.Text != "")
             {
                 PhuHuynh_DTO Cha = new PhuHuynh_DTO();

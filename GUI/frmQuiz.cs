@@ -12,6 +12,8 @@ namespace GUI
 {
     public partial class frmQuiz : Form
     {
+        //Lưu đối tượng ucDoExam để khi hoàn thành bài kiểm tra thì gọi hàm load lại dữ liệu các
+        //bài kiểm tra ở UC_DoExam sau khi hoàn thành 1 bài kiểm tra nào đó
         public UserControl ucDoExam { get; set; }
         private string _MaSV { get; set; }
         public string MaSV

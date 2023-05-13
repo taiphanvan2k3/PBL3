@@ -110,9 +110,13 @@ namespace DAL
                     ChoPhepQuayLai = bkt.ChoPhepQuayLai != null && (bool)bkt.ChoPhepQuayLai
                 })
                 .ToList();
+
+            //Sau khi trả về các bài kiểm tra có ở các lớp HP mà sinh viên đang học thì lọc ra
+            //các bài kiểm tra sv chưa làm để hiển thị trên giao diện thôi
             List<BaiKiemTra_DTO> res = new List<BaiKiemTra_DTO>();
             foreach (BaiKiemTra_DTO bkt in li)
             {
+                //Kiểm tra sinh viên có MaSV này đã làm bài kiểm tra có MaBaiKiemTra này chưa
                 if (db.LAM_BAI_KIEM_TRA.Find(MaSV, bkt.MaBaiKiemTra) == null)
                     res.Add(bkt);
             }

@@ -150,6 +150,8 @@ namespace GUI.MyUserControls
                 bool IsFilterAll = true;
                 if (cbbKiHoc.SelectedIndex > 0)
                     IsFilterAll = false;
+
+                //txtTenHP: "Cơ sở dữ liệu - 21.13" thì lấy ra "Cơ sở dữ liệu" để lọc
                 string[] ds = txtTenHP.Text.Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries);
                 var li = kqLamBai.Where(p => p.TenMH == ds[0] && p.MaHP == ds[1]
                 && (IsFilterAll || p.KiHoc == cbbKiHoc.SelectedIndex)).ToList();
