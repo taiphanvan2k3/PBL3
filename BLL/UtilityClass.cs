@@ -272,7 +272,7 @@ namespace BLL
             }
 
             var result = firstThursday.AddDays(weekNum * 7);
-
+            //Trừ đi 3 để lấy về lại thứ 2 của tuần thứ weekOfYeak
             return result.AddDays(-3);
         }
         public static int ConvertDayOfWeekToNumber(string DayOfWeek)
