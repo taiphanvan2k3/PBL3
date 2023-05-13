@@ -2,16 +2,8 @@
 using DTO;
 using GUI.MyCustomControl;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -67,8 +59,11 @@ namespace GUI
                 else
                 {
                     lbMessagebox.Visible = false;
-                    CustomMessageBox.Show("Đã tìm thấy tài khoản!\nĐang trong quá trình gửi mail. Vui lòng đợi trong giây lát.", "Thông báo");
+                    CustomMessageBox.Show("Đã tìm thấy tài khoản!\nĐang trong quá trình gửi mail. " +
+                                          "Vui lòng đợi trong giây lát.", "Thông báo");
                     pnlProgressBar.Visible = true;
+
+                    //Sau khi gọi RunWorkerAsync thì background worker sẽ gọi đến event DoWork
                     backgroundWorker1.RunWorkerAsync(acc.MaXacThucDeLayLaiMK);
                 }
             }
@@ -76,20 +71,17 @@ namespace GUI
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-
-
             string digitcode = (string)e.Argument;
-            // Gọi phương thức gửi email
 
+            // Gọi phương thức gửi email
             mess = UtilityClass.sendEmail(txtEmail.Texts.ToString(), digitcode);
+
             // Thông báo tiến độ hoàn thành
             backgroundWorker1.ReportProgress(100);
-
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            
             progressBar1.Value = e.ProgressPercentage;
             lblProgress.Text = $"{e.ProgressPercentage}%";
         }
