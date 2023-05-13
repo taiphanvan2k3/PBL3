@@ -8,7 +8,7 @@ namespace GUI
 {
     public partial class frmEnterPassToDoExam : Form
     {
-        #region Danh sách các thuộc tính cần thiết để truyền giữa các form, đỡ truy vấn lại
+        #region Danh sách các thuộc tính cần thiết để truyền giữa các form,tuy hơi nhiều nhưng đỡ truy vấn lại
         public UserControl ucDoExam { get; set; }
         public string MaSV { get; set; }
         public string TenSV { get; set; }
