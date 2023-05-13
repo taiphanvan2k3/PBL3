@@ -20,7 +20,7 @@ namespace GUI.MyUserControls
 
         private void UC_WeeklyWorkSchedule_Load(object sender, EventArgs e)
         {
-            MaGV = "102BK0001";
+            //MaGV = "102BK0001";
             li = GiangVien_BLL.Instance.GetAllKiHocNamHocGVDay(MaGV);
             foreach (KeyValuePair<int, int> item in li)
             {

@@ -43,6 +43,9 @@ namespace DAL
                 db.PHU_HUYNH.Add(phuHuynh);
             }
 
+            /*Tên phụ huynh đã bị thay đổi và phụ huynh này trước đó ĐÃ CÓ trong CSDL(oldName != "")
+            Việc thêm đk oldName != "" rất quan trọng vì nếu thiếu đk này thì ta sẽ xoá đi phuHuynh vừa thêm
+            tại lần thêm ở if trước đó nếu phụ huynh này chưa có trong CSDL*/
             if (phuHuynhOld.TenPH != oldName && oldName != "")
             {
                 //Xoá bản ghi cũ rồi thêm mới vì TenPH là 1 phần của khoá chính 

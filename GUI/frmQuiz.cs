@@ -12,6 +12,8 @@ namespace GUI
 {
     public partial class frmQuiz : Form
     {
+        //Lưu đối tượng ucDoExam để khi hoàn thành bài kiểm tra thì gọi hàm load lại dữ liệu các
+        //bài kiểm tra ở UC_DoExam sau khi hoàn thành 1 bài kiểm tra nào đó
         public UserControl ucDoExam { get; set; }
         private string _MaSV { get; set; }
         public string MaSV
@@ -37,7 +39,7 @@ namespace GUI
         private DateTime SubmitTime { get; set; }
         private int SoLanViPham { get; set; } = 0;
 
-        //Các thuộc tính để ngăn chặn việc chuyển tab, quay màn hình,...
+        //Các thuộc tính để ngăn chặn việc quay, chụp màn hình,... (Ngăn chuyển tab là dùng thuộc tính TopMost = true)
         [DllImport("user32.dll")]
         static extern bool SetWindowDisplayAffinity(IntPtr hWnd, uint dwAffinity);
         const uint WDA_NONE = 0x00000000;

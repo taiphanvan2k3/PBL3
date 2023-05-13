@@ -63,8 +63,9 @@ namespace BLL
                     int buttonHeight = 23;
 
                     string buttonText = "";
-                    if (e.ColumnIndex == 6)
+                    if (e.ColumnIndex == 0 || e.ColumnIndex == 6)
                     {
+                        //Lần đầu vẽ thì 2 cột "XemDanhSach" và "ThongBao" có chỉ số cột lần lượt là 0 và 1
                         buttonText = "Xem";
                         buttonWidth = 50;
                     }

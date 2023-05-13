@@ -58,10 +58,17 @@ namespace GUI.MyUserControls
             if (e.RowIndex >= 0 && dtgv.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
                 DataGridViewRow row = dtgv.Rows[e.RowIndex];
+
+                /*Do property ThoiGianLamBai có Browsable(false) nên không thể truy cập nó từ dtgv
+                  Nên phải truy cập thông qua ThoiGianLamBai_Show, và ThoiGianLamBai_Show có giá trị vd 60 phút
+                  nên phải cần thêm bước Substring nữa để lấy ra thời gian
+                 */
                 string tmp = row.Cells["ThoiGianLamBai_Show"].Value.ToString();
                 int minutes = Convert.ToInt32(tmp.Substring(0, tmp.IndexOf(" ")));
+
                 tmp = row.Cells["SoLuongCauHoi_Show"].Value.ToString();
                 int TongSoCau = Convert.ToInt32(tmp.Substring(0, tmp.IndexOf(" ")));
+
                 frmEnterPass = new frmEnterPassToDoExam
                 {
                     MaSV = this.MaSV,
@@ -74,6 +81,8 @@ namespace GUI.MyUserControls
                     MkBaiKiemTra = row.Cells["MkBaiKiemTra"].Value.ToString(),
                     TongSoCauHoi = TongSoCau,
                     ThoiGianLamBai = minutes,
+
+                    //Thiết lập StartPosition là Manual để làm hiệu ứng form di chuyển từ trên xuống
                     Location = new Point(700, 0),
                     StartPosition = FormStartPosition.Manual,
                     ucDoExam = this
@@ -105,12 +114,15 @@ namespace GUI.MyUserControls
                     //Vẽ text vào giữa HCN bên trong
                     string buttonText = "Làm bài";
                     Font buttonFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-                    // Measure the size of the button text
+
+                    //Tính toán kích thước của text, kích thước này phụ thuộc vào font đang sử dụng
                     SizeF textSize = e.Graphics.MeasureString(buttonText, buttonFont);
-                    // Calculate the center point of the button
+
+                    //Tính toán vị trí bắt đầu vẽ sao cho text nằm giữa button
                     float centerX = e.CellBounds.X + (e.CellBounds.Width - textSize.Width) / 2;
                     float centerY = e.CellBounds.Y + (e.CellBounds.Height - textSize.Height) / 2;
-                    // Draw the button text in the center of the button
+
+                    //Vẽ text ở giữa button
                     using (Brush brushDrawString = new SolidBrush(Color.White))
                     {
                         e.Graphics.DrawString(buttonText, buttonFont, brushDrawString, centerX, centerY);
