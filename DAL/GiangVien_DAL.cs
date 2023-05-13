@@ -331,6 +331,7 @@ namespace DAL
             string MaKhoa = GetMaKhoaByMaLHP(MaLHP);
             List<string> li1 = db.GIANG_VIEN.Where(gv => gv.MaKhoa == MaKhoa).Select(p => p.MaGV).ToList();
 
+            //Lấy ra danh sách giảng viên bị xung đột lịch
             List<string> li2 = db.GIANG_VIEN.Where(gv => gv.MaKhoa == MaKhoa)
                .Join(db.LOP_HOC_PHAN, gv => gv.MaGV, lhp => lhp.MaGV, (gv, lhp) => new
                {
