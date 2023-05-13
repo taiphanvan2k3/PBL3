@@ -69,18 +69,18 @@ namespace GUI.MyUserControls
         }
         public string EmailCaNhan
         {
-            get => tbEmailCaNhan.Texts;
-            set => tbEmailCaNhan.Texts = value;
+            get => tbEmailCaNhan.Text;
+            set => tbEmailCaNhan.Text = value;
         }
         public string EmailTruongCap
         {
-            get => tbEmailTruongCap.Texts; 
-            set => tbEmailTruongCap.Texts = value;
+            get => tbEmailTruongCap.Text; 
+            set => tbEmailTruongCap.Text = value;
         }
         public string SDT
         {
-            get => tbSDT.Texts;
-            set => tbSDT.Texts = value;
+            get => tbSDT.Text;
+            set => tbSDT.Text = value;
         }
         public string DanToc
         {
