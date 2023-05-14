@@ -64,7 +64,8 @@ namespace DAL
             var li = db.THOI_KHOA_BIEU
                      .Join(db.LOP_HOC_PHAN, tkb => tkb.MaLopHP, lhp => lhp.MaLopHP, (tkb, lhp) => new { TKB = tkb, LHP = lhp })
                      .Join(db.GIANG_VIEN, x => x.LHP.MaGV, gv => gv.MaGV, (x, gv) => new { x.TKB, x.LHP, GV = gv })
-                     .Where(x => x.GV.MaGV == id && x.TKB.Thu == thu && ((x.TKB.TietBD >= TietBD && x.TKB.TietBD <= TietKT) || (x.TKB.TietKetThuc >= TietBD && x.TKB.TietKetThuc <= TietKT)))
+                     .Where(x => x.GV.MaGV == id && x.TKB.Thu == thu && ((x.TKB.TietBD >= TietBD && x.TKB.TietBD <= TietKT) 
+                                                                          || (x.TKB.TietKetThuc >= TietBD && x.TKB.TietKetThuc <= TietKT)))
                      .Select(x => x.TKB).ToList();
             //Nếu list rỗng thì không có xung đột trả về true
             return (li.Count == 0 ? true : false);
@@ -330,6 +331,7 @@ namespace DAL
             string MaKhoa = GetMaKhoaByMaLHP(MaLHP);
             List<string> li1 = db.GIANG_VIEN.Where(gv => gv.MaKhoa == MaKhoa).Select(p => p.MaGV).ToList();
 
+            //Lấy ra danh sách giảng viên bị xung đột lịch
             List<string> li2 = db.GIANG_VIEN.Where(gv => gv.MaKhoa == MaKhoa)
                .Join(db.LOP_HOC_PHAN, gv => gv.MaGV, lhp => lhp.MaGV, (gv, lhp) => new
                {

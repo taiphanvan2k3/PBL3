@@ -30,34 +30,29 @@
         {
             this.pnlRight = new System.Windows.Forms.Panel();
             this.gbDiaChi = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.UC_Address = new GUI.MyUserControls.UC_VerticalAddressSelection();
-            this.panelGradient6 = new GUI.MyCustomControl.PanelGradient();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlInfoAnother = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.cbbQuocTich = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbDanToc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbNoiSinh = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.tbCCCD = new GUI.MyCustomControl.CustomTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.gbTTLienHe = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.tbSDT = new GUI.MyCustomControl.CustomTextBox();
-            this.tbEmailTruongCap = new GUI.MyCustomControl.CustomTextBox();
-            this.tbEmailCaNhan = new GUI.MyCustomControl.CustomTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.btnChangePass = new GUI.MyCustomControl.CustomButton();
-            this.btnUploadAvatar = new GUI.MyCustomControl.CustomButton();
-            this.pcbImageGV = new GUI.MyCustomControl.CircularPictureBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.lbNameKhoa = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lbIdGV = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.tbEmailTruongCap = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnChangePass = new GUI.MyCustomControl.CustomButton();
+            this.btnUploadAvatar = new GUI.MyCustomControl.CustomButton();
+            this.pcbImageGV = new GUI.MyCustomControl.CircularPictureBox();
             this.panelGradient2 = new GUI.MyCustomControl.PanelGradient();
             this.lbLuong = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,16 +62,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbNgaySinh = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
+            this.UC_Address = new GUI.MyUserControls.UC_VerticalAddressSelection();
+            this.panelGradient6 = new GUI.MyCustomControl.PanelGradient();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tbCCCD = new GUI.MyCustomControl.CustomTextBox();
+            this.tbSDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbEmailCaNhan = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlRight.SuspendLayout();
             this.gbDiaChi.SuspendLayout();
-            this.panelGradient6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlInfoAnother.SuspendLayout();
             this.gbTTLienHe.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImageGV)).BeginInit();
             this.panelGradient2.SuspendLayout();
+            this.panelGradient6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRight
@@ -111,45 +111,6 @@
             this.gbDiaChi.TabIndex = 8;
             this.gbDiaChi.Text = "Địa chỉ";
             this.gbDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // UC_Address
-            // 
-            this.UC_Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.UC_Address.Background = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.UC_Address.BorderColorComboBox = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
-            this.UC_Address.Location = new System.Drawing.Point(16, 51);
-            this.UC_Address.Name = "UC_Address";
-            this.UC_Address.QuanHuyen = "";
-            this.UC_Address.Size = new System.Drawing.Size(437, 177);
-            this.UC_Address.TabIndex = 0;
-            this.UC_Address.TinhThanhPho = "";
-            this.UC_Address.XaPhuong = "";
-            // 
-            // panelGradient6
-            // 
-            this.panelGradient6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelGradient6.BackColor = System.Drawing.Color.White;
-            this.panelGradient6.BorderRadius = 30;
-            this.panelGradient6.Controls.Add(this.pictureBox2);
-            this.panelGradient6.ForeColor = System.Drawing.Color.Black;
-            this.panelGradient6.GradientAngle = 90F;
-            this.panelGradient6.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.panelGradient6.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
-            this.panelGradient6.Location = new System.Drawing.Point(538, 301);
-            this.panelGradient6.Name = "panelGradient6";
-            this.panelGradient6.Size = new System.Drawing.Size(244, 240);
-            this.panelGradient6.TabIndex = 10;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::GUI.Properties.Resources.Near;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(219, 211);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // pnlInfoAnother
             // 
@@ -223,29 +184,6 @@
             this.cbbNoiSinh.TabIndex = 28;
             this.cbbNoiSinh.Click += new System.EventHandler(this.cbbNoiSinh_Click);
             // 
-            // tbCCCD
-            // 
-            this.tbCCCD.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbCCCD.BorderColor = System.Drawing.Color.Black;
-            this.tbCCCD.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbCCCD.BorderRadius = 8;
-            this.tbCCCD.BorderSize = 2;
-            this.tbCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCCCD.ForeColor = System.Drawing.Color.DimGray;
-            this.tbCCCD.Location = new System.Drawing.Point(537, 92);
-            this.tbCCCD.Margin = new System.Windows.Forms.Padding(4);
-            this.tbCCCD.MaxLength = 32767;
-            this.tbCCCD.Multiline = false;
-            this.tbCCCD.Name = "tbCCCD";
-            this.tbCCCD.Padding = new System.Windows.Forms.Padding(7);
-            this.tbCCCD.PasswordChar = false;
-            this.tbCCCD.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbCCCD.PlaceholderText = "";
-            this.tbCCCD.Size = new System.Drawing.Size(200, 35);
-            this.tbCCCD.TabIndex = 26;
-            this.tbCCCD.Texts = "";
-            this.tbCCCD.UnderlinedStyle = false;
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -297,9 +235,9 @@
             this.gbTTLienHe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.gbTTLienHe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             this.gbTTLienHe.BorderRadius = 8;
+            this.gbTTLienHe.Controls.Add(this.tbEmailCaNhan);
             this.gbTTLienHe.Controls.Add(this.tbSDT);
             this.gbTTLienHe.Controls.Add(this.tbEmailTruongCap);
-            this.gbTTLienHe.Controls.Add(this.tbEmailCaNhan);
             this.gbTTLienHe.Controls.Add(this.label16);
             this.gbTTLienHe.Controls.Add(this.label15);
             this.gbTTLienHe.Controls.Add(this.label14);
@@ -313,76 +251,6 @@
             this.gbTTLienHe.TabIndex = 9;
             this.gbTTLienHe.Text = "Thông tin liên hệ";
             this.gbTTLienHe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbSDT
-            // 
-            this.tbSDT.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbSDT.BorderColor = System.Drawing.Color.Black;
-            this.tbSDT.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbSDT.BorderRadius = 8;
-            this.tbSDT.BorderSize = 2;
-            this.tbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSDT.ForeColor = System.Drawing.Color.DimGray;
-            this.tbSDT.Location = new System.Drawing.Point(180, 211);
-            this.tbSDT.Margin = new System.Windows.Forms.Padding(4);
-            this.tbSDT.MaxLength = 32767;
-            this.tbSDT.Multiline = false;
-            this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Padding = new System.Windows.Forms.Padding(7);
-            this.tbSDT.PasswordChar = false;
-            this.tbSDT.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbSDT.PlaceholderText = "";
-            this.tbSDT.Size = new System.Drawing.Size(482, 35);
-            this.tbSDT.TabIndex = 22;
-            this.tbSDT.Texts = "";
-            this.tbSDT.UnderlinedStyle = false;
-            // 
-            // tbEmailTruongCap
-            // 
-            this.tbEmailTruongCap.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbEmailTruongCap.BorderColor = System.Drawing.Color.Black;
-            this.tbEmailTruongCap.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbEmailTruongCap.BorderRadius = 8;
-            this.tbEmailTruongCap.BorderSize = 2;
-            this.tbEmailTruongCap.Enabled = false;
-            this.tbEmailTruongCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmailTruongCap.ForeColor = System.Drawing.Color.DimGray;
-            this.tbEmailTruongCap.Location = new System.Drawing.Point(180, 131);
-            this.tbEmailTruongCap.Margin = new System.Windows.Forms.Padding(4);
-            this.tbEmailTruongCap.MaxLength = 32767;
-            this.tbEmailTruongCap.Multiline = false;
-            this.tbEmailTruongCap.Name = "tbEmailTruongCap";
-            this.tbEmailTruongCap.Padding = new System.Windows.Forms.Padding(7);
-            this.tbEmailTruongCap.PasswordChar = false;
-            this.tbEmailTruongCap.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbEmailTruongCap.PlaceholderText = "";
-            this.tbEmailTruongCap.Size = new System.Drawing.Size(482, 35);
-            this.tbEmailTruongCap.TabIndex = 21;
-            this.tbEmailTruongCap.Texts = "";
-            this.tbEmailTruongCap.UnderlinedStyle = false;
-            // 
-            // tbEmailCaNhan
-            // 
-            this.tbEmailCaNhan.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbEmailCaNhan.BorderColor = System.Drawing.Color.Black;
-            this.tbEmailCaNhan.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbEmailCaNhan.BorderRadius = 8;
-            this.tbEmailCaNhan.BorderSize = 2;
-            this.tbEmailCaNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmailCaNhan.ForeColor = System.Drawing.Color.DimGray;
-            this.tbEmailCaNhan.Location = new System.Drawing.Point(180, 52);
-            this.tbEmailCaNhan.Margin = new System.Windows.Forms.Padding(4);
-            this.tbEmailCaNhan.MaxLength = 32767;
-            this.tbEmailCaNhan.Multiline = false;
-            this.tbEmailCaNhan.Name = "tbEmailCaNhan";
-            this.tbEmailCaNhan.Padding = new System.Windows.Forms.Padding(7);
-            this.tbEmailCaNhan.PasswordChar = false;
-            this.tbEmailCaNhan.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbEmailCaNhan.PlaceholderText = "";
-            this.tbEmailCaNhan.Size = new System.Drawing.Size(482, 35);
-            this.tbEmailCaNhan.TabIndex = 20;
-            this.tbEmailCaNhan.Texts = "";
-            this.tbEmailCaNhan.UnderlinedStyle = false;
             // 
             // label16
             // 
@@ -441,65 +309,6 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(350, 714);
             this.guna2CustomGradientPanel1.TabIndex = 12;
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnChangePass.BackGroundColor = System.Drawing.Color.SkyBlue;
-            this.btnChangePass.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnChangePass.BorderRadius = 40;
-            this.btnChangePass.BorderSize = 0;
-            this.btnChangePass.FlatAppearance.BorderSize = 0;
-            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePass.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangePass.Image = global::GUI.Properties.Resources.password__1_;
-            this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnChangePass.Location = new System.Drawing.Point(19, 174);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(58, 45);
-            this.btnChangePass.TabIndex = 31;
-            this.btnChangePass.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangePass.UseVisualStyleBackColor = false;
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
-            // 
-            // btnUploadAvatar
-            // 
-            this.btnUploadAvatar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnUploadAvatar.BackGroundColor = System.Drawing.Color.SkyBlue;
-            this.btnUploadAvatar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUploadAvatar.BorderRadius = 40;
-            this.btnUploadAvatar.BorderSize = 0;
-            this.btnUploadAvatar.FlatAppearance.BorderSize = 0;
-            this.btnUploadAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadAvatar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadAvatar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUploadAvatar.Image = global::GUI.Properties.Resources.UploadImage;
-            this.btnUploadAvatar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUploadAvatar.Location = new System.Drawing.Point(285, 174);
-            this.btnUploadAvatar.Name = "btnUploadAvatar";
-            this.btnUploadAvatar.Size = new System.Drawing.Size(58, 45);
-            this.btnUploadAvatar.TabIndex = 30;
-            this.btnUploadAvatar.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUploadAvatar.UseVisualStyleBackColor = false;
-            this.btnUploadAvatar.Click += new System.EventHandler(this.btnUploadAvatar_Click);
-            // 
-            // pcbImageGV
-            // 
-            this.pcbImageGV.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pcbImageGV.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pcbImageGV.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pcbImageGV.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pcbImageGV.BorderSize = 2;
-            this.pcbImageGV.GradientAngle = 50F;
-            this.pcbImageGV.Image = global::GUI.Properties.Resources.studentAvatar;
-            this.pcbImageGV.InitialImage = global::GUI.Properties.Resources.studentAvatar;
-            this.pcbImageGV.Location = new System.Drawing.Point(72, 19);
-            this.pcbImageGV.Name = "pcbImageGV";
-            this.pcbImageGV.Size = new System.Drawing.Size(200, 200);
-            this.pcbImageGV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbImageGV.TabIndex = 29;
-            this.pcbImageGV.TabStop = false;
             // 
             // btnSave
             // 
@@ -562,6 +371,101 @@
             this.label10.Size = new System.Drawing.Size(129, 23);
             this.label10.TabIndex = 12;
             this.label10.Text = "Mã giảng viên:";
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.BackColor = System.Drawing.Color.Transparent;
+            this.lbName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(86, 226);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(186, 31);
+            this.lbName.TabIndex = 10;
+            this.lbName.Text = "Trần Đình Mạnh";
+            // 
+            // tbEmailTruongCap
+            // 
+            this.tbEmailTruongCap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEmailTruongCap.BorderColor = System.Drawing.Color.Black;
+            this.tbEmailTruongCap.BorderRadius = 7;
+            this.tbEmailTruongCap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmailTruongCap.DefaultText = "";
+            this.tbEmailTruongCap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbEmailTruongCap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbEmailTruongCap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmailTruongCap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmailTruongCap.Enabled = false;
+            this.tbEmailTruongCap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmailTruongCap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbEmailTruongCap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmailTruongCap.Location = new System.Drawing.Point(180, 134);
+            this.tbEmailTruongCap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbEmailTruongCap.Name = "tbEmailTruongCap";
+            this.tbEmailTruongCap.PasswordChar = '\0';
+            this.tbEmailTruongCap.PlaceholderText = "";
+            this.tbEmailTruongCap.SelectedText = "";
+            this.tbEmailTruongCap.Size = new System.Drawing.Size(482, 35);
+            this.tbEmailTruongCap.TabIndex = 23;
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnChangePass.BackGroundColor = System.Drawing.Color.SkyBlue;
+            this.btnChangePass.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnChangePass.BorderRadius = 40;
+            this.btnChangePass.BorderSize = 0;
+            this.btnChangePass.FlatAppearance.BorderSize = 0;
+            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangePass.Image = global::GUI.Properties.Resources.password__1_;
+            this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnChangePass.Location = new System.Drawing.Point(19, 174);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(58, 45);
+            this.btnChangePass.TabIndex = 31;
+            this.btnChangePass.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangePass.UseVisualStyleBackColor = false;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // btnUploadAvatar
+            // 
+            this.btnUploadAvatar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUploadAvatar.BackGroundColor = System.Drawing.Color.SkyBlue;
+            this.btnUploadAvatar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnUploadAvatar.BorderRadius = 40;
+            this.btnUploadAvatar.BorderSize = 0;
+            this.btnUploadAvatar.FlatAppearance.BorderSize = 0;
+            this.btnUploadAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadAvatar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadAvatar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUploadAvatar.Image = global::GUI.Properties.Resources.UploadImage;
+            this.btnUploadAvatar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUploadAvatar.Location = new System.Drawing.Point(285, 174);
+            this.btnUploadAvatar.Name = "btnUploadAvatar";
+            this.btnUploadAvatar.Size = new System.Drawing.Size(58, 45);
+            this.btnUploadAvatar.TabIndex = 30;
+            this.btnUploadAvatar.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUploadAvatar.UseVisualStyleBackColor = false;
+            this.btnUploadAvatar.Click += new System.EventHandler(this.btnUploadAvatar_Click);
+            // 
+            // pcbImageGV
+            // 
+            this.pcbImageGV.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pcbImageGV.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pcbImageGV.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pcbImageGV.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pcbImageGV.BorderSize = 2;
+            this.pcbImageGV.GradientAngle = 50F;
+            this.pcbImageGV.Image = global::GUI.Properties.Resources.studentAvatar;
+            this.pcbImageGV.InitialImage = global::GUI.Properties.Resources.studentAvatar;
+            this.pcbImageGV.Location = new System.Drawing.Point(72, 19);
+            this.pcbImageGV.Name = "pcbImageGV";
+            this.pcbImageGV.Size = new System.Drawing.Size(200, 200);
+            this.pcbImageGV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbImageGV.TabIndex = 29;
+            this.pcbImageGV.TabStop = false;
             // 
             // panelGradient2
             // 
@@ -680,28 +584,127 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ngày sinh:";
             // 
-            // lbName
+            // UC_Address
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.BackColor = System.Drawing.Color.Transparent;
-            this.lbName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(86, 226);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(186, 31);
-            this.lbName.TabIndex = 10;
-            this.lbName.Text = "Trần Đình Mạnh";
+            this.UC_Address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UC_Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
+            this.UC_Address.Background = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
+            this.UC_Address.BorderColorComboBox = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
+            this.UC_Address.Location = new System.Drawing.Point(16, 51);
+            this.UC_Address.Name = "UC_Address";
+            this.UC_Address.QuanHuyen = "";
+            this.UC_Address.Size = new System.Drawing.Size(437, 177);
+            this.UC_Address.TabIndex = 0;
+            this.UC_Address.TinhThanhPho = "";
+            this.UC_Address.XaPhuong = "";
+            // 
+            // panelGradient6
+            // 
+            this.panelGradient6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelGradient6.BackColor = System.Drawing.Color.White;
+            this.panelGradient6.BorderRadius = 30;
+            this.panelGradient6.Controls.Add(this.pictureBox2);
+            this.panelGradient6.ForeColor = System.Drawing.Color.Black;
+            this.panelGradient6.GradientAngle = 90F;
+            this.panelGradient6.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
+            this.panelGradient6.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
+            this.panelGradient6.Location = new System.Drawing.Point(538, 301);
+            this.panelGradient6.Name = "panelGradient6";
+            this.panelGradient6.Size = new System.Drawing.Size(244, 240);
+            this.panelGradient6.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::GUI.Properties.Resources.Near;
+            this.pictureBox2.Location = new System.Drawing.Point(17, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(219, 211);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // tbCCCD
+            // 
+            this.tbCCCD.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tbCCCD.BorderColor = System.Drawing.Color.Black;
+            this.tbCCCD.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbCCCD.BorderRadius = 8;
+            this.tbCCCD.BorderSize = 1;
+            this.tbCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCCCD.ForeColor = System.Drawing.Color.DimGray;
+            this.tbCCCD.Location = new System.Drawing.Point(537, 92);
+            this.tbCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCCCD.MaxLength = 32767;
+            this.tbCCCD.Multiline = false;
+            this.tbCCCD.Name = "tbCCCD";
+            this.tbCCCD.Padding = new System.Windows.Forms.Padding(7);
+            this.tbCCCD.PasswordChar = false;
+            this.tbCCCD.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbCCCD.PlaceholderText = "";
+            this.tbCCCD.Size = new System.Drawing.Size(200, 35);
+            this.tbCCCD.TabIndex = 26;
+            this.tbCCCD.Texts = "";
+            this.tbCCCD.UnderlinedStyle = false;
+            // 
+            // tbSDT
+            // 
+            this.tbSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSDT.BorderColor = System.Drawing.Color.Black;
+            this.tbSDT.BorderRadius = 7;
+            this.tbSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSDT.DefaultText = "";
+            this.tbSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSDT.Location = new System.Drawing.Point(180, 211);
+            this.tbSDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.PasswordChar = '\0';
+            this.tbSDT.PlaceholderText = "";
+            this.tbSDT.SelectedText = "";
+            this.tbSDT.Size = new System.Drawing.Size(482, 35);
+            this.tbSDT.TabIndex = 24;
+            // 
+            // tbEmailCaNhan
+            // 
+            this.tbEmailCaNhan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEmailCaNhan.BorderColor = System.Drawing.Color.Black;
+            this.tbEmailCaNhan.BorderRadius = 7;
+            this.tbEmailCaNhan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmailCaNhan.DefaultText = "";
+            this.tbEmailCaNhan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbEmailCaNhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbEmailCaNhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmailCaNhan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmailCaNhan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmailCaNhan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbEmailCaNhan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmailCaNhan.Location = new System.Drawing.Point(180, 52);
+            this.tbEmailCaNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbEmailCaNhan.Name = "tbEmailCaNhan";
+            this.tbEmailCaNhan.PasswordChar = '\0';
+            this.tbEmailCaNhan.PlaceholderText = "";
+            this.tbEmailCaNhan.SelectedText = "";
+            this.tbEmailCaNhan.Size = new System.Drawing.Size(482, 35);
+            this.tbEmailCaNhan.TabIndex = 25;
             // 
             // UC_TeacherInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.pnlRight);
-            this.TenGV = "UC_TeacherInfo";
+            this.Name = "UC_TeacherInfo";
             this.Size = new System.Drawing.Size(1175, 730);
             this.pnlRight.ResumeLayout(false);
             this.gbDiaChi.ResumeLayout(false);
-            this.panelGradient6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlInfoAnother.ResumeLayout(false);
             this.pnlInfoAnother.PerformLayout();
             this.gbTTLienHe.ResumeLayout(false);
@@ -711,6 +714,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbImageGV)).EndInit();
             this.panelGradient2.ResumeLayout(false);
             this.panelGradient2.PerformLayout();
+            this.panelGradient6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -718,9 +723,6 @@
         #endregion
         private System.Windows.Forms.Panel pnlRight;
         private Guna.UI2.WinForms.Guna2GroupBox gbTTLienHe;
-        private MyCustomControl.CustomTextBox tbSDT;
-        private MyCustomControl.CustomTextBox tbEmailTruongCap;
-        private MyCustomControl.CustomTextBox tbEmailCaNhan;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -756,5 +758,8 @@
         private MyCustomControl.CircularPictureBox pcbImageGV;
         private MyCustomControl.CustomButton btnUploadAvatar;
         private MyCustomControl.CustomButton btnChangePass;
+        private Guna.UI2.WinForms.Guna2TextBox tbEmailTruongCap;
+        private Guna.UI2.WinForms.Guna2TextBox tbEmailCaNhan;
+        private Guna.UI2.WinForms.Guna2TextBox tbSDT;
     }
 }

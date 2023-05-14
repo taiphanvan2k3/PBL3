@@ -124,7 +124,6 @@ namespace GUI
             }
             else
                 frm.CheckHasSchedule = false;
-            frm.CheckHasSchedule = false;
             frm.ShowDialog();
         }
 
