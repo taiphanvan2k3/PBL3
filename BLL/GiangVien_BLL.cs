@@ -151,6 +151,7 @@ namespace BLL
         {
             List<AssignTeacher> li = new List<AssignTeacher>();
             int stt = 1;
+            var li1 = GiangVien_DAL.Instance.GetGVPhuHopTKB(MaLHP, Thu, TietBD, TietKT);
             foreach (var i in GiangVien_DAL.Instance.GetGVPhuHopTKB(MaLHP, Thu, TietBD, TietKT))
             {
                 li.Add(new AssignTeacher
