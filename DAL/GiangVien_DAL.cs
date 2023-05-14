@@ -346,6 +346,7 @@ namespace DAL
                    tkb.TietKetThuc
                }).Where(p => p.Thu == Thu && !(p.TietBD > TietKT || p.TietKetThuc < TietBD)).Select(p => p.MaGV).ToList();
             List<string> li = li1.Except(li2).ToList();
+            //Lấy ra danh sách thông tin giảng viên kèm số lượng lớp học phần mà GV đó đang dạy hoặc = 0 nếu chưa dạy lớp nào
             return db.GIANG_VIEN
                 .Join(db.NGUOI_DUNG, gv => gv.MaGV, nd => nd.MaNguoiDung, (gv, nd) => new
                 {
