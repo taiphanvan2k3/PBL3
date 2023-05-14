@@ -62,6 +62,8 @@ namespace GUI
         }
         private void loadData()
         {
+            HideButton();
+            UncheckAllCheckBoxes();
             switch (role)
             {
                 case 0:
@@ -166,6 +168,7 @@ namespace GUI
         }
 
         #region Thêm header checkbox
+        // Thêm 1 cột checkbox vào datagridview ở cột đâu ftiene
         private void BindGridView()
         {
             dgvViewAcc.CurrentCell = null;
@@ -177,24 +180,28 @@ namespace GUI
             TotalCheckedCheckBoxes = 0;
         }
 
+        // Xác định nếu ô hiện tại đang được chỉnh sửa là một ô chứa CheckBox thì nó sẽ thực hiện việc commitEdit để cập nhật dữ liệu.
         private void dgvSelectAll_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (dgvViewAcc.CurrentCell is DataGridViewCheckBoxCell)
                 dgvViewAcc.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
 
+        // khi nhấn vào 1 ô hearder checkbox
         private void HeaderCheckBox_MouseClick(object sender, MouseEventArgs e)
         {
             dgvViewAcc.CurrentCell = null;
             HeaderCheckBoxClick((CheckBox)sender);
         }
 
+        // Vẽ ô checkbox header
         private void dgvSelectAll_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex == -1 && e.ColumnIndex == 0)
                 ResetHeaderCheckBoxLocation(e.ColumnIndex, e.RowIndex);
         }
 
+        // Tạo 1 header checkbox
         private void AddHeaderCheckBox()
         {
             HeaderCheckBox = new CheckBox();
@@ -206,12 +213,12 @@ namespace GUI
 
         private void ResetHeaderCheckBoxLocation(int ColumnIndex, int RowIndex)
         {
-            //Get the column header cell bounds
+            // Lấy kích thước của ô tiêu đề
             Rectangle oRectangle = this.dgvViewAcc.GetCellDisplayRectangle(ColumnIndex, RowIndex, true);
             Point oPoint = new Point();
             oPoint.X = oRectangle.Location.X + (oRectangle.Width - HeaderCheckBox.Width) / 2;
             oPoint.Y = oRectangle.Location.Y + (oRectangle.Height - HeaderCheckBox.Height) / 2;
-            //Change the location of the CheckBox to make it stay on the header
+            // Thay đổi vị trí của nó trên header
             HeaderCheckBox.Location = oPoint;
         }
 
@@ -227,6 +234,18 @@ namespace GUI
             TotalCheckedCheckBoxes = HCheckBox.Checked ? TotalCheckBoxes : 0;
             //IsHeaderCheckBoxClicked = false;
         }
+
+        private void UncheckAllCheckBoxes()
+        {
+            HeaderCheckBox.Checked = false;
+            foreach (DataGridViewRow row in dgvViewAcc.Rows)
+            {
+                DataGridViewCheckBoxCell checkBox = (DataGridViewCheckBoxCell)row.Cells["checkBoxColumn"];
+                checkBox.Value = false;
+            }
+            TotalCheckedCheckBoxes = 0;
+        }
+
 
 
         #endregion
