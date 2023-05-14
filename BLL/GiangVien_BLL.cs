@@ -81,6 +81,11 @@ namespace BLL
         {
             GiangVien_DAL.Instance.AssignTeacherNoChangeSchedule(id, MaLHP);
         }
+
+        public string GetMaKhoaByMaLHP(string maLHP)
+        {
+            return GiangVien_DAL.Instance.GetMaKhoaByMaLHP(maLHP);
+        }
         public List<string> GetListLHPByIDTeacher(string id)
         {
             return GiangVien_DAL.Instance.GetMaLopHPByID(id);

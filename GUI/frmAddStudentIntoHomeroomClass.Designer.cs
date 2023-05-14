@@ -64,7 +64,7 @@
             this.lblImgUpload.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblImgUpload.BackColor = System.Drawing.Color.Transparent;
             this.lblImgUpload.Image = global::GUI.Properties.Resources.csv;
-            this.lblImgUpload.Location = new System.Drawing.Point(182, 69);
+            this.lblImgUpload.Location = new System.Drawing.Point(174, 67);
             this.lblImgUpload.Name = "lblImgUpload";
             this.lblImgUpload.Size = new System.Drawing.Size(74, 78);
             this.lblImgUpload.TabIndex = 6;
@@ -76,7 +76,7 @@
             this.lblTextUpload.BackColor = System.Drawing.Color.Transparent;
             this.lblTextUpload.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextUpload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblTextUpload.Location = new System.Drawing.Point(91, 20);
+            this.lblTextUpload.Location = new System.Drawing.Point(54, 16);
             this.lblTextUpload.Name = "lblTextUpload";
             this.lblTextUpload.Size = new System.Drawing.Size(314, 38);
             this.lblTextUpload.TabIndex = 5;

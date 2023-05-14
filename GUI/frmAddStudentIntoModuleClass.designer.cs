@@ -35,7 +35,7 @@
             this.lblTextUpload = new System.Windows.Forms.Label();
             this.btnCancel = new GUI.MyCustomControl.CustomButton();
             this.btnAdd = new GUI.MyCustomControl.CustomButton();
-            this.txtIdStudent = new GUI.MyCustomControl.CustomTextBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlUpload.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,43 +129,45 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtIdStudent
+            // txtSearch
             // 
-            this.txtIdStudent.BackColor = System.Drawing.SystemColors.Window;
-            this.txtIdStudent.BorderColor = System.Drawing.Color.Black;
-            this.txtIdStudent.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtIdStudent.BorderRadius = 10;
-            this.txtIdStudent.BorderSize = 2;
-            this.txtIdStudent.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdStudent.ForeColor = System.Drawing.Color.DimGray;
-            this.txtIdStudent.Location = new System.Drawing.Point(198, 23);
-            this.txtIdStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdStudent.MaxLength = 32767;
-            this.txtIdStudent.Multiline = false;
-            this.txtIdStudent.Name = "txtIdStudent";
-            this.txtIdStudent.Padding = new System.Windows.Forms.Padding(7);
-            this.txtIdStudent.PasswordChar = false;
-            this.txtIdStudent.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtIdStudent.PlaceholderText = "";
-            this.txtIdStudent.Size = new System.Drawing.Size(227, 38);
-            this.txtIdStudent.TabIndex = 1;
-            this.txtIdStudent.Texts = "";
-            this.txtIdStudent.UnderlinedStyle = false;
-            this.txtIdStudent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdStudent_KeyDown);
+            this.txtSearch.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Location = new System.Drawing.Point(194, 19);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(230, 35);
+            this.txtSearch.TabIndex = 20;
             // 
             // frmAddStudentIntoModuleClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(491, 334);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pnlUpload);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtIdStudent);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddStudentIntoModuleClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddStudent";
+            this.Load += new System.EventHandler(this.frmAddStudentIntoModuleClass_Load);
             this.pnlUpload.ResumeLayout(false);
             this.pnlUpload.PerformLayout();
             this.ResumeLayout(false);
@@ -176,11 +178,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MyCustomControl.CustomTextBox txtIdStudent;
         private MyCustomControl.CustomButton btnAdd;
         private MyCustomControl.CustomButton btnCancel;
         private MyCustomControl.PanelGradient pnlUpload;
         private System.Windows.Forms.Label lblTextUpload;
         private System.Windows.Forms.Label lblImgUpload;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
     }
 }

@@ -171,5 +171,10 @@ namespace BLL
         {
             return LopHocPhan_DAL.Instance.getListSubjects();
         }
+
+        public List<string> getListStudent(string maKhoa, string maLHP)
+        {
+            return LopHocPhan_DAL.Instance.getListStudent(maKhoa, maLHP);
+        }
     }
 }

@@ -3,6 +3,8 @@ using DTO;
 using GUI.MyCustomControl;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace GUI
@@ -20,6 +22,12 @@ namespace GUI
         private int TietBD { get; set; }
         private int TietKT { get; set; }
 
+        private string maKHoa { get; set; }
+
+        // Phục vụ tìm kiếm
+        private AutoCompleteStringCollection autotext;
+        private string previousValue;
+
         public delegate void ReloadParentForm();
         public ReloadParentForm reloadDTGV { get; set; }
         private string FileName { get; set; } = string.Empty;
@@ -36,6 +44,7 @@ namespace GUI
             this.Thu = Thu;
             this.TietBD = TietBD;
             this.TietKT = TietKT;
+            this.maKHoa = GiangVien_BLL.Instance.GetMaKhoaByMaLHP(MaHP);
         }
 
         private void pnlUpload_Click(object sender, EventArgs e)
@@ -49,23 +58,23 @@ namespace GUI
             }
         }
 
-        private void txtIdStudent_KeyDown(object sender, KeyEventArgs e)
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show(txtIdStudent.Texts);
+                MessageBox.Show(txtSearch.Text);
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtIdStudent.Texts == "" && FileName == "")
+            if (txtSearch.Text == "" && FileName == "")
             {
                 CustomMessageBox.Show("Bạn chưa nhập mã sinh viên cần thêm");
                 return;
             }
 
-            string MaSV = txtIdStudent.Texts;
+            string MaSV = txtSearch.Text;
             if (!SinhVien_BLL.ValidateIDStudent(MaSV))
             {
                 CustomMessageBox.Show("Mã sinh viên không hợp lệ hoặc không tồn tại", "Lỗi",
@@ -95,7 +104,7 @@ namespace GUI
                     //Không bị va chạm => Có thể thêm
                     CustomMessageBox.Show("Thêm thành công");
                     LopHocPhan_BLL.Instance.AddStudentIntoClass(MaHP, MaSV);
-                    txtIdStudent.Texts = "";
+                    txtSearch.Text = "";
                 }
                 else if (li.Count == 0)
                 {
@@ -120,6 +129,16 @@ namespace GUI
         {
             reloadDTGV();
             this.Dispose();
+        }
+
+        private void frmAddStudentIntoModuleClass_Load(object sender, EventArgs e)
+        {
+            autotext = new AutoCompleteStringCollection();
+            txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            autotext.AddRange(LopHocPhan_BLL.Instance.getListStudent(maKHoa, MaHP).ToArray());
+            txtSearch.AutoCompleteCustomSource = autotext;
+
         }
     }
 }
