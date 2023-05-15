@@ -81,6 +81,11 @@ namespace BLL
         {
             GiangVien_DAL.Instance.AssignTeacherNoChangeSchedule(id, MaLHP);
         }
+
+        public string GetMaKhoaByMaLHP(string maLHP)
+        {
+            return GiangVien_DAL.Instance.GetMaKhoaByMaLHP(maLHP);
+        }
         public List<string> GetListLHPByIDTeacher(string id)
         {
             return GiangVien_DAL.Instance.GetMaLopHPByID(id);
@@ -151,6 +156,7 @@ namespace BLL
         {
             List<AssignTeacher> li = new List<AssignTeacher>();
             int stt = 1;
+            var li1 = GiangVien_DAL.Instance.GetGVPhuHopTKB(MaLHP, Thu, TietBD, TietKT);
             foreach (var i in GiangVien_DAL.Instance.GetGVPhuHopTKB(MaLHP, Thu, TietBD, TietKT))
             {
                 li.Add(new AssignTeacher

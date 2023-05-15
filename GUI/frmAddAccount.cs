@@ -162,7 +162,7 @@ namespace GUI
 
                     if (TaiKhoan == "")
                     {
-
+                        
                         if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT))
                         {
                             MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD_1.Text.ToString() + "\n" + Email + "\n" + txtCCCD_1.Text.ToString());

@@ -274,5 +274,20 @@ namespace DAL
                 .ToList();
             return result;
         }
+
+        public List<string> getListStudent(string maKhoa, string maLHP)
+        {
+            using(var context = new PBL3Entities())
+            {
+                var result = context.SINH_VIEN
+                     .Where(sv => sv.MaSV.Substring(0, 3) == maKhoa &&
+                                 !context.SINHVIEN_LOPHOCPHAN.Any(svlhp =>
+                                     svlhp.MaSV == sv.MaSV &&
+                                     svlhp.MaLopHP == maLHP))
+                     .Select(sv => sv.MaSV)
+                     .ToList();
+                return result;
+            }
+        }
     }
 }
