@@ -57,7 +57,7 @@ namespace GUI
         {
             InitializeComponent();
             targetTime = TimeSpan.FromMinutes(50); // test thôi
-            //SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
+            SetWindowDisplayAffinity(this.Handle, WDA_MONITOR);
             selectedAnswers = new List<SelectedAnswer>();
             //LoadCauHoi();
         }
@@ -162,6 +162,9 @@ namespace GUI
         {
             FlowLayoutPanel panel = GetPanelIsVisible();
             int idx = 0;
+
+            //Tại mỗi câu hỏi sẽ lưu lại đáp án đã chọn để lát quay lại câu hỏi đó thì còn dữ liệu để
+            //hiển thị. Ví dụ chọn đáp án A,D thì List IndexSelection trong câu hỏi này là {0,3}
             List<int> IndexSelection = questions[CurrentIndex - 1].IndexSelection;
             if (panel == panelSingle)
             {
@@ -229,6 +232,8 @@ namespace GUI
             }
 
             panel.Height = TotalHeight;
+
+            //Các phần tử trên giao diện sẽ có location phụ thuộc vào các phần tử được hiển thị trước đó
             btnPreious.Location = new System.Drawing.Point(btnPreious.Location.X, panel.Bounds.Bottom + 40);
             btnNext.Location = new System.Drawing.Point(btnNext.Location.X, panel.Bounds.Bottom + 40);
             panelMain.Height = btnPreious.Bounds.Bottom + 100;
@@ -237,12 +242,19 @@ namespace GUI
             //lên phía trên cùng của panel nên phải Select() bất kì một control nào đó ở phía trên cùng 
             panelTitle.Select();
         }
+
+        /// <summary>
+        /// Hàm này kiểm tra xem câu hỏi hiện tại đã được chọn hay chưa
+        /// để thực hiện tăng/giảm số lượng câu hỏi đã chọn lên label hiển thị trên giao diện
+        /// </summary>
         private void CheckAnswered()
         {
             bool check = false;
             FlowLayoutPanel panel = GetPanelIsVisible();
 
             List<int> IndexSelection = new List<int>();
+
+            //idx (0->3) thể hiện cho thứ tự các đáp án của câu hỏi
             int idx = 0;
             foreach (Control c in panel.Controls)
             {
@@ -270,6 +282,7 @@ namespace GUI
 
             if (check == true)
             {
+                //Số thứ tự câu hỏi hiện tại đếm từ 1, khi nào cần truy cập vào mảng questions thì giảm 1 đi
                 if (!questions[CurrentIndex - 1].Checked)
                 {
                     //Nếu là câu hỏi 1 lựa chọn. Trước đây chưa lựa chọn đáp án nhưng bây giờ đã chọn
@@ -288,8 +301,8 @@ namespace GUI
 
             //Cập nhật trạng thái đã chọn hay chưa chọn cho câu hỏi này, đồng thời cập nhật lại thứ tự đáp án
             //đã chọn để lát hiển thị lại
-            questions[CurrentIndex - 1].IndexSelection = IndexSelection;
             questions[CurrentIndex - 1].Checked = check;
+            questions[CurrentIndex - 1].IndexSelection = IndexSelection;
         }
 
         private void btnPreious_Click(object sender, EventArgs e)

@@ -76,6 +76,7 @@ namespace GUI.MyUserControls
                 //Tham số thứ hai: góc trên bên trái của đích
                 g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
             }
+
             try
             {
                 SaveFileDialog open = new SaveFileDialog();

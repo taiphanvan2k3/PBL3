@@ -24,6 +24,12 @@ namespace DAL
             db = new PBL3Entities();
         }
 
+        /// <summary>
+        /// Lấy ra danh sách câu hỏi để load vào 1 bài kiểm tra nào đó
+        /// </summary>
+        /// <param name="MaBaiKiemTra"></param>
+        /// <param name="TongSoCau"></param>
+        /// <returns></returns>
         public List<CauHoi_DTO> GetListQuestionInExam(int MaBaiKiemTra, int TongSoCau)
         {
             string LoaiBaiKiemTra = GetLoaiBaiKiemTra(MaBaiKiemTra);
@@ -56,7 +62,7 @@ namespace DAL
         {
             //Lấy ra loại bài kiểm tra (Test,Giữa kỳ,Cuối kỳ) 
             string tmp = db.BAI_KIEM_TRA.Where(bkt => bkt.MaBaiKiemTra == MaBaiKiemTra)
-                   .Select(p => p.TenBaiKiemTra).FirstOrDefault();
+                                        .Select(p => p.TenBaiKiemTra).FirstOrDefault();
             if (tmp == "Giữa kỳ")
                 return "GK";
             else if (tmp == "Cuối kỳ")
@@ -64,6 +70,12 @@ namespace DAL
             return "Test";
         }
 
+        /// <summary>
+        /// Lấy ra thông tin của tất cả các bài kiểm tra mà sinh viên đó có thể làm
+        /// Hiển thị ở datagridview UC_DoExam
+        /// </summary>
+        /// <param name="MaSV"></param>
+        /// <returns></returns>
         public List<BaiKiemTra_DTO> GetAllExamOfStudent(string MaSV)
         {
             /*

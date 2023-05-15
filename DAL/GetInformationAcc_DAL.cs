@@ -1,11 +1,6 @@
 ﻿using DTO;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -30,7 +25,7 @@ namespace DAL
                             join nd in context.NGUOI_DUNG on tt.TaiKhoan equals nd.MaNguoiDung
                             join sv in context.SINH_VIEN on nd.MaNguoiDung equals sv.MaSV
                             select new InformationStudent_DTO
-                            {   
+                            {
                                 TaiKhoan = tt.TaiKhoan,
                                 VaiTro = tt.VaiTro,
                                 Ten = nd.Ho + " " + nd.Ten,
@@ -171,8 +166,8 @@ namespace DAL
                 //              select gv).Count();
                 //return result;
                 var query = from gv in db.GIANG_VIEN
-                             where gv.MaGV.StartsWith(maKhoa)
-                             select (gv.MaGV.Substring(5));
+                            where gv.MaGV.StartsWith(maKhoa)
+                            select (gv.MaGV.Substring(5));
                 string result = query.DefaultIfEmpty("0").Max();
                 return int.Parse(result);
             }
