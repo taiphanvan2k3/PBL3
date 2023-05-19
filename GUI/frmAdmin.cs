@@ -17,6 +17,15 @@ namespace GUI
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+
+         public enum SelectionState{
+            Student,
+            Teacher,
+            HomeroomClass,
+            ModuleClass,
+            Subject
+        }
+
         public frmAdmin()
         {
             InitializeComponent();
@@ -82,8 +91,6 @@ namespace GUI
                 currentBtn.IconColor = Color.Gainsboro;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 leftBorderBtn.Visible = false;
-
-
             }
         }
 
@@ -208,21 +215,27 @@ namespace GUI
         // gắn datasource
         private void btnStudent_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(), 0));
+            //openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(), 0));
+            openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(),SelectionState.Student));
         }
         private void btnTeacher_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList(), 1));
+            openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList(), SelectionState.Teacher));
         }
 
         private void btnHomeroomClass_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewListAccAndClass(LopSinhHoat_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), 2));
+            openChildForm(new frmViewListAccAndClass(LopSinhHoat_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), SelectionState.HomeroomClass));
         }
 
         private void btnModuleClass_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), 3));
+            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), SelectionState.ModuleClass));
+        }
+
+        private void btnSubject_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.getListSubjects().Cast<object>().ToList(), SelectionState.Subject));
         }
 
         private void frmAdmin_Load(object sender, EventArgs e)
@@ -231,9 +244,6 @@ namespace GUI
             btnHome.PerformClick();
         }
 
-        private void btnSubject_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.getListSubjects().Cast<object>().ToList(), 4));
-        }
+       
     }
 }

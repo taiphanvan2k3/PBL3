@@ -29,21 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddAccount));
-            this.btnClose = new System.Windows.Forms.Button();
-            this.Hủy = new System.Windows.Forms.Button();
-            this.btnADD = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbFacultyOrProgram = new System.Windows.Forms.Label();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lbYearOrLevel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.txtCCCD_1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtSurname_1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtName_1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCCCD = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSurname = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbYearOrLevel = new GUI.MyCustomControl.CustomComboBox();
             this.dtpBirthday = new GUI.MyCustomControl.CustomDatetimePicker();
             this.cmbList = new GUI.MyCustomControl.CustomComboBox();
@@ -52,60 +48,11 @@
             this.panelEdit = new System.Windows.Forms.Panel();
             this.txtIDAcc = new GUI.MyCustomControl.CustomTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panelTitleBar.SuspendLayout();
+            this.btnAdd = new GUI.MyCustomControl.CustomButton();
+            this.btnCancel = new GUI.MyCustomControl.CustomButton();
             this.panelContainer.SuspendLayout();
             this.panelEdit.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.LightGray;
-            this.btnClose.Location = new System.Drawing.Point(470, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 14;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // Hủy
-            // 
-            this.Hủy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hủy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.Hủy.FlatAppearance.BorderSize = 0;
-            this.Hủy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Hủy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hủy.ForeColor = System.Drawing.Color.LightGray;
-            this.Hủy.Location = new System.Drawing.Point(43, 744);
-            this.Hủy.Margin = new System.Windows.Forms.Padding(4);
-            this.Hủy.Name = "Hủy";
-            this.Hủy.Size = new System.Drawing.Size(200, 49);
-            this.Hủy.TabIndex = 16;
-            this.Hủy.Text = "Hủy";
-            this.Hủy.UseVisualStyleBackColor = false;
-            // 
-            // btnADD
-            // 
-            this.btnADD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
-            this.btnADD.FlatAppearance.BorderSize = 0;
-            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.ForeColor = System.Drawing.Color.LightGray;
-            this.btnADD.Location = new System.Drawing.Point(251, 744);
-            this.btnADD.Margin = new System.Windows.Forms.Padding(4);
-            this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(200, 49);
-            this.btnADD.TabIndex = 10;
-            this.btnADD.Text = "Thêm ";
-            this.btnADD.UseVisualStyleBackColor = false;
-            this.btnADD.Click += new System.EventHandler(this.btnADD_Click_1);
             // 
             // label3
             // 
@@ -167,15 +114,6 @@
             this.lbFacultyOrProgram.TabIndex = 27;
             this.lbFacultyOrProgram.Text = "Khoa và chương trình đào tạo";
             // 
-            // panelTitleBar
-            // 
-            this.panelTitleBar.Controls.Add(this.btnClose);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(500, 30);
-            this.panelTitleBar.TabIndex = 30;
-            // 
             // lbYearOrLevel
             // 
             this.lbYearOrLevel.AutoSize = true;
@@ -202,9 +140,9 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.txtCCCD_1);
-            this.panelContainer.Controls.Add(this.txtSurname_1);
-            this.panelContainer.Controls.Add(this.txtName_1);
+            this.panelContainer.Controls.Add(this.txtCCCD);
+            this.panelContainer.Controls.Add(this.txtSurname);
+            this.panelContainer.Controls.Add(this.txtName);
             this.panelContainer.Controls.Add(this.label5);
             this.panelContainer.Controls.Add(this.label3);
             this.panelContainer.Controls.Add(this.cmbYearOrLevel);
@@ -222,71 +160,82 @@
             this.panelContainer.Size = new System.Drawing.Size(480, 600);
             this.panelContainer.TabIndex = 35;
             // 
-            // txtCCCD_1
+            // txtCCCD
             // 
-            this.txtCCCD_1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCCCD_1.DefaultText = "";
-            this.txtCCCD_1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCCCD_1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCCCD_1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCCCD_1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCCCD_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.txtCCCD_1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCCCD_1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD_1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCCCD_1.Location = new System.Drawing.Point(33, 149);
-            this.txtCCCD_1.Margin = new System.Windows.Forms.Padding(5);
-            this.txtCCCD_1.Name = "txtCCCD_1";
-            this.txtCCCD_1.PasswordChar = '\0';
-            this.txtCCCD_1.PlaceholderText = "Căn cước công dân";
-            this.txtCCCD_1.SelectedText = "";
-            this.txtCCCD_1.Size = new System.Drawing.Size(400, 40);
-            this.txtCCCD_1.TabIndex = 36;
-            this.txtCCCD_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
+            this.txtCCCD.BorderColor = System.Drawing.Color.Lavender;
+            this.txtCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCCCD.DefaultText = "";
+            this.txtCCCD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCCCD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCCCD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCCCD.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCCCD.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtCCCD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCCCD.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.ForeColor = System.Drawing.Color.Lavender;
+            this.txtCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCCCD.Location = new System.Drawing.Point(33, 155);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCCCD.MaxLength = 12;
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.PasswordChar = '\0';
+            this.txtCCCD.PlaceholderForeColor = System.Drawing.Color.Lavender;
+            this.txtCCCD.PlaceholderText = "Căn cước công dân";
+            this.txtCCCD.SelectedText = "";
+            this.txtCCCD.Size = new System.Drawing.Size(400, 40);
+            this.txtCCCD.TabIndex = 36;
+            this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
-            // txtSurname_1
+            // txtSurname
             // 
-            this.txtSurname_1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSurname_1.DefaultText = "";
-            this.txtSurname_1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSurname_1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSurname_1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSurname_1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSurname_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.txtSurname_1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSurname_1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname_1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSurname_1.Location = new System.Drawing.Point(34, 43);
-            this.txtSurname_1.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSurname_1.Name = "txtSurname_1";
-            this.txtSurname_1.PasswordChar = '\0';
-            this.txtSurname_1.PlaceholderText = "Họ";
-            this.txtSurname_1.SelectedText = "";
-            this.txtSurname_1.Size = new System.Drawing.Size(180, 40);
-            this.txtSurname_1.TabIndex = 35;
-            this.txtSurname_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
+            this.txtSurname.BorderColor = System.Drawing.Color.Lavender;
+            this.txtSurname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSurname.DefaultText = "";
+            this.txtSurname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSurname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSurname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSurname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSurname.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtSurname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSurname.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurname.ForeColor = System.Drawing.Color.Lavender;
+            this.txtSurname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSurname.Location = new System.Drawing.Point(34, 43);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSurname.MaxLength = 12;
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.PasswordChar = '\0';
+            this.txtSurname.PlaceholderForeColor = System.Drawing.Color.Lavender;
+            this.txtSurname.PlaceholderText = "Họ";
+            this.txtSurname.SelectedText = "";
+            this.txtSurname.Size = new System.Drawing.Size(180, 40);
+            this.txtSurname.TabIndex = 35;
+            this.txtSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
             // 
-            // txtName_1
+            // txtName
             // 
-            this.txtName_1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName_1.DefaultText = "";
-            this.txtName_1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtName_1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtName_1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName_1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.txtName_1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName_1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName_1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName_1.Location = new System.Drawing.Point(254, 43);
-            this.txtName_1.Margin = new System.Windows.Forms.Padding(5);
-            this.txtName_1.Name = "txtName_1";
-            this.txtName_1.PasswordChar = '\0';
-            this.txtName_1.PlaceholderText = "Tên";
-            this.txtName_1.SelectedText = "";
-            this.txtName_1.Size = new System.Drawing.Size(180, 40);
-            this.txtName_1.TabIndex = 34;
-            this.txtName_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
+            this.txtName.BorderColor = System.Drawing.Color.Lavender;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.Lavender;
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Location = new System.Drawing.Point(254, 43);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderForeColor = System.Drawing.Color.Lavender;
+            this.txtName.PlaceholderText = "Tên";
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(180, 40);
+            this.txtName.TabIndex = 34;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSurname_KeyPress);
             // 
             // cmbYearOrLevel
             // 
@@ -423,16 +372,57 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "ID";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdd.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.btnAdd.BorderColor = System.Drawing.Color.White;
+            this.btnAdd.BorderRadius = 40;
+            this.btnAdd.BorderSize = 2;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.Location = new System.Drawing.Point(293, 729);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(150, 50);
+            this.btnAdd.TabIndex = 25;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnADD_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.BackGroundColor = System.Drawing.Color.Red;
+            this.btnCancel.BorderColor = System.Drawing.Color.White;
+            this.btnCancel.BorderRadius = 40;
+            this.btnCancel.BorderSize = 2;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.Location = new System.Drawing.Point(43, 729);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.TabIndex = 37;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmAddAccount
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(500, 800);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panelEdit);
             this.Controls.Add(this.panelContainer);
-            this.Controls.Add(this.Hủy);
-            this.Controls.Add(this.btnADD);
-            this.Controls.Add(this.panelTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -440,7 +430,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.frmAddAccStudent_Load);
-            this.panelTitleBar.ResumeLayout(false);
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
             this.panelEdit.ResumeLayout(false);
@@ -450,9 +439,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button Hủy;
-        private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -462,7 +448,6 @@
         private MyCustomControl.CustomRadioButton rbWomen;
         private System.Windows.Forms.Label lbFacultyOrProgram;
         private MyCustomControl.CustomComboBox cmbList;
-        private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lbYearOrLevel;
         private MyCustomControl.CustomComboBox cmbYearOrLevel;
         private System.Windows.Forms.Label label5;
@@ -470,8 +455,10 @@
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.Label label6;
         private MyCustomControl.CustomTextBox txtIDAcc;
-        private Guna.UI2.WinForms.Guna2TextBox txtSurname_1;
-        private Guna.UI2.WinForms.Guna2TextBox txtName_1;
-        private Guna.UI2.WinForms.Guna2TextBox txtCCCD_1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSurname;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
+        private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
+        private MyCustomControl.CustomButton btnAdd;
+        private MyCustomControl.CustomButton btnCancel;
     }
 }

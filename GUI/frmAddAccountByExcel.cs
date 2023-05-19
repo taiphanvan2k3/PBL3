@@ -20,6 +20,7 @@ using Microsoft.Office.Interop.Excel;
 using System.Windows.Controls;
 using System.Security.Cryptography;
 using GUI.MyCustomControl;
+using static GUI.frmAdmin;
 
 namespace Testexcel
 {
@@ -28,6 +29,7 @@ namespace Testexcel
 
         private System.Data.DataTable dtExcel;
         private int role;
+        private SelectionState enumValue;
         int checkBtn;
 
         // Khai báo delegate và event
@@ -39,6 +41,13 @@ namespace Testexcel
             InitializeComponent();
             UtilityClass.EnableDragForm(this);
             this.role = role;
+        }
+
+        public frmAddAccountByExcel(SelectionState enumValue)
+        {
+            InitializeComponent();
+            UtilityClass.EnableDragForm(this);
+            this.enumValue = enumValue;
         }
 
         // Lấy chuỗi id của url
@@ -85,8 +94,8 @@ namespace Testexcel
             }
             else
             {
-                try
-                {
+                    try
+                    {
                     pnlProgressBar.Visible = true;
                     backgroundWorkerLoadFileDrive.RunWorkerAsync();
                 }
@@ -133,6 +142,7 @@ namespace Testexcel
 
                 int countSV;
                 int countGV;
+                DateTime dateTime = DateTime.Now;
 
 
                 int countEror = 0;
@@ -157,6 +167,8 @@ namespace Testexcel
 
                             ttdn.MkUngDung = cccd;
                             ttdn.MaXacThucDeLayLaiMK = null;
+                            ttdn.ThoiGianTao = dateTime;
+
 
                             NguoiDung_DTO nd = new NguoiDung_DTO();
 
@@ -382,8 +394,12 @@ namespace Testexcel
                         for (int i = 0; i < row.Count; i++)
                         {
                             dataRow[i] = row[i];
+                            // Report progress
+                            int progressPercentage = (i * 100) / row.Count;
+                            backgroundWorkerLoadFileDrive.ReportProgress(progressPercentage);
                         }
                         dataTable.Rows.Add(dataRow);
+
                     }
                 }
                 e.Result = dataTable;

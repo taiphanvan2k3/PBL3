@@ -91,7 +91,9 @@ namespace BLL
                 TaiKhoan = loginInfo.TaiKhoan,
                 VaiTro = loginInfo.VaiTro,
                 MkUngDung = loginInfo.MkUngDung,
-                MaXacThucDeLayLaiMK = loginInfo.MaXacThucDeLayLaiMK
+                MaXacThucDeLayLaiMK = loginInfo.MaXacThucDeLayLaiMK,
+                ThoiGianTao = loginInfo.ThoiGianTao
+               
             };
             NGUOI_DUNG nd = new NGUOI_DUNG()
             {

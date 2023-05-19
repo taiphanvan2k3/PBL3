@@ -204,6 +204,7 @@
           <Property Name="MkUngDung" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="VaiTro" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="MaXacThucDeLayLaiMK" Type="varchar" MaxLength="6" />
+          <Property Name="ThoiGianTao" Type="datetime" />
         </EntityType>
         <EntityType Name="THONGBAO_LOPHOCPHAN">
           <Key>
@@ -931,6 +932,7 @@
           <Property Name="VaiTro" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaXacThucDeLayLaiMK" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="NGUOI_DUNG" Relationship="Self.FK_IdUser" FromRole="THONG_TIN_DANG_NHAP" ToRole="NGUOI_DUNG" />
+          <Property Name="ThoiGianTao" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="THONGBAO_LOPHOCPHAN">
           <Key>
@@ -1619,6 +1621,7 @@
           <EntitySetMapping Name="THONG_TIN_DANG_NHAP">
             <EntityTypeMapping TypeName="PBL3Model.THONG_TIN_DANG_NHAP">
               <MappingFragment StoreEntitySet="THONG_TIN_DANG_NHAP">
+                <ScalarProperty Name="ThoiGianTao" ColumnName="ThoiGianTao" />
                 <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
                 <ScalarProperty Name="MkUngDung" ColumnName="MkUngDung" />
                 <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />

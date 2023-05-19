@@ -42,11 +42,18 @@
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnFirstPage = new FontAwesome.Sharp.IconButton();
+            this.lbCurrentPage = new System.Windows.Forms.Label();
+            this.btnNext = new FontAwesome.Sharp.IconButton();
+            this.btnPrev = new FontAwesome.Sharp.IconButton();
+            this.pnButton = new System.Windows.Forms.Panel();
             this.panelContainer.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewAcc)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelButton.SuspendLayout();
+            this.pnButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -125,6 +132,7 @@
             this.dgvViewAcc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvViewAcc.Size = new System.Drawing.Size(1150, 400);
             this.dgvViewAcc.TabIndex = 19;
+            this.dgvViewAcc.DataSourceChanged += new System.EventHandler(this.dgvViewAcc_DataSourceChanged);
             this.dgvViewAcc.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvViewAcc_CellBeginEdit);
             this.dgvViewAcc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewAcc_CellClick);
             this.dgvViewAcc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvSelectAll_CellPainting);
@@ -265,12 +273,110 @@
             this.lbTitle.TabIndex = 17;
             this.lbTitle.Text = "Quản lý tài khoản";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleRight;
+            this.iconButton1.IconColor = System.Drawing.Color.DarkGreen;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.Location = new System.Drawing.Point(139, 43);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(44, 43);
+            this.iconButton1.TabIndex = 46;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.btnLastPage_Click);
+            // 
+            // btnFirstPage
+            // 
+            this.btnFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFirstPage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnFirstPage.FlatAppearance.BorderSize = 0;
+            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirstPage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirstPage.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
+            this.btnFirstPage.IconColor = System.Drawing.Color.DarkGreen;
+            this.btnFirstPage.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFirstPage.IconSize = 30;
+            this.btnFirstPage.Location = new System.Drawing.Point(3, 43);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(44, 43);
+            this.btnFirstPage.TabIndex = 45;
+            this.btnFirstPage.UseVisualStyleBackColor = false;
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
+            // 
+            // lbCurrentPage
+            // 
+            this.lbCurrentPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCurrentPage.AutoSize = true;
+            this.lbCurrentPage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCurrentPage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbCurrentPage.Location = new System.Drawing.Point(3, 3);
+            this.lbCurrentPage.Name = "lbCurrentPage";
+            this.lbCurrentPage.Size = new System.Drawing.Size(61, 23);
+            this.lbCurrentPage.TabIndex = 44;
+            this.lbCurrentPage.Text = "Trang:";
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
+            this.btnNext.IconColor = System.Drawing.Color.DarkGreen;
+            this.btnNext.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNext.IconSize = 30;
+            this.btnNext.Location = new System.Drawing.Point(93, 43);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(45, 43);
+            this.btnNext.TabIndex = 43;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrev.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPrev.FlatAppearance.BorderSize = 0;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.btnPrev.IconColor = System.Drawing.Color.DarkGreen;
+            this.btnPrev.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPrev.IconSize = 30;
+            this.btnPrev.Location = new System.Drawing.Point(48, 43);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(44, 43);
+            this.btnPrev.TabIndex = 42;
+            this.btnPrev.UseVisualStyleBackColor = false;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // pnButton
+            // 
+            this.pnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnButton.Controls.Add(this.btnFirstPage);
+            this.pnButton.Controls.Add(this.iconButton1);
+            this.pnButton.Controls.Add(this.btnPrev);
+            this.pnButton.Controls.Add(this.btnNext);
+            this.pnButton.Controls.Add(this.lbCurrentPage);
+            this.pnButton.Location = new System.Drawing.Point(979, 577);
+            this.pnButton.Name = "pnButton";
+            this.pnButton.Size = new System.Drawing.Size(196, 111);
+            this.pnButton.TabIndex = 47;
+            // 
             // frmViewListAccAndClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.pnButton);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -285,6 +391,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelButton.ResumeLayout(false);
+            this.pnButton.ResumeLayout(false);
+            this.pnButton.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +409,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvViewAcc;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnFirstPage;
+        private System.Windows.Forms.Label lbCurrentPage;
+        private FontAwesome.Sharp.IconButton btnNext;
+        private FontAwesome.Sharp.IconButton btnPrev;
+        private System.Windows.Forms.Panel pnButton;
     }
 }

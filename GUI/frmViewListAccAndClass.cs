@@ -13,6 +13,9 @@ using System.Reflection;
 using GUI.MyCustomControl;
 using Testexcel;
 using Guna.UI2.WinForms;
+using System.Data.Entity.Core.Metadata.Edm;
+using static GUI.frmAdmin;
+using System.Windows.Media.Animation;
 
 namespace GUI
 {
@@ -34,23 +37,30 @@ namespace GUI
         List<string> listOfStudentCodesToDelete = new List<string>();
 
         private List<object> dt;
-        private int role;
+        private SelectionState enumValue;
+
+        // Phân trang
+        private const int maxRow = 14;
+        private int currentPage, maxPage;
+        private SplitPageHelper<object> helper;
+
+
         public frmViewListAccAndClass(List<object> dt, int role)
         {
             InitializeComponent();
             HideButton();
             this.dt = dt;
-            this.role = role;
+            //this.role = role;
         }
-        private void dgvViewAcc_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+
+        public frmViewListAccAndClass(List<object> dt, SelectionState enumValue)
         {
-            // Check if the cell being edited is not in the first column
-            if (e.ColumnIndex != 0)
-            {
-                // Cancel the edit operation
-                e.Cancel = true;
-            }
+            InitializeComponent();
+            HideButton();
+            this.dt = dt;
+            this.enumValue = enumValue;
         }
+
         private void HideButton()
         {
             btnDelete.Visible = false;
@@ -64,35 +74,35 @@ namespace GUI
         {
             HideButton();
             UncheckAllCheckBoxes();
-            switch (role)
+            switch (enumValue)
             {
-                case 0:
+                case SelectionState.Student:
                     dt = GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList();
-                    dgvViewAcc.DataSource = dt;
+                    loadDataIntoGridView();
                     autotext.AddRange(dt.Select(x => ((InformationStudent_DTO)x).TaiKhoan + " - " + ((InformationStudent_DTO)x).Ten).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 1:
+                case SelectionState.Teacher:
                     dt = GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList();
-                    dgvViewAcc.DataSource = dt;
+                    loadDataIntoGridView();
                     autotext.AddRange(dt.Select(x => ((InformationTeacher_DTO)x).TaiKhoan + " - " + ((InformationTeacher_DTO)x).Ten).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 2:
+                case SelectionState.HomeroomClass:
                     dt = LopSinhHoat_BLL.Instance.GetInformationClasses().Cast<object>().ToList();
-                    dgvViewAcc.DataSource = dt;
+                    loadDataIntoGridView();
                     autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 3:
+                case SelectionState.ModuleClass:
                     dt = LopHocPhan_BLL.Instance.GetInformationClasses().Cast<object>().ToList();
-                    dgvViewAcc.DataSource = dt;
+                    loadDataIntoGridView();
                     autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 4:
+                case SelectionState.Subject:
                     dt = LopHocPhan_BLL.Instance.getListSubjects().Cast<object>().ToList();
-                    dgvViewAcc.DataSource = dt;
+                    loadDataIntoGridView();
                     autotext.AddRange(dt.Select(x => ((InformationSubject_DTO)x).TenMh).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
@@ -104,14 +114,14 @@ namespace GUI
             AddHeaderCheckBox();
             HeaderCheckBox.MouseClick += new MouseEventHandler(HeaderCheckBox_MouseClick);
             dgvViewAcc.CurrentCellDirtyStateChanged += new EventHandler(dgvSelectAll_CurrentCellDirtyStateChanged);
-            dgvViewAcc.DataSource = dt;
+            loadDataIntoGridView();
             BindGridView();
             autotext = new AutoCompleteStringCollection();
             txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            switch (role)
+            switch (enumValue)
             {
-                case 0:
+                case SelectionState.Student:
                     UtilityClass.SwapColumns(dgvViewAcc, 1, 2);
                     dgvViewAcc.Columns[7].Visible = false;
                     dgvViewAcc.Columns[8].Visible = false;
@@ -119,7 +129,7 @@ namespace GUI
                     autotext.AddRange(dt.Select(x => ((InformationStudent_DTO)x).TaiKhoan + " - " + ((InformationStudent_DTO)x).Ten).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 1:
+                case SelectionState.Teacher:
                     UtilityClass.SwapColumns(dgvViewAcc, 1, 2);
                     dgvViewAcc.Columns[7].Visible = false;
                     dgvViewAcc.Columns[8].Visible = false;
@@ -127,7 +137,7 @@ namespace GUI
                     autotext.AddRange(dt.Select(x => ((InformationTeacher_DTO)x).TaiKhoan + " - " + ((InformationTeacher_DTO)x).Ten).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 2:
+                case SelectionState.HomeroomClass:
                     dgvViewAcc.Columns[3].Visible = false;
                     lbTitle.Text = "Quản lý lớp sinh hoạt";
                     btnAdd.Text = "Thêm lớp học";
@@ -140,7 +150,7 @@ namespace GUI
                     autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 3:
+                case SelectionState.ModuleClass:
                     lbTitle.Text = "Quản lý lớp học phần";
                     btnAdd.Text = "Thêm lớp học";
                     btnAdd.Click -= btnAdd_Click;
@@ -152,7 +162,7 @@ namespace GUI
                     autotext.AddRange(dt.Select(x => ((InformationClass_DTO)x).maLop + " - " + ((InformationClass_DTO)x).tenLop).ToArray());
                     txtSearch.AutoCompleteCustomSource = autotext;
                     break;
-                case 4:
+                case SelectionState.Subject:
                     lbTitle.Text = "Quản lý môn học";
                     btnAdd.Text = "Thêm môn học";
                     btnAdd.Click -= btnAdd_Click;
@@ -168,6 +178,15 @@ namespace GUI
         }
 
         #region Thêm header checkbox
+        private void dgvViewAcc_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            // Check if the cell being edited is not in the first column
+            if (e.ColumnIndex != 0)
+            {
+                // Cancel the edit operation
+                e.Cancel = true;
+            }
+        }
         // Thêm 1 cột checkbox vào datagridview ở cột đâu ftiene
         private void BindGridView()
         {
@@ -298,7 +317,7 @@ namespace GUI
                         maID = dgvViewAcc.Rows[e.RowIndex].Cells[2].Value.ToString();
                         listOfStudentCodesToDelete.Remove(maID);
                     }
-                    if (role == 4)
+                    if (enumValue == SelectionState.Subject)
                     {
                         HideButton();
                     }
@@ -338,7 +357,7 @@ namespace GUI
                 MessageBoxButtons.YesNoCancel, "Thủ Công", "Bằng Sheet", "Hủy");
             if (result == DialogResult.Yes)
             {
-                frmAddAccount frmAddAccStudent = new frmAddAccount(role, "");
+                frmAddAccount frmAddAccStudent = new frmAddAccount(enumValue, "");
                 // Đăng ký sự kiện DataAddedSuccessEvent và gán method loadData vào
                 frmAddAccStudent.DataAddedSuccessEvent += loadData;
                 frmAddAccStudent.ShowDialog();
@@ -347,58 +366,44 @@ namespace GUI
             }
             else if (result == DialogResult.No)
             {
-                frmAddAccountByExcel frmAddAccountByExcel = new frmAddAccountByExcel(role);
+                frmAddAccountByExcel frmAddAccountByExcel = new frmAddAccountByExcel(enumValue);
                 frmAddAccountByExcel.DataAddedSuccessEvent += loadData;
                 frmAddAccountByExcel.ShowDialog();
-            }
-            else if (result == DialogResult.Cancel)
-            {
-                // Code xử lý khi người dùng chọn Cancel
             }
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //DataGridViewRow row = dgvViewAcc.CurrentRow;
-            //string mssv = row.Cells[2].Value.ToString();
-            //MessageBox.Show(mssv);
-            //if (GetInformationAcc_BLL.Instance.DeleteStudent(mssv)) {
-            //    MessageBox.Show("Thanfh cong");
-            //}
-            //if (GetInformationAcc_BLL.Instance.DeleteUser(mssv))
-            //{
-            //    MessageBox.Show("Thanfh cong");
-            //}
-            //if (GetInformationAcc_BLL.Instance.DeleteLoginInfo(mssv))
-            //{
-            //    MessageBox.Show("Thanfh cong");
-            //}
             foreach (var item in listOfStudentCodesToDelete)
             {
-                if (GetInformationAcc_BLL.Instance.DeleteData(role, item))
+                if (GetInformationAcc_BLL.Instance.DeleteData((int)enumValue, item))
                 {
-                    MessageBox.Show("Xóa acc thành công:" + item);
+                    MessageBox.Show("Xóa tài khoản thành công:" + item);
                 }
                 else
                 {
                     MessageBox.Show("Không thành công");
                 }
             }
-            if (role == 0)
+            listOfStudentCodesToDelete.Clear();
+            HideButton();
+            if (enumValue == SelectionState.Student)
             {
-                dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountStudentList();
+                dt = GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList();
+                loadDataIntoGridView();
             }
             else
             {
-                dgvViewAcc.DataSource = GetInformationAcc_BLL.Instance.GetAccountTeacherList();
+                dt = GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList();
+                loadDataIntoGridView();
             }
 
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            frmAddAccount frmAddAccStudent = new frmAddAccount(role, maID);
+            frmAddAccount frmAddAccStudent = new frmAddAccount(enumValue, maID);
             frmAddAccStudent.DataAddedSuccessEvent += loadData;
             frmAddAccStudent.ShowDialog();
         }
@@ -489,20 +494,20 @@ namespace GUI
                 if (autotext.Contains(txtSearch.Text))
                 {
                     string[] parts = txtSearch.Text.Split(new string[] { " - " }, StringSplitOptions.None);
-                    switch (role)
+                    switch (enumValue)
                     {
-                        case 0:
-                        case 1:
+                        case SelectionState.Student:
+                        case SelectionState.Teacher:
                             txtSearch.Text = "";
-                            frmAddAccount frmAddAccount = new frmAddAccount(role, parts[0]);
+                            frmAddAccount frmAddAccount = new frmAddAccount(enumValue, parts[0]);
                             frmAddAccount.ShowDialog();
                             break;
-                        case 2:
+                        case SelectionState.HomeroomClass:
                             txtSearch.Text = "";
                             frmViewDetailHomeroomClass frmViewDetailHomeroomClass = new frmViewDetailHomeroomClass(parts[0] + " - " + parts[1]);
                             frmViewDetailHomeroomClass.ShowDialog();
                             break;
-                        case 3:
+                        case SelectionState.ModuleClass:
                             txtSearch.Text = "";
                             frmViewDetailModuleClass frmViewDetailModuleClass = new frmViewDetailModuleClass(parts[0]);
                             frmViewDetailModuleClass.ShowDialog();
@@ -513,6 +518,53 @@ namespace GUI
         }
         #endregion
 
+        #region Phân trang
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                dgvViewAcc.DataSource = helper.GetRecords(currentPage);
+            }
+        }
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < maxPage)
+            {
+                currentPage++;
+                dgvViewAcc.DataSource = helper.GetRecords(currentPage);
+            }
+        }
+
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            dgvViewAcc.DataSource = helper.GetRecords(currentPage);
+        }
+
+        private void dgvViewAcc_DataSourceChanged(object sender, EventArgs e)
+        {
+            lbCurrentPage.Text = "Trang " + currentPage + "/" + maxPage;
+            dgvViewAcc.Height = dgvViewAcc.ColumnHeadersHeight + maxRow * dgvViewAcc.RowTemplate.Height;
+
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            currentPage = maxPage;
+            dgvViewAcc.DataSource = helper.GetRecords(currentPage);
+        }
+
+        public void loadDataIntoGridView()
+        {
+            //Hiển thị dữ liệu lên datagridview
+            maxPage = (int)Math.Ceiling(dt.Count * 1.0 / maxRow);
+            currentPage = 1;
+            helper = new SplitPageHelper<object>(maxRow, dt);
+            dgvViewAcc.DataSource = helper.GetRecords(currentPage);
+            //---------------
+        }
+        #endregion
     }
 }

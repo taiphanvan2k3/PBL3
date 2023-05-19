@@ -12,6 +12,7 @@ namespace DTO
         public string MkUngDung { get; set; }
         public string VaiTro { get; set; }
         public string MaXacThucDeLayLaiMK { get; set; }
+        public DateTime ThoiGianTao { get; set; }
 
         public THONG_TIN_DANG_NHAP_DTO() { }
         public THONG_TIN_DANG_NHAP_DTO(string taiKhoan, string mkUngDung, string vaiTro, string maXacThucDeLayLaiMK)

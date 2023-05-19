@@ -29,6 +29,7 @@ namespace DAL
                 var query = context.THONG_TIN_DANG_NHAP
                     .Join(context.NGUOI_DUNG, tt => tt.TaiKhoan, nd => nd.MaNguoiDung, (tt, nd) => new { tt, nd })
                     .Join(context.SINH_VIEN, t => t.nd.MaNguoiDung, sv => sv.MaSV, (t, sv) => new { t.tt, t.nd, sv })
+                    .OrderByDescending(tt => tt.tt.ThoiGianTao)
                     .Select(s => new InformationStudent_DTO
                     {
                         TaiKhoan = s.tt.TaiKhoan,
@@ -38,6 +39,7 @@ namespace DAL
                         EmailTruongCap = s.nd.EmailTruongCap,
                         MaCTDT = s.sv.MaCTDT
                     });
+
 
                 return query.ToList();
             }
@@ -50,6 +52,7 @@ namespace DAL
                 var query = context.THONG_TIN_DANG_NHAP
                     .Join(context.NGUOI_DUNG, tt => tt.TaiKhoan, nd => nd.MaNguoiDung, (tt, nd) => new { tt, nd })
                     .Join(context.GIANG_VIEN, t => t.nd.MaNguoiDung, gv => gv.MaGV, (t, gv) => new { t.tt, t.nd, gv })
+                    .OrderByDescending(tt => tt.tt.ThoiGianTao)
                     .Select(s => new InformationTeacher_DTO
                     {
                         TaiKhoan = s.tt.TaiKhoan,
@@ -59,7 +62,7 @@ namespace DAL
                         EmailTruongCap = s.nd.EmailTruongCap,
                         TrinhDo = s.gv.TrinhDo
                     });
-                return query.ToList(); 
+                return query.ToList();
             }
         }
 
@@ -172,8 +175,8 @@ namespace DAL
                 //              select gv).Count();
                 //return result;
                 var query = from gv in db.GIANG_VIEN
-                             where gv.MaGV.StartsWith(maKhoa)
-                             select (gv.MaGV.Substring(5));
+                            where gv.MaGV.StartsWith(maKhoa)
+                            select (gv.MaGV.Substring(5));
                 string result = query.DefaultIfEmpty("0").Max();
                 return int.Parse(result);
             }

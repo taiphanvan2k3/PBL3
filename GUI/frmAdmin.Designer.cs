@@ -192,7 +192,7 @@
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLogOut.Size = new System.Drawing.Size(250, 50);
             this.btnLogOut.TabIndex = 13;
-            this.btnLogOut.Tag = "LOG OUT";
+            this.btnLogOut.Tag = "Đăng xuất";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = true;

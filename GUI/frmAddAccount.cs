@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
+using static GUI.frmAdmin;
 
 namespace GUI
 {
@@ -29,26 +31,31 @@ namespace GUI
         private string passID = "";
         private string passEmai = "";
 
-        private int role;
+        //private int role;
+        private SelectionState enumValue;
         private string TaiKhoan;
 
         // Khai báo delegate và event
         public delegate void DataAddedSuccessHandler();
         public event DataAddedSuccessHandler DataAddedSuccessEvent;
+
+
+        
         public frmAddAccount(int role, string TaiKhoan)
         {
             InitializeComponent();
             UtilityClass.EnableDragForm(panelContainer);
-            this.role = role;
+            //this.role = role;
             this.TaiKhoan = TaiKhoan;
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        
+        public frmAddAccount(SelectionState enumValue, string TaiKhoan)
         {
-            this.Dispose();
+            InitializeComponent();
+            UtilityClass.EnableDragForm(panelContainer);
+            this.enumValue = enumValue;
+            this.TaiKhoan = TaiKhoan;
         }
-
-
 
         private void cmbList_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -56,7 +63,7 @@ namespace GUI
             {
                 MaKhoa = "";
                 MaCTDT = "";
-                if (role == 0)
+                if (enumValue == SelectionState.Student)
                 {
                     foreach (var item in GetInformationAcc_BLL.Instance.GetListEducationProgram())
                     {
@@ -83,30 +90,28 @@ namespace GUI
         }
         private void ReturnEmpty()
         {
-            txtSurname_1.Text = "";
-            txtName_1.Text = "";
-            txtCCCD_1.Text = "";
+            txtSurname.Text = "";
+            txtName.Text = "";
+            txtCCCD.Text = "";
             cmbList.SelectedIndex = -1;
             cmbYearOrLevel.SelectedIndex = -1;
             rbMen.Checked = rbWomen.Checked = false;
         }
-        private void btnADD_Click_1(object sender, EventArgs e)
+        private void btnADD_Click(object sender, EventArgs e)
         {
             Email = "";
             passID = "";
             passEmai = "";
             VaiTro = "";
+            DateTime date = DateTime.Now;
             Random random = new Random();
             int countRecord = 0;
             string suffix = "";
             if (cmbList.SelectedIndex == -1 || cmbYearOrLevel.SelectedIndex == -1 
-                //|| txtSurname.Texts.ToString() == "" || txtName.Texts.ToString() == ""
-                || txtSurname_1.Text.ToString() == "" || txtName_1.Text.ToString() == ""
-                || txtCCCD_1.Text.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
+                || txtSurname.Text.ToString() == "" || txtName.Text.ToString() == ""
+                || txtCCCD.Text.ToString().Length != 12 || (rbMen.Checked == false && rbWomen.Checked == false))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
-                MessageBox.Show(txtSurname_1.Text.ToString());
-                MessageBox.Show(txtName_1.Text.ToString());
+                CustomMessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo");
             }
             else
             {
@@ -114,20 +119,22 @@ namespace GUI
                 GiangVien_DTO gvDT = new GiangVien_DTO();
 
 
-                passID = BCrypt.Net.BCrypt.HashString(txtCCCD_1.Text.ToString());
-                passEmai = BCrypt.Net.BCrypt.HashString(txtCCCD_1.Text.ToString());
+                passID = BCrypt.Net.BCrypt.HashString(txtCCCD.Text.ToString());
+                passEmai = BCrypt.Net.BCrypt.HashString(txtCCCD.Text.ToString());
 
                 THONG_TIN_DANG_NHAP_DTO ttdn = new THONG_TIN_DANG_NHAP_DTO();
 
                 ttdn.MkUngDung = passID;
                 ttdn.MaXacThucDeLayLaiMK = null;
+                ttdn.ThoiGianTao = date;
+                
 
 
                 NguoiDung_DTO nd = new NguoiDung_DTO()
                 {
-                    Ho = txtSurname_1.Text.ToString(),
-                    Ten = txtName_1.Text.ToString(),
-                    MaCCCD = txtCCCD_1.Text.ToString(),
+                    Ho = txtSurname.Text.ToString(),
+                    Ten = txtName.Text.ToString(),
+                    MaCCCD = txtCCCD.Text.ToString(),
                     AnhCaNhan = null,
                     NgaySinh = dtpBirthday.Value,
                     GioiTinh = rbMen.Checked ? false : true,
@@ -140,7 +147,7 @@ namespace GUI
                     MkEmailTruongCap = passEmai
                 };
 
-                if (role == 0)
+                if (enumValue == SelectionState.Student)
                 {
                     countRecord = GetInformationAcc_BLL.Instance.getTheNumberOfStudentByFaculty(MaKhoa, cmbYearOrLevel.SelectedItem.ToString().Substring(2));
                     countRecord++;
@@ -165,7 +172,7 @@ namespace GUI
                         
                         if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, svDT))
                         {
-                            MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD_1.Text.ToString() + "\n" + Email + "\n" + txtCCCD_1.Text.ToString());
+                            MessageBox.Show("Thêm tài khoản sinh viên thành công" + ID_User + "\n" + txtCCCD.Text.ToString() + "\n" + Email + "\n" + txtCCCD.Text.ToString());
                             var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                             if (result1 == DialogResult.Cancel)
                             {
@@ -218,7 +225,7 @@ namespace GUI
 
                         if (GetInformationAcc_BLL.Instance.InsertData(ttdn, nd, gvDT))
                         {
-                            MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD_1.Text.ToString() + "\n" + Email + "\n" + txtCCCD_1.Text.ToString());
+                            MessageBox.Show("Thêm tài khoản giảng viên thành công" + ID_User + "\n" + txtCCCD.Text.ToString() + "\n" + Email + "\n" + txtCCCD.Text.ToString());
                             var result1 = MessageBox.Show("Bạn có muốn thêm mới tài khoản tiếp không", "Thông báo", MessageBoxButtons.OKCancel);
                             if (result1 == DialogResult.Cancel)
                             {
@@ -248,12 +255,14 @@ namespace GUI
                 }
             }
         }
+        
+
 
         private void frmAddAccStudent_Load(object sender, EventArgs e)
         {
-            switch (role)
+            switch (enumValue)
             {
-                case 0:
+                case SelectionState.Student:
                     List<string> list = new List<string>()
                         {
                            "2018", "2019", "2020", "2021", "2022", "2023"
@@ -264,7 +273,7 @@ namespace GUI
                         cmbList.Items.Add(item.TenCTDT);
                     }
                     break;
-                case 1:
+                case SelectionState.Teacher:
                     lbFacultyOrProgram.Text = "Tên khoa";
                     lbYearOrLevel.Text = "Trình độ";
                     List<string> trinhDo = new List<string>()
@@ -284,23 +293,23 @@ namespace GUI
                 txtIDAcc.Texts = TaiKhoan;
                 txtIDAcc.Enabled = false;
                 cmbList.Enabled = false;
-                btnADD.Text = "Chỉnh sửa";
+                btnAdd.Text = "Chỉnh sửa";
                 string valueItem = "";
                 string valueYearOrLevel = "";
                 string name;
-                switch (role)
+                switch (enumValue)
                 {
-                    case 0:
+                    case SelectionState.Student:
                         name = "";
                         InformationStudent_DTO informationStudent = GetInformationAcc_BLL.Instance.GetInformationStudentByID(TaiKhoan);
                         string[] nameParts = informationStudent.Ten.Split(' ');
-                        txtCCCD_1.Text = informationStudent.MaCCCD;
+                        txtCCCD.Text = informationStudent.MaCCCD;
                         for (int i = 0; i < nameParts.Length - 1; i++)
                         {
                             name += nameParts[i] + " ";
                         }
-                        txtSurname_1.Text = name;
-                        txtName_1.Text = nameParts[nameParts.Length - 1];
+                        txtSurname.Text = name;
+                        txtName.Text = nameParts[nameParts.Length - 1];
                         dtpBirthday.Value = informationStudent.NgaySinh;
                         if (informationStudent.GioiTinh)
                         {
@@ -338,17 +347,17 @@ namespace GUI
                         }
                         cmbYearOrLevel.Enabled = false;
                         break;
-                    case 1:
+                    case SelectionState.Teacher:
                         name = "";
                         InformationTeacher_DTO informationTeacher = GetInformationAcc_BLL.Instance.GetInformationTeacherByID(TaiKhoan);
                         string[] namePartsTeacher = informationTeacher.Ten.Split(' ');
-                        txtCCCD_1.Text = informationTeacher.MaCCCD;
+                        txtCCCD.Text = informationTeacher.MaCCCD;
                         for (int i = 0; i < namePartsTeacher.Length - 1; i++)
                         {
                             name += namePartsTeacher[i] + " ";
                         }
-                        txtSurname_1.Text = name;
-                        txtName_1.Text = namePartsTeacher[namePartsTeacher.Length - 1];
+                        txtSurname.Text = name;
+                        txtName.Text = namePartsTeacher[namePartsTeacher.Length - 1];
                         dtpBirthday.Value = informationTeacher.NgaySinh;
                         if (informationTeacher.GioiTinh)
                         {
@@ -408,6 +417,11 @@ namespace GUI
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
 

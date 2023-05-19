@@ -18,6 +18,7 @@ namespace DAL
         public string MkUngDung { get; set; }
         public string VaiTro { get; set; }
         public string MaXacThucDeLayLaiMK { get; set; }
+        public Nullable<System.DateTime> ThoiGianTao { get; set; }
     
         public virtual NGUOI_DUNG NGUOI_DUNG { get; set; }
     }
