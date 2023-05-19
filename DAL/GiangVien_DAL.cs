@@ -33,6 +33,7 @@ namespace DAL
         {
             return db.cities.Select(p => p.tinhThanhPho).ToList();
         }
+
         public GIANG_VIEN GetGiangVienByID(string id)
         {
             return db.GIANG_VIEN.Where(p => p.MaGV == id).Include(gv => gv.NGUOI_DUNG).
@@ -246,7 +247,7 @@ namespace DAL
         //Lấy ra các lớp học phần mà sinh viên trong lớp học phần cần tạo bài kiểm tra học và kiểm tra xung đột trên các lớp đó 
         public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHP)
         {
-            DateTime TimeKetThuc = TimeExam.AddMinutes((double)ThoiGianLamBai);
+            DateTime TimeKetThuc = TimeExam.AddMinutes(ThoiGianLamBai);
 
             //Lấy ra danh sách sinh viên trong lớp học phần muốn tạo bài kiểm tra
             List<string> list = GetListSVForLHP(MaLHP);
@@ -263,7 +264,7 @@ namespace DAL
                 && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeExam)
             || (bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeKetThuc))).ToList();*/
             var query1 = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
-                                                && !(DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeExam 
+                                                && !(DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeExam
                                                       || bkt.NgayKiemTra > TimeKetThuc)).ToList();
             return query1.Count > 0;
         }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace DAL
 {
@@ -175,7 +174,7 @@ namespace DAL
                     Diem = (double?)i2.Diem
                     //Nếu để Where(p => p.MaSV == MaSV) ngay sau SelectMany này thì kết quả
                     //trả về chỉ các bản ghi nào mà sinh viên có làm bài kiểm tra của lớp học phần đó 
-                })).OrderBy(p=>p.KiHoc).ToList();
+                })).OrderBy(p => p.KiHoc).ToList();
 
             //Dùng Dictionary ở đây để lấy ra KetQuaHocTap của 1 lớp HP nào đó một cách nhanh chóng
             Dictionary<string, KetQuaHocTap> dict = new Dictionary<string, KetQuaHocTap>();

@@ -136,7 +136,7 @@ namespace DAL
 
         public int CountClassroom()
         {
-            return db.LOP_SINH_HOAT.Count();   
+            return db.LOP_SINH_HOAT.Count();
         }
 
         public bool DeleteHomeroomClass(string idHomeroomClass)

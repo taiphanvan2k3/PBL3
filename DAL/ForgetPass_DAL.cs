@@ -58,9 +58,9 @@ namespace DAL
             using (var context = new PBL3Entities())
             {
                 var thongTinDangNhap = context.THONG_TIN_DANG_NHAP.SingleOrDefault(p => p.TaiKhoan.Equals(username));
-                if (thongTinDangNhap == null) 
+                if (thongTinDangNhap == null)
                     return false;
-                else if (thongTinDangNhap.MaXacThucDeLayLaiMK == null) 
+                else if (thongTinDangNhap.MaXacThucDeLayLaiMK == null)
                     return false;
                 return thongTinDangNhap.MaXacThucDeLayLaiMK.Equals(maXacThuc);
             }

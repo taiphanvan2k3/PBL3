@@ -1,7 +1,4 @@
-﻿using DTO;
-using System.Collections.Generic;
-
-namespace DAL
+﻿namespace DAL
 {
     /// <summary>
     /// Lớp này hiện tại chưa dùng vào mục đích gì ????

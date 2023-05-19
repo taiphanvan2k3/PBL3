@@ -4,7 +4,6 @@ namespace DAL
 {
     public class ValidLogin_DAL
     {
-
         private static ValidLogin_DAL _Instance;
         public static ValidLogin_DAL Instance
         {

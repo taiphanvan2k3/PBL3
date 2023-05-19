@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Testexcel;
 
 namespace GUI
 {
@@ -14,7 +13,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdmin());
+            Application.Run(new frmDesignLogin());
         }
     }
 }

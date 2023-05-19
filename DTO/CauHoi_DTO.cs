@@ -7,6 +7,8 @@ namespace DTO
     {
         public string TenCauHoi { get; set; }
         public bool Checked { get; set; } = false;
+
+        //List này sẽ lưu các chuỗi đáp án sau khi đã xáo trộng ABCD và dùng để hiển thị lên giao diện 
         public List<string> DapAnHienThi;
 
         private List<string> DapAnDung;
@@ -31,16 +33,20 @@ namespace DTO
             //Thực hiện việc xác định đáp án đúng trước khi xoá trộn mảng hiển thị
             DapAnDung = new List<string>();
 
-            //Mã 
+            //VD mã đáp án đúng của câu hỏi này lưu trong CSDL là ACD thì đáp án đúng
+            //của nó là các câu hỏi ở index 0,2,3.
             SplitMaDapAnDung(MaDapAnDung);
             ShuffleDapAnHienThi();
         }
+
         private void SplitMaDapAnDung(string MaDapAnDung)
         {
             //Vd mã đáp án đúng là 'ACD' -> có 3 câu đúng
             foreach (char c in MaDapAnDung)
             {
                 int idx = char.ToUpper(c) - 'A';
+                
+                //Lưu lại đáp án đúng dưới dạng string để lát so sánh với đáp án người dùng chọn
                 DapAnDung.Add(DapAnHienThi[idx]);
             }
         }
