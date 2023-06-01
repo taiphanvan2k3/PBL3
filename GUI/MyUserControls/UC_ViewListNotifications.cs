@@ -9,43 +9,84 @@ namespace GUI.MyUserControls
     public partial class UC_ViewListNotifications : UserControl
     {
         private string MaSV;
+
         private List<ThongBao_DTO> li;
 
-        //Các thuộc tính phục vụ cho việc di chuyển trang
-        private const int HeightOfNotification = 92;
-        private int MaxRow;
+        //Lưu lại chiều cao hiện tại của panel, chỉ khi nào chiều cao của panel thay đổi thì mới đi tính
+        //toán lại số trang hiển thị của các thông báo
+        private int CurrentHeightOfFlowPanel;
+
         private int MaxPage;
         private int CurrentPage = 1;
-        private SplitPageHelper<ThongBao_DTO> helper;
+
         public UC_ViewListNotifications(string MaSV)
         {
             InitializeComponent();
-            MaxRow = flowPanel.Height / HeightOfNotification;
+            CurrentHeightOfFlowPanel = flowPanel.Height;
             this.MaSV = MaSV;
         }
 
-        private void ShowNotificationsOnPanel(List<ThongBao_DTO> li)
+        /// <summary>
+        /// Đi tính toán số trang của từng thông báo, để lát dựa vào số trang
+        /// này mà đi hiển thị lên panel
+        /// </summary>
+        private void CalculatePageOfEachNotification()
         {
+            int pageCurrent = 1;
+            int totalHeightCurrentPage = 0;
+            int HeightOfPanel = flowPanel.Height;
             for (int i = 0; i < li.Count; i++)
             {
                 ThongBao_DTO tb = li[i];
-                flowPanel.Controls.Add(new UC_Notification()
+                UC_Notification notification = new UC_Notification() { NoiDungTB = tb.NoiDung };
+                int heightUC = notification.HeightText;
+                if (totalHeightCurrentPage + heightUC + 50 < HeightOfPanel)
                 {
-                    Width = flowPanel.Width - 10,
-                    MaLopHP = tb.MaLopHP,
-                    TenMH = tb.TenMonHoc,
-                    GioiTinhGV = tb.CheckGender,
-                    TenGV = tb.TenGV,
-                    NgayTao = tb.NgayTao.ToShortDateString(),
-                    TieuDeTB = tb.TieuDe,
-                    NoiDungTB = tb.NoiDung
-                });
+                    totalHeightCurrentPage += heightUC;
+                    tb.AtPage = pageCurrent;
+                }
+                else
+                {
+                    tb.AtPage = ++pageCurrent;
+                    totalHeightCurrentPage = heightUC;
+                }
+            }
+            MaxPage = pageCurrent;
+        }
+
+        /// <summary>
+        /// Dựa vào số trang ở thuộc tính AtPage đã lưu trong từng thông báo mà ta sẽ
+        /// hiển thị tương ứng lên panel
+        /// </summary>
+        /// <param name="Page"></param>
+        private void ShowNotificationsOnPanel(int Page)
+        {
+            lblCurrentPage.Text = $"Trang {Page}/{MaxPage}";
+            flowPanel.Controls.Clear();
+            for (int i = 0; i < li.Count; i++)
+            {
+                if (li[i].AtPage == Page)
+                {
+                    ThongBao_DTO tb = li[i];
+                    UC_Notification notification = new UC_Notification()
+                    {
+                        Width = flowPanel.Width - 10,
+                        MaLopHP = tb.MaLopHP,
+                        TenMH = tb.TenMonHoc,
+                        GioiTinhGV = tb.CheckGender,
+                        TenGV = tb.TenGV,
+                        NgayTao = tb.NgayTao.ToShortDateString(),
+                        TieuDeTB = tb.TieuDe,
+                        NoiDungTB = tb.NoiDung
+                    };
+                    flowPanel.Controls.Add(notification);
+                }
             }
         }
 
         private void combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime StartDateFiler = default(DateTime);
+            DateTime StartDateFiler = default;
             int idx = combobox.SelectedIndex;
             if (idx == 1)
                 StartDateFiler = DateTime.Now;
@@ -53,13 +94,19 @@ namespace GUI.MyUserControls
                 StartDateFiler = DateTime.Now.AddDays(-7);
             else if (idx == 3)
                 StartDateFiler = DateTime.Now.AddDays(-30);
-            flowPanel.Controls.Clear();
             li = LopHocPhan_BLL.Instance.GetNotificationsInSpecificBound(MaSV, StartDateFiler);
-            if (li.Count != 0)
+            if (li.Count > 0)
             {
-                MaxPage = (int)Math.Ceiling(li.Count * 1.0 / MaxRow);
-                helper = new SplitPageHelper<ThongBao_DTO>(MaxRow, li);
-                ShowNotificationsOnPanel(helper.GetRecords(1));
+                CalculatePageOfEachNotification();
+                CurrentPage = 1;
+                ShowNotificationsOnPanel(CurrentPage);
+            }
+            else
+            {
+                flowPanel.Controls.Clear();
+                CurrentPage = 0;
+                MaxPage = 0;
+                lblCurrentPage.Text = "Số thông báo: 0";
             }
         }
 
@@ -68,7 +115,7 @@ namespace GUI.MyUserControls
             if (CurrentPage != 1)
             {
                 CurrentPage = 1;
-                ShowNotificationsOnPanel(helper.GetRecords(CurrentPage));
+                ShowNotificationsOnPanel(CurrentPage);
             }
         }
 
@@ -77,7 +124,7 @@ namespace GUI.MyUserControls
             if (CurrentPage > 1)
             {
                 CurrentPage--;
-                ShowNotificationsOnPanel(helper.GetRecords(CurrentPage));
+                ShowNotificationsOnPanel(CurrentPage);
             }
         }
 
@@ -86,7 +133,7 @@ namespace GUI.MyUserControls
             if (CurrentPage < MaxPage)
             {
                 CurrentPage++;
-                ShowNotificationsOnPanel(helper.GetRecords(CurrentPage));
+                ShowNotificationsOnPanel(CurrentPage);
             }
         }
 
@@ -95,13 +142,26 @@ namespace GUI.MyUserControls
             if (CurrentPage != MaxPage)
             {
                 CurrentPage = MaxPage;
-                ShowNotificationsOnPanel(helper.GetRecords(CurrentPage));
+                ShowNotificationsOnPanel(CurrentPage);
             }
         }
 
         private void UC_ViewListNotifications_Load(object sender, EventArgs e)
         {
             combobox_SelectedIndexChanged(sender, e);
+        }
+
+        private void flowPanel_SizeChanged(object sender, EventArgs e)
+        {
+            //Chỉ tính toán lại số trang của các thông báo nếu flowPanel thay đổi về chiều cao
+            if (flowPanel.Height != CurrentHeightOfFlowPanel)
+            {
+                CurrentHeightOfFlowPanel = flowPanel.Height;
+                CalculatePageOfEachNotification();
+                if (CurrentPage > MaxPage)
+                    CurrentPage--;
+                ShowNotificationsOnPanel(CurrentPage);
+            }
         }
     }
 }

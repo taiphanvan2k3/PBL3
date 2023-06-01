@@ -33,7 +33,7 @@
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLastPage = new FontAwesome.Sharp.IconButton();
             this.btnFirstPage = new FontAwesome.Sharp.IconButton();
-            this.lbCurrentPage = new System.Windows.Forms.Label();
+            this.lblCurrentPage = new System.Windows.Forms.Label();
             this.btnNext = new FontAwesome.Sharp.IconButton();
             this.btnPrev = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             "Xem tất cả",
             "Hôm nay",
             "Trong vòng 7 ngày",
-            "Tròng vòng 1 tháng"});
+            "Trong vòng 1 tháng"});
             this.combobox.Location = new System.Drawing.Point(729, 18);
             this.combobox.Name = "combobox";
             this.combobox.Size = new System.Drawing.Size(231, 36);
@@ -83,6 +83,7 @@
             this.flowPanel.Name = "flowPanel";
             this.flowPanel.Size = new System.Drawing.Size(934, 438);
             this.flowPanel.TabIndex = 3;
+            this.flowPanel.SizeChanged += new System.EventHandler(this.flowPanel_SizeChanged);
             // 
             // btnLastPage
             // 
@@ -120,17 +121,17 @@
             this.btnFirstPage.UseVisualStyleBackColor = false;
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
-            // lbCurrentPage
+            // lblCurrentPage
             // 
-            this.lbCurrentPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbCurrentPage.AutoSize = true;
-            this.lbCurrentPage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCurrentPage.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lbCurrentPage.Location = new System.Drawing.Point(25, 511);
-            this.lbCurrentPage.Name = "lbCurrentPage";
-            this.lbCurrentPage.Size = new System.Drawing.Size(61, 23);
-            this.lbCurrentPage.TabIndex = 44;
-            this.lbCurrentPage.Text = "Trang:";
+            this.lblCurrentPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblCurrentPage.AutoSize = true;
+            this.lblCurrentPage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentPage.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lblCurrentPage.Location = new System.Drawing.Point(25, 511);
+            this.lblCurrentPage.Name = "lblCurrentPage";
+            this.lblCurrentPage.Size = new System.Drawing.Size(61, 23);
+            this.lblCurrentPage.TabIndex = 44;
+            this.lblCurrentPage.Text = "Trang:";
             // 
             // btnNext
             // 
@@ -173,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.btnFirstPage);
-            this.Controls.Add(this.lbCurrentPage);
+            this.Controls.Add(this.lblCurrentPage);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.flowPanel);
@@ -194,7 +195,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowPanel;
         private FontAwesome.Sharp.IconButton btnLastPage;
         private FontAwesome.Sharp.IconButton btnFirstPage;
-        private System.Windows.Forms.Label lbCurrentPage;
+        private System.Windows.Forms.Label lblCurrentPage;
         private FontAwesome.Sharp.IconButton btnNext;
         private FontAwesome.Sharp.IconButton btnPrev;
     }

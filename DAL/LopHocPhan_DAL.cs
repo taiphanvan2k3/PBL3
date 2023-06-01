@@ -256,7 +256,7 @@ namespace DAL
                     NoiDung = tb.NDThongBao,
                     TenGV = nd.Ho + " " + nd.Ten,
                     CheckGender = nd.GioiTinh ? "Thầy" : "Cô"
-                }).ToList();
+                }).OrderByDescending(p => p.NgayTao).ToList();
         }
 
         public List<InformationSubject_DTO> getListSubjects()
@@ -277,7 +277,7 @@ namespace DAL
 
         public List<string> getListStudent(string maKhoa, string maLHP)
         {
-            using(var context = new PBL3Entities())
+            using (var context = new PBL3Entities())
             {
                 var result = context.SINH_VIEN
                      .Where(sv => sv.MaSV.Substring(0, 3) == maKhoa &&

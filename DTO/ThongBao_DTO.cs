@@ -17,5 +17,8 @@ namespace DTO
         public string TenMonHoc { get; set; }
         public string TieuDe { get; set; }
         public string NoiDung { get; set; }
+
+        // Lưu trữ page mà thông báo này sẽ hiển thị
+        public int AtPage { get; set; }
     }
 }

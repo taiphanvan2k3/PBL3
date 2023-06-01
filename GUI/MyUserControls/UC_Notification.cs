@@ -15,6 +15,10 @@ namespace GUI.MyUserControls
         public string TenMH { get; set; }
         public string TieuDeTB { get; set; }
         public string NoiDungTB { get; set; }
+        public int HeightText
+        {
+            get => lblTieuDe.Height + UtilityClass.CalculateHeightOfControl(lblNoiDung) + 70;
+        }
         public UC_Notification()
         {
             InitializeComponent();
@@ -25,10 +29,10 @@ namespace GUI.MyUserControls
             lblTieuDe.Text = GioiTinhGV + " " + TenGV + " thông báo đến lớp: " + TenMH + " [" + MaLopHP + "]";
             lblGV.Text = GioiTinhGV + " nhắn:";
             lblNoiDung.Text = "\nTiêu đề: " + TieuDeTB + "\nNội dung: " + NoiDungTB;
-            int HeightText = UtilityClass.CalculateHeightOfControl(lblNoiDung);
-            if (lblNoiDung.Height < HeightText)
+            int RealityHeightText = UtilityClass.CalculateHeightOfControl(lblNoiDung);
+            if (lblNoiDung.Height < RealityHeightText)
             {
-                lblNoiDung.Height = HeightText;
+                lblNoiDung.Height = RealityHeightText;
                 this.Height = lblNoiDung.Bounds.Bottom + 5;
             }
         }
