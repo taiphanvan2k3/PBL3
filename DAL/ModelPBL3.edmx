@@ -75,6 +75,23 @@
           <Property Name="Luong" Type="int" />
           <Property Name="MaKhoa" Type="varchar" MaxLength="3" Nullable="false" />
         </EntityType>
+        <EntityType Name="KET_QUA_PHUC_KHAO">
+          <Key>
+            <PropertyRef Name="maSV" />
+            <PropertyRef Name="maBaiKiemTra" />
+            <PropertyRef Name="thuTuCauHoi" />
+          </Key>
+          <Property Name="maSV" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="maBaiKiemTra" Type="int" Nullable="false" />
+          <Property Name="thuTuCauHoi" Type="int" Nullable="false" />
+          <Property Name="tenCauHoi" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="dapAnA" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="dapAnB" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="dapAnC" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="dapAnD" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="dapAnChon" Type="varchar" MaxLength="4" />
+          <Property Name="dapAnDung" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
         <EntityType Name="KHOA">
           <Key>
             <PropertyRef Name="MaKhoa" />
@@ -280,6 +297,30 @@
             </Principal>
             <Dependent Role="district">
               <PropertyRef Name="city_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KET_QUA_P__maBai__3552E9B6">
+          <End Role="BAI_KIEM_TRA" Type="Self.BAI_KIEM_TRA" Multiplicity="1" />
+          <End Role="KET_QUA_PHUC_KHAO" Type="Self.KET_QUA_PHUC_KHAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BAI_KIEM_TRA">
+              <PropertyRef Name="MaBaiKiemTra" />
+            </Principal>
+            <Dependent Role="KET_QUA_PHUC_KHAO">
+              <PropertyRef Name="maBaiKiemTra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KET_QUA_PH__maSV__345EC57D">
+          <End Role="SINH_VIEN" Type="Self.SINH_VIEN" Multiplicity="1" />
+          <End Role="KET_QUA_PHUC_KHAO" Type="Self.KET_QUA_PHUC_KHAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SINH_VIEN">
+              <PropertyRef Name="MaSV" />
+            </Principal>
+            <Dependent Role="KET_QUA_PHUC_KHAO">
+              <PropertyRef Name="maSV" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -555,6 +596,7 @@
           <EntitySet Name="city" EntityType="Self.city" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="district" EntityType="Self.district" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GIANG_VIEN" EntityType="Self.GIANG_VIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KET_QUA_PHUC_KHAO" EntityType="Self.KET_QUA_PHUC_KHAO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHOA" EntityType="Self.KHOA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAM_BAI_KIEM_TRA" EntityType="Self.LAM_BAI_KIEM_TRA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOP_HOC_PHAN" EntityType="Self.LOP_HOC_PHAN" Schema="dbo" store:Type="Tables" />
@@ -588,6 +630,14 @@
           <AssociationSet Name="FK__district__city_i__09746778" Association="Self.FK__district__city_i__09746778">
             <End Role="city" EntitySet="city" />
             <End Role="district" EntitySet="district" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KET_QUA_P__maBai__3552E9B6" Association="Self.FK__KET_QUA_P__maBai__3552E9B6">
+            <End Role="BAI_KIEM_TRA" EntitySet="BAI_KIEM_TRA" />
+            <End Role="KET_QUA_PHUC_KHAO" EntitySet="KET_QUA_PHUC_KHAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KET_QUA_PH__maSV__345EC57D" Association="Self.FK__KET_QUA_PH__maSV__345EC57D">
+            <End Role="SINH_VIEN" EntitySet="SINH_VIEN" />
+            <End Role="KET_QUA_PHUC_KHAO" EntitySet="KET_QUA_PHUC_KHAO" />
           </AssociationSet>
           <AssociationSet Name="FK__THONGBAO___MaLop__72910220" Association="Self.FK__THONGBAO___MaLop__72910220">
             <End Role="LOP_HOC_PHAN" EntitySet="LOP_HOC_PHAN" />
@@ -700,6 +750,7 @@
           <NavigationProperty Name="BAIKIEMTRA_CAUHOI" Relationship="Self.FK__BAIKIEMTR__MaBai__756D6ECB" FromRole="BAI_KIEM_TRA" ToRole="BAIKIEMTRA_CAUHOI" />
           <NavigationProperty Name="LAM_BAI_KIEM_TRA" Relationship="Self.FK_MaBaiKiemTra_LAMBKT" FromRole="BAI_KIEM_TRA" ToRole="LAM_BAI_KIEM_TRA" />
           <NavigationProperty Name="LOP_HOC_PHAN" Relationship="Self.FK_MaLopHP_BaiKT" FromRole="BAI_KIEM_TRA" ToRole="LOP_HOC_PHAN" />
+          <NavigationProperty Name="KET_QUA_PHUC_KHAO" Relationship="PBL3Model.FK__KET_QUA_P__maBai__3552E9B6" FromRole="BAI_KIEM_TRA" ToRole="KET_QUA_PHUC_KHAO" />
         </EntityType>
         <EntityType Name="BAIKIEMTRA_CAUHOI">
           <Key>
@@ -886,6 +937,7 @@
           <NavigationProperty Name="NGUOI_DUNG" Relationship="Self.FK_MaSV_SV" FromRole="SINH_VIEN" ToRole="NGUOI_DUNG" />
           <NavigationProperty Name="PHU_HUYNH" Relationship="Self.FK_MaSV" FromRole="SINH_VIEN" ToRole="PHU_HUYNH" />
           <NavigationProperty Name="SINHVIEN_LOPHOCPHAN" Relationship="Self.FK_MaSV_SVLHP" FromRole="SINH_VIEN" ToRole="SINHVIEN_LOPHOCPHAN" />
+          <NavigationProperty Name="KET_QUA_PHUC_KHAO" Relationship="PBL3Model.FK__KET_QUA_PH__maSV__345EC57D" FromRole="SINH_VIEN" ToRole="KET_QUA_PHUC_KHAO" />
         </EntityType>
         <EntityType Name="SINHVIEN_LOPHOCPHAN">
           <Key>
@@ -1408,7 +1460,59 @@
             <End Role="THONG_BAO" EntitySet="THONG_BAO" />
             <End Role="THONGBAO_LOPHOCPHAN" EntitySet="THONGBAO_LOPHOCPHAN" />
           </AssociationSet>
+          <EntitySet Name="KET_QUA_PHUC_KHAO" EntityType="PBL3Model.KET_QUA_PHUC_KHAO" />
+          <AssociationSet Name="FK__KET_QUA_P__maBai__3552E9B6" Association="PBL3Model.FK__KET_QUA_P__maBai__3552E9B6">
+            <End Role="BAI_KIEM_TRA" EntitySet="BAI_KIEM_TRA" />
+            <End Role="KET_QUA_PHUC_KHAO" EntitySet="KET_QUA_PHUC_KHAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KET_QUA_PH__maSV__345EC57D" Association="PBL3Model.FK__KET_QUA_PH__maSV__345EC57D">
+            <End Role="SINH_VIEN" EntitySet="SINH_VIEN" />
+            <End Role="KET_QUA_PHUC_KHAO" EntitySet="KET_QUA_PHUC_KHAO" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="KET_QUA_PHUC_KHAO">
+          <Key>
+            <PropertyRef Name="maSV" />
+            <PropertyRef Name="maBaiKiemTra" />
+            <PropertyRef Name="thuTuCauHoi" />
+          </Key>
+          <Property Name="maSV" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="maBaiKiemTra" Type="Int32" Nullable="false" />
+          <Property Name="thuTuCauHoi" Type="Int32" Nullable="false" />
+          <Property Name="tenCauHoi" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="dapAnA" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="dapAnB" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="dapAnC" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="dapAnD" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="dapAnChon" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="dapAnDung" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BAI_KIEM_TRA" Relationship="PBL3Model.FK__KET_QUA_P__maBai__3552E9B6" FromRole="KET_QUA_PHUC_KHAO" ToRole="BAI_KIEM_TRA" />
+          <NavigationProperty Name="SINH_VIEN" Relationship="PBL3Model.FK__KET_QUA_PH__maSV__345EC57D" FromRole="KET_QUA_PHUC_KHAO" ToRole="SINH_VIEN" />
+        </EntityType>
+        <Association Name="FK__KET_QUA_P__maBai__3552E9B6">
+          <End Type="PBL3Model.BAI_KIEM_TRA" Role="BAI_KIEM_TRA" Multiplicity="1" />
+          <End Type="PBL3Model.KET_QUA_PHUC_KHAO" Role="KET_QUA_PHUC_KHAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BAI_KIEM_TRA">
+              <PropertyRef Name="MaBaiKiemTra" />
+            </Principal>
+            <Dependent Role="KET_QUA_PHUC_KHAO">
+              <PropertyRef Name="maBaiKiemTra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KET_QUA_PH__maSV__345EC57D">
+          <End Type="PBL3Model.SINH_VIEN" Role="SINH_VIEN" Multiplicity="1" />
+          <End Type="PBL3Model.KET_QUA_PHUC_KHAO" Role="KET_QUA_PHUC_KHAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SINH_VIEN">
+              <PropertyRef Name="MaSV" />
+            </Principal>
+            <Dependent Role="KET_QUA_PHUC_KHAO">
+              <PropertyRef Name="maSV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1644,6 +1748,22 @@
                 <ScalarProperty Name="ward_id" ColumnName="ward_id" />
                 <ScalarProperty Name="district_id" ColumnName="district_id" />
                 <ScalarProperty Name="xaPhuong" ColumnName="xaPhuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KET_QUA_PHUC_KHAO">
+            <EntityTypeMapping TypeName="PBL3Model.KET_QUA_PHUC_KHAO">
+              <MappingFragment StoreEntitySet="KET_QUA_PHUC_KHAO">
+                <ScalarProperty Name="dapAnDung" ColumnName="dapAnDung" />
+                <ScalarProperty Name="dapAnChon" ColumnName="dapAnChon" />
+                <ScalarProperty Name="dapAnD" ColumnName="dapAnD" />
+                <ScalarProperty Name="dapAnC" ColumnName="dapAnC" />
+                <ScalarProperty Name="dapAnB" ColumnName="dapAnB" />
+                <ScalarProperty Name="dapAnA" ColumnName="dapAnA" />
+                <ScalarProperty Name="tenCauHoi" ColumnName="tenCauHoi" />
+                <ScalarProperty Name="thuTuCauHoi" ColumnName="thuTuCauHoi" />
+                <ScalarProperty Name="maBaiKiemTra" ColumnName="maBaiKiemTra" />
+                <ScalarProperty Name="maSV" ColumnName="maSV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

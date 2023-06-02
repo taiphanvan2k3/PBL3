@@ -19,6 +19,7 @@ namespace DAL
         {
             this.BAIKIEMTRA_CAUHOI = new HashSet<BAIKIEMTRA_CAUHOI>();
             this.LAM_BAI_KIEM_TRA = new HashSet<LAM_BAI_KIEM_TRA>();
+            this.KET_QUA_PHUC_KHAO = new HashSet<KET_QUA_PHUC_KHAO>();
         }
     
         public int MaBaiKiemTra { get; set; }
@@ -38,5 +39,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LAM_BAI_KIEM_TRA> LAM_BAI_KIEM_TRA { get; set; }
         public virtual LOP_HOC_PHAN LOP_HOC_PHAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KET_QUA_PHUC_KHAO> KET_QUA_PHUC_KHAO { get; set; }
     }
 }

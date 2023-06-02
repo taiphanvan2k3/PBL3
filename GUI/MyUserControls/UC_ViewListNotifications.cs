@@ -40,7 +40,7 @@ namespace GUI.MyUserControls
                 ThongBao_DTO tb = li[i];
                 UC_Notification notification = new UC_Notification() { NoiDungTB = tb.NoiDung };
                 int heightUC = notification.HeightText;
-                if (totalHeightCurrentPage + heightUC + 50 < HeightOfPanel)
+                if (totalHeightCurrentPage + heightUC + 100 < HeightOfPanel)
                 {
                     totalHeightCurrentPage += heightUC;
                     tb.AtPage = pageCurrent;

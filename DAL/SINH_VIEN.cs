@@ -20,6 +20,7 @@ namespace DAL
             this.LAM_BAI_KIEM_TRA = new HashSet<LAM_BAI_KIEM_TRA>();
             this.PHU_HUYNH = new HashSet<PHU_HUYNH>();
             this.SINHVIEN_LOPHOCPHAN = new HashSet<SINHVIEN_LOPHOCPHAN>();
+            this.KET_QUA_PHUC_KHAO = new HashSet<KET_QUA_PHUC_KHAO>();
         }
     
         public string MaSV { get; set; }
@@ -35,5 +36,7 @@ namespace DAL
         public virtual ICollection<PHU_HUYNH> PHU_HUYNH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SINHVIEN_LOPHOCPHAN> SINHVIEN_LOPHOCPHAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KET_QUA_PHUC_KHAO> KET_QUA_PHUC_KHAO { get; set; }
     }
 }

@@ -431,6 +431,12 @@
     <Compile Include="MyUserControls\UC_StudentInfoNew.designer.cs">
       <DependentUpon>UC_StudentInfoNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControls\UC_ThongKeDiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_ThongKeDiem.Designer.cs">
+      <DependentUpon>UC_ThongKeDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControls\UC_VerticalAddressSelection.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -546,6 +552,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Notification.resx">
       <DependentUpon>UC_Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_ThongKeDiem.resx">
+      <DependentUpon>UC_ThongKeDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_ViewListNotifications.resx">
       <DependentUpon>UC_ViewListNotifications.cs</DependentUpon>
