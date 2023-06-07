@@ -179,7 +179,8 @@ namespace DAL
                     lambkt.ThoiGianNopBai,
                     lambkt.SoCauDung,
                     lambkt.SoLanViPham,
-                    lambkt.Diem
+                    lambkt.Diem,
+                    bkt.SoCauHoi
                 })
                 .Join(db.SINH_VIEN, lambkt => lambkt.MaSV, sv => sv.MaSV, (lambkt, sv) => new
                 {
@@ -191,7 +192,8 @@ namespace DAL
                     lambkt.ThoiGianNopBai,
                     lambkt.SoCauDung,
                     lambkt.SoLanViPham,
-                    lambkt.Diem
+                    lambkt.Diem,
+                    lambkt.SoCauHoi
                 })
                 .Select(p => new KetQuaLamKiemTra_SVLHP()
                 {
@@ -200,7 +202,7 @@ namespace DAL
                     LopSH = p.MaLopSH,
                     ThoiGianLamBai = (DateTime)p.ThoiGianLamBai,
                     ThoiGianNopBai = (DateTime)p.ThoiGianNopBai,
-                    SoCauDung = p.SoCauDung,
+                    SoCauDung = p.SoCauDung+"/"+p.SoCauHoi,
                     SoLanViPham = p.SoLanViPham,
                     Diem = p.Diem
                 }).ToList();
@@ -241,6 +243,27 @@ namespace DAL
         {
             db.LAM_BAI_KIEM_TRA.Add(lambkt);
             db.SaveChanges();
+        }
+
+        public List<CBBItem> GetAllExamsInSpecificModuleClass(string moduleClass)
+        {
+            var li = db.BAI_KIEM_TRA.Where(bkt => bkt.MaLopHP == moduleClass)
+                .Select(p => new
+                {
+                    p.MaBaiKiemTra,
+                    p.TenBaiKiemTra,
+                    p.TieuDeBaiKiemTra
+                }).ToList();
+            List<CBBItem> res = new List<CBBItem>();
+            foreach (var item in li)
+            {
+                res.Add(new CBBItem()
+                {
+                    Id = item.MaBaiKiemTra.ToString(),
+                    Value = item.TenBaiKiemTra + " - " + item.TieuDeBaiKiemTra
+                });
+            }
+            return res;
         }
     }
 }

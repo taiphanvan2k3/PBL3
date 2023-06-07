@@ -25,7 +25,7 @@ namespace DTO
         public DateTime ThoiGianNopBai { get; set; }
 
         [DisplayName("Số câu đúng")]
-        public int SoCauDung { get; set; }
+        public string SoCauDung { get; set; }
 
         [DisplayName("Số lần vi phạm")]
         public int SoLanViPham { get; set; }
