@@ -410,5 +410,10 @@ namespace Testexcel
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

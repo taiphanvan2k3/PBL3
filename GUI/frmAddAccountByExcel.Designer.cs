@@ -36,7 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Hủy = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnADD = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -102,21 +102,22 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "Thêm từ URL";
             // 
-            // Hủy
+            // btnCancel
             // 
-            this.Hủy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Hủy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.Hủy.FlatAppearance.BorderSize = 0;
-            this.Hủy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Hủy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hủy.ForeColor = System.Drawing.Color.LightGray;
-            this.Hủy.Location = new System.Drawing.Point(23, 756);
-            this.Hủy.Margin = new System.Windows.Forms.Padding(4);
-            this.Hủy.Name = "Hủy";
-            this.Hủy.Size = new System.Drawing.Size(200, 50);
-            this.Hủy.TabIndex = 37;
-            this.Hủy.Text = "Hủy";
-            this.Hủy.UseVisualStyleBackColor = false;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCancel.Location = new System.Drawing.Point(23, 756);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(200, 50);
+            this.btnCancel.TabIndex = 37;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnADD
             // 
@@ -272,7 +273,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(500, 818);
             this.Controls.Add(this.pnlProgressBar);
-            this.Controls.Add(this.Hủy);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnADD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPath);
@@ -302,7 +303,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Hủy;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

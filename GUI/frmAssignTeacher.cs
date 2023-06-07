@@ -9,6 +9,10 @@ namespace GUI
 {
     public partial class frmAssignTeacher : Form
     {
+        // Cập nhật lại dữ liệu của lớp học phần sau khi phân công
+        public delegate void ReloadParentForm();
+        public ReloadParentForm reloadParentForm { get; set; }
+
         private const int maxRow = 6;
         private int currentPage, maxPage;
         private List<AssignTeacher> li;
@@ -127,6 +131,7 @@ namespace GUI
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            reloadParentForm();
             this.Dispose();
         }
 
@@ -196,7 +201,6 @@ namespace GUI
                         //Chỗ này sẽ gọi tới hàm truy vấn vào csdl để sửa đổi thông tin giảng viên của LHP
                         GiangVien_BLL.Instance.AssignTeacherToSectionClass(tbMaGV.Texts, cbbThu.SelectedItem.ToString(), Convert.ToInt32(cbbTietBD.SelectedItem.ToString()), Convert.ToInt32(cbbTietKT.SelectedItem.ToString()), tbPhong.Text, tbMaHP.Texts);
                         CustomMessageBox.Show("Phân công giảng viên thành công!");
-                        this.Dispose();
                     }
                     else
                         CustomMessageBox.Show("Lịch dạy của giảng viên bị xung đột!");
@@ -215,7 +219,6 @@ namespace GUI
                         //Chỗ này sẽ gọi tới hàm truy vấn vào csdl để sửa đổi thông tin giảng viên của LHP
                         GiangVien_BLL.Instance.AssignTeacherNoChangeSchedule(tbMaGV.Texts, tbMaHP.Texts);
                         CustomMessageBox.Show("Phân công giảng viên thành công!");
-                        this.Dispose();
                     }
                     else
                         CustomMessageBox.Show("Lịch dạy của giảng viên bị xung đột!");
