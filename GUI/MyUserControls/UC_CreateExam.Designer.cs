@@ -51,10 +51,8 @@
             this.pnlTao = new System.Windows.Forms.Panel();
             this.btnTao = new GUI.MyCustomControl.CustomButton();
             this.pnlTenBaiKT = new System.Windows.Forms.Panel();
-            this.tbTenBaiKiemTra = new GUI.MyCustomControl.CustomTextBox();
             this.pnlLoaiBKT = new System.Windows.Forms.Panel();
             this.pnlThoiGianLamBai = new System.Windows.Forms.Panel();
-            this.tbThoiGianLamBai = new GUI.MyCustomControl.CustomTextBox();
             this.pnlThoiGianKiemTra = new System.Windows.Forms.Panel();
             this.pnlDatLai = new System.Windows.Forms.Panel();
             this.btnDatLai = new GUI.MyCustomControl.CustomButton();
@@ -64,6 +62,8 @@
             this.flowLayout4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayout5 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayout6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tbThoiGianLamBai = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbTenBaiKiemTra = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlSoLuongCauHoi.SuspendLayout();
             this.pnlLHP.SuspendLayout();
             this.pnlMatKhauLamBai.SuspendLayout();
@@ -421,37 +421,12 @@
             // pnlTenBaiKT
             // 
             this.pnlTenBaiKT.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTenBaiKT.Controls.Add(this.label1);
             this.pnlTenBaiKT.Controls.Add(this.tbTenBaiKiemTra);
+            this.pnlTenBaiKT.Controls.Add(this.label1);
             this.pnlTenBaiKT.Location = new System.Drawing.Point(3, 3);
             this.pnlTenBaiKT.Name = "pnlTenBaiKT";
             this.pnlTenBaiKT.Size = new System.Drawing.Size(479, 101);
             this.pnlTenBaiKT.TabIndex = 32;
-            // 
-            // tbTenBaiKiemTra
-            // 
-            this.tbTenBaiKiemTra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTenBaiKiemTra.BackColor = System.Drawing.SystemColors.Window;
-            this.tbTenBaiKiemTra.BorderColor = System.Drawing.Color.Black;
-            this.tbTenBaiKiemTra.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbTenBaiKiemTra.BorderRadius = 10;
-            this.tbTenBaiKiemTra.BorderSize = 2;
-            this.tbTenBaiKiemTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenBaiKiemTra.ForeColor = System.Drawing.Color.DimGray;
-            this.tbTenBaiKiemTra.Location = new System.Drawing.Point(189, 28);
-            this.tbTenBaiKiemTra.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTenBaiKiemTra.MaxLength = 32767;
-            this.tbTenBaiKiemTra.Multiline = false;
-            this.tbTenBaiKiemTra.Name = "tbTenBaiKiemTra";
-            this.tbTenBaiKiemTra.Padding = new System.Windows.Forms.Padding(7);
-            this.tbTenBaiKiemTra.PasswordChar = false;
-            this.tbTenBaiKiemTra.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbTenBaiKiemTra.PlaceholderText = "";
-            this.tbTenBaiKiemTra.Size = new System.Drawing.Size(253, 35);
-            this.tbTenBaiKiemTra.TabIndex = 0;
-            this.tbTenBaiKiemTra.Texts = "";
-            this.tbTenBaiKiemTra.UnderlinedStyle = false;
             // 
             // pnlLoaiBKT
             // 
@@ -468,38 +443,13 @@
             // 
             this.pnlThoiGianLamBai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlThoiGianLamBai.Controls.Add(this.tbThoiGianLamBai);
             this.pnlThoiGianLamBai.Controls.Add(this.label4);
             this.pnlThoiGianLamBai.Controls.Add(this.label9);
-            this.pnlThoiGianLamBai.Controls.Add(this.tbThoiGianLamBai);
             this.pnlThoiGianLamBai.Location = new System.Drawing.Point(3, 3);
             this.pnlThoiGianLamBai.Name = "pnlThoiGianLamBai";
             this.pnlThoiGianLamBai.Size = new System.Drawing.Size(479, 111);
             this.pnlThoiGianLamBai.TabIndex = 34;
-            // 
-            // tbThoiGianLamBai
-            // 
-            this.tbThoiGianLamBai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbThoiGianLamBai.BackColor = System.Drawing.SystemColors.Window;
-            this.tbThoiGianLamBai.BorderColor = System.Drawing.Color.Black;
-            this.tbThoiGianLamBai.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbThoiGianLamBai.BorderRadius = 10;
-            this.tbThoiGianLamBai.BorderSize = 2;
-            this.tbThoiGianLamBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbThoiGianLamBai.ForeColor = System.Drawing.Color.DimGray;
-            this.tbThoiGianLamBai.Location = new System.Drawing.Point(190, 33);
-            this.tbThoiGianLamBai.Margin = new System.Windows.Forms.Padding(4);
-            this.tbThoiGianLamBai.MaxLength = 32767;
-            this.tbThoiGianLamBai.Multiline = false;
-            this.tbThoiGianLamBai.Name = "tbThoiGianLamBai";
-            this.tbThoiGianLamBai.Padding = new System.Windows.Forms.Padding(7);
-            this.tbThoiGianLamBai.PasswordChar = false;
-            this.tbThoiGianLamBai.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbThoiGianLamBai.PlaceholderText = "";
-            this.tbThoiGianLamBai.Size = new System.Drawing.Size(252, 35);
-            this.tbThoiGianLamBai.TabIndex = 6;
-            this.tbThoiGianLamBai.Texts = "";
-            this.tbThoiGianLamBai.UnderlinedStyle = false;
             // 
             // pnlThoiGianKiemTra
             // 
@@ -618,6 +568,56 @@
             this.flowLayout6.Size = new System.Drawing.Size(977, 121);
             this.flowLayout6.TabIndex = 43;
             // 
+            // tbThoiGianLamBai
+            // 
+            this.tbThoiGianLamBai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbThoiGianLamBai.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbThoiGianLamBai.BorderRadius = 8;
+            this.tbThoiGianLamBai.BorderThickness = 2;
+            this.tbThoiGianLamBai.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbThoiGianLamBai.DefaultText = "";
+            this.tbThoiGianLamBai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbThoiGianLamBai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbThoiGianLamBai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbThoiGianLamBai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbThoiGianLamBai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbThoiGianLamBai.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbThoiGianLamBai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbThoiGianLamBai.Location = new System.Drawing.Point(189, 33);
+            this.tbThoiGianLamBai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbThoiGianLamBai.Name = "tbThoiGianLamBai";
+            this.tbThoiGianLamBai.PasswordChar = '\0';
+            this.tbThoiGianLamBai.PlaceholderText = "";
+            this.tbThoiGianLamBai.SelectedText = "";
+            this.tbThoiGianLamBai.Size = new System.Drawing.Size(250, 35);
+            this.tbThoiGianLamBai.TabIndex = 17;
+            // 
+            // tbTenBaiKiemTra
+            // 
+            this.tbTenBaiKiemTra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTenBaiKiemTra.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbTenBaiKiemTra.BorderRadius = 8;
+            this.tbTenBaiKiemTra.BorderThickness = 2;
+            this.tbTenBaiKiemTra.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTenBaiKiemTra.DefaultText = "";
+            this.tbTenBaiKiemTra.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTenBaiKiemTra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTenBaiKiemTra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTenBaiKiemTra.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTenBaiKiemTra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTenBaiKiemTra.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbTenBaiKiemTra.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTenBaiKiemTra.Location = new System.Drawing.Point(192, 28);
+            this.tbTenBaiKiemTra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbTenBaiKiemTra.Name = "tbTenBaiKiemTra";
+            this.tbTenBaiKiemTra.PasswordChar = '\0';
+            this.tbTenBaiKiemTra.PlaceholderText = "";
+            this.tbTenBaiKiemTra.SelectedText = "";
+            this.tbTenBaiKiemTra.Size = new System.Drawing.Size(250, 35);
+            this.tbTenBaiKiemTra.TabIndex = 27;
+            // 
             // UC_CreateExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -655,13 +655,10 @@
         }
 
         #endregion
-
-        private MyCustomControl.CustomTextBox tbTenBaiKiemTra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private MyCustomControl.CustomTextBox tbThoiGianLamBai;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private MyCustomControl.CustomButton btnDatLai;
@@ -692,5 +689,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayout4;
         private System.Windows.Forms.FlowLayoutPanel flowLayout5;
         private System.Windows.Forms.FlowLayoutPanel flowLayout6;
+        private Guna.UI2.WinForms.Guna2TextBox tbTenBaiKiemTra;
+        private Guna.UI2.WinForms.Guna2TextBox tbThoiGianLamBai;
     }
 }

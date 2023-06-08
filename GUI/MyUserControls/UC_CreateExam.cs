@@ -22,9 +22,9 @@ namespace GUI.MyUserControls
         {
             InitializeComponent();
             LoadInfo(ID);
-            tbTenBaiKiemTra._TextChanged += CheckAllConditions;
-            tbMatKhauLamBai._TextChanged += CheckAllConditions;
-            tbThoiGianLamBai._TextChanged += CheckAllConditions;
+            tbTenBaiKiemTra.TextChanged += CheckAllConditions;
+            tbMatKhauLamBai.TextChanged += CheckAllConditions;
+            tbThoiGianLamBai.TextChanged += CheckAllConditions;
             cbLoaiBaiKiemTra.SelectedIndexChanged += CheckAllConditions;
             cbLopHocPhan.SelectedIndexChanged += CheckAllConditions;
             cbSoLuongCauHoi.SelectedIndexChanged += CheckAllConditions;
@@ -80,8 +80,8 @@ namespace GUI.MyUserControls
             bool allComboboxChoosed = !(cbLoaiBaiKiemTra.SelectedItem.ToString() == "Chọn loại bài kiểm tra") &&
                                       !(cbSoLuongCauHoi.SelectedItem.ToString() == "Chọn số câu hỏi") &&
                                       !(cbLopHocPhan.SelectedItem.ToString() == "Chọn lớp học phần");
-            bool allTextEntered = !string.IsNullOrWhiteSpace(tbTenBaiKiemTra.Texts) &&
-                                  !string.IsNullOrWhiteSpace(tbThoiGianLamBai.Texts) &&
+            bool allTextEntered = !string.IsNullOrWhiteSpace(tbTenBaiKiemTra.Text) &&
+                                  !string.IsNullOrWhiteSpace(tbThoiGianLamBai.Text) &&
                                   !string.IsNullOrWhiteSpace(tbMatKhauLamBai.Texts);
 
             btnTao.Enabled = allComboboxChoosed && allTextEntered;
@@ -103,7 +103,7 @@ namespace GUI.MyUserControls
         private void btnTao_Click(object sender, EventArgs e)
         {
             byte TGLamBai;
-            if (byte.TryParse(tbThoiGianLamBai.Texts, out TGLamBai) == false)
+            if (byte.TryParse(tbThoiGianLamBai.Text, out TGLamBai) == false)
                 CustomMessageBox.Show("Thời gian làm bài nhập không hợp lệ!");
             else
             {
@@ -132,7 +132,7 @@ namespace GUI.MyUserControls
                 {
                     //Lấy ra 21.13 trong OOAD21.13 hay TRR21.13 .Cụ thể là phần đuôi
                     //string NameLHPGeneric = Regex.Match(cbLopHocPhan.SelectedItem.ToString(), @"\d+\.\d+").Value;
-                    if (GiangVien_BLL.Instance.CheckScheduleExamConflict(DateExam, Convert.ToByte(tbThoiGianLamBai.Texts), cbLopHocPhan.SelectedItem.ToString()))
+                    if (GiangVien_BLL.Instance.CheckScheduleExamConflict(DateExam, Convert.ToByte(tbThoiGianLamBai.Text), cbLopHocPhan.SelectedItem.ToString()))
                         CustomMessageBox.Show("Xung đột giữa lịch thi.\nVui lòng chọn lại thời gian thi khác!", "Xung đột lich thi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
@@ -143,8 +143,8 @@ namespace GUI.MyUserControls
                         }
                         else
                         {
-                            if(GiangVien_BLL.Instance.CreateExam(tbTenBaiKiemTra.Texts, cbLoaiBaiKiemTra.SelectedItem.ToString(),
-                                                          Convert.ToByte(tbThoiGianLamBai.Texts), DateExam,
+                            if(GiangVien_BLL.Instance.CreateExam(tbTenBaiKiemTra.Text, cbLoaiBaiKiemTra.SelectedItem.ToString(),
+                                                          Convert.ToByte(tbThoiGianLamBai.Text), DateExam,
                                                           Convert.ToByte(cbSoLuongCauHoi.SelectedItem.ToString()), cbLopHocPhan.SelectedItem.ToString(),
                                                           MaGV, tbMatKhauLamBai.Texts, chbAllowReturn.Checked))
                                 CustomMessageBox.Show("Tạo bài kiểm tra thành công!");
@@ -161,9 +161,9 @@ namespace GUI.MyUserControls
             cbLoaiBaiKiemTra.SelectedIndex = 0;
             cbLopHocPhan.SelectedIndex = 0;
             cbSoLuongCauHoi.SelectedIndex = 0;
-            tbTenBaiKiemTra.Texts = "";
+            tbTenBaiKiemTra.Text = "";
             tbMatKhauLamBai.Texts = "";
-            tbThoiGianLamBai.Texts = "";
+            tbThoiGianLamBai.Text = "";
             chbAllowReturn.Checked = false;
             dtpNgayKiemTra.Value = DateTime.Now;
             dtpGioKT.Value = DateTime.Now;

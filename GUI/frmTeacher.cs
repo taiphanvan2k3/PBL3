@@ -2,13 +2,8 @@
 using DTO;
 using GUI.MyUserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -39,6 +34,7 @@ namespace GUI
         private UC_WeeklyWorkSchedule WeeklySchedule;
         private UC_ViewHomeRoomClass HomeRoomClass;
         private UC_SendNoticeToModuleClass SendNoticeToModuleClass;
+        private UC_ThongKeDiem uC_ThongKeDiem;
         #endregion
         #region Properties
         string ID { get; set; }
@@ -76,8 +72,8 @@ namespace GUI
                     //menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(29);
                 }
-                pnlMain.Width += 100;
-                pnlMain.Location = new Point(pnlMain.Location.X - 100, pnlMain.Location.Y);
+                pnlMain.Width += 150;
+                pnlMain.Location = new Point(pnlMain.Location.X - 150, pnlMain.Location.Y);
             }
             else
             { //Expand menu
@@ -109,8 +105,8 @@ namespace GUI
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
-                pnlMain.Width -= 100;
-                pnlMain.Location = new Point(pnlMain.Location.X + 100, pnlMain.Location.Y);
+                pnlMain.Width -= 150;
+                pnlMain.Location = new Point(pnlMain.Location.X + 150, pnlMain.Location.Y);
             }
         }
         void LoadInfo(string Account)
@@ -157,7 +153,7 @@ namespace GUI
             Info.Dock = DockStyle.Fill;
             CollapseMenu();
         }
-        
+
         private void btnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
@@ -165,7 +161,7 @@ namespace GUI
         private void btnHome_Click(object sender, EventArgs e)
         {
             //Clear hết control trong panel chứa các chức năng trên màn hình
-            if(ButtonClicked != "Home")
+            if (ButtonClicked != "Home")
             {
                 ButtonClicked = "Home";
                 pnlMain.Controls.Clear();
@@ -219,9 +215,19 @@ namespace GUI
             }
         }
 
-        private void btnChangeGrade_Click(object sender, EventArgs e)
+        private void btnViewListDoExam_Click(object sender, EventArgs e)
         {
-
+            if (ButtonClicked != "ViewListDoExam")
+            {
+                ButtonClicked = "ViewListDoExam";
+                if (uC_ThongKeDiem == null)
+                {
+                    uC_ThongKeDiem = new UC_ThongKeDiem() { MaGV = ID };
+                    uC_ThongKeDiem.Dock = DockStyle.Fill;
+                }
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(uC_ThongKeDiem);
+            }
         }
 
         private void btnCreateQuestion_Click(object sender, EventArgs e)
@@ -236,7 +242,7 @@ namespace GUI
             if (ButtonClicked != "Gửi thông báo")
             {
                 ButtonClicked = "Gửi thông báo";
-                if(SendNoticeToModuleClass == null)
+                if (SendNoticeToModuleClass == null)
                 {
                     SendNoticeToModuleClass = new UC_SendNoticeToModuleClass();
                     SendNoticeToModuleClass.Dock = DockStyle.Fill;
@@ -246,13 +252,13 @@ namespace GUI
                 pnlMain.Controls.Add(SendNoticeToModuleClass);
             }
         }
-        
+
         private void btnHomeRoomClass_Click(object sender, EventArgs e)
         {
             if (ButtonClicked != "Lớp sinh hoạt")
             {
                 ButtonClicked = "Lớp sinh hoạt";
-                if(HomeRoomClass == null)
+                if (HomeRoomClass == null)
                 {
                     HomeRoomClass = new UC_ViewHomeRoomClass();
                     HomeRoomClass.ListMaLSH = GiangVien_BLL.Instance.GetMaLSHForGiangVien(ID);
@@ -267,7 +273,7 @@ namespace GUI
             if (ButtonClicked != "Tạo bài kiểm tra")
             {
                 ButtonClicked = "Tạo bài kiểm tra";
-                if(CreateExam == null)
+                if (CreateExam == null)
                 {
                     CreateExam = new UC_CreateExam(ID);
                     CreateExam.MaGV = ID;
@@ -309,9 +315,6 @@ namespace GUI
                 pnlMain.Controls.Add(WeeklySchedule);
             }
         }
-
         #endregion
-
-       
     }
 }

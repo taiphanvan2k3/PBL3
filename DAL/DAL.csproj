@@ -90,6 +90,9 @@
     <Compile Include="GIANG_VIEN.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>
+    <Compile Include="KET_QUA_PHUC_KHAO.cs">
+      <DependentUpon>ModelPBL3.tt</DependentUpon>
+    </Compile>
     <Compile Include="KHOA.cs">
       <DependentUpon>ModelPBL3.tt</DependentUpon>
     </Compile>

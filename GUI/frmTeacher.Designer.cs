@@ -38,17 +38,16 @@
             this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.pnlManageClass = new System.Windows.Forms.Panel();
+            this.btnSendAnnounce = new System.Windows.Forms.Button();
+            this.btnViewListDoExam = new System.Windows.Forms.Button();
             this.btnCreateQuestion = new System.Windows.Forms.Button();
             this.btnCreateExam = new System.Windows.Forms.Button();
             this.btnHomeRoomClass = new System.Windows.Forms.Button();
-            this.btnSendAnnounce = new System.Windows.Forms.Button();
             this.btnManageClass = new System.Windows.Forms.Button();
-            this.btnChangeGrade = new System.Windows.Forms.Button();
             this.pnlViewCalendar = new System.Windows.Forms.Panel();
             this.btnCalendarDays = new System.Windows.Forms.Button();
             this.btnCalendarWeek = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
-            this.btnDarkMode = new System.Windows.Forms.Button();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -64,9 +63,10 @@
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnlMain.Location = new System.Drawing.Point(250, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1175, 730);
+            this.pnlMain.Size = new System.Drawing.Size(1182, 798);
             this.pnlMain.TabIndex = 2;
             // 
             // panel1
@@ -77,7 +77,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1425, 735);
+            this.panel1.Size = new System.Drawing.Size(1432, 803);
             this.panel1.TabIndex = 2;
             // 
             // panelMenu
@@ -89,7 +89,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 735);
+            this.panelMenu.Size = new System.Drawing.Size(250, 803);
             this.panelMenu.TabIndex = 1;
             // 
             // panel4
@@ -136,10 +136,9 @@
             this.flPanel.Controls.Add(this.btnHome);
             this.flPanel.Controls.Add(this.pnlManageClass);
             this.flPanel.Controls.Add(this.pnlViewCalendar);
-            this.flPanel.Controls.Add(this.btnDarkMode);
             this.flPanel.Location = new System.Drawing.Point(0, 76);
             this.flPanel.Name = "flPanel";
-            this.flPanel.Size = new System.Drawing.Size(250, 585);
+            this.flPanel.Size = new System.Drawing.Size(250, 653);
             this.flPanel.TabIndex = 8;
             // 
             // btnHome
@@ -166,12 +165,12 @@
             // 
             // pnlManageClass
             // 
+            this.pnlManageClass.Controls.Add(this.btnSendAnnounce);
+            this.pnlManageClass.Controls.Add(this.btnViewListDoExam);
             this.pnlManageClass.Controls.Add(this.btnCreateQuestion);
             this.pnlManageClass.Controls.Add(this.btnCreateExam);
             this.pnlManageClass.Controls.Add(this.btnHomeRoomClass);
-            this.pnlManageClass.Controls.Add(this.btnSendAnnounce);
             this.pnlManageClass.Controls.Add(this.btnManageClass);
-            this.pnlManageClass.Controls.Add(this.btnChangeGrade);
             this.pnlManageClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlManageClass.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.pnlManageClass.Location = new System.Drawing.Point(3, 77);
@@ -179,21 +178,60 @@
             this.pnlManageClass.Size = new System.Drawing.Size(250, 68);
             this.pnlManageClass.TabIndex = 7;
             // 
+            // btnSendAnnounce
+            // 
+            this.btnSendAnnounce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
+            this.btnSendAnnounce.FlatAppearance.BorderSize = 0;
+            this.btnSendAnnounce.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendAnnounce.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendAnnounce.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSendAnnounce.Image = global::GUI.Properties.Resources.SendAnnounce;
+            this.btnSendAnnounce.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSendAnnounce.Location = new System.Drawing.Point(26, 340);
+            this.btnSendAnnounce.Name = "btnSendAnnounce";
+            this.btnSendAnnounce.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnSendAnnounce.Size = new System.Drawing.Size(224, 68);
+            this.btnSendAnnounce.TabIndex = 14;
+            this.btnSendAnnounce.Tag = "   Gửi thông báo";
+            this.btnSendAnnounce.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSendAnnounce.UseVisualStyleBackColor = false;
+            this.btnSendAnnounce.Click += new System.EventHandler(this.btnSendAnnounce_Click);
+            // 
+            // btnViewListDoExam
+            // 
+            this.btnViewListDoExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
+            this.btnViewListDoExam.FlatAppearance.BorderSize = 0;
+            this.btnViewListDoExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewListDoExam.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewListDoExam.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnViewListDoExam.Image = global::GUI.Properties.Resources.ChangeGrade;
+            this.btnViewListDoExam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewListDoExam.Location = new System.Drawing.Point(26, 204);
+            this.btnViewListDoExam.Name = "btnViewListDoExam";
+            this.btnViewListDoExam.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnViewListDoExam.Size = new System.Drawing.Size(224, 68);
+            this.btnViewListDoExam.TabIndex = 12;
+            this.btnViewListDoExam.Tag = "   Thống kê điểm";
+            this.btnViewListDoExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewListDoExam.UseVisualStyleBackColor = false;
+            this.btnViewListDoExam.Click += new System.EventHandler(this.btnViewListDoExam_Click);
+            // 
             // btnCreateQuestion
             // 
             this.btnCreateQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
             this.btnCreateQuestion.FlatAppearance.BorderSize = 0;
             this.btnCreateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateQuestion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCreateQuestion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCreateQuestion.Image = global::GUI.Properties.Resources.CreateQuestion;
             this.btnCreateQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateQuestion.Location = new System.Drawing.Point(26, 340);
+            this.btnCreateQuestion.Location = new System.Drawing.Point(26, 272);
             this.btnCreateQuestion.Name = "btnCreateQuestion";
             this.btnCreateQuestion.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnCreateQuestion.Size = new System.Drawing.Size(224, 68);
             this.btnCreateQuestion.TabIndex = 17;
-            this.btnCreateQuestion.Tag = "Tạo câu hỏi";
+            this.btnCreateQuestion.Tag = "   Tạo câu hỏi";
+            this.btnCreateQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateQuestion.UseVisualStyleBackColor = false;
             this.btnCreateQuestion.Click += new System.EventHandler(this.btnCreateQuestion_Click);
             // 
@@ -203,15 +241,16 @@
             this.btnCreateExam.FlatAppearance.BorderSize = 0;
             this.btnCreateExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateExam.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateExam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCreateExam.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCreateExam.Image = global::GUI.Properties.Resources.createExam;
             this.btnCreateExam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateExam.Location = new System.Drawing.Point(26, 272);
+            this.btnCreateExam.Location = new System.Drawing.Point(26, 136);
             this.btnCreateExam.Name = "btnCreateExam";
             this.btnCreateExam.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnCreateExam.Size = new System.Drawing.Size(224, 68);
             this.btnCreateExam.TabIndex = 16;
-            this.btnCreateExam.Tag = "Tạo bài kiểm tra";
+            this.btnCreateExam.Tag = "   Tạo bài kiểm tra";
+            this.btnCreateExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateExam.UseVisualStyleBackColor = false;
             this.btnCreateExam.Click += new System.EventHandler(this.btnCreateExam_Click);
             // 
@@ -221,35 +260,18 @@
             this.btnHomeRoomClass.FlatAppearance.BorderSize = 0;
             this.btnHomeRoomClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeRoomClass.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeRoomClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnHomeRoomClass.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnHomeRoomClass.Image = global::GUI.Properties.Resources.Homeroom;
             this.btnHomeRoomClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHomeRoomClass.Location = new System.Drawing.Point(26, 204);
+            this.btnHomeRoomClass.Location = new System.Drawing.Point(26, 68);
             this.btnHomeRoomClass.Name = "btnHomeRoomClass";
             this.btnHomeRoomClass.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnHomeRoomClass.Size = new System.Drawing.Size(224, 68);
             this.btnHomeRoomClass.TabIndex = 15;
-            this.btnHomeRoomClass.Tag = "Lớp sinh hoạt";
+            this.btnHomeRoomClass.Tag = "   Lớp sinh hoạt";
+            this.btnHomeRoomClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomeRoomClass.UseVisualStyleBackColor = false;
             this.btnHomeRoomClass.Click += new System.EventHandler(this.btnHomeRoomClass_Click);
-            // 
-            // btnSendAnnounce
-            // 
-            this.btnSendAnnounce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
-            this.btnSendAnnounce.FlatAppearance.BorderSize = 0;
-            this.btnSendAnnounce.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSendAnnounce.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendAnnounce.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSendAnnounce.Image = global::GUI.Properties.Resources.SendAnnounce;
-            this.btnSendAnnounce.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSendAnnounce.Location = new System.Drawing.Point(26, 136);
-            this.btnSendAnnounce.Name = "btnSendAnnounce";
-            this.btnSendAnnounce.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnSendAnnounce.Size = new System.Drawing.Size(224, 68);
-            this.btnSendAnnounce.TabIndex = 14;
-            this.btnSendAnnounce.Tag = "Gửi thông báo";
-            this.btnSendAnnounce.UseVisualStyleBackColor = false;
-            this.btnSendAnnounce.Click += new System.EventHandler(this.btnSendAnnounce_Click);
             // 
             // btnManageClass
             // 
@@ -269,24 +291,6 @@
             this.btnManageClass.UseVisualStyleBackColor = false;
             this.btnManageClass.Click += new System.EventHandler(this.btnManageClass_Click);
             // 
-            // btnChangeGrade
-            // 
-            this.btnChangeGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
-            this.btnChangeGrade.FlatAppearance.BorderSize = 0;
-            this.btnChangeGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeGrade.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnChangeGrade.Image = global::GUI.Properties.Resources.ChangeGrade;
-            this.btnChangeGrade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChangeGrade.Location = new System.Drawing.Point(26, 68);
-            this.btnChangeGrade.Name = "btnChangeGrade";
-            this.btnChangeGrade.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnChangeGrade.Size = new System.Drawing.Size(224, 68);
-            this.btnChangeGrade.TabIndex = 12;
-            this.btnChangeGrade.Tag = "Chỉnh sửa điểm";
-            this.btnChangeGrade.UseVisualStyleBackColor = false;
-            this.btnChangeGrade.Click += new System.EventHandler(this.btnChangeGrade_Click);
-            // 
             // pnlViewCalendar
             // 
             this.pnlViewCalendar.Controls.Add(this.btnCalendarDays);
@@ -303,7 +307,7 @@
             this.btnCalendarDays.FlatAppearance.BorderSize = 0;
             this.btnCalendarDays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalendarDays.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalendarDays.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCalendarDays.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCalendarDays.Image = global::GUI.Properties.Resources.calendar_date;
             this.btnCalendarDays.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendarDays.Location = new System.Drawing.Point(26, 68);
@@ -321,7 +325,7 @@
             this.btnCalendarWeek.FlatAppearance.BorderSize = 0;
             this.btnCalendarWeek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalendarWeek.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalendarWeek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCalendarWeek.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCalendarWeek.Image = global::GUI.Properties.Resources.Calendar_week;
             this.btnCalendarWeek.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendarWeek.Location = new System.Drawing.Point(26, 136);
@@ -352,25 +356,6 @@
             this.btnCalendar.UseVisualStyleBackColor = false;
             this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
-            // btnDarkMode
-            // 
-            this.btnDarkMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(183)))), ((int)(((byte)(194)))));
-            this.btnDarkMode.FlatAppearance.BorderSize = 0;
-            this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDarkMode.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDarkMode.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDarkMode.Image = global::GUI.Properties.Resources.DarkMode;
-            this.btnDarkMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.Location = new System.Drawing.Point(3, 225);
-            this.btnDarkMode.Name = "btnDarkMode";
-            this.btnDarkMode.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnDarkMode.Size = new System.Drawing.Size(250, 68);
-            this.btnDarkMode.TabIndex = 19;
-            this.btnDarkMode.Tag = "Nền tối";
-            this.btnDarkMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.UseVisualStyleBackColor = false;
-            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
-            // 
             // btnLogOut
             // 
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -383,7 +368,7 @@
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogOut.IconSize = 30;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 667);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 735);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLogOut.Size = new System.Drawing.Size(250, 68);
@@ -397,11 +382,12 @@
             // frmTeacher
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1425, 735);
+            this.ClientSize = new System.Drawing.Size(1432, 803);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1443, 782);
+            this.MinimumSize = new System.Drawing.Size(1450, 850);
             this.Name = "frmTeacher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Teacher";
             this.Load += new System.EventHandler(this.frmTeacher_Load);
             this.panel1.ResumeLayout(false);
@@ -428,7 +414,7 @@
         private System.Windows.Forms.FlowLayoutPanel flPanel;
         private System.Windows.Forms.Panel pnlManageClass;
         private System.Windows.Forms.Panel pnlViewCalendar;
-        private System.Windows.Forms.Button btnChangeGrade;
+        private System.Windows.Forms.Button btnViewListDoExam;
         private System.Windows.Forms.Button btnHomeRoomClass;
         private System.Windows.Forms.Button btnSendAnnounce;
         private System.Windows.Forms.Button btnManageClass;
@@ -436,7 +422,6 @@
         private System.Windows.Forms.Button btnCalendarWeek;
         private System.Windows.Forms.Button btnCalendar;
         private System.Windows.Forms.Button btnCreateExam;
-        private System.Windows.Forms.Button btnDarkMode;
         private System.Windows.Forms.Button btnCreateQuestion;
     }
 }

@@ -36,6 +36,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnADD = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnUploadFile = new System.Windows.Forms.Button();
@@ -101,6 +103,39 @@
             this.label2.Size = new System.Drawing.Size(113, 23);
             this.label2.TabIndex = 35;
             this.label2.Text = "Thêm từ URL";
+            // 
+            // Hủy
+            // 
+            this.Hủy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Hủy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.Hủy.FlatAppearance.BorderSize = 0;
+            this.Hủy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Hủy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hủy.ForeColor = System.Drawing.Color.LightGray;
+            this.Hủy.Location = new System.Drawing.Point(23, 756);
+            this.Hủy.Margin = new System.Windows.Forms.Padding(4);
+            this.Hủy.Name = "Hủy";
+            this.Hủy.Size = new System.Drawing.Size(200, 50);
+            this.Hủy.TabIndex = 37;
+            this.Hủy.Text = "Hủy";
+            this.Hủy.UseVisualStyleBackColor = false;
+            // 
+            // btnADD
+            // 
+            this.btnADD.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
+            this.btnADD.FlatAppearance.BorderSize = 0;
+            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADD.ForeColor = System.Drawing.Color.LightGray;
+            this.btnADD.Location = new System.Drawing.Point(273, 756);
+            this.btnADD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.Size = new System.Drawing.Size(200, 50);
+            this.btnADD.TabIndex = 36;
+            this.btnADD.Text = "Thêm ";
+            this.btnADD.UseVisualStyleBackColor = false;
+            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
             // 
             // label3
             // 
@@ -283,6 +318,8 @@
             this.Controls.Add(this.customButton1);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.pnlProgressBar);
+            this.Controls.Add(this.Hủy);
+            this.Controls.Add(this.btnADD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.panel2);
@@ -311,6 +348,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Hủy;
+        private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnUploadFile;

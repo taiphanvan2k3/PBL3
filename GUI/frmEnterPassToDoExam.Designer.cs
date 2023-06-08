@@ -170,6 +170,7 @@
             // 
             // frmEnterPassToDoExam
             // 
+            this.AcceptButton = this.btnLamBai;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(691, 221);

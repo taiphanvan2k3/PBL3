@@ -2,7 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BLL
 {
@@ -89,6 +88,16 @@ namespace BLL
                 Diem = kq.Diem
             };
             BaiKiemTra_DAL.Instance.SaveResultOfDoExam(lambkt);
+        }
+
+        /// <summary>
+        /// Trả về danh sách các bài kiểm tra của 1 lớp học phần
+        /// </summary>
+        /// <param name="moduleClass"></param>
+        /// <returns></returns>
+        public List<CBBItem> GetAllExamsInSpecificModuleClass(string moduleClass)
+        {
+            return BaiKiemTra_DAL.Instance.GetAllExamsInSpecificModuleClass(moduleClass);
         }
     }
 }

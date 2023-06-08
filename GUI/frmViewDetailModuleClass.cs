@@ -104,6 +104,7 @@ namespace GUI
         private void btnPhanCongGV_Click(object sender, EventArgs e)
         {
             frmAssignTeacher frm = new frmAssignTeacher();
+            frm.reloadParentForm = new frmAssignTeacher.ReloadParentForm(LoadData);
             if (lhp.Thu != "")
                 frm.CheckHasSchedule = true;
             else frm.CheckHasSchedule = false;
