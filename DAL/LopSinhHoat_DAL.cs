@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DAL
 {
@@ -160,6 +161,21 @@ namespace DAL
                 }
             }
             return success;
+        }
+
+        public List<KeyValuePair<string, string>> listOfStudentsWithoutClass(string maCTDT, string maKhoa)
+        {
+            using (var context = new PBL3Entities())
+            {
+                var listStudent = context.NGUOI_DUNG
+                    .Join(context.SINH_VIEN, nd => nd.MaNguoiDung, sv => sv.MaSV, (nd, sv) => new { ND = nd, SV = sv })
+                    .Where(x => x.SV.MaSV.Substring(3, 2).Equals(maKhoa) &&  x.SV.MaCTDT.Contains(maCTDT) && x.SV.MaLopSH == null)
+                    .Select(g => new { MaSinhVien = g.SV.MaSV, Hoten = g.ND.Ho + " " + g.ND.Ten })
+                    .ToDictionary(x => x.MaSinhVien, x => x.Hoten)
+                    .Select(x => new KeyValuePair<string, string>(x.Key, x.Value))
+                    .ToList();
+                return listStudent;
+            }
         }
     }
 }

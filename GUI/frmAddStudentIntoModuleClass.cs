@@ -26,7 +26,7 @@ namespace GUI
 
         // Phục vụ tìm kiếm
         private AutoCompleteStringCollection autotext;
-
+ 
         public delegate void ReloadParentForm();
         public ReloadParentForm reloadDTGV { get; set; }
         private string FileName { get; set; } = string.Empty;

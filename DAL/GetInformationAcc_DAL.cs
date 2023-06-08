@@ -488,15 +488,15 @@ namespace DAL
                 return sinhvienCounts;
             }
         }
-
+        // Lấy ra trình độ giảng viên
         public List<KeyValuePair<string, int>> LevelOfTeacherList()
         {
             using (var context = new PBL3Entities())
             {
                 var studentCounts = context.GIANG_VIEN
                     .GroupBy(gv => gv.TrinhDo)
-                    .Select(g => new { TrinhDo = g.Key, SoSinhVien = g.Count() })
-                    .ToDictionary(x => x.TrinhDo, x => x.SoSinhVien)
+                    .Select(g => new { TrinhDo = g.Key, SoGiangVien = g.Count() })
+                    .ToDictionary(x => x.TrinhDo, x => x.SoGiangVien)
                     .Select(x => new KeyValuePair<string, int>(x.Key, x.Value))
                     .ToList();
                 return studentCounts;

@@ -40,7 +40,7 @@ namespace GUI
         private SelectionState enumValue;
 
         // Phân trang
-        private const int maxRow = 14;
+        private const int maxRow = 29;
         private int currentPage, maxPage;
         private SplitPageHelper<object> helper;
 
@@ -264,8 +264,6 @@ namespace GUI
             }
             TotalCheckedCheckBoxes = 0;
         }
-
-
 
         #endregion
 

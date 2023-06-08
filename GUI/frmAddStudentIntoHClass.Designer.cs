@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmAddStudentIntoHomeroomClass
+    partial class frmAddStudentIntoHClass
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddStudentIntoHomeroomClass));
             this.btnCancel = new GUI.MyCustomControl.CustomButton();
             this.btnAdd = new GUI.MyCustomControl.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panelView = new System.Windows.Forms.Panel();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -113,42 +109,6 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Thêm sinh viên vào lớp sinh hoạt";
             // 
-            // dgvStudent
-            // 
-            this.dgvStudent.AllowUserToResizeRows = false;
-            this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvStudent.EnableHeadersVisualStyles = false;
-            this.dgvStudent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
-            this.dgvStudent.Location = new System.Drawing.Point(52, 136);
-            this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.RowHeadersVisible = false;
-            this.dgvStudent.RowHeadersWidth = 51;
-            this.dgvStudent.RowTemplate.Height = 25;
-            this.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudent.Size = new System.Drawing.Size(406, 154);
-            this.dgvStudent.TabIndex = 19;
-            // 
             // txtSearch
             // 
             this.txtSearch.BorderColor = System.Drawing.SystemColors.ActiveCaption;
@@ -175,24 +135,29 @@
             this.txtSearch.TabIndex = 21;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // frmAddStudentIntoHomeroomClass
+            // panelView
+            // 
+            this.panelView.Location = new System.Drawing.Point(51, 134);
+            this.panelView.Name = "panelView";
+            this.panelView.Size = new System.Drawing.Size(407, 172);
+            this.panelView.TabIndex = 22;
+            // 
+            // frmAddStudentIntoHClass
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(509, 381);
+            this.Controls.Add(this.panelView);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dgvStudent);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmAddStudentIntoHomeroomClass";
+            this.Name = "frmAddStudentIntoHClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm sinh viên vào lớp sinh hoạt";
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +169,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.DataGridView dgvStudent;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private System.Windows.Forms.Panel panelView;
     }
 }

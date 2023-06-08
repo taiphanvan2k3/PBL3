@@ -1,21 +1,28 @@
 ﻿using BLL;
-using FontAwesome.Sharp;
 using GUI.MyCustomControl;
+using GUI.MyUserControls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmAddStudentIntoHomeroomClass : Form
+    public partial class frmAddStudentIntoHClass : Form
     {
         public string MaLopSH { get; set; }
 
         Regex regex = new Regex(@"\D+");
         private List<KeyValuePair<string, string>> list;
+        UC_DatagirdviewCheckbox myUserControl;
+        private List<string> nameHeader = new List<string>{"", "Mã SV", "Họ tên"};
+
 
         private DataTable dt;
 
@@ -31,11 +38,11 @@ namespace GUI
         public delegate void ReloadParentForm();
         public ReloadParentForm reloadDTGV { get; set; }
 
-        public frmAddStudentIntoHomeroomClass()
+        public frmAddStudentIntoHClass()
         {
             InitializeComponent();
             UtilityClass.EnableDragForm(this);
-            MaLopSH = "21CNTT - DT1";
+            MaLopSH = "21CNTT - CLC1";
         }
         public DataTable ConvertListToDataTable(List<KeyValuePair<string, string>> list)
         {
@@ -52,7 +59,7 @@ namespace GUI
         }
 
 
-        public frmAddStudentIntoHomeroomClass(string MaLopSH, int MaxNumberOfStudent)
+        public frmAddStudentIntoHClass(string MaLopSH, int MaxNumberOfStudent)
         {
             InitializeComponent();
             UtilityClass.EnableDragForm(this);
@@ -65,7 +72,9 @@ namespace GUI
             txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
             autotext.AddRange(list.Select(x => x.Key).ToArray());
             txtSearch.AutoCompleteCustomSource = autotext;
-            dgvStudent.DataSource = dt;
+            myUserControl = new UC_DatagirdviewCheckbox(dt, nameHeader);
+            myUserControl.Dock = DockStyle.Fill;
+            panelView.Controls.Add(myUserControl);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -106,7 +115,7 @@ namespace GUI
                 }
                 else
                 {
-                    string currentMaLopSH = SinhVien_BLL.GetNameOfHomeroomClass(MSSV);    
+                    string currentMaLopSH = SinhVien_BLL.GetNameOfHomeroomClass(MSSV);
                     if (currentMaLopSH == null)
                     {
                         //Nếu sinh viên đó chưa có lớp sinh hoạt thì có thể thêm vào lớp này.
@@ -153,7 +162,7 @@ namespace GUI
         {
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("Key like '%{0}%'", txtSearch.Text);
-            dgvStudent.DataSource = dv.ToTable();
+            myUserControl.loadData(dv.ToTable());
         }
     }
 }
