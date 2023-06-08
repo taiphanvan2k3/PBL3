@@ -7,17 +7,22 @@ namespace DAL
 {
     public class SinhVien_DAL
     {
-        private static PBL3Entities db = new PBL3Entities();
 
         public static bool CheckIdStudentExist(string MSSV)
         {
-            return db.THONG_TIN_DANG_NHAP.Where(p => p.TaiKhoan == MSSV
+            using (var db = new PBL3Entities())
+            {
+                return db.THONG_TIN_DANG_NHAP.Where(p => p.TaiKhoan == MSSV
                                           && p.VaiTro == "Sinh Viên").FirstOrDefault() != null;
+            }
         }
 
         public static string GetNameOfHomeroomClass(string MSSV)
         {
-            return db.SINH_VIEN.Where(sv => sv.MaSV == MSSV).Select(sv => sv.MaLopSH).FirstOrDefault();
+            using (var db = new PBL3Entities())
+            {
+                return db.SINH_VIEN.Where(sv => sv.MaSV == MSSV).Select(sv => sv.MaLopSH).FirstOrDefault();
+            }
         }
         public static SINH_VIEN GetSinhVienById(string id)
         {
@@ -25,50 +30,60 @@ namespace DAL
             //return db.SINH_VIEN.Where(p => p.MaSV == id).Include(sv => sv.NGUOI_DUNG).
             //    Include(sv => sv.CHUONG_TRINH_DAO_TAO).Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA).SingleOrDefault();
             #endregion
-
-            //Do hầu như lấy hết tất cả cột của bảng NguoiDung và Khoa nên mới dùng Include trong trường hợp này
-            //Ko cần phải Include(sv => sv.CHUONG_TRINH_DAO_TAO) vì đã có trong
-            //Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA)
-            return db.SINH_VIEN.Where(p => p.MaSV == id).Include(sv => sv.NGUOI_DUNG)
+            using (var db = new PBL3Entities())
+            {
+                //Do hầu như lấy hết tất cả cột của bảng NguoiDung và Khoa nên mới dùng Include trong trường hợp này
+                //Ko cần phải Include(sv => sv.CHUONG_TRINH_DAO_TAO) vì đã có trong
+                //Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA)
+                return db.SINH_VIEN.Where(p => p.MaSV == id).Include(sv => sv.NGUOI_DUNG)
                 .Include(sv => sv.CHUONG_TRINH_DAO_TAO.KHOA).SingleOrDefault();
+            }
         }
 
         public static List<SINH_VIEN> GetSinhVienInLopSH(string MaLopSH)
         {
-            return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).
+            using (var db = new PBL3Entities())
+            {
+                return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).
                 OrderBy(sv => sv.MaSV).ToList();
+            }
         }
 
         public static bool UpdateStudentInfo(SinhVien_DTO sv)
         {
-            //Hàm này dùng trong frmStudent để cập nhật thông tin cá nhân
-            NGUOI_DUNG nd = db.NGUOI_DUNG.Where(p => p.MaNguoiDung == sv.MaNguoiDung).FirstOrDefault();
-            if (nd != null)
+            using (var db = new PBL3Entities())
             {
-                if (sv.DiaChi != "")
-                    nd.DiaChi = sv.DiaChi;
-                if (sv.EmailCaNhan != "")
-                    nd.EmailCaNhan = sv.EmailCaNhan;
-                if (sv.Sdt != "")
-                    nd.Sdt = sv.Sdt;
-                if (sv.NoiSinh != "")
-                    nd.NoiSinh = sv.NoiSinh;
-                if (sv.DanToc != "")
-                    nd.DanToc = sv.DanToc;
-                if (sv.QuocTich != "")
-                    nd.QuocTich = sv.QuocTich;
-                if (sv.AnhCaNhan != null)
-                    nd.AnhCaNhan = sv.AnhCaNhan;
-                return db.SaveChanges() > 0;
+                //Hàm này dùng trong frmStudent để cập nhật thông tin cá nhân
+                NGUOI_DUNG nd = db.NGUOI_DUNG.Where(p => p.MaNguoiDung == sv.MaNguoiDung).FirstOrDefault();
+                if (nd != null)
+                {
+                    if (sv.DiaChi != "")
+                        nd.DiaChi = sv.DiaChi;
+                    if (sv.EmailCaNhan != "")
+                        nd.EmailCaNhan = sv.EmailCaNhan;
+                    if (sv.Sdt != "")
+                        nd.Sdt = sv.Sdt;
+                    if (sv.NoiSinh != "")
+                        nd.NoiSinh = sv.NoiSinh;
+                    if (sv.DanToc != "")
+                        nd.DanToc = sv.DanToc;
+                    if (sv.QuocTich != "")
+                        nd.QuocTich = sv.QuocTich;
+                    if (sv.AnhCaNhan != null)
+                        nd.AnhCaNhan = sv.AnhCaNhan;
+                    return db.SaveChanges() > 0;
+                }
+                return false;
             }
-            return false;
         }
 
         #region Các hàm xử lí chức năng xem lịch học trong ngày, trong tuần
         public static int GetKiHocHienTai(string MaSV)
         {
-            //Kì học đếm như sau: 1,2,3,4,5,6,7,8|,9,10
-            int KiHocHienTai = db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaSV == MaSV)
+            using (var db = new PBL3Entities())
+            {
+                //Kì học đếm như sau: 1,2,3,4,5,6,7,8|,9,10
+                int KiHocHienTai = db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaSV == MaSV)
                 .GroupJoin(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
                 {
                     Hocphan_tmp = hp.DefaultIfEmpty()
@@ -77,15 +92,18 @@ namespace DAL
                 {
                     i2.KiHoc
                 })).OrderByDescending(i => i.KiHoc).Select(i => i.KiHoc).FirstOrDefault();
-            return KiHocHienTai;
+                return KiHocHienTai;
+            }
         }
 
         public static List<LopHocPhan_DTO> GetLichHocTrongTuan(string MaSV, int KiHoc)
         {
-            //Một khi đã thêm được sv vào lớp học phần thì lúc này chắc chắn đã phân công GV rồi
-            //nên không sợ chưa có GiangVien, đỡ phải GroupJoin với GIANG_VIEN. Và một khi phân công được
-            //giảng viên thì chứng tỏ đã có dữ liệu về TKB rồi
-            var li = db.SINHVIEN_LOPHOCPHAN.Where(i => i.MaSV == MaSV)
+            using (var db = new PBL3Entities())
+            {
+                //Một khi đã thêm được sv vào lớp học phần thì lúc này chắc chắn đã phân công GV rồi
+                //nên không sợ chưa có GiangVien, đỡ phải GroupJoin với GIANG_VIEN. Và một khi phân công được
+                //giảng viên thì chứng tỏ đã có dữ liệu về TKB rồi
+                var li = db.SINHVIEN_LOPHOCPHAN.Where(i => i.MaSV == MaSV)
                 .GroupJoin(db.LOP_HOC_PHAN, svhp => svhp.MaLopHP, hp => hp.MaLopHP, (svhp, hp) => new
                 {
                     Hocphan_tmp = hp.DefaultIfEmpty()
@@ -109,7 +127,8 @@ namespace DAL
                     tkb = new ThoiKhoaBieu_DTO()
                     { Thu = tkb.Thu, TietBD = tkb.TietBD, TietKT = tkb.TietKetThuc, Phong = tkb.MaPhongHoc }
                 }).ToList();
-            return li;
+                return li;
+            }
         }
         #endregion
 
@@ -120,7 +139,9 @@ namespace DAL
         /// <returns></returns>
         public static List<KetQuaHocTap> GetKetQuaHocTap(string MaSV)
         {
-            var li = db.SINHVIEN_LOPHOCPHAN.Where(sv => sv.MaSV == MaSV)
+            using (var db = new PBL3Entities())
+            {
+                var li = db.SINHVIEN_LOPHOCPHAN.Where(sv => sv.MaSV == MaSV)
                 .Join(db.LOP_HOC_PHAN, sv => sv.MaLopHP, hp => hp.MaLopHP, (sv, hp) => new
                 {
                     //Lấy ra các lớp học phần mà sinh viên này học
@@ -176,50 +197,51 @@ namespace DAL
                     //trả về chỉ các bản ghi nào mà sinh viên có làm bài kiểm tra của lớp học phần đó 
                 })).OrderBy(p => p.KiHoc).ToList();
 
-            //Dùng Dictionary ở đây để lấy ra KetQuaHocTap của 1 lớp HP nào đó một cách nhanh chóng
-            Dictionary<string, KetQuaHocTap> dict = new Dictionary<string, KetQuaHocTap>();
+                //Dùng Dictionary ở đây để lấy ra KetQuaHocTap của 1 lớp HP nào đó một cách nhanh chóng
+                Dictionary<string, KetQuaHocTap> dict = new Dictionary<string, KetQuaHocTap>();
 
-            //Gộp kết quả làm bài của các bài kiểm tra vào theo từng lớp học phần
-            List<KetQuaHocTap> res = new List<KetQuaHocTap>();
-            int STT = 1;
-            foreach (var item in li)
-            {
-                KetQuaHocTap kq;
-                bool checkIsExist = false;
-                if (dict.ContainsKey(item.MaLopHP))
+                //Gộp kết quả làm bài của các bài kiểm tra vào theo từng lớp học phần
+                List<KetQuaHocTap> res = new List<KetQuaHocTap>();
+                int STT = 1;
+                foreach (var item in li)
                 {
-                    kq = dict[item.MaLopHP];
-                    checkIsExist = true;
-                }
-                else
-                {
-                    kq = new KetQuaHocTap()
+                    KetQuaHocTap kq;
+                    bool checkIsExist = false;
+                    if (dict.ContainsKey(item.MaLopHP))
                     {
-                        MaLopHP = item.MaLopHP,
-                        TenMH = item.TenMH,
-                        SoTC = item.SoTC,
-                        KiHoc = item.KiHoc,
-                        NamHoc = item.NamHoc + " - " + (item.NamHoc + 1),
-                        CtTinhDiem = item.CtTinhDiem
-                    };
+                        kq = dict[item.MaLopHP];
+                        checkIsExist = true;
+                    }
+                    else
+                    {
+                        kq = new KetQuaHocTap()
+                        {
+                            MaLopHP = item.MaLopHP,
+                            TenMH = item.TenMH,
+                            SoTC = item.SoTC,
+                            KiHoc = item.KiHoc,
+                            NamHoc = item.NamHoc + " - " + (item.NamHoc + 1),
+                            CtTinhDiem = item.CtTinhDiem
+                        };
+                    }
+                    if (item.LoaiBaiKiemTra == "Test" && item.Diem != null)
+                        kq.DiemBTs.Add((double)item.Diem);
+                    else if (item.LoaiBaiKiemTra == "Giữa kỳ")
+                        kq.GK = item.Diem;
+                    else if (item.LoaiBaiKiemTra == "Cuối kỳ")
+                        kq.CK = item.Diem;
+                    else if (item.LoaiBaiKiemTra == "Quá trình")
+                        kq.QT = item.Diem;
+                    else kq.DA = item.Diem;
+                    if (!checkIsExist)
+                    {
+                        kq.STT = STT++;
+                        res.Add(kq);
+                        dict.Add(item.MaLopHP, kq);
+                    }
                 }
-                if (item.LoaiBaiKiemTra == "Test" && item.Diem != null)
-                    kq.DiemBTs.Add((double)item.Diem);
-                else if (item.LoaiBaiKiemTra == "Giữa kỳ")
-                    kq.GK = item.Diem;
-                else if (item.LoaiBaiKiemTra == "Cuối kỳ")
-                    kq.CK = item.Diem;
-                else if (item.LoaiBaiKiemTra == "Quá trình")
-                    kq.QT = item.Diem;
-                else kq.DA = item.Diem;
-                if (!checkIsExist)
-                {
-                    kq.STT = STT++;
-                    res.Add(kq);
-                    dict.Add(item.MaLopHP, kq);
-                }
+                return res;
             }
-            return res;
         }
     }
 }

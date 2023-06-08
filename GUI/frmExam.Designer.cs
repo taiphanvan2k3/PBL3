@@ -40,7 +40,6 @@
             this.btnBackFrmStudent = new Guna.UI2.WinForms.Guna2Button();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnDarkMode = new FontAwesome.Sharp.IconButton();
             this.btnHistoryDoExam = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.btnDoExam = new FontAwesome.Sharp.IconButton();
@@ -185,7 +184,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(153)))), ((int)(((byte)(174)))));
-            this.panelMenu.Controls.Add(this.btnDarkMode);
             this.panelMenu.Controls.Add(this.btnHistoryDoExam);
             this.panelMenu.Controls.Add(this.btnLogOut);
             this.panelMenu.Controls.Add(this.btnDoExam);
@@ -196,30 +194,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 884);
             this.panelMenu.TabIndex = 1;
-            // 
-            // btnDarkMode
-            // 
-            this.btnDarkMode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDarkMode.FlatAppearance.BorderSize = 0;
-            this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDarkMode.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDarkMode.ForeColor = System.Drawing.Color.White;
-            this.btnDarkMode.IconChar = FontAwesome.Sharp.IconChar.CircleHalfStroke;
-            this.btnDarkMode.IconColor = System.Drawing.Color.White;
-            this.btnDarkMode.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDarkMode.IconSize = 30;
-            this.btnDarkMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.Location = new System.Drawing.Point(0, 358);
-            this.btnDarkMode.Name = "btnDarkMode";
-            this.btnDarkMode.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDarkMode.Size = new System.Drawing.Size(250, 94);
-            this.btnDarkMode.TabIndex = 10;
-            this.btnDarkMode.Tag = "Nền tối";
-            this.btnDarkMode.Text = "Nền tối";
-            this.btnDarkMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDarkMode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDarkMode.UseVisualStyleBackColor = true;
-            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
             // 
             // btnHistoryDoExam
             // 
@@ -394,7 +368,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnMenu;
         private FontAwesome.Sharp.IconButton btnHistoryDoExam;
-        private FontAwesome.Sharp.IconButton btnDarkMode;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel panelTitle;
         private MyCustomControl.CircularPictureBox avatarTopRight;

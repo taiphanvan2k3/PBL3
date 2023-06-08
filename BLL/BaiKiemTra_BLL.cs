@@ -99,5 +99,20 @@ namespace BLL
         {
             return BaiKiemTra_DAL.Instance.GetAllExamsInSpecificModuleClass(moduleClass);
         }
+
+        /// <summary>
+        /// Sẽ được gọi mỗi khi được nhập password thành công
+        /// </summary>
+        /// <param name="MSV"></param>
+        /// <param name="maBaiKT"></param>
+        public void IsDoingExam(string MSV, int maBaiKT)
+        {
+             BaiKiemTra_DAL.Instance.IsDoingExam(MSV, maBaiKT);
+        }
+        public double? IsExsitExam(string MSV, int maBaiKT)
+        {
+            return BaiKiemTra_DAL.Instance.IsExsitExam(MSV, maBaiKT);
+
+        }
     }
 }

@@ -45,9 +45,20 @@ namespace GUI
                 DialogResult res = CustomMessageBox.Show("Bạn chỉ có thể làm bài kiểm tra này di nhất một lần\n" +
                                    "Bạn có chắc chắn vào làm bài thi không?", "Chú ý",
                                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
                 if (res == DialogResult.OK)
                 {
+                    double? result = BaiKiemTra_BLL.Instance.IsExsitExam(MaSV, MaBaiKiemTra);
+                    if (result == null)
+                        BaiKiemTra_BLL.Instance.IsDoingExam(MaSV, MaBaiKiemTra);
 
+                    if (result != null && result != -1)
+                    {
+                        CustomMessageBox.Show("Bạn đã làm bài kiểm tra này rồi!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                    MessageBox.Show(result.ToString());
+                    //BaiKiemTra_BLL.Instance.IsDoingExam(MaSV, MaBaiKiemTra);
                     UtilityClass.OpenNewForm(this, new frmQuiz()
                     {
                         MaSV = this.MaSV,

@@ -264,12 +264,6 @@
     <Compile Include="frmTaoCauHoiNew.Designer.cs">
       <DependentUpon>frmTaoCauHoiNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTestExam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTestExam.Designer.cs">
-      <DependentUpon>frmTestExam.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmViewDetailHomeroomClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -617,9 +611,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoCauHoiNew.resx">
       <DependentUpon>frmTaoCauHoiNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTestExam.resx">
-      <DependentUpon>frmTestExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAccAndClass.resx">
       <DependentUpon>frmViewListAccAndClass.cs</DependentUpon>
