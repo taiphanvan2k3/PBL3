@@ -161,5 +161,10 @@ namespace GUI.MyUserControls
             dtgv.Width = flowPanel.Width - 5;
             panelButton.Width = flowPanel.Width - 5;
         }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }
