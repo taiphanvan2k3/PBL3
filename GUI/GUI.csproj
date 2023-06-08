@@ -150,6 +150,12 @@
     <Compile Include="frmAddHomeroomClass.Designer.cs">
       <DependentUpon>frmAddHomeroomClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddStudentIntoHClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStudentIntoHClass.Designer.cs">
+      <DependentUpon>frmAddStudentIntoHClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,12 +263,6 @@
     </Compile>
     <Compile Include="frmTaoCauHoiNew.Designer.cs">
       <DependentUpon>frmTaoCauHoiNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTestExam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTestExam.Designer.cs">
-      <DependentUpon>frmTestExam.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViewDetailHomeroomClass.cs">
       <SubType>Form</SubType>
@@ -376,6 +376,12 @@
     </Compile>
     <Compile Include="MyUserControls\UC_DailyWorkSchedule.Designer.cs">
       <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DatagirdviewCheckbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DatagirdviewCheckbox.Designer.cs">
+      <DependentUpon>UC_DatagirdviewCheckbox.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_DapAnPhucKhao.cs">
       <SubType>UserControl</SubType>
@@ -544,6 +550,9 @@
     <EmbeddedResource Include="frmAddHomeroomClass.resx">
       <DependentUpon>frmAddHomeroomClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStudentIntoHClass.resx">
+      <DependentUpon>frmAddStudentIntoHClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -564,9 +573,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailyWorkSchedule.resx">
       <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_DapAnPhucKhao.resx">
-      <DependentUpon>UC_DapAnPhucKhao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Notification.resx">
       <DependentUpon>UC_Notification.cs</DependentUpon>
@@ -617,9 +623,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoCauHoiNew.resx">
       <DependentUpon>frmTaoCauHoiNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTestExam.resx">
-      <DependentUpon>frmTestExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewListAccAndClass.resx">
       <DependentUpon>frmViewListAccAndClass.cs</DependentUpon>

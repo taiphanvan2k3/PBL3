@@ -7,7 +7,6 @@ namespace DAL
 {
     public class AddressSelection_DAL
     {
-        private PBL3Entities db;
         private static AddressSelection_DAL _Instance;
         public static AddressSelection_DAL Instance
         {
@@ -19,29 +18,34 @@ namespace DAL
             }
         }
 
-        private AddressSelection_DAL()
-        {
-            db = new PBL3Entities();
-        }
-
         public List<string> GetAllTinhThanh()
         {
-            return db.cities.Select(p => p.tinhThanhPho).ToList();
+            using (var db = new PBL3Entities())
+            {
+                return db.cities.Select(p => p.tinhThanhPho).ToList();
+            }
         }
 
         public List<city> GetAllCities()
         {
-            return db.cities.Select(p => p).ToList();
+            using (var db = new PBL3Entities())
+            {
+                return db.cities.Select(p => p).ToList();
+            }
         }
-        
         public List<district> GetDistrictRecords(int id_city)
         {
-            return db.districts.Where(p => p.city_id == id_city).ToList();
+            using (var db = new PBL3Entities())
+            {
+                return db.districts.Where(p => p.city_id == id_city).ToList();
+            }
         }
-
         public List<ward> GetWardRecords(int district_id)
         {
-            return db.wards.Where(p => p.district_id == district_id).ToList();
+            using (var db = new PBL3Entities())
+            {
+                return db.wards.Where(p => p.district_id == district_id).ToList();
+            }
         }
     }
 }

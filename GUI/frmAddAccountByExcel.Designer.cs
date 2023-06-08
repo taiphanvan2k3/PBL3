@@ -36,8 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnADD = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnUploadFile = new System.Windows.Forms.Button();
@@ -48,6 +46,8 @@
             this.backgroundWorkerLoadFileLocal = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerLoadFileDrive = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.customButton1 = new GUI.MyCustomControl.CustomButton();
+            this.customButton2 = new GUI.MyCustomControl.CustomButton();
             this.guna2Panel1.SuspendLayout();
             this.pnlProgressBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,40 +101,6 @@
             this.label2.Size = new System.Drawing.Size(113, 23);
             this.label2.TabIndex = 35;
             this.label2.Text = "Thêm từ URL";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCancel.Location = new System.Drawing.Point(23, 756);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(200, 50);
-            this.btnCancel.TabIndex = 37;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnADD
-            // 
-            this.btnADD.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
-            this.btnADD.FlatAppearance.BorderSize = 0;
-            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.ForeColor = System.Drawing.Color.LightGray;
-            this.btnADD.Location = new System.Drawing.Point(273, 756);
-            this.btnADD.Margin = new System.Windows.Forms.Padding(4);
-            this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(200, 50);
-            this.btnADD.TabIndex = 36;
-            this.btnADD.Text = "Thêm ";
-            this.btnADD.UseVisualStyleBackColor = false;
-            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
             // 
             // label3
             // 
@@ -266,15 +232,57 @@
             this.dataGridView1.Size = new System.Drawing.Size(450, 300);
             this.dataGridView1.TabIndex = 42;
             // 
+            // customButton1
+            // 
+            this.customButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton1.BackColor = System.Drawing.Color.Red;
+            this.customButton1.BackGroundColor = System.Drawing.Color.Red;
+            this.customButton1.BorderColor = System.Drawing.Color.White;
+            this.customButton1.BorderRadius = 40;
+            this.customButton1.BorderSize = 2;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton1.Location = new System.Drawing.Point(23, 747);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(150, 50);
+            this.customButton1.TabIndex = 44;
+            this.customButton1.Text = "Hủy";
+            this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // customButton2
+            // 
+            this.customButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton2.BackColor = System.Drawing.Color.SteelBlue;
+            this.customButton2.BackGroundColor = System.Drawing.Color.SteelBlue;
+            this.customButton2.BorderColor = System.Drawing.Color.White;
+            this.customButton2.BorderRadius = 40;
+            this.customButton2.BorderSize = 2;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton2.Location = new System.Drawing.Point(323, 747);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(150, 50);
+            this.customButton2.TabIndex = 43;
+            this.customButton2.Text = "Thêm";
+            this.customButton2.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.customButton2.UseVisualStyleBackColor = false;
+            this.customButton2.Click += new System.EventHandler(this.btnADD_Click);
+            // 
             // frmAddAccountByExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(500, 818);
+            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.customButton2);
             this.Controls.Add(this.pnlProgressBar);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnADD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.panel2);
@@ -303,8 +311,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnUploadFile;
@@ -315,5 +321,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorkerLoadFileLocal;
         private System.ComponentModel.BackgroundWorker backgroundWorkerLoadFileDrive;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private GUI.MyCustomControl.CustomButton customButton1;
+        private GUI.MyCustomControl.CustomButton customButton2;
     }
 }

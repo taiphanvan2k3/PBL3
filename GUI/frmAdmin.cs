@@ -47,7 +47,7 @@ namespace GUI
             public static Color color6 = Color.FromArgb(24, 161, 251);
         }
 
-        private void ActivateButton(object senderBtn, Color color)
+        private void ActivateButton(object senderBtn, Color color, int role)
         {
             if (senderBtn != null)
             {
@@ -67,10 +67,13 @@ namespace GUI
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 //Left border button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
+                if (role == 1)
+                {
+                    leftBorderBtn.BackColor = color;
+                    leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                    leftBorderBtn.Visible = true;
+                    leftBorderBtn.BringToFront();
+                }
             }
         }
         private void DisableButton()
@@ -132,14 +135,14 @@ namespace GUI
         private void btnHome_Click(object sender, EventArgs e)
         {
 
-            ActivateButton(sender, RGBColors.color1);
+            ActivateButton(sender, RGBColors.color1, 1);
             openChildForm(new frmDesignDashboard());
             hideSubMenu();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            ActivateButton(sender, RGBColors.color2, 1);
             showSubMenu(panelAdd);
         }
 
@@ -203,7 +206,7 @@ namespace GUI
 
         private void btnClass_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+            ActivateButton(sender, RGBColors.color3, 1);
             showSubMenu(panelClass);
         }
 
@@ -215,26 +218,30 @@ namespace GUI
         // gắn datasource
         private void btnStudent_Click(object sender, EventArgs e)
         {
-            //openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(), 0));
+            ActivateButton(sender, RGBColors.color4, 0);
             openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountStudentList().Cast<object>().ToList(),SelectionState.Student));
         }
         private void btnTeacher_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color4, 0);
             openChildForm(new frmViewListAccAndClass(GetInformationAcc_BLL.Instance.GetAccountTeacherList().Cast<object>().ToList(), SelectionState.Teacher));
         }
 
         private void btnHomeroomClass_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color4, 0);
             openChildForm(new frmViewListAccAndClass(LopSinhHoat_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), SelectionState.HomeroomClass));
         }
 
         private void btnModuleClass_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color4, 0);
             openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.GetInformationClasses().Cast<object>().ToList(), SelectionState.ModuleClass));
         }
 
         private void btnSubject_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color4, 0);
             openChildForm(new frmViewListAccAndClass(LopHocPhan_BLL.Instance.getListSubjects().Cast<object>().ToList(), SelectionState.Subject));
         }
 

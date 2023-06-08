@@ -58,11 +58,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label3.Location = new System.Drawing.Point(34, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 25);
+            this.label3.Size = new System.Drawing.Size(46, 31);
             this.label3.TabIndex = 19;
             this.label3.Text = "Họ";
             // 
@@ -70,11 +70,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(34, 106);
+            this.label1.Location = new System.Drawing.Point(33, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 25);
+            this.label1.Size = new System.Drawing.Size(213, 31);
             this.label1.TabIndex = 20;
             this.label1.Text = "Căn cước công dân";
             // 
@@ -82,11 +82,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(34, 200);
+            this.label2.Location = new System.Drawing.Point(34, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 25);
+            this.label2.Size = new System.Drawing.Size(122, 31);
             this.label2.TabIndex = 22;
             this.label2.Text = "Ngày sinh";
             // 
@@ -94,11 +94,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Location = new System.Drawing.Point(34, 295);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
+            this.label4.Size = new System.Drawing.Size(109, 31);
             this.label4.TabIndex = 25;
             this.label4.Text = "Giới tính";
             // 
@@ -106,11 +106,11 @@
             // 
             this.lbFacultyOrProgram.AutoSize = true;
             this.lbFacultyOrProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.lbFacultyOrProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFacultyOrProgram.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFacultyOrProgram.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbFacultyOrProgram.Location = new System.Drawing.Point(34, 387);
             this.lbFacultyOrProgram.Name = "lbFacultyOrProgram";
-            this.lbFacultyOrProgram.Size = new System.Drawing.Size(295, 25);
+            this.lbFacultyOrProgram.Size = new System.Drawing.Size(329, 31);
             this.lbFacultyOrProgram.TabIndex = 27;
             this.lbFacultyOrProgram.Text = "Khoa và chương trình đào tạo";
             // 
@@ -118,11 +118,11 @@
             // 
             this.lbYearOrLevel.AutoSize = true;
             this.lbYearOrLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.lbYearOrLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYearOrLevel.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbYearOrLevel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbYearOrLevel.Location = new System.Drawing.Point(34, 499);
+            this.lbYearOrLevel.Location = new System.Drawing.Point(34, 496);
             this.lbYearOrLevel.Name = "lbYearOrLevel";
-            this.lbYearOrLevel.Size = new System.Drawing.Size(151, 25);
+            this.lbYearOrLevel.Size = new System.Drawing.Size(169, 31);
             this.lbYearOrLevel.TabIndex = 31;
             this.lbYearOrLevel.Text = "Năm nhập học";
             // 
@@ -130,11 +130,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Location = new System.Drawing.Point(249, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 25);
+            this.label5.Size = new System.Drawing.Size(53, 31);
             this.label5.TabIndex = 33;
             this.label5.Text = "Tên";
             // 
@@ -174,7 +174,7 @@
             this.txtCCCD.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCCCD.ForeColor = System.Drawing.Color.Lavender;
             this.txtCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCCCD.Location = new System.Drawing.Point(33, 155);
+            this.txtCCCD.Location = new System.Drawing.Point(33, 150);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(5);
             this.txtCCCD.MaxLength = 12;
             this.txtCCCD.Name = "txtCCCD";
@@ -249,7 +249,7 @@
             this.cmbYearOrLevel.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.cmbYearOrLevel.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cmbYearOrLevel.ListTextColor = System.Drawing.Color.DimGray;
-            this.cmbYearOrLevel.Location = new System.Drawing.Point(33, 546);
+            this.cmbYearOrLevel.Location = new System.Drawing.Point(33, 539);
             this.cmbYearOrLevel.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbYearOrLevel.Name = "cmbYearOrLevel";
             this.cmbYearOrLevel.Padding = new System.Windows.Forms.Padding(1);
@@ -262,7 +262,7 @@
             this.dtpBirthday.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.dtpBirthday.BorderSize = 0;
             this.dtpBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBirthday.Location = new System.Drawing.Point(33, 238);
+            this.dtpBirthday.Location = new System.Drawing.Point(33, 245);
             this.dtpBirthday.MaxDate = new System.DateTime(2074, 12, 31, 0, 0, 0, 0);
             this.dtpBirthday.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtpBirthday.MinimumSize = new System.Drawing.Size(4, 35);
@@ -364,11 +364,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Location = new System.Drawing.Point(34, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 25);
+            this.label6.Size = new System.Drawing.Size(42, 31);
             this.label6.TabIndex = 21;
             this.label6.Text = "ID";
             // 

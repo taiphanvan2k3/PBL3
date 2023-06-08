@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnRefesh = new FontAwesome.Sharp.IconButton();
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.panelButton = new System.Windows.Forms.Panel();
@@ -52,6 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelMain.Controls.Add(this.btnRefesh);
             this.panelMain.Controls.Add(this.flowPanel);
             this.panelMain.Controls.Add(this.separator);
             this.panelMain.Controls.Add(this.labelTitle);
@@ -217,5 +219,6 @@
         private System.Windows.Forms.Panel panelButton;
         private MyCustomControl.CustomButton btnPrev;
         private MyCustomControl.CustomButton btnNext;
+        private FontAwesome.Sharp.IconButton btnRefesh;
     }
 }

@@ -107,8 +107,8 @@ namespace GUI
         {
             if (!string.IsNullOrEmpty(lsh.MaGVCN))
             {
-                frmAddStudentIntoHomeroomClass frm = new frmAddStudentIntoHomeroomClass(lsh.MaLopSH, (int)lsh.SoLuongToiDa);
-                frm.reloadDTGV += new frmAddStudentIntoHomeroomClass.ReloadParentForm(LoadDTGV);
+                frmAddStudentIntoHClass frm = new frmAddStudentIntoHClass(lsh.MaLopSH, (int)lsh.SoLuongToiDa);
+                frm.reloadDTGV += new frmAddStudentIntoHClass.ReloadParentForm(LoadDTGV);
                 frm.ShowDialog();
             }
             else

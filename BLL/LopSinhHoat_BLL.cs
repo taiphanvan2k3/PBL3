@@ -70,11 +70,16 @@ namespace BLL
         }
         public int CountClassroom()
         {
-            return LopSinhHoat_BLL.Instance.CountClassroom();
+            return LopSinhHoat_DAL.Instance.CountClassroom();
         }
         public bool DeleteHomeroomClass(string idHomeroomClass)
         {
             return LopSinhHoat_DAL.Instance.DeleteHomeroomClass(idHomeroomClass);
+        }
+
+        public List<KeyValuePair<string, string>> listOfStudentsWithoutClass(string maCTDT, string maKhoa)
+        {
+            return LopSinhHoat_DAL.Instance.listOfStudentsWithoutClass(maCTDT, maKhoa);
         }
     }
 }

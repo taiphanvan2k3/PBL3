@@ -5,7 +5,6 @@ namespace DAL
 {
     public class Khoa_DAL
     {
-        private PBL3Entities db;
         private static Khoa_DAL _Instance;
         public static Khoa_DAL Instance
         {
@@ -17,14 +16,12 @@ namespace DAL
             }
         }
 
-        private Khoa_DAL()
-        {
-            db = new PBL3Entities();
-        }
-
         public List<KHOA> GetAllKhoa()
         {
-            return db.KHOAs.ToList();
+            using (var db = new PBL3Entities())
+            {
+                return db.KHOAs.ToList();
+            }
         }
     }
 }
