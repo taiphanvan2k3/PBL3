@@ -1,4 +1,6 @@
-﻿namespace GUI.MyUserControls
+﻿using System.Windows.Forms;
+
+namespace GUI.MyUserControls
 {
     partial class UC_DoExam
     {
@@ -29,18 +31,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnRefesh = new FontAwesome.Sharp.IconButton();
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.panelButton = new System.Windows.Forms.Panel();
-            this.btnPrev = new GUI.MyCustomControl.CustomButton();
-            this.btnNext = new GUI.MyCustomControl.CustomButton();
             this.separator = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.timerPopupForm = new System.Windows.Forms.Timer(this.components);
+            this.btnPrev = new GUI.MyCustomControl.CustomButton();
+            this.btnNext = new GUI.MyCustomControl.CustomButton();
             this.panelMain.SuspendLayout();
             this.flowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
@@ -61,6 +63,22 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(977, 506);
             this.panelMain.TabIndex = 0;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefesh.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnRefesh.FlatAppearance.BorderSize = 0;
+            this.btnRefesh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefesh.IconChar = FontAwesome.Sharp.IconChar.ArrowRightRotate;
+            this.btnRefesh.IconColor = System.Drawing.Color.SkyBlue;
+            this.btnRefesh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRefesh.Location = new System.Drawing.Point(911, 9);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(50, 44);
+            this.btnRefesh.TabIndex = 0;
+            this.btnRefesh.UseVisualStyleBackColor = false;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // flowPanel
             // 
@@ -127,6 +145,32 @@
             this.panelButton.Size = new System.Drawing.Size(935, 61);
             this.panelButton.TabIndex = 6;
             // 
+            // separator
+            // 
+            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.separator.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.separator.Location = new System.Drawing.Point(19, 59);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(942, 1);
+            this.separator.TabIndex = 2;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(22, 21);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(185, 23);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Danh sách bài kiểm tra";
+            // 
+            // timerPopupForm
+            // 
+            this.timerPopupForm.Interval = 80;
+            this.timerPopupForm.Tick += new System.EventHandler(this.timerPopupForm_Tick);
+            // 
             // btnPrev
             // 
             this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -164,32 +208,6 @@
             this.btnNext.TabIndex = 10;
             this.btnNext.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnNext.UseVisualStyleBackColor = false;
-            // 
-            // separator
-            // 
-            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.separator.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.separator.Location = new System.Drawing.Point(19, 59);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(942, 1);
-            this.separator.TabIndex = 2;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(22, 21);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(185, 23);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Danh sách bài kiểm tra";
-            // 
-            // timerPopupForm
-            // 
-            this.timerPopupForm.Interval = 80;
-            this.timerPopupForm.Tick += new System.EventHandler(this.timerPopupForm_Tick);
             // 
             // UC_DoExam
             // 
