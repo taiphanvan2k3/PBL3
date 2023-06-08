@@ -330,6 +330,12 @@
     <Compile Include="frmViewDetailModuleClass.Designer.cs">
       <DependentUpon>frmViewDetailModuleClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhucKhao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhucKhao.Designer.cs">
+      <DependentUpon>frmPhucKhao.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyCustomControl\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -370,6 +376,12 @@
     </Compile>
     <Compile Include="MyUserControls\UC_DailyWorkSchedule.Designer.cs">
       <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DapAnPhucKhao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControls\UC_DapAnPhucKhao.Designer.cs">
+      <DependentUpon>UC_DapAnPhucKhao.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControls\UC_FinishDoExam.cs">
       <SubType>UserControl</SubType>
@@ -541,6 +553,9 @@
     <EmbeddedResource Include="frmEnterPassToDoExam.resx">
       <DependentUpon>frmEnterPassToDoExam.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPhucKhao.resx">
+      <DependentUpon>frmPhucKhao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmShowListStudentInModuleClass.resx">
       <DependentUpon>frmShowListStudentInModuleClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -549,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailyWorkSchedule.resx">
       <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DapAnPhucKhao.resx">
+      <DependentUpon>UC_DapAnPhucKhao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Notification.resx">
       <DependentUpon>UC_Notification.cs</DependentUpon>

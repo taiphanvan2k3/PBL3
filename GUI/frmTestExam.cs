@@ -49,10 +49,7 @@ namespace GUI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-            UC_WeeklyWorkSchedule uc = new UC_WeeklyWorkSchedule();
-            uc.Dock = DockStyle.Fill;
-            this.Controls.Add(uc);
+            
         }
     }
 }
