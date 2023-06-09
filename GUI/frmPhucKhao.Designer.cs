@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhucKhao));
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
@@ -66,7 +67,7 @@
             this.flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel.Location = new System.Drawing.Point(18, 362);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(960, 401);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(960, 0);
             this.flowLayoutPanel.TabIndex = 0;
             this.flowLayoutPanel.SizeChanged += new System.EventHandler(this.flowLayoutPanel_SizeChanged);
             // 
@@ -146,6 +147,7 @@
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(479, 229);
@@ -167,9 +169,10 @@
             // 
             // lbDiem
             // 
+            this.lbDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDiem.AutoSize = true;
             this.lbDiem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiem.Location = new System.Drawing.Point(658, 229);
+            this.lbDiem.Location = new System.Drawing.Point(653, 229);
             this.lbDiem.Name = "lbDiem";
             this.lbDiem.Size = new System.Drawing.Size(22, 25);
             this.lbDiem.TabIndex = 18;
@@ -373,9 +376,10 @@
             this.Controls.Add(this.separator);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPhucKhao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frm_PhucKhao";
+            this.Text = "Phúc khảo";
             this.Load += new System.EventHandler(this.frmPhucKhao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

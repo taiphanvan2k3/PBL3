@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using GUI.MyCustomControl;
+using GUI.MyUserControls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -82,15 +83,25 @@ namespace GUI
 
         private void flowLayoutPanel_SizeChanged(object sender, EventArgs e)
         {
-            //foreach(UC_DapAnPhucKhao uc in flowLayoutPanel.Controls)
-            //{
-            //    uc.Width = flowLayoutPanel.Width;
-            //}    
+            foreach (UC_DapAnPhucKhao uc in flowLayoutPanel.Controls)
+            {
+                uc.Width = flowLayoutPanel.Width - 10;
+            }
         }
 
         private void ShowQuestions(List<CauHoi_DTO> questions)
         {
-
+            for(int i = 0;i < questions.Count;i++)
+            {
+                UC_DapAnPhucKhao ans = new UC_DapAnPhucKhao()
+                {
+                    Width = flowLayoutPanel.Width - 10
+                };
+                string soThuTu = (i + 1) + "/" + questions.Count;
+                ans.SetAnswers(soThuTu, questions[i]);
+                flowLayoutPanel.Height += ans.Height + 10;
+                flowLayoutPanel.Controls.Add(ans);
+            }
         }
 
         private void frmPhucKhao_Load(object sender, EventArgs e)
