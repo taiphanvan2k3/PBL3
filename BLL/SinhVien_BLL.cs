@@ -60,29 +60,7 @@ namespace BLL
 
         public static List<SinhVienLSH_View> GetSinhVienInLopSH(string MaLopSH)
         {
-            List<SINH_VIEN> li = SinhVien_DAL.GetSinhVienInLopSH(MaLopSH);
-
-            //Thực hiện chuyển đối tượng từ SINHVIEN -> SinhVienLSH_View vì GUI chỉ thao tác được
-            //với các đối tượng ở DTO, không thao tác được với các Entity ở DAL
-            List<SinhVienLSH_View> res = new List<SinhVienLSH_View>();
-            int stt = 1;
-            foreach (SINH_VIEN sv in li)
-            {
-                NGUOI_DUNG nd = sv.NGUOI_DUNG;
-                SinhVienLSH_View svView = new SinhVienLSH_View()
-                {
-                    STT = stt,
-                    MaSV = sv.MaSV,
-                    HoTen = nd.Ho + " " + nd.Ten,
-                    SDT = nd.Sdt,
-                    EmailCaNhan = nd.EmailCaNhan
-                };
-                if (sv.PHU_HUYNH.Count > 0)
-                    svView.SdtNguoiThan = sv.PHU_HUYNH.FirstOrDefault().Sdt;
-                res.Add(svView);
-                stt++;
-            }
-            return res;
+            return SinhVien_DAL.GetSinhVienInLopSH(MaLopSH);
         }
 
         public static bool UpdateStudentInfo(SinhVien_DTO sv)
