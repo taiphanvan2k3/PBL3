@@ -186,6 +186,7 @@ namespace DAL
                 var li = db.BAI_KIEM_TRA.Where(bkt => bkt.MaBaiKiemTra == MaBaiKiemTra)
                 .Join(db.LAM_BAI_KIEM_TRA, bkt => bkt.MaBaiKiemTra, lambkt => lambkt.MaBaiKiemTra, (bkt, lambkt) => new
                 {
+                    bkt.MaBaiKiemTra,
                     lambkt.MaSV,
                     lambkt.ThoiGianLamBai,
                     lambkt.ThoiGianNopBai,
@@ -196,6 +197,7 @@ namespace DAL
                 })
                 .Join(db.SINH_VIEN, lambkt => lambkt.MaSV, sv => sv.MaSV, (lambkt, sv) => new
                 {
+                    lambkt.MaBaiKiemTra,
                     lambkt.MaSV,
                     sv.NGUOI_DUNG.Ho,
                     sv.NGUOI_DUNG.Ten,
@@ -209,6 +211,7 @@ namespace DAL
                 })
                 .Select(p => new KetQuaLamKiemTra_SVLHP()
                 {
+                    MaBaiKiemTra = p.MaBaiKiemTra,
                     MaSV = p.MaSV,
                     HoTenSV = p.Ho + " " + p.Ten,
                     LopSH = p.MaLopSH,
@@ -276,6 +279,18 @@ namespace DAL
             }
         }
 
+        public void SaveKetQuaPhucKhao(List<KET_QUA_PHUC_KHAO> listKetQuaPhucKhao)
+        {
+            using (var db = new PBL3Entities())
+            {
+                foreach (var ketQuaPhucKhao in listKetQuaPhucKhao)
+                {
+                    db.KET_QUA_PHUC_KHAO.Add(ketQuaPhucKhao);
+                }
+                db.SaveChanges();
+            }
+        }
+
         public List<CBBItem> GetAllExamsInSpecificModuleClass(string moduleClass)
         {
             using (var db = new PBL3Entities())
@@ -312,16 +327,16 @@ namespace DAL
                     ThoiGianLamBai = DateTime.Now,
                     ThoiGianNopBai = DateTime.Now,
                 };
-                db.LAM_BAI_KIEM_TRA.Add(lbkt);  
+                db.LAM_BAI_KIEM_TRA.Add(lbkt);
                 db.SaveChanges();
             }
         }
-        
+
         public double? IsExsitExam(string MSV, int maBaiKT)
         {
             using (var db = new PBL3Entities())
             {
-                LAM_BAI_KIEM_TRA lbkt = db.LAM_BAI_KIEM_TRA.Where(p => p.MaSV == MSV && p.MaBaiKiemTra ==  maBaiKT).FirstOrDefault();  
+                LAM_BAI_KIEM_TRA lbkt = db.LAM_BAI_KIEM_TRA.Where(p => p.MaSV == MSV && p.MaBaiKiemTra == maBaiKT).FirstOrDefault();
                 if (lbkt != null)
                 {
                     return lbkt.Diem;

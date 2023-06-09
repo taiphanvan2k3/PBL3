@@ -10,26 +10,69 @@ namespace GUI
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public string TenBaiKiemTra
         {
-            UC_DapAnPhucKhao uc = new UC_DapAnPhucKhao() { state = UC_DapAnPhucKhao.StateAnswer.Correct };
-            flowLayoutPanel.Controls.Add(uc);
-            flowLayoutPanel.Height += uc.Height;
+            set => lbTenBaiKiemTra.Text = value;
+        }
+        public string TenHP
+        {
+            set => lblTenHocPhan.Text = value;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public string MaSV
         {
-            UC_DapAnPhucKhao uc = new UC_DapAnPhucKhao() { state = UC_DapAnPhucKhao.StateAnswer.InCorrect };
-            flowLayoutPanel.Controls.Add(uc);
-            flowLayoutPanel.Height += uc.Height;
+            set => lbMaSV.Text = value;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public string LopSH
         {
-            UC_DapAnPhucKhao uc = new UC_DapAnPhucKhao() { state = UC_DapAnPhucKhao.StateAnswer.DoNot };
-            flowLayoutPanel.Controls.Add(uc);
-            flowLayoutPanel.Height += uc.Height;
+            set => lbLopSH.Text = value;
+        }
+
+        public string HoTen
+        {
+            set => lbHoTen.Text = value;
+        }
+
+        public string MaHP
+        {
+            set => lbNhomHP.Text = value;
+        }
+
+        private DateTime _startTime;
+        public DateTime StartTime
+        {
+            set
+            {
+                lbThoiGianBatDau.Text = value.ToString();
+                _startTime = value;
+            }
+        }
+
+        public DateTime SubmitTime
+        {
+            set
+            {
+                lbThoiGianNopBai.Text = value.ToString();
+                TimeSpan thoiGianLamBai = value - _startTime;
+                int totalMinute = thoiGianLamBai.Hours * 3600 + thoiGianLamBai.Minutes*60 + thoiGianLamBai.Seconds;
+                lbThoiGianLamBai.Text = (totalMinute / 60) + " phút " + (totalMinute % 60) + " giây";
+            }
+        }
+
+        public int SoLuongCauHoi
+        {
+            set => lbTongSoCauHoi.Text = value.ToString();
+        }
+
+        public double Diem
+        {
+            set => lbDiem.Text = value.ToString();
+        }
+
+        public int SoCauDung
+        {
+            set => lbSoCauDung.Text = value.ToString();
         }
 
         private void flowLayoutPanel_SizeChanged(object sender, EventArgs e)
@@ -38,6 +81,11 @@ namespace GUI
             //{
             //    uc.Width = flowLayoutPanel.Width;
             //}    
+        }
+
+        private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

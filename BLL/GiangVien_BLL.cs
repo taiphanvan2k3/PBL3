@@ -69,14 +69,17 @@ namespace BLL
             }
             return li;
         }
+
         public bool CheckTKBGiangVienConflict(string id, string thu, int TietBD, int TietKT)
         {
             return GiangVien_DAL.Instance.CheckTKBGiangVienConflict(id, thu, TietBD, TietKT);
         }
+
         public void AssignTeacherToSectionClass(string id, string thu, int TietBD, int TietKT, string phong, string MaLHP)
         {
             GiangVien_DAL.Instance.AssignTeacherToSectionClass(id, thu, TietBD, TietKT, phong, MaLHP);
         }
+
         public void AssignTeacherNoChangeSchedule(string id, string MaLHP)
         {
             GiangVien_DAL.Instance.AssignTeacherNoChangeSchedule(id, MaLHP);
@@ -86,26 +89,32 @@ namespace BLL
         {
             return GiangVien_DAL.Instance.GetMaKhoaByMaLHP(maLHP);
         }
+
         public List<string> GetListLHPByIDTeacher(string id)
         {
             return GiangVien_DAL.Instance.GetMaLopHPByID(id);
         }
+
         public void SendNoticeToLHP(string MaGV, string MaLHP, string TieuDe, string NoiDung, DateTime NgayTao)
         {
             GiangVien_DAL.Instance.SendNoticeToLHP(MaGV, MaLHP, TieuDe, NoiDung, NgayTao);
         }
+
         public bool CheckNoticeRedundanṭ̣̣̣(string MaGV, DateTime NgayTao, string MaLHP)
         {
             return GiangVien_DAL.Instance.CheckNoticeRedundanṭ̣̣̣(MaGV, NgayTao, MaLHP);
         }
+
         public void ReplaceNotice(string MaGV, DateTime NgayTao, string MaLHP, string TieuDe, string NoiDung)
         {
             GiangVien_DAL.Instance.ReplaceNotice(MaGV, NgayTao, MaLHP, TieuDe, NoiDung);
         }
+
         public int GetNumberQuestionForMonHoc(string MaLHP)
         {
             return GiangVien_DAL.Instance.GetNumberQuestionForMonHoc(MaLHP);
         }
+
         public bool CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
                                byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
         {
@@ -139,18 +148,22 @@ namespace BLL
             return GiangVien_DAL.Instance.GetTeacherByFaculuty(idFaculuty, nameFaculuty);
 
         }
+
         public ThoiKhoaBieu_DTO GetScheduleForTKB(string MaLHP)
         {
             return GiangVien_DAL.Instance.GetScheduleForTKB(MaLHP);
         }
+
         public List<string> GetMaLSHForGiangVien(string MaGiangVien)
         {
             return GiangVien_DAL.Instance.GetMaLSHForGiangVien(MaGiangVien);
         }
+
         public bool UpdateTeacherInfo(GiangVien_DTO gv)
         {
             return GiangVien_DAL.Instance.UpdateTeacherInfo(gv);
         }
+
         #region Get List GV Suitable To Assign
         public List<AssignTeacher> GetGiangVienWithNumberLHPPhuHop(string MaLHP, string Thu, int? TietBD, int? TietKT)
         {

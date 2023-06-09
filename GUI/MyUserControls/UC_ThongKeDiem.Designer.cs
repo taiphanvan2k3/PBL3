@@ -122,6 +122,7 @@
             this.dataGridView.Size = new System.Drawing.Size(1077, 508);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.DataSourceChanged += new System.EventHandler(this.dataGridView_DataSourceChanged);
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // btnLastPage
             // 

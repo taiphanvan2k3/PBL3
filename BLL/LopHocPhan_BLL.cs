@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BLL
 {
@@ -175,6 +176,11 @@ namespace BLL
         public List<string> getListStudent(string maKhoa, string maLHP)
         {
             return LopHocPhan_DAL.Instance.getListStudent(maKhoa, maLHP);
+        }
+
+        public LopHocPhan_DTO GetTenMonHocByMaLHP(string MaLHP)
+        {
+            return LopHocPhan_DAL.Instance.GetInfoLopHocPhanByMaLHP(MaLHP);
         }
     }
 }

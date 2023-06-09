@@ -30,7 +30,7 @@ namespace BLL
 
                     Rectangle buttonBounds = e.CellBounds;
                     int buttonWidth = (int)textSize.Width + 20;
-                    int buttonHeight = (int)textSize.Height;
+                    int buttonHeight = 25;
 
                     buttonBounds.Width = buttonWidth;
                     buttonBounds.Height = buttonHeight;

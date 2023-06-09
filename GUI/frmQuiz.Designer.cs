@@ -89,6 +89,7 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1498, 762);
             this.panelMain.TabIndex = 0;
+            this.panelMain.TabStop = true;
             // 
             // panelTitle
             // 

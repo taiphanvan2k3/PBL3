@@ -57,7 +57,6 @@ namespace GUI
                         CustomMessageBox.Show("Bạn đã làm bài kiểm tra này rồi!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         return;
                     }
-                    MessageBox.Show(result.ToString());
                     //BaiKiemTra_BLL.Instance.IsDoingExam(MaSV, MaBaiKiemTra);
                     UtilityClass.OpenNewForm(this, new frmQuiz()
                     {

@@ -321,5 +321,19 @@ namespace DAL
                 return result;
             }
         }
+
+        public LopHocPhan_DTO GetInfoLopHocPhanByMaLHP(string MaLHP)
+        {
+            using(var db = new PBL3Entities())
+            {
+                return db.LOP_HOC_PHAN.Where(p => p.MaLopHP == MaLHP)
+                   .Select(p => new LopHocPhan_DTO()
+                    {
+                        TenHP = p.MON_HOC.TenMH,
+                        KiHoc = p.KiHoc,
+                        NamHoc = p.NamHoc
+                    }).FirstOrDefault();
+            }
+        }
     }
 }

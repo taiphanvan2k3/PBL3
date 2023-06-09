@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace DTO
 {
@@ -19,8 +20,8 @@ namespace DTO
 
         #region edit 9/6/2023
         private bool[] indexCorrectAnswer = new bool[] { false, false, false, false };
-        private string maDapAnDung = "";
-        private string maDapAnChon = "";
+        public string maDapAnDung = "";
+        public string maDapAnChon = "";
         #endregion
 
         public CauHoi_DTO(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD,
@@ -81,7 +82,7 @@ namespace DTO
             for (int i = 0; i < indexCorrectAnswer.Length; i++)
             {
                 if (indexCorrectAnswer[i])
-                    maDapAnDung += ('A' + i);
+                    maDapAnDung += (char)('A' + i);
             }
         }
 
@@ -109,7 +110,7 @@ namespace DTO
             //}
             //return true;
             foreach(int idx in IndexSelection)
-                maDapAnChon += ('A' + idx);
+                maDapAnChon += (char)('A' + idx);
             return maDapAnDung == maDapAnChon;
         }
     }

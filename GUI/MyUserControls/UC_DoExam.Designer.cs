@@ -38,11 +38,12 @@ namespace GUI.MyUserControls
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.panelButton = new System.Windows.Forms.Panel();
+            this.btnPrev = new GUI.MyCustomControl.CustomButton();
+            this.btnNext = new GUI.MyCustomControl.CustomButton();
             this.separator = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.timerPopupForm = new System.Windows.Forms.Timer(this.components);
-            this.btnPrev = new GUI.MyCustomControl.CustomButton();
-            this.btnNext = new GUI.MyCustomControl.CustomButton();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panelMain.SuspendLayout();
             this.flowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
@@ -145,32 +146,6 @@ namespace GUI.MyUserControls
             this.panelButton.Size = new System.Drawing.Size(935, 61);
             this.panelButton.TabIndex = 6;
             // 
-            // separator
-            // 
-            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.separator.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.separator.Location = new System.Drawing.Point(19, 59);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(942, 1);
-            this.separator.TabIndex = 2;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(22, 21);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(185, 23);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Danh sách bài kiểm tra";
-            // 
-            // timerPopupForm
-            // 
-            this.timerPopupForm.Interval = 80;
-            this.timerPopupForm.Tick += new System.EventHandler(this.timerPopupForm_Tick);
-            // 
             // btnPrev
             // 
             this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -209,6 +184,38 @@ namespace GUI.MyUserControls
             this.btnNext.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnNext.UseVisualStyleBackColor = false;
             // 
+            // separator
+            // 
+            this.separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.separator.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.separator.Location = new System.Drawing.Point(19, 59);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(942, 1);
+            this.separator.TabIndex = 2;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(22, 21);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(185, 23);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Danh sách bài kiểm tra";
+            // 
+            // timerPopupForm
+            // 
+            this.timerPopupForm.Interval = 80;
+            this.timerPopupForm.Tick += new System.EventHandler(this.timerPopupForm_Tick);
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // UC_DoExam
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -238,5 +245,6 @@ namespace GUI.MyUserControls
         private MyCustomControl.CustomButton btnPrev;
         private MyCustomControl.CustomButton btnNext;
         private FontAwesome.Sharp.IconButton btnRefesh;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

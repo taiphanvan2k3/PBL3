@@ -9,6 +9,8 @@ namespace DTO
     /// </summary>
     public class KetQuaLamKiemTra_SVLHP
     {
+        public int MaBaiKiemTra { get; set; }
+
         [DisplayName("Mã sinh viên")]
         public string MaSV { get; set; }
 

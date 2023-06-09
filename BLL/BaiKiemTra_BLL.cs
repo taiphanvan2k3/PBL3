@@ -91,6 +91,36 @@ namespace BLL
         }
 
         /// <summary>
+        /// Lưu kết quả phúc khảo khi nhấn nút nộp bài ở frmQuiz 
+        /// </summary>
+        /// <param name="maSV"></param>
+        /// <param name="maBaiKiemTra"></param>
+        /// <param name="listCauHoi"></param>
+        public void SaveKetQuaPhucKhao(string maSV, int maBaiKiemTra, List<CauHoi_DTO> listCauHoi)
+        {
+            List<KET_QUA_PHUC_KHAO> listKetQuaPhucKhao = new List<KET_QUA_PHUC_KHAO>();
+            int i = 1;
+            foreach(var cauHoi in listCauHoi)
+            {
+                listKetQuaPhucKhao.Add(new KET_QUA_PHUC_KHAO
+                {
+                    maSV = maSV,
+                    maBaiKiemTra = maBaiKiemTra,
+                    thuTuCauHoi = i,
+                    tenCauHoi = cauHoi.TenCauHoi,
+                    dapAnA = cauHoi.DapAnHienThi[0],
+                    dapAnB = cauHoi.DapAnHienThi[1],
+                    dapAnC = cauHoi.DapAnHienThi[2],
+                    dapAnD = cauHoi.DapAnHienThi[3],
+                    dapAnChon = cauHoi.maDapAnChon,
+                    dapAnDung = cauHoi.maDapAnDung
+                });
+                i++;
+            }
+            BaiKiemTra_DAL.Instance.SaveKetQuaPhucKhao(listKetQuaPhucKhao);
+        }
+
+        /// <summary>
         /// Trả về danh sách các bài kiểm tra của 1 lớp học phần
         /// </summary>
         /// <param name="moduleClass"></param>

@@ -360,6 +360,7 @@ namespace GUI
                 Diem = Math.Round(10.0 * SoCauDung / this.TongSoCauHoi,2)
             };
             BaiKiemTra_BLL.Instance.SaveResultOfDoExam(kq);
+            BaiKiemTra_BLL.Instance.SaveKetQuaPhucKhao(MaSV, MaBaiKiemTra, questions);
 
             //Hiển thị UC xem kết quả
             panelMain.Controls.Clear();
