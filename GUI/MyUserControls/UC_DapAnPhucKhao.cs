@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI.MyUserControls
@@ -20,9 +21,14 @@ namespace GUI.MyUserControls
                     BackColor = Color.LightGreen;
                 else if (value == StateAnswer.InCorrect)
                     BackColor = Color.LightCoral;
-                else 
+                else
                     BackColor = Color.LightSalmon;
             }
+        }
+
+        public void SetAnswers(List<string> dapAnHienThi, bool isSingleQuestion)
+        {
+
         }
 
         public UC_DapAnPhucKhao()

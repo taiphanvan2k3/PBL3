@@ -344,5 +344,32 @@ namespace DAL
                 return null;
             }
         }
+
+        public List<CauHoi_DTO> GetCauHoiPhucKhao(string MaSV, int MaBaiKiemTra)
+        {
+            using (var db = new PBL3Entities())
+            {
+                var li = db.KET_QUA_PHUC_KHAO.Where(kq => kq.maSV == MaSV && kq.maBaiKiemTra == MaBaiKiemTra).ToList();
+                List<CauHoi_DTO> res = new List<CauHoi_DTO>();
+                foreach (var item in li)
+                {
+                    List<string> dapAnHienThi = new List<string>()
+                    {
+                        item.dapAnA,
+                        item.dapAnB,
+                        item.dapAnC,
+                        item.dapAnD
+                    };
+                    res.Add(new CauHoi_DTO()
+                    {
+                        TenCauHoi = item.tenCauHoi,
+                        DapAnHienThi = dapAnHienThi,
+                        maDapAnDung = item.dapAnDung,
+                        maDapAnChon = item.dapAnChon
+                    });
+                }
+                return res;
+            }
+        }
     }
 }

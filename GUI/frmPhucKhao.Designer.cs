@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbSoCauDung = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lbTongSoCauHoi = new System.Windows.Forms.Label();
             this.lbDiem = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.lblTenHocPhan = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTenBaiKiemTra = new System.Windows.Forms.Label();
-            this.lbSoCauDung = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +69,6 @@
             this.flowLayoutPanel.Size = new System.Drawing.Size(960, 401);
             this.flowLayoutPanel.TabIndex = 0;
             this.flowLayoutPanel.SizeChanged += new System.EventHandler(this.flowLayoutPanel_SizeChanged);
-            this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Paint);
             // 
             // label1
             // 
@@ -124,6 +123,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(955, 263);
             this.panel1.TabIndex = 6;
+            // 
+            // lbSoCauDung
+            // 
+            this.lbSoCauDung.AutoSize = true;
+            this.lbSoCauDung.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoCauDung.Location = new System.Drawing.Point(194, 194);
+            this.lbSoCauDung.Name = "lbSoCauDung";
+            this.lbSoCauDung.Size = new System.Drawing.Size(32, 25);
+            this.lbSoCauDung.TabIndex = 21;
+            this.lbSoCauDung.Text = "28";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 25);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Số câu đúng:";
             // 
             // label22
             // 
@@ -344,26 +363,6 @@
             this.lbTenBaiKiemTra.TabIndex = 0;
             this.lbTenBaiKiemTra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbSoCauDung
-            // 
-            this.lbSoCauDung.AutoSize = true;
-            this.lbSoCauDung.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoCauDung.Location = new System.Drawing.Point(194, 194);
-            this.lbSoCauDung.Name = "lbSoCauDung";
-            this.lbSoCauDung.Size = new System.Drawing.Size(32, 25);
-            this.lbSoCauDung.TabIndex = 21;
-            this.lbSoCauDung.Text = "28";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 194);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Số câu đúng:";
-            // 
             // frmPhucKhao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,6 +376,7 @@
             this.Name = "frmPhucKhao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frm_PhucKhao";
+            this.Load += new System.EventHandler(this.frmPhucKhao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

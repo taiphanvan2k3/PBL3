@@ -139,10 +139,15 @@ namespace BLL
         {
              BaiKiemTra_DAL.Instance.IsDoingExam(MSV, maBaiKT);
         }
+
         public double? IsExsitExam(string MSV, int maBaiKT)
         {
             return BaiKiemTra_DAL.Instance.IsExsitExam(MSV, maBaiKT);
+        }
 
+        public List<CauHoi_DTO> GetCauHoiPhucKhao(string MaSV, int MaBaiKiemTra)
+        {
+            return BaiKiemTra_DAL.Instance.GetCauHoiPhucKhao(MaSV, MaBaiKiemTra);
         }
     }
 }

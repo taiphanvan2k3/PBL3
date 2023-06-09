@@ -1,5 +1,8 @@
-﻿using GUI.MyUserControls;
+﻿using BLL;
+using DTO;
+using GUI.MyCustomControl;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace GUI
@@ -10,6 +13,8 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        public int MaBaiKiemTra { get; set; }
         public string TenBaiKiemTra
         {
             set => lbTenBaiKiemTra.Text = value;
@@ -55,7 +60,7 @@ namespace GUI
             {
                 lbThoiGianNopBai.Text = value.ToString();
                 TimeSpan thoiGianLamBai = value - _startTime;
-                int totalMinute = thoiGianLamBai.Hours * 3600 + thoiGianLamBai.Minutes*60 + thoiGianLamBai.Seconds;
+                int totalMinute = thoiGianLamBai.Hours * 3600 + thoiGianLamBai.Minutes * 60 + thoiGianLamBai.Seconds;
                 lbThoiGianLamBai.Text = (totalMinute / 60) + " phút " + (totalMinute % 60) + " giây";
             }
         }
@@ -83,9 +88,23 @@ namespace GUI
             //}    
         }
 
-        private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        private void ShowQuestions(List<CauHoi_DTO> questions)
         {
 
+        }
+
+        private void frmPhucKhao_Load(object sender, EventArgs e)
+        {
+            List<CauHoi_DTO> questions = BaiKiemTra_BLL.Instance.GetCauHoiPhucKhao(lbMaSV.Text, MaBaiKiemTra);
+            if (questions.Count == 0)
+            {
+                CustomMessageBox.Show("Chưa có dữ liệu về kết quả chi tiết của bài thi này.", "Thông báo",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                ShowQuestions(questions);
+            }
         }
     }
 }

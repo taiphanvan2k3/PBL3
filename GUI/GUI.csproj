@@ -574,6 +574,9 @@
     <EmbeddedResource Include="MyUserControls\UC_DailyWorkSchedule.resx">
       <DependentUpon>UC_DailyWorkSchedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControls\UC_DapAnPhucKhao.resx">
+      <DependentUpon>UC_DapAnPhucKhao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_Notification.resx">
       <DependentUpon>UC_Notification.cs</DependentUpon>
     </EmbeddedResource>

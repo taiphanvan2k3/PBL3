@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace DTO
 {
@@ -24,6 +23,7 @@ namespace DTO
         public string maDapAnChon = "";
         #endregion
 
+        public CauHoi_DTO() { }
         public CauHoi_DTO(string TenCauHoi, string DapAnA, string DapAnB, string DapAnC, string DapAnD,
                           string MaDapAnDung)
         {
@@ -109,7 +109,7 @@ namespace DTO
             //        return false;
             //}
             //return true;
-            foreach(int idx in IndexSelection)
+            foreach (int idx in IndexSelection)
                 maDapAnChon += (char)('A' + idx);
             return maDapAnDung == maDapAnChon;
         }

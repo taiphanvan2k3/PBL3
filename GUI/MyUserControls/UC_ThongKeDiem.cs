@@ -76,6 +76,7 @@ namespace GUI.MyUserControls
             if (e.RowIndex >= 0 && dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
                 DataGridViewRow row = dataGridView.SelectedRows[0];
+                int maBaiKiemTra = Convert.ToInt32(row.Cells["MaBaiKiemTra"].Value);
                 string[] kqLamBai = row.Cells["SoCauDung"].Value.ToString().Split('/');
                 string maLHP = cbbLopHocPhan.SelectedItem.ToString();
 
@@ -94,6 +95,7 @@ namespace GUI.MyUserControls
 
                 frmPhucKhao frm = new frmPhucKhao()
                 {
+                    MaBaiKiemTra = maBaiKiemTra,
                     TenBaiKiemTra = tenBaiKiemTraShow.ToString(),
                     TenHP = lhp.TenHP,
                     MaSV = row.Cells["MaSV"].Value.ToString(),
