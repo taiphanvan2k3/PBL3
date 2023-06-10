@@ -96,7 +96,7 @@ namespace GUI
             else if (mess == null)
             {
                 CustomMessageBox.Show("Gửi mail thành công", "Thông báo");
-                UtilityClass.OpenNewForm(this, new frmDesinEnterDigitCode(acc, txtEmail.Texts.ToString()));
+                UtilityClass.OpenNewForm(this, new frmDesignEnterDigitCode(acc, txtEmail.Texts.ToString()));
             }
             else
             {

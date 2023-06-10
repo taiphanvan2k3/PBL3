@@ -14,13 +14,13 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmDesinEnterDigitCode : Form
+    public partial class frmDesignEnterDigitCode : Form
     {
         private Timer countdownTimer;
         private int duration = 120;
         private THONG_TIN_DANG_NHAP_DTO acc;
         private string email;
-        public frmDesinEnterDigitCode(THONG_TIN_DANG_NHAP_DTO acc, string email)
+        public frmDesignEnterDigitCode(THONG_TIN_DANG_NHAP_DTO acc, string email)
         {
             InitializeComponent();
             UtilityClass.EnableDragForm(this);

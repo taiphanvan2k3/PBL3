@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmDesinEnterDigitCode
+    partial class frmDesignEnterDigitCode
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDesinEnterDigitCode));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDesignEnterDigitCode));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.btnSendBackAgain = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();

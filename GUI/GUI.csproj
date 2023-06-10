@@ -144,12 +144,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAddHomeroomClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,12 +192,6 @@
     <Compile Include="frmAddModuleClass.Designer.cs">
       <DependentUpon>frmAddModuleClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddStudentIntoHomeroomClass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddStudentIntoHomeroomClass.Designer.cs">
-      <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAddSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,12 +203,6 @@
     </Compile>
     <Compile Include="frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDashboard.Designer.cs">
-      <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDesignEnterNewPass.cs">
       <SubType>Form</SubType>
@@ -240,11 +222,11 @@
     <Compile Include="frmDesignLogin.Designer.cs">
       <DependentUpon>frmDesignLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDesinEnterDigitCode.cs">
+    <Compile Include="frmDesignEnterDigitCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDesinEnterDigitCode.Designer.cs">
-      <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
+    <Compile Include="frmDesignEnterDigitCode.Designer.cs">
+      <DependentUpon>frmDesignEnterDigitCode.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuiz.cs">
       <SubType>Form</SubType>
@@ -287,18 +269,6 @@
     </Compile>
     <Compile Include="frmViewListAccAndClass.Designer.cs">
       <DependentUpon>frmViewListAccAndClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAddStudentIntoModuleClass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddStudentIntoModuleClass.designer.cs">
-      <DependentUpon>frmAddStudentIntoModuleClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCreateClassSection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCreateClassSection.Designer.cs">
-      <DependentUpon>frmCreateClassSection.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAssignTeacher.cs">
       <SubType>Form</SubType>
@@ -467,24 +437,6 @@
     <Compile Include="MyUserControls\UC_VerticalAddressSelection.Designer.cs">
       <DependentUpon>UC_VerticalAddressSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_Calendar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_Calendar.Designer.cs">
-      <DependentUpon>UC_Calendar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserControls\UC_ChangeGradeStudent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_ChangeGradeStudent.Designer.cs">
-      <DependentUpon>UC_ChangeGradeStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserControls\UC_DapAnControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_DapAnControl.Designer.cs">
-      <DependentUpon>UC_DapAnControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyUserControls\UC_DailySchoolSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -541,9 +493,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAddHomeroomClass.resx">
       <DependentUpon>frmAddHomeroomClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,11 +561,8 @@
     <EmbeddedResource Include="frmDesignLogin.resx">
       <DependentUpon>frmDesignLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDesinEnterDigitCode.resx">
-      <DependentUpon>frmDesinEnterDigitCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAddStudentIntoHomeroomClass.resx">
-      <DependentUpon>frmAddStudentIntoHomeroomClass.cs</DependentUpon>
+    <EmbeddedResource Include="frmDesignEnterDigitCode.resx">
+      <DependentUpon>frmDesignEnterDigitCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuiz.resx">
       <DependentUpon>frmQuiz.cs</DependentUpon>
@@ -636,17 +582,8 @@
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddStudentIntoModuleClass.resx">
-      <DependentUpon>frmAddStudentIntoModuleClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateClassSection.resx">
-      <DependentUpon>frmCreateClassSection.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAssignTeacher.resx">
       <DependentUpon>frmAssignTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDashboard.resx">
-      <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmExam.resx">
       <DependentUpon>frmExam.cs</DependentUpon>
@@ -698,15 +635,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_VerticalAddressSelection.resx">
       <DependentUpon>UC_VerticalAddressSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_Calendar.resx">
-      <DependentUpon>UC_Calendar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_ChangeGradeStudent.resx">
-      <DependentUpon>UC_ChangeGradeStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_DapAnControl.resx">
-      <DependentUpon>UC_DapAnControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailySchoolSchedule.resx">
       <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>

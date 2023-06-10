@@ -14,6 +14,8 @@ namespace GUI.MyUserControls
 {
     public partial class UC_DatagirdviewCheckbox : UserControl
     {
+        string maSV;
+
         int TotalCheckBoxes = 0;
         int TotalCheckedCheckBoxes = 0;
         CheckBox HeaderCheckBox = null;
@@ -150,7 +152,7 @@ namespace GUI.MyUserControls
 
         #region Sự kiện nhấn vào 1 ô checkbox
         //Kiểm tra xem checkbox được đánh dấu ở header của datagridview có được chọn hay không.
-        private void dgvView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
@@ -168,7 +170,7 @@ namespace GUI.MyUserControls
             }
         }
 
-        private void dgvView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void DgvView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
@@ -230,5 +232,61 @@ namespace GUI.MyUserControls
         {
             dgvView.Columns[0].Width = 50;
         }
+
+        #region Sự kiện nhấn vào 1 ô checkbox
+        //Kiểm tra xem checkbox được đánh dấu ở header của datagridview có được chọn hay không.
+        private void dgvView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            {
+                //Loop to verify whether all row CheckBoxes are checked or not.
+                bool isChecked = true;
+                foreach (DataGridViewRow row in dgvView.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells["checkBoxColumn"].EditedFormattedValue) == false)
+                    {
+                        isChecked = false;
+                        break;
+                    }
+                }
+                HeaderCheckBox.Checked = isChecked;
+            }
+        }
+
+        private void dgvView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                DataGridViewCheckBoxCell checkCell = dgvView.Rows[e.RowIndex].Cells["checkBoxColumn"] as DataGridViewCheckBoxCell;
+                if (checkCell != null)
+                {
+                    bool isChecked = (bool)checkCell.EditedFormattedValue;
+                    dgvView.Rows[e.RowIndex].Selected = isChecked;
+                    int selectedRowCount = dgvView.SelectedRows.Count;
+
+                    if (isChecked)
+                    {
+                        dgvView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
+                        dgvView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                        TotalCheckedCheckBoxes++;
+                    }
+                    else
+                    {
+                        dgvView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+                        dgvView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.FromName("ActiveCaption");
+                        TotalCheckedCheckBoxes--;
+
+                    }
+                   
+                }
+
+            }
+        }
+
+
+
+        #endregion
+
+
     }
 }

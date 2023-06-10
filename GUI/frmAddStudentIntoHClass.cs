@@ -76,23 +76,6 @@ namespace GUI
             myUserControl.Dock = DockStyle.Fill;
             panelView.Controls.Add(myUserControl);
         }
-        public frmAddStudentIntoHClass(string MaLopSH, int MaxNumberOfStudent, int role)
-        {
-            InitializeComponent();
-            UtilityClass.EnableDragForm(this);
-            this.MaLopSH = MaLopSH;
-            this.MaxNumberOfStudent = MaxNumberOfStudent;
-            list = LopSinhHoat_BLL.Instance.listOfStudentsWithoutClass(regex.Match(this.MaLopSH).Value, MaLopSH.Substring(0, 2));
-            dt = ConvertListToDataTable(list);
-            autotext = new AutoCompleteStringCollection();
-            txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            autotext.AddRange(list.Select(x => x.Key).ToArray());
-            txtSearch.AutoCompleteCustomSource = autotext;
-            myUserControl = new UC_DatagirdviewCheckbox(dt, nameHeader);
-            myUserControl.Dock = DockStyle.Fill;
-            panelView.Controls.Add(myUserControl);
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
