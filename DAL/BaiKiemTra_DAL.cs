@@ -46,9 +46,9 @@ namespace DAL
                 //Nếu là bài Test thì chỉ lấy các bài thuộc phạm vi Test
                 //Nếu là GK thì lấy các câu hỏi của Test và GK
                 //Còn nếu là CK thì lấy câu nào cũng được
-                .Where(p => (LoaiBaiKiemTra == "Test" && p.MaPhanLoaiCauHoi == "Test") ||
-                            (LoaiBaiKiemTra == "GK" && p.MaPhanLoaiCauHoi != "CK") ||
-                            LoaiBaiKiemTra == "CK")
+                //.Where(p => (LoaiBaiKiemTra == "Test" && p.MaPhanLoaiCauHoi == "Test") ||
+                //            (LoaiBaiKiemTra == "GK" && p.MaPhanLoaiCauHoi != "CK") ||
+                //            LoaiBaiKiemTra == "CK")
                 .OrderBy(ch => Guid.NewGuid()).Take(TongSoCau).ToList();
 
                 List<CauHoi_DTO> res = new List<CauHoi_DTO>();

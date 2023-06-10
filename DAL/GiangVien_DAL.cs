@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace DAL
 {
@@ -20,7 +21,6 @@ namespace DAL
         }
 
 
-
         public string GetMaKhoaOfGV(string MaGVCN)
         {
             using (var db = new PBL3Entities())
@@ -28,6 +28,7 @@ namespace DAL
                 return db.GIANG_VIEN.Where(gv => gv.MaGV == MaGVCN).Select(p => p.MaKhoa).FirstOrDefault();
             }
         }
+
         public List<string> GetAllTinhThanh()
         {
             using (var db = new PBL3Entities())
@@ -71,6 +72,7 @@ namespace DAL
                 return li;
             }
         }
+
         public bool CheckTKBGiangVienConflict(string id, string thu, int TietBD, int TietKT)
         {
             using (var db = new PBL3Entities())
@@ -177,6 +179,7 @@ namespace DAL
                 return query.Count != 0;
             }
         }
+
         //Thay thế thông báo 
         public void ReplaceNotice(string MaGV, DateTime NgayTao, string MaLHP, string TieuDe, string NoiDung)
         {
@@ -199,10 +202,7 @@ namespace DAL
                 }
             }
         }
-        /*public bool CheckTimeExamConflict(string MaGV, string MaLHP, DateTime TimeExam)
-        {
-            var query = db.BAI_KIEM_TRA.
-        }*/
+
         public int GetNumberQuestionForMonHoc(string MaLHP)
         {
             using (var db = new PBL3Entities())
@@ -216,6 +216,7 @@ namespace DAL
                 return db.CAU_HOI.Where(p => p.MaMH == MaMH).Count();
             }
         }
+
         public bool CheckExamGKOrCKExist(string MaLHP, string LoaiBaiKiemTra)
         {
             using (var db = new PBL3Entities())
@@ -224,6 +225,7 @@ namespace DAL
                 return query.Count > 0;
             }
         }
+
         public void CreateExam(string TenBKT, string LoaiBaiKiemTra, byte ThoiGianLamBai, DateTime NgayKiemTra,
                                byte SoCauHoi, string MaLHP, string MaGV, string MatKhauLamBai, bool ChoPhepQuayLai)
         {
@@ -252,6 +254,7 @@ namespace DAL
                 if (SoLuongCauHoi > SoCauHoi * 2)
                     SoLuongCauHoi = SoCauHoi * 2;
                 string PhanLoai;
+
                 if (LoaiBaiKiemTra == "Cuối kỳ")
                     PhanLoai = "CK";
                 else if (LoaiBaiKiemTra == "Giữa kỳ")
@@ -259,7 +262,18 @@ namespace DAL
                 else
                     PhanLoai = LoaiBaiKiemTra;
                 //x => Guid.NewGuid() là phương thức lấy ngẫu nhiên record trong database theo method syntax in LinQ to entities 
-                List<CAU_HOI> li = db.CAU_HOI.OrderBy(x => Guid.NewGuid()).Take(SoLuongCauHoi).Where(x => x.PhanLoai == PhanLoai).ToList();
+                string pattern = @"^([A-Za-z]+)";
+                string maMH = "";
+                Match match = Regex.Match(MaLHP, pattern);
+
+                if (match.Success)
+                    maMH = match.Groups[1].Value;
+
+                List<CAU_HOI> li = db.CAU_HOI.Where(ch => ch.MaMH == maMH && ((PhanLoai == "Test" && ch.PhanLoai == "Test") ||
+                                                    (PhanLoai == "GK" && ch.PhanLoai != "CK") ||
+                                                    PhanLoai == "CK"))
+                                             .OrderBy(x => Guid.NewGuid())
+                                             .Take(SoLuongCauHoi).ToList();
                 foreach (var i in li)
                 {
                     BAIKIEMTRA_CAUHOI NewBKT_CH = new BAIKIEMTRA_CAUHOI
@@ -272,6 +286,7 @@ namespace DAL
                 db.SaveChanges();
             }
         }
+
         public ThoiKhoaBieu_DTO GetScheduleForTKB(string MaLHP)
         {
             using (var db = new PBL3Entities())
@@ -284,6 +299,7 @@ namespace DAL
                 return query;
             }
         }
+
         public List<string> GetListSVForLHP(string MaLHP)
         {
             using (var db = new PBL3Entities())
@@ -291,6 +307,7 @@ namespace DAL
                 return db.SINHVIEN_LOPHOCPHAN.Where(p => p.MaLopHP == MaLHP).Select(p => p.MaSV).Distinct().ToList();
             }
         }
+
         //Lấy ra các lớp học phần mà sinh viên trong lớp học phần cần tạo bài kiểm tra học và kiểm tra xung đột trên các lớp đó 
         public bool CheckScheduleExamConflict(DateTime TimeExam, byte ThoiGianLamBai, string MaLHP)
         {
@@ -305,13 +322,6 @@ namespace DAL
                 var ListLHP = db.SINHVIEN_LOPHOCPHAN.Where(x => list.Contains(x.MaSV)).Select(x => x.MaLopHP).Distinct().ToList();
 
                 //Lấy ra các bài kiểm tra thuộc trong danh sách lớp học phần vừa lấy và kiểm tra xung đột thời gian thi 
-                /*var query = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
-                && ((bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeKetThuc
-                    && bkt.NgayKiemTra <= TimeKetThuc)
-                || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeKetThuc)
-                || (bkt.NgayKiemTra <= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeKetThuc
-                    && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) >= TimeExam)
-                || (bkt.NgayKiemTra >= TimeExam && DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) <= TimeKetThuc))).ToList();*/
                 var query1 = db.BAI_KIEM_TRA.Where(bkt => ListLHP.Contains(bkt.MaLopHP)
                                                     && !(DbFunctions.AddMinutes(bkt.NgayKiemTra, bkt.ThoiGianLamBai) < TimeExam
                                                           || bkt.NgayKiemTra > TimeKetThuc)).ToList();
