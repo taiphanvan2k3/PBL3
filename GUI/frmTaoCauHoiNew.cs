@@ -183,7 +183,26 @@ namespace GUI
                 }
             }
         }
-
+        private void ReloadForm()
+        {
+            tbQuestion.Texts = "";
+            tbA.Texts = "";
+            tbB.Texts = "";
+            tbC.Texts = "";
+            tbD.Texts = "";
+            foreach(Control control in pnlChooseAnswer.Controls)
+            {
+                if (control is RadioButton)
+                {
+                    ((RadioButton)(control)).Checked = false;
+                }
+                else if (control is CheckBox)
+                    ((CheckBox)(control)).Checked = false;
+            }
+            tgMultiAnswer.Checked = false;
+            cbMonHoc.SelectedIndex = 0;
+            cbPhanLoai.SelectedIndex = 0;
+        }
         private void btnCreateQues_Click(object sender, EventArgs e)
         {
             string DapAnDung = "";
@@ -192,7 +211,7 @@ namespace GUI
                 PhanLoai = "GK";
             else if (cbPhanLoai.SelectedItem.ToString() == "Cuối kỳ")
                 PhanLoai = "CK";
-            else if (cbPhanLoai.SelectedItem.ToString() == "Cuối kỳ")
+            else if (cbPhanLoai.SelectedItem.ToString() == "Test")
                 PhanLoai = "Test";
             GiangVien_BLL.Instance.CreateQuestion(tbQuestion.Texts, tbA.Texts, tbB.Texts, tbC.Texts, tbD.Texts, DapAnDung, ((CBBItem)cbMonHoc.SelectedItem).Id, PhanLoai);
             CustomMessageBox.Show("Tạo câu hỏi thành công!");
