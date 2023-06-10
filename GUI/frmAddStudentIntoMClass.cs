@@ -1,15 +1,21 @@
 ﻿using BLL;
 using DTO;
 using GUI.MyCustomControl;
+using GUI.MyUserControls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
-using System.Windows.Controls;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmAddStudentIntoModuleClass : Form
+    public partial class frmAddStudentIntoMClass : Form
     {
         //Truyền qua frmAddStudent MaHP để lát kiểm tra xem sinhvien có phải ở khoa chứa môn học đó không?
         private string MaHP { get; set; }
@@ -26,17 +32,39 @@ namespace GUI
 
         // Phục vụ tìm kiếm
         private AutoCompleteStringCollection autotext;
- 
+
         public delegate void ReloadParentForm();
         public ReloadParentForm reloadDTGV { get; set; }
         private string FileName { get; set; } = string.Empty;
-        public frmAddStudentIntoModuleClass()
+
+        //----------------------------------------------
+
+
+        private List<KeyValuePair<string, string>> list;
+        UC_DatagirdviewCheckbox myUserControl;
+        private List<string> nameHeader = new List<string> { "", "Mã SV", "Họ tên" };
+
+
+        private DataTable dt;
+
+        public DataTable ConvertListToDataTable(List<KeyValuePair<string, string>> list)
         {
-            InitializeComponent();
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Key", typeof(string));
+            dataTable.Columns.Add("Value", typeof(string));
+
+            foreach (var item in list)
+            {
+                dataTable.Rows.Add(item.Key, item.Value);
+            }
+
+            return dataTable;
         }
-        public frmAddStudentIntoModuleClass(string MaHP, int SoLuongToiDa, int KiHoc, string Thu, int TietBD, int TietKT)
+
+        public frmAddStudentIntoMClass(string MaHP, int SoLuongToiDa, int KiHoc, string Thu, int TietBD, int TietKT)
         {
             InitializeComponent();
+            UtilityClass.EnableDragForm(this);
             this.MaHP = MaHP;
             this.SoLuongToiDa = SoLuongToiDa;
             this.KiHoc = KiHoc;
@@ -44,18 +72,19 @@ namespace GUI
             this.TietBD = TietBD;
             this.TietKT = TietKT;
             this.MaKhoa = GiangVien_BLL.Instance.GetMaKhoaByMaLHP(MaHP);
+
+            list = LopHocPhan_BLL.Instance.GetListStundent_v2(MaKhoa, MaHP);
+            dt = ConvertListToDataTable(list);
+            autotext = new AutoCompleteStringCollection();
+            txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            autotext.AddRange(list.Select(x => x.Key).ToArray());
+            txtSearch.AutoCompleteCustomSource = autotext;
+            myUserControl = new UC_DatagirdviewCheckbox(dt, nameHeader);
+            myUserControl.Dock = DockStyle.Fill;
+            panelView.Controls.Add(myUserControl);
         }
 
-        private void pnlUpload_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = "Lựa chọn file để thêm sinh viên vào lớp học phần";
-            open.Filter = "Text files (*.csv)|*.csv";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                FileName = open.FileName;
-            }
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -118,18 +147,15 @@ namespace GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            reloadDTGV();
             this.Dispose();
+            reloadDTGV();
         }
 
-        private void frmAddStudentIntoModuleClass_Load(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            autotext = new AutoCompleteStringCollection();
-            txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            autotext.AddRange(LopHocPhan_BLL.Instance.getListStudent(MaKhoa, MaHP).ToArray());
-            txtSearch.AutoCompleteCustomSource = autotext;
-
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = string.Format("Key like '%{0}%'", txtSearch.Text);
+            myUserControl.loadData(dv.ToTable());
         }
     }
 }

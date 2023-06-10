@@ -322,6 +322,29 @@ namespace DAL
             }
         }
 
+        public List<KeyValuePair<string, string>> GetListStundent_v2(string maKhoa, string maLHP)
+        {
+            using (var context = new PBL3Entities())
+            {
+
+                var listStudent = context.NGUOI_DUNG
+                    .Join(context.SINH_VIEN, nd => nd.MaNguoiDung, sv => sv.MaSV, (nd, sv) => new
+                    {
+                        ND = nd,
+                        SV = sv
+                    })
+                    .Where(x => x.SV.MaSV.Substring(0, 3) == maKhoa &&
+                    !context.SINHVIEN_LOPHOCPHAN.Any(svlhp =>
+                        svlhp.MaSV == x.SV.MaSV &&
+                        svlhp.MaLopHP == maLHP))
+                    .Select(g => new { MaSinhVien = g.SV.MaSV, HoTen = g.ND.Ho + " " + g.ND.Ten })
+                    .ToDictionary(x => x.MaSinhVien, x => x.HoTen)
+                    .Select(x => new KeyValuePair<string, string>(x.Key, x.Value))
+                    .ToList();
+                return listStudent;
+            }
+        }
+
         public LopHocPhan_DTO GetInfoLopHocPhanByMaLHP(string MaLHP)
         {
             using(var db = new PBL3Entities())

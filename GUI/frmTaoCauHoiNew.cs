@@ -15,6 +15,16 @@ namespace GUI
 {
     public partial class frmTaoCauHoiNew : Form
     {
+
+
+        
+        public frmTaoCauHoiNew(int role)
+        {
+            InitializeComponent();
+            
+        }
+
+
         public frmTaoCauHoiNew()
         {
             InitializeComponent();

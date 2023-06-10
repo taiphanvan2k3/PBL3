@@ -60,19 +60,21 @@ namespace GUI.MyUserControls
             {
                 DataGridViewRow row = dtgv.Rows[e.RowIndex];
 
+                // Kiểm tra bài kiểm tra có nằm trong khoảng thời gian được phép hay không
+                DateTime startTime = Convert.ToDateTime(row.Cells["ThoiGianBatDau"].Value);
+                DateTime endTime = Convert.ToDateTime(row.Cells["ThoiGianKetThuc"].Value);
+                DateTime nowTime = DateTime.Now;
+                if (!(startTime <= nowTime && nowTime <= endTime))
+                {
+                    CustomMessageBox.Show("Đây không phải là thời điểm để làm bài kiểm tra này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 /*Do property ThoiGianLamBai có Browsable(false) nên không thể truy cập nó từ dtgv
                   Nên phải truy cập thông qua ThoiGianLamBai_Show, và ThoiGianLamBai_Show có giá trị vd 60 phút
                   nên phải cần thêm bước Substring nữa để lấy ra thời gian
                  */
 
-                //DateTime startTime = Convert.ToDateTime(row.Cells["ThoiGianBatDau"].Value);
-                //DateTime endTime = Convert.ToDateTime(row.Cells["ThoiGianKetThuc"].Value);
-                //DateTime nowTime = DateTime.Now;
-                //if (!(startTime <= nowTime && nowTime <= endTime))
-                //{
-                //    CustomMessageBox.Show("Đây không phải là thời điểm để làm bài kiểm tra này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    return;
-                //}
                 string tmp = row.Cells["ThoiGianLamBai_Show"].Value.ToString();
                 int minutes = Convert.ToInt32(tmp.Substring(0, tmp.IndexOf(" ")));
 

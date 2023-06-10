@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.MyCustomControl;
 using GUI.MyUserControls;
 using System;
 using System.Drawing;
@@ -206,14 +207,6 @@ namespace GUI
             }
         }
 
-        private void btnDarkMode_Click(object sender, EventArgs e)
-        {
-            if (ButtonClicked != "Nền tối")
-            {
-                ButtonClicked = "Nền tối";
-                pnlMain.Controls.Clear();
-            }
-        }
 
         private void btnViewListDoExam_Click(object sender, EventArgs e)
         {
@@ -232,9 +225,25 @@ namespace GUI
 
         private void btnCreateQuestion_Click(object sender, EventArgs e)
         {
-            frmTaoCauHoiNew f = new frmTaoCauHoiNew();
-            f.MaGV = ID;
-            f.ShowDialog();
+
+            DialogResult result = CustomMessageBox.Show("Lựa chọn chế độ muốn thêm câu hỏi mới",
+               "Tạo Tài Khoản",
+               MessageBoxButtons.YesNoCancel, "Thủ Công", "Bằng Sheet", "Hủy");
+            if (result == DialogResult.Yes)
+            {
+                frmTaoCauHoiNew f = new frmTaoCauHoiNew();
+                f.MaGV = ID;
+                f.ShowDialog();
+
+
+            }
+            else if (result == DialogResult.No)
+            {
+                MessageBox.Show("Sheet");
+            }
+
+
+            
         }
 
         private void btnSendAnnounce_Click(object sender, EventArgs e)

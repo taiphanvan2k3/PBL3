@@ -182,5 +182,10 @@ namespace BLL
         {
             return LopHocPhan_DAL.Instance.GetInfoLopHocPhanByMaLHP(MaLHP);
         }
+
+        public List<KeyValuePair<string, string>> GetListStundent_v2(string maKhoa, string maLHP)
+        {
+            return LopHocPhan_DAL.Instance.GetListStundent_v2(maKhoa, maLHP);
+        }
     }
 }

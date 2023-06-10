@@ -144,6 +144,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddHomeroomClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,12 @@
     </Compile>
     <Compile Include="frmAddStudentIntoHClass.Designer.cs">
       <DependentUpon>frmAddStudentIntoHClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddStudentIntoMClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStudentIntoMClass.Designer.cs">
+      <DependentUpon>frmAddStudentIntoMClass.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChangePassword.cs">
       <SubType>Form</SubType>
@@ -485,18 +497,6 @@
     <Compile Include="MyUserControls\UC_DailySchoolSchedule.Designer.cs">
       <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControls\UC_DisplayInformation.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_DisplayInformation.Designer.cs">
-      <DependentUpon>UC_DisplayInformation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserControls\UC_EditTeacher.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserControls\UC_EditTeacher.Designer.cs">
-      <DependentUpon>UC_EditTeacher.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyUserControls\UC_TeacherInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -547,11 +547,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddHomeroomClass.resx">
       <DependentUpon>frmAddHomeroomClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudentIntoHClass.resx">
       <DependentUpon>frmAddStudentIntoHClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStudentIntoMClass.resx">
+      <DependentUpon>frmAddStudentIntoMClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
@@ -713,12 +719,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_DailySchoolSchedule.resx">
       <DependentUpon>UC_DailySchoolSchedule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_DisplayInformation.resx">
-      <DependentUpon>UC_DisplayInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControls\UC_EditTeacher.resx">
-      <DependentUpon>UC_EditTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControls\UC_TeacherInfo.resx">
       <DependentUpon>UC_TeacherInfo.cs</DependentUpon>

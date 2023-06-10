@@ -178,9 +178,9 @@ namespace GUI
                 //Chỉ có thể thêm sinh viên khi lớp học phần này đã được xếp thời khoá biểu
                 //Một khi đã có thứ trong tuần thì chắc chắn đã có TietBD,TietKT nên có thể ép
                 //kiểu int? thành int
-                frmAddStudentIntoModuleClass frm = new frmAddStudentIntoModuleClass(lhp.MaHP, lhp.SoLuongMax, lhp.KiHoc, lhp.Thu,
+                frmAddStudentIntoMClass frm = new frmAddStudentIntoMClass(lhp.MaHP, lhp.SoLuongMax, lhp.KiHoc, lhp.Thu,
                     (int)lhp.TietBD, (int)lhp.TietKT);
-                frm.reloadDTGV += new frmAddStudentIntoModuleClass.ReloadParentForm(LoadDataGridView);
+                frm.reloadDTGV += new frmAddStudentIntoMClass.ReloadParentForm(LoadDataGridView);
                 frm.ShowDialog();
             }
             else
