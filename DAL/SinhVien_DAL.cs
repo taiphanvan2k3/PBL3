@@ -7,7 +7,6 @@ namespace DAL
 {
     public class SinhVien_DAL
     {
-
         public static bool CheckIdStudentExist(string MSSV)
         {
             using (var db = new PBL3Entities())
@@ -24,6 +23,7 @@ namespace DAL
                 return db.SINH_VIEN.Where(sv => sv.MaSV == MSSV).Select(sv => sv.MaLopSH).FirstOrDefault();
             }
         }
+
         public static SINH_VIEN GetSinhVienById(string id)
         {
             #region Trước đó
@@ -44,48 +44,36 @@ namespace DAL
         {
             using (var db = new PBL3Entities())
             {
-                var li = db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH).Include(sv => sv.PHU_HUYNH).
-                OrderBy(sv => sv.MaSV).ToList();
+                var li = db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH)
+                    .Join(db.NGUOI_DUNG, sv => sv.MaSV, nd => nd.MaNguoiDung, (sv, nd) => new
+                    {
+                        sv.MaSV,
+                        nd.Ho,
+                        nd.Ten,
+                        SdtCaNhan = nd.Sdt,
+                        nd.EmailCaNhan,
+                        PhuHuynhs = sv.PHU_HUYNH
+                    }).OrderBy(sv => sv.MaSV);
 
                 //Thực hiện chuyển đối tượng từ SINHVIEN -> SinhVienLSH_View vì GUI chỉ thao tác được
                 //với các đối tượng ở DTO, không thao tác được với các Entity ở DAL
                 List<SinhVienLSH_View> res = new List<SinhVienLSH_View>();
                 int stt = 1;
-                foreach (SINH_VIEN sv in li)
+                foreach (var sv in li)
                 {
-                    NGUOI_DUNG nd = sv.NGUOI_DUNG;
                     SinhVienLSH_View svView = new SinhVienLSH_View()
                     {
-                        STT = stt,
+                        STT = stt++,
                         MaSV = sv.MaSV,
-                        HoTen = nd.Ho + " " + nd.Ten,
-                        SDT = nd.Sdt,
-                        EmailCaNhan = nd.EmailCaNhan
+                        HoTen = sv.Ho + " " + sv.Ten,
+                        SDT = sv.SdtCaNhan,
+                        EmailCaNhan = sv.EmailCaNhan
                     };
-                    if (sv.PHU_HUYNH.Count > 0)
-                        svView.SdtNguoiThan = sv.PHU_HUYNH.FirstOrDefault().Sdt;
+                    if (sv.PhuHuynhs.Count > 0)
+                        svView.SdtNguoiThan = sv.PhuHuynhs.FirstOrDefault().Sdt;
                     res.Add(svView);
-                    stt++;
                 }
                 return res;
-                //return db.SINH_VIEN.Where(p => p.MaLopSH == MaLopSH)
-                //    .Join(db.PHU_HUYNH, sv => sv.MaSV, ph => ph.MaSV, (sv, ph) => new
-                //    {
-                //        sv.MaSV,
-                //        sv.NGUOI_DUNG.Ho,
-                //        sv.NGUOI_DUNG.Ten,
-                //        SDTCaNhan = sv.NGUOI_DUNG.Sdt,
-                //        sv.NGUOI_DUNG.EmailCaNhan,
-                //        SDTPhuHuynh = ph.Sdt
-                //    }).Select(p => new SinhVienLSH_View
-                //    {
-                //        MaSV = p.MaSV,
-                //        HoTen = p.Ho + " " + p.Ten,
-                //        SDT = p.SDTCaNhan,
-                //        EmailCaNhan = p.EmailCaNhan,
-
-
-                //    }).ToList();
             }
         }
 
