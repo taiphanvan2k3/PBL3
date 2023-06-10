@@ -53,7 +53,7 @@ namespace Testexcel
         // Lấy chuỗi id của url
         public static string GetSheetIdFromUrl(string url)
         {
-            string pattern = @"\/spreadsheets\/d\/([a-zA-Z0-9-_]+";
+            string pattern = @"\/spreadsheets\/d\/([a-zA-Z0-9-_]+)";
             Regex regex = new Regex(pattern);
             Match match = regex.Match(url);
             return match.Success ? match.Groups[1].Value : null;

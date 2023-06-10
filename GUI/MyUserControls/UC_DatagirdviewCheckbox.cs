@@ -269,6 +269,8 @@ namespace GUI.MyUserControls
                         dgvView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
                         dgvView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
                         TotalCheckedCheckBoxes++;
+                        maSV = dgvView.Rows[e.RowIndex].Cells[1].Value.ToString();
+
                     }
                     else
                     {
@@ -283,7 +285,10 @@ namespace GUI.MyUserControls
             }
         }
 
-
+        public string getMaSV()
+        {
+            return maSV;
+        }
 
         #endregion
 
