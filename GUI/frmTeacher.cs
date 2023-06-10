@@ -239,7 +239,9 @@ namespace GUI
             }
             else if (result == DialogResult.No)
             {
-                MessageBox.Show("Sheet");
+                frmTaoCauHoiNew f = new frmTaoCauHoiNew(1);
+                f.MaGV = ID;
+                f.ShowDialog();
             }
 
 
