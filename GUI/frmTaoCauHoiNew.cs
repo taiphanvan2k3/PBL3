@@ -203,6 +203,7 @@ namespace GUI
             cbMonHoc.SelectedIndex = 0;
             cbPhanLoai.SelectedIndex = 0;
         }
+
         private void btnCreateQues_Click(object sender, EventArgs e)
         {
             string DapAnDung = "";
@@ -213,10 +214,36 @@ namespace GUI
                 PhanLoai = "CK";
             else if (cbPhanLoai.SelectedItem.ToString() == "Test")
                 PhanLoai = "Test";
+            foreach(Control control in pnlChooseAnswer.Controls)
+            {
+                if (tgMultiAnswer.Checked)
+                {
+                    if(control is CheckBox)
+                    {
+                        if (((CheckBox)(control)).Checked)
+                        {
+                            DapAnDung += control.Name.ToString()[control.Name.ToString().Length - 1];
+                        }
+                    }
+                }
+                else
+                {
+                    if(control is RadioButton)
+                    {
+                        if (((RadioButton)(control)).Checked)
+                        {
+                            DapAnDung += control.Name.ToString()[control.Name.ToString().Length - 1];
+                        }
+                    }
+                }
+            }
+            DapAnDung = DapAnDung.ToLower();
+            char[] charArray = DapAnDung.ToCharArray();
+            Array.Sort(charArray);
+            DapAnDung = new string(charArray);
             GiangVien_BLL.Instance.CreateQuestion(tbQuestion.Texts, tbA.Texts, tbB.Texts, tbC.Texts, tbD.Texts, DapAnDung, ((CBBItem)cbMonHoc.SelectedItem).Id, PhanLoai);
             CustomMessageBox.Show("Tạo câu hỏi thành công!");
+            ReloadForm();
         }
-
-
     }
 }
