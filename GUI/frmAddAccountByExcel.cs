@@ -201,7 +201,7 @@ namespace Testexcel
                             nd.MkEmailTruongCap = cccd;
 
 
-                            if (role == 0)
+                            if (enumValue == SelectionState.Student)
                             {
                                 countSV = GetInformationAcc_BLL.Instance.getTheNumberOfStudentByFaculty(row[0].ToString().Substring(0, 3), row[0].ToString().Substring(3));
                                 countSV++;
@@ -411,9 +411,5 @@ namespace Testexcel
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
     }
 }

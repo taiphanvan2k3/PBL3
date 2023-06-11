@@ -377,11 +377,11 @@ namespace GUI
             {
                 if (GetInformationAcc_BLL.Instance.DeleteData((int)enumValue, item))
                 {
-                    MessageBox.Show("Xóa tài khoản thành công:" + item);
+                    CustomMessageBox.Show("Xóa tài khoản thành công:" + item);
                 }
                 else
                 {
-                    MessageBox.Show("Không thành công");
+                    CustomMessageBox.Show("Không thành công");
                 }
             }
             listOfStudentCodesToDelete.Clear();

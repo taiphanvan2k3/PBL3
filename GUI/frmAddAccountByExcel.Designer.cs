@@ -251,7 +251,7 @@
             this.customButton1.Text = "Hủy";
             this.customButton1.TextColor = System.Drawing.Color.WhiteSmoke;
             this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.btnCancel_Click);
+            this.customButton1.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // customButton2
             // 
