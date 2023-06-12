@@ -1,0 +1,46 @@
+# PBL3
+## 1. Giao diện Admin
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/d4485852-7677-4e34-b468-f09140afd106)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/4e53c0a0-a19b-484c-8021-2315932386d5)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/589b8132-c92a-4a37-b345-5168d643cdce)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/b8dbed32-7845-48b1-9729-b194291b6dea)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/61e2fd40-2c49-4635-9ad7-82d833b8c62a)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/0e4d9553-8ace-419f-964b-9de9b5684e18)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/ba9ba5d5-e0c1-436e-b7ff-b1b1e35be40f)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/fba99678-eb12-4d94-ac2c-7174f4c7df5b)
+
+## 2. Giao diện Student
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/443af76e-75b3-4770-a93d-c5274f2c48bb)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/d3df6261-0c5a-4471-b2c8-936510aaf8c4)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/8c061c6d-cde2-4f04-b3bb-c905ae775d19)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/fa99be47-4737-406a-906c-9c9ee4576e0c)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/b1aa4731-9183-4b29-aee1-2ab135c8b8cb)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/39321448-b3e9-44da-974e-c27a61a948cd)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/ecd835b2-4dbc-4781-9e35-36476c5154fe)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/87a9d1ae-81a8-46d0-acb5-107d1d341049)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/d2697f06-c69f-4d19-8912-f906e5227ec5)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/7ee96b3e-7b02-456c-83c0-4a027de5e744)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/ec44eea8-9213-4e1a-9507-d3959929d534)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/605a5b0c-4620-49cb-841f-57f58cc69cbc)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/4e25f1c5-25f0-48c9-b0f6-65ac0a2abb36)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/7f7057b1-a42c-422f-b584-3f12d4125dd4)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/af86ca33-69d5-4d55-93cb-383cd4d359a3)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/24d3e7fa-c5e4-4c08-9770-97ba0e3533fb)
+
+## 3. Giao diện Teacher
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/c0709bb3-ad30-41ee-bd69-d908da020a03)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/9104d494-a560-470f-8981-4d60102303e2)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/c3162101-763b-474d-9f48-0b6753ef5541)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/f6e1dca9-4984-40d7-8e65-25b79e012f0f)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/42b9ee86-51fd-4119-8738-3b1630188e83)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/8576b1cf-3cb6-40ea-8c92-e4a3c8aa1712)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/eb05e6b5-cb79-4495-9083-7999adb98a5b)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/0f9b43a7-5ee4-4256-867d-ff4199fd37a3)
+
+## 4. Làm bài kiểm tra
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/d63792b4-0639-42c3-8b10-334a8a50315c)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/2151b9df-5fda-45c8-bfd7-d68d86ec5c7c)
+![Screenshot (114)](https://github.com/taiphanvan2k3/PBL3/assets/108993284/72518634-4f8d-4471-8afc-ea029e617a76)
+![Screenshot (115)](https://github.com/taiphanvan2k3/PBL3/assets/108993284/5e0b5ae4-21c5-4427-a5b4-3877c21bd33c)
+![Screenshot (116)](https://github.com/taiphanvan2k3/PBL3/assets/108993284/4c5b9375-cd97-4949-b349-994be2e57757)
+![image](https://github.com/taiphanvan2k3/PBL3/assets/108993284/cc0159da-6dbe-45e3-b5e3-47ac226edc18)
